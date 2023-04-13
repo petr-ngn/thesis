@@ -6,25 +6,25 @@
 \contentsline {section}{\numberline {2.1}Formal requirements of master's thesis}{2}{section.2.1}%
 \contentsline {section}{\numberline {2.2}Template adjustments and meta-data}{3}{section.2.2}%
 \contentsline {chapter}{\numberline {3}Machine Learning}{4}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Terminology}{5}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Algorithms}{5}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Logistic Regression}{5}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Decision Tree}{5}{subsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.2.3}Logistic Regression}{5}{subsection.3.2.3}%
-\contentsline {subsection}{\numberline {3.2.4}Naive Bayes}{5}{subsection.3.2.4}%
-\contentsline {subsection}{\numberline {3.2.5}K-Nearest Neighbors}{5}{subsection.3.2.5}%
-\contentsline {subsection}{\numberline {3.2.6}Random Forest}{5}{subsection.3.2.6}%
-\contentsline {subsection}{\numberline {3.2.7}Gradient Boosting}{5}{subsection.3.2.7}%
-\contentsline {subsection}{\numberline {3.2.8}Support Vector Machine}{5}{subsection.3.2.8}%
-\contentsline {subsection}{\numberline {3.2.9}Neural Networks}{5}{subsection.3.2.9}%
-\contentsline {section}{\numberline {3.3}Evaluation Metrics}{5}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Confusion Matrix}{5}{subsection.3.3.1}%
+\contentsline {section}{\numberline {3.1}Terminology}{4}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Algorithms}{4}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Logistic Regression}{4}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Decision Tree}{4}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Logistic Regression}{4}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.4}Naive Bayes}{4}{subsection.3.2.4}%
+\contentsline {subsection}{\numberline {3.2.5}K-Nearest Neighbors}{4}{subsection.3.2.5}%
+\contentsline {subsection}{\numberline {3.2.6}Random Forest}{4}{subsection.3.2.6}%
+\contentsline {subsection}{\numberline {3.2.7}Gradient Boosting}{4}{subsection.3.2.7}%
+\contentsline {subsection}{\numberline {3.2.8}Support Vector Machine}{4}{subsection.3.2.8}%
+\contentsline {subsection}{\numberline {3.2.9}Neural Networks}{4}{subsection.3.2.9}%
+\contentsline {section}{\numberline {3.3}Evaluation Metrics}{4}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Confusion Matrix}{4}{subsection.3.3.1}%
 \contentsline {subsection}{\numberline {3.3.2}Accuracy}{5}{subsection.3.3.2}%
 \contentsline {subsection}{\numberline {3.3.3}Recall}{5}{subsection.3.3.3}%
 \contentsline {subsection}{\numberline {3.3.4}Precision}{5}{subsection.3.3.4}%
 \contentsline {subsection}{\numberline {3.3.5}F1 Score}{5}{subsection.3.3.5}%
-\contentsline {subsection}{\numberline {3.3.6}AUC}{6}{subsection.3.3.6}%
-\contentsline {subsection}{\numberline {3.3.7}Kolmogorov-Smirnov}{6}{subsection.3.3.7}%
+\contentsline {subsection}{\numberline {3.3.6}AUC}{5}{subsection.3.3.6}%
+\contentsline {subsection}{\numberline {3.3.7}Kolmogorov-Smirnov}{5}{subsection.3.3.7}%
 \contentsline {subsection}{\numberline {3.3.8}Somer's D}{6}{subsection.3.3.8}%
 \contentsline {subsection}{\numberline {3.3.9}Matthews Correlation Coefficient}{6}{subsection.3.3.9}%
 \contentsline {subsection}{\numberline {3.3.10}Brier Score Loss}{6}{subsection.3.3.10}%

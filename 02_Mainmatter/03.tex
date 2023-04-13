@@ -14,11 +14,53 @@
 \section{Evaluation Metrics}
 \subsection{Confusion Matrix}
 
+
+\begin{equation}\label{eq}
+C = {c_{i,j} = \sum_{l=1}^{m}[(y_l=i) \land (f(x_l)=j)]}
+\end{equation}
+
+\begin{equation}\label{eq}
+    C_{i \times j} = \begin{bmatrix}
+    c_{1,1} & c_{2,1} & \cdots & c_{1,j} \\
+    c_{2,1} & c_{2,2} & \cdots & c_{2,j} \\
+    \vdots & \vdots & \ddots & \vdots \\
+    c_{i,1} & c_{i,2} & \cdots & c_{i,j} \\
+    \end{bmatrix}
+\end{equation}
+
+
+\begin{equation}
+    C_{2 \times 2} = \begin{bmatrix}
+    TP & FN \\
+    FP & TN \\
+    \end{bmatrix}
+    \end{equation}
+
+
 \subsection{Accuracy}
+
+\begin{equation}\label{eq}
+    Accuracy = \frac{TP + FN}{TP + TN + FP + FN}
+\end{equation}
+
 \subsection{Recall}
+
+\begin{equation}\label{eq}
+    Precision = \frac{TP}{TP + FN}
+\end{equation}
+
 \subsection{Precision}
+
+\begin{equation}\label{eq}
+    Precision = \frac{TP}{TP + FP}
+\end{equation}
+
 \subsection{F1 Score}
-sdf
+
+\begin{equation}\label{eq}
+    F1 = \frac{2 \times Precision \times Recall}{Precision + Recall} = \frac{2 \times TP}{2 \times TP + FP + FN}
+\end{equation}
+
 \subsection{AUC}
 
 \begin{equation}\label{eq}
@@ -57,8 +99,8 @@ sdf
 
 
 \begin{equation}\label{eq}
-    JC = \frac{}{n}
-\end{equation}
+    JC = \frac{|y \cap \hat{y} |}{|y \cup \hat{y} |}
+    \end{equation}
 
 
 \subsection{Zero-One Loss}
