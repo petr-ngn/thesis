@@ -3,6 +3,54 @@
 
 \section{Repository and Environment Structure}
 \section{Dataset Description}
+The analyzed dataset pertains to the HMEQ dataset which contains loan application information and default status of 5,960 US home equity loans. Such dataset was acquired from \bfseries{Credit Risk Analytics}.
+
+
+\begin{table}[!htbp]
+	\small
+	\setlength{\tabcolsep}{8pt}
+	\renewcommand{\arraystretch}{1.3}
+	\begin{center}
+		\caption[Dataset columns]{Dataset columns}\label{tab:values}
+	\begin{tabular}{@{} l p{8cm} l @{}}
+	\toprule
+	\textbf{Columns} & \textbf{Description} & \textbf{Data type}\\
+	\midrule
+	BAD & Default status & Boolean \\
+	\hline
+
+	LOAN & Requested loan amount & numeric \\
+	\hline
+	MORTDUE & Loan amount due on existing mortgage & numeric \\
+	\hline
+	VALUE & Value of current underlying collateral property & numeric \\
+	\hline
+	REASON & Reason of loan application & character \\
+	\hline
+	JOB & Job occupancy category & character \\
+	\hline
+	YOJ & Years of employment at present job & numeric \\
+	\hline
+	DEROG & Number of derogatory public reports & numeric \\
+	\hline
+	DELINQ & Number of delinquent credit lines & numeric \\
+	\hline
+	CLAGE & Age of the oldest credit line in months & numeric \\
+	\hline
+	NINQ & Number of recent credit inquiries & numeric \\
+	\hline
+	CLNO & Number of credit lines & numeric \\
+	\hline
+	DEBTINC & Debt-to-income ratio & numeric \\
+	\bottomrule
+	\end{tabular}  
+	\end{center}
+	\begin{source}Source: \url{http://www.creditriskanalytics.net/datasets-private2.html}\end{source}
+\end{table}
+
+
+
+
 \section{Data Exploration}
 \subsection{Default Distribution}
 \subsection{Categorical Features}
