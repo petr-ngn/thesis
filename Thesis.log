@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.31)  11 APR 2023 23:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.31)  13 APR 2023 16:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
  encTeX v. Jun. 2004, reencoding enabled
-**"c:/Users/ngnpe/OneDrive/Desktop/VŠE/FFÚ - INŽENÝRSKÉ STUDIUM 2020-2023/FFÚ - DIPLOMOVÁ PRÁCE/LaTeX/Thesis"
-(c:/Users/ngnpe/OneDrive/Desktop/VŠE/FFÚ - INŽENÝRSKÉ STUDIUM 2020-2023/FFÚ - DIPLOMOVÁ PRÁCE/LaTeX/Thesis.tex
+**"c:/Users/ngnpe/OneDrive/Desktop/VŠE/FFÚ - INŽENÝRSKÉ STUDIUM 2020-2023/FFÚ - DIPLOMOVÁ PRÁCE/thesis/Thesis"
+(c:/Users/ngnpe/OneDrive/Desktop/VŠE/FFÚ - INŽENÝRSKÉ STUDIUM 2020-2023/FFÚ - DIPLOMOVÁ PRÁCE/thesis/Thesis.tex
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-02-24> (c:/tex/texlive/texmf-dist/tex/latex/base/report.cls
 Document Class: report 2021/10/04 v1.4n Standard LaTeX document class
@@ -1831,48 +1831,60 @@ Package natbib Warning: Citation `Haufler2006' on page 12 undefined on input lin
 
 ) (./02_Mainmatter/04.tex [12.22]
 Chapter 4.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.95> on input line 15.
 
-Package natbib Warning: Citation `Haufler2006' on page 13 undefined on input line 31.
+Package natbib Warning: Citation `Haufler2006' on page 13 undefined on input line 79.
 
 [13.23
 
-]
-Overfull \vbox (454.04471pt too high) has occurred while \output is active []
+] [14.24]
+Overfull \vbox (133.23163pt too high) has occurred while \output is active []
 
- [14.24]
+ [15.25]
 
-Package natbib Warning: Citation `Wells2001' on page 15 undefined on input line 33.
+Package natbib Warning: Citation `Wells2001' on page 16 undefined on input line 81.
 
-[15.25]
+[16.26]
 
-Package natbib Warning: Citation `Blomstrom2003' on page 16 undefined on input line 58.
+Package natbib Warning: Citation `Blomstrom2003' on page 17 undefined on input line 106.
 
-) (./02_Mainmatter/05.tex [16.26]
+) (./02_Mainmatter/05.tex [17.27]
 Chapter 5.
-[17.27
+[18.28
 
-]) (./02_Mainmatter/06.tex [18.28]
+]) (./02_Mainmatter/06.tex [19.29]
 Chapter 6.
 
 Package acronym Warning: Acronym `MNC' is not defined on input line 8.
 
-[19.29
 
-] [20.30]) (./02_Mainmatter/99_Concl.tex [21.31]
+Overfull \hbox (10.42636pt too wide) in paragraph at lines 18--19
+\T1/lmr/bx/n/12 ``he's,'' ``don't,'' etc. Keep the apos-tro-phe to in-di-cate possession---
+ []
+
+[20.30
+
+]
+Overfull \hbox (12.25941pt too wide) in paragraph at lines 35--36
+[]\T1/lmr/bx/n/12 A short word like ``buy'' is bet-ter than a long one like ``purchase''---
+ []
+
+[21.31]) (./02_Mainmatter/99_Concl.tex [22.32]
 Chapter 7.
-) [22.32
+) [23.33
 
 ]
 No file Thesis.bbl.
 (./03_Backmatter/01_App.tex
 Appendix A.
-) (./03_Backmatter/02_App.tex [1.33
+) (./03_Backmatter/02_App.tex [1.34
 
 
 
 ]
 Appendix B.
-) [2.34
+) [2.35
 
 ]
 
@@ -1892,21 +1904,21 @@ Package rerunfilecheck Info: File `Thesis.out' has not changed.
 (rerunfilecheck)             Checksum: 7FB74E0D4BA0417EAD8D5313FF18975E;15423.
  ) 
 Here is how much of TeX's memory you used:
- 19207 strings out of 480559
- 295905 string characters out of 5897073
+ 19222 strings out of 480559
+ 296129 string characters out of 5897073
  559161 words of memory out of 5000000
- 36138 multiletter control sequences out of 15000+600000
- 571317 words of font info for 100 fonts, out of 8000000 for 9000
+ 36149 multiletter control sequences out of 15000+600000
+ 586011 words of font info for 110 fonts, out of 8000000 for 9000
  48 hyphenation exceptions out of 8191
- 77i,12n,79p,1362b,2543s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 77i,12n,79p,1363b,2543s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
-{c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}<c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmex10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmmi12.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmmi6.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmmib10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmr17.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmr6.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmr7.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmri12.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmss12.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmsso12.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmsy8.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmtt12.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmtt8.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Thesis.pdf (34 pages, 862427 bytes).
+{c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}<c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmex10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmmi12.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmmi6.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmmib10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmr17.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmr6.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmr7.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmri12.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmss12.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmsso12.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmsy8.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmtt10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmtt12.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmtt8.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on Thesis.pdf (35 pages, 909486 bytes).
 PDF statistics:
- 868 PDF objects out of 1000 (max. 8388607)
- 758 compressed objects within 8 object streams
- 171 named destinations out of 1000 (max. 500000)
+ 885 PDF objects out of 1000 (max. 8388607)
+ 770 compressed objects within 8 object streams
+ 173 named destinations out of 1000 (max. 500000)
  750 words of extra memory for PDF output out of 10000 (max. 10000000)
 
