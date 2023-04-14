@@ -1,0 +1,11 @@
+{
+    "latex.chkTeX.maxLineLength": 0,
+"latex-workshop": {
+    "chktex": {
+        "args": [
+            "--max-line-length=0"
+        ]
+    }
+},
+"latex.chktex.enabled": false,
+}

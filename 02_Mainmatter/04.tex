@@ -2,8 +2,12 @@
 \label{chap:four}
 
 \section{Repository and Environment Structure}
-\section{Dataset Description}
-The analyzed dataset pertains to the HMEQ dataset which contains loan application information and default status of 5,960 US home equity loans. Such dataset was acquired from \bfseries{Credit Risk Analytics}.
+\section{Data Exploration}
+This section is focused on exploration of the analyzed loan dataset, particularly on dataset description, distribution analysis and association analysis, in order to infer potential valuable insights and hypotheses which can be used in the preprocessing or modelling part.
+\subsection{Dataset Description}
+The analyzed dataset pertains to the HMEQ dataset which contains loan application information and default status of 5,960 US home equity loans. Such dataset was acquired from Credit Risk Analytics.
+
+As can be seen, the dataset contains 12 columns, 11 features and 1 target variable \texttt{BAD} indicating whether the loan was in default (\texttt{1}) or not (\texttt{0}). Amongst the 11 features, there are 9 numeric features and 2 categorical features, namely \texttt{REASON} which contains 2 categories - Debt consolidation (\texttt{DebtCon}) and Home improvement (\texttt{HomeImp}), and \texttt{JOB} which fontains following categories - Administration (\texttt{Offce}), Sales, Manager (\texttt{Mgr}), Professional Executive (\texttt{ProfExe}), Self-employed (\texttt{Self}), and Other.
 
 
 \begin{table}[!htbp]
@@ -25,9 +29,9 @@ The analyzed dataset pertains to the HMEQ dataset which contains loan applicatio
 	\hline
 	VALUE & Value of current underlying collateral property & numeric \\
 	\hline
-	REASON & Reason of loan application & character \\
+	REASON & Reason of loan application & categorical \\
 	\hline
-	JOB & Job occupancy category & character \\
+	JOB & Job occupancy category & categorical \\
 	\hline
 	YOJ & Years of employment at present job & numeric \\
 	\hline
@@ -45,18 +49,27 @@ The analyzed dataset pertains to the HMEQ dataset which contains loan applicatio
 	\bottomrule
 	\end{tabular}  
 	\end{center}
-	\begin{source}Source: \url{http://www.creditriskanalytics.net/datasets-private2.html}\end{source}
+	\begin{source} \url{http://www.creditriskanalytics.net/datasets-private2.html}\end{source}
 \end{table}
 
-
-
-
-\section{Data Exploration}
-\subsection{Default Distribution}
-\subsection{Categorical Features}
-\subsection{Continuous Features}
-\subsection{Missing Values Analysis}
+\subsection{Distribution Analysis}
 \subsection{Association Analysis}
+
+\begin{equation}\label{eq}
+	\rho_{spearman} = 1 - \frac{6 \sum_{i=1}^{n} d_{i}^{2}}{n \left(n^{2}-1\right)}
+	\end{equation}
+
+\begin{equation}\label{eq}
+	r_{X} = \frac{\mu \left( X | Y=1 \right) -\mu_{X}}{\sigma_{X}} \sqrt{\frac{\Pr \left(Y=1\right)}{1-\Pr \left(Y=1\right)}}
+	\end{equation}
+
+\begin{equation}\label{eq}
+		CV_{X} = \sqrt{\frac{\chi^{2}}{N\left(k-1\right)}}
+		\end{equation}
+
+		\begin{equation}\label{eq}
+			\phi_{X} = \sqrt{\frac{\chi^{2}}{n}}
+			\end{equation}
 \section{Data Preprocessing}
 \subsection{Data Split and ADASYN Oversampling}
 \subsection{Optimal Binning and Weight-of-Evidence Encoding}
