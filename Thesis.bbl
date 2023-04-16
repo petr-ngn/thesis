@@ -1,4 +1,4 @@
-\begin{thebibliography}{5}
+\begin{thebibliography}{6}
 \newcommand{\enquote}[1]{``#1''}
 \providecommand{\natexlab}[1]{#1}
 
@@ -22,6 +22,10 @@
 \textsc{Haufler}, A. \& I.~\textsc{Wooton} (2006): \enquote{{The Effects of
   Regional Tax and Subsidy Coordination on Foreign Direct Investment}.}
 \newblock \emph{European Economic Review} \textbf{50(2)}: pp. 285--305.
+
+\bibitem[{Kornbrot(2014)}]{kornbrot2014point}
+\textsc{Kornbrot}, D. (2014): \enquote{Point biserial correlation.}
+\newblock \emph{Wiley StatsRef: Statistics Reference Online} .
 
 \bibitem[{Wells \emph{et~al.}(2001)Wells, Allen, Morisset, \&
   Pirnia}]{Wells2001}
