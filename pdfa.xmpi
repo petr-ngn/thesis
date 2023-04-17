@@ -63,8 +63,8 @@
   <rdf:Description rdf:about="" xmlns:dc="http://purl.org/dc/elements/1.1/"> 
    <dc:format>application/pdf</dc:format> 
    <dc:title><rdf:Alt><rdf:li xml:lang="x-default">The Price Elasticity of Gasoline Demand: A Meta-Analysis</rdf:li></rdf:Alt></dc:title>
-   <dc:creator><rdf:Seq><rdf:li>Firstname Lastname</rdf:li></rdf:Seq></dc:creator>
-   <dc:publisher><rdf:Bag><rdf:li>Charles University</rdf:li></rdf:Bag></dc:publisher>
+   <dc:creator><rdf:Seq><rdf:li>Petr Nguyen</rdf:li></rdf:Seq></dc:creator>
+   <dc:publisher><rdf:Bag><rdf:li>Prague University of Economics and Business</rdf:li></rdf:Bag></dc:publisher>
    <dc:description><rdf:Alt><rdf:li xml:lang="x-default">Price Elasticity of Gasoline Demand</rdf:li></rdf:Alt></dc:description>
    <dc:subject><rdf:Bag><rdf:li>keywordone, keywordtwo, keywordthree, keywordfour</rdf:li></rdf:Bag></dc:subject>
   </rdf:Description> 
@@ -78,15 +78,15 @@
   </rdf:Description> 
   <rdf:Description rdf:about="" xmlns:xmp="http://ns.adobe.com/xap/1.0/"> 
    <xmp:CreatorTool>LaTeX with hyperref</xmp:CreatorTool> 
-   <xmp:ModifyDate>2023-04-16T03:00:02+02:00</xmp:ModifyDate> 
-   <xmp:CreateDate>2023-04-16T03:00:02+02:00</xmp:CreateDate> 
-   <xmp:MetadataDate>2023-04-16T03:00:02+02:00</xmp:MetadataDate> 
+   <xmp:ModifyDate>2023-04-17T05:05:45+02:00</xmp:ModifyDate> 
+   <xmp:CreateDate>2023-04-17T05:05:45+02:00</xmp:CreateDate> 
+   <xmp:MetadataDate>2023-04-17T05:05:45+02:00</xmp:MetadataDate> 
   </rdf:Description> 
   <rdf:Description rdf:about="" xmlns:xmpRights = "http://ns.adobe.com/xap/1.0/rights/"> 
   </rdf:Description> 
   <rdf:Description rdf:about="" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/"> 
    <xmpMM:DocumentID>uuid:B3127226-E9DF-0BA7-D508-53757BC0CACB</xmpMM:DocumentID> 
-   <xmpMM:InstanceID>uuid:7C7CF5FC-AF26-285E-1D98-403019CEDA30</xmpMM:InstanceID> 
+   <xmpMM:InstanceID>uuid:0ABC6EC9-CAE2-67A4-518C-82D6D6FC9C99</xmpMM:InstanceID> 
   </rdf:Description> 
  </rdf:RDF> 
 </x:xmpmeta> 

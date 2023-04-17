@@ -4,13 +4,11 @@
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Market equilibrium\relax }}{10}{figure.caption.20}%
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Boxy's example\relax }}{11}{figure.caption.22}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Default status distribution\relax }}{16}{figure.caption.26}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Conditional distribution of numeric features -- boxplots\relax }}{17}{figure.caption.27}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Conditional distribution of numeric features -- histograms\relax }}{18}{figure.caption.28}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Conditional distribution of categorical features\relax }}{19}{figure.caption.29}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Spearman Correlation Matrix\relax }}{22}{figure.caption.35}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Nullity dendrogram\relax }}{23}{figure.caption.36}%
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Phi Correlation Matrix\relax }}{24}{figure.caption.37}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Default status distribution\relax }}{15}{figure.caption.27}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Conditional distribution of numeric features\relax }}{17}{figure.caption.29}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Conditional distribution of categorical features\relax }}{20}{figure.caption.32}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Nullity dendrogram\relax }}{25}{figure.caption.40}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Spearman Correlation Matrix\relax }}{26}{figure.caption.42}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
