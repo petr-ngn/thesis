@@ -4,11 +4,25 @@
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Market equilibrium\relax }}{10}{figure.caption.20}%
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Boxy's example\relax }}{11}{figure.caption.22}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Default status distribution\relax }}{15}{figure.caption.27}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Conditional distribution of numeric features\relax }}{17}{figure.caption.29}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Conditional distribution of categorical features\relax }}{20}{figure.caption.32}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Default status distribution\relax }}{16}{figure.caption.27}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Conditional distribution of numeric features\relax }}{18}{figure.caption.29}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Conditional distribution of categorical features\relax }}{21}{figure.caption.32}%
 \contentsline {figure}{\numberline {4.4}{\ignorespaces Nullity dendrogram\relax }}{25}{figure.caption.40}%
 \contentsline {figure}{\numberline {4.5}{\ignorespaces Spearman Correlation Matrix\relax }}{26}{figure.caption.42}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces WoE Bins Distribution\relax }}{32}{figure.caption.44}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Feature Selection Print Statement\relax }}{38}{figure.caption.61}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Reccurrence of Selected Features\relax }}{39}{figure.caption.62}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Distribution of Selected Features per Model\relax }}{40}{figure.caption.63}%
+\contentsline {figure}{\numberline {4.10}{\ignorespaces F1 score distribution\relax }}{42}{figure.caption.64}%
+\contentsline {figure}{\numberline {4.11}{\ignorespaces F1 score distribution - without outliers\relax }}{42}{figure.caption.65}%
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Classification Threshold distribution\relax }}{43}{figure.caption.66}%
+\contentsline {figure}{\numberline {4.13}{\ignorespaces Classification Threshold distribution - without outliers\relax }}{43}{figure.caption.67}%
+\contentsline {figure}{\numberline {4.14}{\ignorespaces Execution time distribution\relax }}{44}{figure.caption.68}%
+\contentsline {figure}{\numberline {4.15}{\ignorespaces Confusion Matrix\relax }}{45}{figure.caption.69}%
+\contentsline {figure}{\numberline {4.16}{\ignorespaces ROC Curve\relax }}{47}{figure.caption.71}%
+\contentsline {figure}{\numberline {4.17}{\ignorespaces SHAP Summary Plot\relax }}{48}{figure.caption.72}%
+\contentsline {figure}{\numberline {4.18}{\ignorespaces Flask Web Application Form\relax }}{49}{figure.caption.73}%
+\contentsline {figure}{\numberline {4.19}{\ignorespaces Flask Web Application - Prediction Result\relax }}{50}{figure.caption.74}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

@@ -1,4 +1,4 @@
-\begin{thebibliography}{6}
+\begin{thebibliography}{9}
 \newcommand{\enquote}[1]{``#1''}
 \providecommand{\natexlab}[1]{#1}
 
@@ -23,9 +23,26 @@
   Regional Tax and Subsidy Coordination on Foreign Direct Investment}.}
 \newblock \emph{European Economic Review} \textbf{50(2)}: pp. 285--305.
 
+\bibitem[{He \emph{et~al.}(2008)He, Bai, Garcia, \& Li}]{adasynhaibo}
+\textsc{He}, H., Y.~\textsc{Bai}, E.~A. \textsc{Garcia}, \& S.~\textsc{Li}
+  (2008): \enquote{Adasyn: Adaptive synthetic sampling approach for imbalanced
+  learning.}
+\newblock In \enquote{2008 IEEE International Joint Conference on Neural
+  Networks (IEEE World Congress on Computational Intelligence),} pp.
+  1322--1328.
+
+\bibitem[{Igareta(2021)}]{igareta2021strat}
+\textsc{Igareta}, A. (2021): \enquote{Stratified sampling: You may have been
+  splitting your dataset all wrong.}
+
 \bibitem[{Kornbrot(2014)}]{kornbrot2014point}
 \textsc{Kornbrot}, D. (2014): \enquote{Point biserial correlation.}
 \newblock \emph{Wiley StatsRef: Statistics Reference Online} .
+
+\bibitem[{{Scikit-learn}(n.d.)}]{scikit-learn-sequential-feature-selector}
+\textsc{{Scikit-learn}} (n.d.): \enquote{Sequentialfeatureselector.}
+\newblock
+  \url{https://scikit-learn.org/stable/modules/generated/sklearn.feature_selection.SequentialFeatureSelector.html}.
 
 \bibitem[{Wells \emph{et~al.}(2001)Wells, Allen, Morisset, \&
   Pirnia}]{Wells2001}
