@@ -6,21 +6,119 @@
 \section{Terminology}
 \section{Algorithms}
 \subsection{Logistic Regression}
+
+Despite the algorithm's name, it is actually not a regression but rather a classification model.
+In contrast, a linear regression's target variable is continuous whereas regarding a logistic regression, the target variable is binary or dichotomous.
+For the probability estimation it is using a logistic, or so-called sigmoid function, which maps any real value within the range of 0 to 1 and takes a S-shaped curve as can be seen in \autoref{fig:sigmoid}.
+
+\begin{figure}[H]
+    \centering
+    \caption{Logistic function}\vspace{0.5em}
+    \label{fig:sigmoid}\
+    \includegraphics[width=130mm]{Figures/sigmoid.jpg}
+    \centering{\begin{source}\citep{wendler2021data}\end{source}}\vspace{-1em}
+\end{figure}
+
+The linear form of the logistic regression with n features can be written as:
+
+\begin{equation}\label{eq}
+    \ln\left(\frac{P}{1-P}\right) = \beta_0  + \sum_{i=1}^{n} \beta_i X_i
+\end{equation}
+
+where $P$ is the probability of the occurred event, conditional on the set of given features. Let us denote $Y=1$ as an observed target instance where the event occurred (e.g., defaulted), then:
+\begin{equation}\label{eq}
+    P = \operatorname{Pr}(Y=1 \mid X_1,X_2,\ldots,X_n)
+\end{equation}
+
+Therefore, the term within the natural logarithm are the odds or more particularly, the ratio of the probability of the event with respect to the probability of non-event, both conditional on the same set of given features.
+\begin{equation}\label{eq}
+    \begin{aligned}
+    \frac{P}{1-P}  {} & = \frac{\operatorname{Pr}(Y=1 \mid X_1,X_2,\ldots,X_n)}{1-\operatorname{Pr}(Y=1 \mid X_1,X_2,\ldots,X_n)} \\
+    & = \frac{\operatorname{Pr}(Y=1 \mid X_1,X_2,\ldots,X_n)}{\operatorname{Pr}(Y=0 \mid X_1,X_2,\ldots,X_n)}
+\end{aligned}
+    \end{equation}
+
+Referring to the previous equations, solving for $P$, henceforth we get a final equation for computing the probability of occurred event with usage of logistic regression:
+
+\begin{equation}\label{eq}
+P = \frac{1}{1+e^{-\left(\beta_0 + \displaystyle\sum_{i=1}^{n} \beta_i X_i\right)}}
+\end{equation}
+
 \subsection{Decision Tree}
-\subsection{Logistic Regression}
 \subsection{Naive Bayes}
+
+Naive Bayes is a classification and probabilistic machine learning algorithm which is based on the Bayes theorem:
+
+\begin{equation}\label{eq}
+    \operatorname{Pr}\left(C=c \mid E \right) = \frac{\operatorname{Pr}\left(C=c\right) \times \operatorname{Pr}\left(E \mid C=c\right)}{\operatorname{Pr}\left(E\right)}
+\end{equation}
+
+where:
+\begin{itemize}\setlength\itemsep{0em}
+	\item $\operatorname{Pr}\left(C=c \mid E \right)$ is the posterior probability which is the probability that the target variable $C$ takes on the class of interest $c$ after taking the evidence $E$.
+	\item $\operatorname{Pr}\left(C=c\right)$  is the prior probability of the class $c$ is the probability we would assign to the class $c$ before seeing any evidence $E$.
+	\item $\operatorname{Pr}\left(E \mid C=c\right)$ is the probability of seeing the evidence $E$ conditional on the given class $c$.
+	\item $\operatorname{Pr}\left(E\right)$ is the probability of the evidence $E$.
+\end{itemize}
+
+With regards to the binary classification, we can substitute $Y$ as a target variable instead $C$, and set of features $X$ which will refer to the set of evidence $E$.
+Assuming that $Y=1$ refers to the occurrence of given event (e.g., default), henceforth the probability of default using the Naïve Bayes algorithm can be mathematically expressed as:
+
+\begin{equation}\label{eq}
+    \operatorname{Pr}\left(Y=1 \mid X \right) = \frac{\operatorname{Pr}\left(Y=1\right) \times \operatorname{Pr}\left(X \mid Y=1 \right)}{\operatorname{Pr}\left(X\right)}
+\end{equation}
+
+One of the assumptions of this algorithm is the conditional probabilistic independence among the features.
+Therefore, instead of computing the probability of all features together, conditional on the class event, for each feature $X$ we will compute its probability, conditional on the class event. Hence:
+
+\begin{equation}\label{eq}
+    \operatorname{Pr}\left(Y=1 \mid X \right) = \prod_{i=1}^{n} \operatorname{Pr}\left(X_i \mid Y=1\right)
+\end{equation}
+
+With regards to the conditional independence, we can also derived the probability of evidence $E$ or set of features $X$ respectively, as a sum of the probability of given set of features, conditional on class one (event), and of the probability of given set of features, conditional on one class two (non-event).
+Therefore:
+\begin{equation}\label{eq}
+\operatorname{Pr}\left(X\right) = \operatorname{Pr}\left(X \mid Y=1\right) \times \operatorname{Pr}\left(Y=1\right) + \operatorname{Pr}\left(X \mid Y=0\right) \times \operatorname{Pr}\left(Y=0\right)
+\end{equation}
+Therefore:
+\begin{equation}\label{eq}
+    \begin{aligned}
+    \operatorname{Pr}\left(X\right) = {} & \prod_{i=1}^{n} \operatorname{Pr}\left(X_i \mid Y=1\right) \times \operatorname{Pr}\left(Y=1\right) + \\
+    & \prod_{i=1}^{n} \operatorname{Pr}\left(X_i \mid Y=0\right) \times \operatorname{Pr}\left(Y=0\right)
+    \end{aligned}
+    \end{equation}
+Finally, we can derive the final formula for Naïve Bayes the posterior probability as:
+
+    \begin{equation}
+        \frac{\displaystyle\prod_{i=1}^{n} \operatorname{Pr}(X_i \mid Y=1)}{\displaystyle\prod_{i=1}^{n} \operatorname{Pr}(X_i \mid Y=1) \operatorname{Pr}(Y=1) + \displaystyle\prod_{i=1}^{n} \operatorname{Pr}(X_i \mid Y=0) \operatorname{Pr}(Y=0)}
+        \end{equation}
+
+
 \subsection{K-Nearest Neighbors}
 \subsection{Random Forest}
 \subsection{Gradient Boosting}
 \subsection{Support Vector Machine}
 \subsection{Neural Networks}
 \section{Evaluation Metrics}
+
+This section focusdx on particular measures through which it is possible to determine to a predictive power of model in terms of its performance.
+The are many ways, how to evaluate the model's performance, therefore, only the most common ones will be further described.
+Note, since default prediction regards classification model, therefore regression's evaluation metrics will be omitted.
+
 \subsection{Confusion Matrix}
 
+Confusion matrix is a table which summarizes the classification model's performance with respect to the actual classes and predicted classes.
+It is a square $n \times n$ matrix, where $n$ determines number of classes within the target variable.
+Let us denote the confusion matrix as $C\left(f\right)$ for classification algorithm $f$. 
+Its elements can be denoted as $c_{i,j}$ where $i$ and $j$ refer to the row and column indices, respectively, or more particularly, $i$ refers to the actual class and $j$ to the class predicted by the classifier $f$.
+Each element of the confusion matrix refers to the number of instances corresponding to actual class $i$ and predicted class $j$. For instance, the element $c_2,1$ would refer to the number of instances which have the actual class $2$ but have been classified as class $1$.
+Mathematically, the confusion matrix can be written as following:
 
 \begin{equation}\label{eq}
 C = {c_{i,j} = \sum_{l=1}^{m}[(y_l=i) \land (f(x_l)=j)]}
 \end{equation}
+
+Or either in matrix form as:
 
 \begin{equation}\label{eq}
     C_{i \times j} = \begin{bmatrix}
@@ -31,6 +129,18 @@ C = {c_{i,j} = \sum_{l=1}^{m}[(y_l=i) \land (f(x_l)=j)]}
     \end{bmatrix}
 \end{equation}
 
+From the given matrix, the diagonal elements represent the numbers of correctly classified instances, whereas the non-diagonal elements represent the numbers of misclassified instances.
+Further, let us consider a binary classification - hence, the confusion matrix will have a form of $2\times 2$.
+
+\begin{equation}
+    C_{2 \times 2} = \begin{bmatrix}
+    c_{1,1} & c_{1,2} \\
+    c_{2,1} & c_{2,2} \\
+    \end{bmatrix}
+    \end{equation}
+
+
+We can this rewrite confusion matrix as:
 
 \begin{equation}
     C_{2 \times 2} = \begin{bmatrix}
@@ -39,6 +149,13 @@ C = {c_{i,j} = \sum_{l=1}^{m}[(y_l=i) \land (f(x_l)=j)]}
     \end{bmatrix}
     \end{equation}
 
+where:
+\begin{itemize}\setlength\itemsep{0em}
+    \item TP is the True Positive which refers to the number of instances which correspond to the actual class $True$ and indeed have been correctly classified as class $True$.
+	\item $FP$ is the False Positive which refers to the number of instances which correspond to the actual class $True$, but have been incorrectly classified as class $False$. In the statistics and hypothesis--testing terms, it can be also called as Type 1 Error.
+	\item $FN$ is the False Negative which refers to the number of instances which correspond to the actual class $False$, but have been incorrectly classified as class $True$. In the statistics and hypothesis--testing terms, it can be also called as Type 2 Error.
+	\item $TN$ is the True Negative which refers to the number of instances which correspond to the actual class $False$ and indeed have been correctly classified as class $False$.
+\end{itemize}
 
 \subsection{Accuracy}
 
@@ -65,6 +182,49 @@ C = {c_{i,j} = \sum_{l=1}^{m}[(y_l=i) \land (f(x_l)=j)]}
 \end{equation}
 
 \subsection{AUC}
+
+In order to derive Area Under the Curve ($AUC$), first we need to define Receiver Operating Characteristics ($ROC$) curve.
+ROC curve is two-dimensional visualization of the model performance as a probability curve in terms of True Positive Rate ($TPR$) and False Positive Rate ($FPR$) based on varying the given threshold.
+
+Briefly, it can be construct as following: First, we need to sort the instances by the predicted probability and based on the given probability, we set a threshold - what will be above the threshold will be classified as $True$ instance and what is below the threshold will be classified as $False$ instance.
+Based on these classified instances, the confusion matrix can be constructed and via which we can compute the $TPR$ and $FPR$ values.
+Thus, if the probability is 1, the threshold will be 1 as well and hence:
+\begin{itemize}\setlength\itemsep{0em}
+    \item $TPR$ will be 0 because there is no probability which is higher than 1 and hence, everything will be classified as $False$ which will result into $TP$ of 0, and subsequently into $TPR$ of 0 as well.
+	\item $FPR$ will be 0, too – since everything will be classified as $False$, therefore $FP$ will be 0 which implies $FPR$ to be 0, too.
+\end{itemize}
+On the other hand, if the probability is 0, the threshold will be 0 as well and hence:
+\begin{itemize}\setlength\itemsep{0em}
+    \item $TPR$ will be 1 because there is no probability which is lower than 0 and hence, everything will be classified as $True$ which will result into $FN$ of 0, and subsequently into $TPR$ of 1.
+	\item $FPR$ will be 1, too – since everything will be classified as $True$, therefore $TN$ will be 0 which implies $FPR$ to be 1.
+\end{itemize}
+
+Thus, based on each threshold, the $TPR$ and $FPR$ will be to coordinates for single point within the graph and based on such points, we can construct the ROC curve.
+Such visualization on the following \autoref{fig:roccurvetheory}.
+Note the diagonal line represents a random model which randomly and correctly predicts the $True$ and $False$ classes in such way, that $FPR$ and $TPR$ are the same.
+Logically, a decent model should perform better than the random model, thus it the ROC curve should be above the diagonal line.
+Intuitively, the best possible theoretical model would have $TPR$ of 1 and $FPR$ of 0, meaning that all the $True$ actual classes should be predicted as $True$ and all the $False$ actual classes should not be classified as $True$
+ Within the ROC curve, the given curve reaches the left top corner which corresponds to the coordinates of $TPR$ and $FPR$.
+
+ \begin{figure}[H]
+    \centering
+    \caption{ROC Curve}\vspace{0.5em}
+    \label{fig:roccurvetheory}\
+    \includegraphics[width=100mm]{Figures/ROC_theory.jpg}
+
+    \centering{\begin{source}Author's results in Python.\end{source}}\vspace{-1em}
+\end{figure}
+
+$AUC$ is basically the representation of ROC curve as a single number as it aggregates the performance on all possible thresholds.
+$AUC$ can be interpreted as the probability that the randomly chosen actual $True$ instance is ranked higher than the randomly chosen actual $False$ instance.
+Since ROC curve is a probability curve, thus it is considering distribution curve of $TP$ and distribution class of $TN$, separated by particular threshold – hence, $TP$ would have probability scores above the given thresholds, whereas $TN$ would have probability scores below the threshold.
+If these curves do not overlap, meaning the model can perfectly distinguish between the $True$ and $False$ values, therefore the $AUC$ would be 1 and the ROC curve would reach the left top corner.
+However, this idealistic situation does not occur in the practice at all, but rather the two distributions are overlapping since the misclassification of the classes takes the place.
+The bigger overlap, the lower $AUC$ is.
+If the distributions are completely overlapping, it implies the $AUC$ of 0.5, meaning that the model cannot distinguish between the $True$ and $False$ classes, which is the worst scenario.
+On the other hand, if the distributions are totally opposite (meaning that the $TP$ instances would have probability scores below the given threshold, whereas the $TN$ instances would have probability scores above the given threshold), the $AUC$ would be 0 since the model is predicting the $True$ actual classes instead of $False$ and vice versa.
+
+As the $AUC$ is an area present underneath the ROC curve, mathematically, it can be computed with the definite integral where $x$ is the given threshold:
 
 \begin{equation}\label{eq}
     AUC = \int_{0}^{1} TPR \left(FPR^{-1}\left(x \right)\right) dx
@@ -128,202 +288,3 @@ TBD
 \section{Optimal Binning}
 \subsection{Weight of Evidence Encoding}
 TBD
-
-\label{sec:citace}
-
-Text text  \citet{Haufler2006}.
-
-Text text text text text text text \cite[see, \latinfont{inter alia},][pg.~10]{Haaparanta1996}. 
-
-Special Czech, Slovak, and German letters:
-
-\r{u}, \'{a}, \v{s}, \v{d}, \v{t}, \v{r}, \^{o}, \ss{}, \"{o}
-
-Acronyms:
-
-Politicians usualy like inward \ac{FDI} and an \ac{MNC} appreciates \ac{FDI} subsidies. Are \acp{MNC} greedy?
-
-Figures:
-
-To achieve compatibility with PDF/A 2u, your file must not include links to external fonts, audio, video, or scripts. On the other hand, your file must declare each color environment you use, it must include all the pictures/figures either in jpeg or PDF/A 2u format, used fonts compliant under Unicode (your file cannot use any external fonts), and it must include meta-data in XMP format.
-
-
-Most troubleshooting comes from the conversion of figures to compliant formats. You can convert from simple PDF using Adobe Acrobat:
-\begin{itemize}
-	\item Select File >> Save as Other >> Archivable PDF (PDF/A)
-				\begin{figure}[!h]
-					\centering
-						\includegraphics[width=0.6\textwidth]{Figures/conversion1.pdf}
-					\label{fig:conversion1}
-				\end{figure}
-	\item Save as PDF/A-2u:
-			\begin{figure}[!h]
-				\centering
-					\includegraphics[width=0.6\textwidth]{Figures/conversion2.pdf}
-				\label{fig:conversion2}
-			\end{figure}
-\end{itemize}	
-
-
-But most of the vector graphics gets distorted to lower quality in Adobe (like pictures in pdfs generated from Stata, unless jpeg is sufficient for you).
-You can also use GhostScript, the conversion tool is provided by courtesy of the Faculty of Mathematics and Physics at
-
-\vspace{0.5cm}
-\textbf{\href{https://kam.mff.cuni.cz/pdfix/}{https://kam.mff.cuni.cz/pdfix/}}
-\vspace{0.5cm}
-
-Text text text text text text.\footnote{Text text text text text text text text text text text text text text text. Text text text text text text text text text text.Text text text text text text.}
-Font of Latin phrases should be consistent: Furthermore, there is no \latinfont{ex post} price effect, all things being equal (\latinfont{ceteris paribus}). This is \latinfont{per se} truth.
-
-\begin{figure}[!htbp]
-\begin{center}
-\caption{Market equilibrium}
-\label{fig:supply}
-\includegraphics[width=60mm]{Figures/supplydemand}
-\end{center}\vspace{-0.5cm}
-\begin{source}\cite{Haufler2006}.\end{source}
-\end{figure}
-
-Look at the \autoref{fig:supply}. Text text text text text text text text text text.
-
-
-
-Tables
-
-If you use Stata, you might want to check the \texttt{sutex}, \texttt{outtable}, \texttt{outtex}, and \texttt{estout} tools, which help you with exporting Stata tables to \LaTeX{}.
-
-\begin{table}[!htbp]
-\begin{center}
-	\caption[Calibration table]{Model's predictions}\label{tab:values}
-\begin{tabular}{lrrrrrrrrrr}
-\toprule
-\textit{Case} &        $Y_1$ &        $Y_2$ &  $\tau_1$ &  $\tau_2$ &          $a$ &          $n$\\
-\midrule
-CR---Slovakia &       10.9 &         10 &       0.24 &       0.19 &          1,000 &       2.16\\
-
-CR---Poland &       13.3 &         12 &       0.24 &       0.19 &          1,000 &       0.38\\
-
-CR---Hungary &       10.4 &          8 &       0.24 &       0.16 &          1,000 &        1.10\\
-\bottomrule
-\end{tabular}  
-\end{center}
-\begin{source} If the source is author himself (like a calculation output), this line is redundant.\end{source}
-\end{table}
-
-Text text text text text text text text text text text text text text text.
-
-Boxes
-
-Text text text text text text text text text text text text text text text. Let us make a box:
-
-\begin{figure}[!htbp]
-\begin{center}
-\caption{Boxy's example}\label{box:values}
-\begin{boxeditemize}
-	\item Welcome to Boxy paragraph. 
-We sincerely hope you will
-all enjoy the show.
-	\item
-Welcome to Boxy paragraph.
-We sincerely hope you will
-all enjoy the show.
-	\item 
-Welcome to Boxy paragraph.
-We sincerely hope you will
-all enjoy the show.
-\end{boxeditemize}
-\end{center}
-\begin{source}\cite{Haaparanta1996}\end{source}
-\end{figure}
-
-Text text text text text text text text text text text text text text text.
-
-Theorems, Definitions, \ldots
-
-\begin{defin}[My original definition]\label{de:definice1}
-This is a definition.
-\end{defin}
-
-\begin{ass}[My realistic assumption]\label{as:predpoklad1}
-This is an assumption.
-\end{ass}
-
-\begin{prop}[My clever proposition]\label{pr:veta1}
-This is a proposition.
-\end{prop}
-
-\begin{lemma}[My useful lemma]\label{le:lemma1}
-This is a lemma.
-\end{lemma}
-
-\begin{exam}\label{ex:priklad1}
-This is an example.
-\end{exam}
-
-\begin{proof}
-This is a proof.
-\end{proof}
-
-Equations
-\label{rovnice}
-
-Nonumbered Equations
-
-
-    \[ U = \underbrace{\int_0^{\infty} \frac{1}{1-\sigma}\left(C^{1-\sigma} -1 \right) e^{-\rho t} \ud t}_\text{meaning of life} \]
-
-
-Numbered Equations
-
-\begin{equation}\label{eq:rovnice1}
-    U = \int_0^{\infty} \overbrace{ \frac{1}{1-\sigma}\left(C^{1-\sigma} -1 \right)}^\text{instantaneous utility} e^{-\rho t} \ud t
-\end{equation}
-
-Matrix Equations
-
-\begin{equation}\label{eq:rovnice2}
-    \mat{A} = \mat{B} + \mat{C}
-\end{equation}
-
-Cross-references
-
-\begin{itemize}
-    \item to literature~\citep[pg.~10]{Bjorvatn2006} 	
-            or~\citet[pg.~10]{Haufler2006},
-    \item to~\autoref{fig:supply},														%or use \autoref
-    \item see~\autoref{tab:values},
-    \item to~\autoref{rovnice},
-    \item to~\defref{de:definice1}, to~\proref{pr:veta1},
-            \exaref{ex:priklad1}, 
-    \item to equations like this: see~\eqref{eq:rovnice1}.
-\end{itemize}
-
-Source codes
-
-You can input a source code like this:
-\begin{matlab}{.9\linewidth}{dgreen}
-    omega = 1;
-    syms zeta;
-    jmn = [1 2*zeta*omega omega^2];
-    figure(1);
-        for zeta = 1E-5 : 0.2 : 1+1E-12
-            G = tf(omega^2,subs([1 2*zeta*omega omega^2]));
-            bode(G); hold on;
-        end
-    legend('\zeta = 0','\zeta = 0,2','\zeta = 0,4','\zeta = 0,6',');
-\end{matlab}
-Should you prefer a different font size, redefine file \texttt{Styles/Mystyle.sty}.
-
-
-
-Paragraphs
-
-Usually you should not use the first person singular (I) in your text, write we instead.
-As a general recommendation, use the first person sparsely, sometimes it can be replaced by a phrase like ``This work presents \ldots.''
-
-Text text text text text text \citep{Haufler2006}. Let us make two paragraphs:
-
-\paragraph{Proin} Text text text text text text text text text text text text text text text. Text text text text text text. And a subparagraph:
-\subparagraph{Velit} Text text text text text text text text text text text text text text text.
-
-
