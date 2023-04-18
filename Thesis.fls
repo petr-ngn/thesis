@@ -1435,6 +1435,7 @@ INPUT 02_Mainmatter/04.tex
 INPUT ./02_Mainmatter/04.tex
 INPUT 02_Mainmatter/04.tex
 INPUT c:/tex/texlive/texmf-dist/fonts/tfm/public/lm/ec-lmr10.tfm
+INPUT c:/tex/texlive/texmf-dist/fonts/tfm/public/lm/ec-lmtt10.tfm
 INPUT c:/tex/texlive/texmf-dist/fonts/tfm/public/lm/rm-lmr10.tfm
 INPUT c:/tex/texlive/texmf-dist/fonts/tfm/public/lm/lmmi10.tfm
 INPUT c:/tex/texlive/texmf-dist/fonts/tfm/public/lm/lmsy10.tfm
@@ -1474,7 +1475,6 @@ INPUT Figures/WoE_Distribution.jpg
 INPUT ./Figures/WoE_Distribution.jpg
 INPUT ./Figures/WoE_Distribution.jpg
 INPUT c:/tex/texlive/texmf-dist/fonts/tfm/public/lm/ec-lmtk10.tfm
-INPUT c:/tex/texlive/texmf-dist/fonts/tfm/public/lm/ec-lmtt10.tfm
 INPUT ./Figures/fs_print.jpg
 INPUT ./Figures/fs_print.jpg
 INPUT Figures/fs_print.jpg

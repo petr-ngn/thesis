@@ -2,6 +2,42 @@
 \label{chap:four}
 
 \section{Repository and Environment Structure}
+\begin{figure}[H]
+    \centering\caption{Repository Structure}
+    \label{fig:repostructure}
+
+{\small
+\begin{verbatim}
+
+    |--- data
+    |  |--- interim_dat.csv
+    |  |--- preprocessed_dat.csv
+    |  |--- raw_data.csv
+    |
+    |--- flask_app
+    |  |--- inputs
+    |  |  |--- inputs_flask_app_dict.pkl
+    |  |
+    |  |--- templates
+    |  |  |--- index.html
+    |  |  |--- results.html
+    |  |
+    |  |--- app.py
+    |
+    |--- models
+    |  |--- feature_preprocessing
+    |  |--- feature_selection
+    |  |--- model_selection
+    |  |--- objects_FINAL
+    |
+    |--- plots
+    |--- Master_Thesis.ipynb
+    |--- README.md
+    |--- requirements.yml
+\end{verbatim}
+}
+\centering{\begin{source}Author's results in Python.\end{source}}\vspace{-1em}
+\end{figure}
 \section{Data Exploration}
 This section is focused on exploration of the analyzed loan dataset, particularly on dataset description, distribution analysis and association analysis, in order to infer potential valuable insights and hypotheses which can be used in the preprocessing or modelling part.
 
