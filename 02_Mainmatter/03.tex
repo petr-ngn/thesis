@@ -1,11 +1,19 @@
 \chapter{Machine Learning}
 \label{chap:three}
 
+
+
 \textbf{TBD}
 
 \section{Terminology}
+
+\textbf{TBD}
 \section{Algorithms}
+
+In this section, several algorithms, which are used in the machine learning implementation, are going to be described. Since the goal is to predict whether or not given client will default, henceforth only (binary) classification algorithms as a part of the supervised learning are described. In other words, regression models and unsupervised learning algorithms are out of the scope of this thesis.
 \subsection{Logistic Regression}
+
+\textbf{TBD}
 
 Despite the algorithm's name, it is actually not a regression but rather a classification model.
 In contrast, a linear regression's target variable is continuous whereas regarding a logistic regression, the target variable is binary or dichotomous.
@@ -45,7 +53,11 @@ P = \frac{1}{1+e^{-\left(\beta_0 + \displaystyle\sum_{i=1}^{n} \beta_i X_i\right
 \end{equation}
 
 \subsection{Decision Tree}
+
+\textbf{TBD}
 \subsection{Naive Bayes}
+
+\textbf{TBD}
 
 Naive Bayes is a classification and probabilistic machine learning algorithm which is based on the Bayes theorem:
 
@@ -95,17 +107,32 @@ Finally, we can derive the final formula for Naïve Bayes the posterior probabil
 
 
 \subsection{K-Nearest Neighbors}
+
+\textbf{TBD}
 \subsection{Random Forest}
+
+\textbf{TBD}
 \subsection{Gradient Boosting}
+
+\textbf{TBD}
 \subsection{Support Vector Machine}
+
+\textbf{TBD}
 \subsection{Neural Networks}
+
+\textbf{TBD}
+
 \section{Evaluation Metrics}
 
-This section focusdx on particular measures through which it is possible to determine to a predictive power of model in terms of its performance.
-The are many ways, how to evaluate the model's performance, therefore, only the most common ones will be further described.
-Note, since default prediction regards classification model, therefore regression's evaluation metrics will be omitted.
+\textbf{TBD}
+
+This section focuses on particular measures through which it is possible to determine a predictive power of model in terms of its performance.
+The are many ways, how to evaluate the model's performance, therefore, only the most common ones and the most relevant are further described.
+Note, since default prediction regards classification tasks, therefore regression's evaluation metrics are omitted.
 
 \subsection{Confusion Matrix}
+
+\textbf{TBD}
 
 Confusion matrix is a table which summarizes the classification model's performance with respect to the actual classes and predicted classes.
 It is a square $n \times n$ matrix, where $n$ determines number of classes within the target variable.
@@ -159,11 +186,15 @@ where:
 
 \subsection{Accuracy}
 
+\textbf{TBD}
+
 \begin{equation}\label{eq}
     Accuracy = \frac{TP + FN}{TP + TN + FP + FN}
 \end{equation}
 
 \subsection{Recall}
+
+\textbf{TBD}
 
 \begin{equation}\label{eq}
     Precision = \frac{TP}{TP + FN}
@@ -171,17 +202,23 @@ where:
 
 \subsection{Precision}
 
+\textbf{TBD}
+
 \begin{equation}\label{eq}
     Precision = \frac{TP}{TP + FP}
 \end{equation}
 
 \subsection{F1 Score}
 
+\textbf{TBD}
+
 \begin{equation}\label{eq}
     F1 = \frac{2 \times Precision \times Recall}{Precision + Recall} = \frac{2 \times TP}{2 \times TP + FP + FN}
 \end{equation}
 
 \subsection{AUC}
+
+\textbf{TBD}
 
 In order to derive Area Under the Curve ($AUC$), first we need to define Receiver Operating Characteristics ($ROC$) curve.
 ROC curve is two-dimensional visualization of the model performance as a probability curve in terms of True Positive Rate ($TPR$) and False Positive Rate ($FPR$) based on varying the given threshold.
@@ -232,12 +269,16 @@ As the $AUC$ is an area present underneath the ROC curve, mathematically, it can
 
 \subsection{Kolmogorov-Smirnov Distance}
 
+\textbf{TBD}
+
 \begin{equation}\label{eq}
     KS = \max_{x \in \mathbb{R}} \left| \hat{F}_n \left(x \right) - F \left(x \right) \right|
 \end{equation}
 
 
 \subsection{Somer's D}
+
+\textbf{TBD}
 
 \begin{equation}\label{eq}
     SD = \frac{\tau \left(X, Y\right)}{\sqrt{\tau \left(X, X\right) \tau \left(Y, Y\right)}}
@@ -246,12 +287,16 @@ As the $AUC$ is an area present underneath the ROC curve, mathematically, it can
 
 \subsection{Matthews Correlation Coefficient}
 
+\textbf{TBD}
+
 \begin{equation}\label{eq}
     MCC = \frac{TP \times TN - FP \times FN}{\sqrt{(TP + FP) (TP + FN) (TN + FP) (TN + FN)}}
 \end{equation}
 
 
 \subsection{Brier Score Loss}
+
+\textbf{TBD}
 
 \begin{equation}\label{eq}
     BSL = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2
@@ -260,6 +305,7 @@ As the $AUC$ is an area present underneath the ROC curve, mathematically, it can
 
 \subsection{Jaccard Score}
 
+\textbf{TBD}
 
 \begin{equation}\label{eq}
     JC = \frac{|y \cap \hat{y} |}{|y \cup \hat{y} |}
@@ -268,6 +314,8 @@ As the $AUC$ is an area present underneath the ROC curve, mathematically, it can
 
 \subsection{Zero-One Loss}
 
+\textbf{TBD}
+
 \begin{equation}\label{eq}
     ZOL = \frac{1}{n} \sum_{i}^{n} \delta_{y_{i=1} \neq \hat{y}_{i}} \text{ , where } \delta_{y_{i} \neq \hat{y}_{i}} = \begin{cases}
         1, & \text{if $x<0$}.\\
@@ -275,16 +323,32 @@ As the $AUC$ is an area present underneath the ROC curve, mathematically, it can
       \end{cases}
 \end{equation}
 \section{Hyperparameter Tuning}
-TBD
+
+\textbf{TBD}
 \subsection{Grid Search}
+
+\textbf{TBD}
 \subsection{Random Search}
+
+\textbf{TBD}
 \subsection{Bayesian Optimization}
+
+\textbf{TBD}
 \section{Imbalanced Class Distribution}
-TBD
+
+\textbf{TBD}
 \subsection{Random Oversampling}
+
+\textbf{TBD}
 \subsection{SMOTE Oversampling}
+
+\textbf{TBD}
 \subsection{ADASYN Oversampling}
-TBD
+
+\textbf{TBD}
 \section{Optimal Binning}
+
+\textbf{TBD}
 \subsection{Weight of Evidence Encoding}
-TBD
+
+\textbf{TBD}

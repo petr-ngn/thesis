@@ -1,5 +1,4 @@
 %-----<<< PACKAGES >>>-----
-\usepackage{fancyhdr}
 \usepackage{amsmath, amsthm, amssymb}
 \usepackage{amsmath}
 \usepackage{latexsym}
@@ -27,6 +26,11 @@
 \usepackage{lscape}											%enables landscape environment (for big tables)
 \usepackage{totpages}
 \usepackage[T1]{fontenc}
+\usepackage{pdflscape}
+\usepackage{rotating}
+\usepackage{graphicx}
+\usepackage[absolute]{textpos}
+\usepackage{adjustbox}
 %\usepackage[colorlinks=false, unicode, pdftex, pdfauthor={\AuthorDP},
 %            pdftitle={\Bookname},
 %            pdfsubject={\Subject},
@@ -44,7 +48,10 @@
         stringstyle=\color{red},
         showstringspaces=false}
 %-----<<< LAYOUT & BASICS >>>-----
+\usepackage[usegeometry]{typearea}
 \usepackage[left=3.7cm,top=3.2cm,bottom=3.2cm,right=3.2cm]{geometry} 
+\usepackage{fancyhdr}
+\pagestyle{fancy}
 \onehalfspacing												%line spacing 1.5
 \setlength{\headheight}{20pt}         %header
 \allsectionsfont{\bfseries}						%headings in sans serif
@@ -71,6 +78,7 @@
 %-----<<< ------ >>>-----
 \setlength{\parskip}{1ex}
 \setlength{\parindent}{1em}
+
 %-----<<< THEOREMS >>>-----
 \newtheoremstyle{plainsf}% name
   {9pt}%      Space above, empty = `usual value'

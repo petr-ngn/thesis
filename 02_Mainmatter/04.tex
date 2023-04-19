@@ -1,50 +1,130 @@
-\chapter{Application of Machine Learning Algorithms}
+\chapter{Machine Learning Implementation}
 \label{chap:four}
+This chapter focuses on the main part of this thesis, particularly on the practical example of machine learning implementation. The machine learning framework deployed in this thesis is shown in \autoref{fig:mlframe}.
+\begin{itemize}\setlength\itemsep{0em}
+    \item \textbf{Data Exploration} - this part of the framework is focused on the exploration of the data in order to infer some insights about the data quality, distribution of the variables, statistical testing or association analysis.
+    \item \textbf{Data Split} - this part of the framework is focused on the splitting of the data which are used separaterly in diferrent tasks such as model training, model selection and model evaluation.
+    \item \textbf{Optimal Binning and WoE Encoding} - this part of the framework is focused on the optimal binning and the WoE encoding of the features as the main part of the feature preprocessing.
+    \item \textbf{Feature Selection} - this part of the framework is focused on the feature selection in order to reduce the dimensionality of the data and to improve the performance of the machine learning models - each input model estimator is tuned with Bayesian Optimization.
+    \item \textbf{Model Selection} - this part of the framework is focused on the model selection in order to find the best model based on the ranking - each input model is tuned with Bayesian Optimization on the subsets of selected features.
+    \item \textbf{Model Building (Evaluation)} - this part of the framework is focused on the recalibration of the final model by re-training it on the joined training and validation sets, which will be further evaluated.
+    \item \textbf{Model Evaluation} - this part of the framework is focused on the evaluation of the final model on the unseen data from test set.
+    \item \textbf{Model Building (Deployment)} - this part of the framework is focused on the final recalibration of the final model by re-training it on the joined training, validation and test sets, which will be further deployed into a production.
+    \item \textbf{Model Deployment} - this part of the framework is focused on the deployment of the final model into a production as a web application.
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \caption{Machine Learning Framework}\vspace{0.5em}
+    \label{fig:mlframe}
+    \includegraphics[width=120mm]{Figures/ml_framework.jpg}
+
+    \centering{\begin{source}Author's results\end{source}}\vspace{-1em}
+\end{figure}
 
 \section{Repository and Environment Structure}
+
+The whole machine learning implmenetation as the scope of this thesis is done mainly using Python Programming Language and further with collaboration of Git and HTML.
+The whole repository can be found in the separate appendix or is available on the GitHub repository \url{https://github.com/petr-ngn/FFU_VSE_Masters_Thesis_ML_Credit_Risk_Modelling}.
+The repository structure is shown in \autoref{fig:repostructure}.
 \begin{figure}[H]
     \centering\caption{Repository Structure}
     \label{fig:repostructure}
 
-{\small
+{\footnotesize
 \begin{verbatim}
 
-    |--- data
-    |  |--- interim_dat.csv
-    |  |--- preprocessed_dat.csv
-    |  |--- raw_data.csv
-    |
-    |--- flask_app
-    |  |--- inputs
-    |  |  |--- inputs_flask_app_dict.pkl
-    |  |
-    |  |--- templates
-    |  |  |--- index.html
-    |  |  |--- results.html
-    |  |
-    |  |--- app.py
-    |
-    |--- models
-    |  |--- feature_preprocessing
-    |  |--- feature_selection
-    |  |--- model_selection
-    |  |--- objects_FINAL
-    |
-    |--- plots
-    |--- Master_Thesis.ipynb
-    |--- README.md
-    |--- requirements.yml
+                    |--- data
+                    |  |--- interim_dat.csv
+                    |  |--- preprocessed_data.csv
+                    |  |--- raw_data.csv
+                    |
+                    |--- flask_app
+                    |  |--- inputs
+                    |  |  |--- inputs_flask_app_dict.pkl
+                    |  |
+                    |  |--- templates
+                    |  |  |--- index.html
+                    |  |  |--- results.html
+                    |  |
+                    |  |--- app.py
+                    |
+                    |--- models
+                    |  |--- feature_preprocessing
+                    |  |--- feature_selection
+                    |  |--- model_selection
+                    |  |--- objects_FINAL
+                    |
+                    |--- plots
+                    |--- Masters_Thesis.ipynb
+                    |--- README.md
+                    |--- requirements.yml
 \end{verbatim}
 }
-\centering{\begin{source}Author's results in Python.\end{source}}\vspace{-1em}
+\centering{\begin{source}Author's results at GitHub\end{source}}\vspace{0em}
 \end{figure}
+
+
+\begin{itemize}\setlength\itemsep{0em}
+    \item \texttt{data} - directory containing the raw data, partially preprocessed data (\texttt{interim}) and the final preprocessed data.
+    \item \texttt{flask\_app} - directory containing the Flask application which is used for the deployment of the model. Particularly, it contains the \texttt{app.py} file which is the main back-end file of the application, the \texttt{templates} subdirectory which contains the front-end HTML files for the application and the \texttt{inputs} subdirectory which contains the input dictionary for the application (such as the trained model, threshold, final features etc.).
+    \item \texttt{models} - directory containing the the subdirectories of the trained and fitted objects for features preprocessing, feature selection and model selection, including the final objects used in deployment.
+    \item \texttt{plots} - directory containing the plots generated within the main Python notebook.
+    \item \texttt{Masters\_Thesis.ipynb} - main Python notebook containing the main part of the machine learning Implementation, such as exploratory analysis, data preprocessing, training and evaluation of the models.
+    \item \texttt{README.md} - README file containing the description of the repository.
+    \item \texttt{requirements.yml} - file containing the list of the required packages and their specific versions used in this project.
+\end{itemize}
+
+This particular solution is developed in Python version 3.10.9 and these are the main packages and modules used in this project:
+\begin{itemize}\setlength\itemsep{0em}
+    \item \lstinline{NumPy}, \lstinline{Pandas} - for data manipulation and analysis.
+    \item \lstinline{Matplotlib}, \lstinline{Seaborn} - for data visualization.
+    \item \lstinline{Scipy} - for statistical analysis.
+    \item \lstinline{OptBinning} - for optimal binning of features with respect to the target.
+    \item \lstinline{ImbLearn} - for handling imbalanced data using oversampling.
+    \item {Scikit-learn} - for feature selection, model selection and model evaluation.
+    \item {Scikit-optimize} - for more advanced hyperparameter optimization.
+    \item {Flask} - for deployment of the model as web application.
+\end{itemize}
+
+To replicate this solution, one may download this repository as a zip file or either can clone this repository using Git to the local repository. Before running any files or scripts, it is important to set the environment for such project using the file \texttt{requirements.yml}. This can be done by running the following command in the Anaconda terminal which will create the new environment with the name \texttt{FFU\_VSE\_Masters\_Thesis} and install all the required packages:
+\begin{figure}[H]
+    \centering\
+{\footnotesize
+\begin{verbatim}
+    >> conda env create -n FFU_VSE_Masters_Thesis -f requirements.yml    
+\end{verbatim}
+\vspace{-1em}
+}
+\end{figure}
+Be aware of your current path directory in your terminal. In order to install the file \texttt{requirements.yml}, you need to define a path to the directory, where such file is located.
+To achieve this, the user has to either change the path in the terminal using \texttt{cd} command, insert the path directory before the \texttt{requirements.yml} in terminal, or to copy the file \texttt{requirements.yml} to the current path directory. The following code shows the former approach:
+\begin{figure}[H]
+    \centering\
+{\footnotesize
+\begin{verbatim}
+    >> cd C:\Users\ngnpe\FFU_VSE_Masters_Thesis_ML_Credit_Risk_Modelling
+    >> conda env create -n FFU_VSE_Masters_Thesis -f requirements.yml   
+\end{verbatim}
+\vspace{-1em}
+}
+\end{figure}
+
+
+
+
+
+
+
+
+
 \section{Data Exploration}
 This section is focused on exploration of the analyzed loan dataset, particularly on dataset description, distribution analysis and association analysis, in order to infer potential valuable insights and hypotheses which can be used in the preprocessing or modelling part.
 
 \subsection{Dataset Description}
 The analyzed dataset pertains to the HMEQ dataset which contains loan application information and default status of 5,960 US home equity loans. Such dataset was acquired from Credit Risk Analytics.
 
-As can be seen in \autoref{tab:dataset}, the dataset contains 12 columns, 11 features and 1 target variable \texttt{BAD} indicating whether the loan was in default (\texttt{1}) or not (\texttt{0}). 
+As can be seen in \autoref{tab:dataset}, the dataset contains 13 columns, 11 features and 1 target variable \texttt{BAD} indicating whether the loan was in default (\texttt{1}) or not (\texttt{0}). 
 Amongst the 11 features, there are 9 numeric features and 2 categorical features, namely \texttt{REASON} which contains 2 categories - Debt consolidation (\texttt{DebtCon}) and Home improvement (\texttt{HomeImp}), and \texttt{JOB} which fontains following categories - Administration (\texttt{Offce}), Sales, Manager (\texttt{Mgr}), Professional Executive (\texttt{ProfExe}), Self-employed (\texttt{Self}), and Other.
 
 
@@ -91,6 +171,40 @@ Amongst the 11 features, there are 9 numeric features and 2 categorical features
     \end{center}
 \end{table}
 
+After the initial data inspection, data does not contain any duplicates but does contain missing values, which are summarized in \autoref{tab:natable}. Most of the missing values contains the feature \texttt{DEBTINC} with 1,267 missing observations, whereas columns indicating default status (\texttt{BAD}) or requested loan amount (\texttt{LOAN}) do not contain any missing values.
+
+\begin{table}[H]
+    \small
+    \setlength{\tabcolsep}{8pt}
+    \renewcommand{\arraystretch}{1.3}
+    \centering
+        \caption[Missing Values Summary]{Missing Values Summary}\label{tab:natable}
+    \begin{tabular}{l r r}
+    \toprule
+    \textbf{Columns} & \textbf{\# NA's} & \textbf{\% NA's}\\
+    \midrule
+    \hline
+    BAD & 0 & 0.00 \% \\
+LOAN & 0 & 0.00 \% \\
+MORTDUE & 518 & 8.69 \% \\
+VALUE & 112 & 1.88 \% \\
+REASON & 252 & 4.23 \% \\
+JOB & 279 & 4.68 \% \\
+YOJ & 515 & 8.64 \% \\
+DEROG & 708 & 11.88 \% \\
+DELINQ & 580 & 9.73 \% \\
+CLAGE & 308 & 5.17 \% \\
+NINQ & 510 & 8.56 \% \\
+CLNO & 222 & 3.72 \% \\
+DEBTINC & 1267 & 21.26 \% \\
+\hline
+    \bottomrule
+    \end{tabular}
+    \vspace{0.35em}
+
+    \centering{\begin{source}Author's results in Python.\end{source}}\vspace{-1em}
+\end{table}
+
 
 \subsection{Distribution Analysis}
 In this subsection, we inspect the distribution of our variables, including the target variable and the features.
@@ -113,18 +227,21 @@ This may cause problems in the modelling part, as the model may be biased toward
 \subsubsection{Numeric Features' Distribution}
 \label{subsubsec:numdist}
 
-With regards to the numeric features, most of the features are positively skewed containing outliers as can be seen in \autoref{fig:boxfeat}, which depicts conditional distribution of numeric features on the default status visualized using boxplots.
+Regarding the numeric features, it can be observed that most of them exhibit a positive skewness and contain outliers, as illustrated in \autoref{fig:boxfeat}, which depicts the conditional distribution of the numeric features with respect to the default status via boxplots.
 
-All the outliers appear to be valid, i.e., they have not occurred due to data entry errors.
-This can be attributed to the fact that all the numeric features are non--negative, thus it is not possible to have negative number of years at present job, negative number of delinquent credit lines, etc. 
-Furthermore, the maximum values of given features are not unrealistically high, which further confirms the validity of the outliers.
-Nevertheless, the outliers need to be treated since they can biased model's weights or coefficients (in case of logistic regression or neural networks), jeopardize distance calculation (in case of KNN) or in general, they can affect the position and orientation of the decision boundary -- all the reasonings can lead to the model's overfitting and inaccurate and biased predictions.
-The outliers' treatment is further described in \autoref{subsec:prep-optbinning}.
+All the outliers appear to be valid, indicating that they have not arisen due to data entry errors.
+This can be attributed to the non-negative nature of all the numeric features, which makes it impossible to have negative values for features such as the number of years at present job or the number of delinquent credit lines, among others.
+Additionally, the maximum values of the given features are not unrealistically high, further corroborating the validity of the outliers.
+However, it is necessary to treat these outliers as they can bias a model's weights or coefficients, particularly in the case of logistic regression or neural networks.
+Outliers can also jeopardize distance calculations in the case of KNN, or in general, affect the position and orientation of the decision boundary.
+Such factors can lead to overfitting and inaccurate and biased predictions.
+A detailed explanation of the outlier treatment is provided in \autoref{subsec:prep-optbinning}.
 
-With respect to the target variable, we can observe some differences in the distribution shapes of \texttt{DEROG} and \texttt{DELINQ}, which are less skewed and have lower dispersion for non--default cases compared to the default cases.
-Since both features indicates a negative information about the delinquency, it is expected that the higher value is, the more likely the loan will end in default.
-Referring to the feature \texttt{DEBTINC}, it does not have any extreme values for non--default cases, but it has some extreme values for default cases. We can infer that if the debt--to--income ratio is too high, hence applicant's income is not sufficient to cover his debt, the loan is more likely to end in default.
-The assocation between the default status and the numeric features is further investigated in \autoref{subsubsec:target-num-ass}.
+Concerning the target variable, it can be observed that there are some differences in the distribution shapes of \texttt{DEROG} and \texttt{DELINQ}, which exhibit less skewness and lower dispersion for non-default cases as compared to default cases.
+Since both features indicate negative information about delinquency, it is expected that a higher value for these features would increase the likelihood of loan default.
+Referring to the feature \texttt{DEBTINC}, it does not exhibit any extreme values for non-default cases, but some extreme values are present for default cases.
+From this, it can be inferred that if the debt-to-income ratio is too high, indicating that the applicant's income is not sufficient to cover their debt, the loan is more likely to end in default.
+The association between the default status and the numeric features is further investigated in \autoref{subsubsec:target-num-ass}.
 
 \begin{figure}[H]
     \centering
@@ -186,16 +303,17 @@ Such associations are further investigated in \autoref{subsubsec:target-na-ass}.
         \source{Author's results in Python}
     \end{center}
 \end{table}
-
-
 \subsubsection{Categorical Features' Distribution}
 \label{subsubsec:catdist}
 
-Pertaining to the categorical features, such dataset has 2 nominal features - \texttt{REASON} and \texttt{JOB}. The following \autoref{fig:catdist} depicts the conditional distribution of categorical features on the default status visualized using barplots.
-We can observe that most of the loan applicants applied for a loan because of the debt consolidation and/or their job occupancies were labelled as \texttt{Other}.
+Regarding the distribution of categorical features, the dataset includes 2 nominal features, namely \texttt{REASON} and \texttt{JOB}.
+The conditional distribution of categorical features on the default status is visualized using barplots in \autoref{fig:catdist}.
+The plot indicates that most loan applicants applied for debt consolidation, while most job occupancies were labeled as \texttt{Other}.
 
-Regarding the default status, there does not seem to be a significant difference between the default and non-default cases in terms of relative distribution of \texttt{REASON}.
-However, we can observe a slight difference between the default and non-default cases in terms of relative distribution of \texttt{JOB} feature. Particularly, in the categories \texttt{Office}, \texttt{ProfExe} and \texttt{N/A} there is relatively higher proportion of non--default cases than default cases. Therefore, there could be a moderate association between the \texttt{JOB} feature and the default status -- such association is further investigated in \autoref{subsubsec:target-cat-ass}.
+With respect to the default status, there appears to be no significant difference between the default and non-default cases in terms of the relative distribution of the \texttt{REASON} feature.
+However, a slight difference is observed between the default and non-default cases in terms of the relative distribution of the \texttt{JOB} feature.
+Specifically, the categories \texttt{Office}, \texttt{ProfExe}, and \texttt{N/A} exhibit a relatively higher proportion of non-default cases than default cases.
+Hence, a moderate association between the \texttt{JOB} feature and the default status is possible, as further investigated in \autoref{subsubsec:target-cat-ass}.
 
 
 \begin{figure}[H]
@@ -207,25 +325,26 @@ However, we can observe a slight difference between the default and non-default 
     \end{figure}
 
 \subsection{Association Analysis}
-In this subsection, we focus on the association analysis in order to inspect potential relationships between the variables. First, we inspect the association between the default status and the features and aftewards, we check for the association amongst the features themselves.
-
+In this subsection, we aim to examine potential relationships between the variables by analyzing their associations. Firstly, we investigate the association between the default status and the features. Subsequently, we explore the association among the features themselves.
 
 \subsubsection{Association between default status and numeric features}
 \label{subsubsec:target-num-ass}
 
-In order to measure an association between the target variable and the numeric features, we use Point--Biserial correlation which denotes the value of Pearson's product moment correlation between the continuous variable and dichotomous variable \citep{kornbrot2014point}. Such coefficient ranges from -1 to +1.
+To measure the association between the target variable and the numeric features, we use the Point-Biserial correlation coefficient, which is the Pearson's product moment correlation coefficient between a continuous variable and a dichotomous variable \citep{kornbrot2014point}.
+This coefficient ranges from -1 to +1 and can be used to assess the strength and direction of the relationship between a continuous variable and a binary variable.
+The formula for computing this coefficient is as follows:
 
 \begin{equation}\label{eq}
     r_{pb,X} =  \frac{\mu \left( X | Y=1 \right) -\mu \left( X | Y=0 \right)}{\sigma_{X}}\sqrt{\frac{N\left(Y=1\right) \times N\left(Y=0\right)}{N \left(N - 1 \right)}}
 \end{equation}
 
-where $\mu \left( X | Y=1 \right)$ and $\mu \left( X | Y=0 \right)$ are the means of given numeric feature $X$ conditional on the default status and non--default status, respectively, $\sigma_{X}$ is the standard deviation of given numeric feature $X$, $N\left(Y=1\right)$ and $N\left(Y=0\right)$ are the numbers of observations with default status and non--default status, respectively, and $N$ is the total number of observation within given feature $X$.
+Here, $\mu \left( X | Y=1 \right)$ and $\mu \left( X | Y=0 \right)$ represent the means of the given numeric feature $X$ conditional on the default status and non-default status, respectively, while $\sigma_{X}$ denotes the standard deviation of $X$.
+The values of $N\left(Y=1\right)$ and $N\left(Y=0\right)$ indicate the number of observations with default status and non-default status, respectively, and $N$ represents the total number of observations within the feature $X$.
 
 
-In the following \autoref{tab:pointbi}, we can observe the computed Point-Biserial coefficient for each numeric feature with respect to the default status, including its statistical significance.
-As can be seen, features such as \texttt{DEROG}, \texttt{DELINQ} and \texttt{DEBTINC} are moderately and positively association with default status on 1\% statistical significance level.
-Thus, we can confirm the findings from \autoref{subsubsec:numdist} regarding the positive associations of the features \texttt{DEROG}, \texttt{DELINQ} and \texttt{DEBTINC} with the default status.
-It can be deemed and inferred that such features may be important predictors within modelling.
+The following \autoref{tab:pointbi} displays the computed Point-Biserial coefficient for each numeric feature with respect to the default status, along with its statistical significance.
+The results show that features such as \texttt{DEROG}, \texttt{DELINQ}, and \texttt{DEBTINC} are moderately and positively associated with the default status at the 1\% statistical significance level.
+These findings support the observations made in \autoref{subsubsec:numdist} regarding the positive associations of these features with the default status. It can be inferred that these features may serve as important predictors in the model.
 
     \begin{table}[H]
         \small
@@ -270,24 +389,23 @@ It can be deemed and inferred that such features may be important predictors wit
 
     \end{table}
 
-ok
-
-ok
-
 \subsubsection{Association between default status and categorical features}
 \label{subsubsec:target-cat-ass}
 
-For measuring a relationship's strength between the dichotomous and categorical variables, we use Cramer's V which ranges from 0 to 1 and is defined as:
+In order to measure the strength of the relationship between the dichotomous default status and categorical variables, we employ Cramer's V, which ranges from 0 to 1 and is defined as:
+
 
 \begin{equation}\label{eq}
 		CV_{X} = \sqrt{\frac{\chi^{2}}{N\left(k-1\right)}}
-		\end{equation}
+\end{equation}
 
-As expected based on findings in \autoref{subsubsec:catdist}, according to the following \autoref{tab:cramer-v}, the association between the default status and \texttt{REASON} is really weak as the Cramer's V is close to zero.
-On the other hand, we can observe slightly stronger association of \texttt{JOB} with default status as some of its categories, namely \texttt{Office}, \texttt{ProfExe} and \texttt{N/A}, showed a higher proportion of non--default cases compared to the default cases. 
-Note both \texttt{REASON}'s and \texttt{JOB}'s associations with default status are statistically significant on 1\% significance level.
-Although statistical significance is important, it does not guarantee that a feature is a strong predictor of the target variable. Ultimately, the performance metrics of the model are what determine the usefulness of a feature in predicting the target variable.
 
+As noted in \autoref{subsubsec:catdist}, the association between the default status and \texttt{REASON} is weak, as evidenced by the Cramer's V value being close to zero.
+Conversely, the association between the default status and \texttt{JOB} is slightly stronger, as the categories \texttt{Office}, \texttt{ProfExe}, and \texttt{N/A} exhibit a higher proportion of non-default cases than default cases.
+Both \texttt{REASON}'s and \texttt{JOB}'s associations with default status are statistically significant at the 1\% significance level.
+
+While statistical significance is important, it does not necessarily indicate that a feature is a strong predictor of the target variable.
+Ultimately, the usefulness of a feature in predicting the target variable is determined by the performance metrics of the model.
 
         \begin{table}[H]
             \small
@@ -314,20 +432,19 @@ Although statistical significance is important, it does not guarantee that a fea
             \centering{\begin{source}Author's results in Python.\end{source}}\vspace{-1em}
 \end{table}
 
-
 \subsubsection{Association between default status and missing values}
 \label{subsubsec:target-na-ass}
 
-Since the loan data contains missing values, it is deemed appropriate to check whether the missing values are associated with the default status as well. One way how to deal with the measurement, is to encode the feature into a binary variable where 1 indicates a missing value occurrence and 0 otherwise.
+Given that the loan dataset contains missing values, it is necessary to examine whether the missingness is associated with the default status. One possible approach is to encode the feature with missing values as a binary variable, where 1 indicates the presence of a missing value and 0 otherwise.
 
-For measuring a strength of association between the two binary variables, we use Phi coefficien which is defined as:
+To quantify the strength of association between the two binary variables, the Phi coefficient is used, which is defined as:
 
 \begin{equation}\label{eq}
     \phi_{X} = \sqrt{\frac{\chi^{2}}{n}}
     \end{equation}
 
-In line with the finding regarding the \texttt{DEBTINC} and \texttt{VALUE} in \autoref{subsubsec:numdist}, as shown in \autoref{tab:phi-target}, we can observe a strong and statistically significant association between the missing debt--to--income and default status, respectively a moderate and statistically significant association between the missing collateral property value and the default status. Hence, we can expect such indicators will be the main drivers in a default prediction.
-
+In line with the finding regarding the \texttt{DEBTINC} and \texttt{VALUE} in \autoref{subsubsec:numdist}, there is a strong and statistically significant association between the missing debt-to-income ratio and default status, and a moderate and statistically significant association between the missing collateral property value and default status, as shown in \autoref{tab:phi-target}.
+Therefore, we can anticipate that these features will be crucial indicators in default prediction. Further details on feature selection are presented in \autoref{subsec:feature-selection}.
     \begin{table}[H]
         \small
         \setlength{\tabcolsep}{8pt}
@@ -372,17 +489,17 @@ In line with the finding regarding the \texttt{DEBTINC} and \texttt{VALUE} in \a
             \centering{\begin{source}Author's results in Python.\end{source}}\vspace{-1em}
 \end{table}
 
-
 \subsubsection{Missing Values Association}
-Furthermore, it is needed to inspect how the missing values are related to default status, but also how they are associated between themselves.
-One way, how to indetify any patterns of missing data in dataset is using dendrogram which hierarchically clusters the variables based on the missing values' occurrences.
-Hence it groups the variables into clusters based on the similarity of their missing value patterns ,i.e., variables with similar patterns of missingness are clustered together, while variables with dissimilar patterns of missingness are placed in separate clusters.
-The dendrogram is constructed by iteratively merging the two closest clusters until all variables are in the same cluster.
-The distance between the clusters at each step of the merging process is shown on the y-axis of the dendrogram, and the order in which the variables are merged is shown on the x--axis.
+Additionally, it is imperative to investigate the relationship between missing values and default status, as well as the interrelationship between the missing values themselves.
+A common approach to identifying patterns of missing data in a dataset is through the use of a dendrogram, which clusters variables hierarchically based on the occurrence of missing values.
+This method groups variables into clusters based on the similarity of their missing value patterns, such that variables with comparable patterns of missingness are clustered together.
+Conversely, variables with dissimilar patterns of missingness are placed in separate clusters.
+The dendrogram is constructed by merging the two closest clusters iteratively until all variables are in the same cluster.
+The distance between the clusters at each step of the merging process is shown on the y-axis of the dendrogram, and the order in which the variables are merged is displayed on the x-axis.
 
-The following \autoref{fig:dendrogram} depicts the hierarchical clustering of the dataset's variables, excluding the default status the requested loan amount \texttt{LOAN} since these variables do not contain any missing values.
-As can be seen, features \texttt{CLNO} and \texttt{CLAGE} are the most similar in terms of missing values' occurrences
-Thus, most of the loan applicants, when submitting their loan application, they oftenly omit their number of credit lines (\texttt{CLNO}) as well as the age of their recent credit line (\texttt{CLAGE}).
+In \autoref{fig:dendrogram}, the hierarchical clustering of the dataset's variables is illustrated, excluding the default status and requested loan amount feature \texttt{LOAN}, as these variables do not contain any missing values.
+As depicted in the dendrogram, the \texttt{CLNO} and \texttt{CLAGE} features have the most similar patterns of missing values occurrences.
+Therefore, it can be inferred that a significant number of loan applicants tend to omit information regarding their number of credit lines (\texttt{CLNO}) and the age of their most recent credit line (\texttt{CLAGE}) when submitting their loan applications.
 
     \begin{figure}[H]
         \centering
@@ -392,12 +509,12 @@ Thus, most of the loan applicants, when submitting their loan application, they 
         \centering{\begin{source}Author's results in Python.\end{source}}\vspace{-1em}
     \end{figure}
     
-
 \subsubsection{Multicolinearity Analysis}
 
-ADD contigency table for REASON and JOB.
-
-To measure the correlation between the numeric features, one would use Pearson correlation coefficient. However, such measure is very sensitive to outliers and assumes normal distribution of variables as well as the linear relationship between the variables. Therefore, we use Spearman correlation coefficient instead, which is a nonparametric measure of the association between two continuous variables. It is defined as:
+To quantify the association between the numerical features, Pearson correlation coefficient is often used.
+However, it is highly sensitive to outliers and makes assumptions regarding the normal distribution and linear relationship between variables.
+Consequently, Spearman correlation coefficient is utilized as an alternative, as it is a non-parametric measure that does not make any assumptions regarding the distribution of variables or the linearity of their relationship.
+The Spearman correlation coefficient is defined as follows:
 
 \begin{equation}\label{eq}
 	\rho_{spearman} = 1 - \frac{6 \sum_{i=1}^{n} d_{i}^{2}}{n \left(n^{2}-1\right)}
@@ -414,6 +531,7 @@ In the \autoref{fig:spearmancorr}, we can observe a very strong correlation betw
         \centering{\begin{source}Author's results in Python.\end{source}}\vspace{-1em}
     \end{figure}
 
+
 \section{Data Preprocessing}
 In this section, the process of preprocessing data is described as the crucial step in the machine learning modelling. Particularly, the following is described:
 \begin{itemize}\setlength\itemsep{0em}
@@ -427,32 +545,27 @@ In this section, the process of preprocessing data is described as the crucial s
 \subsection{Data Split and ADASYN Oversampling}
 \label{subsec:data-split-ADASYN}
 
-In order to ensure the appropriate model training and unbiased evaluation, it is needed to split our data into sets where each sample has its own purpose. We split our data into following sets in the ratio of 70:15:15:
-\begin{itemize}\setlength\itemsep{0em}
-    \item Training set - such set is used for training the model, feature selection and hyperparameter tuning.
-    \item Validation set - such set is used for selection of the best final model.
-    \item Test set - such set is used for the final evaluation of the best final model.
+To ensure appropriate model training and unbiased evaluation, it is necessary to split data into separate sets for various purposes. Specifically, the data was split into three sets with the ratio of 70:15:15:
+\begin{itemize}\setlength\itemsep{0em} 
+    \item Training set for model training, feature selection, and hyperparameter tuning;
+    \item Validation set for selecting the best final model;
+    Test set for the final evaluation of the best final model.
 \end{itemize}
 
-It is important to split the data into separate sets so we could independently train and tuned the several models as well as choose the best features, select the best model and evaluate it on the unseen data as we ensure an avoidance of overfitting as well as the data leakage.
+\subsubsection{ADASYN}
+The data is split using stratified split to preserve the default status distribution, which was highly imbalanced.
+Stratification ensures that the distribution of defaults and non-defaults remains the same across all sets, thereby avoiding overfitting and data leakage. Using stratification, each set had 80 \% non-defaults and 20 \% defaults. This method enables accurate prediction since the model is trained and evaluated on the same population \citep{igareta2021strat}.
 
-As already, since the default status distribution highly imbalanced, it is needed to treat such issue, otherwise the model would be biased towards the non--defaults.
-Hence, the data is split into such sets using stratified split, which ensures that the default status distribution remains the same across all the sets.
-Thus, when splitting the data with a stratification, the default distribution is each set is preserved, i.e., 80 \% of non--defaults and 20 \% of defaults in each set.
-With a stratification, it is possible to train the model on the same population in which it is being evaluated leading to more accurate predictions \citep{igareta2021strat}.
+However, stratification alone may not be sufficient for dealing with imbalanced classes.
+Undersampling or random oversampling may lead to loss of information or overfitting.
+Therefore, the Adaptive Synthetic Sampling (ADASYN) technique is used for oversampling the minority class.
+ADASYN generates synthetic instances of the minority class based on the nearest neighbors of the minority class instances.
+It is more effective than SMOTE, as it generates more synthetic samples in regions where the density of the minority class is lower and fewer synthetic instances in regions where the density is higher, thereby focusing on the difficult-to-learn minority instances \citep{adasynhaibo}.
+In other words, ADASYN focuses on difficult--to--learn minority instances, i.e., instances having lower density, therefore it generates more synthetic instances for such instances \citep{adasynhaibo}.
+Thereby, it makes easier for the machine learning model to learn the decision boundary between the minority and majority classes and boost the model's performance. 
+The oversampling is performed on the training set only after the split to avoid data leakage and biased evaluation.
 
-Despite the stratification, it does not have to be sufficient when dealing with imbalanced class.
-One approach is to use undersampling which removes the instances with majority class.
-However, this is not deemed appropriate since our data sample size is relatively small and we would lose a lot of information by removing such instances.
-Other approach is to use random oversampling, which randomly duplicates the instances of minority class in such way that the target distribution is then balanced.
-Although, this is not deemed appropriate as well since as it could lead to the overfitting as the model would just memorize the duplicated instances and would not be able to generalize well on the unseen data.
-
-Instead, ADASYN (Adaptive Synthetic Sampling) is used, which is an oversampling technique that generates synthetic instances of the minority class based on the nearest neighbors of the minority class instances.
-Compared to SMOTE (Synthetic Minority Oversampling Technique), ADASYN is more effective as it uses density distribution of each minority instance which generates more synthetic samples in regions where the density of the minority class is lower and fewer synthetic instances in regions where the density is higher.
-In other words, ADASYN focuses on difficult--to--learn minority instances, i.e., instances having lower density, therefore it generates more synthetic instances for such instances \citep{adasynhaibo}. Thereby, it makes easier for the machine learning model to learn the decision boundary between the minority and majority classes and boost the model's performance. 
-
-It is important to emphasize, that the oversampling has to be performed on the training set only after the split and not before the split or on validation or test sets. Otherwise it would lead to data leakage and biased evaluation of the model.
-In the following \autoref{tab:split}, we can observe some split information regarding the individual sets. As can be seen,  either test, validation and training sets (before oversampling) have the same default distribution which is desired thanks to the stratification. The table also depicts the information about the training set after performed ADASYN oversampling, where the default distribution is balanced. 
+The following \autoref{tab:split} shows the default distribution of the individual sets before and after oversampling. The training set after ADASYN oversampling was balanced, while the default distribution remained the same across the validation and test sets before and after oversampling, which is desirable due to stratification.
 
 \begin{table}[H]
     \small
@@ -478,62 +591,76 @@ In the following \autoref{tab:split}, we can observe some split information rega
     \centering{\begin{source}Author's results in Python.\end{source}}\vspace{-1em}
 \end{table}
 
-In Python, the data are split and oversampled using a custom function \lstinline{data_split()} which first splits the data into training, validation and test sets using \lstinline{train_test_split()} function with a stratification from \lstinline{scikit-klearn} module. Then, the training set is oversampled using \lstinline{ADASYN()} class with 5 nearest neighbors and Euclidean distance from \lstinline{imblearn} module. 
+In Python, the data are divided and oversampled using a custom function \lstinline{data_split()}.
+This function first employs the \lstinline{train_test_split()} function from the \lstinline{scikit-learn} module to split the data into training, validation, and test sets with a stratification technique.
+Next, the \lstinline{ADASYN()} class from the \lstinline{imblearn} module is used to oversample the training set. This is achieved by generating synthetic instances of the minority class based on the five nearest neighbors and Euclidean distance.
 
-However, the \lstinline{imblearn}'s \lstinline{ADASYN()} class cannot handle either missing values or categorical variables. Therefore, the approach in order to deal with such obstacle is following:
-\begin{enumerate}\setlength\itemsep{0em}
+However, the \lstinline{ADASYN()} class from \lstinline{imblearn} is not designed to handle missing values or categorical features encoded as character. To overcome this limitation, the following approach is taken:
+\begin{enumerate}
     \item Separate the categorical and numeric features;
     \item Impute the missing values with arbitrary values:
-    \begin{itemize}\setlength\itemsep{0em}
-        \item Categorical features: string \lstinline{'N/A'};
-        \item Numeric features: number \lstinline{99999999999999} - such value is chosen since it is highly unlikely to be present in the dataset.
+    \begin{itemize}
+    \item Categorical features: string \lstinline{'N/A'};
+    \item Numeric features: number \lstinline{99999999999999} - such value is chosen since it is highly unlikely to be present in the dataset.
     \end{itemize}
     \item Convert the categorical features into dummy variables;
     \item Join the numeric features with the dummy variables;
     \item Perform the oversampling on the joined dataset;
     \item Convert the dummy variables back into categorical features;
     \item Retrieve back the missing values:
-    \begin{itemize}\setlength\itemsep{0em}
-        \item Categorical features: replace string \lstinline{'N/A'} with \lstinline{np.nan};
-        \item Numeric features: for each feature $X$ if its value exceeds the original maximum value, then replace it with \lstinline{np.nan};\footnote{The theory behind this ADASYN will be described later.}
+    \begin{itemize}
+    \item Categorical features: replace string \lstinline{'N/A'} with \lstinline{np.nan};
+    \item Numeric features: for each feature $X$ if its value exceeds the original maximum value, then replace it with \lstinline{np.nan};\footnote{The theory behind this ADASYN will be described later.}
     \end{itemize}
-\end{enumerate}
+    \end{enumerate}
 
 \subsection{Optimal Binning and WoE Encoding}
 \label{subsec:prep-optbinning}
 
-One of the most common approach of feature preprocessing are for instance - dummy encoding, standardization, logarithmic transformation, normalization, etc.
-However, these approaches are not always suitable for the given dataset. For instance, the dummy encoding is not suitable for the categorical features with a large number of categories, since it would lead to the curse of dimensionality. The standardization is not suitable for the features with a large number of outliers, since it would lead to the loss of information.
-The logarithmic transformation is not suitable for the features with a large number of zeros, since it would lead to the loss of information. The normalization is not suitable for the features with a large number of outliers, since it would lead to the loss of information and so on.
+In the context of data preprocessing, it is crucial to consider the most appropriate feature transformation method that optimizes the performance of machine learning models.
+Although common approaches such as dummy encoding, standardization, logarithmic transformation, and normalization are widely used, they may not always be suitable for a given dataset due to the presence of certain characteristics.
+For instance, dummy encoding may not be suitable for categorical features with a large number of categories as it could lead to the curse of dimensionality.
+Standardization may not be appropriate for features with a large number of outliers as it may result in a loss of information.
+Similarly, logarithmic transformation may not be appropriate for features with a large number of zeros, and normalization may not be suitable for features with a significant number of outliers.
 
-Instead, a discretization or so called binning is used as it can captures outliers within bins, which is not possible with the standardization or normalization. It also captures missing values, so there is no need to remove or impute missing values or removing outliers thanks to such approach.
+Therefore, alternative approaches such as discretization or binning are increasingly being used.
+This approach enables the identification of outliers within bins, which is not feasible with standardization or normalization.
+Additionally, discretization can capture missing values without requiring the removal or imputation of such values.
+As a result, binning is a more flexible and versatile feature transformation method that can effectively handle different types of datasets and is particularly useful in cases where other methods may not be appropriate.
 
-In Python, \lstinline{BinningProcess} from \lstinline{optbinning} module is used for an optimal binning of both numeric features into interval bins and categorical features into category--group bins, with respect to the target variable. Such bins as categories are then encoded into numeric values using Weight-of-Evidence\footnote{The theory behind this optimal binnging will be described later.} which is calculated as:
+
+
+In this thesis, we employ the \lstinline{BinningProcess} from the \lstinline{optbinning} module in Python for an optimal binning of both numeric and categorical features.
+This approach involves grouping the values of a continuous variable into discrete intervals, or "bins", based on their relationship with the target variable.
+Similarly, for categorical features, the approach involves grouping the categories based on their relationship with the target variable.
+The optimal binning is performed with the objective of achieving maximum separation between the classes of the target variable within each bin.
+This is done to ensure that the bins are highly informative with respect to the target variable, and that each bin contains a meaningful range of values.
+Furthermore, the resulting bins are encoded into numeric values using the Weight-of-Evidence (WoE) approach. The WoE is a commonly used measure of the strength of association between a binary target variable and an independent variable. It is calculated as
 
 \begin{equation}\label{eq}
 	WoE_{X, b}= \ln \left(\frac{\Pr{\left(X = b\;\middle|\;Y = 0\right)}}{\Pr{\left(X = b\;\middle|\;Y = 1\right)}}\right)
 \end{equation}
 
-The following \autoref{fig:woedist} depicts Weight--of--Evidence bins distribution per each feature. It can be observed that the binning captures either linear, non--linear, monotonic or non--monotonic relationship between the default status and the numeric features in terms of WoE.
-With respect to the \texttt{DELINQ} future, we can observe a monotonic relationship as the higher number of delinquent credit lines is, the lower WoE cofficient is, i.e., the larger distribution of defaults with respect to the non-defaults in given bin.
-Thus the higher number of delinquent credit lines, the higher likelihood of defaulting in terms of WoE.
+he following \autoref{fig:woedist} depicts the distribution of Weight-of-Evidence (WoE) bins for each feature. It can be observed that binning captures linear, non-linear, monotonic, or non-monotonic relationships between the default status and the numeric features in terms of WoE
+ Regarding the \texttt{DELINQ} feature, a monotonic relationship can be observed, where the higher number of delinquent credit lines, the lower the WoE coefficient, indicating a larger distribution of defaults with respect to non-defaults in the given bin.
+ Thus, the higher the number of delinquent credit lines, the higher the likelihood of defaulting in terms of WoE.
 
-A non--linear relationship can be observed with respect to the \texttt{YOJ} feature, where the WoE coefficient is positive for applicants who just have recently started working at their new job (i.e., number of years at the present job is less than 1) and for applicants who are working at their current job relatively for a long time (i.e., number of years at th present job is higher than 19).
-Thus, applicants who are working for a longer time, have stable income and therefore are more creditworthy and less likely to default.
-Regarding the applicants who just have recently started working at their new job, it is possible that they are less likely to default since the \texttt{YOJ} feature does not capture the applicant's total number of years of work experience, but only the number of years at the present job.
-Thus, in the given dataset, the applicants who just have recently started working at their new job, have a relatively higher total number of years of work experience, thus they are more creditworthy and less likely to default.
-On the other hand, applicants who are working at their present job between 1 and 19 years, the WoE coefficient is negative.This relationship seems to be complex and can be influenced by other factors which are not present in the dataset, such as the applicant's age, total number of years of work experience, education etc.
+ A non-linear relationship can be observed with respect to the \texttt{YOJ} feature, where the WoE coefficient is positive for applicants who have recently started working at their new job (i.e., number of years at the present job is less than 1) and for applicants who have been working at their current job for a relatively long time (i.e., number of years at the present job is higher than 19).
+ Thus, applicants who have been working for a longer time have stable income and are more creditworthy and less likely to default.
+ Regarding applicants who have recently started working at their new job, it is possible that they are less likely to default since the \texttt{YOJ} feature does not capture the applicant's total number of years of work experience, but only the number of years at the present job.
+ Thus, in the given dataset, applicants who have recently started working at their new job have a relatively higher total number of years of work experience, making them more creditworthy and less likely to default. On the other hand, for applicants who have been working at their present job between 1 and 19 years, the WoE coefficient is negative.
+ This relationship seems to be complex and can be influenced by other factors not present in the dataset, such as the applicant's age, total number of years of work experience, education, etc.
 
-Both numeric and categorical features contain a separate bin capturing missing values which can be useful indicator when training a model.
-This can be apperant in the \texttt{DEBTINC} feature, where the bin capturing missing values has the most negative WoE coefficient, indicating that there is a larger distribution of defaulteres compared to non-defaulters.
-Such finding was already raised in \autoref{subsubsec:target-na-ass} in terms of strong and statistically significant association between the default status and the missing values in \texttt{DEBTINC}.
+ Both numeric and categorical features contain a separate bin capturing missing values, which can be a useful indicator when training a model. This is evident in the \texttt{DEBTINC} feature, where the bin capturing missing values has the most negative WoE coe
+ fficient, indicating that there is a larger distribution of defaulters compared to non-defaulters.This finding was already raised in \autoref{subsubsec:target-na-ass} in terms of the strong and statistically significant association between the default status and the missing values in \texttt{DEBTINC}.
 
-Nevertheless, we can also observe some incosistencies in terms of distributions from exploratory analysis and the WoE coefficient distributions.
-One example pertains to the category \texttt{Mgr} in \texttt{JOB} feature - the WoE coefficient is substantially negative, which would indicate that there amongst the managers, there is a larger distribution of defaulters compared to non--defaulters.
-However, this was not observed in the distribution analysis of categorical features (\autoref{subsubsec:catdist}), where the relative distributions conditional on the default status does not differ too much in terms of \texttt{Mgr} category.
-This is a result of ADASYN oversampling, which synthetically replicates minority instances, especially those instances which are hard--to--learn.
-Hence defaulted loans which the managers have applied for are difficult to learn, therefore ADASYN balances default distribution by generating default instances having \texttt{JOB} equal to \texttt{Mgr}, which results in an increase of number of instances having \texttt{JOB} equal to \texttt{Mgr}, i.e., in a larger distribution of defaulters in \texttt{Mgr} bin, therefore in a negative WoE coefficient.
-
+ However, inconsistencies can also be observed in terms of distributions from exploratory analysis and the WoE coefficient distributions.
+ One example pertains to the \texttt{Mgr} category in the \texttt{JOB} feature, where the WoE coefficient is substantially negative, indicating that among managers, there is a larger distribution of defaulters compared to non-defaulters.
+ However, this was not observed in the distribution analysis of categorical features (\autoref{subsubsec:catdist}), where the relative distributions conditional on the default status do not differ too much in terms of the \texttt{Mgr} category.
+ This is a result of ADASYN oversampling, which synthetically replicates minority instances, especially those instances that are hard-to-learn.
+ Hence defaulted loans that managers have applied for are difficult to learn, and ADASYN balances default distribution by generating default instances having \texttt{JOB} equal to \texttt{Mgr}, which results in an increase in the number of instances having \texttt{JOB} equal to \texttt{Mgr}, i.e., a larger distribution of defaulters in the \texttt{Mgr} bin, and therefore a negative WoE coefficient.
+ This inconsistency highlights the limitations of relying solely on WoE analysis, and emphasizes the importance of combining it with other techniques and domain knowledge to gain a comprehensive understanding of the data.
+ It also suggests that the ADASYN oversampling technique needs to be used with caution, as it can distort the actual distribution of data and lead to inaccurate insights.
 
 \begin{figure}[H]
     \centering
@@ -561,16 +688,27 @@ In Python, 8 different machine learning models from \lstinline{Scikit-learn} mod
 
 \subsection{Hyperparameter Bayesian Optimization}
 
-Instead of using models with default hyperparameters, it is deemed desired to choose optimal hyperparameter values in order to boost model's performance.
-One would use Grid Search or Random Search which are commonly used in hyperparameter tuning. Nonetheless, these methods are computationally expensive and do not guarantee to find the global optimum.
-Also they do not consider any information from previous iterations but rather checks all the possible hyperparameters combinations or randomly chooses hyperparameters combinations, respectively.
+In order to enhance a model's performance, it is recommended to select optimal hyperparameter values instead of relying on default hyperparameters.
+Grid Search and Random Search are commonly used methods for hyperparameter tuning, however, they are computationally expensive and do not guarantee to find the global optimum.
+Additionally, they do not consider any information from previous iterations and rather check all possible hyperparameter combinations or randomly select hyperparameter combinations, respectively.
 
-Therefore, Bayesian Optimization is used for hyperparameter tuning instead of Grid Search or Random Search, as a probabilistic model using Gaussian Process is used to approximate the objective function, which we want to target.
-Such hyperparameter tuning approach uses Bayesian inference to update prior distribution over hyperparameters' values based on the result of previous iterations and uses resulting posterior distribution to sample guide the selection of the next set of hyperparameters to evaluate.\footnote{Theory behind Bayesian Optimization will be described later}.
+To overcome these limitations, Bayesian Optimization is used as a hyperparameter tuning approach.
+This method employs a probabilistic model using a Gaussian Process to approximate the objective function of interest
+ By utilizing Bayesian inference, the approach updates the prior distribution over hyperparameter values based on the results of previous iterations and uses the resulting posterior distribution to guide the selection of the next set of hyperparameters to evaluate.
+In summary, Bayesian Optimization provides a more efficient and effective approach to hyperparameter tuning compared to Grid Search and Random Search, by utilizing prior information and Bayesian inference to guide the selection of hyperparameters to evaluate.\footnote{Theory behind Bayesian Optimization will be described later}.
 
-In Python, a custom function \lstinline{bayesian_optimization()} is used which further uses \lstinline{BayesSearchCV} class from \lstinline{Scikit-optimize} module with 10-fold stratified cross-validation, 50 iterations while maximizing F1 score. Therefore, each model, the Bayesian Optimization 50 times looks for the best hyperparameters' values while maximizing F1 score where within each iteration, 10-fold stratified cross-validation is used to evaluate the model's F1 score.
 
-The hyperparameter space is defined for each model as follows:
+
+
+
+In Python, a custom function, \lstinline{bayesian_optimization()}, is implemented to perform hyperparameter tuning using Bayesian Optimization.
+This function utilizes the\lstinline{BayesSearchCV} class from the \lstinline{Scikit-optimize} module, with a 10-fold stratified cross-validation scheme and 50 iterations, while maximizing the F1 score.
+For each model, the Bayesian Optimization algorithm performs 50 iterations, searching for the best hyperparameters values that maximize the F1 score. Within each iteration, a 10-fold stratified cross-validation is conducted to evaluate the model's F1 score.
+
+The use of \lstinline{BayesSearchCV} with stratified cross-validation in the hyperparameter tuning process provides a robust and reliable approach to selecting the optimal hyperparameters for the model, while the incorporation of Bayesian Optimization enables the efficient exploration of the hyperparameter space.
+By maximizing the F1 score, the hyperparameters selected through this process will result in a model with improved performance for the classification task at hand.
+
+The hyperparameter space is defined for each model as follows(\textit{The individual hyperparameters will be later described in the theory part}):
 \subsubsection{Logistic Regression}
 
 \begin{table}[H]
@@ -800,8 +938,10 @@ For such case, the Forward Sequential Feature Selection is used. The approach is
 
 Thus, when having $n$ input models, it returns $n$  subsets of optimal features, one per each model.
 
-In Python, a custom function \lstinline{SFS_feature_selection()} is used which further uses another custom function defined previously \lstinline{bayesian_optimization()} for tuning the model, and \lstinline{SequentialFeatureSelector} class from \lstinline{Scikit-learn} for feature selection.
-\lstinline{SequentialFeatureSelector} class is predetermined with the \texttt{forward} direction, 10--fold stratified cross validation while maximizing F1 score.
+In Python, a custom function \lstinline{SFS_feature_selection()} is used which further uses another custom function defined previously \lstinline{bayesian_optimization()} for tuning the model, and \lstinline{SequentialFeatureSelector} class from the module \lstinline{Scikit-learn} for feature selection.
+Particularl,y the feature selection with \lstinline{SequentialFeatureSelector} class is performed with the \texttt{forward} direction, 10--fold stratified cross validation while maximizing F1 score.
+
+
 
 Instead of choosing a fixed number of features, \lstinline{SequentialFeatureSelector} class also allows to choose a variable number of features due to the early stopping (\texttt{tol} paramater) - The \lstinline{SequentialFeatureSelector} stops adding new features into optimal subset if the objective score is not incremented by at least \texttt{tol} between two consecutive feature additions\citep{scikit-learn-sequential-feature-selector}.
 The \texttt{tol} parameter is set to the number close to zero indicating that the feature selection should stop adding new features if the F1 score is not increasing between two consecutive feature additions.
@@ -869,18 +1009,140 @@ Further, for each model, we evalute it on the validation set by computing follow
 \end{itemize}
 
 Pertaining to the class--based metrics which require predicted classes (and not predicted probability scores), such as F1 score, Precision, Recall, Accuracy, Matthews Correlation Coefficient, Jaccard Score and Zero-One Loss, by default they use a default classifiation threshold of 0.5.
-Meaning if the probability score is higher than 0.5, it will be encoded as class 1 and otherwise. 
+Meaning if the predicted probability score is higher than 0.5, it will be encoded as predicted class of 1 and otherwise. 
 Note that 0.5 clasification threshold does not have to be valid for real life use cases. Therefore, it is deemed desired to calculate an optimal threshold instead of using the default one.
-One way how to achieve this is to use Younden index which is derived from ROC curve 
-
+One way how to achieve this is to use Younden index which is derived from ROC curve and looks for such threshold, which maximizes the sum of True Positive Rate and True Negative Rate, decreased by 1:
 \begin{equation}\label{eq}
-J = \text{TPR} - \text{FPR}
+J = TPR + TNR - 1
+\end{equation}
+Mathematically, the optimal threshold using Youden index is derived as follows:
+\begin{equation}\label{eq}
+    T_{opt} = \text{argmax}_{t \in [0, 1]}\left(J\right)
+\end{equation}
+In Python, the \lstinline{roc_curve} function from \lstinline{Scikit-learn} returns False Positive Rate instead of the True Negative Rate. Nevertheless, we can derive the True Negative Rate from False Positive Rate as follows:
+\begin{equation}\label{eq}
+    TNR =  1-FPR
+\end{equation}
+Therefore:
+\begin{equation}\label{eq}
+    T_{opt} = \text{argmax}_{t \in [0, 1]}\left(TPR +  \left(1-FPR\right) - 1\right)
 \end{equation}
 
+In order to ensure a more comprehensive and unbiased evaluation of a model's performance, it is recommended to consider multiple metrics rather than relying on a single metric alone. This approach provides a more generalized overview of the model's performance across different aspects and helps to prevent any bias towards a single metric.
+To accomplish this, models can be ranked based on their performance on each individual metric, where a higher score or a lower loss indicates a better model, resulting in a higher rank for that metric. Subsequently, for each metric, the ranking of the models is determined, and the final ranking is calculated as a weighted average of these individual rankings.
+The weights have been set expertly and are summarized in \autoref{tab:weightsrank}.
 
-\begin{equation}\label{eq}
-    T_{opt} = \text{argmax}_{t \in [0, 1]}(J)
-\end{equation}
+Specifically, the highest weight (1.5) is assigned to the F1 score, which provides a balanced measure of a model's performance with respect to both False Positives and False Negatives.
+This metric is commonly used in classification tasks, particularly in imbalanced datasets, such as the validation set in our case, which has not been oversampled.
+In addition to the F1 score, higher weight is assigned to the Recall score as well (1.2), which is a metric that penalizes False Negatives.
+False Negatives occur when the model predicts a negative result (i.e., no default) for an instance that is actually positive (i.e., default).
+In the context of loan applications, one may prefer to reject a loan applicant who would not have defaulted (False Positive) rather than approving the application of a client who would have defaulted (False Negative). Therefore, it is appropriate to give higher weight to Recall in order to reduce the likelihood of False Negatives.
+Henceforth, the weights are assigned to different metrics based on their relevance to the models' ranking, with the highest weight given to F1 score and additional weight given to Recall to ensure that False Negatives are minimized.
+
+\begin{table}[H]
+    \small
+    \setlength{\tabcolsep}{8pt}
+    \renewcommand{\arraystretch}{1.3}
+    \centering
+        \caption[Model Ranking Weights table]{Model Ranking Weights table}\label{tab:weightsrank}
+        \begin{tabular}{ll}
+    \toprule
+    \textbf{Metric} & \textbf{Weight}\\
+    \midrule
+    \hline
+    F1 score & 1.5 \\
+    Recall & 1.2 \\
+    Precision & 1 \\
+    Accuracy & 1 \\
+    AUC & 1 \\
+    Somers' D & 1 \\ 
+    Kolmogorov Smirnov Distance  & 1 \\
+    Matthews Correlation Coefficient  & 1 \\
+    Jaccard Score  & 1 \\
+    Brier Score Loss  & 1 \\
+    Zero-One Loss  & 1 \\
+    \hline
+    \bottomrule
+    \end{tabular}
+    \vspace{0.7em}
+
+    \centering{\begin{source}Author's results in Python.\end{source}}\vspace{-1em}
+\end{table}
+
+
+
+The custom function \lstinline{model_selection()} iterively prints the process of the model tuning and end evaluation on each subset of features, in order to keep the track of such process as it is depicted in \autoref{fig:modselprint}.
+Particularly, it prints which model on which features is being tuned and evaluated, exeuction time, optimal threshold, F1 score on the validation set and the best hyperparameters.
+
+\begin{figure}[H]
+    \centering
+    \caption{Model Selection Print Statement}\vspace{0.5em}
+    \label{fig:modselprint}\
+    \includegraphics[width=140mm]{Figures/model_selection_print.jpg}
+    \centering{\begin{source}Author's results in Python.\end{source}}\vspace{-1em}
+\end{figure}
+
+
+\clearpage
+\newpage
+
+\KOMAoptions{paper=landscape,DIV=last}
+\newgeometry{hmargin=2.5cm,bottom=25mm,height=150mm,includehead}
+\fancyheadoffset{0pt}
+
+
+
+\begin{table}[H]
+    \small
+    \setlength{\tabcolsep}{8pt}
+    \renewcommand{\arraystretch}{1.3}
+    \caption[Model Selection table]{Model Selection table}\label{tab:modelsectab}
+    \centering
+    \scalebox{0.8}{
+
+    \begin{tabular}{|p{1.3cm}|p{1.2cm}|p{1.4cm}|p{1.6cm}|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+        \toprule
+        \textbf{Tuned model} & \textbf{FS model} & \# \newline Features & Execution time & Threshold & F1 & Precision & Recall & Accuracy & AUC & SD & KS & MCC & JC & BSL & ZOL & rank \\
+        \midrule
+        \hline
+        GB & KNN & 11 & 814 & 0.5072 & 0.7978 & 0.7912 & 0.8045 & 0.9184 & 0.9587 & 0.9175 & 0.7989 & 0.7467 & 0.6636 & 0.0687 & 0.08156 & 1 \\
+        
+        GB & SVM & 11 & 951 & 0.5053 & 0.7896 & 0.8155 & 0.7654 & 0.9184 & 0.9555 & 0.9109 & 0.7961 & 0.7397 & 0.6524 & 0.0718 & 0.0816 & 2 \\
+        GB & MLP & 10 & 776 & 0.4955 & 0.7809 & 0.7853 & 0.7765 & 0.9128 & 0.9515 & 0.9030 & 0.7751 & 0.7265 & 0.6406 & 0.0666 & 0.0872 & 3 \\
+        GB & GB & 11 & 723 & 0.4132 & 0.7799 & 0.7778 & 0.7821 & 0.9117 & 0.9543 & 0.9086 & 0.7989 & 0.7247 & 0.6393 & 0.0703 & 0.0883 & 4 \\
+\ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots \\
+GNB & MLP & 10 & 23 & 0.2194 & 0.6013 & 0.5000 & 0.7542 & 0.8000 & 0.8493 & 0.6986 & 0.5768 & 0.4930 & 0.4299 & 0.1319 & 0.2000 & 60.\\
+GNB & GNB & 6 & 23 & 0.4787 & 0.5950 & 0.5039 & 0.7263 & 0.8022 & 0.8356 & 0.6711 & 0.5559 & 0.4835 & 0.4235 & 0.1470 & 0.1978 & 61 \\
+        LR & GNB & 6 & 93 & 0.4561 & 0.5949 & 0.5121 & 0.7095 & 0.8067 & 0.8379 & 0.6758 & 0.5531 & 0.4831 & 0.4235 & 0.1319 & 0.1933 & 62 \\
+        GNB & SVM & 11 & 22 & 0.1991 & 0.5885 & 0.4872 & 0.7430 & 0.7922 & 0.8425 & 0.6850 & 0.5712 & 0.4756 & 0.4169 & 0.1345 & 0.2078 & 63 \\
+        GNB & RF & 11 & 23 & 0.3413	& 0.5863 & 0.4943 & 0.72067 & 0.7967 & 0.8288 & 0.6577 & 0.5545	& 0.4720 & 0.4148 & 0.1486 & 0.2034 & 64 \\
+        \hline
+        \bottomrule 
+    \end{tabular}}
+    \vspace{1em}
+
+    \centering{\begin{source}Author's results in Python.\end{source}}\vspace{-1em}
+\end{table}
+
+
+
+\clearpage
+\newpage
+\KOMAoptions{paper=portrait,DIV=last}
+\restoregeometry
+\fancyheadoffset{0pt}
+
+
+															
+
+\begin{figure}[H]
+    \centering
+    \caption{Model Selection Print Statement}\vspace{0.5em}
+    \label{fig:modselprint}\
+    \includegraphics[width=150mm]{Figures/model_selection_print.jpg}
+    \centering{\begin{source}Author's results in Python.\end{source}}\vspace{-1em}
+\end{figure}
+
 
 \begin{figure}[H]
     \centering
@@ -923,6 +1185,8 @@ J = \text{TPR} - \text{FPR}
     \includegraphics[width=140mm]{Figures/EXECUTION_TIME_Distribution.jpg}
     \centering{\begin{source}Author's results in Python.\end{source}}\vspace{-1em}
 \end{figure}
+
+
 
 
 \subsection{Model Building}
