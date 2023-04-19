@@ -53,18 +53,17 @@
 \contentsline {subsubsection}{Multicolinearity Analysis}{31}{section*.38}%
 \contentsline {section}{\numberline {4.3}Data Preprocessing}{33}{section.4.3}%
 \contentsline {subsection}{\numberline {4.3.1}Data Split and ADASYN Oversampling}{33}{subsection.4.3.1}%
-\contentsline {subsubsection}{ADASYN}{33}{section*.40}%
 \contentsline {subsection}{\numberline {4.3.2}Optimal Binning and WoE Encoding}{35}{subsection.4.3.2}%
 \contentsline {section}{\numberline {4.4}Modelling}{39}{section.4.4}%
 \contentsline {subsection}{\numberline {4.4.1}Hyperparameter Bayesian Optimization}{39}{subsection.4.4.1}%
-\contentsline {subsubsection}{Logistic Regression}{40}{section*.43}%
-\contentsline {subsubsection}{Decision Tree}{41}{section*.45}%
-\contentsline {subsubsection}{Gaussian Naive Bayes}{41}{section*.47}%
-\contentsline {subsubsection}{K-Nearest Neighbors}{41}{section*.49}%
-\contentsline {subsubsection}{Random Forest}{42}{section*.51}%
-\contentsline {subsubsection}{Gradient Boosting}{42}{section*.53}%
-\contentsline {subsubsection}{Support Vector Machine}{43}{section*.55}%
-\contentsline {subsubsection}{Neural Network}{43}{section*.57}%
+\contentsline {subsubsection}{Logistic Regression}{40}{section*.42}%
+\contentsline {subsubsection}{Decision Tree}{41}{section*.44}%
+\contentsline {subsubsection}{Gaussian Naive Bayes}{41}{section*.46}%
+\contentsline {subsubsection}{K-Nearest Neighbors}{41}{section*.48}%
+\contentsline {subsubsection}{Random Forest}{42}{section*.50}%
+\contentsline {subsubsection}{Gradient Boosting}{42}{section*.52}%
+\contentsline {subsubsection}{Support Vector Machine}{43}{section*.54}%
+\contentsline {subsubsection}{Neural Network}{43}{section*.56}%
 \contentsline {subsection}{\numberline {4.4.2}Feature Selection}{43}{subsection.4.4.2}%
 \contentsline {subsection}{\numberline {4.4.3}Model Selection}{47}{subsection.4.4.3}%
 \contentsline {subsection}{\numberline {4.4.4}Model Building}{59}{subsection.4.4.4}%
@@ -89,9 +88,9 @@
 \contentsline {section}{\numberline {5.14}Cross-references}{78}{section.5.14}%
 \contentsline {section}{\numberline {5.15}Source codes}{78}{section.5.15}%
 \contentsline {section}{\numberline {5.16}Paragraphs}{79}{section.5.16}%
-\contentsline {paragraph}{Proin}{79}{section*.88}%
-\contentsline {subparagraph}{Velit}{79}{section*.89}%
+\contentsline {paragraph}{Proin}{79}{section*.87}%
+\contentsline {subparagraph}{Velit}{79}{section*.88}%
 \contentsline {chapter}{\numberline {6}Conclusion}{80}{chapter.6}%
-\contentsline {chapter}{Bibliography}{81}{chapter*.90}%
+\contentsline {chapter}{Bibliography}{81}{chapter*.89}%
 \contentsline {chapter}{\numberline {A}Title of Appendix A}{I}{appendix.A}%
 \contentsline {chapter}{\numberline {B}Project's website}{II}{appendix.B}%

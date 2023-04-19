@@ -120,10 +120,11 @@ Some \lstinline{Scikit-learn} or \lstinline{Scikit-optimize} objects have option
 This section is focused on exploration of the analyzed loan dataset, particularly on dataset description, distribution analysis and association analysis, in order to infer potential valuable insights and hypotheses which can be used in the preprocessing or modelling part.
 
 \subsection{Dataset Description}
-The analyzed dataset pertains to the HMEQ dataset which contains loan application information and default status of 5,960 US home equity loans. Such dataset was acquired from Credit Risk Analytics. Since this dataset regards the loan application scoring data, using macroeconomic or other external data is omitted due to the dataset characteristics as well as modelling with behavioral scoring.
+The analyzed dataset pertains to the HMEQ dataset which contains loan application information and default status of 5,960 US home equity loans. Such dataset was acquired from Credit Risk Analytics platform. Since this dataset regards the loan application scoring data, using macroeconomic or other external data is omitted due to the dataset characteristics as well as modelling with behavioral scoring.
+Thus our goal is to predict whether the loan applicant will or would default based on provided information from the loan application.
 
-As can be seen in \autoref{tab:dataset}, the dataset contains 13 columns, 11 features and 1 target variable \texttt{BAD} indicating whether the loan was in default (\texttt{1}) if default, otherwise (\texttt{0}). 
-Amongst the 11 features, there are 9 numeric features and 2 categorical features, namely \texttt{REASON} which contains 2 categories - Debt consolidation (\texttt{DebtCon}) and Home improvement (\texttt{HomeImp}), and \texttt{JOB} which fontains following categories - Administration (\texttt{Offce}), Sales, Manager (\texttt{Mgr}), Professional Executive (\texttt{ProfExe}), Self-employed (\texttt{Self}), and Other.
+As can be seen in \autoref{tab:dataset}, the dataset contains 13 columns, 12 features and 1 target variable \texttt{BAD} indicating whether the loan was in default (\texttt{1}) or not (\texttt{0}). 
+Amongst the 12 features, there are 10 numeric features and 2 categorical features, namely \texttt{REASON} which contains 2 categories - Debt consolidation (\texttt{DebtCon}) and Home improvement (\texttt{HomeImp}), and \texttt{JOB} which fontains following categories - Administration (\texttt{Office}), Sales, Manager (\texttt{Mgr}), Professional Executive (\texttt{ProfExe}), Self-employed (\texttt{Self}), and Other.
 
 
 \begin{table}[H]
@@ -549,18 +550,17 @@ To ensure appropriate model training and unbiased evaluation, it is necessary to
 \begin{itemize}\setlength\itemsep{0em} 
     \item Training set for model training, feature selection, and hyperparameter tuning;
     \item Validation set for selecting the best final model;
-    Test set for the final evaluation of the best final model.
+    \item Test set for the final evaluation of the best final model.
 \end{itemize}
 
-\subsubsection{ADASYN}
 The data is split using stratified split to preserve the default status distribution, which was highly imbalanced.
 Stratification ensures that the distribution of defaults and non-defaults remains the same across all sets, thereby avoiding overfitting and data leakage. Using stratification, each set had 80 \% non-defaults and 20 \% defaults. This method enables accurate prediction since the model is trained and evaluated on the same population \citep{igareta2021strat}.
 
 However, stratification alone may not be sufficient for dealing with imbalanced classes.
-Undersampling or random oversampling may lead to loss of information or overfitting.
+Undersampling or random oversampling may lead to loss of information or overfitting due to the minority instances' duplication.
 Therefore, the Adaptive Synthetic Sampling (ADASYN) technique is used for oversampling the minority class.
 ADASYN generates synthetic instances of the minority class based on the nearest neighbors of the minority class instances.
-It is more effective than SMOTE, as it generates more synthetic samples in regions where the density of the minority class is lower and fewer synthetic instances in regions where the density is higher, thereby focusing on the difficult-to-learn minority instances \citep{adasynhaibo}.
+It is more effective than SMOTE, as it generates more synthetic samples in regions where the density of the minority class is lower and fewer synthetic instances in regions where the density is higher, thereby focusing on the difficult-to-learn minority instances.
 In other words, ADASYN focuses on difficult--to--learn minority instances, i.e., instances having lower density, therefore it generates more synthetic instances for such instances \citep{adasynhaibo}.
 Thereby, it makes easier for the machine learning model to learn the decision boundary between the minority and majority classes and boost the model's performance. 
 The oversampling is performed on the training set only after the split to avoid data leakage and biased evaluation.
@@ -641,7 +641,7 @@ Furthermore, the resulting bins are encoded into numeric values using the Weight
 	WoE_{X, b}= \ln \left(\frac{\Pr{\left(X = b\;\middle|\;Y = 0\right)}}{\Pr{\left(X = b\;\middle|\;Y = 1\right)}}\right)
 \end{equation}
 
-he following \autoref{fig:woedist} depicts the distribution of Weight-of-Evidence (WoE) bins for each feature. It can be observed that binning captures linear, non-linear, monotonic, or non-monotonic relationships between the default status and the numeric features in terms of WoE
+he following \autoref{fig:woedist} depicts the distribution of Weight-of-Evidence (WoE) bins for each feature. It can be observed that binning captures either linear, non-linear, monotonic, or non-monotonic relationships between the default status and the numeric features in terms of WoE.
  Regarding the \texttt{DELINQ} feature, a monotonic relationship can be observed, where the higher number of delinquent credit lines, the lower the WoE coefficient, indicating a larger distribution of defaults with respect to non-defaults in the given bin.
  Thus, the higher the number of delinquent credit lines, the higher the likelihood of defaulting in terms of WoE.
 
@@ -651,16 +651,14 @@ he following \autoref{fig:woedist} depicts the distribution of Weight-of-Evidenc
  Thus, in the given dataset, applicants who have recently started working at their new job have a relatively higher total number of years of work experience, making them more creditworthy and less likely to default. On the other hand, for applicants who have been working at their present job between 1 and 19 years, the WoE coefficient is negative.
  This relationship seems to be complex and can be influenced by other factors not present in the dataset, such as the applicant's age, total number of years of work experience, education, etc.
 
- Both numeric and categorical features contain a separate bin capturing missing values, which can be a useful indicator when training a model. This is evident in the \texttt{DEBTINC} feature, where the bin capturing missing values has the most negative WoE coe
- fficient, indicating that there is a larger distribution of defaulters compared to non-defaulters.This finding was already raised in \autoref{subsubsec:target-na-ass} in terms of the strong and statistically significant association between the default status and the missing values in \texttt{DEBTINC}.
+ Both numeric and categorical features contain a separate bin capturing missing values, which can be a useful indicator when training a model. This is evident in the \texttt{DEBTINC} feature, where the bin capturing missing values has the most negative WoE coefficient, indicating that there is a larger distribution of defaulters compared to non-defaulters.
+ This finding was already raised in \autoref{subsubsec:target-na-ass} in terms of the strong and statistically significant association between the default status and the missing values in \texttt{DEBTINC}.
 
  However, inconsistencies can also be observed in terms of distributions from exploratory analysis and the WoE coefficient distributions.
  One example pertains to the \texttt{Mgr} category in the \texttt{JOB} feature, where the WoE coefficient is substantially negative, indicating that among managers, there is a larger distribution of defaulters compared to non-defaulters.
  However, this was not observed in the distribution analysis of categorical features (\autoref{subsubsec:catdist}), where the relative distributions conditional on the default status do not differ too much in terms of the \texttt{Mgr} category.
  This is a result of ADASYN oversampling, which synthetically replicates minority instances, especially those instances that are hard-to-learn.
  Hence defaulted loans that managers have applied for are difficult to learn, and ADASYN balances default distribution by generating default instances having \texttt{JOB} equal to \texttt{Mgr}, which results in an increase in the number of instances having \texttt{JOB} equal to \texttt{Mgr}, i.e., a larger distribution of defaulters in the \texttt{Mgr} bin, and therefore a negative WoE coefficient.
- This inconsistency highlights the limitations of relying solely on WoE analysis, and emphasizes the importance of combining it with other techniques and domain knowledge to gain a comprehensive understanding of the data.
- It also suggests that the ADASYN oversampling technique needs to be used with caution, as it can distort the actual distribution of data and lead to inaccurate insights.
 
 \begin{figure}[H]
     \centering
@@ -693,8 +691,8 @@ Grid Search and Random Search are commonly used methods for hyperparameter tunin
 Additionally, they do not consider any information from previous iterations and rather check all possible hyperparameter combinations or randomly select hyperparameter combinations, respectively.
 
 To overcome these limitations, Bayesian Optimization is used as a hyperparameter tuning approach.
-This method employs a probabilistic model using a Gaussian Process to approximate the objective function of interest
- By utilizing Bayesian inference, the approach updates the prior distribution over hyperparameter values based on the results of previous iterations and uses the resulting posterior distribution to guide the selection of the next set of hyperparameters to evaluate.
+This method employs a probabilistic model using a Gaussian Process to approximate the objective function of interest.
+By utilizing Bayesian inference, the approach updates the prior distribution over hyperparameter values based on the results of previous iterations and uses the resulting posterior distribution to guide the selection of the next set of hyperparameters to evaluate.
 In summary, Bayesian Optimization provides a more efficient and effective approach to hyperparameter tuning compared to Grid Search and Random Search, by utilizing prior information and Bayesian inference to guide the selection of hyperparameters to evaluate.\textit{Theory behind Bayesian Optimization will be described later}.
 
 
@@ -702,7 +700,7 @@ In summary, Bayesian Optimization provides a more efficient and effective approa
 
 
 In Python, a custom function, \lstinline{bayesian_optimization()}, is implemented to perform hyperparameter tuning using Bayesian Optimization.
-This function utilizes the\lstinline{BayesSearchCV} class from the \lstinline{Scikit-optimize} module, with a 10-fold stratified cross-validation scheme and 50 iterations, while maximizing the F1 score.
+This function utilizes \lstinline{BayesSearchCV} class from the \lstinline{Scikit-optimize} module, with a 10-fold stratified cross-validation scheme and 50 iterations, while maximizing the F1 score.
 For each model, the Bayesian Optimization algorithm performs 50 iterations, searching for the best hyperparameters values that maximize the F1 score. Within each iteration, a 10-fold stratified cross-validation is conducted to evaluate the model's F1 score.
 
 The use of \lstinline{BayesSearchCV} with stratified cross-validation in the hyperparameter tuning process provides a robust and reliable approach to selecting the optimal hyperparameters for the model, while the incorporation of Bayesian Optimization enables the efficient exploration of the hyperparameter space.
@@ -927,21 +925,20 @@ The hyperparameter space is defined for each model as follows(\textit{The indivi
 
 In subsection, the process of selecting optimal features is described. Instead of using all the features in dataset, only the most relevant are chosen and the noisy ones are eliminated.
 
-For such case, the Forward Sequential Feature Selection is used. The approach is following - for each model:
-
-\begin{enumerate}\setlength\itemsep{0em}
-    \item tune the model with Bayesian Optimization;
-    \item use such tuned model as an input estimator within Forward Sequential Feature Selection;
-    \item get the best features for each model.
-\end{enumerate}
-
-Thus, when having $n$ input models, it returns $n$  subsets of optimal features, one per each model.
-
+For such case, the Forward Sequential Feature Selection is used.
 Forward Sequential Feature Selection (SFS) is a feature selection technique used in machine learning to select the optimal features from a given dataset.
 It is a wrapper-based approach that selects features by using a specific model to evaluate the usefulness of each feature in the dataset.
 The process starts with an empty set of features and iteratively adds one feature at a time that maximizes the performance of the model.
 The process continues until the desired number of features is selected or no improvement in model performance is observed (or until the stop criterion is met).
 
+The approach is following - for each model:
+\begin{enumerate}\setlength\itemsep{0em}
+    \item tune the model with Bayesian Optimization;
+    \item use such tuned model as an input estimator within Forward Sequential Feature Selection;
+    \item get the best features from the Forward Sequential Feature Selection.
+\end{enumerate}
+
+Thus, when having $n$ input models, it returns $n$  subsets of optimal features, one per each model.
 
 To implement Forward SFS, the custom function \lstinline{bayesian_optimization()} is used to tune the model, and the \lstinline{SequentialFeatureSelector} class from the \lstinline{Scikit-learn} module is used for feature selection.
 The \lstinline{Scikit-learn}'s \lstinline{SequentialFeatureSelector} class performs feature selection in the forward direction by maximizing the F1 score with a 10-fold stratified cross-validation approach.
@@ -972,7 +969,7 @@ On the other hand, features such as \texttt{LOAN} and \texttt{REASON} were selec
 \end{figure}
 
 
-According to \autoref{fig:fsdistmod}, models such as K--Nearest Neighbors, Random Forest, Gradient Boosting and Support Vector Machine chose all the features from the dataset. On the other hand, Gaussian Naive Bayes chose only 6. It seems to be that most of the features are important as each model has selected a higher amount of features. \textit{the figure will be adjusted, it has been incorrectly exported}.
+According to \autoref{fig:fsdistmod}, models such as K--Nearest Neighbors, Random Forest, Gradient Boosting and Support Vector Machine chose almost all the features as one feature feature was eliminated. On the other hand, Gaussian Naive Bayes chose only 6. It seems to be that most of the features are important as each model has selected a higher amount of features. \textit{the figure will be adjusted, it has been incorrectly exported}.
 
 \begin{figure}[H]
     \centering
@@ -987,7 +984,7 @@ According to \autoref{fig:fsdistmod}, models such as K--Nearest Neighbors, Rando
 In combination with the pre--selected subsets of features, the next step regards the selection of the final model. The process is following:
 
 \begin{enumerate}\setlength\itemsep{0em}
-    \item tune each model on each subset of optimal features (selected within Feature Selection) with Bayesian Optimization on the training set.
+    \item tune each model on each subset of optimal features (selected within Feature Selection) with Bayesian Optimization on the training set;
     \item evaluate the tuned model on the validation set.
 \end{enumerate}
 
@@ -1072,7 +1069,7 @@ Henceforth, the weights are assigned to different metrics based on their relevan
 
 
 
-The custom function \lstinline{model_selection()} iterively prints the process of the model tuning and end evaluation on each subset of features, in order to keep the track of such process as it is depicted in \autoref{fig:modselprint}.
+The custom function \lstinline{model_selection()} iteratively prints the process of the model tuning and evaluation on each subset of features, in order to keep the track of such process as it is depicted in \autoref{fig:modselprint}.
 Particularly, it prints which model on which features is being tuned and evaluated, exeuction time, optimal threshold, F1 score on the validation set and the best hyperparameters.
 
 \begin{figure}[H]
@@ -1084,7 +1081,7 @@ Particularly, it prints which model on which features is being tuned and evaluat
 \end{figure}
 
 
-The final output of the function \lstinline{model_selection()} is table which summarizes the model's computed metrics as depicted in \autoref{tab:modelsectab}. As can be seen, the best models in terms of ranking are the Gradient Boosting models which in general have the highest score metrics and the lowest loss metrics. On the other hand, the worst-performing models are Gaussian Naive Bayes models 
+The final output of the function \lstinline{model_selection()} is table which summarizes the model's computed metrics as depicted in \autoref{tab:modelsectab}. As can be seen, the best models in terms of ranking are the Gradient Boosting models which in general have the highest score metrics and the lowest loss metrics. On the other hand, the worst-performing models are Gaussian Naive Bayes models.
 
 
 \clearpage
@@ -1293,7 +1290,7 @@ After recalibrating the model and threshold, the final step in evaluating the mo
 This evaluation is critical to determine whether the model can generalize well to new data beyond the training, feature selection, and model selection phases.
 During the evaluation, the recalibrated classification threshold of 0.4072, determined in the model recalibration process, is also used.
 
-In \autoref{fig:confmat}, the confusion matrix for the final model, based on the test set and using the recalibrated threshold, is presented. The matrix shows that the model is generalizing well, having accurately predicted 140 defaults and misclassified only 38 defaults. Such a result indicates that the model is a good fit for the data and can provide useful predictions for the problem at hand.
+In \autoref{fig:confmat}, the confusion matrix for the final model, based on the test set and using the recalibrated threshold, is presented. The matrix shows that the model is generalizing well, having correctly predicted 140 defaults and misclassified only 38 defaults and further, correctly predicted 686 non--defaults and misclassified only 30 non--defaults. Such a result indicates that the model is a good fit for the data and can provide useful predictions for the problem at hand.
 
 \begin{figure}[H]
     \centering
@@ -1304,12 +1301,10 @@ In \autoref{fig:confmat}, the confusion matrix for the final model, based on the
 \end{figure}
 
 In order to obtain a better understanding of the model's performance on previously unseen data, we computed several metrics that were used during the model selection process.
-These metrics are presented in \autoref{tab:metrics eval}. The results indicate that the model performs well on the unseen data, with most of the metrics scoring around 80 \% to 90 \%
+These metrics are presented in \autoref{tab:metrics eval}. The results indicate that the model performs well on the unseen data, with most of the scores metrics around 80 \% to 90 \%.
 Furthermore, the loss metrics are relatively low, indicating that the model can effectively distinguish between defaults and non-defaults.
-Overall, these results suggest that the model is performing well and is suitable for predicting defaults in financial transactions.
-It is worth noting that the metrics evaluated in this thesis, such as F1, Precision, Recall, Accuracy, and AUC, are commonly used in evaluating binary classification models. The results suggest that the model has a good balance between correctly identifying defaults and non-defaults, as well as minimizing false positives and false negatives.
-The Brier Score Loss and Zero-One loss metrics, which represent the difference between the predicted and actual probabilities and the proportion of misclassified samples, respectively, are also low.
-This further confirms the model's ability to accurately predict defaults.
+Overall, these results suggest that the model is performing well and is suitable for predicting defaults.
+The results suggest that the model has a good balance between correctly identifying defaults and non-defaults, as well as minimizing false positives and false negatives. This further confirms the model's ability to accurately predict defaults.
     \begin{table}[H]
         \small
         \setlength{\tabcolsep}{8pt}
@@ -1405,7 +1400,7 @@ This value is derived from a comprehensive analysis of the training, validation,
 
 \subsection{Flask and HTML Web Application}
 
-In this case, the machine learning model was deployed into a web application using Flask and HTML. The application is temporarily deployed on the cloud servers of the PythonAnywhere platform and was accessible at this URL: \url{http://ml-credit-risk-app-petrngn.pythonanywhere.com/}.
+In this case, the machine learning model was deployed into a web application using Flask and HTML. The application is temporarily deployed on the Cloud server on the \textbf{PythonAnywhere} platform and is accessible here: \url{http://ml-credit-risk-app-petrngn.pythonanywhere.com/}.
 However, the application will be shut down after the thesis defense and will not be available online anymore due to the budget reasons.
 Nevertheless, the code for the application is available in the GitHub repository, and the application can be run locally using any Python compiler.
 
@@ -1419,7 +1414,7 @@ Furthermore, prior to deployment, we need to prepare several Python inputs for t
     \item WoE Bins - a set of bins and WoE values used for mapping the WoE values to missing values.
 \end{itemize}
 
-Such inputs required for the machine learning application are exported in the \lstinline{.pkl} format using the \lstinline{pickle} module. This format allows for efficient and easy-to-use serialization and deserialization of the trained model inputs. The pickled file is then loaded directly into the Flask application.
+Such inputs required for the machine learning application are exported in the \lstinline{.pkl} format using the \lstinline{pickle} module. This format allows for efficient and easy-to-use serialization and deserialization of the inputs. The pickled file is then loaded directly into the Flask application.
 
 For the back-end of the web application, Flask is used to deploy the machine learning model. The Flask application is coded in the \lstinline{app.py} file, which is stored in the \lstinline{flask_app} repository. The front-end of the web application is coded in HTML, with CSS and JavaScript elements used to enhance the user interface.
  
@@ -1439,7 +1434,7 @@ Note that not all fields in the loan application form need to be filled out, exc
 \clearpage
 
 Once, the loan application form is submitted, the web application uses the pickled input to transform the data from the loan application form and use it in the recalibrated model in order to get the result, whether the given loan applicant would repay his loan based on predetermined threshold. The result is then displayed in the web application, as shown in \autoref{fig:flaskres}.
-Particularly, the web application returns whether the loan application for denied or approved and also the probability score of default.
+Particularly, the web application returns whether the loan application would be denied or approved and also the probability score of default.
 
 \begin{figure}[H]
     \centering
