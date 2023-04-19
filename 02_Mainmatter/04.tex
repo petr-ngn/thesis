@@ -111,20 +111,18 @@ To achieve this, the user has to either change the path in the terminal using \t
 \end{figure}
 
 
+To preserve the reproducibility of this solution and conistency of the results, the random seed is instantiated to \texttt{42}, so for instance data split, model optimization or training would be deterministic and not totally random everytime when replicating the solution.
 
-
-
-
-
+Some \lstinline{Scikit-learn} or \lstinline{Scikit-optimize} objects have optional argument \texttt{n\_jobs} which utilizes the number of CPU cores used during the parallelizing computation. Such argument was set to \texttt{-1}, hence all the processors are used in order to  speed up the training or optimization process.
 
 
 \section{Data Exploration}
 This section is focused on exploration of the analyzed loan dataset, particularly on dataset description, distribution analysis and association analysis, in order to infer potential valuable insights and hypotheses which can be used in the preprocessing or modelling part.
 
 \subsection{Dataset Description}
-The analyzed dataset pertains to the HMEQ dataset which contains loan application information and default status of 5,960 US home equity loans. Such dataset was acquired from Credit Risk Analytics.
+The analyzed dataset pertains to the HMEQ dataset which contains loan application information and default status of 5,960 US home equity loans. Such dataset was acquired from Credit Risk Analytics. Since this dataset regards the loan application scoring data, using macroeconomic or other external data is omitted due to the dataset characteristics as well as modelling with behavioral scoring.
 
-As can be seen in \autoref{tab:dataset}, the dataset contains 13 columns, 11 features and 1 target variable \texttt{BAD} indicating whether the loan was in default (\texttt{1}) or not (\texttt{0}). 
+As can be seen in \autoref{tab:dataset}, the dataset contains 13 columns, 11 features and 1 target variable \texttt{BAD} indicating whether the loan was in default (\texttt{1}) if default, otherwise (\texttt{0}). 
 Amongst the 11 features, there are 9 numeric features and 2 categorical features, namely \texttt{REASON} which contains 2 categories - Debt consolidation (\texttt{DebtCon}) and Home improvement (\texttt{HomeImp}), and \texttt{JOB} which fontains following categories - Administration (\texttt{Offce}), Sales, Manager (\texttt{Mgr}), Professional Executive (\texttt{ProfExe}), Self-employed (\texttt{Self}), and Other.
 
 
@@ -138,31 +136,32 @@ Amongst the 11 features, there are 9 numeric features and 2 categorical features
     \toprule
     \textbf{Columns} & \textbf{Description} & \textbf{Data type}\\
     \midrule
+    \hline
     BAD & Default status & Boolean \\
-    \hline
+
     LOAN & Requested loan amount & numeric \\
-    \hline
+
     MORTDUE & Loan amount due on existing mortgage & numeric \\
-    \hline
+
     VALUE & Value of current underlying collateral property & numeric \\
-    \hline
+
     REASON & Reason of loan application & categorical \\
-    \hline
     JOB & Job occupancy category & categorical \\
-    \hline
+
     YOJ & Years of employment at present job & numeric \\
-    \hline
+
     DEROG & Number of derogatory public reports & numeric \\
-    \hline
+
     DELINQ & Number of delinquent credit lines & numeric \\
-    \hline
+
     CLAGE & Age of the oldest credit line in months & numeric \\
-    \hline
+
     NINQ & Number of recent credit inquiries & numeric \\
-    \hline
+
     CLNO & Number of credit lines & numeric \\
-    \hline
+
     DEBTINC & Debt-to-income ratio & numeric \\
+    \hline
     \bottomrule
     \end{tabular}
     \end{center}
@@ -171,7 +170,8 @@ Amongst the 11 features, there are 9 numeric features and 2 categorical features
     \end{center}
 \end{table}
 
-After the initial data inspection, data does not contain any duplicates but does contain missing values, which are summarized in \autoref{tab:natable}. Most of the missing values contains the feature \texttt{DEBTINC} with 1,267 missing observations, whereas columns indicating default status (\texttt{BAD}) or requested loan amount (\texttt{LOAN}) do not contain any missing values.
+After the initial data inspection, data does not contain any duplicates but does contain missing values, which are summarized in \autoref{tab:natable}.
+Most of the missing values contains the feature \texttt{DEBTINC} with 1,267 missing observations, whereas columns indicating default status (\texttt{BAD}) or requested loan amount (\texttt{LOAN}) do not contain any missing values, which is expected as the bank should have the available information about their loans whether they have defaulted or not, and since this dataset pertains to the application scoring, when applying for a loan, an applicant should always fill out the requested loan amount.
 
 \begin{table}[H]
     \small
@@ -202,7 +202,7 @@ DEBTINC & 1267 & 21.26 \% \\
     \end{tabular}
     \vspace{0.35em}
 
-    \centering{\begin{source}Author's results in Python.\end{source}}\vspace{-1em}
+    \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{table}
 
 
@@ -221,7 +221,7 @@ This may cause problems in the modelling part, as the model may be biased toward
     \caption{Default status distribution}
     \label{fig:defaultdist}
     \includegraphics[width=150mm]{Figures/Default_Distribution.jpg}\vspace{-1em}
-\centering{\begin{source}Author's results in Python.\end{source}}\vspace{-1em}
+\centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
 
 \subsubsection{Numeric Features' Distribution}
@@ -248,7 +248,7 @@ The association between the default status and the numeric features is further i
     \caption{Conditional distribution of numeric features}\vspace{0.5em}
     \label{fig:boxfeat}
     \includegraphics[width=140mm]{Figures/Continuous_Features_Distribution_Boxplots.jpg}
-    \centering{\begin{source}Author's results in Python.\end{source}}\vspace{-1em}
+    \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
 
 Due to the fact that the boxplots do not capture the missing values occurred in given features, it is also important to inspect the numbers and proportions of missing values in each feature, conditional on the default status.
@@ -321,7 +321,7 @@ Hence, a moderate association between the \texttt{JOB} feature and the default s
     \caption{Conditional distribution of categorical features}\vspace{0.5em}
     \label{fig:catdist}
     \includegraphics[width=140mm]{Figures/Categorical_Features_Distribution.jpg}
-    \centering{\begin{source}Author's results in Python.\end{source}}\vspace{-1em}
+    \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
     \end{figure}
 
 \subsection{Association Analysis}
@@ -385,7 +385,7 @@ These findings support the observations made in \autoref{subsubsec:numdist} rega
     
             \centering\footnotesize{$^{*}$: $p<0.10$, $^{**}$: $p<0.05$, $^{***}$: $p<0.01$}\vspace{0.7em}
 
-            \centering{\begin{source}Author's results in Python.\end{source}}\vspace{-1em}
+            \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 
     \end{table}
 
@@ -429,7 +429,7 @@ Ultimately, the usefulness of a feature in predicting the target variable is det
     
             \centering\footnotesize{$^{*}$: $p<0.10$, $^{**}$: $p<0.05$, $^{***}$: $p<0.01$}\vspace{0.7em}
 
-            \centering{\begin{source}Author's results in Python.\end{source}}\vspace{-1em}
+            \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{table}
 
 \subsubsection{Association between default status and missing values}
@@ -486,7 +486,7 @@ Therefore, we can anticipate that these features will be crucial indicators in d
     
             \centering\footnotesize{$^{*}$: $p<0.10$, $^{**}$: $p<0.05$, $^{***}$: $p<0.01$}\vspace{0.7em}
 
-            \centering{\begin{source}Author's results in Python.\end{source}}\vspace{-1em}
+            \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{table}
 
 \subsubsection{Missing Values Association}
@@ -506,7 +506,7 @@ Therefore, it can be inferred that a significant number of loan applicants tend 
         \caption{Nullity dendrogram}\vspace{0.5em}
         \label{fig:dendrogram}
         \includegraphics[width=150mm]{Figures/NA_Dendrogram.jpg}
-        \centering{\begin{source}Author's results in Python.\end{source}}\vspace{-1em}
+        \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
     \end{figure}
     
 \subsubsection{Multicolinearity Analysis}
@@ -528,7 +528,7 @@ In the \autoref{fig:spearmancorr}, we can observe a very strong correlation betw
         \caption{Spearman Correlation Matrix}\vspace{0.5em}
         \label{fig:spearmancorr}\
         \includegraphics[width=150mm]{Figures/Spearman_Correlation_Matrix_Continuous_Features.jpg}
-        \centering{\begin{source}Author's results in Python.\end{source}}\vspace{-1em}
+        \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
     \end{figure}
 
 
@@ -588,7 +588,7 @@ The following \autoref{tab:split} shows the default distribution of the individu
     \end{tabular}
     \vspace{0.7em}
 
-    \centering{\begin{source}Author's results in Python.\end{source}}\vspace{-1em}
+    \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{table}
 
 In Python, the data are divided and oversampled using a custom function \lstinline{data_split()}.
@@ -667,7 +667,7 @@ he following \autoref{fig:woedist} depicts the distribution of Weight-of-Evidenc
     \caption{WoE Bins Distribution}\vspace{0.5em}
     \label{fig:woedist}
     \includegraphics[width=150mm]{Figures/WoE_Distribution.jpg}
-    \centering{\begin{source}Author's results in Python.\end{source}}\vspace{-1em}
+    \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
 
 
@@ -676,14 +676,14 @@ Once the data are finally preprocessed, the next step regards the modelling part
 
 In Python, 8 different machine learning models from \lstinline{Scikit-learn} module are used for the default status prediction, which are:
 \begin{itemize}\setlength\itemsep{0em}
-    \item Logistic Regression - \lstinline{LogisticRegression from sklearn.linear_model},
-    \item Decision Tree - \lstinline{DecisionTreeClassifier from sklearn.tree},
-    \item Gaussian Naive Bayes - \lstinline{GaussianNB from sklearn.naive_bayes},
-    \item K-Nearest Neighbors - \lstinline{KNeighborsClassifier from sklearn.neighbors},
-    \item Random Forest - \lstinline{RandomForestClassifier from sklearn.ensemble},
-    \item Gradient Boosting - \lstinline{GradientBoostingClassifier from sklearn.ensemble},
-    \item Support Vector Machine - \lstinline{SVC from sklearn.svm},
-    \item Neural Network - \lstinline{MLPClassifier from sklearn.neural_network}.
+    \item Logistic Regression - \lstinline{LogisticRegression()},
+    \item Decision Tree - \lstinline{DecisionTreeClassifier()},
+    \item Gaussian Naive Bayes - \lstinline{GaussianNB()},
+    \item K-Nearest Neighbors - \lstinline{KNeighborsClassifier()},
+    \item Random Forest - \lstinline{RandomForestClassifier()},
+    \item Gradient Boosting - \lstinline{GradientBoostingClassifier()},
+    \item Support Vector Machine - \lstinline{SVC()},
+    \item Neural Network - \lstinline{MLPClassifier()}.
 \end{itemize}
 
 \subsection{Hyperparameter Bayesian Optimization}
@@ -695,7 +695,7 @@ Additionally, they do not consider any information from previous iterations and 
 To overcome these limitations, Bayesian Optimization is used as a hyperparameter tuning approach.
 This method employs a probabilistic model using a Gaussian Process to approximate the objective function of interest
  By utilizing Bayesian inference, the approach updates the prior distribution over hyperparameter values based on the results of previous iterations and uses the resulting posterior distribution to guide the selection of the next set of hyperparameters to evaluate.
-In summary, Bayesian Optimization provides a more efficient and effective approach to hyperparameter tuning compared to Grid Search and Random Search, by utilizing prior information and Bayesian inference to guide the selection of hyperparameters to evaluate.\footnote{Theory behind Bayesian Optimization will be described later}.
+In summary, Bayesian Optimization provides a more efficient and effective approach to hyperparameter tuning compared to Grid Search and Random Search, by utilizing prior information and Bayesian inference to guide the selection of hyperparameters to evaluate.\textit{Theory behind Bayesian Optimization will be described later}.
 
 
 
@@ -734,7 +734,7 @@ The hyperparameter space is defined for each model as follows(\textit{The indivi
     \end{tabular}
     \vspace{0.7em}
 
-    \centering{\begin{source}Author's results in Python.\end{source}}\vspace{-1em}
+    \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{table}
 
 
@@ -759,7 +759,7 @@ The hyperparameter space is defined for each model as follows(\textit{The indivi
     \end{tabular}
     \vspace{0.7em}
 
-    \centering{\begin{source}Author's results in Python.\end{source}}\vspace{-1em}
+    \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{table}
 
 \subsubsection{Gaussian Naive Bayes}
@@ -781,7 +781,7 @@ The hyperparameter space is defined for each model as follows(\textit{The indivi
     \end{tabular}
     \vspace{0.7em}
 
-    \centering{\begin{source}Author's results in Python.\end{source}}\vspace{-1em}
+    \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{table}
 
 
@@ -808,7 +808,7 @@ The hyperparameter space is defined for each model as follows(\textit{The indivi
     \end{tabular}
     \vspace{0.7em}
 
-    \centering{\begin{source}Author's results in Python.\end{source}}\vspace{-1em}
+    \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{table}
 
 \subsubsection{Random Forest}
@@ -836,7 +836,7 @@ The hyperparameter space is defined for each model as follows(\textit{The indivi
     \end{tabular}
     \vspace{0.7em}
 
-    \centering{\begin{source}Author's results in Python.\end{source}}\vspace{-1em}
+    \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{table}
 
 \subsubsection{Gradient Boosting}
@@ -863,7 +863,7 @@ The hyperparameter space is defined for each model as follows(\textit{The indivi
     \end{tabular}
     \vspace{0.7em}
 
-    \centering{\begin{source}Author's results in Python.\end{source}}\vspace{-1em}
+    \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{table}
 
 \subsubsection{Support Vector Machine}
@@ -893,7 +893,7 @@ The hyperparameter space is defined for each model as follows(\textit{The indivi
     \end{tabular}
     \vspace{0.7em}
 
-    \centering{\begin{source}Author's results in Python.\end{source}}\vspace{-1em}
+    \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{table}
 
 
@@ -919,9 +919,8 @@ The hyperparameter space is defined for each model as follows(\textit{The indivi
     \end{tabular}
     \vspace{0.7em}
 
-    \centering{\begin{source}Author's results in Python.\end{source}}\vspace{-1em}
+    \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{table}
-
 
 \subsection{Feature Selection}
 \label{subsec:feature-selection}
@@ -938,23 +937,26 @@ For such case, the Forward Sequential Feature Selection is used. The approach is
 
 Thus, when having $n$ input models, it returns $n$  subsets of optimal features, one per each model.
 
-In Python, a custom function \lstinline{SFS_feature_selection()} is used which further uses another custom function defined previously \lstinline{bayesian_optimization()} for tuning the model, and \lstinline{SequentialFeatureSelector} class from the module \lstinline{Scikit-learn} for feature selection.
-Particularl,y the feature selection with \lstinline{SequentialFeatureSelector} class is performed with the \texttt{forward} direction, 10--fold stratified cross validation while maximizing F1 score.
+Forward Sequential Feature Selection (SFS) is a feature selection technique used in machine learning to select the optimal features from a given dataset.
+It is a wrapper-based approach that selects features by using a specific model to evaluate the usefulness of each feature in the dataset.
+The process starts with an empty set of features and iteratively adds one feature at a time that maximizes the performance of the model.
+The process continues until the desired number of features is selected or no improvement in model performance is observed (or until the stop criterion is met).
 
 
+To implement Forward SFS, the custom function \lstinline{bayesian_optimization()} is used to tune the model, and the \lstinline{SequentialFeatureSelector} class from the \lstinline{Scikit-learn} module is used for feature selection.
+The \lstinline{Scikit-learn}'s \lstinline{SequentialFeatureSelector} class performs feature selection in the forward direction by maximizing the F1 score with a 10-fold stratified cross-validation approach.
+The \lstinline{tol} parameter is used to set a threshold for the minimum increase in performance required for adding a new feature to the optimal subset.
+Such parameter is set to a number which is close to zero, thus the feature selection process stops when the model's F1 score is not increasing between the two consecutive steps.
 
-Instead of choosing a fixed number of features, \lstinline{SequentialFeatureSelector} class also allows to choose a variable number of features due to the early stopping (\texttt{tol} paramater) - The \lstinline{SequentialFeatureSelector} stops adding new features into optimal subset if the objective score is not incremented by at least \texttt{tol} between two consecutive feature additions\citep{scikit-learn-sequential-feature-selector}.
-The \texttt{tol} parameter is set to the number close to zero indicating that the feature selection should stop adding new features if the F1 score is not increasing between two consecutive feature additions.
-
-The custom function \lstinline{SFS_feature_selection()} iterively prints the process of the feature selection for in order to keep the track of such process as it is depicted in \autoref{fig:fsprint}.
-Particularly, it prints which step model and which step is currently being executed (whether it is Bayesian Optimization or Feature Selection), the execution time and the selected features for each model.
+In Python, the custom function \lstinline{SFS_feature_selection()} is used to implement the Forward SFS approach.
+This function iteratively prints the process of the feature selection, including the current step (Bayesian Optimization or Feature Selection), the execution time, and the selected features for each model.
 
 \begin{figure}[H]
     \centering
     \caption{Feature Selection Print Statement}\vspace{0.5em}
     \label{fig:fsprint}\
     \includegraphics[width=140mm]{Figures/fs_print.jpg}
-    \centering{\begin{source}Author's results in Python.\end{source}}\vspace{-1em}
+    \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
 
 
@@ -966,7 +968,7 @@ On the other hand, features such as \texttt{LOAN} and \texttt{REASON} were selec
     \caption{Reccurrence of Selected Features}\vspace{0.5em}
     \label{fig:fsrec}\
     \includegraphics[width=150mm]{Figures/Recurrence_Selected_Features.jpg}
-    \centering{\begin{source}Author's results in Python.\end{source}}\vspace{-1em}
+    \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
 
 
@@ -977,7 +979,7 @@ According to \autoref{fig:fsdistmod}, models such as K--Nearest Neighbors, Rando
     \caption{Distribution of Selected Features per Model}\vspace{0.5em}
     \label{fig:fsdistmod}\
     \includegraphics[width=140mm]{Figures/Selected_Features_Distribution.jpg}
-    \centering{\begin{source}Author's results in Python.\end{source}}\vspace{-1em}
+    \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
 
 \subsection{Model Selection}
@@ -986,7 +988,7 @@ In combination with the pre--selected subsets of features, the next step regards
 
 \begin{enumerate}\setlength\itemsep{0em}
     \item tune each model on each subset of optimal features (selected within Feature Selection) with Bayesian Optimization on the training set.
-    \item evaluate tuned model on the validation set.
+    \item evaluate the tuned model on the validation set.
 \end{enumerate}
 
 Thus, when having $n$ input models and $m$ subsets of selected features, we get $n \times m$ tuned models.
@@ -1008,10 +1010,9 @@ Further, for each model, we evalute it on the validation set by computing follow
     \item Zero-One Loss.
 \end{itemize}
 
-Pertaining to the class--based metrics which require predicted classes (and not predicted probability scores), such as F1 score, Precision, Recall, Accuracy, Matthews Correlation Coefficient, Jaccard Score and Zero-One Loss, by default they use a default classifiation threshold of 0.5.
-Meaning if the predicted probability score is higher than 0.5, it will be encoded as predicted class of 1 and otherwise. 
-Note that 0.5 clasification threshold does not have to be valid for real life use cases. Therefore, it is deemed desired to calculate an optimal threshold instead of using the default one.
-One way how to achieve this is to use Younden index which is derived from ROC curve and looks for such threshold, which maximizes the sum of True Positive Rate and True Negative Rate, decreased by 1:
+When evaluating classification models using class-based metrics such as F1 score, Precision, Recall, Accuracy, Matthews Correlation Coefficient, Jaccard Score, and Zero-One Loss, a default classification threshold of 0.5 is often used. This threshold separates predicted classes based on whether the predicted probability score is higher or lower than 0.5.
+However, in real-world use cases, the 0.5 classification threshold may not be appropriate. Therefore, it is recommended to calculate an optimal threshold rather than relying on the default one.
+One approach to finding the optimal threshold is to use the Younden index, which is derived from the Receiver Operating Characteristic (ROC) curve. The Younden index searches for the threshold that maximizes the sum of True Positive Rate and True Negative Rate, decreased by 1, thus:
 \begin{equation}\label{eq}
 J = TPR + TNR - 1
 \end{equation}
@@ -1066,7 +1067,7 @@ Henceforth, the weights are assigned to different metrics based on their relevan
     \end{tabular}
     \vspace{0.7em}
 
-    \centering{\begin{source}Author's results in Python.\end{source}}\vspace{-1em}
+    \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{table}
 
 
@@ -1079,8 +1080,11 @@ Particularly, it prints which model on which features is being tuned and evaluat
     \caption{Model Selection Print Statement}\vspace{0.5em}
     \label{fig:modselprint}\
     \includegraphics[width=140mm]{Figures/model_selection_print.jpg}
-    \centering{\begin{source}Author's results in Python.\end{source}}\vspace{-1em}
+    \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
+
+
+The final output of the function \lstinline{model_selection()} is table which summarizes the model's computed metrics as depicted in \autoref{tab:modelsectab}. As can be seen, the best models in terms of ranking are the Gradient Boosting models which in general have the highest score metrics and the lowest loss metrics. On the other hand, the worst-performing models are Gaussian Naive Bayes models 
 
 
 \clearpage
@@ -1105,11 +1109,12 @@ Particularly, it prints which model on which features is being tuned and evaluat
         \textbf{Tuned model} & \textbf{FS model} & \# \newline Features & Execution time & Threshold & F1 & Precision & Recall & Accuracy & AUC & SD & KS & MCC & JC & BSL & ZOL & rank \\
         \midrule
         \hline
-        GB & KNN & 11 & 814 & 0.5072 & 0.7978 & 0.7912 & 0.8045 & 0.9184 & 0.9587 & 0.9175 & 0.7989 & 0.7467 & 0.6636 & 0.0687 & 0.08156 & 1 \\
+        GB & KNN & 11 & 814 & 0.5072 & 0.7978 & 0.7912 & 0.8045 & 0.9184 & 0.9587 & 0.9175 & 0.7989 & 0.7467 & 0.6636 & 0.0687 & 0.0816 & 1 \\
         
         GB & SVM & 11 & 951 & 0.5053 & 0.7896 & 0.8155 & 0.7654 & 0.9184 & 0.9555 & 0.9109 & 0.7961 & 0.7397 & 0.6524 & 0.0718 & 0.0816 & 2 \\
         GB & MLP & 10 & 776 & 0.4955 & 0.7809 & 0.7853 & 0.7765 & 0.9128 & 0.9515 & 0.9030 & 0.7751 & 0.7265 & 0.6406 & 0.0666 & 0.0872 & 3 \\
         GB & GB & 11 & 723 & 0.4132 & 0.7799 & 0.7778 & 0.7821 & 0.9117 & 0.9543 & 0.9086 & 0.7989 & 0.7247 & 0.6393 & 0.0703 & 0.0883 & 4 \\
+        GB & RF & 11 & 853 & 0.4973 & 0.7775 & 0.7841 & 0.7710 & 0.9117 & 0.9541 & 0.9082 & 0.7961 & 0.7225 & 0.6360 & 0.0669 & 0.0883 & 5 \\
 \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots \\
 GNB & MLP & 10 & 23 & 0.2194 & 0.6013 & 0.5000 & 0.7542 & 0.8000 & 0.8493 & 0.6986 & 0.5768 & 0.4930 & 0.4299 & 0.1319 & 0.2000 & 60.\\
 GNB & GNB & 6 & 23 & 0.4787 & 0.5950 & 0.5039 & 0.7263 & 0.8022 & 0.8356 & 0.6711 & 0.5559 & 0.4835 & 0.4235 & 0.1470 & 0.1978 & 61 \\
@@ -1121,10 +1126,8 @@ GNB & GNB & 6 & 23 & 0.4787 & 0.5950 & 0.5039 & 0.7263 & 0.8022 & 0.8356 & 0.671
     \end{tabular}}
     \vspace{1em}
 
-    \centering{\begin{source}Author's results in Python.\end{source}}\vspace{-1em}
+    \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{table}
-
-
 
 \clearpage
 \newpage
@@ -1132,78 +1135,181 @@ GNB & GNB & 6 & 23 & 0.4787 & 0.5950 & 0.5039 & 0.7263 & 0.8022 & 0.8356 & 0.671
 \restoregeometry
 \fancyheadoffset{0pt}
 
-
-															
-
-\begin{figure}[H]
-    \centering
-    \caption{Model Selection Print Statement}\vspace{0.5em}
-    \label{fig:modselprint}\
-    \includegraphics[width=150mm]{Figures/model_selection_print.jpg}
-    \centering{\begin{source}Author's results in Python.\end{source}}\vspace{-1em}
-\end{figure}
-
-
+In order to gain a more detailed understanding of the model selection results, the distribution of computed metrics is plotted. In \autoref{fig:f1dist}, the F1 score distribution is visualized for each input model. An outlier can be observed in KNN where the F1 score is 0.				
 \begin{figure}[H]
     \centering
     \caption{F1 score distribution}\vspace{0.5em}
     \label{fig:f1dist}\
     \includegraphics[width=140mm]{Figures/F1_Distribution.jpg}
-    \centering{\begin{source}Author's results in Python.\end{source}}\vspace{-1em}
+    \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
-
+Such outlier is removed in \autoref{fig:f1distclean} to gain a more general insight into the F1 score distribution.
+It can be observed that Gradient Boosting models have the highest F1 scores of around 80 \%.
+Another tree ensemble model, Random Forest, is performing well as the second best. However, more transparent models such as Logistic Regression and Naive Bayes are performing poorly, having F1 scores around 60 \%.
+Surprisingly, black box models such as Support Vector Machine and Neural Network are outperformed by the less complex KNN model.
+Nonetheless, given the relatively small sample size, KNN performs better than Neural Network and non-linear SVM on small datasets, whereas NN or non-linear SVM generally outperform KNN when it comes to large datasets.
 \begin{figure}[H]
     \centering
     \caption{F1 score distribution - without outliers}\vspace{0.5em}
     \label{fig:f1distclean}\
     \includegraphics[width=140mm]{Figures/F1_wo_outliers_Distribution.jpg}
-    \centering{\begin{source}Author's results in Python.\end{source}}\vspace{-1em}
+    \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
 
+The optimal threshold distribution for each base model is presented in \autoref{fig:thresdist}. We can observe an outlier in KNN having a threshold value of 1, which explains the F1 score outlier found previously in \autoref{fig:f1dist}.
 \begin{figure}[H]
     \centering
-    \caption{Classification Threshold distribution}\vspace{0.5em}
+    \caption{Threshold distribution}\vspace{0.5em}
     \label{fig:thresdist}\
     \includegraphics[width=140mm]{Figures/Threshold_Distribution.jpg}
-    \centering{\begin{source}Author's results in Python.\end{source}}\vspace{-1em}
+    \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
 
-
+In order to obtain a better insight into the distribution of optimal thresholds, the outlier in KNN is excluded, resulting in the threshold distribution depicted in \autoref{fig:thresdistclean}. The optimal threshold values are mostly distributed below 0.5, indicating that the models are generally more conservative. The most conservative model is Gaussian Naive Bayes, which has a median threshold value around 0.25.
 \begin{figure}[H]
     \centering
-    \caption{Classification Threshold distribution - without outliers}\vspace{0.5em}
+    \caption{Threshold distribution - without outliers}\vspace{0.5em}
     \label{fig:thresdistclean}\
     \includegraphics[width=140mm]{Figures/Threshold_wo_outliers_Distribution.jpg}
-    \centering{\begin{source}Author's results in Python.\end{source}}\vspace{-1em}
+    \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
 
-
+Upon examining the optimization time of each model, it can be observed that the transparent and non-complex models such as Logistic Regression, Gaussian Naive Bayes, or even Decision Tree, which take around only 1 minute to optimize themselves, also perform poorly, as already inspected in \autoref{fig:f1distclean}.
+Conversely, the most time-consuming models are undoubtedly the Neural Network models, which take around 30 minutes to optimize themselves. Other time-consuming models include Gradient Boosting and Support Vector Machine, which take around 13 and 11 minutes to optimize themselves, respectively.
+This finding suggests that longer optimization time does not necessarily lead to better performance, as the Neural Network models are significantly outperformed by several other models.
 \begin{figure}[H]
     \centering
     \caption{Execution time distribution}\vspace{0.5em}
     \label{fig:timedist}\
     \includegraphics[width=140mm]{Figures/EXECUTION_TIME_Distribution.jpg}
-    \centering{\begin{source}Author's results in Python.\end{source}}\vspace{-1em}
+    \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
 
+The execution time and the F1 score were inspected together using a scatterplot, as shown in \autoref{fig:scattertime}.
+A cluster of non-complex and transparent models, such as Logistic Regression, Gaussian Naive Bayes, Decision Tree, and KNN, can be observed around the vertical line near 0 execution time. These models are quick to optimize, but their F1 scores are generally low, except for KNN.
+Further, their variance in execution time is quite low, regardless of the feature subset they are optimized on.
+On the other hand, the Neural Network models always perform poorly, regardless of the length of the execution time. Furthermore, the variance of the F1 scores is quite low for these models, indicating that the execution time does not have a significant impact on the F1 score in the case of Neural Networks.
+
+\begin{figure}[H]
+    \centering
+    \caption{Execution time vs. F1 Scatterplot}\vspace{0.5em}
+    \label{fig:scattertime}\
+    \includegraphics[width=140mm]{Figures/scatter_time.jpg}
+    \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
+\end{figure}
+
+To summarize this subsection, the best and final model is the Gradient Boosting Classifier which was optimized on the subset of features selected by KNN model - both the model information and its final hyperparameters' values are described in \autoref{tab:finalmodelinfo} and \autoref{tab:finalhyp}, respectively. Such model is then used in the next modelling steps, including the recalibration, evaluation and deployment.
+\begin{table}[H]
+    \small
+    \setlength{\tabcolsep}{8pt}
+    \renewcommand{\arraystretch}{1.3}
+    \centering
+    \caption{Final Model Information}\label{tab:finalmodelinfo}
+    \begin{tabular}{p{0.20\linewidth}|p{0.65\linewidth}}
+    \toprule
+    \midrule
+    \textbf{Final Model} & Gradient Boosting \\
+    \midrule
+    \textbf{FS Model} & K-Nearest Neighbors \\
+    \midrule
+    \textbf{Final Features} &
+    LOAN, MORTDUE, VALUE, REASON, JOB, YOJ, DEROG, DELINQ, CLAGE, CLNO, DEBTINC \\
+    \midrule
+    \textbf{Threshold} & 0.5072 \\
+    \midrule
+    \textbf{F1} & 0.7989 \\
+    \midrule
+    \textbf{Precision} & 0.7912 \\
+    \midrule
+    \textbf{Recall} & 0.8045 \\
+    \midrule
+    \textbf{Accuracy} & 0.9184 \\
+    \midrule
+    \textbf{AUC} & 0.9587 \\
+    \midrule
+    \textbf{SD} & 0.9175 \\
+    \midrule
+    \textbf{KS} & 0.7989 \\
+    \midrule
+    \textbf{MCC} & 0.7467 \\
+    \midrule
+    \textbf{JC} & 0.6636 \\
+    \midrule
+    \textbf{BSL} & 0.0687\\
+    \midrule
+    \textbf{ZOL} & 0.0816 \\
+    \midrule
+    \bottomrule
+    \end{tabular}
+    \vspace{0.5em}
+
+    \centering{\begin{source}Author's results in Python\end{source}}\vspace{-0.5em}
+    \end{table}
 
 
+\begin{table}[H]
+    \small
+    \setlength{\tabcolsep}{8pt}
+    \renewcommand{\arraystretch}{1.3}
+    \centering
+        \caption[Gradient Boosting - Final Hyperparameters]{Gradient Boosting - Final Hyperparameters}\label{tab:finalhyp}
+        \begin{tabular}{p{0.25\linewidth}p{0.25\linewidth}}
+    \toprule
+    \textbf{Hyperparameter} & \textbf{Value}\\
+    \midrule
+    \hline
+    \# estimators & 1,000 \\
+    Criterion & Squared Error \\
+    Max depth & 10 \\
+    Max features & 1 \\
+    Loss & Exponential \\
+    Learning rate & 0.0186 \\
+    \hline
+    \bottomrule
+    \end{tabular}
+    \vspace{0.7em}
+
+    \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
+\end{table}
 
 \subsection{Model Building}
+
+In order to ensure that the final model performs well on unseen data, it is common practice to employ the recalibration approach, which involves retraining the model on both the training and validation sets.
+By doing so, the sample size used for training is increased, resulting in improved model performance.
+The recalibrated model is then used to evaluate the performance of the final model on the test set, which is the ultimate measure of a model's performance.
+
+In addition to recalibrating the final model, it is crucial to recalibrate the threshold value for assigning class labels based on predicted probabilities. The optimal threshold value can be determined using the training and validation sets.
+In this thesis, the optimal threshold value is found to be \textbf{0.4072}, which is then used for evaluating the final model's performance on the test set.
+By recalibrating the threshold value, the model's performance is further improved, resulting in more accurate predictions.
+
+Moreover, the recalibration process helps to mitigate overfitting issues, which occur when the model is only trained on the training set.
+By incorporating the validation set into the training process, the recalibrated model can better generalize to new data and improve its overall performance on the test set.
+The inclusion of the validation set during the recalibration process does not cause any data leakage issues since this set was already used during model selection to evaluate each model's performance.
+Therefore, using the validation data for recalibration is a sound practice that helps to ensure the reliability and accuracy of the final model.
+
 \section{Model Evaluation}
-\subsection{Confusion Matrix}
+
+After recalibrating the model and threshold, the final step in evaluating the model's performance is to test it on previously unseen data, specifically the test set.
+This evaluation is critical to determine whether the model can generalize well to new data beyond the training, feature selection, and model selection phases.
+During the evaluation, the recalibrated classification threshold of 0.4072, determined in the model recalibration process, is also used.
+
+In \autoref{fig:confmat}, the confusion matrix for the final model, based on the test set and using the recalibrated threshold, is presented. The matrix shows that the model is generalizing well, having accurately predicted 140 defaults and misclassified only 38 defaults. Such a result indicates that the model is a good fit for the data and can provide useful predictions for the problem at hand.
 
 \begin{figure}[H]
     \centering
     \caption{Confusion Matrix}\vspace{0.5em}
     \label{fig:confmat}\
     \includegraphics[width=140mm]{Figures/Confusion_Matrix.jpg}
-    \centering{\begin{source}Author's results in Python.\end{source}}\vspace{-1em}
+    \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
 
-\subsection{Metrics Scores}
-
-
+In order to obtain a better understanding of the model's performance on previously unseen data, we computed several metrics that were used during the model selection process.
+These metrics are presented in \autoref{tab:metrics eval}. The results indicate that the model performs well on the unseen data, with most of the metrics scoring around 80 \% to 90 \%
+Furthermore, the loss metrics are relatively low, indicating that the model can effectively distinguish between defaults and non-defaults.
+Overall, these results suggest that the model is performing well and is suitable for predicting defaults in financial transactions.
+It is worth noting that the metrics evaluated in this thesis, such as F1, Precision, Recall, Accuracy, and AUC, are commonly used in evaluating binary classification models. The results suggest that the model has a good balance between correctly identifying defaults and non-defaults, as well as minimizing false positives and false negatives.
+The Brier Score Loss and Zero-One loss metrics, which represent the difference between the predicted and actual probabilities and the proportion of misclassified samples, respectively, are also low.
+This further confirms the model's ability to accurately predict defaults.
     \begin{table}[H]
         \small
         \setlength{\tabcolsep}{8pt}
@@ -1231,52 +1337,115 @@ GNB & GNB & 6 & 23 & 0.4787 & 0.5950 & 0.5039 & 0.7263 & 0.8022 & 0.8356 & 0.671
         \end{tabular}
         \vspace{0.35em}
 
-            \centering{\begin{source}Author's results in Python.\end{source}}\vspace{-1em}
+            \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{table}
 
+To further evaluate the performance of the model, we can visualize the Receiver Operating Characteristic (ROC) curve, as presented in \autoref{fig:roc}. The curve illustrates the trade-off between the true positive rate and the false positive rate at various classification thresholds. An ideal ROC curve should have an area under the curve (AUC) value of 100 \%, indicating a perfect classifier, while a random classifier would have an AUC of 50 \%.
 
-\subsection{ROC Curve}
+From the curve, we observe that the AUC value of the model is 95.55 \%, indicating a high degree of accuracy in distinguishing between defaults and non-defaults. The curve covers most of the area under the diagonal line, indicating that the model is performing well in differentiating the two classes. Therefore, the results suggest that the model is performing well and is capable of accurately identifying potential defaulters.
 
 \begin{figure}[H]
     \centering
     \caption{ROC Curve}\vspace{0.5em}
     \label{fig:roc}\
     \includegraphics[width=150mm]{Figures/ROC_curve_FINAL.jpg}
-    \centering{\begin{source}Author's results in Python.\end{source}}\vspace{-1em}
+    \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
+\end{figure}
+To gain insights into the impact of the features used in the final model, a feature importance graph was visualized and is presented in \autoref{fig:fi}.
+Feature importance is a measure of how much a feature contributes to the overall performance of the model, and it is based on the reduction in impurity achieved by splitting the data on that feature.
+The higher the reduction in impurity, the more important the feature is considered to be.
+Overall, the feature importance plot provides valuable insights into the factors that are most important in predicting loan defaults. It can be used to identify which features are contributing the most to the model's accuracy and to guide future feature selection efforts.
+The two most important features used in the final model are \texttt{DEBTINC} and \texttt{DEROG}, which are crucial delinquency indicators in determining whether a borrower would be able to repay their loan. These two features have a significant impact on the model's ability to accurately predict loan defaults, with high feature importance scores.
+
+Understanding the impact of individual features on model performance can be useful in identifying areas for improvement, as well as in identifying the most significant factors that drive loan defaults.
+By focusing on these important features, lenders and policymakers can better understand and address the underlying factors that contribute to default risk, ultimately leading to better lending decisions and improved outcomes for borrowers and lenders alike.
+
+\begin{figure}[H]
+    \centering
+    \caption{Feature Importance}\vspace{0.5em}
+    \label{fig:fi}\
+    \includegraphics[width=140mm]{Figures/fi.jpg}
+    \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
 
-\subsection{SHAP Values}
+To gain further insights into the impact of the features on the final model's predictions, the SHAP (SHapley Additive exPlanations) summary plot is displayed in \autoref{fig:shap}.
+The SHAP summary plot provides a clear visualization of the contribution each feature makes to a prediction and is used for a black box model explainability.
+Each dot in the plot represents a feature and its corresponding SHAP value.
+The color of the dot represents the feature's value, with red indicating high values and blue indicating low values.
+The position of the dot on the x-axis represents the impact of the feature on the prediction, with features on the right-hand side contributing more positively to the prediction, and features on the left-hand side contributing more negatively.
+
+Since our data points are encoded in WoE values, the higher (the more positive) value, the larger distribution of non-defaulters compared to defaulters, and vice versa, the lower (the more negative) value, the larger distribution of defaulters compared to non-defaulters.
+For the most important features, we can observe that the blue values (negative WoE values) and red values (positive WoE values) are quite separable.
+Negative WoE values are positively contributing to the predictions, and the positive WoE values are negatively contributing to the predictions. This means that the more negative the WoE value, the more likely the borrower is to default, and vice versa.
+
+Overall, the SHAP summary plot provides a valuable tool for interpreting and understanding the complex decision-making process of the final model.
+The plot enables us to examine the impact of individual features on the model's output and helps us to identify which features are most influential in the model's decision-making process.
+By understanding the relative importance of each feature, we can gain deeper insights into the creditworthiness assessment process and make more informed decisions in the lending industry.
 
 \begin{figure}[H]
     \centering
     \caption{SHAP Summary Plot}\vspace{0.5em}
     \label{fig:shap}\
     \includegraphics[width=140mm]{Figures/SHAP_values.jpg}
-    \centering{\begin{source}Author's results in Python.\end{source}}\vspace{-1em}
+    \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
 
 \section{Machine Learning Deployment}
+This section describes the process of taking a trained machine learning model and making it available for use in the real world. It involves taking the model from a development environment and integrating it into a production environment where it can be used to make predictions or decisions based on new data. In this thesis, the machine learning model is deployed as web application using Flask and HTML.
 \subsection{Final Model Building}
-\subsection{Flask and HTML Web Application}
-Once the final model is trained or built, it can be deployed into a production and monitored.
+Before deploying the model in a production setting, a meticulous process is undertaken to ensure optimal performance.
+This involves conducting a final recalibration of the model using the entire dataset, comprising the training, validation, and test sets.
+The purpose of this recalibration is to fine-tune the model parameters, thereby maximizing its ability to generalize and yield accurate predictions.
 
-For machine learning deployment in this case, the model is deployed into a web application using Flask and HTML. 
+The test set, which has been employed previously during the model evaluation phase, is incorporated into the recalibration process without any risk of data leakage.
+By including the test set, the sample size for training is expanded, thereby increasing the model's capacity to generalize effectively.
+
+Upon completion of the recalibration, the final classification threshold for deployment is determined to be \textbf{0.5162}.
+This value is derived from a comprehensive analysis of the training, validation, and test sets, which ensures that the model's generalization capabilities are further enhanced for optimal performance in real-world applications.
+
+\subsection{Flask and HTML Web Application}
+
+In this case, the machine learning model was deployed into a web application using Flask and HTML. The application is temporarily deployed on the cloud servers of the PythonAnywhere platform and was accessible at this URL: \url{http://ml-credit-risk-app-petrngn.pythonanywhere.com/}.
+However, the application will be shut down after the thesis defense and will not be available online anymore due to the budget reasons.
+Nevertheless, the code for the application is available in the GitHub repository, and the application can be run locally using any Python compiler.
+
+Furthermore, prior to deployment, we need to prepare several Python inputs for the web application, including:
+\begin{itemize}\setlength\itemsep{0em}
+    \item Model - the final model recalibrated on the training, validation and test set.
+    \item Threshold - the final classification threshold recalibrated on the training, validation and test set.
+    \item Features - the final features used in the final model.
+    \item Data Frame - he input data frame used in the web application to store the loan applicant's inputs.
+    \item Optimal Binning Transformator - fitted \lstinline{BinningProcess} object for binning and WoE-encoding of the loan applicant's inputs.
+    \item WoE Bins - a set of bins and WoE values used for mapping the WoE values to missing values.
+\end{itemize}
+
+Such inputs required for the machine learning application are exported in the \lstinline{.pkl} format using the \lstinline{pickle} module. This format allows for efficient and easy-to-use serialization and deserialization of the trained model inputs. The pickled file is then loaded directly into the Flask application.
+
+For the back-end of the web application, Flask is used to deploy the machine learning model. The Flask application is coded in the \lstinline{app.py} file, which is stored in the \lstinline{flask_app} repository. The front-end of the web application is coded in HTML, with CSS and JavaScript elements used to enhance the user interface.
+ 
+The web application first renders an HTML page, as shown in \autoref{fig:flaskform}.
+This page contains a loan application form, in which the user or the loan applicant fills in the respective field values that correspond to the features on which the machine learning model was trained.
+The form is designed to capture the necessary information required for the model to make a prediction about the loan applicant's application.
+Note that not all fields in the loan application form need to be filled out, except for the requested loan amount. This is because missing values in certain features may indicate a higher risk of defaulting. Conversely, one may choose to impose a restriction on the form, requiring all fields to be filled out. However, this could result in a lower number of received applications from delinquent clients, as they may not have all the necessary information to complete the form.
 
 \begin{figure}[H]
     \centering
     \caption{Flask Web Application Form}\vspace{0.5em}
-    \label{fig:shap}\
+    \label{fig:flaskform}\
     \includegraphics[width=100mm]{Figures/flask_app_form.jpg}
 
-    \centering{\begin{source}Author's results in Python.\end{source}}\vspace{-1em}
+    \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
+\clearpage
 
+Once, the loan application form is submitted, the web application uses the pickled input to transform the data from the loan application form and use it in the recalibrated model in order to get the result, whether the given loan applicant would repay his loan based on predetermined threshold. The result is then displayed in the web application, as shown in \autoref{fig:flaskres}.
+Particularly, the web application returns whether the loan application for denied or approved and also the probability score of default.
 
 \begin{figure}[H]
     \centering
     \caption{Flask Web Application - Prediction Result}\vspace{0.5em}
-    \label{fig:shap}\
+    \label{fig:flaskres}\
     \includegraphics[width=90mm]{Figures/flask_app_result.jpg}
 
-    \centering{\begin{source}Author's results in Python.\end{source}}\vspace{-1em}
+    \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}

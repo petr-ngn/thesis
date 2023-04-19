@@ -1656,7 +1656,6 @@ INPUT ./Figures/WoE_Distribution.jpg
 INPUT Figures/WoE_Distribution.jpg
 INPUT ./Figures/WoE_Distribution.jpg
 INPUT ./Figures/WoE_Distribution.jpg
-INPUT c:/tex/texlive/texmf-dist/fonts/tfm/public/lm/ec-lmtk10.tfm
 INPUT c:/tex/texlive/texmf-dist/fonts/tfm/public/lm/ec-lmtt10.tfm
 INPUT ./Figures/fs_print.jpg
 INPUT ./Figures/fs_print.jpg
@@ -1677,10 +1676,6 @@ INPUT ./Figures/model_selection_print.jpg
 INPUT ./Figures/model_selection_print.jpg
 INPUT Figures/model_selection_print.jpg
 INPUT ./Figures/model_selection_print.jpg
-INPUT ./Figures/model_selection_print.jpg
-INPUT ./Figures/model_selection_print.jpg
-INPUT ./Figures/model_selection_print.jpg
-INPUT Figures/model_selection_print.jpg
 INPUT ./Figures/model_selection_print.jpg
 INPUT ./Figures/F1_Distribution.jpg
 INPUT ./Figures/F1_Distribution.jpg
@@ -1707,6 +1702,11 @@ INPUT ./Figures/EXECUTION_TIME_Distribution.jpg
 INPUT Figures/EXECUTION_TIME_Distribution.jpg
 INPUT ./Figures/EXECUTION_TIME_Distribution.jpg
 INPUT ./Figures/EXECUTION_TIME_Distribution.jpg
+INPUT ./Figures/scatter_time.jpg
+INPUT ./Figures/scatter_time.jpg
+INPUT Figures/scatter_time.jpg
+INPUT ./Figures/scatter_time.jpg
+INPUT ./Figures/scatter_time.jpg
 INPUT ./Figures/Confusion_Matrix.jpg
 INPUT ./Figures/Confusion_Matrix.jpg
 INPUT Figures/Confusion_Matrix.jpg
@@ -1717,6 +1717,11 @@ INPUT ./Figures/ROC_curve_FINAL.jpg
 INPUT Figures/ROC_curve_FINAL.jpg
 INPUT ./Figures/ROC_curve_FINAL.jpg
 INPUT ./Figures/ROC_curve_FINAL.jpg
+INPUT ./Figures/fi.jpg
+INPUT ./Figures/fi.jpg
+INPUT Figures/fi.jpg
+INPUT ./Figures/fi.jpg
+INPUT ./Figures/fi.jpg
 INPUT ./Figures/SHAP_values.jpg
 INPUT ./Figures/SHAP_values.jpg
 INPUT Figures/SHAP_values.jpg
@@ -1818,7 +1823,6 @@ INPUT c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmsso12.pfb
 INPUT c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmsy10.pfb
 INPUT c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmsy7.pfb
 INPUT c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmsy8.pfb
-INPUT c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmtk10.pfb
 INPUT c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmtt10.pfb
 INPUT c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmtt12.pfb
 INPUT c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmtt8.pfb

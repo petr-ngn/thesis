@@ -67,35 +67,31 @@
 \contentsline {subsubsection}{Neural Network}{43}{section*.57}%
 \contentsline {subsection}{\numberline {4.4.2}Feature Selection}{43}{subsection.4.4.2}%
 \contentsline {subsection}{\numberline {4.4.3}Model Selection}{47}{subsection.4.4.3}%
-\contentsline {subsection}{\numberline {4.4.4}Model Building}{57}{subsection.4.4.4}%
-\contentsline {section}{\numberline {4.5}Model Evaluation}{57}{section.4.5}%
-\contentsline {subsection}{\numberline {4.5.1}Confusion Matrix}{57}{subsection.4.5.1}%
-\contentsline {subsection}{\numberline {4.5.2}Metrics Scores}{58}{subsection.4.5.2}%
-\contentsline {subsection}{\numberline {4.5.3}ROC Curve}{59}{subsection.4.5.3}%
-\contentsline {subsection}{\numberline {4.5.4}SHAP Values}{60}{subsection.4.5.4}%
-\contentsline {section}{\numberline {4.6}Machine Learning Deployment}{60}{section.4.6}%
-\contentsline {subsection}{\numberline {4.6.1}Final Model Building}{60}{subsection.4.6.1}%
-\contentsline {subsection}{\numberline {4.6.2}Flask and HTML Web Application}{60}{subsection.4.6.2}%
-\contentsline {chapter}{\numberline {5}Title of Chapter Five}{63}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Frequently made mistakes}{63}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Useful Hints}{64}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Formal requirements of master's thesis}{66}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Template adjustments and meta-data}{67}{section.5.4}%
-\contentsline {section}{\numberline {5.5}Itemization and Environments}{67}{section.5.5}%
-\contentsline {section}{\numberline {5.6}Acronyms}{68}{section.5.6}%
-\contentsline {section}{\numberline {5.7}Figures}{68}{section.5.7}%
-\contentsline {section}{\numberline {5.8}Tables}{70}{section.5.8}%
-\contentsline {section}{\numberline {5.9}Boxes}{71}{section.5.9}%
-\contentsline {section}{\numberline {5.10}Theorems, Definitions, \ldots }{71}{section.5.10}%
-\contentsline {section}{\numberline {5.11}Nonumbered Equations}{71}{section.5.11}%
-\contentsline {section}{\numberline {5.12}Numbered Equations}{72}{section.5.12}%
-\contentsline {section}{\numberline {5.13}Matrix Equations}{72}{section.5.13}%
-\contentsline {section}{\numberline {5.14}Cross-references}{72}{section.5.14}%
-\contentsline {section}{\numberline {5.15}Source codes}{72}{section.5.15}%
-\contentsline {section}{\numberline {5.16}Paragraphs}{73}{section.5.16}%
-\contentsline {paragraph}{Proin}{73}{section*.85}%
-\contentsline {subparagraph}{Velit}{73}{section*.86}%
-\contentsline {chapter}{\numberline {6}Conclusion}{74}{chapter.6}%
-\contentsline {chapter}{Bibliography}{76}{chapter*.87}%
+\contentsline {subsection}{\numberline {4.4.4}Model Building}{59}{subsection.4.4.4}%
+\contentsline {section}{\numberline {4.5}Model Evaluation}{59}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Machine Learning Deployment}{64}{section.4.6}%
+\contentsline {subsection}{\numberline {4.6.1}Final Model Building}{65}{subsection.4.6.1}%
+\contentsline {subsection}{\numberline {4.6.2}Flask and HTML Web Application}{65}{subsection.4.6.2}%
+\contentsline {chapter}{\numberline {5}Title of Chapter Five}{69}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Frequently made mistakes}{69}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Useful Hints}{70}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Formal requirements of master's thesis}{72}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Template adjustments and meta-data}{73}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Itemization and Environments}{73}{section.5.5}%
+\contentsline {section}{\numberline {5.6}Acronyms}{74}{section.5.6}%
+\contentsline {section}{\numberline {5.7}Figures}{74}{section.5.7}%
+\contentsline {section}{\numberline {5.8}Tables}{76}{section.5.8}%
+\contentsline {section}{\numberline {5.9}Boxes}{77}{section.5.9}%
+\contentsline {section}{\numberline {5.10}Theorems, Definitions, \ldots }{77}{section.5.10}%
+\contentsline {section}{\numberline {5.11}Nonumbered Equations}{77}{section.5.11}%
+\contentsline {section}{\numberline {5.12}Numbered Equations}{78}{section.5.12}%
+\contentsline {section}{\numberline {5.13}Matrix Equations}{78}{section.5.13}%
+\contentsline {section}{\numberline {5.14}Cross-references}{78}{section.5.14}%
+\contentsline {section}{\numberline {5.15}Source codes}{78}{section.5.15}%
+\contentsline {section}{\numberline {5.16}Paragraphs}{79}{section.5.16}%
+\contentsline {paragraph}{Proin}{79}{section*.88}%
+\contentsline {subparagraph}{Velit}{79}{section*.89}%
+\contentsline {chapter}{\numberline {6}Conclusion}{80}{chapter.6}%
+\contentsline {chapter}{Bibliography}{81}{chapter*.90}%
 \contentsline {chapter}{\numberline {A}Title of Appendix A}{I}{appendix.A}%
 \contentsline {chapter}{\numberline {B}Project's website}{II}{appendix.B}%

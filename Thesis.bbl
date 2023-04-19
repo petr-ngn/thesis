@@ -1,4 +1,4 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{9}
 \newcommand{\enquote}[1]{``#1''}
 \providecommand{\natexlab}[1]{#1}
 
@@ -38,11 +38,6 @@
 \bibitem[{Kornbrot(2014)}]{kornbrot2014point}
 \textsc{Kornbrot}, D. (2014): \enquote{Point biserial correlation.}
 \newblock \emph{Wiley StatsRef: Statistics Reference Online} .
-
-\bibitem[{{Scikit-learn}(n.d.)}]{scikit-learn-sequential-feature-selector}
-\textsc{{Scikit-learn}} (n.d.): \enquote{Sequentialfeatureselector.}
-\newblock
-  \url{https://scikit-learn.org/stable/modules/generated/sklearn.feature_selection.SequentialFeatureSelector.html}.
 
 \bibitem[{Wells \emph{et~al.}(2001)Wells, Allen, Morisset, \&
   Pirnia}]{Wells2001}
