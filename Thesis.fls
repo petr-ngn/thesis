@@ -1,8 +1,8 @@
-PWD c:/Users/ngnpe/OneDrive/Desktop/VŠE/FFÚ - INŽENÝRSKÉ STUDIUM 2020-2023/FFÚ - DIPLOMOVÁ PRÁCE/thesis
+PWD c:/Users/ngnpe/OneDrive/Desktop/VŠE/FFÚ - INŽENÝRSKÉ STUDIUM 2020-2023/FFÚ - DIPLOMOVÁ PRÁCE/LaTeX
 INPUT c:/tex/texlive/texmf.cnf
 INPUT c:/tex/texlive/texmf-dist/web2c/texmf.cnf
 INPUT c:/tex/texlive/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT c:/Users/ngnpe/OneDrive/Desktop/VŠE/FFÚ - INŽENÝRSKÉ STUDIUM 2020-2023/FFÚ - DIPLOMOVÁ PRÁCE/thesis/Thesis.tex
+INPUT c:/Users/ngnpe/OneDrive/Desktop/VŠE/FFÚ - INŽENÝRSKÉ STUDIUM 2020-2023/FFÚ - DIPLOMOVÁ PRÁCE/LaTeX/Thesis.tex
 OUTPUT Thesis.log
 INPUT c:/tex/texlive/texmf-dist/tex/latex/base/report.cls
 INPUT c:/tex/texlive/texmf-dist/tex/latex/base/report.cls

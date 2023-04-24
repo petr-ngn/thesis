@@ -1,0 +1,26 @@
+1 - intro
+2 - theoretical background
+	- basic terms - what is credit risk, ML etc.
+	- literature review -> hypotheses formulation.
+3 - Empirical analysis (instead of the ML implementation) -> comparison with the research papers.
+
+Consider -> insert some links for documents where the metrics are described in more detail. Appendix -->
+
+Dataset variables - instead of columns
+
+doplnit vzorce z association analysis do lit review
+
+odkaz na modely (str 39) na theoretical background
+
+F1 score weights -> empirical citation
+
+Distribution metrics scores -> Hypotheses rejection/non-rejection (for instance NN -> it should be supported by empirical researchers).
+
+Feature importance -> comparison with other authors -> literature review (delinquency drivers - comparison with others -> chose the main ones).
+
+4.7 - Summary of results (hypothesis testing) -> crucial element of thesis
+	- 4.7.1 hyp 1 etc
+
+30.04.2023 -> the next review
+
+Dohledat up to date papers for literature reviews
