@@ -1657,11 +1657,8 @@ INPUT Figures/WoE_Distribution.jpg
 INPUT ./Figures/WoE_Distribution.jpg
 INPUT ./Figures/WoE_Distribution.jpg
 INPUT c:/tex/texlive/texmf-dist/fonts/tfm/public/lm/ec-lmtt10.tfm
-INPUT ./Figures/fs_print.jpg
-INPUT ./Figures/fs_print.jpg
-INPUT Figures/fs_print.jpg
-INPUT ./Figures/fs_print.jpg
-INPUT ./Figures/fs_print.jpg
+INPUT c:/tex/texlive/texmf-dist/fonts/tfm/public/lm/ec-lmr9.tfm
+INPUT c:/tex/texlive/texmf-dist/fonts/tfm/public/lm/ec-lmtt9.tfm
 INPUT ./Figures/Recurrence_Selected_Features.jpg
 INPUT ./Figures/Recurrence_Selected_Features.jpg
 INPUT Figures/Recurrence_Selected_Features.jpg
@@ -1672,11 +1669,6 @@ INPUT ./Figures/Selected_Features_Distribution.jpg
 INPUT Figures/Selected_Features_Distribution.jpg
 INPUT ./Figures/Selected_Features_Distribution.jpg
 INPUT ./Figures/Selected_Features_Distribution.jpg
-INPUT ./Figures/model_selection_print.jpg
-INPUT ./Figures/model_selection_print.jpg
-INPUT Figures/model_selection_print.jpg
-INPUT ./Figures/model_selection_print.jpg
-INPUT ./Figures/model_selection_print.jpg
 INPUT ./Figures/F1_Distribution.jpg
 INPUT ./Figures/F1_Distribution.jpg
 INPUT Figures/F1_Distribution.jpg
@@ -1826,4 +1818,5 @@ INPUT c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmsy8.pfb
 INPUT c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmtt10.pfb
 INPUT c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmtt12.pfb
 INPUT c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmtt8.pfb
+INPUT c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmtt9.pfb
 INPUT c:/tex/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb

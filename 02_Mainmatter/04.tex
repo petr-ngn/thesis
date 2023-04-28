@@ -737,7 +737,6 @@ The hyperparameter space is defined for each model as follows(\textit{The indivi
 
 
 \subsubsection{Decision Tree}
-
 \begin{table}[H]
     \small
     \setlength{\tabcolsep}{8pt}
@@ -946,14 +945,55 @@ The \lstinline{tol} parameter is used to set a threshold for the minimum increas
 Such parameter is set to a number which is close to zero, thus the feature selection process stops when the model's F1 score is not increasing between the two consecutive steps.
 
 In Python, the custom function \lstinline{SFS_feature_selection()} is used to implement the Forward SFS approach.
-This function iteratively prints the process of the feature selection, including the current step (Bayesian Optimization or Feature Selection), the execution time, and the selected features for each model.
+This function iteratively prints the process of the feature selection as can be seen in \autoref{fig:featselectprint}, including the current step (Bayesian Optimization or Feature Selection), the execution time, and the selected features for each model.
 
 \begin{figure}[H]
-    \centering
-    \caption{Feature Selection Print Statement}\vspace{0.5em}
-    \label{fig:fsprint}\
-    \includegraphics[width=140mm]{Figures/fs_print.jpg}
-    \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
+    \centering\caption{Feature Selection Print Statement}
+    \label{fig:featselectprint}
+
+{\fontsize{8.8}{11}\selectfont 
+\begin{verbatim}
+-------------------------------------------------------------------------------------
+------------------------------------------ 2/8 --------------------------------------
+-------------------------------------------------------------------------------------
+------------------------------- FEATURE SELECTION WITH DT ---------------------------
+-------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------- 
+  
+    1/4 ... Starting Bayesian Optimization on the whole set of features
+    2/4 ... Bayesian Optimization finished
+    3/4 ... Starting Forward Sequential Feature Selection
+    4/4 ... Forward Sequential Feature Selection with finished 
+    
+    Execution time: 0.8622 minutes 
+    
+    9 features selected: VALUE, JOB, YOJ, DEROG, DELINQ, CLAGE, NINQ, CLNO, DEBTINC 
+    
+-------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------- 
+   
+    
+-------------------------------------------------------------------------------------
+------------------------------------------ 3/8 --------------------------------------
+-------------------------------------------------------------------------------------
+------------------------------- FEATURE SELECTION WITH GNB --------------------------
+-------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------- 
+    
+    1/4 ... Starting Bayesian Optimization on the whole set of features
+    2/4 ... Bayesian Optimization finished
+    3/4 ... Starting Forward Sequential Feature Selection
+    4/4 ... Forward Sequential Feature Selection with finished 
+    
+    Execution time: 0.4152 minutes 
+    
+    6 features selected: MORTDUE, JOB, DELINQ, CLAGE, NINQ, DEBTINC 
+    
+------------------------------------------------------------------------------------- 
+------------------------------------------------------------------------------------- 
+\end{verbatim}
+}
+\centering{\begin{source}Author's results in Python\end{source}}\vspace{0em}
 \end{figure}
 
 
@@ -1073,12 +1113,54 @@ The custom function \lstinline{model_selection()} iteratively prints the process
 Particularly, it prints which model on which features is being tuned and evaluated, exeuction time, optimal threshold, F1 score on the validation set and the best hyperparameters.
 
 \begin{figure}[H]
-    \centering
-    \caption{Model Selection Print Statement}\vspace{0.5em}
-    \label{fig:modselprint}\
-    \includegraphics[width=140mm]{Figures/model_selection_print.jpg}
-    \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
+    \centering\caption{Model Selection Print Statement}
+    \label{fig:modselprint}
+
+{\fontsize{8.8}{11}\selectfont 
+\begin{verbatim}
+-------------------------------------------------------------------------------------
+--------------------------------------- 56/64 ---------------------------------------
+-------------------------------------------------------------------------------------
+---------------------------- BAYESIAN OPTIMIZATION OF SVM ---------------------------
+--------------------------- WITH FEATURES SELECTED BY MLP ---------------------------
+-------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------- 
+    
+   1/2 ... Starting Bayesian Optimization on the subset of features (10 features):
+              MORTDUE, VALUE, JOB, YOJ, DEROG, DELINQ, CLAGE, NINQ, CLNO, DEBTINC
+   2/2... Bayesian Optimization finished 
+    
+   Execution time: 22.0695 minutes 
+   
+   F1 Score on Validation set: 0.7102272727272726 
+    
+   Optimal classification threshold: 0.6477 
+    
+   Tuned hyperparameters of SVM: 
+    
+        C: 4.999999999999999
+        break_ties: False
+        cache_size: 200
+        class_weight: balanced
+        coef0: 0.0
+        decision_function_shape: ovr
+        degree: 1
+        gamma: scale
+        kernel: rbf
+        max_iter: -1
+        probability: True
+        random_state: 42
+        shrinking: False
+        tol: 1.102507160381566e-09
+        verbose: False
+
+-------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------- 
+\end{verbatim}
+}
+\centering{\begin{source}Author's results in Python\end{source}}\vspace{0em}
 \end{figure}
+
 
 
 The final output of the function \lstinline{model_selection()} is table which summarizes the model's computed metrics as depicted in \autoref{tab:modelsectab}. As can be seen, the best models in terms of ranking are the Gradient Boosting models which in general have the highest score metrics and the lowest loss metrics. On the other hand, the worst-performing models are Gaussian Naive Bayes models.
