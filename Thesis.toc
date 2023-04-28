@@ -91,6 +91,6 @@
 \contentsline {paragraph}{Proin}{79}{section*.87}%
 \contentsline {subparagraph}{Velit}{79}{section*.88}%
 \contentsline {chapter}{\numberline {6}Conclusion}{80}{chapter.6}%
-\contentsline {chapter}{Bibliography}{81}{chapter*.89}%
+\contentsline {chapter}{Bibliography}{I}{chapter.6}%
 \contentsline {chapter}{\numberline {A}Title of Appendix A}{I}{appendix.A}%
 \contentsline {chapter}{\numberline {B}Project's website}{II}{appendix.B}%
