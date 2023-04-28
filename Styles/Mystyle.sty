@@ -29,8 +29,14 @@
 \usepackage{pdflscape}
 \usepackage{rotating}
 \usepackage{graphicx}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
 \usepackage[absolute]{textpos}
 \usepackage{adjustbox}
+\usepackage{hyperref}
+\usepackage{nameref}
+\newcommand{\algorithmautoref}[1]{\hyperref[#1]{Algorithm \ref*{#1}}}
+
 %\usepackage[colorlinks=false, unicode, pdftex, pdfauthor={\AuthorDP},
 %            pdftitle={\Bookname},
 %            pdfsubject={\Subject},
