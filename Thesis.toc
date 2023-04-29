@@ -3,7 +3,7 @@
 \contentsline {chapter}{Acronyms}{xii}{section*.13}%
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
 \contentsline {chapter}{\numberline {2}Credit Risk Modelling}{2}{chapter.2}%
-\contentsline {chapter}{\numberline {3}Machine Learning}{3}{chapter.3}%
+\contentsline {chapter}{\numberline {3}Theoretical Background}{3}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Terminology}{3}{section.3.1}%
 \contentsline {section}{\numberline {3.2}Algorithms}{3}{section.3.2}%
 \contentsline {subsection}{\numberline {3.2.1}Logistic Regression}{3}{subsection.3.2.1}%
@@ -37,7 +37,7 @@
 \contentsline {subsection}{\numberline {3.5.3}ADASYN Oversampling}{14}{subsection.3.5.3}%
 \contentsline {section}{\numberline {3.6}Optimal Binning}{14}{section.3.6}%
 \contentsline {subsection}{\numberline {3.6.1}Weight of Evidence Encoding}{14}{subsection.3.6.1}%
-\contentsline {chapter}{\numberline {4}Machine Learning Implementation}{15}{chapter.4}%
+\contentsline {chapter}{\numberline {4}Empirical Analysis - Machine Learning Implementation}{15}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Repository and Environment Structure}{16}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Data Exploration}{19}{section.4.2}%
 \contentsline {subsection}{\numberline {4.2.1}Dataset Description}{19}{subsection.4.2.1}%

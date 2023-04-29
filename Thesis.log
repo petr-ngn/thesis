@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.31)  29 APR 2023 21:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.31)  29 APR 2023 21:33
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2038,14 +2038,14 @@ Package pdftex.def Info: Figures/ml_framework.jpg  used on input line 20.
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 28.
  (c:/tex/texlive/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [16.28 <./Figures/ml_framework.jpg>] [17.29] [18.30] [19.31]
+) [16.28 <./Figures/ml_framework.jpg>] [17.29] [18.30]
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10.95> on input line 138.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10> on input line 172.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <7> on input line 172.
- [20.32]
+ [19.31] [20.32]
 <Figures/Default_Distribution.jpg, id=740, 578.16pt x 433.62pt>
 File: Figures/Default_Distribution.jpg Graphic file (type jpg)
 <use Figures/Default_Distribution.jpg>
@@ -2107,91 +2107,6 @@ Overfull \vbox (54.99573pt too high) has occurred while \output is active []
 Package hyperref Warning: No autoref name for `algorithm' on input line 935.
 
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 939.
-
-Overfull \hbox (28.47543pt too wide) in paragraph at lines 966--966
-[]        \T1/lmtt/m/n/8.8 ------------------------------------------------------------------------------------- 
- []
-
-
-Overfull \hbox (28.47543pt too wide) in paragraph at lines 967--967
-[]        \T1/lmtt/m/n/8.8 ------------------------------------------ 2/8 --------------------------------------[] 
- []
-
-
-Overfull \hbox (28.47543pt too wide) in paragraph at lines 968--968
-[]        \T1/lmtt/m/n/8.8 -------------------------------------------------------------------------------------[] 
- []
-
-
-Overfull \hbox (28.47543pt too wide) in paragraph at lines 969--969
-[]        \T1/lmtt/m/n/8.8 ------------------------------- FEATURE SELECTION WITH DT ---------------------------[] 
- []
-
-
-Overfull \hbox (28.47543pt too wide) in paragraph at lines 970--970
-[]        \T1/lmtt/m/n/8.8 -------------------------------------------------------------------------------------[] 
- []
-
-
-Overfull \hbox (28.47543pt too wide) in paragraph at lines 971--971
-[]        \T1/lmtt/m/n/8.8 -------------------------------------------------------------------------------------[] 
- []
-
-
-Overfull \hbox (19.23544pt too wide) in paragraph at lines 980--980
-[]            \T1/lmtt/m/n/8.8 9 features selected: VALUE, JOB, YOJ, DEROG, DELINQ, CLAGE, NINQ, CLNO, DEBTINC[] 
- []
-
-
-Overfull \hbox (28.47543pt too wide) in paragraph at lines 982--982
-[]        \T1/lmtt/m/n/8.8 -------------------------------------------------------------------------------------[] 
- []
-
-
-Overfull \hbox (28.47543pt too wide) in paragraph at lines 983--983
-[]        \T1/lmtt/m/n/8.8 -------------------------------------------------------------------------------------[] 
- []
-
-
-Overfull \hbox (28.47543pt too wide) in paragraph at lines 986--986
-[]        \T1/lmtt/m/n/8.8 -------------------------------------------------------------------------------------[] 
- []
-
-
-Overfull \hbox (28.47543pt too wide) in paragraph at lines 987--987
-[]        \T1/lmtt/m/n/8.8 ------------------------------------------ 3/8 --------------------------------------[] 
- []
-
-
-Overfull \hbox (28.47543pt too wide) in paragraph at lines 988--988
-[]        \T1/lmtt/m/n/8.8 -------------------------------------------------------------------------------------[] 
- []
-
-
-Overfull \hbox (28.47543pt too wide) in paragraph at lines 989--989
-[]        \T1/lmtt/m/n/8.8 ------------------------------- FEATURE SELECTION WITH GNB --------------------------[] 
- []
-
-
-Overfull \hbox (28.47543pt too wide) in paragraph at lines 990--990
-[]        \T1/lmtt/m/n/8.8 -------------------------------------------------------------------------------------[] 
- []
-
-
-Overfull \hbox (28.47543pt too wide) in paragraph at lines 991--991
-[]        \T1/lmtt/m/n/8.8 -------------------------------------------------------------------------------------[] 
- []
-
-
-Overfull \hbox (28.47543pt too wide) in paragraph at lines 1002--1002
-[]        \T1/lmtt/m/n/8.8 -------------------------------------------------------------------------------------[] 
- []
-
-
-Overfull \hbox (28.47543pt too wide) in paragraph at lines 1003--1003
-[]        \T1/lmtt/m/n/8.8 -------------------------------------------------------------------------------------[] 
- []
-
 [44.56]
 <Figures/Recurrence_Selected_Features.jpg, id=915, 794.97pt x 505.89pt>
 File: Figures/Recurrence_Selected_Features.jpg Graphic file (type jpg)
@@ -2208,62 +2123,7 @@ Package pdftex.def Info: Figures/Selected_Features_Distribution.jpg  used on inp
 
 Package hyperref Warning: No autoref name for `algorithm' on input line 1034.
 
-[47.59 <./Figures/Selected_Features_Distribution.jpg>] [48.60] [49.61]
-Overfull \hbox (28.47543pt too wide) in paragraph at lines 1142--1142
-[]        \T1/lmtt/m/n/8.8 ------------------------------------------------------------------------------------- 
- []
-
-
-Overfull \hbox (28.47543pt too wide) in paragraph at lines 1143--1143
-[]        \T1/lmtt/m/n/8.8 --------------------------------------- 56/64 ---------------------------------------[] 
- []
-
-
-Overfull \hbox (28.47543pt too wide) in paragraph at lines 1144--1144
-[]        \T1/lmtt/m/n/8.8 -------------------------------------------------------------------------------------[] 
- []
-
-
-Overfull \hbox (28.47543pt too wide) in paragraph at lines 1145--1145
-[]        \T1/lmtt/m/n/8.8 ---------------------------- BAYESIAN OPTIMIZATION OF SVM ---------------------------[] 
- []
-
-
-Overfull \hbox (28.47543pt too wide) in paragraph at lines 1146--1146
-[]        \T1/lmtt/m/n/8.8 --------------------------- WITH FEATURES SELECTED BY MLP ---------------------------[] 
- []
-
-
-Overfull \hbox (28.47543pt too wide) in paragraph at lines 1147--1147
-[]        \T1/lmtt/m/n/8.8 -------------------------------------------------------------------------------------[] 
- []
-
-
-Overfull \hbox (28.47543pt too wide) in paragraph at lines 1148--1148
-[]        \T1/lmtt/m/n/8.8 -------------------------------------------------------------------------------------[] 
- []
-
-
-Overfull \hbox (0.75546pt too wide) in paragraph at lines 1150--1150
-[]        \T1/lmtt/m/n/8.8 1/2 ... Starting Bayesian Optimization on the subset of features (10 features):[] 
- []
-
-
-Overfull \hbox (0.75546pt too wide) in paragraph at lines 1151--1151
-[]                    \T1/lmtt/m/n/8.8 MORTDUE, VALUE, JOB, YOJ, DEROG, DELINQ, CLAGE, NINQ, CLNO, DEBTINC[] 
- []
-
-
-Overfull \hbox (28.47543pt too wide) in paragraph at lines 1178--1178
-[]        \T1/lmtt/m/n/8.8 -------------------------------------------------------------------------------------[] 
- []
-
-
-Overfull \hbox (28.47543pt too wide) in paragraph at lines 1179--1179
-[]        \T1/lmtt/m/n/8.8 -------------------------------------------------------------------------------------[] 
- []
-
-[50.62] [51.63]
+[47.59 <./Figures/Selected_Features_Distribution.jpg>] [48.60] [49.61] [50.62] [51.63]
 Package typearea Info: With paper sizes other than (almost) `A4' predefined
 (typearea)             DIV values do not exist. Using DIV calculation for good
 (typearea)             line width (unless using `version=3.24` or prior).
@@ -2607,7 +2467,7 @@ LaTeX Warning: There were undefined references.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 3217FB21A9B3B8245C63A67FB027E9D7;13816.
+(rerunfilecheck)             Checksum: C962849D275BDED06D8445388F56FE9A;13960.
  ) 
 Here is how much of TeX's memory you used:
  24653 strings out of 480559
@@ -2624,7 +2484,7 @@ pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist,
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
 {c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}<c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmex10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmmi12.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmmi6.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmmib10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmr17.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmr6.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmr7.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmri12.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmss12.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmsso12.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmsy7.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmsy8.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmtt10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmtt12.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmtt8.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmtt9.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Thesis.pdf (98 pages, 9437268 bytes).
+Output written on Thesis.pdf (98 pages, 9438410 bytes).
 PDF statistics:
  1436 PDF objects out of 1440 (max. 8388607)
  1223 compressed objects within 13 object streams
