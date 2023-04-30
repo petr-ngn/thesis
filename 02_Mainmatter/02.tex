@@ -122,37 +122,47 @@ where:
 	\item $\operatorname{Pr}\left(E\right)$ is the probability of the evidence $E$.
 \end{itemize}
 
-With regards to the binary classification, we can substitute $Y$ as a target variable instead $C$, and set of features $X$ which will refer to the set of evidence $E$.
-Assuming that $Y=1$ refers to the occurrence of given event (e.g., default), henceforth the probability of default using the Naïve Bayes algorithm can be mathematically expressed as:
+With regards to the binary classification, we can substitute $Y$ as a target variable instead $C$, and set of features $X$ which will refer to the set of evidence $E$., henceforth the probability of $Y$ using the Naive Bayes algorithm can be mathematically expressed as:
 
 \begin{equation}\label{eq}
-    \operatorname{Pr}\left(Y=1 \mid X \right) = \frac{\operatorname{Pr}\left(Y=1\right) \times \operatorname{Pr}\left(X \mid Y=1 \right)}{\operatorname{Pr}\left(X\right)}
+    \operatorname{Pr}\left(Y \mid X \right) = \frac{\operatorname{Pr}\left(Y\right) \times \operatorname{Pr}\left(X \mid Y \right)}{\operatorname{Pr}\left(X\right)}
 \end{equation}
 
 One of the assumptions of this algorithm is the conditional probabilistic independence among the features.
-Therefore, instead of computing the probability of all features together, conditional on the class event, for each feature $X$ we will compute its probability, conditional on the class event. Hence:
-
+Since all the $X$ features' values combinations do not have to appear at all, we assume their independence \citep{cichosz2014data}.
+Therefore, instead of computing the probability of all features together, conditional on the class event, for each feature $X$ we the conditional joint probability of $X$ given the class event. Hence:
 \begin{equation}\label{eq}
-    \operatorname{Pr}\left(Y=1 \mid X \right) = \prod_{i=1}^{n} \operatorname{Pr}\left(X_i \mid Y=1\right)
+    \operatorname{Pr}\left(X  \mid Y \right) = \prod_{i=1}^{n} \operatorname{Pr}\left(X_i \mid Y\right)
 \end{equation}
 
-With regards to the conditional independence, we can also derived the probability of evidence $E$ or set of features $X$ respectively, as a sum of the probability of given set of features, conditional on class one (event), and of the probability of given set of features, conditional on one class two (non-event).
-Therefore:
+Furthermore, the second adjustment is applied to the denominator of the Bayes theorem, i.e., $\operatorname{Pr}\left(X\right)$ - since such probability is constant over all the values of the class event, we can omit it from the equation. Therefore, the probability of the class event $Y$ can be expressed as:
 \begin{equation}\label{eq}
-\operatorname{Pr}\left(X\right) = \operatorname{Pr}\left(X \mid Y=1\right) \times \operatorname{Pr}\left(Y=1\right) + \operatorname{Pr}\left(X \mid Y=0\right) \times \operatorname{Pr}\left(Y=0\right)
+    \operatorname{Pr}\left(Y \mid X \right) = \prod_{i=1}^{n} \operatorname{Pr}\left(X_i \mid Y\right) \times \operatorname{Pr}\left(Y\right)
 \end{equation}
-Therefore:
-\begin{equation}\label{eq}
-    \begin{aligned}
-    \operatorname{Pr}\left(X\right) = {} & \prod_{i=1}^{n} \operatorname{Pr}\left(X_i \mid Y=1\right) \times \operatorname{Pr}\left(Y=1\right) + \\
-    & \prod_{i=1}^{n} \operatorname{Pr}\left(X_i \mid Y=0\right) \times \operatorname{Pr}\left(Y=0\right)
-    \end{aligned}
-    \end{equation}
-Finally, we can derive the final formula for Naïve Bayes the posterior probability as:
 
-    \begin{equation}
-        \frac{\displaystyle\prod_{i=1}^{n} \operatorname{Pr}(X_i \mid Y=1)}{\displaystyle\prod_{i=1}^{n} \operatorname{Pr}(X_i \mid Y=1) \operatorname{Pr}(Y=1) + \displaystyle\prod_{i=1}^{n} \operatorname{Pr}(X_i \mid Y=0) \operatorname{Pr}(Y=0)}
-        \end{equation}
+During the training process, the Naive Bayes algorithm computes $\operatorname{Pr}\left(Y\right)$ and $ \operatorname{Pr}\left(X \mid Y \right)$ for each class event $Y$ and each feature $X$.
+In terms of default status, it calculates the proportion of defaulters  $\operatorname{Pr}\left(Y = 1\right)$ and non--defaulters $\operatorname{Pr}\left(Y=0\right)$ within given training sample as well as the proportion of defaulters and non--defaulters within given feature $X$.
+
+
+When it comes to the predictions or classification of new instances, we use the trained Naive Bayes model, i.e., the computed probabilities $\operatorname{Pr}\left(Y\right)$ and $ \operatorname{Pr}\left(X \mid Y \right)$ for both default and non--default class.
+Specifically, based on the new instance's features $X$, we determine the computed $\operatorname{Pr}\left(Y\right)$ and $ \operatorname{Pr}\left(X \mid Y \right)$ for both classes and aftewards, as a predicted class, we choose such class with the highest posterior probability. In general, the prediction while maximizing posterior probability is given as:
+\begin{equation}\label{eq:nb-corrected}
+    \operatorname{Pr}\left(Y \mid X \right) = \operatorname{argmax}_{y \in Y} \operatorname{Pr}\left(X \mid Y = y\right) \times \operatorname{Pr}(Y = y)
+\end{equation}
+Specifically, in terms of binary classification for prediction of given class, whether it is default or non--default, we can compute the probability of the default event ($1$) and non--default event ($0$) and choose the class with the higher probability.
+\begin{equation}\label{eq}
+    \operatorname{Pr}\left(Y \mid X \right)  = \max \left(\operatorname{Pr}\left(Y=1 \mid X\right), \operatorname{Pr}\left(Y=0 \mid X\right)\right)
+\end{equation}
+where:
+\begin{equation}
+    \operatorname{Pr}\left(Y=0 \mid X \right) = \operatorname{Pr}\left(Y=0\right) \times \prod_{i=1}^{n} \operatorname{Pr}\left(X_i \mid Y=0\right)
+\end{equation}
+respectively:
+\begin{equation}
+    \operatorname{Pr}\left(Y=1 \mid X \right) = \operatorname{Pr}\left(Y=1\right) \times \prod_{i=1}^{n} \operatorname{Pr}\left(X_i \mid Y=1\right)
+\end{equation}
+    
+
 
 
 \subsection{K-Nearest Neighbors}
