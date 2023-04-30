@@ -1,4 +1,4 @@
-\begin{thebibliography}{11}
+\begin{thebibliography}{13}
 \newcommand{\enquote}[1]{``#1''}
 \providecommand{\natexlab}[1]{#1}
 
@@ -39,6 +39,12 @@
 \textsc{Kornbrot}, D. (2014): \enquote{Point biserial correlation.}
 \newblock \emph{Wiley StatsRef: Statistics Reference Online} .
 
+\bibitem[{Mucherino \emph{et~al.}(2009)Mucherino, Papajorgji, \&
+  Pardalos}]{mucherino2009data}
+\textsc{Mucherino}, A., P.~\textsc{Papajorgji}, \& P.~M. \textsc{Pardalos}
+  (2009): \emph{Data mining in agriculture}, volume~34.
+\newblock Springer Science \& Business Media.
+
 \bibitem[{Ribeiro \emph{et~al.}(2016)Ribeiro, Singh, \&
   Guestrin}]{ribeiro2016should}
 \textsc{Ribeiro}, M.~T., S.~\textsc{Singh}, \& C.~\textsc{Guestrin} (2016):
@@ -62,5 +68,11 @@
 \textsc{Wendler}, T. \& S.~\textsc{Gr{\"o}ttrup} (2021): \emph{Data Mining with
   SPSS Modeler: Theory, Exercises and Solutions}.
 \newblock Cham: Springer.
+
+\bibitem[{Witten \emph{et~al.}(2011)Witten, Frank, Hall, \&
+  Pal}]{witten2011data}
+\textsc{Witten}, I.~H., E.~\textsc{Frank}, M.~\textsc{Hall}, \& C.~\textsc{Pal}
+  (2011): \emph{Data Mining: Practical Machine Learning Tools and Techniques}.
+\newblock Morgan Kaufmann, 4th edition.
 
 \end{thebibliography}
