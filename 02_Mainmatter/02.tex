@@ -8,6 +8,12 @@
 \textbf{TBD}
 
 \section{Terminology}
+\begin{itemize}\setlength\itemsep{0em}
+	\item \textbf{Target variable} - Dependent variable or response variable, which we want to predict or classify ($Y$). In this case we want to predict a defaut status (Yes or No).
+	\item \textbf{Feature} - Predictor, independent variable or explanatory variable ($X$), which we want to use to predict the target variable $Y$.
+	\item TBD
+\end{itemize}
+
 
 \textbf{TBD}
 \section{Algorithms}
@@ -56,7 +62,48 @@ P = \frac{1}{1+e^{-\left(\beta_0 + \displaystyle\sum_{i=1}^{n} \beta_i X_i\right
 
 \subsection{Decision Tree}
 
-\textbf{TBD}
+Decision tree (DT) is a rule--based algorithm which aims to partition the data into smaller and more homogeneous subsets. Such tree contains nodes, which are also visualized in \autoref{fig:dtnodes}, namely:
+\begin{itemize}\setlength\itemsep{0em}
+	\item Root node - the topmost node of the tree where the splitting begins.
+	\item Internal node - the non--terminal nodes as a result of the split and can be further split into another subsets.
+	\item Leaf node - the terminal nodes as a results of the split and cannot be further split into another subsets.
+\end{itemize}
+\begin{figure}[H]
+    \centering
+    \caption{Gini Impurity vs. Entropy}\vspace{0.5em}
+    \label{fig:dtnodes}\
+    \includegraphics[width=130mm]{Figures/dtnodes.jpg}
+    \centering{\begin{source}\citep{gauhar2020decision}\end{source}}\vspace{-1em}
+\end{figure}
+
+The splitting process is based on the homogeneity or so called purity of the node with respect to the target variable \citep{provost2013data}.
+In other words, we want to have the node as pure as possible which means that the node should contain as high proportion of one class as possible.
+In this case, the node should either contain high proportion of defaulters or non--defaulters, respectively.
+Such splitting processs starts from the root node and continues until the leaf nodes are pure enough or until the stopping criteria are met.
+The stopping criteria can be either a maximum depth of the tree, minimum number of observations within the node or minimum number of observations within the leaf node.
+One way to measure impurity is using Entropy which ranges from 0 to 1 and is defined as:
+\begin{equation}\label{eq}
+    E = -\sum_{i=1}^{n} p_i \log_2 \left(p_i\right) + \left(1-p_i\right) \log_2 \left(1-p_i\right)
+    \end{equation}
+where $p_i$ is the probability of the occurrence of the event $i$, or in other words, it is a fraction of the observations belonging to the class $i$ within given node. In credit risk modelling terms, it is a proportion of defaulters within given node and $1-p_i$ is a proportion of non--defaulters within given sample.
+The lower Entropy value, the purer the node is, i.e., the more homogeneous the subset is, where the frequency of one class is dominant to other class.
+Therefore, the goal is to minimize the Entropy value since we want to have the purest nodes as possible, i.e., the nodes where is either a high proportion of defaulters or non--defaulters. 
+However, the Entropy is not the only way to measure the impurity of the node. Another way is using Gini Impurity which ranges from 0 to 0.5 and is defined as:
+\begin{equation}\label{eq}
+    G = 1 - \sum_{i=1}^{n} p_{i}^{2} + \left(1-p_{i}\right)^{2}
+\end{equation}
+Both impurity measures are depicted in \autoref{fig:impurity} which we want to both of them minimize. Thus, we choose such feature and such rule which result in the lowest impurity measure. Such process is repeated until the stopping criteria are met or until the leaf nodes are pure enough.
+\begin{figure}[H]
+    \centering
+    \caption{Decision Tree's Nodes}\vspace{0.5em}
+    \label{fig:impurity}\
+    \includegraphics[width=130mm]{Figures/impurity.jpg}
+    \centering{\begin{source}Author's simulation in Python\end{source}}\vspace{-1em}
+\end{figure}
+
+After the training, the DT predicts the target variable based on the rules which are stored in the tree.
+The prediction process starts from the root node and continues until the leaf node is reached. Within the leaf node, the prediction can be either the most frequent class within the node or the probability of the occurrence of the event, i.e., the proportion of defaulters within given node.
+
 \subsection{Naive Bayes}
 
 \textbf{TBD}

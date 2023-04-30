@@ -1,36 +1,38 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Logistic function\relax }}{3}{figure.caption.15}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces K-Nearest Neighbors with $k=4$\relax }}{7}{figure.caption.16}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces ROC Curve\relax }}{12}{figure.caption.17}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Gini Impurity vs. Entropy\relax }}{4}{figure.caption.16}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Decision Tree's Nodes\relax }}{6}{figure.caption.17}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces K-Nearest Neighbors with $k=4$\relax }}{9}{figure.caption.18}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces ROC Curve\relax }}{14}{figure.caption.19}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Machine Learning Framework\relax }}{17}{figure.caption.18}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Repository Structure\relax }}{18}{figure.caption.19}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Default status distribution\relax }}{23}{figure.caption.25}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Conditional distribution of numeric features\relax }}{25}{figure.caption.27}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Conditional distribution of categorical features\relax }}{28}{figure.caption.30}%
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Nullity dendrogram\relax }}{32}{figure.caption.38}%
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Spearman Correlation Matrix\relax }}{33}{figure.caption.40}%
-\contentsline {figure}{\numberline {3.8}{\ignorespaces WoE Bins Distribution\relax }}{39}{figure.caption.42}%
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Feature Selection Print Statement\relax }}{46}{figure.caption.59}%
-\contentsline {figure}{\numberline {3.10}{\ignorespaces Reccurrence of Selected Features\relax }}{47}{figure.caption.60}%
-\contentsline {figure}{\numberline {3.11}{\ignorespaces Distribution of Selected Features per Model\relax }}{48}{figure.caption.61}%
-\contentsline {figure}{\numberline {3.12}{\ignorespaces Model Selection Print Statement\relax }}{52}{figure.caption.63}%
-\contentsline {figure}{\numberline {3.13}{\ignorespaces F1 score distribution\relax }}{54}{figure.caption.65}%
-\contentsline {figure}{\numberline {3.14}{\ignorespaces F1 score distribution - without outliers\relax }}{55}{figure.caption.66}%
-\contentsline {figure}{\numberline {3.15}{\ignorespaces Threshold distribution\relax }}{55}{figure.caption.67}%
-\contentsline {figure}{\numberline {3.16}{\ignorespaces Threshold distribution - without outliers\relax }}{56}{figure.caption.68}%
-\contentsline {figure}{\numberline {3.17}{\ignorespaces Execution time distribution\relax }}{57}{figure.caption.69}%
-\contentsline {figure}{\numberline {3.18}{\ignorespaces Execution time vs. F1 Scatterplot\relax }}{58}{figure.caption.70}%
-\contentsline {figure}{\numberline {3.19}{\ignorespaces Confusion Matrix\relax }}{61}{figure.caption.72}%
-\contentsline {figure}{\numberline {3.20}{\ignorespaces ROC Curve\relax }}{63}{figure.caption.74}%
-\contentsline {figure}{\numberline {3.21}{\ignorespaces Feature Importance\relax }}{64}{figure.caption.75}%
-\contentsline {figure}{\numberline {3.22}{\ignorespaces SHAP Summary Plot\relax }}{65}{figure.caption.76}%
-\contentsline {figure}{\numberline {3.23}{\ignorespaces Flask Web Application Form\relax }}{69}{figure.caption.77}%
-\contentsline {figure}{\numberline {3.24}{\ignorespaces Flask Web Application - Prediction Result\relax }}{70}{figure.caption.78}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Machine Learning Framework\relax }}{19}{figure.caption.20}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Repository Structure\relax }}{20}{figure.caption.21}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Default status distribution\relax }}{25}{figure.caption.27}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Conditional distribution of numeric features\relax }}{27}{figure.caption.29}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Conditional distribution of categorical features\relax }}{30}{figure.caption.32}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Nullity dendrogram\relax }}{34}{figure.caption.40}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Spearman Correlation Matrix\relax }}{35}{figure.caption.42}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces WoE Bins Distribution\relax }}{41}{figure.caption.44}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Feature Selection Print Statement\relax }}{48}{figure.caption.61}%
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Reccurrence of Selected Features\relax }}{49}{figure.caption.62}%
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Distribution of Selected Features per Model\relax }}{50}{figure.caption.63}%
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Model Selection Print Statement\relax }}{54}{figure.caption.65}%
+\contentsline {figure}{\numberline {3.13}{\ignorespaces F1 score distribution\relax }}{56}{figure.caption.67}%
+\contentsline {figure}{\numberline {3.14}{\ignorespaces F1 score distribution - without outliers\relax }}{57}{figure.caption.68}%
+\contentsline {figure}{\numberline {3.15}{\ignorespaces Threshold distribution\relax }}{57}{figure.caption.69}%
+\contentsline {figure}{\numberline {3.16}{\ignorespaces Threshold distribution - without outliers\relax }}{58}{figure.caption.70}%
+\contentsline {figure}{\numberline {3.17}{\ignorespaces Execution time distribution\relax }}{59}{figure.caption.71}%
+\contentsline {figure}{\numberline {3.18}{\ignorespaces Execution time vs. F1 Scatterplot\relax }}{60}{figure.caption.72}%
+\contentsline {figure}{\numberline {3.19}{\ignorespaces Confusion Matrix\relax }}{63}{figure.caption.74}%
+\contentsline {figure}{\numberline {3.20}{\ignorespaces ROC Curve\relax }}{65}{figure.caption.76}%
+\contentsline {figure}{\numberline {3.21}{\ignorespaces Feature Importance\relax }}{66}{figure.caption.77}%
+\contentsline {figure}{\numberline {3.22}{\ignorespaces SHAP Summary Plot\relax }}{67}{figure.caption.78}%
+\contentsline {figure}{\numberline {3.23}{\ignorespaces Flask Web Application Form\relax }}{71}{figure.caption.79}%
+\contentsline {figure}{\numberline {3.24}{\ignorespaces Flask Web Application - Prediction Result\relax }}{72}{figure.caption.80}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Market equilibrium\relax }}{79}{figure.caption.84}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Boxy's example\relax }}{80}{figure.caption.86}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Market equilibrium\relax }}{81}{figure.caption.86}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Boxy's example\relax }}{82}{figure.caption.88}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

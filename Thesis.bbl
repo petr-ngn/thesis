@@ -1,4 +1,4 @@
-\begin{thebibliography}{13}
+\begin{thebibliography}{15}
 \newcommand{\enquote}[1]{``#1''}
 \providecommand{\natexlab}[1]{#1}
 
@@ -12,6 +12,13 @@
   Foreign Direct Investment Incentives}.}
 \newblock \emph{NBER Working Papers 9489}, National Bureau of Economic
   Research, Inc.
+
+\bibitem[{Gauhar(2020)}]{gauhar2020decision}
+\textsc{Gauhar}, N. (2020): \enquote{Decision tree: A classification
+  algorithm.}
+\newblock
+  \url{https://learnwithgauhar.com/decision-tree-a-classification-algorithm/}.
+\newblock Accessed on April 30, 2023.
 
 \bibitem[{Haaparanta(1996)}]{Haaparanta1996}
 \textsc{Haaparanta}, P. (1996): \enquote{{Competition for Foreign Direct
@@ -44,6 +51,12 @@
 \textsc{Mucherino}, A., P.~\textsc{Papajorgji}, \& P.~M. \textsc{Pardalos}
   (2009): \emph{Data mining in agriculture}, volume~34.
 \newblock Springer Science \& Business Media.
+
+\bibitem[{Provost \& Fawcett(2013)}]{provost2013data}
+\textsc{Provost}, F. \& T.~\textsc{Fawcett} (2013): \emph{Data Science for
+  Business: What you need to know about data mining and data-analytic
+  thinking}.
+\newblock " O'Reilly Media, Inc.".
 
 \bibitem[{Ribeiro \emph{et~al.}(2016)Ribeiro, Singh, \&
   Guestrin}]{ribeiro2016should}
