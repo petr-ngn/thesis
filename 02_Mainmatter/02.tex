@@ -11,7 +11,8 @@
 \begin{itemize}\setlength\itemsep{0em}
 	\item \textbf{Target variable} - Dependent variable or response variable, which we want to predict or classify ($Y$). In this case we want to predict a defaut status (Yes or No).
 	\item \textbf{Feature} - Predictor, independent variable or explanatory variable ($X$), which we want to use to predict the target variable $Y$.
-	\item TBD
+	\item cross validation
+	\item over fitting
 \end{itemize}
 
 
@@ -21,10 +22,8 @@
 In this section, several algorithms, which are used in the machine learning implementation, are going to be described. Since the goal is to predict whether or not given client will default, henceforth only (binary) classification algorithms as a part of the supervised learning are described. In other words, regression models and unsupervised learning algorithms are out of the scope of this thesis.
 \subsection{Logistic Regression}
 
-\textbf{TBD}
-
 Despite the algorithm's name, it is actually not a regression but rather a classification model.
-In contrast, a linear regression's target variable is continuous whereas regarding a logistic regression, the target variable is binary or dichotomous.
+In contrast, a linear regression's target variable is continuous whereas regarding a logistic regression, the target variable is categorical (or rather dichotomous in case of binary classification) \citep{wendler2021data}.
 For the probability estimation it is using a logistic, or so-called sigmoid function, which maps any real value within the range of 0 to 1 and takes a S-shaped curve as can be seen in \autoref{fig:sigmoid}.
 
 \begin{figure}[H]
@@ -41,9 +40,9 @@ The linear form of the logistic regression with n features can be written as:
     \ln\left(\frac{P}{1-P}\right) = \beta_0  + \sum_{i=1}^{n} \beta_i X_i
 \end{equation}
 
-where $P$ is the probability of the occurred event, conditional on the set of given features. Let us denote $Y=1$ as an observed target instance where the event occurred (e.g., defaulted), then:
+where $P$ is the probability of the occurred event, conditional on the set of given features. Let us denote $Y=1$ as an observed target instance where the event occurred (e.g., default), then:
 \begin{equation}\label{eq}
-    P = \operatorname{Pr}(Y=1 \mid X_1,X_2,\ldots,X_n)
+    P = \operatorname{Pr}(Y=1 \mid X)
 \end{equation}
 
 Therefore, the term within the natural logarithm are the odds or more particularly, the ratio of the probability of the event with respect to the probability of non-event, both conditional on the same set of given features.
@@ -83,14 +82,14 @@ Such splitting processs starts from the root node and continues until the leaf n
 The stopping criteria can be either a maximum depth of the tree, minimum number of observations within the node or minimum number of observations within the leaf node.
 One way to measure impurity is using Entropy which ranges from 0 to 1 and is defined as:
 \begin{equation}\label{eq}
-    E = -\sum_{i=1}^{n} p_i \log_2 \left(p_i\right) + \left(1-p_i\right) \log_2 \left(1-p_i\right)
+    E = -\sum_{i=1}^{n} p_i \log_2 \left(p_i\right)
     \end{equation}
 where $p_i$ is the probability of the occurrence of the event $i$, or in other words, it is a fraction of the observations belonging to the class $i$ within given node. In credit risk modelling terms, it is a proportion of defaulters within given node and $1-p_i$ is a proportion of non--defaulters within given sample.
 The lower Entropy value, the purer the node is, i.e., the more homogeneous the subset is, where the frequency of one class is dominant to other class.
 Therefore, the goal is to minimize the Entropy value since we want to have the purest nodes as possible, i.e., the nodes where is either a high proportion of defaulters or non--defaulters. 
 However, the Entropy is not the only way to measure the impurity of the node. Another way is using Gini Impurity which ranges from 0 to 0.5 and is defined as:
 \begin{equation}\label{eq}
-    G = 1 - \sum_{i=1}^{n} p_{i}^{2} + \left(1-p_{i}\right)^{2}
+    G = 1 - \sum_{i=1}^{n} p_{i}^{2}
 \end{equation}
 Both impurity measures are depicted in \autoref{fig:impurity} which we want to both of them minimize. Thus, we choose such feature and such rule which result in the lowest impurity measure. Such process is repeated until the stopping criteria are met or until the leaf nodes are pure enough.
 \begin{figure}[H]
@@ -105,8 +104,6 @@ After the training, the DT predicts the target variable based on the rules which
 The prediction process starts from the root node and continues until the leaf node is reached. Within the leaf node, the prediction can be either the most frequent class within the node or the probability of the occurrence of the event, i.e., the proportion of defaulters within given node.
 
 \subsection{Naive Bayes}
-
-\textbf{TBD}
 
 Naive Bayes is a classification and probabilistic machine learning algorithm which is based on the Bayes theorem:
 

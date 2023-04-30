@@ -1,6 +1,6 @@
-\contentsline {chapter}{List of Tables}{ix}{section*.9}%
-\contentsline {chapter}{List of Figures}{x}{section*.11}%
-\contentsline {chapter}{Acronyms}{xii}{section*.13}%
+\contentsline {chapter}{List of Tables}{viii}{section*.9}%
+\contentsline {chapter}{List of Figures}{ix}{section*.11}%
+\contentsline {chapter}{Acronyms}{xi}{section*.13}%
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
 \contentsline {chapter}{\numberline {2}Theoretical Background}{2}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Credit Risk}{2}{section.2.1}%
@@ -72,26 +72,7 @@
 \contentsline {section}{\numberline {3.6}Machine Learning Deployment}{68}{section.3.6}%
 \contentsline {subsection}{\numberline {3.6.1}Final Model Building}{68}{subsection.3.6.1}%
 \contentsline {subsection}{\numberline {3.6.2}Flask and HTML Web Application}{68}{subsection.3.6.2}%
-\contentsline {chapter}{\numberline {4}Irrelevant text}{74}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Frequently made mistakes}{74}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Useful Hints}{75}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Formal requirements of master's thesis}{77}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Template adjustments and meta-data}{78}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Itemization and Environments}{78}{section.4.5}%
-\contentsline {section}{\numberline {4.6}Acronyms}{79}{section.4.6}%
-\contentsline {section}{\numberline {4.7}Figures}{79}{section.4.7}%
-\contentsline {section}{\numberline {4.8}Tables}{81}{section.4.8}%
-\contentsline {section}{\numberline {4.9}Boxes}{82}{section.4.9}%
-\contentsline {section}{\numberline {4.10}Theorems, Definitions, \ldots }{82}{section.4.10}%
-\contentsline {section}{\numberline {4.11}Nonumbered Equations}{82}{section.4.11}%
-\contentsline {section}{\numberline {4.12}Numbered Equations}{83}{section.4.12}%
-\contentsline {section}{\numberline {4.13}Matrix Equations}{83}{section.4.13}%
-\contentsline {section}{\numberline {4.14}Cross-references}{83}{section.4.14}%
-\contentsline {section}{\numberline {4.15}Source codes}{83}{section.4.15}%
-\contentsline {section}{\numberline {4.16}Paragraphs}{84}{section.4.16}%
-\contentsline {paragraph}{Proin}{84}{section*.89}%
-\contentsline {subparagraph}{Velit}{84}{section*.90}%
-\contentsline {chapter}{\numberline {5}Conclusion}{85}{chapter.5}%
-\contentsline {chapter}{Bibliography}{87}{chapter*.91}%
+\contentsline {chapter}{\numberline {4}Conclusion}{74}{chapter.4}%
+\contentsline {chapter}{Bibliography}{76}{chapter*.81}%
 \contentsline {chapter}{\numberline {A}Title of Appendix A}{I}{appendix.A}%
 \contentsline {chapter}{\numberline {B}Project's website}{II}{appendix.B}%
