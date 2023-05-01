@@ -60,6 +60,7 @@ P = \frac{1}{1+e^{-\left(\beta_0 + \displaystyle\sum_{i=1}^{n} \beta_i X_i\right
 \end{equation}
 
 \subsection{Decision Tree}
+\label{subsec:dt}
 
 Decision tree (DT) is a rule--based algorithm which aims to partition the data into smaller and more homogeneous subsets. Such tree contains nodes, which are also visualized in \autoref{fig:dtnodes}, namely:
 \begin{itemize}\setlength\itemsep{0em}
@@ -158,10 +159,6 @@ respectively:
 \begin{equation}
     \operatorname{Pr}\left(Y=1 \mid X \right) = \operatorname{Pr}\left(Y=1\right) \times \prod_{i=1}^{n} \operatorname{Pr}\left(X_i \mid Y=1\right)
 \end{equation}
-    
-
-
-
 \subsection{K-Nearest Neighbors}
 
 The goal of K-nearest Neighbors algorithm (also known as KNN) is to find $k$ instances that are most similar to particular instances y in the n-dimensional space, where n is the number of features.
@@ -202,10 +199,18 @@ Therefore, when applying majority voting, KNN would predict such instance as a r
 
     \centering{\begin{source}\citep{mucherino2009data}\end{source}}\vspace{-1em}
 \end{figure}
-
 \subsection{Random Forest}
 
-ratatatat \citep{rigatti2017random}
+Random forest is an ensemble algorithm which is a collection of decision trees where each tree is independently trained on on a bootstrap sample of the training data \citep{han2011data}, i.e., on a on a set which is randomly sampled from the training data with replacement which has the same size as the training data. In such way, each bootstrap sample is unique and can contain duplicates of the original data or does not have to contain all the original data.
+Another aspect of randomness in such algorithm, particularly in the variability within trees, is the number of features considered for the split at each node.
+Instead of considering all the features of the length $M$, it randomly selects a subset of features of the length $m$ (where $m<M$) and chooses the best split from the subset.
+The training process of individual decision tree is the same as described in \autoref{subsec:dt}.
+
+Within classifying new instances, the random forest algorithm predicts the class based on the majority voting of the individual decision trees or predicts a probability as an average of the probabilities of the individual decision trees \citep{randomforestmalley}, thus:
+\begin{equation}
+    \operatorname{Pr}\left(Y=1 \mid X \right) = \frac{1}{B} \sum_{b=1}^{B} \operatorname{Pr}\left(Y=1 \mid X, T_b \right)
+\end{equation}
+where $B$ is the number of trees and $T_b$ is the $b$-th tree.
 
 \textbf{TBD}
 \subsection{Gradient Boosting}
@@ -226,9 +231,8 @@ This section focuses on particular measures through which it is possible to dete
 The are many ways, how to evaluate the model's performance, therefore, only the most common ones and the most relevant are further described.
 Note, since default prediction regards classification tasks, therefore regression's evaluation metrics are omitted.
 
-\subsection{Confusion Matrix}
+\subsection{Confusion Matrix and Derived Metrics}
 
-\textbf{TBD}
 
 Confusion matrix is a table which summarizes the classification model's performance with respect to the actual classes and predicted classes.
 It is a square $n \times n$ matrix, where $n$ determines number of classes within the target variable.
@@ -280,7 +284,8 @@ where:
 	\item $TN$ is the True Negative which refers to the number of instances which correspond to the actual class $False$ and indeed have been correctly classified as class $False$.
 \end{itemize}
 
-\subsection{Accuracy}
+\subsubsection{Accuracy}
+Such metric ranges from 0 to 1 and it describes in relatives terms how many instances the model has correctly predicted. Thus, the goal is to minimize the number of False Positives and False Negatives, or in credit risk modelling terms, number of defaulters which the model has classified as non--defaulters and number of non--defaulters which the model has classified as defaulters.
 
 \textbf{TBD}
 
@@ -288,30 +293,37 @@ where:
     Accuracy = \frac{TP + FN}{TP + TN + FP + FN}
 \end{equation}
 
-\subsection{Recall}
-
+\subsubsection{Recall}
+Such metric is also known as True Positive Rate (TPR) or Sensitivity and it describes in relative terms how many dactual \textit{True} instances the model has correctly predicted out of all the \textit{True} instances. Thus, the goal is to minimize the number of False Negatives, i.e., number of defaulters which the model has classified as non--defaulters.
 \textbf{TBD}
 
 \begin{equation}\label{eq}
-    Precision = \frac{TP}{TP + FN}
+    Recall = \frac{TP}{TP + FN}
 \end{equation}
 
-\subsection{Precision}
-
+\subsubsection{Precision}
+This metric describes in relative terms how many predicted \textit{True} instances are actually \textit{True}. Thus, the goal is to minimize the number of False Positives, i.e., number of non--defaulters which the model has classified as defaulters.
 \textbf{TBD}
 
 \begin{equation}\label{eq}
     Precision = \frac{TP}{TP + FP}
 \end{equation}
 
-\subsection{F1 Score}
-
+\subsubsection{F1 Score}
+F1 score incorporates both Recall and Precision into a single value. Is it defined as a harmonic mean of these two metrics and the goal is to minimize False Positives and False Negatives at the same time.
 \textbf{TBD}
 
 \begin{equation}\label{eq}
     F1 = \frac{2 \times Precision \times Recall}{Precision + Recall} = \frac{2 \times TP}{2 \times TP + FP + FN}
 \end{equation}
 
+\subsubsection{Matthews Correlation Coefficient}
+
+\textbf{TBD}
+
+\begin{equation}\label{eq}
+    MCC = \frac{TP \times TN - FP \times FN}{\sqrt{(TP + FP) (TP + FN) (TN + FP) (TN + FN)}}
+\end{equation}
 \subsection{AUC}
 
 \textbf{TBD}
@@ -368,7 +380,7 @@ As the $AUC$ is an area present underneath the ROC curve, mathematically, it can
 \textbf{TBD}
 
 \begin{equation}\label{eq}
-    KS = \max_{x \in \mathbb{R}} \left| \hat{F}_n \left(x \right) - F \left(x \right) \right|
+    \text{Kolmogorov Smirnov} = \max_{x \in \mathbb{R}} \left| \hat{F}_n \left(x \right) - F \left(x \right) \right|
 \end{equation}
 
 
@@ -377,25 +389,15 @@ As the $AUC$ is an area present underneath the ROC curve, mathematically, it can
 \textbf{TBD}
 
 \begin{equation}\label{eq}
-    SD = \frac{\tau \left(X, Y\right)}{\sqrt{\tau \left(X, X\right) \tau \left(Y, Y\right)}}
+    \text{Somers' D} = \frac{\tau \left(X, Y\right)}{\sqrt{\tau \left(X, X\right) \tau \left(Y, Y\right)}}
 \end{equation}
-
-
-\subsection{Matthews Correlation Coefficient}
-
-\textbf{TBD}
-
-\begin{equation}\label{eq}
-    MCC = \frac{TP \times TN - FP \times FN}{\sqrt{(TP + FP) (TP + FN) (TN + FP) (TN + FN)}}
-\end{equation}
-
 
 \subsection{Brier Score Loss}
 
 \textbf{TBD}
 
 \begin{equation}\label{eq}
-    BSL = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2
+    \text{Brier Score Loss} = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2
 \end{equation}
 
 
@@ -404,47 +406,25 @@ As the $AUC$ is an area present underneath the ROC curve, mathematically, it can
 \textbf{TBD}
 
 \begin{equation}\label{eq}
-    JC = \frac{|y \cap \hat{y} |}{|y \cup \hat{y} |}
-    \end{equation}
-
+    \text{Jaccard Score} = \frac{|y \cap \hat{y} |}{|y \cup \hat{y} |}
+\end{equation}
 
 \subsection{Zero-One Loss}
 
 \textbf{TBD}
 
 \begin{equation}\label{eq}
-    ZOL = \frac{1}{n} \sum_{i}^{n} \delta_{y_{i=1} \neq \hat{y}_{i}} \text{ , where } \delta_{y_{i} \neq \hat{y}_{i}} = \begin{cases}
+    \text{Zero--One Loss} = \frac{1}{n} \sum_{i}^{n} \delta_{y_{i=1} \neq \hat{y}_{i}} \text{ , where } \delta_{y_{i} \neq \hat{y}_{i}} = \begin{cases}
         1, & \text{if $x<0$}.\\
         0, & \text{otherwise}.
-      \end{cases}
+        \end{cases}
 \end{equation}
-\section{Hyperparameter Tuning}
+
+
+\subsection{Log Loss}
 
 \textbf{TBD}
-\subsection{Grid Search}
 
-\textbf{TBD}
-\subsection{Random Search}
-
-\textbf{TBD}
-\subsection{Bayesian Optimization}
-
-\textbf{TBD}
-\section{Imbalanced Class Distribution}
-
-\textbf{TBD}
-\subsection{Random Oversampling}
-
-\textbf{TBD}
-\subsection{SMOTE Oversampling}
-
-\textbf{TBD}
-\subsection{ADASYN Oversampling}
-
-\textbf{TBD}
-\section{Optimal Binning}
-
-\textbf{TBD}
-\subsection{Weight of Evidence Encoding}
-
-\textbf{TBD}
+\begin{equation}\label{eq}
+    \text{Log Loss}  = -\frac{1}{N} \sum_{i=1}^{N} y_i \log(p_i) + (1-y_i)\log(1-p_i)
+\end{equation}
