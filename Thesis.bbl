@@ -1,4 +1,4 @@
-\begin{thebibliography}{22}
+\begin{thebibliography}{23}
 \newcommand{\enquote}[1]{``#1''}
 \providecommand{\natexlab}[1]{#1}
 
@@ -38,6 +38,12 @@
 \bibitem[{Cichosz(2014)}]{cichosz2014data}
 \textsc{Cichosz}, P. (2014): \emph{Data mining algorithms: explained using R}.
 \newblock John Wiley \& Sons.
+
+\bibitem[{Comotto(2022)}]{comotto2022evaluation}
+\textsc{Comotto}, F. (2022): \enquote{Evaluation metrics: Leave your comfort
+  zone and try mcc and brier score.}
+\newblock Medium.
+\newblock Retrieved April 30, 2023.
 
 \bibitem[{Dembla(2020)}]{dembla2020intuition}
 \textsc{Dembla}, G. (2020): \enquote{Intuition behind log-loss score.}

@@ -405,14 +405,12 @@ Therefore, Somers' D can be defined as the difference between the two conditiona
 In case of a binary classification, $X$ values would represent \textit{True} labels and $Y$ values would represent predicted probability scores as rank vectors. Such metric ranges from -1 to +1 (likewise as Matthews correlation coefficient +1). Thus, the higher value of Somers' D, the model's better ability to distinguish between borrowers who are likely to default and those who are not.
 
 \subsection{Brier Score Loss}
-
-\textbf{TBD}
-
+Methodologically, Brier Score Loss is calculated in the same way as Mean Squared Error (MSE). However, Brier Score Loss is applied to the predicted probabilities (i.e., assumes that the target variable is dichotomous) \citep{comotto2022evaluation}, whereas MSE is rather used in regression tasks where is no assumption regarding the continuous target variable.
+Henceforth, Brier Score Loss is defined as a mean squared error between the $True$ labels ($y$) and the predicted probabilities ($\hat{y}$) as follows:
 \begin{equation}\label{eq}
     \text{Brier Score Loss} = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2
 \end{equation}
-
-
+Brier Score Loss ranges from 0 to 1, where the the ideal scenario would be Brier Score Loss of 0 - in such case, the model would be perfect predictive power.
 \subsection{Jaccard Score}
 Jaccard Score which is also known as Jaccard Index is a similarity metric as it measures similarity between the\textit{True} labels and predicted classes (0 or 1).
 Let us denote $y$ as a vector of \textit{True} labels and $\hat{y}$ as a vector of predicted classes.
