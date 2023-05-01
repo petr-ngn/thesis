@@ -31,7 +31,7 @@ For the probability estimation it is using a logistic, or so-called sigmoid func
     \caption{Logistic function}\vspace{0.5em}
     \label{fig:sigmoid}\
     \includegraphics[width=130mm]{Figures/sigmoid.jpg}
-    \centering{\begin{source}\citep{wendler2021data}\end{source}}\vspace{-1em}
+    \centering{\begin{source}Author's simulation in Python\end{source}}\vspace{-1em}
 \end{figure}
 
 The linear form of the logistic regression with n features can be written as:
@@ -230,7 +230,7 @@ where $B$ is the number of trees and $T_b$ is the $b$-th tree.
 This section focuses on particular measures through which it is possible to determine a predictive power of model in terms of its performance.
 The are many ways, how to evaluate the model's performance, therefore, only the most common ones and the most relevant are further described.
 Note, since default prediction regards classification tasks, therefore regression's evaluation metrics are omitted.
-
+If not stated otherwise, the higher metric measure, the better the model's performance is.
 \subsection{Confusion Matrix and Derived Metrics}
 
 
@@ -238,7 +238,7 @@ Confusion matrix is a table which summarizes the classification model's performa
 It is a square $n \times n$ matrix, where $n$ determines number of classes within the target variable.
 Let us denote the confusion matrix as $C\left(f\right)$ for classification algorithm $f$. 
 Its elements can be denoted as $c_{i,j}$ where $i$ and $j$ refer to the row and column indices, respectively, or more particularly, $i$ refers to the actual class and $j$ to the class predicted by the classifier $f$.
-Each element of the confusion matrix refers to the number of instances corresponding to actual class $i$ and predicted class $j$. For instance, the element $c_2,1$ would refer to the number of instances which have the actual class $2$ but have been classified as class $1$.
+Each element of the confusion matrix refers to the number of instances corresponding to actual class $i$ and predicted class $j$ \citep{japkowicz2011evaluating}. For instance, the element $c_2,1$ would refer to the number of instances which have the actual class $2$ but have been classified as class $1$.
 Mathematically, the confusion matrix can be written as following:
 
 \begin{equation}\label{eq}
@@ -249,7 +249,7 @@ Or either in matrix form as:
 
 \begin{equation}\label{eq}
     C_{i \times j} = \begin{bmatrix}
-    c_{1,1} & c_{2,1} & \cdots & c_{1,j} \\
+    c_{1,1} & c_{1,2} & \cdots & c_{1,j} \\
     c_{2,1} & c_{2,2} & \cdots & c_{2,j} \\
     \vdots & \vdots & \ddots & \vdots \\
     c_{i,1} & c_{i,2} & \cdots & c_{i,j} \\
@@ -264,7 +264,7 @@ Further, let us consider a binary classification - hence, the confusion matrix w
     c_{1,1} & c_{1,2} \\
     c_{2,1} & c_{2,2} \\
     \end{bmatrix}
-    \end{equation}
+\end{equation}
 
 
 We can this rewrite confusion matrix as:
@@ -274,7 +274,7 @@ We can this rewrite confusion matrix as:
     TP & FN \\
     FP & TN \\
     \end{bmatrix}
-    \end{equation}
+\end{equation}
 
 where:
 \begin{itemize}\setlength\itemsep{0em}
@@ -286,47 +286,54 @@ where:
 
 \subsubsection{Accuracy}
 Such metric ranges from 0 to 1 and it describes in relatives terms how many instances the model has correctly predicted. Thus, the goal is to minimize the number of False Positives and False Negatives, or in credit risk modelling terms, number of defaulters which the model has classified as non--defaulters and number of non--defaulters which the model has classified as defaulters.
-
-\textbf{TBD}
-
+However, accuracy is inappropriate metric for evaluation when having imbalanced class, i.e., where the distribution of the target variable is skewed.
+In such case, the model can achieve a relatively high accuracy even though it is not able to predict the minority class correctly \citep{brownlee2021failure}, thus it would lead to the misleading results.
+This is the case of the credit risk modelling, when the loan portfolio oftenly have a lot of non--defaults and few defaults.
+Therefore, it is deemed appropriate to consider other metrics when having imbalanced class.
 \begin{equation}\label{eq}
     Accuracy = \frac{TP + FN}{TP + TN + FP + FN}
 \end{equation}
 
 \subsubsection{Recall}
-Such metric is also known as True Positive Rate (TPR) or Sensitivity and it describes in relative terms how many dactual \textit{True} instances the model has correctly predicted out of all the \textit{True} instances. Thus, the goal is to minimize the number of False Negatives, i.e., number of defaulters which the model has classified as non--defaulters.
-\textbf{TBD}
-
+Such metric is also known as True Positive Rate (TPR) or Sensitivity, which also ranges from 0 to 1, and it describes in relative terms how many actual \textit{True} instances the model has correctly predicted out of all the \textit{True} instances. Thus, the goal is to minimize the number of False Negatives, i.e., number of defaulters which the model has classified as non--defaulters.
+A lower value of recall could therefore indicates that either the model is not able to predict correctly the $True$ classes resulting in low number of True Positives and/or high number of False Negatives.
+Recall metris is useful when having imbalanced class and should be used instead of accuracy metric as it measures the model's ability to correctly identify instances of the minority class (i.e., defaults).
+Mathematically based on the confusion matrix elements, it can be computed as:
 \begin{equation}\label{eq}
     Recall = \frac{TP}{TP + FN}
 \end{equation}
 
 \subsubsection{Precision}
 This metric describes in relative terms how many predicted \textit{True} instances are actually \textit{True}. Thus, the goal is to minimize the number of False Positives, i.e., number of non--defaulters which the model has classified as defaulters.
-\textbf{TBD}
-
+A lower value of precision could therefore indicates that either the model is not able to predict correctly the $True$ classes (low number of True Positives) or its prediction of $True$ classes is noisy (high number of False Positives).
+Precision is another metric which should be used instead of accuracy when having imbalanced class as it tt measures the model's ability to correctly identify instances of the minority class while minimizing false positives (i.e., non--default instances which the model has classified as default).
+Similarly, Precision also ranges from 0 to 1 and can be derived from the confusion matrix as follows:
 \begin{equation}\label{eq}
     Precision = \frac{TP}{TP + FP}
 \end{equation}
-
 \subsubsection{F1 Score}
-F1 score incorporates both Recall and Precision into a single value. Is it defined as a harmonic mean of these two metrics and the goal is to minimize False Positives and False Negatives at the same time.
-\textbf{TBD}
-
+F1 score incorporates both Recall and Precision into a single value and takes on values between 0 and 1 as well.
+Is it defined as a weighted harmonic mean of these two metrics \citep{brabec2020model} (where both Recall and Precision have uniform weights), and the goal is to minimize False Positives and False Negatives at the same time as within accuracy.
+Nevertheless, F1 score is deemed as more appropriate metric when dealing with imbalanced class as it provides more balanced evaluation of model's performance in imbalanced datasets compared to accuracy.
 \begin{equation}\label{eq}
     F1 = \frac{2 \times Precision \times Recall}{Precision + Recall} = \frac{2 \times TP}{2 \times TP + FP + FN}
 \end{equation}
 
 \subsubsection{Matthews Correlation Coefficient}
-
-\textbf{TBD}
-
+The drawback of Recall, Precision and F1 score is they are asymmetric measures, i.e., they do not take into account the True Negatives.
+Therefore, such metrics' values will differ if we swap the positive and negative classes \citep{chicco2020advantages}, e.g., 1 would indicate non--default and vice versa.
+In order to overcome such drawback, Matthews Correlation Coefficient can be used as it is symmetric and it takes into account all the four elements of the confusion matrix as well as it captures imbalanced class issue.
+Methodologically, Matthews Correlation Coefficient is defined as a discretization of Pearson correlation for the case of binary variables \citep{boughorbel2017optimal}.
+Pearson correlation coefficient is defined as:
+\begin{equation}\label{eq}
+    r(x,y) = \frac{\sum\limits_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum\limits_{i=1}^n (x_i - \bar{x})^2} \sqrt{\sum\limits_{i=1}^n (y_i - \bar{y})^2}}
+\end{equation}
+Thus, assuming that $x$ is the vector of True labels and $y$ is the vector of predictions, the Matthews Correlation Coefficient can be defined as:
 \begin{equation}\label{eq}
     MCC = \frac{TP \times TN - FP \times FN}{\sqrt{(TP + FP) (TP + FN) (TN + FP) (TN + FN)}}
 \end{equation}
+Matthews correlation coefficient ranges from -1 to 1, where 1 indicates perfect model's predictions, -1 indicates that model misclassifies all the instances and 0 indicates that model's predictions are not better than random guessing.
 \subsection{AUC}
-
-\textbf{TBD}
 
 In order to derive Area Under the Curve ($AUC$), first we need to define Receiver Operating Characteristics ($ROC$) curve.
 ROC curve is two-dimensional visualization of the model performance as a probability curve in terms of True Positive Rate ($TPR$) and False Positive Rate ($FPR$) based on varying the given threshold.
@@ -375,22 +382,27 @@ As the $AUC$ is an area present underneath the ROC curve, mathematically, it can
     AUC = \int_{0}^{1} TPR \left(FPR^{-1}\left(x \right)\right) dx
 \end{equation}
 
-\subsection{Kolmogorov-Smirnov Distance}
+\subsection{Kolmogorov-Smirnov}
 
-\textbf{TBD}
-
+The Kolmogorov-Smirnov (KS) is non--parametric metric for assessing discriminant power of a model as it measures distance between the cumulative distribution functions (CDF) between two classes, and is quantified as a maximum vertical absolute difference between such two CDF's \citep{adeodato2016equivalence}.
+In credit risk modelling terms, we can express KS as follows:
 \begin{equation}\label{eq}
-    \text{Kolmogorov Smirnov} = \max_{x \in \mathbb{R}} \left| \hat{F}_n \left(x \right) - F \left(x \right) \right|
+    \text{Kolmogorov Smirnov} = \max_{0 \le j \le 1} \left| F_D \left(j \right) - F_{ND} \left(j \right) \right|
 \end{equation}
-
-
+where $F_D$ and $F_{ND}$ are the cumulative distribution functions of default and non-default cases, respectively, and $j$ is the probability score threshold which ranges between 0 and 1.
 \subsection{Somer's D}
 
-\textbf{TBD}
-
+The Somers' D is a metric which is part of the Kendall family of ranking measures. Particularly, assuming X-Y pairs, a Kendall's $\tau_{a}$ is defined as:
 \begin{equation}\label{eq}
-    \text{Somers' D} = \frac{\tau \left(X, Y\right)}{\sqrt{\tau \left(X, X\right) \tau \left(Y, Y\right)}}
+    \tau\left(X,Y\right) = \text{E} \left[ \text{sign}(X_i - X_j) \text{sign} (Y_i - Y_j) \right]
 \end{equation}
+Equivalently, Kendall's $\tau_{a}$ can be defined as the difference between the probability that the two X-Y pairs are \textit{concordant} and the probability that they are \textit{discordant}. X-Y pair is concordant if the larger of the $X$ values is paired with with larger of the $Y$ values, i.e, $X_i < X_j$ and $Y_i < Y_j$.
+In contrast, X-Y pair is discordant if the larger of $X$ values is associated with smaller of $Y$ values or vice versa, i.e, $X_i < X_j$ and $Y_i > Y_j$, or $X_i > X_j$ and $Y_i < Y_j$ \citep{newson2002parameters}.
+Therefore, Somers' D can be defined as the difference between the two conditional probabilities of concordance and discordance, given that the two $X$ values are unequal \citep{newson2014interpretation} as follows:
+\begin{equation}
+    D\left(Y \mid X\right) = \frac{\tau\left(X,Y\right)}{\tau\left(X,X\right)}
+\end{equation}
+In case of a binary classification, $X$ values would represent \textit{True} labels and $Y$ values would represent predicted probability scores as rank vectors. Such metric ranges from -1 to +1 (likewise as Matthews correlation coefficient +1). Thus, the higher value of Somers' D, the model's better ability to distinguish between borrowers who are likely to default and those who are not.
 
 \subsection{Brier Score Loss}
 
@@ -423,8 +435,17 @@ As the $AUC$ is an area present underneath the ROC curve, mathematically, it can
 
 \subsection{Log Loss}
 
-\textbf{TBD}
-
+Log loss, also know as logistic loss or cross--entropy loss, is a loss function metric which takes \textit{True} labels and predicted probabilities as an input and the minimize the difference between these two in a logarithmic function's form. Particularly, it indicates how close the predicted probabilities are to the corresponding $True$ labels. The more predicted probabilities diverges from the actual value, the more the log loss function penalizes the model's performance \citep{dembla2020intuition}.
 \begin{equation}\label{eq}
-    \text{Log Loss}  = -\frac{1}{N} \sum_{i=1}^{N} y_i \log(p_i) + (1-y_i)\log(1-p_i)
+    \text{Log Loss}  = -\frac{1}{N} \sum_{i=1}^{N} y_i \ln(p_i) + (1-y_i)\ln(1-p_i)
 \end{equation}
+
+
+Logically, the lower Log loss value, the better performance of the model is. As depicted in \autoref{fig:logloss}, we can observe the closer the predicted probability is closer to 1 with respect to the $True$ label being equal to 1, the more is the log loss function closer to 0 which is desired in terms of model's performance.
+\begin{figure}[H]
+    \centering
+    \caption{Log Loss Function when $Y=1$}\vspace{0.5em}
+    \label{fig:logloss}\
+    \includegraphics[width=130mm]{Figures/logloss.jpg}
+    \centering{\begin{source}Author's simulation in Python\end{source}}\vspace{-1em}
+\end{figure}

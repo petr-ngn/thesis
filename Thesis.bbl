@@ -1,10 +1,48 @@
-\begin{thebibliography}{12}
+\begin{thebibliography}{21}
 \newcommand{\enquote}[1]{``#1''}
 \providecommand{\natexlab}[1]{#1}
+
+\bibitem[{Adeodato \& Melo(2016)}]{adeodato2016equivalence}
+\textsc{Adeodato}, P.~J. \& S.~B. \textsc{Melo} (2016): \enquote{On the
+  equivalence between kolmogorov-smirnov and roc curve metrics for binary
+  classification.}
+\newblock \emph{arXiv preprint arXiv:1606.00496} .
+
+\bibitem[{Boughorbel \emph{et~al.}(2017)Boughorbel, Jarray, \&
+  El-Anbari}]{boughorbel2017optimal}
+\textsc{Boughorbel}, S., F.~\textsc{Jarray}, \& M.~\textsc{El-Anbari} (2017):
+  \enquote{Optimal classifier for imbalanced data using matthews correlation
+  coefficient metric.}
+\newblock \emph{PloS one} \textbf{12(6)}: p. e0177678.
+
+\bibitem[{Brabec \emph{et~al.}(2020)Brabec, Kom{\'a}rek, Franc, \&
+  Machlica}]{brabec2020model}
+\textsc{Brabec}, J., T.~\textsc{Kom{\'a}rek}, V.~\textsc{Franc}, \&
+  L.~\textsc{Machlica} (2020): \enquote{On model evaluation under non-constant
+  class imbalance.}
+\newblock In \enquote{Computational Science--ICCS 2020: 20th International
+  Conference, Amsterdam, The Netherlands, June 3--5, 2020, Proceedings, Part IV
+  20,} pp. 74--87. Springer.
+
+\bibitem[{Brownlee(2021)}]{brownlee2021failure}
+\textsc{Brownlee}, J. (2021): \enquote{Failure of classification accuracy for
+  imbalanced class distributions.}
+\newblock \emph{MachineLearningMastery.com} .
+
+\bibitem[{Chicco \& Jurman(2020)}]{chicco2020advantages}
+\textsc{Chicco}, D. \& G.~\textsc{Jurman} (2020): \enquote{The advantages of
+  the matthews correlation coefficient (mcc) over f1 score and accuracy in
+  binary classification evaluation.}
+\newblock \emph{BMC genomics} \textbf{21}: pp. 1--13.
 
 \bibitem[{Cichosz(2014)}]{cichosz2014data}
 \textsc{Cichosz}, P. (2014): \emph{Data mining algorithms: explained using R}.
 \newblock John Wiley \& Sons.
+
+\bibitem[{Dembla(2020)}]{dembla2020intuition}
+\textsc{Dembla}, G. (2020): \enquote{Intuition behind log-loss score.}
+\newblock Medium.
+\newblock Retrieved April 30, 2023.
 
 \bibitem[{Gauhar(2020)}]{gauhar2020decision}
 \textsc{Gauhar}, N. (2020): \enquote{Decision tree: A classification
@@ -30,6 +68,11 @@
 \textsc{Igareta}, A. (2021): \enquote{Stratified sampling: You may have been
   splitting your dataset all wrong.}
 
+\bibitem[{Japkowicz \& Shah(2011)}]{japkowicz2011evaluating}
+\textsc{Japkowicz}, N. \& M.~\textsc{Shah} (2011): \emph{Evaluating learning
+  algorithms: a classification perspective}.
+\newblock Cambridge University Press.
+
 \bibitem[{Kornbrot(2014)}]{kornbrot2014point}
 \textsc{Kornbrot}, D. (2014): \enquote{Point biserial correlation.}
 \newblock \emph{Wiley StatsRef: Statistics Reference Online} .
@@ -47,6 +90,15 @@
 \textsc{Mucherino}, A., P.~\textsc{Papajorgji}, \& P.~M. \textsc{Pardalos}
   (2009): \emph{Data mining in agriculture}, volume~34.
 \newblock Springer Science \& Business Media.
+
+\bibitem[{Newson(2002)}]{newson2002parameters}
+\textsc{Newson}, R. (2002): \enquote{Parameters behind “nonparametric”
+  statistics: Kendall's tau, somers’ d and median differences.}
+\newblock \emph{The Stata Journal} \textbf{2(1)}: pp. 45--64.
+
+\bibitem[{Newson(2014)}]{newson2014interpretation}
+\textsc{Newson}, R.~B. (2014): \enquote{Interpretation of somers' d under four
+  simple models.}
 
 \bibitem[{Provost \& Fawcett(2013)}]{provost2013data}
 \textsc{Provost}, F. \& T.~\textsc{Fawcett} (2013): \emph{Data Science for
