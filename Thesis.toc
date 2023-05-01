@@ -27,8 +27,7 @@
 \contentsline {subsection}{\numberline {2.4.4}Somer's D}{18}{subsection.2.4.4}%
 \contentsline {subsection}{\numberline {2.4.5}Brier Score Loss}{18}{subsection.2.4.5}%
 \contentsline {subsection}{\numberline {2.4.6}Jaccard Score}{18}{subsection.2.4.6}%
-\contentsline {subsection}{\numberline {2.4.7}Zero-One Loss}{19}{subsection.2.4.7}%
-\contentsline {subsection}{\numberline {2.4.8}Log Loss}{19}{subsection.2.4.8}%
+\contentsline {subsection}{\numberline {2.4.7}Log Loss}{19}{subsection.2.4.7}%
 \contentsline {chapter}{\numberline {3}Empirical Analysis - Machine Learning Implementation}{21}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Repository and Environment Structure}{22}{section.3.1}%
 \contentsline {section}{\numberline {3.2}Data Exploration}{25}{section.3.2}%
@@ -64,6 +63,6 @@
 \contentsline {subsection}{\numberline {3.6.1}Final Model Building}{71}{subsection.3.6.1}%
 \contentsline {subsection}{\numberline {3.6.2}Flask and HTML Web Application}{71}{subsection.3.6.2}%
 \contentsline {chapter}{\numberline {4}Conclusion}{77}{chapter.4}%
-\contentsline {chapter}{Bibliography}{79}{chapter*.87}%
+\contentsline {chapter}{Bibliography}{80}{chapter*.87}%
 \contentsline {chapter}{\numberline {A}Title of Appendix A}{I}{appendix.A}%
 \contentsline {chapter}{\numberline {B}Project's website}{II}{appendix.B}%

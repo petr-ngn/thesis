@@ -414,23 +414,13 @@ In case of a binary classification, $X$ values would represent \textit{True} lab
 
 
 \subsection{Jaccard Score}
-
-\textbf{TBD}
-
+Jaccard Score which is also known as Jaccard Index is a similarity metric as it measures similarity between the\textit{True} labels and predicted classes (0 or 1).
+Let us denote $y$ as a vector of \textit{True} labels and $\hat{y}$ as a vector of predicted classes.
+Hence, we can define Jaccard Score as the ratio of the size of intersection of $y$ and $\hat{y}$ to the size of union of $y$ and $\hat{y}$ \citep{leskovec2020mining}. Thus:
 \begin{equation}\label{eq}
     \text{Jaccard Score} = \frac{|y \cap \hat{y} |}{|y \cup \hat{y} |}
 \end{equation}
-
-\subsection{Zero-One Loss}
-
-\textbf{TBD}
-
-\begin{equation}\label{eq}
-    \text{Zero--One Loss} = \frac{1}{n} \sum_{i}^{n} \delta_{y_{i=1} \neq \hat{y}_{i}} \text{ , where } \delta_{y_{i} \neq \hat{y}_{i}} = \begin{cases}
-        1, & \text{if $x<0$}.\\
-        0, & \text{otherwise}.
-        \end{cases}
-\end{equation}
+Likewise, Jaccard score ranges from 0 to 1 where the higher value indicates the higher similarity between the \textit{True} labels and predicted classes, hence the better model's performance.
 
 
 \subsection{Log Loss}
