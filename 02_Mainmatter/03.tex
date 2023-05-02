@@ -928,46 +928,39 @@ In subsection, the process of selecting optimal features is described. Such proc
 With respect to the target variable, we distinguish 2 most common types of feature selection approaches: (1) filter methods and (2) warapper methods.
 Using the former approach, the feature selection is independent on a machine learning model itself, but rather is performed using univariate statistical tests, such as correlation measures, Chi--square test, Fisher score and others \citep{kaushik2016introduction}, and chooses those ones with the highest or lowest values.
 This approach is used when we prefer lower computational cost and faster feature selection process, but since it does no take into account the model itself, it does not have to able to select the features which would be optimal for particular model.
-Regarding the latter approach, the feature selection is based on a specific machine learning model and follows a greedy search approach by evaluating all the possible combinations of features against the evaluation metric criteria \citep{Verma2020}.
+Regarding the latter approach, the feature selection is based on a specific machine learning model and follows a greedy search approach by evaluating all the possible combinations of features against the evaluation metric criteria \citep{Verma2020}. Although, such approach is very computationally expensive, it is able to select the optimal features for a particular model.
 
 The most common wrapper method for feature selection is Recursive Feature Elimination (henceforth RFE). Such method takes a machine learning model as an base estimator, fit the model on whole set of features, computes and ranks their coefficients or feature importances, eliminates the least important features and repeats the process until the desired number of features is reached \citep{Brownlee2020} or until the stop criteria is met.
 However, the drawback of RFE is that it always requires feature importances or coefficients to compute, which is not suitable for models which do not produce any coefficients nor feature importances, such as KNN or Naive Bayes. Therefore, this approach is not implemented in this thesis.
 
-Instead, the feature selection is performed with Sequential Feature Selection (henceforth SFS). Such method is iteratively adding (or removes) features the set sequentially. 
+Instead, the feature selection is performed with Sequential Feature Selection (henceforth SFS). Such method is iteratively adding (or removes) features the set sequentially. Hence, there are two approaches, Forward SFS and Backward SFS.
+The former approach keeps adding features to the set until the desired number of features is reached, while the latter approach starts with the whole set of features and removes them until the desired number of features is reached.
+In this thesis, Forward SFS is used since it was way more computationally efficient than Backward SFS within author's analysis. Forward SFS starts with an empty set of features and afterwards, variant features are sequentially added until the desired number of features is reached  or until the addition of extra features does not reduce the criterion \citep{Verma2021}. 
+According to Scikit-learn's documentation \citep{sfs}, at each stage, SFS chooses the best feature to add based on the cross--validation score. 
 
 
 
-For such case, the Forward Sequential Feature Selection is used.
-Forward Sequential Feature Selection (SFS) is a feature selection technique used in machine learning to select the optimal features from a given dataset.
-It is a wrapper-based approach that selects features by using a specific model to evaluate the usefulness of each feature in the dataset.
-The process starts with an empty set of features and iteratively adds one feature at a time that maximizes the performance of the model.
-The process continues until the desired number of features is selected or no improvement in model performance is observed (or until the stop criterion is met).
 
 
-The feature selection algorithm is stated in \autoref{alg:feature_selection} below:
-
-
-\begin{algorithm}
+Within machine learning implemenation, instead of fitting Forward SFS only with one model, Forward SFS is fitted for each input model in order to obtain the best subsets of features for each model, assuming the importance of each features varies across the models.
+Instead of using input models with default hyperparameters, each model is tuned with Bayesian Optimization in order to obtain the optimal hyperparameters for each model, which would further improve the performance of each model within SFS and therefore, it would lead to the more optimal selection of features.
+The custom feature selection algorithm is stated in Algorithm \autoref{alg:feature_selection}, thus, when having $n$ input models, it returns $n$  subsets of optimal features, one per each model:
+\begin{algorithm}[H]
 \caption{Feature Selection Algorithm}
 \label{alg:feature_selection}
 \begin{algorithmic}[1]
 \For{$model \in \textit{models}$}
     \State $\textit{optimized\_model} \gets \textsc{BayesianOptimization}(model)$
-    \State $\textit{best\_features} \gets \textsc{SequentialFeatureSelection}(\textit{optimized\_model})$
+    \State $\textit{best\_features} \gets \textsc{ForwardSFS}(\textit{optimized\_model})$
 \EndFor
 \end{algorithmic}
 \end{algorithm}
+Particularly, each input model is first tuned on the training set with Bayesian Optimization with 50 iterations and 10--fold stratified cross validation (in order to preserve the target variable distribution across the folds) while maximizing the F1 score - within author's machine learning implemenation, his custom function \lstinline{bayesian_optimization()} is used.
+Once the model is tuned, the Forward SFS is fitted with such tuned model on the same training set with 10--fold stratified cross validation while maximizing the F1 score. Instead of selecting the fixed number of features, Scikit-learn's \lstinline{SequentialFeatureSelector}  class allows to set a stop criterion (\lstinline{tol} parameter) which stops adding features if the objective score function is not increasing between two consecutive feature additions \citep{sfs}.
 
-In other words, each input model is tuned using the Bayesian Optimization on the training set and on the same set, and then the optimal features are selected using the Forward SFS.
-Thus, when having $n$ input models, it returns $n$  subsets of optimal features, one per each model.
 
-To implement Forward SFS, the custom function \lstinline{bayesian_optimization()} is used to tune the model, and the \lstinline{SequentialFeatureSelector} class from the \lstinline{Scikit-learn} module is used for feature selection.
-The \lstinline{Scikit-learn}'s \lstinline{SequentialFeatureSelector} class performs feature selection in the forward direction by maximizing the F1 score with a 10-fold stratified cross-validation approach.
-The \lstinline{tol} parameter is used to set a threshold for the minimum increase in performance required for adding a new feature to the optimal subset.
-Such parameter is set to a number which is close to zero, thus the feature selection process stops when the model's F1 score is not increasing between the two consecutive steps.
-
-In Python, the custom function \lstinline{SFS_feature_selection()} is used to implement the Forward SFS approach.
-This function iteratively prints the process of the feature selection as can be seen in \autoref{fig:featselectprint}, including the current step (Bayesian Optimization or Feature Selection), the execution time, and the selected features for each model.
+Such feature selection algorithm is wrapped into author's custom function \lstinline{SFS_feature_selection()}.
+This function iteratively prints the process of the feature selection as can be seen in \autoref{fig:featselectprint}, including the current step (Bayesian Optimization or Feature Selection), the execution time in muntes, and the selected features for each model. Since we have 8 input models, we get 8 optimal subset of features.
 
 \begin{figure}[H]
 \centering\caption{Feature Selection Print Statement}
@@ -1019,9 +1012,8 @@ Execution time: 0.4152 minutes
 \end{figure}
 
 
-The following \autoref{fig:fsrec} depicts the reccurrence of the selected features. As can be seen, features such as \texttt{CLAGE}, \texttt{DEBTINC}, \texttt{JOB} and \texttt{REASON} were selected by each model. 
-On the other hand, features such as \texttt{LOAN} and \texttt{REASON} were selected by only 4 times. Therefore, we can expect that such features which were selected every time will have high importance in predictions. \textit{the figure will be adjusted, it has been incorrectly exported}.
-
+The following \autoref{fig:fsrec} depicts the reccurrence of the selected features. As can be seen, features such as \texttt{CLAGE}, \texttt{DEBTINC}, \texttt{DELINQ} and \texttt{JOB} were selected by each model. 
+On the other hand, features such as \texttt{LOAN} and \texttt{REASON} were selected by only four times. Therefore, it can be expected that such features which were selected every time will have significant impact in predictions.
 \begin{figure}[H]
 \centering
 \caption{Reccurrence of Selected Features}\vspace{0.5em}
@@ -1031,7 +1023,8 @@ On the other hand, features such as \texttt{LOAN} and \texttt{REASON} were selec
 \end{figure}
 
 
-According to \autoref{fig:fsdistmod}, models such as K--Nearest Neighbors, Random Forest, Gradient Boosting and Support Vector Machine chose almost all the features as one feature feature was eliminated. On the other hand, Gaussian Naive Bayes chose only 6. It seems to be that most of the features are important as each model has selected a higher amount of features. \textit{the figure will be adjusted, it has been incorrectly exported}.
+According to \autoref{fig:fsdistmod}, models such as K--Nearest Neighbors, Random Forest, Gradient Boosting and Support Vector Machine chose almost all the features as one feature feature was eliminated. On the other hand, Gaussian Naive Bayes chose only 6. It seems to be that most of the features are important as each model has selected a higher amount of features.
+It is evident the more comples and/or black--box models require more features in contrast to transparant models such as Logistic Regression or Gaussian Naive Bayes.
 
 \begin{figure}[H]
 \centering
@@ -1043,7 +1036,7 @@ According to \autoref{fig:fsdistmod}, models such as K--Nearest Neighbors, Rando
 
 \subsection{Model Selection}
 
-In combination with the pre--selected subsets of features, the next step regards the selection of the final model. The algorithm process is described in  \autoref{alg:model_selection} below:
+In combination with the pre--selected subsets of features, the next step regards the selection of the final model. The algorithm process is described in Algorithm  \autoref{alg:model_selection} below:
 \begin{algorithm}[H]
 \caption{Model Selection Algorithm}
 \label{alg:model_selection}
@@ -1064,20 +1057,6 @@ In combination with the pre--selected subsets of features, the next step regards
 Therefore, each input model is tuned on each subset of features selected within feature selection on the training set and subsequently, the optimized model is evaluated on the validation set. Thus, when having $n$ input models and $m$ subsets of selected features, we get $n \times m$ tuned models.
 $m \leq n$ because we exclude duplicated subset of selected features which can occur when more than one model choose the same subset(s) of features.
 Since there are 8 input models and 8 unique subsets of selected features, the total number of tuned models is 64.
-
-Further, for each model, we evalute it on the validation set by computing following metrics scores and loss functions:
-\begin{itemize}\setlength\itemsep{0em}
-\item F1 score,
-\item Precision,
-\item Recall,
-\item Accuracy,
-\item AUC,
-\item Somers' D,
-\item Kolmogorov Smirnov Distance,
-\item Matthews Correlation Coefficient,
-\item Jaccard Score,
-\item Brier Score Loss,
-\end{itemize}
 
 When evaluating classification models using class-based metrics such as F1 score, Precision, Recall, Accuracy, Matthews Correlation Coefficient and Jaccard Score, a default classification threshold of 0.5 is often used. This threshold separates predicted classes based on whether the predicted probability score is higher or lower than 0.5.
 However, in real-world use cases, the 0.5 classification threshold may not be appropriate. Therefore, it is recommended to calculate an optimal threshold rather than relying on the default one.

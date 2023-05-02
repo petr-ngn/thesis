@@ -1,4 +1,4 @@
-\begin{thebibliography}{27}
+\begin{thebibliography}{29}
 \newcommand{\enquote}[1]{``#1''}
 \providecommand{\natexlab}[1]{#1}
 
@@ -147,12 +147,25 @@
 \newblock In \enquote{Proceedings of the 22nd ACM SIGKDD international
   conference on knowledge discovery and data mining,} pp. 1135--1144.
 
+\bibitem[{{scikit-learn}(n.d.)}]{sfs}
+\textsc{{scikit-learn}} (n.d.): \enquote{Sequentialfeatureselector.}
+\newblock
+  \url{https://scikit-learn.org/stable/modules/generated/sklearn.feature_selection.SequentialFeatureSelector.html#sklearn.feature_selection.SequentialFeatureSelector}.
+\newblock Retrieved April 28, 2023.
+
 \bibitem[{Verma(2020)}]{Verma2020}
 \textsc{Verma}, V. (2020): \enquote{A comprehensive guide to feature selection
   using wrapper methods in python.}
 \newblock
   \url{https://www.analyticsvidhya.com/blog/2020/10/a-comprehensive-guide-to-feature-selection-using-wrapper-methods-in-python/}.
 \newblock Retrieved April 30, 2023.
+
+\bibitem[{Verma(2021)}]{Verma2021}
+\textsc{Verma}, Y. (2021): \enquote{A complete guide to sequential feature
+  selection.}
+\newblock
+  \url{https://analyticsindiamag.com/a-complete-guide-to-sequential-feature-selection/}.
+\newblock Retrieved April 28, 2023.
 
 \bibitem[{Wendler \& Gr{\"o}ttrup(2021)}]{wendler2021data}
 \textsc{Wendler}, T. \& S.~\textsc{Gr{\"o}ttrup} (2021): \emph{Data Mining with
