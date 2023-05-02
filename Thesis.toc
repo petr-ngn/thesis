@@ -58,10 +58,12 @@
 \contentsline {subsubsection}{Neural Network}{51}{section*.66}%
 \contentsline {subsection}{\numberline {3.4.2}Feature Selection}{51}{subsection.3.4.2}%
 \contentsline {subsection}{\numberline {3.4.3}Model Selection}{56}{subsection.3.4.3}%
-\contentsline {subsection}{\numberline {3.4.4}Model Building}{66}{subsection.3.4.4}%
+\contentsline {subsection}{\numberline {3.4.4}Model Recalibration}{66}{subsection.3.4.4}%
 \contentsline {section}{\numberline {3.5}Model Evaluation}{67}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Model's Performance Assessment}{67}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}Model Explainability}{71}{subsection.3.5.2}%
 \contentsline {section}{\numberline {3.6}Machine Learning Deployment}{73}{section.3.6}%
-\contentsline {subsection}{\numberline {3.6.1}Final Model Building}{73}{subsection.3.6.1}%
+\contentsline {subsection}{\numberline {3.6.1}Final Model Recalibration}{73}{subsection.3.6.1}%
 \contentsline {subsection}{\numberline {3.6.2}Flask and HTML Web Application}{73}{subsection.3.6.2}%
 \contentsline {chapter}{\numberline {4}Conclusion}{79}{chapter.4}%
 \contentsline {chapter}{Bibliography}{82}{chapter*.88}%

@@ -1,4 +1,4 @@
-\begin{thebibliography}{31}
+\begin{thebibliography}{33}
 \newcommand{\enquote}[1]{``#1''}
 \providecommand{\natexlab}[1]{#1}
 
@@ -82,6 +82,11 @@
   Networks (IEEE World Congress on Computational Intelligence),} pp.
   1322--1328.
 
+\bibitem[{He \& Ma(2013)}]{ma2013imbalanced}
+\textsc{He}, H. \& Y.~\textsc{Ma} (2013): \emph{Imbalanced Learning:
+  Foundations, Algorithms, and Applications}.
+\newblock Wiley-IEEE Press.
+
 \bibitem[{Igareta(2021)}]{igareta2021strat}
 \textsc{Igareta}, A. (2021): \enquote{Stratified sampling: You may have been
   splitting your dataset all wrong.}
@@ -106,10 +111,6 @@
   \emph{Mining of massive data sets}.
 \newblock Cambridge university press.
 
-\bibitem[{Ma \& He(2013)}]{ma2013imbalanced}
-\textsc{Ma}, Y. \& H.~\textsc{He} (2013): \enquote{Imbalanced learning:
-  foundations, algorithms, and applications.} .
-
 \bibitem[{Malley \emph{et~al.}(2011)Malley, Kruppa, Dasgupta, Malley, \&
   Ziegler}]{randomforestmalley}
 \textsc{Malley}, J., J.~\textsc{Kruppa}, A.~\textsc{Dasgupta},
@@ -123,6 +124,11 @@
 \textsc{Mucherino}, A., P.~\textsc{Papajorgji}, \& P.~M. \textsc{Pardalos}
   (2009): \emph{Data mining in agriculture}, volume~34.
 \newblock Springer Science \& Business Media.
+
+\bibitem[{Navas-Palencia(2020)}]{navas2020optimal}
+\textsc{Navas-Palencia}, G. (2020): \enquote{Optimal binning: mathematical
+  programming formulation.}
+\newblock \emph{arXiv preprint arXiv:2001.08025} .
 
 \bibitem[{Newson(2002)}]{newson2002parameters}
 \textsc{Newson}, R. (2002): \enquote{Parameters behind “nonparametric”
@@ -183,5 +189,10 @@
 \textsc{Witten}, I.~H., E.~\textsc{Frank}, M.~\textsc{Hall}, \& C.~\textsc{Pal}
   (2011): \emph{Data Mining: Practical Machine Learning Tools and Techniques}.
 \newblock Morgan Kaufmann, 4th edition.
+
+\bibitem[{Zeng(2014)}]{zeng2014necessary}
+\textsc{Zeng}, G. (2014): \enquote{A necessary condition for a good binning
+  algorithm in credit scoring.}
+\newblock \emph{Applied Mathematical Sciences} \textbf{8(65)}: pp. 3229--3242.
 
 \end{thebibliography}

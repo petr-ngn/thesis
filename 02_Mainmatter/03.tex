@@ -624,6 +624,7 @@ Training (oversampled) & 6,437 &  48.13 \% & 51.87 \% \\
 Validation & 895 &  20.00 \% & 80.00 \% \\
 
 Test & 894 &  20.00 \% & 80.00 \% \\
+\hline
 \bottomrule
 \end{tabular}
 \vspace{0.7em}
@@ -636,7 +637,7 @@ This function first employs the \lstinline{train_test_split()} function from the
 Next, the \lstinline{ADASYN()} class from the \lstinline{imblearn} module is used to oversample the training set. This is achieved by generating synthetic instances of the minority class based on the five nearest neighbors and Euclidean distance.
 
 However, the \lstinline{ADASYN()} class from \lstinline{imblearn} is not designed to handle missing values or categorical features encoded as character. To overcome this limitation, the following approach is taken:
-\begin{enumerate}
+\begin{enumerate}\setlength\itemsep{0em} 
 \item Separate the categorical and numeric features;
 \item Impute the missing values with arbitrary values:
 \begin{itemize}
@@ -665,14 +666,22 @@ For instance, dummy encoding may not be suitable for categorical features with a
 Standardization may not be appropriate for features with a large number of outliers as it may result in a loss of information.
 Similarly, logarithmic transformation may not be appropriate for features with a large number of zeros, and normalization may not be suitable for features with a significant number of outliers.
 
-Therefore, alternative approaches such as discretization or binning are increasingly being used.
-This approach enables the identification of outliers within bins, which is not feasible with standardization or normalization.
-Additionally, discretization can capture missing values without requiring the removal or imputation of such values.
+Therefore, alternative approaches such as discretization or binning are increasingly being used. Binning is a categorization process to transform a continuous variable into a small set of groups or bins \citep{zeng2014necessary}. This approach enables the identification of outliers within bins and reduce their impact, and additionally, it can capture missing values without requiring the removal or imputation of such values.
 As a result, binning is a more flexible and versatile feature transformation method that can effectively handle different types of datasets and is particularly useful in cases where other methods may not be appropriate.
 
+In this thesis, we employ the \lstinline{BinningProcess} from the \lstinline{optbinning} module in Python for an optimal binning of both numeric and categorical features with respect to the target variable, developed by Guillermo Navas--Palencia \citep{navas2020optimal}. 
+In general, the optimal binning is solved by iteratively merging an initial granular discretization until imposed constraints are satisfied. Particularly, the optimal binning process consists of two phases - pre--binning process (for generating initial granular discretization) and subsequent optimization (for satisfying imposed constraints).
+The former phase usually uses decision tree to generate initial split points. \citep{navas2020optimal} such as:
+\begin{itemize}\setlength\itemsep{0em} 
+    \item Creation of separate bins for missing values: Since missing values can have a significant impact on the target variable, hence is important to create a separate bin for them.
+    \item Minimum bin size constraint - at least 5 \% of the total number of instances: Such constraint ensures a bin's representativness.
+    \item Each bin should have at least one instance of each target class: Application of such constraint allows to compute divergence measures.
+\end{itemize}
+
+    
 
 
-In this thesis, we employ the \lstinline{BinningProcess} from the \lstinline{optbinning} module in Python for an optimal binning of both numeric and categorical features.
+
 This approach involves grouping the values of a continuous variable into discrete intervals, or "bins", based on their relationship with the target variable.
 Similarly, for categorical features, the approach involves grouping the categories based on their relationship with the target variable.
 The optimal binning is performed with the objective of achieving maximum separation between the classes of the target variable within each bin.
@@ -736,9 +745,6 @@ To overcome these limitations, Bayesian Optimization is used as a hyperparameter
 This method employs a probabilistic model using a Gaussian Process to approximate the objective function of interest.
 By utilizing Bayesian inference, the approach updates the prior distribution over hyperparameter values based on the results of previous iterations and uses the resulting posterior distribution to guide the selection of the next set of hyperparameters to evaluate.
 In summary, Bayesian Optimization provides a more efficient and effective approach to hyperparameter tuning compared to Grid Search and Random Search, by utilizing prior information and Bayesian inference to guide the selection of hyperparameters to evaluate.\textit{Theory behind Bayesian Optimization will be described later}.
-
-
-
 
 
 In Python, a custom function, \lstinline{bayesian_optimization()}, is implemented to perform hyperparameter tuning using Bayesian Optimization.
@@ -822,8 +828,6 @@ Variance smoothing & <$1\times 10^{-9}$, $1\times 10^{-6}$> \\
 
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{table}
-
-
 
 \subsubsection{K-Nearest Neighbors}
 
@@ -935,7 +939,6 @@ Class weight & balanced, None \\
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{table}
 
-
 \subsubsection{Neural Network}
 
 \begin{table}[H]
@@ -978,9 +981,6 @@ Instead, the feature selection is performed with Sequential Feature Selection (h
 The former approach keeps adding features to the set until the desired number of features is reached, while the latter approach starts with the whole set of features and removes them until the desired number of features is reached.
 In this thesis, Forward SFS is used since it was way more computationally efficient than Backward SFS within author's analysis. Forward SFS starts with an empty set of features and afterwards, variant features are sequentially added until the desired number of features is reached  or until the addition of extra features does not reduce the criterion \citep{Verma2021}. 
 According to Scikit-learn's documentation \citep{sfs}, at each stage, SFS chooses the best feature to add based on the cross--validation score. 
-
-
-
 
 
 Within machine learning implemenation, instead of fitting Forward SFS only with one model, Forward SFS is fitted for each input model in order to obtain the best subsets of features for each model, assuming the importance of each features varies across the models.
@@ -1378,8 +1378,7 @@ To summarize this subsection, the best and final model is the Gradient Boosting 
     \centering{\begin{source}Author's results in Python\end{source}}\vspace{-0.5em}
 \end{table}
 
-
-\subsection{Model Building}
+\subsection{Model Recalibration}
 
 In order to ensure that the final model performs well on unseen data, it is common practice to employ the recalibration approach, which involves retraining the model on both the training and validation sets.
 By doing so, the sample size used for training is increased, resulting in improved model performance.
@@ -1395,6 +1394,8 @@ The inclusion of the validation set during the recalibration process does not ca
 Therefore, using the validation data for recalibration is a sound practice that helps to ensure the reliability and accuracy of the final model.
 
 \section{Model Evaluation}
+
+\subsection{Model's Performance Assessment}
 
 After recalibrating the model and threshold, the final step in evaluating the model's performance is to test it on previously unseen data, specifically the test set.
 This evaluation is critical to determine whether the model can generalize well to new data beyond the training, feature selection, and model selection phases.
@@ -1466,6 +1467,8 @@ The two most important features used in the final model are \texttt{DEBTINC} and
 Understanding the impact of individual features on model performance can be useful in identifying areas for improvement, as well as in identifying the most significant factors that drive loan defaults.
 By focusing on these important features, lenders and policymakers can better understand and address the underlying factors that contribute to default risk, ultimately leading to better lending decisions and improved outcomes for borrowers and lenders alike.
 
+\subsection{Model Explainability}
+
 \begin{figure}[H]
 \centering
 \caption{Feature Importance}\vspace{0.5em}
@@ -1498,7 +1501,7 @@ By understanding the relative importance of each feature, we can gain deeper ins
 
 \section{Machine Learning Deployment}
 This section describes the process of taking a trained machine learning model and making it available for use in the real world. It involves taking the model from a development environment and integrating it into a production environment where it can be used to make predictions or decisions based on new data. In this thesis, the machine learning model is deployed as web application using Flask and HTML.
-\subsection{Final Model Building}
+\subsection{Final Model Recalibration}
 Before deploying the model in a production setting, a meticulous process is undertaken to ensure optimal performance.
 This involves conducting a final recalibration of the model using the entire dataset, comprising the training, validation, and test sets.
 The purpose of this recalibration is to fine-tune the model parameters, thereby maximizing its ability to generalize and yield accurate predictions.
