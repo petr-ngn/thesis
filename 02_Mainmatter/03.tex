@@ -923,7 +923,19 @@ Learning rate & Constant, Adaptive, Invscaling \\
 \subsection{Feature Selection}
 \label{subsec:feature-selection}
 
-In subsection, the process of selecting optimal features is described. Instead of using all the features in dataset, only the most relevant are chosen and the noisy ones are eliminated.
+In subsection, the process of selecting optimal features is described. Such process is called feature selection and can be defined as the process of detecting the most relevant features and discarding the noisy redundant ones. Instead of using all the features in dataset, we use only the subset of the most relevant ones, which can further reduce the dimensionality of dataset, boost model performance, save computational resources and reduce overfitting \citep{bolon2015feature}.
+
+With respect to the target variable, we distinguish 2 most common types of feature selection approaches: (1) filter methods and (2) warapper methods.
+Using the former approach, the feature selection is independent on a machine learning model itself, but rather is performed using univariate statistical tests, such as correlation measures, Chi--square test, Fisher score and others \citep{kaushik2016introduction}, and chooses those ones with the highest or lowest values.
+This approach is used when we prefer lower computational cost and faster feature selection process, but since it does no take into account the model itself, it does not have to able to select the features which would be optimal for particular model.
+Regarding the latter approach, the feature selection is based on a specific machine learning model and follows a greedy search approach by evaluating all the possible combinations of features against the evaluation metric criteria \citep{Verma2020}.
+
+The most common wrapper method for feature selection is Recursive Feature Elimination (henceforth RFE). Such method takes a machine learning model as an base estimator, fit the model on whole set of features, computes and ranks their coefficients or feature importances, eliminates the least important features and repeats the process until the desired number of features is reached \citep{Brownlee2020} or until the stop criteria is met.
+However, the drawback of RFE is that it always requires feature importances or coefficients to compute, which is not suitable for models which do not produce any coefficients nor feature importances, such as KNN or Naive Bayes. Therefore, this approach is not implemented in this thesis.
+
+Instead, the feature selection is performed with Sequential Feature Selection (henceforth SFS). Such method is iteratively adding (or removes) features the set sequentially. 
+
+
 
 For such case, the Forward Sequential Feature Selection is used.
 Forward Sequential Feature Selection (SFS) is a feature selection technique used in machine learning to select the optimal features from a given dataset.
@@ -941,7 +953,7 @@ The feature selection algorithm is stated in \autoref{alg:feature_selection} bel
 \begin{algorithmic}[1]
 \For{$model \in \textit{models}$}
     \State $\textit{optimized\_model} \gets \textsc{BayesianOptimization}(model)$
-    \State $\textit{best\_features} \gets \textsc{ForwardSFS}(\textit{optimized\_model})$
+    \State $\textit{best\_features} \gets \textsc{SequentialFeatureSelection}(\textit{optimized\_model})$
 \EndFor
 \end{algorithmic}
 \end{algorithm}

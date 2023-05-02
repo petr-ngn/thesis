@@ -56,13 +56,13 @@
 \contentsline {subsubsection}{Support Vector Machine}{49}{section*.63}%
 \contentsline {subsubsection}{Neural Network}{49}{section*.65}%
 \contentsline {subsection}{\numberline {3.4.2}Feature Selection}{49}{subsection.3.4.2}%
-\contentsline {subsection}{\numberline {3.4.3}Model Selection}{53}{subsection.3.4.3}%
-\contentsline {subsection}{\numberline {3.4.4}Model Building}{64}{subsection.3.4.4}%
-\contentsline {section}{\numberline {3.5}Model Evaluation}{65}{section.3.5}%
-\contentsline {section}{\numberline {3.6}Machine Learning Deployment}{71}{section.3.6}%
-\contentsline {subsection}{\numberline {3.6.1}Final Model Building}{71}{subsection.3.6.1}%
-\contentsline {subsection}{\numberline {3.6.2}Flask and HTML Web Application}{71}{subsection.3.6.2}%
-\contentsline {chapter}{\numberline {4}Conclusion}{77}{chapter.4}%
-\contentsline {chapter}{Bibliography}{80}{chapter*.87}%
+\contentsline {subsection}{\numberline {3.4.3}Model Selection}{54}{subsection.3.4.3}%
+\contentsline {subsection}{\numberline {3.4.4}Model Building}{65}{subsection.3.4.4}%
+\contentsline {section}{\numberline {3.5}Model Evaluation}{66}{section.3.5}%
+\contentsline {section}{\numberline {3.6}Machine Learning Deployment}{72}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}Final Model Building}{72}{subsection.3.6.1}%
+\contentsline {subsection}{\numberline {3.6.2}Flask and HTML Web Application}{72}{subsection.3.6.2}%
+\contentsline {chapter}{\numberline {4}Conclusion}{78}{chapter.4}%
+\contentsline {chapter}{Bibliography}{81}{chapter*.87}%
 \contentsline {chapter}{\numberline {A}Title of Appendix A}{I}{appendix.A}%
 \contentsline {chapter}{\numberline {B}Project's website}{II}{appendix.B}%

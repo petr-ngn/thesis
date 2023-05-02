@@ -1,4 +1,4 @@
-\begin{thebibliography}{23}
+\begin{thebibliography}{27}
 \newcommand{\enquote}[1]{``#1''}
 \providecommand{\natexlab}[1]{#1}
 
@@ -7,6 +7,13 @@
   equivalence between kolmogorov-smirnov and roc curve metrics for binary
   classification.}
 \newblock \emph{arXiv preprint arXiv:1606.00496} .
+
+\bibitem[{Bol{\'o}n-Canedo \emph{et~al.}(2015)Bol{\'o}n-Canedo,
+  S{\'a}nchez-Maro{\~n}o, \& Alonso-Betanzos}]{bolon2015feature}
+\textsc{Bol{\'o}n-Canedo}, V., N.~\textsc{S{\'a}nchez-Maro{\~n}o}, \&
+  A.~\textsc{Alonso-Betanzos} (2015): \emph{Feature selection for
+  high-dimensional data}.
+\newblock Springer.
 
 \bibitem[{Boughorbel \emph{et~al.}(2017)Boughorbel, Jarray, \&
   El-Anbari}]{boughorbel2017optimal}
@@ -23,6 +30,13 @@
 \newblock In \enquote{Computational Science--ICCS 2020: 20th International
   Conference, Amsterdam, The Netherlands, June 3--5, 2020, Proceedings, Part IV
   20,} pp. 74--87. Springer.
+
+\bibitem[{Brownlee(2020)}]{Brownlee2020}
+\textsc{Brownlee}, J. (2020): \enquote{Recursive feature elimination (rfe) for
+  feature selection in python.}
+\newblock
+  \url{https://machinelearningmastery.com/rfe-feature-selection-in-python/}.
+\newblock Retrieved April 28, 2023.
 
 \bibitem[{Brownlee(2021)}]{brownlee2021failure}
 \textsc{Brownlee}, J. (2021): \enquote{Failure of classification accuracy for
@@ -79,6 +93,13 @@
   algorithms: a classification perspective}.
 \newblock Cambridge University Press.
 
+\bibitem[{Kaushik(2016)}]{kaushik2016introduction}
+\textsc{Kaushik}, S. (2016): \enquote{Introduction to feature selection methods
+  with an example (or how to select the right variables?).}
+\newblock
+  \url{https://www.analyticsvidhya.com/blog/2016/12/introduction-to-feature-selection-methods-with-an-example-or-how-to-select-the-right-variables/}.
+\newblock Accessed: April 30, 2023.
+
 \bibitem[{Kornbrot(2014)}]{kornbrot2014point}
 \textsc{Kornbrot}, D. (2014): \enquote{Point biserial correlation.}
 \newblock \emph{Wiley StatsRef: Statistics Reference Online} .
@@ -125,6 +146,13 @@
   classifier.}
 \newblock In \enquote{Proceedings of the 22nd ACM SIGKDD international
   conference on knowledge discovery and data mining,} pp. 1135--1144.
+
+\bibitem[{Verma(2020)}]{Verma2020}
+\textsc{Verma}, V. (2020): \enquote{A comprehensive guide to feature selection
+  using wrapper methods in python.}
+\newblock
+  \url{https://www.analyticsvidhya.com/blog/2020/10/a-comprehensive-guide-to-feature-selection-using-wrapper-methods-in-python/}.
+\newblock Retrieved April 30, 2023.
 
 \bibitem[{Wendler \& Gr{\"o}ttrup(2021)}]{wendler2021data}
 \textsc{Wendler}, T. \& S.~\textsc{Gr{\"o}ttrup} (2021): \emph{Data Mining with
