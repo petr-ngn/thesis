@@ -1,4 +1,4 @@
-\begin{thebibliography}{34}
+\begin{thebibliography}{38}
 \newcommand{\enquote}[1]{``#1''}
 \providecommand{\natexlab}[1]{#1}
 
@@ -7,6 +7,17 @@
   equivalence between kolmogorov-smirnov and roc curve metrics for binary
   classification.}
 \newblock \emph{arXiv preprint arXiv:1606.00496} .
+
+\bibitem[{Bischl \emph{et~al.}(2023)Bischl, Binder, Lang, Pielok, Richter,
+  Coors, Thomas, Ullmann, Becker, Boulesteix
+  \emph{et~al.}}]{bischl2023hyperparameter}
+\textsc{Bischl}, B., M.~\textsc{Binder}, M.~\textsc{Lang}, T.~\textsc{Pielok},
+  J.~\textsc{Richter}, S.~\textsc{Coors}, J.~\textsc{Thomas},
+  T.~\textsc{Ullmann}, M.~\textsc{Becker}, A.-L. \textsc{Boulesteix}
+  \emph{et~al.} (2023): \enquote{Hyperparameter optimization: Foundations,
+  algorithms, best practices, and open challenges.}
+\newblock \emph{Wiley Interdisciplinary Reviews: Data Mining and Knowledge
+  Discovery} \textbf{13(2)}: p. e1484.
 
 \bibitem[{Bol{\'o}n-Canedo \emph{et~al.}(2015)Bol{\'o}n-Canedo,
   S{\'a}nchez-Maro{\~n}o, \& Alonso-Betanzos}]{bolon2015feature}
@@ -61,6 +72,12 @@
 \textsc{Dembla}, G. (2020): \enquote{Intuition behind log-loss score.}
 \newblock Medium.
 \newblock Retrieved April 30, 2023.
+
+\bibitem[{Drahokoupil(2022)}]{drahokoupil2022application}
+\textsc{Drahokoupil}, J. (2022): \enquote{Application of the xgboost algorithm
+  and bayesian optimization for the bitcoin price prediction during the
+  covid-19 period.}
+\newblock \emph{FFA Working Papers} \textbf{4}: p. Article 2022.006.
 
 \bibitem[{Gauhar(2020)}]{gauhar2020decision}
 \textsc{Gauhar}, N. (2020): \enquote{Decision tree: A classification
@@ -119,6 +136,12 @@
   machines.}
 \newblock \emph{Methods of information in medicine} \textbf{51}: pp. 74--81.
 
+\bibitem[{Marinov \& Karapetyan(2019)}]{marinov2019hyperparameter}
+\textsc{Marinov}, D. \& D.~\textsc{Karapetyan} (2019): \enquote{Hyperparameter
+  optimisation with early termination of poor performers.}
+\newblock In \enquote{2019 11th Computer Science and Electronic Engineering
+  (CEEC),} pp. 160--163. IEEE.
+
 \bibitem[{Mucherino \emph{et~al.}(2009)Mucherino, Papajorgji, \&
   Pardalos}]{mucherino2009data}
 \textsc{Mucherino}, A., P.~\textsc{Papajorgji}, \& P.~M. \textsc{Pardalos}
@@ -144,6 +167,11 @@
 \newblock Medium.
 \newblock Retrieved on May 2, 2023 from
   \url{https://medium.com/@ruinian/an-introduction-to-adasyn-with-code-1383a5ece7aa}.
+
+\bibitem[{Owen(2022)}]{owen2022hyperparameter}
+\textsc{Owen}, L. (2022): \emph{Hyperparameter Tuning with Python}.
+\newblock Packt Publishing, 1st edition.
+\newblock Original work published 2022.
 
 \bibitem[{Provost \& Fawcett(2013)}]{provost2013data}
 \textsc{Provost}, F. \& T.~\textsc{Fawcett} (2013): \emph{Data Science for
@@ -190,9 +218,8 @@
   (2011): \emph{Data Mining: Practical Machine Learning Tools and Techniques}.
 \newblock Morgan Kaufmann, 4th edition.
 
-\bibitem[{Witzany \& Witzany(2017)}]{witzany2017credit}
-\textsc{Witzany}, J. \& J.~\textsc{Witzany} (2017): \emph{Credit risk
-  management}.
+\bibitem[{Witzany(2017)}]{witzany2017credit}
+\textsc{Witzany}, J. (2017): \emph{Credit risk management}.
 \newblock Springer.
 
 \bibitem[{Zeng(2014)}]{zeng2014necessary}
