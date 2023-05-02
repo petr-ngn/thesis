@@ -557,14 +557,53 @@ To ensure appropriate model training and unbiased evaluation, it is necessary to
 The data is split using stratified split to preserve the default status distribution, which was highly imbalanced.
 Stratification ensures that the distribution of defaults and non-defaults remains the same across all sets, thereby avoiding overfitting and data leakage. Using stratification, each set had 80 \% non-defaults and 20 \% defaults. This method enables accurate prediction since the model is trained and evaluated on the same population \citep{igareta2021strat}.
 
-However, stratification alone may not be sufficient for dealing with imbalanced classes.
-Undersampling or random oversampling may lead to loss of information or overfitting due to the minority instances' duplication.
-Therefore, the Adaptive Synthetic Sampling (ADASYN) technique is used for oversampling the minority class.
+\subsubsection{ADASYN Oversampling}
+
+However, stratification alone may not be sufficient for dealing with imbalanced classes. One would use random undersampling or random oversampling to deal with the class imbalanced issue. The former randomly eliminates majority class instances whereas the latter randomly duplicates minority class instances.
+However, both have particular drawbacks, as the random under-sampling may lead to a a significant loss of information, and random oversampling is lead to the high degree of repetation of minority instances. Both then could lead to model's overfitting and detoriation in model's performance \citep{ma2013imbalanced}.
+This might be a significant issue when the target variable distribution is heavily imbalanced - assume that we have a dataset of 1,000 instances where 990 instances belongs to majority class and 10 instances to minority class.
+If we perform random undersampling in order to balance the target variable distribution, we would have to remove 980 instances and end up with undersampled dataset of 20 instances, which is not acceptable for model training.
+On the other hand, if we perform random oversampling, we would end up with 1,980 instances, where 980 instances would be the same as in the original dataset, which would lead to the model's overfitting.
+
+Therefore, the Adaptive Synthetic Sampling (henceforth ADASYN) technique is used for oversampling the minority class.
 ADASYN generates synthetic instances of the minority class based on the nearest neighbors of the minority class instances.
-It is more effective than SMOTE, as it generates more synthetic samples in regions where the density of the minority class is lower and fewer synthetic instances in regions where the density is higher, thereby focusing on the difficult-to-learn minority instances.
-In other words, ADASYN focuses on difficult--to--learn minority instances, i.e., instances having lower density, therefore it generates more synthetic instances for such instances \citep{adasynhaibo}.
-Thereby, it makes easier for the machine learning model to learn the decision boundary between the minority and majority classes and boost the model's performance. 
+Such approach is more effective than Synthetic Minority Oversampling Technique (henceforth SMOTE) which also uses nearest neighbors to generate synthetic instances of minority class, as it generates more synthetic instances which are hard--to--learn by K-Nearest Neighbors given the density distributtions, whereby SMOTE generates synthetic instances uniformly for each minority instance.
+ \citep{adasynhaibo}. 
+In other words, ADASYN generates more synthetic instances in regions where the density of the majority class within $K$ nearest neighbors of minority instance is higher and fewer synthetic instances in regions where the density is lower, thereby ADASYN focuses on generating more hard--to--learn minority instances.
+Thereby, it makes easier for the machine learning model to learn the decision boundary between the minority and majority classes and boost the model's performance by focusing on hard--to--learn instances \citep{adasynhaibo}. 
 The oversampling is performed on the training set only after the split to avoid data leakage and biased evaluation.
+
+Before oversampling algorithm's execution, first we need to calculate the number of instances of minority class to be synthetically generated in order to balance the target variable distribution. The number of instances to be generated $G$ is calculated as follows:
+\begin{equation}\label{eq}
+    G = \left(m_{l} - m_{s}\right) \times \beta
+\end{equation}
+where $m_l$ is the number of majority class instances, $m_s$ is the number of minority class instances and $\beta$ indicates the desired ratio between the numbers of majority and minority class instances after oversampling.
+
+Then for each minority class instance $x_i$, using K-nearest Neighbors with Euclidean distance calculate the ratio $r_i$ as:
+\begin{equation}\label{eq}
+   r_{i} = \frac{\delta_{i}} {K}
+\end{equation}
+where $\delta_{i}$ is the number of majority class instances within the $K$ nearest neighbors of $x_i$.
+In such case, higher $r_i$ indicates dominance of the majority class in given specific neighbourhood of $x_i$ \citep{nian2018introduction}.
+Subsequently, all the $r_i$ ratios are normalized as:
+\begin{equation}\label{eq}
+    \hat{r}_{i} = \frac{r{i}}{\displaystyle\sum_{i=1}^{m_{s}} r_{i}}
+\end{equation}
+In such way that sum of all the normalized $\hat{r}_i$ ratios is equal to 1. Hence, we can denote $\hat{r}_i$ as the density distribution.
+\begin{equation}\label{eq}
+    \sum_{i=1}^{m_{s}} \hat{r}_{i} = 1
+\end{equation}
+
+Finally, the oversampling process is initialized.
+For each minority class instance $x_i$, calculate the number of instances to be synthetically generated based on the respective density distribution $\hat{r}_i$ and the total number of instances to be synthetically generated $G$. Thus, for the minority classes with higher density, it generates more synthetic instances, since those instances are hard--to--classify by the K-Nearest Neighbors.
+\begin{equation}\label{eq}
+    G_i = G \times \hat{r}_{i}
+\end{equation}
+Further, for each minority class instance $x$, generate $G_i$ synthetic instances $s_i$ as follows:
+\begin{equation}\label{eq}
+    s_i = x_i + \left(x_{zi} - x_{i} \right) \times \lambda
+\end{equation}
+where $x_{zi}$ represents the radnomly chosen minority class instance within the $K$ nearest neares neighbors for $x_i$, and $\lambda \in \left[0,1\right]$ is a random number.
 
 The following \autoref{tab:split} shows the default distribution of the individual sets before and after oversampling. The training set after ADASYN oversampling was balanced, while the default distribution remained the same across the validation and test sets before and after oversampling, which is desirable due to stratification.
 
@@ -614,6 +653,8 @@ However, the \lstinline{ADASYN()} class from \lstinline{imblearn} is not designe
 \item Numeric features: for each feature $X$ if its value exceeds the original maximum value, then replace it with \lstinline{np.nan};\footnote{The theory behind this ADASYN will be described later.}
 \end{itemize}
 \end{enumerate}
+
+\textbf{ADD IMPACT OF OVERSAMPLING ON FEATURES DISTRIBUTION}
 
 \subsection{Optimal Binning and Weight--of--Evidence}
 \label{subsec:prep-optbinning}

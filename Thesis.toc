@@ -44,25 +44,26 @@
 \contentsline {subsubsection}{Multicolinearity Analysis}{37}{section*.47}%
 \contentsline {section}{\numberline {3.3}Data Preprocessing}{39}{section.3.3}%
 \contentsline {subsection}{\numberline {3.3.1}Data Split and ADASYN Oversampling}{39}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Optimal Binning and Weight--of--Evidence}{41}{subsection.3.3.2}%
-\contentsline {section}{\numberline {3.4}Modelling}{45}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Hyperparameter Bayesian Optimization}{45}{subsection.3.4.1}%
-\contentsline {subsubsection}{Logistic Regression}{46}{section*.51}%
-\contentsline {subsubsection}{Decision Tree}{47}{section*.53}%
-\contentsline {subsubsection}{Gaussian Naive Bayes}{47}{section*.55}%
-\contentsline {subsubsection}{K-Nearest Neighbors}{47}{section*.57}%
-\contentsline {subsubsection}{Random Forest}{48}{section*.59}%
-\contentsline {subsubsection}{Gradient Boosting}{48}{section*.61}%
-\contentsline {subsubsection}{Support Vector Machine}{49}{section*.63}%
-\contentsline {subsubsection}{Neural Network}{49}{section*.65}%
-\contentsline {subsection}{\numberline {3.4.2}Feature Selection}{49}{subsection.3.4.2}%
-\contentsline {subsection}{\numberline {3.4.3}Model Selection}{54}{subsection.3.4.3}%
-\contentsline {subsection}{\numberline {3.4.4}Model Building}{64}{subsection.3.4.4}%
-\contentsline {section}{\numberline {3.5}Model Evaluation}{65}{section.3.5}%
-\contentsline {section}{\numberline {3.6}Machine Learning Deployment}{71}{section.3.6}%
-\contentsline {subsection}{\numberline {3.6.1}Final Model Building}{71}{subsection.3.6.1}%
-\contentsline {subsection}{\numberline {3.6.2}Flask and HTML Web Application}{71}{subsection.3.6.2}%
-\contentsline {chapter}{\numberline {4}Conclusion}{77}{chapter.4}%
-\contentsline {chapter}{Bibliography}{80}{chapter*.87}%
+\contentsline {subsubsection}{ADASYN Oversampling}{39}{section*.49}%
+\contentsline {subsection}{\numberline {3.3.2}Optimal Binning and Weight--of--Evidence}{43}{subsection.3.3.2}%
+\contentsline {section}{\numberline {3.4}Modelling}{47}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Hyperparameter Bayesian Optimization}{47}{subsection.3.4.1}%
+\contentsline {subsubsection}{Logistic Regression}{48}{section*.52}%
+\contentsline {subsubsection}{Decision Tree}{49}{section*.54}%
+\contentsline {subsubsection}{Gaussian Naive Bayes}{49}{section*.56}%
+\contentsline {subsubsection}{K-Nearest Neighbors}{49}{section*.58}%
+\contentsline {subsubsection}{Random Forest}{50}{section*.60}%
+\contentsline {subsubsection}{Gradient Boosting}{50}{section*.62}%
+\contentsline {subsubsection}{Support Vector Machine}{51}{section*.64}%
+\contentsline {subsubsection}{Neural Network}{51}{section*.66}%
+\contentsline {subsection}{\numberline {3.4.2}Feature Selection}{51}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}Model Selection}{56}{subsection.3.4.3}%
+\contentsline {subsection}{\numberline {3.4.4}Model Building}{66}{subsection.3.4.4}%
+\contentsline {section}{\numberline {3.5}Model Evaluation}{67}{section.3.5}%
+\contentsline {section}{\numberline {3.6}Machine Learning Deployment}{73}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}Final Model Building}{73}{subsection.3.6.1}%
+\contentsline {subsection}{\numberline {3.6.2}Flask and HTML Web Application}{73}{subsection.3.6.2}%
+\contentsline {chapter}{\numberline {4}Conclusion}{79}{chapter.4}%
+\contentsline {chapter}{Bibliography}{82}{chapter*.88}%
 \contentsline {chapter}{\numberline {A}Title of Appendix A}{I}{appendix.A}%
 \contentsline {chapter}{\numberline {B}Project's website}{II}{appendix.B}%

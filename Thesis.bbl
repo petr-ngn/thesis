@@ -1,4 +1,4 @@
-\begin{thebibliography}{29}
+\begin{thebibliography}{31}
 \newcommand{\enquote}[1]{``#1''}
 \providecommand{\natexlab}[1]{#1}
 
@@ -34,8 +34,6 @@
 \bibitem[{Brownlee(2020)}]{Brownlee2020}
 \textsc{Brownlee}, J. (2020): \enquote{Recursive feature elimination (rfe) for
   feature selection in python.}
-\newblock
-  \url{https://machinelearningmastery.com/rfe-feature-selection-in-python/}.
 \newblock Retrieved April 28, 2023.
 
 \bibitem[{Brownlee(2021)}]{brownlee2021failure}
@@ -96,8 +94,6 @@
 \bibitem[{Kaushik(2016)}]{kaushik2016introduction}
 \textsc{Kaushik}, S. (2016): \enquote{Introduction to feature selection methods
   with an example (or how to select the right variables?).}
-\newblock
-  \url{https://www.analyticsvidhya.com/blog/2016/12/introduction-to-feature-selection-methods-with-an-example-or-how-to-select-the-right-variables/}.
 \newblock Accessed: April 30, 2023.
 
 \bibitem[{Kornbrot(2014)}]{kornbrot2014point}
@@ -109,6 +105,10 @@
 \textsc{Leskovec}, J., A.~\textsc{Rajaraman}, \& J.~D. \textsc{Ullman} (2020):
   \emph{Mining of massive data sets}.
 \newblock Cambridge university press.
+
+\bibitem[{Ma \& He(2013)}]{ma2013imbalanced}
+\textsc{Ma}, Y. \& H.~\textsc{He} (2013): \enquote{Imbalanced learning:
+  foundations, algorithms, and applications.} .
 
 \bibitem[{Malley \emph{et~al.}(2011)Malley, Kruppa, Dasgupta, Malley, \&
   Ziegler}]{randomforestmalley}
@@ -132,6 +132,12 @@
 \bibitem[{Newson(2014)}]{newson2014interpretation}
 \textsc{Newson}, R.~B. (2014): \enquote{Interpretation of somers' d under four
   simple models.}
+
+\bibitem[{Nian(2018)}]{nian2018introduction}
+\textsc{Nian}, R. (2018): \enquote{An introduction to {ADASYN} (with code!).}
+\newblock Medium.
+\newblock Retrieved on May 2, 2023 from
+  \url{https://medium.com/@ruinian/an-introduction-to-adasyn-with-code-1383a5ece7aa}.
 
 \bibitem[{Provost \& Fawcett(2013)}]{provost2013data}
 \textsc{Provost}, F. \& T.~\textsc{Fawcett} (2013): \emph{Data Science for
