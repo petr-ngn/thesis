@@ -1,4 +1,4 @@
-\begin{thebibliography}{33}
+\begin{thebibliography}{34}
 \newcommand{\enquote}[1]{``#1''}
 \providecommand{\natexlab}[1]{#1}
 
@@ -189,6 +189,11 @@
 \textsc{Witten}, I.~H., E.~\textsc{Frank}, M.~\textsc{Hall}, \& C.~\textsc{Pal}
   (2011): \emph{Data Mining: Practical Machine Learning Tools and Techniques}.
 \newblock Morgan Kaufmann, 4th edition.
+
+\bibitem[{Witzany \& Witzany(2017)}]{witzany2017credit}
+\textsc{Witzany}, J. \& J.~\textsc{Witzany} (2017): \emph{Credit risk
+  management}.
+\newblock Springer.
 
 \bibitem[{Zeng(2014)}]{zeng2014necessary}
 \textsc{Zeng}, G. (2014): \enquote{A necessary condition for a good binning

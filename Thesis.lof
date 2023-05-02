@@ -14,23 +14,23 @@
 \contentsline {figure}{\numberline {3.5}{\ignorespaces Conditional distribution of categorical features\relax }}{33}{figure.caption.38}%
 \contentsline {figure}{\numberline {3.6}{\ignorespaces Nullity dendrogram\relax }}{37}{figure.caption.46}%
 \contentsline {figure}{\numberline {3.7}{\ignorespaces Spearman Correlation Matrix\relax }}{38}{figure.caption.48}%
-\contentsline {figure}{\numberline {3.8}{\ignorespaces WoE Bins Distribution\relax }}{46}{figure.caption.51}%
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Feature Selection Print Statement\relax }}{54}{figure.caption.68}%
-\contentsline {figure}{\numberline {3.10}{\ignorespaces Reccurrence of Selected Features\relax }}{55}{figure.caption.69}%
-\contentsline {figure}{\numberline {3.11}{\ignorespaces Distribution of Selected Features per Model\relax }}{56}{figure.caption.70}%
-\contentsline {figure}{\numberline {3.12}{\ignorespaces Model Selection Print Statement\relax }}{59}{figure.caption.72}%
-\contentsline {figure}{\numberline {3.13}{\ignorespaces F1 score distribution\relax }}{61}{figure.caption.74}%
-\contentsline {figure}{\numberline {3.14}{\ignorespaces F1 score distribution - without outliers\relax }}{62}{figure.caption.75}%
-\contentsline {figure}{\numberline {3.15}{\ignorespaces Threshold distribution\relax }}{62}{figure.caption.76}%
-\contentsline {figure}{\numberline {3.16}{\ignorespaces Threshold distribution - without outliers\relax }}{63}{figure.caption.77}%
-\contentsline {figure}{\numberline {3.17}{\ignorespaces Execution time distribution\relax }}{64}{figure.caption.78}%
-\contentsline {figure}{\numberline {3.18}{\ignorespaces Execution time vs. F1 Scatterplot\relax }}{65}{figure.caption.79}%
-\contentsline {figure}{\numberline {3.19}{\ignorespaces Confusion Matrix\relax }}{68}{figure.caption.81}%
-\contentsline {figure}{\numberline {3.20}{\ignorespaces ROC Curve\relax }}{70}{figure.caption.83}%
-\contentsline {figure}{\numberline {3.21}{\ignorespaces Feature Importance\relax }}{71}{figure.caption.84}%
-\contentsline {figure}{\numberline {3.22}{\ignorespaces SHAP Summary Plot\relax }}{72}{figure.caption.85}%
-\contentsline {figure}{\numberline {3.23}{\ignorespaces Flask Web Application Form\relax }}{76}{figure.caption.86}%
-\contentsline {figure}{\numberline {3.24}{\ignorespaces Flask Web Application - Prediction Result\relax }}{77}{figure.caption.87}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces WoE Bins Distribution\relax }}{47}{figure.caption.51}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Feature Selection Print Statement\relax }}{55}{figure.caption.68}%
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Reccurrence of Selected Features\relax }}{56}{figure.caption.69}%
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Distribution of Selected Features per Model\relax }}{57}{figure.caption.70}%
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Model Selection Print Statement\relax }}{60}{figure.caption.72}%
+\contentsline {figure}{\numberline {3.13}{\ignorespaces F1 score distribution\relax }}{62}{figure.caption.74}%
+\contentsline {figure}{\numberline {3.14}{\ignorespaces F1 score distribution - without outliers\relax }}{63}{figure.caption.75}%
+\contentsline {figure}{\numberline {3.15}{\ignorespaces Threshold distribution\relax }}{63}{figure.caption.76}%
+\contentsline {figure}{\numberline {3.16}{\ignorespaces Threshold distribution - without outliers\relax }}{64}{figure.caption.77}%
+\contentsline {figure}{\numberline {3.17}{\ignorespaces Execution time distribution\relax }}{65}{figure.caption.78}%
+\contentsline {figure}{\numberline {3.18}{\ignorespaces Execution time vs. F1 Scatterplot\relax }}{66}{figure.caption.79}%
+\contentsline {figure}{\numberline {3.19}{\ignorespaces Confusion Matrix\relax }}{69}{figure.caption.81}%
+\contentsline {figure}{\numberline {3.20}{\ignorespaces ROC Curve\relax }}{71}{figure.caption.83}%
+\contentsline {figure}{\numberline {3.21}{\ignorespaces Feature Importance\relax }}{72}{figure.caption.84}%
+\contentsline {figure}{\numberline {3.22}{\ignorespaces SHAP Summary Plot\relax }}{73}{figure.caption.85}%
+\contentsline {figure}{\numberline {3.23}{\ignorespaces Flask Web Application Form\relax }}{77}{figure.caption.86}%
+\contentsline {figure}{\numberline {3.24}{\ignorespaces Flask Web Application - Prediction Result\relax }}{78}{figure.caption.87}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

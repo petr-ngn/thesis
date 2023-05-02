@@ -670,29 +670,35 @@ Therefore, alternative approaches such as discretization or binning are increasi
 As a result, binning is a more flexible and versatile feature transformation method that can effectively handle different types of datasets and is particularly useful in cases where other methods may not be appropriate.
 
 In this thesis, we employ the \lstinline{BinningProcess} from the \lstinline{optbinning} module in Python for an optimal binning of both numeric and categorical features with respect to the target variable, developed by Guillermo Navas--Palencia \citep{navas2020optimal}. 
+This approach involves grouping the values of a continuous variable into discrete intervals, or "bins", based on their relationship with the target variable.
+Similarly, for categorical features, the approach involves grouping the categories based on their relationship with the target variable.
 In general, the optimal binning is solved by iteratively merging an initial granular discretization until imposed constraints are satisfied. Particularly, the optimal binning process consists of two phases - pre--binning process (for generating initial granular discretization) and subsequent optimization (for satisfying imposed constraints).
-The former phase usually uses decision tree to generate initial split points. \citep{navas2020optimal} such as:
+The former phase usually uses decision tree to generate initial split points to create pre--bins which are further merged while maximizing Information Value (also known as Jeffreys' divergence) while accounting for the constraints. \citep{navas2020optimal} Such constraints are:
 \begin{itemize}\setlength\itemsep{0em} 
     \item Creation of separate bins for missing values: Since missing values can have a significant impact on the target variable, hence is important to create a separate bin for them.
     \item Minimum bin size constraint - at least 5 \% of the total number of instances: Such constraint ensures a bin's representativness.
-    \item Each bin should have at least one instance of each target class: Application of such constraint allows to compute divergence measures.
+    \item Each bin should have at least one instance of each target class: Application of such constraint allows to compute divergence measure.
 \end{itemize}
+Thus, the optimal binning process, the goal is the maximize discriminatory power among bins, i.e., divergence measure.
+For more information about optimal binning, please refer to \citep{navas2020optimal}.
 
-    
-
-
-
-This approach involves grouping the values of a continuous variable into discrete intervals, or "bins", based on their relationship with the target variable.
-Similarly, for categorical features, the approach involves grouping the categories based on their relationship with the target variable.
-The optimal binning is performed with the objective of achieving maximum separation between the classes of the target variable within each bin.
-This is done to ensure that the bins are highly informative with respect to the target variable, and that each bin contains a meaningful range of values.
-Furthermore, the resulting bins are encoded into numeric values using the Weight-of-Evidence (WoE) approach. The WoE is a commonly used measure of the strength of association between a binary target variable and an independent variable. It is calculated as
-
+After the binning process, the bins as categorical values needed to be encoded into numeric values. The most common approach in credit risk modelling is Weight-of-Evidence (henceforth WoE) encoding. The WoE is a commonly used measure of the strength of association between a binary target variable and an independent variable.
+According to Witzany \citep{witzany2017credit}, the WoE of categorical value $c$ can be expressed as the change between the overal log odds ratio and the log odds ratio given the value $c$, hence:
 \begin{equation}\label{eq}
-WoE_{X, b}= \ln \left(\frac{\Pr{\left(X = b\;\middle|\;Y = 0\right)}}{\Pr{\left(X = b\;\middle|\;Y = 1\right)}}\right)
+    WoE\left(c\right) = \ln\left(\operatorname{Pr}\left(c \mid Y = 0 \right) \right) - \ln\left(\operatorname{Pr}\left(c \mid Y = 1 \right) \right)
 \end{equation}
+Assuming feature $X$ and its respective bin $b_i$, thus $b_i \in X$, we can express WoE in terms of $b$ as follows:
+\begin{equation}\label{eq}
+    WoE_{X, b}= \ln \left(\frac{\Pr{\left(X = b\;\middle|\;Y = 0\right)}}{\Pr{\left(X = b\;\middle|\;Y = 1\right)}}\right)
+\end{equation}
+According to Navas--Palencia \citep{navas2020optimal}, the WoE for bin $i$ can be also computed as:
+\begin{equation}\label{eq}
+    WoE_{i} = \ln \left( \frac{r^{ND}_i / r^{ND}_T} {r^{D}_i / r^{D}_T}  \right)
+\end{equation}
+where $r^{ND}_i$ is the number of non--default instances in given bin $i$, $r^{D}_i$ is the number of default instances in the given bin $i$, $r^{ND}_T$ is the total number of non--default instances in whole sample and $r^{D}_T$ is the total number of default instances in whole sample.
+Thus, positive WoE value is indicates larger distribution of non--defaults, i.e. higher likelihood of non--default, while negative WoE value indicates larger distribution of defaults, i.e., higher likelihood of default. 
 
-he following \autoref{fig:woedist} depicts the distribution of Weight-of-Evidence (WoE) bins for each feature. It can be observed that binning captures either linear, non-linear, monotonic, or non-monotonic relationships between the default status and the numeric features in terms of WoE.
+The following \autoref{fig:woedist} depicts the distribution of Weight-of-Evidence (WoE) bins for each feature. It can be observed that binning captures either linear, non-linear, monotonic, or non-monotonic relationships between the default status and the numeric features in terms of WoE.
 Regarding the \texttt{DELINQ} feature, a monotonic relationship can be observed, where the higher number of delinquent credit lines, the lower the WoE coefficient, indicating a larger distribution of defaults with respect to non-defaults in the given bin.
 Thus, the higher the number of delinquent credit lines, the higher the likelihood of defaulting in terms of WoE.
 
@@ -723,7 +729,7 @@ Hence defaulted loans that managers have applied for are difficult to learn, and
 \section{Modelling}
 Once the data are finally preprocessed, the next step regards the modelling part which includes hyperparameter tuning, feature selection, model selection and model building.
 
-In Python, 8 different machine learning models from \lstinline{Scikit-learn} module are used for the default status prediction, which are:
+In Python, 8 different machine learning models from \lstinline{Scikit-learn} module are used for the default status prediction, which were already described in \autoref{sec:algorithms}, namely:
 \begin{itemize}\setlength\itemsep{0em}
 \item Logistic Regression - \lstinline{LogisticRegression()},
 \item Decision Tree - \lstinline{DecisionTreeClassifier()},

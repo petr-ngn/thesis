@@ -46,26 +46,26 @@
 \contentsline {subsection}{\numberline {3.3.1}Data Split and ADASYN Oversampling}{39}{subsection.3.3.1}%
 \contentsline {subsubsection}{ADASYN Oversampling}{39}{section*.49}%
 \contentsline {subsection}{\numberline {3.3.2}Optimal Binning and Weight--of--Evidence}{43}{subsection.3.3.2}%
-\contentsline {section}{\numberline {3.4}Modelling}{47}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Hyperparameter Bayesian Optimization}{47}{subsection.3.4.1}%
-\contentsline {subsubsection}{Logistic Regression}{48}{section*.52}%
-\contentsline {subsubsection}{Decision Tree}{49}{section*.54}%
-\contentsline {subsubsection}{Gaussian Naive Bayes}{49}{section*.56}%
-\contentsline {subsubsection}{K-Nearest Neighbors}{49}{section*.58}%
-\contentsline {subsubsection}{Random Forest}{50}{section*.60}%
-\contentsline {subsubsection}{Gradient Boosting}{50}{section*.62}%
-\contentsline {subsubsection}{Support Vector Machine}{51}{section*.64}%
-\contentsline {subsubsection}{Neural Network}{51}{section*.66}%
-\contentsline {subsection}{\numberline {3.4.2}Feature Selection}{51}{subsection.3.4.2}%
-\contentsline {subsection}{\numberline {3.4.3}Model Selection}{56}{subsection.3.4.3}%
-\contentsline {subsection}{\numberline {3.4.4}Model Recalibration}{66}{subsection.3.4.4}%
-\contentsline {section}{\numberline {3.5}Model Evaluation}{67}{section.3.5}%
-\contentsline {subsection}{\numberline {3.5.1}Model's Performance Assessment}{67}{subsection.3.5.1}%
-\contentsline {subsection}{\numberline {3.5.2}Model Explainability}{71}{subsection.3.5.2}%
-\contentsline {section}{\numberline {3.6}Machine Learning Deployment}{73}{section.3.6}%
-\contentsline {subsection}{\numberline {3.6.1}Final Model Recalibration}{73}{subsection.3.6.1}%
-\contentsline {subsection}{\numberline {3.6.2}Flask and HTML Web Application}{73}{subsection.3.6.2}%
-\contentsline {chapter}{\numberline {4}Conclusion}{79}{chapter.4}%
-\contentsline {chapter}{Bibliography}{82}{chapter*.88}%
+\contentsline {section}{\numberline {3.4}Modelling}{48}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Hyperparameter Bayesian Optimization}{48}{subsection.3.4.1}%
+\contentsline {subsubsection}{Logistic Regression}{49}{section*.52}%
+\contentsline {subsubsection}{Decision Tree}{50}{section*.54}%
+\contentsline {subsubsection}{Gaussian Naive Bayes}{50}{section*.56}%
+\contentsline {subsubsection}{K-Nearest Neighbors}{50}{section*.58}%
+\contentsline {subsubsection}{Random Forest}{51}{section*.60}%
+\contentsline {subsubsection}{Gradient Boosting}{51}{section*.62}%
+\contentsline {subsubsection}{Support Vector Machine}{52}{section*.64}%
+\contentsline {subsubsection}{Neural Network}{52}{section*.66}%
+\contentsline {subsection}{\numberline {3.4.2}Feature Selection}{52}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}Model Selection}{57}{subsection.3.4.3}%
+\contentsline {subsection}{\numberline {3.4.4}Model Recalibration}{67}{subsection.3.4.4}%
+\contentsline {section}{\numberline {3.5}Model Evaluation}{68}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Model's Performance Assessment}{68}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}Model Explainability}{72}{subsection.3.5.2}%
+\contentsline {section}{\numberline {3.6}Machine Learning Deployment}{74}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}Final Model Recalibration}{74}{subsection.3.6.1}%
+\contentsline {subsection}{\numberline {3.6.2}Flask and HTML Web Application}{74}{subsection.3.6.2}%
+\contentsline {chapter}{\numberline {4}Conclusion}{80}{chapter.4}%
+\contentsline {chapter}{Bibliography}{84}{chapter*.88}%
 \contentsline {chapter}{\numberline {A}Title of Appendix A}{I}{appendix.A}%
 \contentsline {chapter}{\numberline {B}Project's website}{II}{appendix.B}%
