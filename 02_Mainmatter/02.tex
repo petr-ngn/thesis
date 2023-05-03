@@ -344,16 +344,16 @@ Based on these classified instances, the confusion matrix can be constructed and
 Thus, if the probability is 1, the threshold will be 1 as well and hence:
 \begin{itemize}\setlength\itemsep{0em}
     \item $TPR$ will be 0 because there is no probability which is higher than 1 and hence, everything will be classified as $False$ which will result into $TP$ of 0, and subsequently into $TPR$ of 0 as well.
-	\item $FPR$ will be 0, too – since everything will be classified as $False$, therefore $FP$ will be 0 which implies $FPR$ to be 0, too.
+	\item $FPR$ will be 0, too - since everything will be classified as $False$, therefore $FP$ will be 0 which implies $FPR$ to be 0, too.
 \end{itemize}
 On the other hand, if the probability is 0, the threshold will be 0 as well and hence:
 \begin{itemize}\setlength\itemsep{0em}
     \item $TPR$ will be 1 because there is no probability which is lower than 0 and hence, everything will be classified as $True$ which will result into $FN$ of 0, and subsequently into $TPR$ of 1.
-	\item $FPR$ will be 1, too – since everything will be classified as $True$, therefore $TN$ will be 0 which implies $FPR$ to be 1.
+	\item $FPR$ will be 1, too - since everything will be classified as $True$, therefore $TN$ will be 0 which implies $FPR$ to be 1.
 \end{itemize}
 
 Thus, based on each threshold, the $TPR$ and $FPR$ will be to coordinates for single point within the graph and based on such points, we can construct the ROC curve.
-Such visualization on the following \autoref{fig:roccurvetheory}.
+Such visualization on the following \autoref{fig:roccurvetheory}.d
 Note the diagonal line represents a random model which randomly and correctly predicts the $True$ and $False$ classes in such way, that $FPR$ and $TPR$ are the same.
 Logically, a decent model should perform better than the random model, thus it the ROC curve should be above the diagonal line.
 Intuitively, the best possible theoretical model would have $TPR$ of 1 and $FPR$ of 0, meaning that all the $True$ actual classes should be predicted as $True$ and all the $False$ actual classes should not be classified as $True$
