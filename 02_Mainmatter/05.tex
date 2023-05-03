@@ -605,6 +605,32 @@ Further, for each minority class instance $x$, generate $G_i$ synthetic instance
 \end{equation}
 where $x_{zi}$ represents the radnomly chosen minority class instance within the $K$ nearest neares neighbors for $x_i$, and $\lambda \in \left[0,1\right]$ is a random number.
 
+
+
+In Python, the data are divided and oversampled using a custom function \lstinline{data_split()}.
+This function first employs the \lstinline{train_test_split()} function from the \lstinline{scikit-learn} module to split the data into training, validation, and test sets with a stratification technique.
+Next, the \lstinline{ADASYN()} class from the \lstinline{imblearn} module is used to oversample the training set. This is achieved by generating synthetic instances of the minority class based on the five nearest neighbors and Euclidean distance.
+
+However, the \lstinline{ADASYN()} class from \lstinline{imblearn} is not designed to handle missing values or categorical features encoded as character. To overcome this limitation, the following approach is taken:
+\begin{enumerate}\setlength\itemsep{0em} 
+\item Separate the categorical and numeric features;
+\item Impute the missing values with arbitrary values:
+\begin{itemize}
+\item Categorical features: string \lstinline{'N/A'};
+\item Numeric features: number \lstinline{99999999999999} - such value is chosen since it is highly unlikely to be present in the dataset.
+\end{itemize}
+\item Convert the categorical features into dummy variables;
+\item Join the numeric features with the dummy variables;
+\item Perform the oversampling on the joined dataset;
+\item Convert the dummy variables back into categorical features;
+\item Retrieve back the missing values:
+\begin{itemize}
+\item Categorical features: replace string \lstinline{'N/A'} with \lstinline{np.nan};
+\item Numeric features: for each feature $X$ if its value exceeds the original maximum value, then replace it with \lstinline{np.nan};
+\end{itemize}
+\end{enumerate}
+
+
 The following \autoref{tab:split} shows the default distribution of the individual sets before and after oversampling. The training set after ADASYN oversampling was balanced, while the default distribution remained the same across the validation and test sets before and after oversampling, which is desirable due to stratification.
 
 \begin{table}[H]
@@ -632,30 +658,9 @@ Test & 894 &  20.00 \% & 80.00 \% \\
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{table}
 
-In Python, the data are divided and oversampled using a custom function \lstinline{data_split()}.
-This function first employs the \lstinline{train_test_split()} function from the \lstinline{scikit-learn} module to split the data into training, validation, and test sets with a stratification technique.
-Next, the \lstinline{ADASYN()} class from the \lstinline{imblearn} module is used to oversample the training set. This is achieved by generating synthetic instances of the minority class based on the five nearest neighbors and Euclidean distance.
-
-However, the \lstinline{ADASYN()} class from \lstinline{imblearn} is not designed to handle missing values or categorical features encoded as character. To overcome this limitation, the following approach is taken:
-\begin{enumerate}\setlength\itemsep{0em} 
-\item Separate the categorical and numeric features;
-\item Impute the missing values with arbitrary values:
-\begin{itemize}
-\item Categorical features: string \lstinline{'N/A'};
-\item Numeric features: number \lstinline{99999999999999} - such value is chosen since it is highly unlikely to be present in the dataset.
-\end{itemize}
-\item Convert the categorical features into dummy variables;
-\item Join the numeric features with the dummy variables;
-\item Perform the oversampling on the joined dataset;
-\item Convert the dummy variables back into categorical features;
-\item Retrieve back the missing values:
-\begin{itemize}
-\item Categorical features: replace string \lstinline{'N/A'} with \lstinline{np.nan};
-\item Numeric features: for each feature $X$ if its value exceeds the original maximum value, then replace it with \lstinline{np.nan};
-\end{itemize}
-\end{enumerate}
-
 \textbf{ADD IMPACT OF OVERSAMPLING ON FEATURES DISTRIBUTION}
+
+\textbf{TBD} - Oversampling generates a lot of synthetic default instances for managers.
 
 
 
