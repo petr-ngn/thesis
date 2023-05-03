@@ -31,39 +31,39 @@
 \contentsline {chapter}{\numberline {3}Literature Review}{21}{chapter.3}%
 \contentsline {chapter}{\numberline {4}Hypotheses}{22}{chapter.4}%
 \contentsline {chapter}{\numberline {5}Empirical Analysis - Machine Learning Implementation}{23}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Repository and Environment Structure}{24}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Data Exploration}{27}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Dataset Description}{27}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}Distribution Analysis}{29}{subsection.5.2.2}%
-\contentsline {subsubsection}{Default Distribution}{29}{section*.32}%
-\contentsline {subsubsection}{Numeric Features' Distribution}{30}{section*.34}%
-\contentsline {subsubsection}{Categorical Features' Distribution}{34}{section*.37}%
-\contentsline {subsection}{\numberline {5.2.3}Association Analysis}{35}{subsection.5.2.3}%
-\contentsline {subsubsection}{Association between default status and numeric features}{35}{section*.39}%
-\contentsline {subsubsection}{Association between default status and categorical features}{37}{section*.41}%
-\contentsline {subsubsection}{Association between default status and missing values}{37}{section*.43}%
-\contentsline {subsubsection}{Missing Values Association}{38}{section*.45}%
-\contentsline {subsubsection}{Multicolinearity Analysis}{39}{section*.47}%
-\contentsline {section}{\numberline {5.3}Data Preprocessing}{41}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}Data Split and ADASYN Oversampling}{41}{subsection.5.3.1}%
-\contentsline {subsubsection}{ADASYN Oversampling}{41}{section*.49}%
-\contentsline {subsection}{\numberline {5.3.2}Optimal Binning and Weight--of--Evidence}{46}{subsection.5.3.2}%
-\contentsline {section}{\numberline {5.4}Modelling}{51}{section.5.4}%
-\contentsline {subsection}{\numberline {5.4.1}Hyperparameter Bayesian Optimization}{51}{subsection.5.4.1}%
-\contentsline {subsubsection}{Python Implementation}{54}{section*.54}%
-\contentsline {subsubsection}{Hyperparameters' spaces}{54}{section*.55}%
-\contentsline {subsection}{\numberline {5.4.2}Feature Selection}{56}{subsection.5.4.2}%
-\contentsline {subsection}{\numberline {5.4.3}Model Selection}{61}{subsection.5.4.3}%
-\contentsline {subsubsection}{Metrics Space}{62}{section*.67}%
-\contentsline {subsubsection}{Model Selection Results}{64}{section*.69}%
-\contentsline {subsection}{\numberline {5.4.4}Model Recalibration}{72}{subsection.5.4.4}%
-\contentsline {section}{\numberline {5.5}Model Evaluation}{73}{section.5.5}%
-\contentsline {subsection}{\numberline {5.5.1}Model's Performance Assessment}{73}{subsection.5.5.1}%
-\contentsline {subsection}{\numberline {5.5.2}Model Explainability}{77}{subsection.5.5.2}%
-\contentsline {section}{\numberline {5.6}Machine Learning Deployment}{80}{section.5.6}%
-\contentsline {subsection}{\numberline {5.6.1}Final Model Recalibration}{81}{subsection.5.6.1}%
-\contentsline {subsection}{\numberline {5.6.2}Flask and HTML Web Application}{81}{subsection.5.6.2}%
-\contentsline {chapter}{\numberline {6}Conclusion}{86}{chapter.6}%
-\contentsline {chapter}{Bibliography}{90}{chapter*.87}%
+\contentsline {section}{\numberline {5.1}Repository and Environment Structure}{25}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Data Exploration}{28}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Dataset Description}{28}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Distribution Analysis}{30}{subsection.5.2.2}%
+\contentsline {subsubsection}{Default Distribution}{30}{section*.32}%
+\contentsline {subsubsection}{Numeric Features' Distribution}{31}{section*.34}%
+\contentsline {subsubsection}{Categorical Features' Distribution}{35}{section*.37}%
+\contentsline {subsection}{\numberline {5.2.3}Association Analysis}{36}{subsection.5.2.3}%
+\contentsline {subsubsection}{Association between default status and numeric features}{36}{section*.39}%
+\contentsline {subsubsection}{Association between default status and categorical features}{38}{section*.41}%
+\contentsline {subsubsection}{Association between default status and missing values}{38}{section*.43}%
+\contentsline {subsubsection}{Missing Values Association}{39}{section*.45}%
+\contentsline {subsubsection}{Multicolinearity Analysis}{40}{section*.47}%
+\contentsline {section}{\numberline {5.3}Data Preprocessing}{42}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Data Split and ADASYN Oversampling}{42}{subsection.5.3.1}%
+\contentsline {subsubsection}{ADASYN Oversampling}{42}{section*.49}%
+\contentsline {subsection}{\numberline {5.3.2}Optimal Binning and Weight--of--Evidence}{48}{subsection.5.3.2}%
+\contentsline {section}{\numberline {5.4}Modelling}{53}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Hyperparameter Bayesian Optimization}{53}{subsection.5.4.1}%
+\contentsline {subsubsection}{Python Implementation}{56}{section*.54}%
+\contentsline {subsubsection}{Hyperparameters' spaces}{56}{section*.55}%
+\contentsline {subsection}{\numberline {5.4.2}Feature Selection}{58}{subsection.5.4.2}%
+\contentsline {subsection}{\numberline {5.4.3}Model Selection}{63}{subsection.5.4.3}%
+\contentsline {subsubsection}{Metrics Space}{64}{section*.67}%
+\contentsline {subsubsection}{Model Selection Results}{66}{section*.69}%
+\contentsline {subsection}{\numberline {5.4.4}Model Recalibration}{75}{subsection.5.4.4}%
+\contentsline {section}{\numberline {5.5}Model Evaluation}{76}{section.5.5}%
+\contentsline {subsection}{\numberline {5.5.1}Model's Performance Assessment}{76}{subsection.5.5.1}%
+\contentsline {subsection}{\numberline {5.5.2}Model Explainability}{79}{subsection.5.5.2}%
+\contentsline {section}{\numberline {5.6}Machine Learning Deployment}{83}{section.5.6}%
+\contentsline {subsection}{\numberline {5.6.1}Final Model Recalibration}{83}{subsection.5.6.1}%
+\contentsline {subsection}{\numberline {5.6.2}Flask and HTML Web Application}{83}{subsection.5.6.2}%
+\contentsline {chapter}{\numberline {6}Conclusion}{89}{chapter.6}%
+\contentsline {chapter}{Bibliography}{94}{chapter*.87}%
 \contentsline {chapter}{\numberline {A}Title of Appendix A}{I}{appendix.A}%
 \contentsline {chapter}{\numberline {B}Project's website}{II}{appendix.B}%

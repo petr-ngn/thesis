@@ -22,6 +22,7 @@ This chapter focuses on the main part of this thesis, particularly on the practi
 \centering{\begin{source}Author's results\end{source}}\vspace{-1em}
 \end{figure}
 
+\newpage
 \section{Repository and Environment Structure}
 
 The whole machine learning implmenetation as the scope of this thesis is done mainly using Python Programming Language and further with collaboration of Git and HTML.
@@ -117,7 +118,7 @@ To preserve the reproducibility of this solution and conistency of the results, 
 
 Some \lstinline{Scikit-learn} or \lstinline{Scikit-optimize} objects have optional argument \texttt{n\_jobs} which utilizes the number of CPU cores used during the parallelizing computation. Such argument was set to \texttt{-1}, hence all the processors are used in order to  speed up the training or optimization process.
 
-
+\newpage
 \section{Data Exploration}
 This section is focused on exploration of the analyzed loan dataset, particularly on dataset description, distribution analysis and association analysis, in order to infer potential valuable insights and hypotheses which can be used in the preprocessing or modelling part.
 
@@ -534,7 +535,7 @@ In the \autoref{fig:spearmancorr}, we can observe a very strong correlation betw
     \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
 
-
+\newpage
 \section{Data Preprocessing}
 In this section, the process of preprocessing data is described as the crucial step in the machine learning modelling. Particularly, the following is described:
 \begin{itemize}\setlength\itemsep{0em}
@@ -658,20 +659,15 @@ Test & 894 &  20.00 \% & 80.00 \% \\
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{table}
 
-\textbf{ADD IMPACT OF OVERSAMPLING ON FEATURES DISTRIBUTION}
-
-
-\textbf{TBD} - Oversampling generates a lot of synthetic default instances for managers.
-
 Since ADASYN increases the sample size by generating, i.e., adding new instances into the sample, it may have an impact on the distribution of the features.
 After the inspection in Python, it have no significant impact on the numeric features as the distributions before and after ADASYN oversampling do not differ that much.
 However, pertaining to the categorical features, a significant impact of ADASYN oversampling can be observed as can be seen in  \autoref{tab:adasynimpact} and \autoref{fig:adasynimpact}, respectively, which depict the distribution of categorical features on the subsample of default cases within the training set, particularly distribution before and after the oversampling.
-As such, $n_B$ and $n_A$ refer to the number of default cases within given category before and after oversampling, respectively, $N_B$ and $N_A$ represents the total number of default cases before and after oversampling, respectively, hence $n_{B} / N_{B}$ and $n_{A} / N_{A}$ is
+As such, $n_B$ and $n_A$ refer to the number of default cases within given category before and after oversampling, respectively, $N_B$ and $N_A$ represents the total number of default cases before and after oversampling, respectively.
 
-
-
-
-
+Within the \texttt{REASON} feature, we can observe a significant increase the proportion of defaulted clients who applied for a loan due to the debt consolidation (\texttt{DebtCon}) among all the defaulters after an oversampling - particularly, the ratio has increased by 12.20 percentage points.
+On the other hand, the proportion of defaulted clients who applied for a loan due to the home improvement (\texttt{HomeImp}) has decreased by 9.69 percentage points, indicating lower distribution of such clients in the oversampled set.
+Regarding the \texttt{JOB} feature, we can observe a substantial increase in the proportion in the of defaulted managers (\texttt{Mgr}) among all the defaulters after oversampling by 38.75 percentage points.
+On the other hand, the proportion of defaulted clients who are labelled as \texttt{Others} has decreased by 17.15 percentage points.
 
 \begin{table}[H]
     \small
@@ -704,6 +700,11 @@ As such, $n_B$ and $n_A$ refer to the number of default cases within given categ
     \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{table}
 
+Such findings regarding the significant increases in the proportion of default cases regarding the \texttt{DebtCon} and \texttt{Mgr} categories are given to the nature of ADASYN oversampling.
+As explained before, ADASYN generates more synthetic default class instances in the neighborhood of such default instances, which are hard--to--learn for ADASYN.
+In other words, ADASYN creates more default instances for such default instances where the density of the non--default class is relatively high in given default instance's neighborhood.
+Therefore, default instances which either are managers or applied for a loan due to the debt consolidation are difficult--to--learn for ADASYN, thus ADASYN replicates more instances with such characteristics, hence this results in a higher proportion of default cases in the oversampled set for such category.
+
 
 \begin{figure}[H]
     \centering
@@ -719,7 +720,7 @@ As such, $n_B$ and $n_A$ refer to the number of default cases within given categ
 
 In the context of data preprocessing, it is crucial to consider the most appropriate feature transformation method that optimizes the performance of machine learning models.
 Although common approaches such as dummy encoding, standardization, logarithmic transformation, and normalization are widely used, they may not always be suitable for a given dataset due to the presence of certain characteristics.
-For instance, dummy encoding may not be suitable for categorical features with a large number of categories as it could lead to the curse of dimensionality.
+For instance, dummy encoding (also known as one--hot encoding) may not be suitable for categorical features with a large number of categories as it could lead to the curse of dimensionality, therefore, it may result in the decrease of model's performance \citep{bera2021dimensionality}.
 Standardization may not be appropriate for features with a large number of outliers as it may result in a loss of information.
 Similarly, logarithmic transformation may not be appropriate for features with a large number of zeros, and normalization may not be suitable for features with a significant number of outliers.
 
@@ -739,7 +740,7 @@ The former phase usually uses decision tree to generate initial split points to 
 Thus, the optimal binning process, the goal is the maximize discriminatory power among bins, i.e., divergence measure.
 For more information about optimal binning, please refer to \citep{navas2020optimal}.
 
-After the binning process, the bins as categorical values needed to be encoded into numeric values. The most common approach in credit risk modelling is Weight-of-Evidence (henceforth WoE) encoding. The WoE is a commonly used measure of the strength of association between a binary target variable and an independent variable.
+After the binning process, the bins as categorical values needed to be encoded into numeric values. The most common approach in credit risk modelling is Weight--of--Evidence (henceforth WoE) encoding. The WoE is a commonly used measure of the strength of association between a binary target variable and an independent variable.
 According to Witzany \citep{witzany2017credit}, the WoE of categorical value $c$ can be expressed as the change between the overal log odds ratio and the log odds ratio given the value $c$, hence:
 \begin{equation}\label{eq}
     WoE\left(c\right) = \ln\left(\operatorname{Pr}\left(c \mid Y = 0 \right) \right) - \ln\left(\operatorname{Pr}\left(c \mid Y = 1 \right) \right)
@@ -755,7 +756,7 @@ According to Navas--Palencia \citep{navas2020optimal}, the WoE for bin $i$ can b
 where $r^{ND}_i$ is the number of non--default instances in given bin $i$, $r^{D}_i$ is the number of default instances in the given bin $i$, $r^{ND}_T$ is the total number of non--default instances in whole sample and $r^{D}_T$ is the total number of default instances in whole sample.
 Thus, positive WoE value is indicates larger distribution of non--defaults, i.e. higher likelihood of non--default, while negative WoE value indicates larger distribution of defaults, i.e., higher likelihood of default. 
 
-The following \autoref{fig:woedist} depicts the distribution of Weight-of-Evidence (WoE) bins for each feature. It can be observed that binning captures either linear, non-linear, monotonic, or non-monotonic relationships between the default status and the numeric features in terms of WoE.
+The following \autoref{fig:woedist} depicts the distribution of WoE bins for each feature. It can be observed that binning captures either linear, non-linear, monotonic, or non-monotonic relationships between the default status and the numeric features in terms of WoE.
 Regarding the \texttt{DELINQ} feature, a monotonic relationship can be observed, where the higher number of delinquent credit lines, the lower the WoE coefficient, indicating a larger distribution of defaults with respect to non-defaults in the given bin.
 Thus, the higher the number of delinquent credit lines, the higher the likelihood of defaulting in terms of WoE.
 
@@ -768,11 +769,12 @@ This relationship seems to be complex and can be influenced by other factors not
 Both numeric and categorical features contain a separate bin capturing missing values, which can be a useful indicator when training a model. This is evident in the \texttt{DEBTINC} feature, where the bin capturing missing values has the most negative WoE coefficient, indicating that there is a larger distribution of defaulters compared to non-defaulters.
 This finding was already raised in \autoref{subsubsec:target-na-ass} in terms of the strong and statistically significant association between the default status and the missing values in \texttt{DEBTINC}.
 
-However, inconsistencies can also be observed in terms of distributions from exploratory analysis and the WoE coefficient distributions.
-One example pertains to the \texttt{Mgr} category in the \texttt{JOB} feature, where the WoE coefficient is substantially negative, indicating that among managers, there is a larger distribution of defaulters compared to non-defaulters.
-However, this was not observed in the distribution analysis of categorical features (\autoref{subsubsec:catdist}), where the relative distributions conditional on the default status do not differ too much in terms of the \texttt{Mgr} category.
-This is a result of ADASYN oversampling, which synthetically replicates minority instances, especially those instances that are hard-to-learn.
-Hence defaulted loans that managers have applied for are difficult to learn, and ADASYN balances default distribution by generating default instances having \texttt{JOB} equal to \texttt{Mgr}, which results in an increase in the number of instances having \texttt{JOB} equal to \texttt{Mgr}, i.e., a larger distribution of defaulters in the \texttt{Mgr} bin, and therefore a negative WoE coefficient.
+Within the \texttt{JOB} feature, specifically regarding the \texttt{Mgr} category, we can observe the direct impact of ADASYN oversampling as already described by \autoref{tab:adasynimpact}.
+Since ADASYN generated more default class instances for original default instances who are managers, this results in higher default rate within such job category, thus to the larger distribution of defaulters compared to non--defaulters, which is quantified in the negative WoE value.
+
+
+\textbf{QUESTION FOR SUPERVISOR: should I also decsribe the WoE distribution for other features as well or is this sufficient?}
+
 
 \begin{figure}[H]
 \centering
@@ -782,7 +784,7 @@ Hence defaulted loans that managers have applied for are difficult to learn, and
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
 
-
+\newpage
 \section{Modelling}
 Once the data are finally preprocessed, the next step regards the modelling part which includes hyperparameter tuning, feature selection, model selection and model building.
 
@@ -1474,12 +1476,13 @@ To summarize this subsection, the best and final model is the Gradient Boosting 
     \centering{\begin{source}Author's results in Python\end{source}}\vspace{-0.5em}
 \end{table}
 
+\newpage
 \subsection{Model Recalibration}
 
 \textbf{ADD BRIEF THEORY ABOUT THE SHAP VALUES}
 
 In order to ensure that the final model performs well on unseen data, it is common practice to employ the recalibration approach, which involves retraining the model on both the training and validation sets.
-By doing so, the sample size used for training is increased, resulting in improved model performance.
+By doing so, the sample size used for training is increased. As such, the retraining (or so called recalibration) model lead (or are expected to lead) to markedly improved model performance \citep{de2023predicting}.
 The recalibrated model is then used to evaluate the performance of the final model on the test set, which is the ultimate measure of a model's performance.
 
 In addition to recalibrating the final model, it is crucial to recalibrate the threshold value for assigning class labels based on predicted probabilities. The optimal threshold value can be determined using the training and validation sets. Such threshold is recalibrated based on the training and validation set.
@@ -1491,14 +1494,15 @@ By incorporating the validation set into the training process, the recalibrated 
 The inclusion of the validation set during the recalibration process does not cause any data leakage issues since this set was already used during model selection to evaluate each model's performance.
 Therefore, using the validation data for recalibration is a sound practice that helps to ensure the reliability and accuracy of the final model.
 
+\newpage
 \section{Model Evaluation}
-
-\subsection{Model's Performance Assessment}
-\label{subsec:modelperformance}
-
 After recalibrating the model and threshold, the final step in evaluating the model's performance is to test it on previously unseen data, specifically the test set.
 This evaluation is critical to determine whether the model can generalize well to new data beyond the training, feature selection, and model selection phases.
 During the evaluation, the recalibrated classification threshold of 0.45109, determined in the model recalibration process, is also used.
+\subsection{Model's Performance Assessment}
+\label{subsec:modelperformance}
+
+
 
 In \autoref{fig:confmat}, the confusion matrix for the final model, based on the test set and using the recalibrated threshold, is presented. The matrix shows that the model is generalizing well, having correctly predicted 140 defaults and misclassified only 38 defaults and further, correctly predicted 686 non--defaults and misclassified only 30 non--defaults. Such a result indicates that the model is a good fit for the data and can provide useful predictions for the problem at hand.
 
@@ -1596,17 +1600,17 @@ From the curve, we observe that the AUC value of the model is 95.55 \%, indicati
 \subsection{Model Explainability}
 
 \textbf{ADD BRIEF THEORY ABOUT THE FEATURE IMPORTANCE}
-
-To gain insights into the impact of the features used in the final model, a feature importance graph was visualized and is presented in \autoref{fig:fi}.
-Feature importance is a measure of how much a feature contributes to the overall performance of the model, and it is based on the reduction in impurity achieved by splitting the data on that feature.
-The higher the reduction in impurity, the more important the feature is considered to be.
+To gain insights into the impact of the features used in the final model, we can inspect the feature imporances of the final model, which is a part of family of tree ensemble algorithms.
+As the names indicates, it is the score value representing the importance of the features, i.e., the higher score, the more important the feature is. Basically, it is the measure of how much a feature contributes to the overall performance of the model.
 Overall, the feature importance plot provides valuable insights into the factors that are most important in predicting loan defaults. It can be used to identify which features are contributing the most to the model's accuracy and to guide future feature selection efforts.
-The two most important features used in the final model are \texttt{DEBTINC} and \texttt{DEROG}, which are crucial delinquency indicators in determining whether a borrower would be able to repay their loan. These two features have a significant impact on the model's ability to accurately predict loan defaults, with high feature importance scores.
+According to Bonaccorso \citep{bonaccorso2020mastering}, feature importance is the measure proportional to the impurity reduction that a particular feature allows us to achieve, and is defined as:
+\begin{equation}\label{eq}
+    \text{FI}\left(\bar{x}^{\left(i\right)}\right) = \frac{1}{N} \displaystyle\sum_{k=1}^{N} \displaystyle\sum_{j=1}^{L} \frac{n(j)}{M} \delta I_{j}^{i}
+\end{equation}
+where $ \text{FI}\left(\bar{x}^{\left(i\right)}\right)$ referes to the feature importance of the feature $i$, $n(j)$ is the number of samples reaching the node $j$, $\delta I_{j}^{i}$ represents the impurity reduction at node $j$ after the splitting using the feature $j$, $M$ is total number of samples in the dataset used to built the model, and $N$ refers to the number of tree estimators used within an ensemble model.
 
-Understanding the impact of individual features on model performance can be useful in identifying areas for improvement, as well as in identifying the most significant factors that drive loan defaults.
-By focusing on these important features, lenders and policymakers can better understand and address the underlying factors that contribute to default risk, ultimately leading to better lending decisions and improved outcomes for borrowers and lenders alike.
-
-
+The following \autoref{fig:fi} depicts the feature importances of all the selected features on which the model was trained.
+The two most important features used in the final model are \texttt{DEBTINC} and \texttt{DEROG}, which are crucial delinquency indicators in determining whether a borrower would be able to repay their loan. These two features have a significant impact on the model's ability to accurately predict loan defaults, with high feature importance scores. This is also in line with the findings from the exploratory analysis, WoE distribution or feature selection.
 \begin{figure}[H]
 \centering
 \caption{Feature Importance}\vspace{0.5em}
@@ -1615,9 +1619,14 @@ By focusing on these important features, lenders and policymakers can better und
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
 
+Thus, understanding the impact of individual features on model performance can be useful in identifying areas for improvement, as well as in identifying the most significant factors that drive loan defaults.
+By focusing on these important features, lenders and policymakers can better understand and address the underlying factors that contribute to default risk, ultimately leading to better lending decisions and improved outcomes for borrowers and lenders alike.
+
+
+
 \textbf{ADD BRIEF THEORY ABOUT THE SHAP VALUES}
 
-To gain further insights into the impact of the features on the final model's predictions, the SHAP (SHapley Additive exPlanations) summary plot is displayed in \autoref{fig:shap}.
+To gain further insights into the impact of the features on the final model's predictions, the SHapley Additive exPlanations (henceforth SHAP) summary plot is displayed in \autoref{fig:shap}.
 The SHAP summary plot provides a clear visualization of the contribution each feature makes to a prediction and is used for a black box model explainability.
 Each dot in the plot represents a feature and its corresponding SHAP value.
 The color of the dot represents the feature's value, with red indicating high values and blue indicating low values.
@@ -1639,6 +1648,8 @@ By understanding the relative importance of each feature, we can gain deeper ins
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
 
+
+\newpage
 \section{Machine Learning Deployment}
 This section describes the process of taking a trained machine learning model and making it available for use in the real world. It involves taking the model from a development environment and integrating it into a production environment where it can be used to make predictions or decisions based on new data. In this thesis, the machine learning model is deployed as web application using Flask and HTML.
 \subsection{Final Model Recalibration}

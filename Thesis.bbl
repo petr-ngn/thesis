@@ -1,4 +1,4 @@
-\begin{thebibliography}{41}
+\begin{thebibliography}{44}
 \newcommand{\enquote}[1]{``#1''}
 \providecommand{\natexlab}[1]{#1}
 
@@ -7,6 +7,12 @@
   equivalence between kolmogorov-smirnov and roc curve metrics for binary
   classification.}
 \newblock \emph{arXiv preprint arXiv:1606.00496} .
+
+\bibitem[{Bera \emph{et~al.}(2021)Bera, Pratap, \&
+  Verma}]{bera2021dimensionality}
+\textsc{Bera}, D., R.~\textsc{Pratap}, \& B.~D. \textsc{Verma} (2021):
+  \enquote{Dimensionality reduction for categorical data.}
+\newblock \emph{IEEE Transactions on Knowledge and Data Engineering} .
 
 \bibitem[{Bischl \emph{et~al.}(2023)Bischl, Binder, Lang, Pielok, Richter,
   Coors, Thomas, Ullmann, Becker, Boulesteix
@@ -25,6 +31,12 @@
   A.~\textsc{Alonso-Betanzos} (2015): \emph{Feature selection for
   high-dimensional data}.
 \newblock Springer.
+
+\bibitem[{Bonaccorso(2020)}]{bonaccorso2020mastering}
+\textsc{Bonaccorso}, G. (2020): \emph{Mastering Machine Learning Algorithms:
+  Expert techniques for implementing popular machine learning algorithms,
+  fine-tuning your models, and understanding how they work}.
+\newblock Packt Publishing Ltd.
 
 \bibitem[{Boughorbel \emph{et~al.}(2017)Boughorbel, Jarray, \&
   El-Anbari}]{boughorbel2017optimal}
@@ -118,6 +130,15 @@
 \textsc{He}, H. \& Y.~\textsc{Ma} (2013): \emph{Imbalanced Learning:
   Foundations, Algorithms, and Applications}.
 \newblock Wiley-IEEE Press.
+
+\bibitem[{de~Hond \emph{et~al.}(2023)de~Hond, Kant, Fornasa, Cin{\`a}, Elbers,
+  Thoral, Arbous, \& Steyerberg}]{de2023predicting}
+\textsc{de~Hond}, A.~A., I.~M. \textsc{Kant}, M.~\textsc{Fornasa},
+  G.~\textsc{Cin{\`a}}, P.~W. \textsc{Elbers}, P.~J. \textsc{Thoral}, M.~S.
+  \textsc{Arbous}, \& E.~W. \textsc{Steyerberg} (2023): \enquote{Predicting
+  readmission or death after discharge from the icu: External validation and
+  retraining of a machine learning model.}
+\newblock \emph{Critical Care Medicine} \textbf{51(2)}: pp. 291--300.
 
 \bibitem[{Igareta(2021)}]{igareta2021strat}
 \textsc{Igareta}, A. (2021): \enquote{Stratified sampling: You may have been
