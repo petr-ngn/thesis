@@ -1,4 +1,4 @@
-\begin{thebibliography}{38}
+\begin{thebibliography}{40}
 \newcommand{\enquote}[1]{``#1''}
 \providecommand{\natexlab}[1]{#1}
 
@@ -78,6 +78,21 @@
   and bayesian optimization for the bitcoin price prediction during the
   covid-19 period.}
 \newblock \emph{FFA Working Papers} \textbf{4}: p. Article 2022.006.
+
+\bibitem[{Esposito \emph{et~al.}(2021)Esposito, Landrum, Schneider, Stiefl, \&
+  Riniker}]{esposito2021ghost}
+\textsc{Esposito}, C., G.~A. \textsc{Landrum}, N.~\textsc{Schneider},
+  N.~\textsc{Stiefl}, \& S.~\textsc{Riniker} (2021): \enquote{Ghost: adjusting
+  the decision threshold to handle imbalanced data in machine learning.}
+\newblock \emph{Journal of Chemical Information and Modeling} \textbf{61(6)}:
+  pp. 2623--2640.
+
+\bibitem[{Fluss \emph{et~al.}(2005)Fluss, Faraggi, \&
+  Reiser}]{fluss2005estimation}
+\textsc{Fluss}, R., D.~\textsc{Faraggi}, \& B.~\textsc{Reiser} (2005):
+  \enquote{Estimation of the youden index and its associated cutoff point.}
+\newblock \emph{Biometrical Journal: Journal of Mathematical Methods in
+  Biosciences} \textbf{47(4)}: pp. 458--472.
 
 \bibitem[{Gauhar(2020)}]{gauhar2020decision}
 \textsc{Gauhar}, N. (2020): \enquote{Decision tree: A classification

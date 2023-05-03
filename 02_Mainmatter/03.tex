@@ -1111,9 +1111,12 @@ Therefore, each input model is tuned on each subset of features selected within 
 $m \leq n$ because we exclude duplicated subset of selected features which can occur when more than one model choose the same subset(s) of features.
 Since there are 8 input models and 8 unique subsets of selected features, the total number of tuned models is 64.
 
+\subsubsection{Metrics Space}
+
 When evaluating classification models using class-based metrics such as F1 score, Precision, Recall, Accuracy, Matthews Correlation Coefficient and Jaccard Score, a default classification threshold of 0.5 is often used. This threshold separates predicted classes based on whether the predicted probability score is higher or lower than 0.5.
-However, in real-world use cases, the 0.5 classification threshold may not be appropriate. Therefore, it is recommended to calculate an optimal threshold rather than relying on the default one.
-One approach to finding the optimal threshold is to use the Younden index, which is derived from the Receiver Operating Characteristic (ROC) curve. The Younden index searches for the threshold that maximizes the sum of True Positive Rate and True Negative Rate, decreased by 1, thus:
+However, in real-world use cases, the 0.5 classification threshold may not be appropriate and according to \citep{esposito2021ghost}, such threshold is not appropriate when having imbalanced ata. Therefore, it is recommended to calculate an optimal threshold rather than relying on the default one.
+For such case, the Youden index is employed which is derived from ROC curve and enables the selection of an optimal classification threshold value. 
+The Younden index searches for the threshold that maximizes the sum of True Positive Rate and True Negative Rate, decreased by 1 \citep{fluss2005estimation}, thus:
 \begin{equation}\label{eq}
 J = TPR + TNR - 1
 \end{equation}
@@ -1169,6 +1172,8 @@ Brier Score Loss  & 1 \\
 
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{table}
+
+\subsubsection{Model Selection Results}
 
 
 
