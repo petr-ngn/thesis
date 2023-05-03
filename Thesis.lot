@@ -1,25 +1,27 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {3.1}{\ignorespaces Dataset columns}}{26}{table.caption.30}%
-\contentsline {table}{\numberline {3.2}{\ignorespaces Missing Values Summary}}{27}{table.caption.31}%
-\contentsline {table}{\numberline {3.3}{\ignorespaces Numeric features NA's table}}{32}{table.caption.36}%
-\contentsline {table}{\numberline {3.4}{\ignorespaces Point--Biserial Correlation table}}{34}{table.caption.40}%
-\contentsline {table}{\numberline {3.5}{\ignorespaces Cramer's V Association table}}{35}{table.caption.42}%
-\contentsline {table}{\numberline {3.6}{\ignorespaces Phi Correlation Coefficient table}}{36}{table.caption.44}%
-\contentsline {table}{\numberline {3.7}{\ignorespaces WoE distribution}}{42}{table.caption.50}%
-\contentsline {table}{\numberline {3.8}{\ignorespaces Logistic Regression - Hyperparameter Space}}{50}{table.caption.53}%
-\contentsline {table}{\numberline {3.9}{\ignorespaces Decision Tree - Hyperparameter Space}}{50}{table.caption.55}%
-\contentsline {table}{\numberline {3.10}{\ignorespaces Gaussian Naive Bayes - Hyperparameter Space}}{51}{table.caption.57}%
-\contentsline {table}{\numberline {3.11}{\ignorespaces K--Nearest Neighbors - Hyperparameter Space}}{51}{table.caption.59}%
-\contentsline {table}{\numberline {3.12}{\ignorespaces Random Forest - Hyperparameter Space}}{51}{table.caption.61}%
-\contentsline {table}{\numberline {3.13}{\ignorespaces Gradient Boosting - Hyperparameter Space}}{52}{table.caption.63}%
-\contentsline {table}{\numberline {3.14}{\ignorespaces Support Vector Machine - Hyperparameter Space}}{52}{table.caption.65}%
-\contentsline {table}{\numberline {3.15}{\ignorespaces Multi Layer Percepton - Hyperparameter Space}}{52}{table.caption.67}%
-\contentsline {table}{\numberline {3.16}{\ignorespaces Model Ranking Weights table}}{59}{table.caption.72}%
-\contentsline {table}{\numberline {3.17}{\ignorespaces Model Selection table}}{62}{table.caption.75}%
-\contentsline {table}{\numberline {3.18}{\ignorespaces Final Model Information\relax }}{68}{table.caption.82}%
-\contentsline {table}{\numberline {3.19}{\ignorespaces Metrics Evaluation}}{71}{table.caption.84}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {5.1}{\ignorespaces Dataset columns}}{28}{table.caption.30}%
+\contentsline {table}{\numberline {5.2}{\ignorespaces Missing Values Summary}}{29}{table.caption.31}%
+\contentsline {table}{\numberline {5.3}{\ignorespaces Numeric features NA's table}}{34}{table.caption.36}%
+\contentsline {table}{\numberline {5.4}{\ignorespaces Point--Biserial Correlation table}}{36}{table.caption.40}%
+\contentsline {table}{\numberline {5.5}{\ignorespaces Cramer's V Association table}}{37}{table.caption.42}%
+\contentsline {table}{\numberline {5.6}{\ignorespaces Phi Correlation Coefficient table}}{38}{table.caption.44}%
+\contentsline {table}{\numberline {5.7}{\ignorespaces WoE distribution}}{44}{table.caption.50}%
+\contentsline {table}{\numberline {5.8}{\ignorespaces Logistic Regression - Hyperparameter Space}}{52}{table.caption.53}%
+\contentsline {table}{\numberline {5.9}{\ignorespaces Decision Tree - Hyperparameter Space}}{52}{table.caption.55}%
+\contentsline {table}{\numberline {5.10}{\ignorespaces Gaussian Naive Bayes - Hyperparameter Space}}{53}{table.caption.57}%
+\contentsline {table}{\numberline {5.11}{\ignorespaces K--Nearest Neighbors - Hyperparameter Space}}{53}{table.caption.59}%
+\contentsline {table}{\numberline {5.12}{\ignorespaces Random Forest - Hyperparameter Space}}{53}{table.caption.61}%
+\contentsline {table}{\numberline {5.13}{\ignorespaces Gradient Boosting - Hyperparameter Space}}{54}{table.caption.63}%
+\contentsline {table}{\numberline {5.14}{\ignorespaces Support Vector Machine - Hyperparameter Space}}{54}{table.caption.65}%
+\contentsline {table}{\numberline {5.15}{\ignorespaces Multi Layer Percepton - Hyperparameter Space}}{54}{table.caption.67}%
+\contentsline {table}{\numberline {5.16}{\ignorespaces Model Ranking Weights table}}{61}{table.caption.72}%
+\contentsline {table}{\numberline {5.17}{\ignorespaces Model Selection table}}{64}{table.caption.75}%
+\contentsline {table}{\numberline {5.18}{\ignorespaces Final Model Information\relax }}{70}{table.caption.82}%
+\contentsline {table}{\numberline {5.19}{\ignorespaces Metrics Evaluation}}{73}{table.caption.84}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
