@@ -12,10 +12,10 @@
 \contentsline {table}{\numberline {5.7}{\ignorespaces Sample sizes of split sets}}{44}{table.caption.50}%
 \contentsline {table}{\numberline {5.8}{\ignorespaces Logistic Regression - Hyperparameter Space}}{52}{table.caption.53}%
 \contentsline {table}{\numberline {5.9}{\ignorespaces Decision Tree - Hyperparameter Space}}{52}{table.caption.55}%
-\contentsline {table}{\numberline {5.10}{\ignorespaces Gaussian Naive Bayes - Hyperparameter Space}}{53}{table.caption.57}%
+\contentsline {table}{\numberline {5.10}{\ignorespaces Gaussian Naive Bayes - Hyperparameter Space}}{52}{table.caption.57}%
 \contentsline {table}{\numberline {5.11}{\ignorespaces K--Nearest Neighbors - Hyperparameter Space}}{53}{table.caption.59}%
 \contentsline {table}{\numberline {5.12}{\ignorespaces Random Forest - Hyperparameter Space}}{53}{table.caption.61}%
-\contentsline {table}{\numberline {5.13}{\ignorespaces Gradient Boosting - Hyperparameter Space}}{54}{table.caption.63}%
+\contentsline {table}{\numberline {5.13}{\ignorespaces Gradient Boosting - Hyperparameter Space}}{53}{table.caption.63}%
 \contentsline {table}{\numberline {5.14}{\ignorespaces Support Vector Machine - Hyperparameter Space}}{54}{table.caption.65}%
 \contentsline {table}{\numberline {5.15}{\ignorespaces Multi Layer Percepton - Hyperparameter Space}}{54}{table.caption.67}%
 \contentsline {table}{\numberline {5.16}{\ignorespaces Model Ranking Weights table}}{62}{table.caption.72}%

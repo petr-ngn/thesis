@@ -731,14 +731,14 @@ Once the data are finally preprocessed, the next step regards the modelling part
 
 In Python, 8 different machine learning models from \lstinline{Scikit-learn} module are used for the default status prediction, which were already described in \autoref{sec:algorithms}, namely:
 \begin{itemize}\setlength\itemsep{0em}
-\item Logistic Regression - \lstinline{LogisticRegression()},
-\item Decision Tree - \lstinline{DecisionTreeClassifier()},
-\item Gaussian Naive Bayes - \lstinline{GaussianNB()},
-\item K-Nearest Neighbors - \lstinline{KNeighborsClassifier()},
-\item Random Forest - \lstinline{RandomForestClassifier()},
-\item Gradient Boosting - \lstinline{GradientBoostingClassifier()},
-\item Support Vector Machine - \lstinline{SVC()},
-\item Neural Network - \lstinline{MLPClassifier()}.
+\item \textbf{Logistic Regression} - \lstinline{LogisticRegression()}
+\item \textbf{Decision Tree} - \lstinline{DecisionTreeClassifier()}
+\item \textbf{Gaussian Naive Bayes} - \lstinline{GaussianNB()}
+\item \textbf{K-Nearest Neighbors} - \lstinline{KNeighborsClassifier()}
+\item \textbf{Random Forest} - \lstinline{RandomForestClassifier()}
+\item \textbf{Gradient Boosting} - \lstinline{GradientBoostingClassifier()}
+\item \textbf{Support Vector Machine} - \lstinline{SVC()}
+\item \textbf{Multi--Layer Percepton} (\textit{Neural Network}) - \lstinline{MLPClassifier()}
 \end{itemize}
 
 \subsection{Hyperparameter Bayesian Optimization}
@@ -766,7 +766,7 @@ For each model, the Bayesian Optimization algorithm performs 50 iterations, sear
 The use of \lstinline{BayesSearchCV} with stratified cross-validation in the hyperparameter tuning process provides a robust and reliable approach to selecting the optimal hyperparameters for the model, while the incorporation of Bayesian Optimization enables the efficient exploration of the hyperparameter space.
 By maximizing the F1 score, the hyperparameters selected through this process will result in a model with improved performance for the classification task at hand.
 
-The hyperparameter space is defined for each model as follows(\textit{The individual hyperparameters will be later described in the theory part}):
+The hyperparameter space is defined for each model as follows:
 \subsubsection{Logistic Regression}
 
 \begin{table}[H]
@@ -1080,11 +1080,11 @@ According to \autoref{fig:fsdistmod}, models such as K--Nearest Neighbors, Rando
 It is evident the more comples and/or black--box models require more features in contrast to transparant models such as Logistic Regression or Gaussian Naive Bayes.
 
 \begin{figure}[H]
-\centering
-\caption{Distribution of Selected Features per Model}\vspace{0.5em}
-\label{fig:fsdistmod}\
-\includegraphics[width=140mm]{Figures/Selected_Features_Distribution.jpg}
-\centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
+    \centering
+    \caption{Distribution of Selected Features per Model}\vspace{0.5em}
+    \label{fig:fsdistmod}\
+    \includegraphics[width=140mm]{Figures/Selected_Features_Distribution.jpg}
+    \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
 
 \subsection{Model Selection}
