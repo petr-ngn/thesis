@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.31)  3 MAY 2023 04:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.31)  3 MAY 2023 04:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2434,20 +2434,20 @@ File: Figures/SHAP_summary_plot.jpg Graphic file (type jpg)
 <use Figures/SHAP_summary_plot.jpg>
 Package pdftex.def Info: Figures/SHAP_summary_plot.jpg  used on input line 1516.
 (pdftex.def)             Requested size: 398.33858pt x 398.33975pt.
- [76.87 <./Figures/SHAP_summary_plot.jpg>] [77.88] [78.89]
-<Figures/flask_app_form.jpg, id=1106, 507.39563pt x 808.52063pt>
+ [76.87 <./Figures/SHAP_summary_plot.jpg>] [77.88]
+<Figures/flask_app_form.jpg, id=1102, 507.39563pt x 808.52063pt>
 File: Figures/flask_app_form.jpg Graphic file (type jpg)
 <use Figures/flask_app_form.jpg>
-Package pdftex.def Info: Figures/flask_app_form.jpg  used on input line 1562.
+Package pdftex.def Info: Figures/flask_app_form.jpg  used on input line 1561.
 (pdftex.def)             Requested size: 398.33858pt x 634.76413pt.
- [79.90]
+ [78.89] [79.90]
 Overfull \vbox (7.88412pt too high) has occurred while \output is active []
 
  [80.91 <./Figures/flask_app_form.jpg>]
 <Figures/flask_app_result.jpg, id=1117, 746.03719pt x 628.59843pt>
 File: Figures/flask_app_result.jpg Graphic file (type jpg)
 <use Figures/flask_app_result.jpg>
-Package pdftex.def Info: Figures/flask_app_result.jpg  used on input line 1575.
+Package pdftex.def Info: Figures/flask_app_result.jpg  used on input line 1574.
 (pdftex.def)             Requested size: 369.88582pt x 311.66074pt.
  [81.92
 
@@ -2529,7 +2529,7 @@ Here is how much of TeX's memory you used:
  48 hyphenation exceptions out of 8191
  123i,12n,120p,951b,2543s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}<c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmex10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmmi12.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmmi6.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmr17.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmr6.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmri12.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmss12.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmsy7.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmsy8.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmtt10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmtt12.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmtt9.pfb>
-Output written on Thesis.pdf (100 pages, 9534964 bytes).
+Output written on Thesis.pdf (100 pages, 9534937 bytes).
 PDF statistics:
  1358 PDF objects out of 1440 (max. 8388607)
  1166 compressed objects within 12 object streams

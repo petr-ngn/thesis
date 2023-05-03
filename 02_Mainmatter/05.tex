@@ -1541,7 +1541,7 @@ Furthermore, prior to deployment, we need to prepare several Python inputs for t
 \item Model - the final model recalibrated on the training, validation and test set.
 \item Threshold - the final classification threshold recalibrated on the training, validation and test set.
 \item Features - the final features used in the final model.
-\item Data Frame - he input data frame used in the web application to store the loan applicant's inputs.
+\item Data Frame - the input tabular object used in the web application to store the loan applicant's inputs.
 \item Optimal Binning Transformator - fitted \lstinline{BinningProcess} object for binning and WoE-encoding of the loan applicant's inputs.
 \item WoE Bins - a set of bins and WoE values used for mapping the WoE values to missing values.
 \end{itemize}
@@ -1553,8 +1553,7 @@ For the back-end of the web application, Flask is used to deploy the machine lea
 The web application first renders an HTML page, as shown in \autoref{fig:flaskform}.
 This page contains a loan application form, in which the user or the loan applicant fills in the respective field values that correspond to the features on which the machine learning model was trained.
 The form is designed to capture the necessary information required for the model to make a prediction about the loan applicant's application.
-Note that not all fields in the loan application form need to be filled out, except for the requested loan amount. This is because missing values in certain features may indicate a higher risk of defaulting. Conversely, one may choose to impose a restriction on the form, requiring all fields to be filled out. However, this could result in a lower number of received applications from delinquent clients, as they may not have all the necessary information to complete the form.
-
+Note that not all fields in the loan application form need to be filled out. This is because the missing values in certain features may indicate a higher risk of default. Conversely, one may choose to impose a restriction on the form, requiring all fields to be filled out. However, this could result in a lower number of received applications from delinquent clients, as they may not have all the necessary information to complete the form.
 \begin{figure}[H]
 \centering
 \caption{Flask Web Application Form}\vspace{0.5em}
@@ -1577,7 +1576,7 @@ Particularly, the web application returns whether the loan application would be 
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
 
-Besides the prediction results, it also displays the Local Interpretable Model-Agnostic Explanations (LIME) of the black--box model (Gradient Boosting) with respect to the inputs submitted within the form.
+Besides the prediction results, it also displays the Local Interpretable Model-Agnostic Explanations (henceforth LIME) of the black--box model (Gradient Boosting) with respect to the inputs submitted within the form.
 LIME focuses on the local explainability of the black box model around the black--box prediction as it generates a new dataset consisting of perturbed samples around the given prediction and then trains a surrogate linear model on the new dataset.
 Such local interpretable, surrogate model should be a good approximation of the black box model in the vicinity of the given prediction, i.e., the local interpretable model is then used to explain the prediction of the black box model \citep{ribeiro2016should}.
 
