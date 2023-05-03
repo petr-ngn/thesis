@@ -1711,6 +1711,11 @@ INPUT ./Figures/Spearman_Correlation_Matrix_Numeric_Features.jpg
 INPUT Figures/Spearman_Correlation_Matrix_Numeric_Features.jpg
 INPUT ./Figures/Spearman_Correlation_Matrix_Numeric_Features.jpg
 INPUT ./Figures/Spearman_Correlation_Matrix_Numeric_Features.jpg
+INPUT ./Figures/Categorical_Features_Distribution_OS_Default.jpg
+INPUT ./Figures/Categorical_Features_Distribution_OS_Default.jpg
+INPUT Figures/Categorical_Features_Distribution_OS_Default.jpg
+INPUT ./Figures/Categorical_Features_Distribution_OS_Default.jpg
+INPUT ./Figures/Categorical_Features_Distribution_OS_Default.jpg
 INPUT ./Figures/WoE_Distribution.jpg
 INPUT ./Figures/WoE_Distribution.jpg
 INPUT Figures/WoE_Distribution.jpg

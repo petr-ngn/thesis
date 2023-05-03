@@ -1,4 +1,4 @@
-\begin{thebibliography}{40}
+\begin{thebibliography}{41}
 \newcommand{\enquote}[1]{``#1''}
 \providecommand{\natexlab}[1]{#1}
 
@@ -202,8 +202,8 @@
 \newblock In \enquote{Proceedings of the 22nd ACM SIGKDD international
   conference on knowledge discovery and data mining,} pp. 1135--1144.
 
-\bibitem[{{scikit-learn}(n.d.)}]{sfs}
-\textsc{{scikit-learn}} (n.d.): \enquote{Sequentialfeatureselector.}
+\bibitem[{{scikit-learn}(2023)}]{sfs}
+\textsc{{scikit-learn}} (2023): \enquote{Sequentialfeatureselector.}
 \newblock
   \url{https://scikit-learn.org/stable/modules/generated/sklearn.feature_selection.SequentialFeatureSelector.html#sklearn.feature_selection.SequentialFeatureSelector}.
 \newblock Retrieved April 28, 2023.
@@ -221,6 +221,12 @@
 \newblock
   \url{https://analyticsindiamag.com/a-complete-guide-to-sequential-feature-selection/}.
 \newblock Retrieved April 28, 2023.
+
+\bibitem[{Wang(2020)}]{wang2020bayesian}
+\textsc{Wang}, W. (2020): \enquote{Bayesian optimization concept explained in
+  layman terms.}
+\newblock Medium.
+\newblock Accessed: April 29, 2023.
 
 \bibitem[{Wendler \& Gr{\"o}ttrup(2021)}]{wendler2021data}
 \textsc{Wendler}, T. \& S.~\textsc{Gr{\"o}ttrup} (2021): \emph{Data Mining with

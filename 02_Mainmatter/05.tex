@@ -657,6 +657,53 @@ However, the \lstinline{ADASYN()} class from \lstinline{imblearn} is not designe
 
 \textbf{ADD IMPACT OF OVERSAMPLING ON FEATURES DISTRIBUTION}
 
+
+
+
+
+
+
+\begin{table}[H]
+\small
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.3}
+\centering
+\caption[ADASYN Impact on Categorical Features' Distribution]{ADASYN Impact on Categorical Features' Distribution}\label{tab:adasynimpact}
+\begin{tabular}{|l|l|r|r|r|r|r|}
+
+    \hline
+Feat. & Cat. & \# (Y=1) & \# (Y=1) OS & \% (Y=1) & \% (Y=1) OS & Diff. \\ 
+\midrule
+\hline
+REASON & DebtCon & 528 & 2,344 & 63.46 \% & 75.66 \% & 12.20 p.p. \\ 
+REASON & HomeImp & 274 & 720 & 32.93 \% & 23.24 \% & -9.69 p.p. \\
+REASON & N/A & 30 & 34 & 3.61 \% & 1.1 \% & -2.51 p.p. \\
+\hline
+JOB & Mgr & 124 & 1,662 & 14.9 \% & 53.65 \% & 38.75 p.p. \\ 
+JOB & Other & 396 & 943 & 47.6 \% & 30.44 \% & -17.16 p.p. \\ 
+JOB & ProfExe & 142 & 272 & 17.07 \% & 8.78 \% & -8.29 p.p. \\ 
+JOB & Office & 85 & 104 & 10.22 \% \% & 3.36 \% & -6.86 p.p. \\ 
+JOB & Self & 39 & 58 & 4.69 \% & 1.87 \% & -2.82 p.p. \\
+JOB & Sales & 29 & 36 & 3.49 \% & 1.16 \% & -2.33 p.p. \\ 
+JOB & N/A & 17 & 23 & 2.04 \% & 0.74 \% & -1.3 p.p. \\ 
+\hline
+\bottomrule
+\end{tabular}
+\vspace{0.7em}
+
+\centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
+\end{table}
+
+
+\begin{figure}[H]
+    \centering
+    \caption{ADASYN Impact of Categorical Features' Distribution}\vspace{0.5em}
+    \label{fig:adasynimpact}\
+    \includegraphics[width=140mm]{Figures/Categorical_Features_Distribution_OS_Default.jpg}
+    \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
+\end{figure}
+
+
 \subsection{Optimal Binning and Weight--of--Evidence}
 \label{subsec:prep-optbinning}
 
@@ -754,20 +801,46 @@ Regarding the latter approach, instead of trying al the possible combinations fr
 Another issue pertaining to both approach is that they do not consider any information from previous iterations and rather check all possible hyperparameter combinations or randomly select hyperparameter combinations, respectively.
 
 The compromise for such drawbacks is hyperparameter tuning with Bayesian Optimization, which is able to find the best hyperparameters' values in less time and with less computational resources than Grid Search and also, it leads to better model's performance than Random Search despite the longer optimization time \citep{drahokoupil2022application}.
+Bayesian Optimization is a hyperparameter tuning method which uses infromation from previous iterations in order to make more informed decsion about which hyperparameters' values to try next.
+The main property of hyperparameter tuning is the objective function which we want to optimize (i.e., maximize or minimize in case of a score and loss, respectively), which input is the hyperparameters' values and the output is the score or loss. However, the objective function is not known beforehand and is very computionally expensive to evaluate.
 
-This method employs a probabilistic model using a Gaussian Process to approximate the objective function of interest.
-By utilizing Bayesian inference, the approach updates the prior distribution over hyperparameter values based on the results of previous iterations and uses the resulting posterior distribution to guide the selection of the next set of hyperparameters to evaluate.
-In summary, Bayesian Optimization provides a more efficient and effective approach to hyperparameter tuning compared to Grid Search and Random Search, by utilizing prior information and Bayesian inference to guide the selection of hyperparameters to evaluate.
+
+Therefore, Bayesian Optimization uses a surrogate function which is the approximation and probability representation of the objective function. The most common surrogate function is the Gaussian Process (henceforth GP) which is able to produce accurate approximations as well as the uncertainty around the approximations \citep{wang2020bayesian}.
+According to Owen \citep{owen2022hyperparameter}, GP is utilized as the prior for the objective function along the posterior, which we want to update while.
+In other words, the prior captures the initial belief about the objective function, while the posterior is the updated distribution combining the prior belief and the observed evaluations of the objective function, i.e., it reflects the current belief about the objective function, hence the relation between the hyperparameters' values and the score or loss.
+GP is the generalization of the normal distribution and describes the distribution over functions (not the distribution of a random variable), hence the objective function $f$ follows a normal distribution with noise as:
+\begin{equation}\label{eq}
+    y = f\left(x\right) + \epsilon
+\end{equation}
+Let us nedote, set $f_{1:n} = \{ f\left(x_1\right), f\left(x_2\right), \ldots, f\left(x_n\right)\}$ as a set of $n$ observations of the objective function, where $m\left(x_{1:n}\right)$ is the mean function and $K$ is the covariance kernel. Hence, such set follows normal distribution as well:
+\begin{equation}\label{eq}
+    f_{1:n} \sim N\left(m\left(x_{i:n}\right), K\right)
+\end{equation}
+Henceforht, the distribution of prediction generated by GP also follows normal distribution as:
+\begin{equation}\label{eq}
+    p\left(y \mid x, D\right) \mid N\left(y \mid \mu^{*}, \sigma^{*2}\right)
+\end{equation}
+where $\mu^{*}$ and $\sigma^{*2}$ can by analytically derived from the $K$ kernel, and $D$ represents observed data regarding the previously evaluated iterions of hyperparameters' values.
+
+Furthermore, Bayesian Optimization also employs acquisition function which accounts for which set of hyperparameters should be used in the next iteration \citep{owen2022hyperparameter}. Particularly, the next hyperparameters' set is chosen based on the location where the acquisition function is maximized.
+The most common acquisition function is the Expected Improvement (henceforth EI), which is according to Owen \citep{owen2022hyperparameter} defined as follows assuming that $ \sigma\left(x\right) \neq 0$:
+\begin{equation}\label{eq}
+    EI(x) = \left(\mu\left(x\right) - f\left(x^{+}\right)\right) \times \Phi\left(Z\right) + \sigma\left(x\right) \times \phi\left(Z\right)
+\end{equation}
+where $\sigma\left(x\right)$ is the uncertainty, $\mu\left(x\right)$ is the expected performance which are both captured by surrogate model. $f\left(x^{+}\right)$ indicates the current best value of the objective function, $\Phi\left(Z\right)$ and $\phi\left(Z\right)$ are the cumulative distribution function and probability density function of the standard normal distribution, respectively.
+Moreover, EI allows to balance between exploration and exploitation, where the former refers to the searching for the uknown regions where the objective function may have higher values, i.e, the hyperparameters' values which have not been evaluated yet, while the latter refers to the searching near the best observed values of the objective function, i.e.,near by the hyperparameters' values which have been evaluated already.
+Referring to Owen \citep{owen2022hyperparameter}, higher expected performance $\mu\left(x\right)$ compared to the current best value $f\left(x^{+}\right)$ will favor the exploitation process, whereby a very high uncertainty $\sigma\left(x\right)$ will support exploration process.
+
+\subsubsection{Python Implementation}
 
 In Python, a custom function, \lstinline{bayesian_optimization()}, is implemented to perform hyperparameter tuning using Bayesian Optimization.
 This function utilizes \lstinline{BayesSearchCV} class from the \lstinline{Scikit-optimize} module, with a 10-fold stratified cross-validation scheme and 50 iterations, while maximizing the F1 score.
 For each model, the Bayesian Optimization algorithm performs 50 iterations, searching for the best hyperparameters values that maximize the F1 score. Within each iteration, a 10-fold stratified cross-validation is conducted to evaluate the model's F1 score.
 
 The use of \lstinline{BayesSearchCV} with stratified cross-validation in the hyperparameter tuning process provides a robust and reliable approach to selecting the optimal hyperparameters for the model, while the incorporation of Bayesian Optimization enables the efficient exploration of the hyperparameter space.
-By maximizing the F1 score, the hyperparameters selected through this process will result in a model with improved performance for the classification task at hand.
+By maximizing the F1 score, the hyperparameters selected through this process will result in a model with improved performance.
 
-The hyperparameter space is defined for each model as follows:
-\subsubsection{Logistic Regression}
+\subsubsection{Hyperparameters' spaces}
 
 \begin{table}[H]
 \small
@@ -796,7 +869,6 @@ Intercept scaling & True, False  \\
 \end{table}
 
 
-\subsubsection{Decision Tree}
 \begin{table}[H]
 \small
 \setlength{\tabcolsep}{8pt}
@@ -819,7 +891,6 @@ Max features & <1, \verb|len(X.columns)|>  \\
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{table}
 
-\subsubsection{Gaussian Naive Bayes}
 
 \begin{table}[H]
 \small
@@ -841,7 +912,6 @@ Variance smoothing & <$1\times 10^{-9}$, $1\times 10^{-6}$> \\
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{table}
 
-\subsubsection{K-Nearest Neighbors}
 
 \begin{table}[H]
 \small
@@ -866,7 +936,7 @@ Metric & Euclidean, Manhattan, Minkowski \\
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{table}
 
-\subsubsection{Random Forest}
+
 
 \begin{table}[H]
 \small
@@ -894,7 +964,7 @@ CCP alpha & <$1 \times 10^{-12}$, 0.5> \\
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{table}
 
-\subsubsection{Gradient Boosting}
+
 
 \begin{table}[H]
 \small
@@ -921,7 +991,6 @@ Learning rate & <0.0001, 0.2> \\
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{table}
 
-\subsubsection{Support Vector Machine}
 
 
 \begin{table}[H]
@@ -951,7 +1020,6 @@ Class weight & balanced, None \\
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{table}
 
-\subsubsection{Neural Network}
 
 \begin{table}[H]
 \small
