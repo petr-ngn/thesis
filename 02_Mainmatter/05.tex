@@ -1240,7 +1240,7 @@ Precision & 1 \\
 Accuracy & 1 \\
 AUC & 1 \\
 Somers' D & 1 \\ 
-Kolmogorov Smirnov Distance  & 1 \\
+Kolmogorov Smirnov & 1 \\
 Matthews Correlation Coefficient  & 1 \\
 Jaccard Score  & 1 \\
 Brier Score Loss  & 1 \\
@@ -1530,7 +1530,7 @@ The results suggest that the model has a good balance between correctly identify
     Recall & 0.8146 \\ 
     Accuracy & 0.9262 \\ 
     AUC & 0.9564 \\ 
-    Somers D & 0.9128 \\ 
+    Somers' D & 0.9128 \\ 
     KS & 0.7915 \\ 
     MCC & 0.7685 \\ 
     Jaccard Score & 0.6872 \\
@@ -1553,13 +1553,13 @@ From the curve, we observe that the AUC value of the model is 95.55 \%, indicati
 \caption{ROC Curve}\vspace{0.5em}
 \label{fig:roc}\
 \includegraphics[width=140mm]{Figures/ROC_curve_FINAL.jpg}
+\centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
+\end{figure}
 
 \subsection{Model Explainability}
 
 \textbf{ADD BRIEF THEORY ABOUT THE FEATURE IMPORTANCE}
 
-\centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
-\end{figure}
 To gain insights into the impact of the features used in the final model, a feature importance graph was visualized and is presented in \autoref{fig:fi}.
 Feature importance is a measure of how much a feature contributes to the overall performance of the model, and it is based on the reduction in impurity achieved by splitting the data on that feature.
 The higher the reduction in impurity, the more important the feature is considered to be.
