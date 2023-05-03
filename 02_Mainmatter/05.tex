@@ -1484,7 +1484,7 @@ The recalibrated model is then used to evaluate the performance of the final mod
 
 In addition to recalibrating the final model, it is crucial to recalibrate the threshold value for assigning class labels based on predicted probabilities. The optimal threshold value can be determined using the training and validation sets. Such threshold is recalibrated based on the training and validation set.
 In this thesis, the optimal threshold value is found to be \textbf{0.45109}, which is then used for evaluating the final model's performance on the test set.
-By recalibrating the threshold value, the model's performance is further improved, resulting in more accurate predictions.
+By recalibrating the threshold value, the model's performance is further improved, resulting in more accurate predictions. After the recalibration process, we can observe that the model is more conservative as its optimal classification threshold has decreased. The impact on the model's performance is further assessed in \autoref{subsec:modelperformance}.
 
 Moreover, the recalibration process helps to mitigate overfitting issues, which occur when the model is only trained on the training set.
 By incorporating the validation set into the training process, the recalibrated model can better generalize to new data and improve its overall performance on the test set.
@@ -1494,6 +1494,7 @@ Therefore, using the validation data for recalibration is a sound practice that 
 \section{Model Evaluation}
 
 \subsection{Model's Performance Assessment}
+\label{subsec:modelperformance}
 
 After recalibrating the model and threshold, the final step in evaluating the model's performance is to test it on previously unseen data, specifically the test set.
 This evaluation is critical to determine whether the model can generalize well to new data beyond the training, feature selection, and model selection phases.
@@ -1510,16 +1511,17 @@ In \autoref{fig:confmat}, the confusion matrix for the final model, based on the
 \end{figure}
 
 In order to obtain a better understanding of the model's performance on previously unseen data, we computed several metrics that were used during the model selection process.
-These metrics are presented in \autoref{tab:metrics eval}. The results indicate that the model performs well on the unseen data, with most of the scores metrics around 80 \% to 90 \%.
+These metrics are presented in \autoref{tab:metricseval}. The results indicate that the model performs well on the unseen data, with most of the scores metrics around 80 \% to 90 \%.
 Furthermore, the loss metrics are relatively low, indicating that the model can effectively distinguish between defaults and non-defaults.
 Overall, these results suggest that the model is performing well and is suitable for predicting defaults.
 The results suggest that the model has a good balance between correctly identifying defaults and non-defaults, as well as minimizing false positives and false negatives. This further confirms the model's ability to accurately predict defaults.
+
 \begin{table}[H]
     \small
     \setlength{\tabcolsep}{8pt}
     \renewcommand{\arraystretch}{1.3}
     \centering
-        \caption[Metrics Evaluation]{Metrics Evaluation}\label{tab:metrics eval}
+        \caption[Metrics Evaluation]{Metrics Evaluation}\label{tab:metricseval}
         \begin{tabular}{@{} r r @{\hspace{1cm}} l @{}}
     \toprule
     \textbf{Metric} & \textbf{Value}\\
@@ -1544,7 +1546,42 @@ The results suggest that the model has a good balance between correctly identify
         \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{table}
 
-To further evaluate the performance of the model, we can visualize the Receiver Operating Characteristic (ROC) curve, as presented in \autoref{fig:roc}. The curve illustrates the trade-off between the true positive rate and the false positive rate at various classification thresholds. An ideal ROC curve should have an area under the curve (AUC) value of 100 \%, indicating a perfect classifier, while a random classifier would have an AUC of 50 \%.
+The following \autoref{tab:recab} shows the impact of recalibration on the model's performance metrics. $M_{NR}$ denotes the final model which was not recalibrated at all (i.e., was trained only on the training set), whereas $M_R$ denotes the recalibrated model (i.e., trained on the joined training and validation set). Respectively, $M_{NR}$ uses its threshold computed bas on the training set (0.4955), and $M_R$ uses its threshold computed on the joined training and validation set(0.45109).
+As can be seen, the recalibration indeed has a positive impact on the metrics evaluation as all the metric scores have increased, while the metric loss functions decreased.
+We can observe the most significant decrease in the Log Loss function, which decreased by 8.09 \%, while the objective function F1 score has increased by 3.30 \% thanks to to increase in both Precision and Recall.
+Therefore, the recalibration process is deemed desired and appropriate in terms of model's performance.
+
+\begin{table}[H]
+    \small
+    \setlength{\tabcolsep}{8pt}
+    \renewcommand{\arraystretch}{1.3}
+    \centering
+        \caption[Recalibration Impact on Metrics Evaluation]{Recalibration Impact on Metrics Evaluation}\label{tab:recab}
+        \begin{tabular}{@{} r r @{\hspace{0.5cm}} r @{\hspace{0.5cm}} r @{}}
+            \toprule
+            \textbf{Metric} & \textbf{$M_{NR}$} & \textbf{$M_{R}$} & \textbf{Diff.}\\
+    \midrule
+    \hline
+    F1 & 0.7886 & 0.8146 & 3.30 \% \\ 
+    Precision & 0.8023 & 0.8146 & 1.53 \% \\ 
+    Recall & 0.7753 & 0.8146 & 5.07 \% \\ 
+    Accuracy & 0.9172 & 0.9262 & 0.98 \% \\ 
+    AUC & 0.9518 & 0.9564  & 0.48 \% \\ 
+    Somers' D & 0.9037 & 0.9128 & 1.01 \% \\ 
+    KS & 0.7845 & 0.7915 & 0.89 \% \\ 
+    MCC & 0.7373 & 0.7685 & 4.23 \% \\ 
+    Jaccard Score & 0.6509 & 0.6872 & 5.57 \% \\
+    Brier Score Loss & 0.0632 & 0.0594 & -6.11 \% \\
+    Log Loss & 0.2353 & 0.2163 & -8.09 \% \\
+    \hline
+    \bottomrule
+    \end{tabular}
+    \vspace{0.35em}
+
+        \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
+\end{table}
+
+To further evaluate the performance of the (recalibrated) model, we can visualize the ROC curve, as presented in \autoref{fig:roc}. The curve illustrates the trade-off between the true positive rate and the false positive rate at various classification thresholds. An ideal ROC curve should have an area under the curve (AUC) value of 100 \%, indicating a perfect classifier, while a random classifier would have an AUC of 50 \%.
 
 From the curve, we observe that the AUC value of the model is 95.55 \%, indicating a high degree of accuracy in distinguishing between defaults and non-defaults. The curve covers most of the area under the diagonal line, indicating that the model is performing well in differentiating the two classes. Therefore, the results suggest that the model is performing well and is capable of accurately identifying potential defaulters.
 

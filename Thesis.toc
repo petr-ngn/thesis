@@ -59,11 +59,11 @@
 \contentsline {subsection}{\numberline {5.4.4}Model Recalibration}{72}{subsection.5.4.4}%
 \contentsline {section}{\numberline {5.5}Model Evaluation}{73}{section.5.5}%
 \contentsline {subsection}{\numberline {5.5.1}Model's Performance Assessment}{73}{subsection.5.5.1}%
-\contentsline {subsection}{\numberline {5.5.2}Model Explainability}{76}{subsection.5.5.2}%
-\contentsline {section}{\numberline {5.6}Machine Learning Deployment}{79}{section.5.6}%
-\contentsline {subsection}{\numberline {5.6.1}Final Model Recalibration}{80}{subsection.5.6.1}%
-\contentsline {subsection}{\numberline {5.6.2}Flask and HTML Web Application}{80}{subsection.5.6.2}%
-\contentsline {chapter}{\numberline {6}Conclusion}{85}{chapter.6}%
-\contentsline {chapter}{Bibliography}{89}{chapter*.86}%
+\contentsline {subsection}{\numberline {5.5.2}Model Explainability}{77}{subsection.5.5.2}%
+\contentsline {section}{\numberline {5.6}Machine Learning Deployment}{80}{section.5.6}%
+\contentsline {subsection}{\numberline {5.6.1}Final Model Recalibration}{81}{subsection.5.6.1}%
+\contentsline {subsection}{\numberline {5.6.2}Flask and HTML Web Application}{81}{subsection.5.6.2}%
+\contentsline {chapter}{\numberline {6}Conclusion}{86}{chapter.6}%
+\contentsline {chapter}{Bibliography}{90}{chapter*.87}%
 \contentsline {chapter}{\numberline {A}Title of Appendix A}{I}{appendix.A}%
 \contentsline {chapter}{\numberline {B}Project's website}{II}{appendix.B}%
