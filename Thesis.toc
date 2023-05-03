@@ -5,7 +5,7 @@
 \contentsline {chapter}{\numberline {2}Theoretical Background}{2}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Credit Risk}{2}{section.2.1}%
 \contentsline {subsection}{\numberline {2.1.1}Regulation}{2}{subsection.2.1.1}%
-\contentsline {section}{\numberline {2.2}Terminology}{2}{section.2.2}%
+\contentsline {section}{\numberline {2.2}Machine Learning Terminology}{2}{section.2.2}%
 \contentsline {section}{\numberline {2.3}Algorithms}{2}{section.2.3}%
 \contentsline {subsection}{\numberline {2.3.1}Logistic Regression}{3}{subsection.2.3.1}%
 \contentsline {subsection}{\numberline {2.3.2}Decision Tree}{4}{subsection.2.3.2}%
@@ -14,7 +14,7 @@
 \contentsline {subsection}{\numberline {2.3.5}Random Forest}{10}{subsection.2.3.5}%
 \contentsline {subsection}{\numberline {2.3.6}Gradient Boosting}{11}{subsection.2.3.6}%
 \contentsline {subsection}{\numberline {2.3.7}Support Vector Machine}{11}{subsection.2.3.7}%
-\contentsline {subsection}{\numberline {2.3.8}Neural Networks}{11}{subsection.2.3.8}%
+\contentsline {subsection}{\numberline {2.3.8}Neural Network}{11}{subsection.2.3.8}%
 \contentsline {section}{\numberline {2.4}Evaluation Metrics}{11}{section.2.4}%
 \contentsline {subsection}{\numberline {2.4.1}Confusion Matrix and Derived Metrics}{11}{subsection.2.4.1}%
 \contentsline {subsubsection}{Accuracy}{13}{section*.19}%

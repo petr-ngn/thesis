@@ -584,7 +584,7 @@ Then for each minority class instance $x_i$, using K-nearest Neighbors with Eucl
    r_{i} = \frac{\delta_{i}} {K}
 \end{equation}
 where $\delta_{i}$ is the number of majority class instances within the $K$ nearest neighbors of $x_i$.
-In such case, higher $r_i$ indicates dominance of the majority class in given specific neighbourhood of $x_i$ \citep{nian2018introduction}.
+In such case, higher $r_i$ indicates dominance of the majority class in given specific neighborhood of $x_i$ \citep{nian2018introduction}.
 Subsequently, all the $r_i$ ratios are normalized as:
 \begin{equation}\label{eq}
     \hat{r}_{i} = \frac{r{i}}{\displaystyle\sum_{i=1}^{m_{s}} r_{i}}
@@ -1095,8 +1095,8 @@ In combination with the pre--selected subsets of features, the next step regards
 \label{alg:model_selection}
 \begin{algorithmic}[1]
 \For{$model \in \textit{models}$}
-    \For{$F \subseteq \textit{features\_subsets}$}
-        \State $\textit{optimized\_model} \gets \textsc{BayesianOptimization}(model, F)$
+    \For{$features \in \textit{features\_subsets}$}
+        \State $\textit{optimized\_model} \gets \textsc{BayesianOptimization}(model, features)$
         \For{$\textit{metric} \in \textit{evaluation\_metrics}$}
             \State $\textit{performance} \gets \textsc{Evaluation}(\textit{optimized\_model}, \textit{metric})$
         \EndFor
@@ -1132,6 +1132,7 @@ Therefore:
 \begin{equation}\label{eq}
 T_{opt} = \text{argmax}_{t \in [0, 1]}\left(TPR +  \left(1-FPR\right) - 1\right)
 \end{equation}
+Note, that the optimal threshold is calculated based on the training set and henceforth is applied within the evaluation on validation set.
 
 In order to ensure a more comprehensive and unbiased evaluation of a model's performance, it is recommended to consider multiple metrics rather than relying on a single metric alone. This approach provides a more generalized overview of the model's performance across different aspects and helps to prevent any bias towards a single metric.
 To accomplish this, models can be ranked based on their performance on each individual metric, where a higher score or a lower loss indicates a better model, resulting in a higher rank for that metric. Subsequently, for each metric, the ranking of the models is determined, and the final ranking is calculated as a weighted average of these individual rankings.
@@ -1401,7 +1402,7 @@ In order to ensure that the final model performs well on unseen data, it is comm
 By doing so, the sample size used for training is increased, resulting in improved model performance.
 The recalibrated model is then used to evaluate the performance of the final model on the test set, which is the ultimate measure of a model's performance.
 
-In addition to recalibrating the final model, it is crucial to recalibrate the threshold value for assigning class labels based on predicted probabilities. The optimal threshold value can be determined using the training and validation sets.
+In addition to recalibrating the final model, it is crucial to recalibrate the threshold value for assigning class labels based on predicted probabilities. The optimal threshold value can be determined using the training and validation sets. Such threshold is recalibrated based on the training and validation set.
 In this thesis, the optimal threshold value is found to be \textbf{0.4955}, which is then used for evaluating the final model's performance on the test set.
 By recalibrating the threshold value, the model's performance is further improved, resulting in more accurate predictions.
 
