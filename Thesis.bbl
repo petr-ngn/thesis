@@ -1,4 +1,4 @@
-\begin{thebibliography}{44}
+\begin{thebibliography}{46}
 \newcommand{\enquote}[1]{``#1''}
 \providecommand{\natexlab}[1]{#1}
 
@@ -7,6 +7,10 @@
   equivalence between kolmogorov-smirnov and roc curve metrics for binary
   classification.}
 \newblock \emph{arXiv preprint arXiv:1606.00496} .
+
+\bibitem[{Ayyadevara(2018)}]{ayyadevara2018pro}
+\textsc{Ayyadevara}, V.~K. (2018): \enquote{Pro machine learning algorithms.}
+\newblock \emph{Apress: Berkeley, CA, USA} .
 
 \bibitem[{Bera \emph{et~al.}(2021)Bera, Pratap, \&
   Verma}]{bera2021dimensionality}
@@ -63,6 +67,10 @@
 \textsc{Brownlee}, J. (2021): \enquote{Failure of classification accuracy for
   imbalanced class distributions.}
 \newblock \emph{MachineLearningMastery.com} .
+
+\bibitem[{Charu(2018)}]{charu2018neural}
+\textsc{Charu}, C.~A. (2018): \enquote{Neural networks and deep learning: a
+  textbook.}
 
 \bibitem[{Chicco \& Jurman(2020)}]{chicco2020advantages}
 \textsc{Chicco}, D. \& G.~\textsc{Jurman} (2020): \enquote{The advantages of

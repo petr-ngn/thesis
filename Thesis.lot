@@ -3,27 +3,27 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {5.1}{\ignorespaces Dataset columns}}{29}{table.caption.30}%
-\contentsline {table}{\numberline {5.2}{\ignorespaces Missing Values Summary}}{30}{table.caption.31}%
-\contentsline {table}{\numberline {5.3}{\ignorespaces Numeric features NA's table}}{35}{table.caption.36}%
-\contentsline {table}{\numberline {5.4}{\ignorespaces Point--Biserial Correlation table}}{37}{table.caption.40}%
-\contentsline {table}{\numberline {5.5}{\ignorespaces Cramer's V Association table}}{38}{table.caption.42}%
-\contentsline {table}{\numberline {5.6}{\ignorespaces Phi Correlation Coefficient table}}{39}{table.caption.44}%
-\contentsline {table}{\numberline {5.7}{\ignorespaces Sample sizes of split sets}}{45}{table.caption.50}%
-\contentsline {table}{\numberline {5.8}{\ignorespaces ADASYN Impact on Categorical Features' Distribution}}{47}{table.caption.51}%
-\contentsline {table}{\numberline {5.9}{\ignorespaces Logistic Regression - Hyperparameter Space}}{56}{table.caption.56}%
-\contentsline {table}{\numberline {5.10}{\ignorespaces Decision Tree - Hyperparameter Space}}{57}{table.caption.57}%
-\contentsline {table}{\numberline {5.11}{\ignorespaces Gaussian Naive Bayes - Hyperparameter Space}}{57}{table.caption.58}%
-\contentsline {table}{\numberline {5.12}{\ignorespaces K--Nearest Neighbors - Hyperparameter Space}}{57}{table.caption.59}%
-\contentsline {table}{\numberline {5.13}{\ignorespaces Random Forest - Hyperparameter Space}}{57}{table.caption.60}%
-\contentsline {table}{\numberline {5.14}{\ignorespaces Gradient Boosting - Hyperparameter Space}}{58}{table.caption.61}%
-\contentsline {table}{\numberline {5.15}{\ignorespaces Support Vector Machine - Hyperparameter Space}}{58}{table.caption.62}%
-\contentsline {table}{\numberline {5.16}{\ignorespaces Multi Layer Percepton - Hyperparameter Space}}{58}{table.caption.63}%
-\contentsline {table}{\numberline {5.17}{\ignorespaces Model Ranking Weights table}}{66}{table.caption.68}%
-\contentsline {table}{\numberline {5.18}{\ignorespaces Model Selection table}}{68}{table.caption.71}%
-\contentsline {table}{\numberline {5.19}{\ignorespaces Final Model Information\relax }}{74}{table.caption.78}%
-\contentsline {table}{\numberline {5.20}{\ignorespaces Metrics Evaluation}}{77}{table.caption.80}%
-\contentsline {table}{\numberline {5.21}{\ignorespaces Recalibration Impact on Metrics Evaluation}}{78}{table.caption.81}%
+\contentsline {table}{\numberline {5.1}{\ignorespaces Dataset columns}}{31}{table.caption.30}%
+\contentsline {table}{\numberline {5.2}{\ignorespaces Missing Values Summary}}{32}{table.caption.31}%
+\contentsline {table}{\numberline {5.3}{\ignorespaces Numeric features NA's table}}{37}{table.caption.36}%
+\contentsline {table}{\numberline {5.4}{\ignorespaces Point--Biserial Correlation table}}{39}{table.caption.40}%
+\contentsline {table}{\numberline {5.5}{\ignorespaces Cramer's V Association table}}{40}{table.caption.42}%
+\contentsline {table}{\numberline {5.6}{\ignorespaces Phi Correlation Coefficient table}}{41}{table.caption.44}%
+\contentsline {table}{\numberline {5.7}{\ignorespaces Sample sizes of split sets}}{47}{table.caption.50}%
+\contentsline {table}{\numberline {5.8}{\ignorespaces ADASYN Impact on Categorical Features' Distribution}}{49}{table.caption.51}%
+\contentsline {table}{\numberline {5.9}{\ignorespaces Logistic Regression - Hyperparameter Space}}{58}{table.caption.56}%
+\contentsline {table}{\numberline {5.10}{\ignorespaces Decision Tree - Hyperparameter Space}}{59}{table.caption.57}%
+\contentsline {table}{\numberline {5.11}{\ignorespaces Gaussian Naive Bayes - Hyperparameter Space}}{59}{table.caption.58}%
+\contentsline {table}{\numberline {5.12}{\ignorespaces K--Nearest Neighbors - Hyperparameter Space}}{59}{table.caption.59}%
+\contentsline {table}{\numberline {5.13}{\ignorespaces Random Forest - Hyperparameter Space}}{59}{table.caption.60}%
+\contentsline {table}{\numberline {5.14}{\ignorespaces Gradient Boosting - Hyperparameter Space}}{60}{table.caption.61}%
+\contentsline {table}{\numberline {5.15}{\ignorespaces Support Vector Machine - Hyperparameter Space}}{60}{table.caption.62}%
+\contentsline {table}{\numberline {5.16}{\ignorespaces Multi Layer Percepton - Hyperparameter Space}}{60}{table.caption.63}%
+\contentsline {table}{\numberline {5.17}{\ignorespaces Model Ranking Weights table}}{68}{table.caption.68}%
+\contentsline {table}{\numberline {5.18}{\ignorespaces Model Selection table}}{70}{table.caption.71}%
+\contentsline {table}{\numberline {5.19}{\ignorespaces Final Model Information\relax }}{76}{table.caption.78}%
+\contentsline {table}{\numberline {5.20}{\ignorespaces Metrics Evaluation}}{79}{table.caption.80}%
+\contentsline {table}{\numberline {5.21}{\ignorespaces Recalibration Impact on Metrics Evaluation}}{80}{table.caption.81}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

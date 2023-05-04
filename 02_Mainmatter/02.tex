@@ -22,6 +22,7 @@
 
 In this section, several algorithms, which are used in the machine learning implementation, are going to be described. Since the goal is to predict whether or not given client will default, henceforth only (binary) classification algorithms as a part of the supervised learning are described. In other words, regression models and unsupervised learning algorithms are out of the scope of this thesis.
 \subsection{Logistic Regression}
+\label{subsubsec:logisticregression}
 
 Despite the algorithm's name, it is actually not a regression but rather a classification model.
 In contrast, a linear regression's target variable is continuous whereas regarding a logistic regression, the target variable is categorical (or rather dichotomous in case of binary classification) \citep{wendler2021data}.
@@ -219,10 +220,46 @@ where $B$ is the number of trees and $T_b$ is the $b$-th tree.
 \textbf{TBD}
 \subsection{Support Vector Machine}
 
-\textbf{TBD}
-\subsection{Neural Network}
+Support Vector Machine (henceforth SVM) is machine learning algorithm which can handle both linear and non--linear classification problems and tries to transform original training data into a higher dimension, where the class points are linearly separable by a decision boundary, also known as hyperplane \citep{han2011data}.
 
 \textbf{TBD}
+\subsection{Neural Network}
+Neural Network is a black--box machine learning algorithm which can handle very complex and non--linear relationship between. It contains several layers where each unit have a certain number of units. In general, we distinguish 3 type of layers:
+\begin{itemize}\setlength\itemsep{0em}
+    \item \textbf{Input layer} - The initial layer wghich contains $n$ units, where $n$ is the number of features within the dataset.
+    \item \textbf{Output layer} - The final final layer which contains $m$ units, where $m$ is the number of classes within the target variable. Since we assume only binary classification algorithms, therefore the output layer contains only one unit.
+    \item \textbf{Hiden layer} - The intermediate layer which is always between the two layers - either between the input and output layer or even between other hidden layers.
+    \end{itemize}
+The most common type of hidden layer is the fully connected layer where each unit is connected to each unit of the previous layer and to each unit in the next layer.
+Thus, each unit receives the inputs from the previous layer, performs the computation and feed the output to the next layer - such process is called \textit{feed--forward}, thus feed--forward neural networks \citep{charu2018neural}.
+Within the receiving the inputs, let us assume an integration function $g$ which performs a linear combination of the inputs $x$ and the weights $w$, and adds a bias term $b$.
+Therefore, the ouput value $z$ of the single unit in hidden layer is calculated as:
+\begin{equation}
+    z = g\left(X,w\right)= b + \sum_{m=1}^{M} w_m x_m
+\end{equation}
+where $M$ indicates the number of units in the previous layer.
+Before the output value $z$ is passed to the next layer, it is transformed by an activation function $f$ which is usually a non--linear function. The most common activation functions are:
+\begin{itemize}\setlength\itemsep{0cm}
+\item \textbf{ReLU} - Rectified Linear Unit (henceforth ReLU) is half--linear function which is rectified from the negative values to zero. The ReLU function is defined as:
+\end{itemize}
+\begin{equation}
+    f(z) = \max(0,z)
+\end{equation}
+\begin{itemize}\setlength\itemsep{0cm}
+    \item \textbf{Tanh} - Hyperbolic tangent (henceforth Tanh) is another widely used non--linear activation function which reminds of the sigmoid function. The Tanh function is limited to the range between -1 and 1, and is defined as:
+    \end{itemize}
+\begin{equation}
+    f(z) = \frac{e^z - e^{-z}}{e^z + e^{-z}}
+\end{equation}
+\begin{itemize}\setlength\itemsep{0cm}
+    \item \textbf{Sigmoid} - The logistic function was already described in \autoref{subsubsec:logisticregression}. Such function is usually used in the last hidden layer before the output layer as it maps the output to the range between 0 and 1, i.e., the predicted probability for binary classification. In terms of $z$, the sigmoid function is defined as:
+    \end{itemize}
+\begin{equation}
+    f(z) = \frac{1}{1+e^{-z}}
+\end{equation}
+The training of neural network is an iterative process, where within each iteration (also called as epoch), the neural network is fed with the input, pass through the (hidden) layers to the output. The output is then compared with the actual value and the error is calculated.
+Here comes another property of neural network which is the back--propagation, which updates all the weights and biases starting from the last layer by a small amount until the error is minimized as much as possible \citep{ayyadevara2018pro}.
+The error is then backpropagated through the network and the weights are updated. The process is repeated until the error is minimized.
 
 \section{Evaluation Metrics}
 
