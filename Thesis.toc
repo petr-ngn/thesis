@@ -14,20 +14,20 @@
 \contentsline {subsection}{\numberline {2.3.5}Random Forest}{10}{subsection.2.3.5}%
 \contentsline {subsection}{\numberline {2.3.6}Gradient Boosting}{11}{subsection.2.3.6}%
 \contentsline {subsection}{\numberline {2.3.7}Support Vector Machine}{11}{subsection.2.3.7}%
-\contentsline {subsection}{\numberline {2.3.8}Neural Network}{11}{subsection.2.3.8}%
+\contentsline {subsection}{\numberline {2.3.8}Neural Network}{12}{subsection.2.3.8}%
 \contentsline {section}{\numberline {2.4}Evaluation Metrics}{13}{section.2.4}%
-\contentsline {subsection}{\numberline {2.4.1}Confusion Matrix and Derived Metrics}{13}{subsection.2.4.1}%
-\contentsline {subsubsection}{Accuracy}{14}{section*.19}%
-\contentsline {subsubsection}{Recall}{15}{section*.20}%
-\contentsline {subsubsection}{Precision}{15}{section*.21}%
+\contentsline {subsection}{\numberline {2.4.1}Confusion Matrix and Derived Metrics}{14}{subsection.2.4.1}%
+\contentsline {subsubsection}{Accuracy}{15}{section*.19}%
+\contentsline {subsubsection}{Recall}{16}{section*.20}%
+\contentsline {subsubsection}{Precision}{16}{section*.21}%
 \contentsline {subsubsection}{F1 Score}{16}{section*.22}%
-\contentsline {subsubsection}{Matthews Correlation Coefficient}{16}{section*.23}%
-\contentsline {subsection}{\numberline {2.4.2}AUC}{17}{subsection.2.4.2}%
-\contentsline {subsection}{\numberline {2.4.3}Kolmogorov-Smirnov}{19}{subsection.2.4.3}%
-\contentsline {subsection}{\numberline {2.4.4}Somer's D}{19}{subsection.2.4.4}%
-\contentsline {subsection}{\numberline {2.4.5}Brier Score Loss}{20}{subsection.2.4.5}%
+\contentsline {subsubsection}{Matthews Correlation Coefficient}{17}{section*.23}%
+\contentsline {subsection}{\numberline {2.4.2}AUC}{18}{subsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.4.3}Kolmogorov-Smirnov}{20}{subsection.2.4.3}%
+\contentsline {subsection}{\numberline {2.4.4}Somer's D}{20}{subsection.2.4.4}%
+\contentsline {subsection}{\numberline {2.4.5}Brier Score Loss}{21}{subsection.2.4.5}%
 \contentsline {subsection}{\numberline {2.4.6}Jaccard Score}{21}{subsection.2.4.6}%
-\contentsline {subsection}{\numberline {2.4.7}Log Loss}{21}{subsection.2.4.7}%
+\contentsline {subsection}{\numberline {2.4.7}Log Loss}{22}{subsection.2.4.7}%
 \contentsline {chapter}{\numberline {3}Literature Review}{23}{chapter.3}%
 \contentsline {chapter}{\numberline {4}Hypotheses}{24}{chapter.4}%
 \contentsline {chapter}{\numberline {5}Empirical Analysis - Machine Learning Implementation}{25}{chapter.5}%

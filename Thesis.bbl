@@ -1,4 +1,4 @@
-\begin{thebibliography}{46}
+\begin{thebibliography}{47}
 \newcommand{\enquote}[1]{``#1''}
 \providecommand{\natexlab}[1]{#1}
 
@@ -236,6 +236,12 @@
 \newblock
   \url{https://scikit-learn.org/stable/modules/generated/sklearn.feature_selection.SequentialFeatureSelector.html#sklearn.feature_selection.SequentialFeatureSelector}.
 \newblock Retrieved April 28, 2023.
+
+\bibitem[{Tatsat \emph{et~al.}(2020)Tatsat, Puri, \&
+  Lookabaugh}]{tatsat2020machine}
+\textsc{Tatsat}, H., S.~\textsc{Puri}, \& B.~\textsc{Lookabaugh} (2020):
+  \emph{Machine Learning and Data Science Blueprints for Finance}.
+\newblock O'Reilly Media.
 
 \bibitem[{Verma(2020)}]{Verma2020}
 \textsc{Verma}, V. (2020): \enquote{A comprehensive guide to feature selection

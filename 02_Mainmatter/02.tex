@@ -220,9 +220,42 @@ where $B$ is the number of trees and $T_b$ is the $b$-th tree.
 \textbf{TBD}
 \subsection{Support Vector Machine}
 
-Support Vector Machine (henceforth SVM) is machine learning algorithm which can handle both linear and non--linear classification problems and tries to transform original training data into a higher dimension, where the class points are linearly separable by a decision boundary, also known as hyperplane \citep{han2011data}.
+Support Vector Machine (henceforth SVM) is machine learning algorithm which can handle both linear and non--linear classification problems and tries to transform original training data into a higher dimension, where the class points are linearly separable by a (linear) decision boundary, also known as hyperplane \citep{han2011data}.
+In particular, SVM tries to maximize the margin which is the distance between the separating hyperplane and the support vectors, i.e., the training data points which are equally closest and parallel to such hyperplane\citep{tatsat2020machine}. The hyperplane can be expressed as follows, where $X$ are the features data, $W$ is the vector of the weights and $b$ is the intercept:
+\begin{equation}
+    W \times X + b = 0
+\end{equation}
+Moreover, the distance between the hyperplane and any training data point is expressed as $\frac{1}{\|W\|}$, where $\|W\|$ is Euclidean the norm of the weight vector $W$.
+In order to maximize the margin, we therefore maximize $\frac{2}{\|W\|}$ as we want to maximize both sides of below and above the hyperplane.
+When the data are not linearly separable, SVM transforms the original data points into a higher dimensional space using non--linear mapping functions, also known as kernels \citep{han2011data}.
+In general, kernel function for the training tuples $(X_i,X_j)$ can be expressed as:
+\begin{equation}
+    K(X_i,X_j) = \phi(X_i) \cdot \phi(X_j)
+\end{equation}
+where $\phi$ mapping function for high--dimensional transformation of the feature space. The most common kernel functions are:
+\begin{itemize}\setlength\itemsep{0em}
+    \item $h$--degree polynomial kernel
+\end{itemize}
+\begin{equation}
+    K\left(X_i,X_j\right) = (X_i \cdot X_k + 1)^{h}
+\end{equation}
+\begin{itemize}\setlength\itemsep{0em}
+    \item Gaussian radial basis kernel
+\end{itemize}
+\begin{equation}
+    K(X_i,X_j) = \exp\left(-\gamma |X_i-X_j\|^{2}\right)
+\end{equation}
+\begin{itemize}\setlength\itemsep{0em}
+    \item Sigmoid kernel
+\end{itemize}
+\begin{equation}
+    K(X_i,X_j) = \tanh(\kappa X_i \cdot X_j - \delta)
+\end{equation}
 
-\textbf{TBD}
+
+
+
+
 \subsection{Neural Network}
 Neural Network is a black--box machine learning algorithm which can handle very complex and non--linear relationship between. It contains several layers where each unit have a certain number of units. In general, we distinguish 3 type of layers:
 \begin{itemize}\setlength\itemsep{0em}
