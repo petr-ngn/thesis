@@ -1,4 +1,4 @@
-\begin{thebibliography}{47}
+\begin{thebibliography}{53}
 \newcommand{\enquote}[1]{``#1''}
 \providecommand{\natexlab}[1]{#1}
 
@@ -93,6 +93,12 @@
 \newblock Medium.
 \newblock Retrieved April 30, 2023.
 
+\bibitem[{Dilmegani(2017)}]{Dilmegani2017}
+\textsc{Dilmegani}, C. (2017): \enquote{Dark side of neural networks explained
+  [2023].}
+\newblock AIMultiple.
+\newblock Retrieved April 30, 2023.
+
 \bibitem[{Drahokoupil(2022)}]{drahokoupil2022application}
 \textsc{Drahokoupil}, J. (2022): \enquote{Application of the xgboost algorithm
   and bayesian optimization for the bitcoin price prediction during the
@@ -148,6 +154,12 @@
   retraining of a machine learning model.}
 \newblock \emph{Critical Care Medicine} \textbf{51(2)}: pp. 291--300.
 
+\bibitem[{Hsu \& Lin(2002)}]{hsu2002comparison}
+\textsc{Hsu}, C.-W. \& C.-J. \textsc{Lin} (2002): \enquote{A comparison of
+  methods for multiclass support vector machines.}
+\newblock \emph{IEEE transactions on Neural Networks} \textbf{13(2)}: pp.
+  415--425.
+
 \bibitem[{Igareta(2021)}]{igareta2021strat}
 \textsc{Igareta}, A. (2021): \enquote{Stratified sampling: You may have been
   splitting your dataset all wrong.}
@@ -172,6 +184,12 @@
   \emph{Mining of massive data sets}.
 \newblock Cambridge university press.
 
+\bibitem[{Lin \emph{et~al.}(2007)Lin, Lin, \& Weng}]{lin2007note}
+\textsc{Lin}, H.-T., C.-J. \textsc{Lin}, \& R.~C. \textsc{Weng} (2007):
+  \enquote{A note on platt’s probabilistic outputs for support vector
+  machines.}
+\newblock \emph{Machine learning} \textbf{68}: pp. 267--276.
+
 \bibitem[{Malley \emph{et~al.}(2011)Malley, Kruppa, Dasgupta, Malley, \&
   Ziegler}]{randomforestmalley}
 \textsc{Malley}, J., J.~\textsc{Kruppa}, A.~\textsc{Dasgupta},
@@ -185,6 +203,10 @@
   optimisation with early termination of poor performers.}
 \newblock In \enquote{2019 11th Computer Science and Electronic Engineering
   (CEEC),} pp. 160--163. IEEE.
+
+\bibitem[{Meyer(2015)}]{meyer2015support}
+\textsc{Meyer}, D. (2015): \enquote{Support vector machines.}
+\newblock \emph{The Interface to libsvm in package e1071} \textbf{28}: p.~20.
 
 \bibitem[{Mucherino \emph{et~al.}(2009)Mucherino, Papajorgji, \&
   Pardalos}]{mucherino2009data}
@@ -217,6 +239,12 @@
 \newblock Packt Publishing, 1st edition.
 \newblock Original work published 2022.
 
+\bibitem[{Platt \emph{et~al.}(1999)}]{platt1999probabilistic}
+\textsc{Platt}, J. \emph{et~al.} (1999): \enquote{Probabilistic outputs for
+  support vector machines and comparisons to regularized likelihood methods.}
+\newblock \emph{Advances in large margin classifiers} \textbf{10(3)}: pp.
+  61--74.
+
 \bibitem[{Provost \& Fawcett(2013)}]{provost2013data}
 \textsc{Provost}, F. \& T.~\textsc{Fawcett} (2013): \emph{Data Science for
   Business: What you need to know about data mining and data-analytic
@@ -242,6 +270,11 @@
 \textsc{Tatsat}, H., S.~\textsc{Puri}, \& B.~\textsc{Lookabaugh} (2020):
   \emph{Machine Learning and Data Science Blueprints for Finance}.
 \newblock O'Reilly Media.
+
+\bibitem[{TIBCO-Software(2023)}]{TIBCO2023}
+\textsc{TIBCO-Software} (2023): \enquote{What is a random forest?}
+\newblock \url{https://www.tibco.com/reference-center/what-is-a-random-forest}.
+\newblock Retrieved April 30, 2023.
 
 \bibitem[{Verma(2020)}]{Verma2020}
 \textsc{Verma}, V. (2020): \enquote{A comprehensive guide to feature selection

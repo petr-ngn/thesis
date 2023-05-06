@@ -197,7 +197,7 @@ Therefore, when applying majority voting, KNN would predict such instance as a r
     \centering
     \caption{K-Nearest Neighbors with $k=4$}\vspace{0.5em}
     \label{fig:knn-example}\
-    \includegraphics[width=80mm]{Figures/KNN_example.jpg}
+    \includegraphics[width=70mm]{Figures/KNN_example.jpg}
 
     \centering{\begin{source}\citep{mucherino2009data}\end{source}}\vspace{-1em}
 \end{figure}
@@ -214,6 +214,15 @@ Within classifying new instances, the random forest algorithm predicts the class
 \end{equation}
 where $B$ is the number of trees and $T_b$ is the $b$-th tree.
 
+\begin{figure}[H]
+    \centering
+    \caption{Random Forest Diagram}\vspace{0.5em}
+    \label{fig:rf-example}\
+    \includegraphics[width=135mm]{Figures/random-forest-diagram.jpg}
+
+    \centering{\begin{source}\citep{TIBCO2023}\end{source}}\vspace{-1em}
+\end{figure}
+
 \textbf{TBD}
 \subsection{Gradient Boosting}
 
@@ -221,12 +230,27 @@ where $B$ is the number of trees and $T_b$ is the $b$-th tree.
 \subsection{Support Vector Machine}
 
 Support Vector Machine (henceforth SVM) is machine learning algorithm which can handle both linear and non--linear classification problems and tries to transform original training data into a higher dimension, where the class points are linearly separable by a (linear) decision boundary, also known as hyperplane \citep{han2011data}.
-In particular, SVM tries to maximize the margin which is the distance between the separating hyperplane and the support vectors, i.e., the training data points which are equally closest and parallel to such hyperplane\citep{tatsat2020machine}. The hyperplane can be expressed as follows, where $X$ are the features data, $W$ is the vector of the weights and $b$ is the intercept:
-\begin{equation}
-    W \times X + b = 0
+In particular, SVM tries to maximize the margin which is the distance between the separating hyperplane and the support vectors, i.e., the training data points which are equally closest and parallel to such hyperplane \citep{tatsat2020machine}, as shown in \autoref{fig:svm-example}.
+
+\begin{figure}[H]
+    \centering
+    \caption{Support Vector Machine 2D Hyperplane}\vspace{0.5em}
+    \label{fig:svm-example}\
+    \includegraphics[width=80mm]{Figures/svmhyperplane.jpg}
+
+    \centering{\begin{source}\citep{meyer2015support}\end{source}}\vspace{-1em}
+\end{figure}
+
+The hyperplane can be expressed as follows, where $X$ are the features data, $W$ is the vector of the weights and $b$ is the intercept:
+\begin{equation}\label{eq:wxdo0}
+    W \cdot X + b = 0
 \end{equation}
+Thus, the data points which lie above the hyperplane are classified as 1 and otherwise \citep{hsu2002comparison}.
 Moreover, the distance between the hyperplane and any training data point is expressed as $\frac{1}{\|W\|}$, where $\|W\|$ is Euclidean the norm of the weight vector $W$.
-In order to maximize the margin, we therefore maximize $\frac{2}{\|W\|}$ as we want to maximize both sides of below and above the hyperplane.
+In order to maximize the margin, we maximize following term as we want to maximize both sides of below and above the hyperplane, therefore:
+\begin{equation}
+    \min {\frac{2}{\|W\|}}
+\end{equation}
 When the data are not linearly separable, SVM transforms the original data points into a higher dimensional space using non--linear mapping functions, also known as kernels \citep{han2011data}.
 In general, kernel function for the training tuples $(X_i,X_j)$ can be expressed as:
 \begin{equation}
@@ -234,35 +258,54 @@ In general, kernel function for the training tuples $(X_i,X_j)$ can be expressed
 \end{equation}
 where $\phi$ mapping function for high--dimensional transformation of the feature space. The most common kernel functions are:
 \begin{itemize}\setlength\itemsep{0em}
-    \item $h$--degree polynomial kernel
+    \item $h$--degree polynomial kernel:
 \end{itemize}
 \begin{equation}
     K\left(X_i,X_j\right) = (X_i \cdot X_k + 1)^{h}
 \end{equation}
 \begin{itemize}\setlength\itemsep{0em}
-    \item Gaussian radial basis kernel
+    \item Gaussian radial basis kernel:
 \end{itemize}
 \begin{equation}
     K(X_i,X_j) = \exp\left(-\gamma |X_i-X_j\|^{2}\right)
 \end{equation}
 \begin{itemize}\setlength\itemsep{0em}
-    \item Sigmoid kernel
+    \item Sigmoid kernel:
 \end{itemize}
 \begin{equation}
     K(X_i,X_j) = \tanh(\kappa X_i \cdot X_j - \delta)
 \end{equation}
+In some cases, the data cannot be linearly separable in higher dimensional space, i.e., we need to account for some potential errors, thus we introduce regularization factor $C$  for penalizing the errors $\xi$, therefore, in order to maximize the margin as well as to allow for errors, we minizes the following term:
+\begin{equation}
+    \min \frac{1}{2} \|W\| + C \sum_{i=1}^{N} \xi
+\end{equation}
+Hence, by minimizing $\frac{1}{2} \|W\|$ we minimize the weights (i.e, maximize the margin), by minimizing $\xi$ we reduce the number of training error, and by tuning $C$ we balance between these two properties \citep{hsu2002comparison}. 
 
-
-
-
+Note, that SVM do not predicted probability scores by default, but rather predicted classes based on the location whether the given data points are above or below the hyperplane.
+In order to obtain SVM's probabilities. as stated by Lin \citep{lin2007note}, the Platt scaling \citep{platt1999probabilistic} can be applied as a surrogate model to estimate probability outputs. Particularly, it fits a logistic regression model with true labels as target variable and predictions produced by SVM as features to predict the probability scores.
+Hence:
+\begin{equation}
+    \operatorname{Pr}\left(Y | f(x) \right) = \frac{1}{1 + \exp\left(A \cdot f(x) + B \right)} 
+\end{equation}
+where, $A$ and $B$ are the coefficients of the logistic regression model.
 
 \subsection{Neural Network}
-Neural Network is a black--box machine learning algorithm which can handle very complex and non--linear relationship between. It contains several layers where each unit have a certain number of units. In general, we distinguish 3 type of layers:
+Neural Network is a black--box machine learning algorithm which can handle very complex and non--linear relationship between. It contains several layers where each unit have a certain number of units. In general, we distinguish 3 type of layers as also visualized in \autoref{fig:nn-example}
 \begin{itemize}\setlength\itemsep{0em}
     \item \textbf{Input layer} - The initial layer wghich contains $n$ units, where $n$ is the number of features within the dataset.
     \item \textbf{Output layer} - The final final layer which contains $m$ units, where $m$ is the number of classes within the target variable. Since we assume only binary classification algorithms, therefore the output layer contains only one unit.
     \item \textbf{Hiden layer} - The intermediate layer which is always between the two layers - either between the input and output layer or even between other hidden layers.
     \end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \caption{Neural Network Architecture}\vspace{0.5em}
+    \label{fig:nn-example}\
+    \includegraphics[width=100mm]{Figures/nn-example.jpg}
+
+    \centering{\begin{source}\citep{Dilmegani2017}\end{source}}\vspace{-1em}
+\end{figure}
+
 The most common type of hidden layer is the fully connected layer where each unit is connected to each unit of the previous layer and to each unit in the next layer.
 Thus, each unit receives the inputs from the previous layer, performs the computation and feed the output to the next layer - such process is called \textit{feed--forward}, thus feed--forward neural networks \citep{charu2018neural}.
 Within the receiving the inputs, let us assume an integration function $g$ which performs a linear combination of the inputs $x$ and the weights $w$, and adds a bias term $b$.
