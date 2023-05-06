@@ -1,4 +1,4 @@
-\begin{thebibliography}{53}
+\begin{thebibliography}{54}
 \newcommand{\enquote}[1]{``#1''}
 \providecommand{\natexlab}[1]{#1}
 
@@ -238,6 +238,12 @@
 \textsc{Owen}, L. (2022): \emph{Hyperparameter Tuning with Python}.
 \newblock Packt Publishing, 1st edition.
 \newblock Original work published 2022.
+
+\bibitem[{Patle \& Chouhan(2013)}]{patle2013svm}
+\textsc{Patle}, A. \& D.~S. \textsc{Chouhan} (2013): \enquote{Svm kernel
+  functions for classification.}
+\newblock In \enquote{2013 International Conference on Advances in Technology
+  and Engineering (ICATE),} pp. 1--9. IEEE.
 
 \bibitem[{Platt \emph{et~al.}(1999)}]{platt1999probabilistic}
 \textsc{Platt}, J. \emph{et~al.} (1999): \enquote{Probabilistic outputs for
