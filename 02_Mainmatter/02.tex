@@ -27,7 +27,6 @@ In order to avoid confusion and ensure clear understanding in this thesis, it is
 In this section, several algorithms, which are used in the machine learning implementation, are described. Since the goal is to predict whether or not given client will default, henceforth only (binary) classification algorithms as a part of the supervised learning are described. In other words, regression models and unsupervised learning algorithms are out of the scope of this thesis.
 \subsection{Logistic Regression}
 \label{subsubsec:logisticregression}
-
 Despite the algorithm's name, it is actually not a regression but rather a classification model.
 In contrast, a linear regression's target variable is continuous whereas regarding a logistic regression, the target variable is categorical (or rather dichotomous in case of binary classification) \citep{wendler2021data}.
 For the probability estimation it is using a logistic, or so-called sigmoid function, which maps any real value within the range of 0 to 1 and takes a S-shaped curve as can be seen in \autoref{fig:sigmoid}.
@@ -574,6 +573,7 @@ Likewise, Jaccard score ranges from 0 to 1 where the higher value indicates the 
 
 
 \subsection{Log Loss}
+\label{subsubsec:logloss}
 
 Log loss, also know as logistic loss or cross--entropy loss, is a loss function metric which takes \textit{True} labels and predicted probabilities as an input and the minimize the difference between these two in a logarithmic function's form. Particularly, it indicates how close the predicted probabilities are to the corresponding $True$ labels. The more predicted probabilities diverges from the actual value, the more the log loss function penalizes the model's performance \citep{dembla2020intuition}.
 \begin{equation}\label{eq}

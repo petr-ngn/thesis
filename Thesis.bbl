@@ -1,4 +1,4 @@
-\begin{thebibliography}{62}
+\begin{thebibliography}{65}
 \newcommand{\enquote}[1]{``#1''}
 \providecommand{\natexlab}[1]{#1}
 
@@ -159,6 +159,10 @@
   \url{https://learnwithgauhar.com/decision-tree-a-classification-algorithm/}.
 \newblock Accessed on April 30, 2023.
 
+\bibitem[{Hale(2019)}]{hale2019dont}
+\textsc{Hale}, J. (2019): \enquote{Don't sweat the solver stuff.}
+\newblock \emph{Medium} Retrieved May 1, 2023.
+
 \bibitem[{Han \emph{et~al.}(2011)Han, Kamber, \& Pei}]{han2011data}
 \textsc{Han}, J., M.~\textsc{Kamber}, \& J.~\textsc{Pei} (2011): \emph{Data
   Mining: Concepts and Techniques}.
@@ -295,6 +299,12 @@
 \newblock \emph{Advances in large margin classifiers} \textbf{10(3)}: pp.
   61--74.
 
+\bibitem[{Pramoditha(2021)}]{pramoditha2021mitigate}
+\textsc{Pramoditha}, R. (2021): \enquote{How to mitigate overfitting with
+  regularization.}
+\newblock Medium.
+\newblock Retrieved May 1, 2023.
+
 \bibitem[{Provost \& Fawcett(2013)}]{provost2013data}
 \textsc{Provost}, F. \& T.~\textsc{Fawcett} (2013): \emph{Data Science for
   Business: What you need to know about data mining and data-analytic
@@ -309,10 +319,18 @@
 \newblock In \enquote{Proceedings of the 22nd ACM SIGKDD international
   conference on knowledge discovery and data mining,} pp. 1135--1144.
 
-\bibitem[{{scikit-learn}(2023)}]{sfs}
-\textsc{{scikit-learn}} (2023): \enquote{Sequentialfeatureselector.}
+\bibitem[{{scikit-learn}(2023{\natexlab{a}})}]{sfs}
+\textsc{{scikit-learn}} (2023{\natexlab{a}}):
+  \enquote{Sequentialfeatureselector.}
 \newblock
   \url{https://scikit-learn.org/stable/modules/generated/sklearn.feature_selection.SequentialFeatureSelector.html#sklearn.feature_selection.SequentialFeatureSelector}.
+\newblock Retrieved April 28, 2023.
+
+\bibitem[{{scikit-learn}(2023{\natexlab{b}})}]{scikit-lr}
+\textsc{{scikit-learn}} (2023{\natexlab{b}}):
+  \enquote{sklearn.linear\_model.logisticregression.}
+\newblock
+  \url{https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html#sklearn.linear_model.LogisticRegression}.
 \newblock Retrieved April 28, 2023.
 
 \bibitem[{Subasi(2020)}]{subasi2020practical}

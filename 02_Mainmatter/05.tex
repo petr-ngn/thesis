@@ -843,7 +843,32 @@ By maximizing the F1 score, the hyperparameters selected through this process wi
 
 
 
-\subsubsection{Hyperparameters' spaces}
+\subsubsection{Logistic Regression}
+The first hyperparameter \textbf{\texttt{Intercept}} allows to specify whether the intercept should be estimated or not.
+The next hyperparameter is the \textbf{\texttt{C penalty factor}} as a regularization term to prevent overfitting by adding such term to the objective loss function \citep{pramoditha2021mitigate}. Particularly, in case of Logistic Regression, $C$ penalty factor is the regularization term which penalizes the coefficients' magnitudes.
+The is related to the \textbf{\texttt{Penalty}} hyperparameter, which allows to specify the norm used in the penalization.
+The most common penalty is $L1$ (also known as Lasso) penalty which which takes the absolute value of the coefficients' magnitudes.
+The logistic regression's loss function is the cross--entropy (also known as Log Loss) which is further described in \autoref{subsubsec:logloss}. Then, the loss function with  $L1$ penalty is defined as follows:
+\begin{equation}\label{eq}
+    L(y, p)_{L1}  = L(y, p) + C \sum_{j=1}^{k} \mid w_j \mid
+\end{equation}
+Another penalty is $L2$ (also known as Ridge) penalty, which is more strict in penalization than $L1$ as it squares the coefficients' magnitudes. The loss function with $L2$ penalty is defined as follows:
+\begin{equation}\label{eq}
+    L(y, p)_{L2}  = L(y, p) + C \sum_{j=1}^{k} w_j^2
+\end{equation}
+The third penalty norm is the $ElasticNet$ which combines both $L1$ and $L2$. The loss function with $ElasticNet$ penalty is defined as follows:
+\begin{equation}\label{eq}
+    L(y, p)_{ElasticNet} = L(y, p) + C \sum_{j=1}^{k} \left[ \alpha \mid w_j \mid + (1-\alpha) w_j^2 \right]
+\end{equation}
+where $\alpha$ indicates the weight of $L1$ penalty in the $ElasticNet$ penalty and refers to the \textit{L1 ratio} hyperparameter.
+Moreover, the  \textbf{\texttt{Class weight}} hyperparameter is a hyperparameter which allows to assign higher importance to the minority class instances during the training process.
+
+
+Furthermore, \textbf{\texttt{Solver}} hyperparameter is used to specify which optimization algorithm should be used to estimate the coefficients' values.
+According to Hale \citep{hale2019dont}, Scikit-learn provides five solvers for Logistic Regression, namely \textit{lbfgs} (Limited-memory Broyden-Fletcher-Goldfarb-Shanno) which approximates the second derivative matrix updates with gradient evaluations, \textit{liblinear} (Library for Large Linear Classification) which uses coordinate descent algorithm, \textit{newton-cg},
+\textit{sag} (Stochastic Average Gradient descent) as a variation of gradient descent and incremental aggregated gradient approaches using random sample of previous gradient values, and \textit{saga} as an extension of \textit{sag} which allows $L1$ regularization.
+For more information, please refer to the Scikit-learn documentation regarding Logistic Regression \citep{scikit-lr}.
+The last hyperparameter of Logistic Regression to tune in this thesis is the \textbf{\texttt{Intercept scaling}} which allows to scale the intercept.
 
 \begin{table}[H]
 \small
@@ -872,6 +897,11 @@ Intercept scaling & True, False  \\
 \end{table}
 
 
+\subsubsection{Decision Tree}
+The first hyperparameter of Decision Tree is the \textbf{\texttt{Criterion}} which allows to specify the function to measure the quality of a split - either Gini or Entropy impurity function.
+Another important hyperparameter is the \textbf{\texttt{Max depth}} which allows to specify the maximum depth of the tree.
+The last hyperparameter is the \textbf{\texttt{Max features}} which allows to specify the number of features to consider when looking for the best split.
+Note, that \textbf{\texttt{Max features}} has a variable range of values depending on the number of features which is dependent on the number of features selected during feature selection (where the feature are iteratively selected and the model is trained and evaluated on each iteration).
 \begin{table}[H]
 \small
 \setlength{\tabcolsep}{8pt}
