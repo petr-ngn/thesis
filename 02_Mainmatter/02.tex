@@ -8,19 +8,23 @@
 \textbf{TBD}
 
 \section{Machine Learning Terminology}
+In order to avoid confusion and ensure clear understanding in this thesis, it is necessary to provide precise definitions for machine learning terminology that may be easily confused with statistical terminology due to their similar meanings but different naming conventions.
 \begin{itemize}\setlength\itemsep{0em}
-	\item \textbf{Target variable} - Dependent variable or response variable, which we want to predict or classify ($Y$). In this case we want to predict a defaut status (Yes or No).
-	\item \textbf{Feature} - Predictor, independent variable or explanatory variable ($X$), which we want to use to predict the target variable $Y$.
-	\item cross validation
-	\item over fitting
+	\item \textbf{Target variable} - Dependent variable, output variable or response variable, which we want to predict or classify ($Y$). In this case we want to predict a defaut status (Yes or No).
+	\item \textbf{Feature} - Predictor, attribute, independent variable or explanatory variable ($X$), which we want to use to predict the target variable $Y$. In tabular data, one feature is represented by one column.
+	\item \textbf{instance} - Observation, example, record, data point, case or a row in tabular data.
+	\item \textbf{Training} - Fitting process, learning process or estimation of the model's parameters using the training data.
+	\item \textbf{Weights} - Coefficient or parameters learnt during the training process.
+	\item \textbf{Supervised Learning} - Process reflecting the abilty of an algorithm to generelize knowledge from the data having with target or label cases, so that the algorithm can be used to predict new (unlabelled) cases \citep{alloghani2020supervised}.
+    In other words, the learning process is supervised by the target variable, hence the output model can be used to predict the target variable for new data, either using classification (when having categorical target variable) or regression (when having continuous target variable).
+	\item \textbf{Cross--validation} - When being limited by the small dataset size, the data is split the data into $k$ folds (subsets) and the model is trained $k$ times, each time on $k-1$ folds and validated on the remaining fold, in order to btain reliable estimates of the model generalization error \citep{tatsat2020machine}.
+	\item \textbf{Overfitting} - Situation, when the model has small error during the training, but also a high tet error \citep{forsyth2019applied}. The model is too complex just purely memorizes the data on which is trained on, but cannot generalize and predict well on unseen data.
 \end{itemize}
 
-
-\textbf{TBD}
 \section{Algorithms}
 \label{sec:algorithms}
 
-In this section, several algorithms, which are used in the machine learning implementation, are going to be described. Since the goal is to predict whether or not given client will default, henceforth only (binary) classification algorithms as a part of the supervised learning are described. In other words, regression models and unsupervised learning algorithms are out of the scope of this thesis.
+In this section, several algorithms, which are used in the machine learning implementation, are described. Since the goal is to predict whether or not given client will default, henceforth only (binary) classification algorithms as a part of the supervised learning are described. In other words, regression models and unsupervised learning algorithms are out of the scope of this thesis.
 \subsection{Logistic Regression}
 \label{subsubsec:logisticregression}
 
@@ -361,8 +365,6 @@ The error is then backpropagated through the network and the weights are updated
 
 \section{Evaluation Metrics}
 
-\textbf{TBD}
-
 This section focuses on particular measures through which it is possible to determine a predictive power of model in terms of its performance.
 The are many ways, how to evaluate the model's performance, therefore, only the most common ones and the most relevant are further described.
 Note, since default prediction regards classification tasks, therefore regression's evaluation metrics are omitted.
@@ -403,7 +405,7 @@ Further, let us consider a binary classification - hence, the confusion matrix w
 \end{equation}
 
 
-We can this rewrite confusion matrix as:
+We can this rewrite confusion matrix, assuming 2 target variable classes $Positive$ and $Negative$, as:
 
 \begin{equation}
     C_{2 \times 2} = \begin{bmatrix}
@@ -414,10 +416,10 @@ We can this rewrite confusion matrix as:
 
 where:
 \begin{itemize}\setlength\itemsep{0em}
-    \item TP is the True Positive which refers to the number of instances which correspond to the actual class $True$ and indeed have been correctly classified as class $True$.
-	\item $FP$ is the False Positive which refers to the number of instances which correspond to the actual class $True$, but have been incorrectly classified as class $False$. In the statistics and hypothesis--testing terms, it can be also called as Type 1 Error.
-	\item $FN$ is the False Negative which refers to the number of instances which correspond to the actual class $False$, but have been incorrectly classified as class $True$. In the statistics and hypothesis--testing terms, it can be also called as Type 2 Error.
-	\item $TN$ is the True Negative which refers to the number of instances which correspond to the actual class $False$ and indeed have been correctly classified as class $False$.
+    \item TP is the True Positive which refers to the number of instances which corresponds to the actual (\textit{True}) class $Positive$ and indeed have been correctly classified as class $Positive$.
+	\item $FP$ is the False Positive which refers to the number of instances which corresponds to the actual (\textit{True}) class $Negative$, but have been incorrectly classified as class $Positive$. In the statistics and hypothesis--testing terms, it can be also called as Type 1 Error.
+	\item $FN$ is the False Negative which refers to the number of instances which corresponds to the actual class $Negative$, but have been incorrectly classified as class $Positive$. In the statistics and hypothesis--testing terms, it can be also called as Type 2 Error.
+	\item $TN$ is the True Negative which refers to the number of instances which corresponds to the actual class $Negative$ and indeed have been correctly classified as class $Negative$.
 \end{itemize}
 
 \subsubsection{Accuracy}
@@ -431,7 +433,8 @@ Therefore, it is deemed appropriate to consider other metrics when having imbala
 \end{equation}
 
 \subsubsection{Recall}
-Such metric is also known as True Positive Rate (TPR) or Sensitivity, which also ranges from 0 to 1, and it describes in relative terms how many actual \textit{True} instances the model has correctly predicted out of all the \textit{True} instances. Thus, the goal is to minimize the number of False Negatives, i.e., number of defaulters which the model has classified as non--defaulters.
+\label{subsubsec:recall}
+Such metric is also known as True Positive Rate (TPR) or Sensitivity, which also ranges from 0 to 1, and it describes in relative terms how many actual $Positive$ instances the model has correctly predicted out of all the actual $Positive$ instances. Thus, the goal is to minimize the number of False Negatives, i.e., number of defaulters which the model has classified as non--defaulters.
 A lower value of recall could therefore indicates that either the model is not able to predict correctly the $True$ classes resulting in low number of True Positives and/or high number of False Negatives.
 Recall metris is useful when having imbalanced class and should be used instead of accuracy metric as it measures the model's ability to correctly identify instances of the minority class (i.e., defaults).
 Mathematically based on the confusion matrix elements, it can be computed as:
@@ -440,7 +443,7 @@ Mathematically based on the confusion matrix elements, it can be computed as:
 \end{equation}
 
 \subsubsection{Precision}
-This metric describes in relative terms how many predicted \textit{True} instances are actually \textit{True}. Thus, the goal is to minimize the number of False Positives, i.e., number of non--defaulters which the model has classified as defaulters.
+This metric describes in relative terms how many predicted $Positive$ instances are actually $Positive$ out of all the predicted $Positive$ instances. Thus, the goal is to minimize the number of False Positives, i.e., number of non--defaulters which the model has classified as defaulters.
 A lower value of precision could therefore indicates that either the model is not able to predict correctly the $True$ classes (low number of True Positives) or its prediction of $True$ classes is noisy (high number of False Positives).
 Precision is another metric which should be used instead of accuracy when having imbalanced class as it tt measures the model's ability to correctly identify instances of the minority class while minimizing false positives (i.e., non--default instances which the model has classified as default).
 Similarly, Precision also ranges from 0 to 1 and can be derived from the confusion matrix as follows:
@@ -469,27 +472,28 @@ Thus, assuming that $x$ is the vector of True labels and $y$ is the vector of pr
     MCC = \frac{TP \times TN - FP \times FN}{\sqrt{(TP + FP) (TP + FN) (TN + FP) (TN + FN)}}
 \end{equation}
 Matthews correlation coefficient ranges from -1 to 1, where 1 indicates perfect model's predictions, -1 indicates that model misclassifies all the instances and 0 indicates that model's predictions are not better than random guessing.
-\subsection{AUC}
+\subsection{ROC Curve and AUC}
+\subsubsection{ROC Curve}
+In order to derive Area Under the Curve (henceforth AUC), first we need to define Receiver Operating Characteristics (henceforth ROC) curve.
+ROC curve is two-dimensional visualization of the model performance and shows trade--off beteen True Positive Rate ($TPR$) and False Positive Rate ($FPR$) based on varying the given threshold \citep{han2011data}. The former metric was already described in \autoref{subsubsec:recall}, the latter refers to the ratio of the number of $Negative$ instances which are classified as $Positive$ to the total number of the actual $Negative$ instances, hence:
+\begin{equation}\label{eq}
+    FPR = \frac{FP}{TN + FP}
+\end{equation}
 
-In order to derive Area Under the Curve ($AUC$), first we need to define Receiver Operating Characteristics ($ROC$) curve.
-ROC curve is two-dimensional visualization of the model performance as a probability curve in terms of True Positive Rate ($TPR$) and False Positive Rate ($FPR$) based on varying the given threshold.
-
-Briefly, it can be construct as following: First, we need to sort the instances by the predicted probability and based on the given probability, we set a threshold - what will be above the threshold will be classified as $True$ instance and what is below the threshold will be classified as $False$ instance.
-Based on these classified instances, the confusion matrix can be constructed and via which we can compute the $TPR$ and $FPR$ values.
+In order to construct ROC curve, we need to sort the instances by the predicted probability scores and based on the given probability score, we set a threshold - what will be above the threshold will be classified as $True$ instance and what is below the threshold will be classified as $False$ instance. Thus, each probability score threshold produces a differnt confusion matrix and hence, different $TPR$ and $FPR$ values \citep{fawcett2006introduction}.
 Thus, if the probability is 1, the threshold will be 1 as well and hence:
 \begin{itemize}\setlength\itemsep{0em}
-    \item $TPR$ will be 0 because there is no probability which is higher than 1 and hence, everything will be classified as $False$ which will result into $TP$ of 0, and subsequently into $TPR$ of 0 as well.
-	\item $FPR$ will be 0, too - since everything will be classified as $False$, therefore $FP$ will be 0 which implies $FPR$ to be 0, too.
+    \item $TPR$ will be 0 because there is no probability which is higher than 1 and hence, everything will be classified as $Negative$ which will result into $TP$ of 0, and subsequently into $Negative$ of 0 as well.
+	\item $FPR$ will be 0, too - since everything will be classified as $Negative$, therefore $FP$ will be 0 which implies $FPR$ to be 0, too.
 \end{itemize}
 On the other hand, if the probability is 0, the threshold will be 0 as well and hence:
 \begin{itemize}\setlength\itemsep{0em}
-    \item $TPR$ will be 1 because there is no probability which is lower than 0 and hence, everything will be classified as $True$ which will result into $FN$ of 0, and subsequently into $TPR$ of 1.
-	\item $FPR$ will be 1, too - since everything will be classified as $True$, therefore $TN$ will be 0 which implies $FPR$ to be 1.
+    \item $TPR$ will be 1 because there is no probability which is lower than 0 and hence, everything will be classified as $Positive$ which will result into $FN$ of 0, and subsequently into $TPR$ of 1.
+	\item $FPR$ will be 1, too - since everything will be classified as $Positive$, therefore $TN$ will be 0 which implies $FPR$ to be 1.
 \end{itemize}
 
-Thus, based on each threshold, the $TPR$ and $FPR$ will be to coordinates for single point within the graph and based on such points, we can construct the ROC curve.
-Such visualization on the following \autoref{fig:roccurvetheory}.d
-Note the diagonal line represents a random model which randomly and correctly predicts the $True$ and $False$ classes in such way, that $FPR$ and $TPR$ are the same.
+Thus, based on each threshold, the $TPR$ and $FPR$ will be to coordinates for single point within the graph and based on such points, we can construct the ROC curve, which can be depicted in \autoref{fig:roccurvetheory}.
+Note that the diagonal line represents a random model which randomly guesses the $Positive$ class half the time in such way, that $FPR$ and $TPR$ are the same, i.e., 0.5 \citep{fawcett2006introduction}.
 Logically, a decent model should perform better than the random model, thus it the ROC curve should be above the diagonal line.
 Intuitively, the best possible theoretical model would have $TPR$ of 1 and $FPR$ of 0, meaning that all the $True$ actual classes should be predicted as $True$ and all the $False$ actual classes should not be classified as $True$
  Within the ROC curve, the given curve reaches the left top corner which corresponds to the coordinates of $TPR$ and $FPR$.
@@ -502,25 +506,29 @@ Intuitively, the best possible theoretical model would have $TPR$ of 1 and $FPR$
 
     \centering{\begin{source}Author's results in Python.\end{source}}\vspace{-1em}
 \end{figure}
+\subsubsection{AUC}
 
-$AUC$ is basically the representation of ROC curve as a single number as it aggregates the performance on all possible thresholds.
-$AUC$ can be interpreted as the probability that the randomly chosen actual $True$ instance is ranked higher than the randomly chosen actual $False$ instance.
-Since ROC curve is a probability curve, thus it is considering distribution curve of $TP$ and distribution class of $TN$, separated by particular threshold – hence, $TP$ would have probability scores above the given thresholds, whereas $TN$ would have probability scores below the threshold.
-If these curves do not overlap, meaning the model can perfectly distinguish between the $True$ and $False$ values, therefore the $AUC$ would be 1 and the ROC curve would reach the left top corner.
-However, this idealistic situation does not occur in the practice at all, but rather the two distributions are overlapping since the misclassification of the classes takes the place.
-The bigger overlap, the lower $AUC$ is.
-If the distributions are completely overlapping, it implies the $AUC$ of 0.5, meaning that the model cannot distinguish between the $True$ and $False$ classes, which is the worst scenario.
-On the other hand, if the distributions are totally opposite (meaning that the $TP$ instances would have probability scores below the given threshold, whereas the $TN$ instances would have probability scores above the given threshold), the $AUC$ would be 0 since the model is predicting the $True$ actual classes instead of $False$ and vice versa.
-
+$AUC$ is basically the representation of ROC curve as a single number as it aggregates the performance on all possible thresholds ranging from 0 to 1.
+$AUC$ can be interpreted as the probability that the randomly chosen actual $True$ instance is ranked higher than the randomly chosen actual $False$ instance \citep{janitza2013auc}.
 As the $AUC$ is an area present underneath the ROC curve, mathematically, it can be computed with the definite integral where $x$ is the given threshold:
 
 \begin{equation}\label{eq}
     AUC = \int_{0}^{1} TPR \left(FPR^{-1}\left(x \right)\right) dx
 \end{equation}
 
-\subsection{Kolmogorov-Smirnov}
 
-The Kolmogorov-Smirnov (KS) is non--parametric metric for assessing discriminant power of a model as it measures distance between the cumulative distribution functions (CDF) between two classes, and is quantified as a maximum vertical absolute difference between such two CDF's \citep{adeodato2016equivalence}.
+Since ROC curve is a probability curve, thus it is considering distribution curve of $TP$ and distribution curve of $TN$, separated by particular threshold - hence, $TP$ would have probability scores above the given thresholds, whereas $TN$ would have probability scores below the threshold.
+If these curves do not overlap, meaning the model can perfectly distinguish between the $Positive$ and $Negative$ values, therefore the $AUC$ would be 1 and the ROC curve would reach the left top corner.
+However, this idealistic situation does not occur in the practice at all, but rather the two distributions are overlapping since the misclassification of the classes takes the place.
+The bigger overlap, the lower $AUC$ is.
+If the distributions are completely overlapping, it implies the $AUC$ of 0.5, meaning that the model cannot distinguish between the $Positive$ and $Negative$ classes, which is the worst scenario.
+On the other hand, if the distributions are totally opposite (meaning that the $TP$ instances would have probability scores below the given threshold, whereas the $TN$ instances would have probability scores above the given threshold), the $AUC$ would be 0 since the model is predicting the $Positive$ actual classes instead of $Negative$ and vice versa \citep{narkhede2018understanding}.
+
+
+
+\subsection{Kolmogorov-Smirnov Distance}
+
+The Kolmogorov-Smirnov (KS) Distance is non--parametric metric for assessing discriminant power of a model as it measures distance between the cumulative distribution functions (henceforth CDF) between two classes, and is quantified as a maximum vertical absolute difference between such two CDF's \citep{adeodato2016equivalence}.
 In credit risk modelling terms, we can express KS as follows:
 \begin{equation}\label{eq}
     \text{Kolmogorov Smirnov} = \max_{0 \le t \le 1} \left| F_D \left(t \right) - F_{ND} \left(t \right) \right|
@@ -573,7 +581,7 @@ Log loss, also know as logistic loss or cross--entropy loss, is a loss function 
 \end{equation}
 
 
-Logically, the lower Log loss value, the better performance of the model is. As depicted in \autoref{fig:logloss}, we can observe the closer the predicted probability is closer to 1 with respect to the $True$ label being equal to 1, the more is the log loss function closer to 0 which is desired in terms of model's performance.
+Logically, the lower Log loss value, the better performance of the model is. As depicted in \autoref{fig:logloss}, we can observe the closer the predicted probability is closer to 1 with respect to the actual target class being equal to 1, the more is the log loss function closer to 0 which is desired in terms of model's performance.
 \begin{figure}[H]
     \centering
     \caption{Log Loss Function when $Y=1$}\vspace{0.5em}

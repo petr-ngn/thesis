@@ -537,24 +537,13 @@ In the \autoref{fig:spearmancorr}, we can observe a very strong correlation betw
 
 \newpage
 \section{Data Preprocessing}
-In this section, the process of preprocessing data is described as the crucial step in the machine learning modelling. Particularly, the following is described:
-\begin{itemize}\setlength\itemsep{0em}
-\item Splitting the data
-\item oversampling,
-\item discretization,
-\item Weight--of--Evidence encoding.
-\end{itemize}
-
+In this section, the process of preprocessing data is described as the crucial step in the machine learning modelling. Particularly, the the process of dividing data for various tasks, oversampling due to the imbalanced class issue, discretization of features and Weight--of--Eveidence transformation are further discussed and described.
 
 \subsection{Data Split and ADASYN Oversampling}
 \label{subsec:data-split-ADASYN}
 
-To ensure appropriate model training and unbiased evaluation, it is necessary to split data into separate sets for various purposes. Specifically, the data was split into three sets with the ratio of 70:15:15:
-\begin{itemize}\setlength\itemsep{0em} 
-\item Training set for model training, feature selection, and hyperparameter tuning;
-\item Validation set for selecting the best final model;
-\item Test set for the final evaluation of the best final model.
-\end{itemize}
+To ensure appropriate model training and unbiased evaluation, it is necessary to split data into separate sets for various purposes. Specifically, the dataset is split into three sets: (1) training est for training the model, perform feature selection or hyperparameter tuning, (2) validation for hyperparameter tuning, and (3) test set for assess the model performance on the unseen data \citep{subasi2020practical}.
+In this thesis, the data is plit into training, validation and test sets in ratio of 70:!5:15, which ensures sufficient amount of data for training, hence the model would be able to generalize well, while keeping the validation and test sets large enough to provide reliable evaluation of the model's performance.
 
 The data is split using stratified split to preserve the default status distribution, which was highly imbalanced.
 Stratification ensures that the distribution of defaults and non-defaults remains the same across all sets, thereby avoiding overfitting and data leakage. Using stratification, each set had 80 \% non-defaults and 20 \% defaults. This method enables accurate prediction since the model is trained and evaluated on the same population \citep{igareta2021strat}.
@@ -851,6 +840,8 @@ For each model, the Bayesian Optimization algorithm performs 50 iterations, sear
 
 The use of \lstinline{BayesSearchCV} with stratified cross-validation in the hyperparameter tuning process provides a robust and reliable approach to selecting the optimal hyperparameters for the model, while the incorporation of Bayesian Optimization enables the efficient exploration of the hyperparameter space.
 By maximizing the F1 score, the hyperparameters selected through this process will result in a model with improved performance.
+
+
 
 \subsubsection{Hyperparameters' spaces}
 

@@ -1,4 +1,4 @@
-\begin{thebibliography}{56}
+\begin{thebibliography}{62}
 \newcommand{\enquote}[1]{``#1''}
 \providecommand{\natexlab}[1]{#1}
 
@@ -7,6 +7,13 @@
   equivalence between kolmogorov-smirnov and roc curve metrics for binary
   classification.}
 \newblock \emph{arXiv preprint arXiv:1606.00496} .
+
+\bibitem[{Alloghani \emph{et~al.}(2020)Alloghani, Al-Jumeily, Mustafina,
+  Hussain, \& Aljaaf}]{alloghani2020supervised}
+\textsc{Alloghani}, M., D.~\textsc{Al-Jumeily}, J.~\textsc{Mustafina},
+  A.~\textsc{Hussain}, \& A.~\textsc{Aljaaf} (2020): \enquote{Supervised and
+  unsupervised learning for data science.}
+\newblock \emph{Supervised and Unsupervised Learning for Data Science} .
 
 \bibitem[{Ayyadevara(2018)}]{ayyadevara2018pro}
 \textsc{Ayyadevara}, V.~K. (2018): \enquote{Pro machine learning algorithms.}
@@ -130,12 +137,20 @@
 \newblock \emph{Journal of Chemical Information and Modeling} \textbf{61(6)}:
   pp. 2623--2640.
 
+\bibitem[{Fawcett(2006)}]{fawcett2006introduction}
+\textsc{Fawcett}, T. (2006): \enquote{An introduction to roc analysis.}
+\newblock \emph{Pattern recognition letters} \textbf{27(8)}: pp. 861--874.
+
 \bibitem[{Fluss \emph{et~al.}(2005)Fluss, Faraggi, \&
   Reiser}]{fluss2005estimation}
 \textsc{Fluss}, R., D.~\textsc{Faraggi}, \& B.~\textsc{Reiser} (2005):
   \enquote{Estimation of the youden index and its associated cutoff point.}
 \newblock \emph{Biometrical Journal: Journal of Mathematical Methods in
   Biosciences} \textbf{47(4)}: pp. 458--472.
+
+\bibitem[{Forsyth(2019)}]{forsyth2019applied}
+\textsc{Forsyth}, D. (2019): \emph{Applied machine learning}.
+\newblock Springer.
 
 \bibitem[{Gauhar(2020)}]{gauhar2020decision}
 \textsc{Gauhar}, N. (2020): \enquote{Decision tree: A classification
@@ -180,6 +195,13 @@
 \bibitem[{Igareta(2021)}]{igareta2021strat}
 \textsc{Igareta}, A. (2021): \enquote{Stratified sampling: You may have been
   splitting your dataset all wrong.}
+
+\bibitem[{Janitza \emph{et~al.}(2013)Janitza, Strobl, \&
+  Boulesteix}]{janitza2013auc}
+\textsc{Janitza}, S., C.~\textsc{Strobl}, \& A.-L. \textsc{Boulesteix} (2013):
+  \enquote{An auc-based permutation variable importance measure for random
+  forests.}
+\newblock \emph{BMC bioinformatics} \textbf{14(1)}: pp. 1--11.
 
 \bibitem[{Japkowicz \& Shah(2011)}]{japkowicz2011evaluating}
 \textsc{Japkowicz}, N. \& M.~\textsc{Shah} (2011): \emph{Evaluating learning
@@ -230,6 +252,11 @@
 \textsc{Mucherino}, A., P.~\textsc{Papajorgji}, \& P.~M. \textsc{Pardalos}
   (2009): \emph{Data mining in agriculture}, volume~34.
 \newblock Springer Science \& Business Media.
+
+\bibitem[{Narkhede(2018)}]{narkhede2018understanding}
+\textsc{Narkhede}, S. (2018): \enquote{Understanding auc - roc curve.}
+\newblock Medium.
+\newblock Retrieved April 28, 2023.
 
 \bibitem[{Navas-Palencia(2020)}]{navas2020optimal}
 \textsc{Navas-Palencia}, G. (2020): \enquote{Optimal binning: mathematical
@@ -287,6 +314,11 @@
 \newblock
   \url{https://scikit-learn.org/stable/modules/generated/sklearn.feature_selection.SequentialFeatureSelector.html#sklearn.feature_selection.SequentialFeatureSelector}.
 \newblock Retrieved April 28, 2023.
+
+\bibitem[{Subasi(2020)}]{subasi2020practical}
+\textsc{Subasi}, A. (2020): \emph{Practical machine learning for data analysis
+  using python}.
+\newblock Academic Press.
 
 \bibitem[{Tatsat \emph{et~al.}(2020)Tatsat, Puri, \&
   Lookabaugh}]{tatsat2020machine}
