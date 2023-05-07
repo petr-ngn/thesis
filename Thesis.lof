@@ -5,38 +5,38 @@
 \contentsline {figure}{\numberline {2.3}{\ignorespaces Gini Impurity vs. Entropy\relax }}{6}{figure.caption.17}%
 \contentsline {figure}{\numberline {2.4}{\ignorespaces K-Nearest Neighbors with $k=4$\relax }}{10}{figure.caption.18}%
 \contentsline {figure}{\numberline {2.5}{\ignorespaces Random Forest Diagram\relax }}{11}{figure.caption.19}%
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Support Vector Machine 2D Hyperplane\relax }}{12}{figure.caption.20}%
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Neural Network Architecture\relax }}{14}{figure.caption.21}%
-\contentsline {figure}{\numberline {2.8}{\ignorespaces ROC Curve\relax }}{21}{figure.caption.27}%
-\contentsline {figure}{\numberline {2.9}{\ignorespaces Log Loss Function when $Y=1$\relax }}{24}{figure.caption.28}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Support Vector Machine 2D Hyperplane\relax }}{13}{figure.caption.20}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Neural Network Architecture\relax }}{15}{figure.caption.21}%
+\contentsline {figure}{\numberline {2.8}{\ignorespaces ROC Curve\relax }}{22}{figure.caption.27}%
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Log Loss Function when $Y=1$\relax }}{26}{figure.caption.28}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Machine Learning Framework\relax }}{28}{figure.caption.29}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Repository Structure\relax }}{29}{figure.caption.30}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Default status distribution\relax }}{35}{figure.caption.36}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Conditional distribution of numeric features\relax }}{37}{figure.caption.38}%
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Conditional distribution of categorical features\relax }}{40}{figure.caption.41}%
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Nullity dendrogram\relax }}{44}{figure.caption.49}%
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Spearman Correlation Matrix\relax }}{45}{figure.caption.51}%
-\contentsline {figure}{\numberline {5.8}{\ignorespaces ADASYN Impact of Categorical Features' Distribution\relax }}{52}{figure.caption.55}%
-\contentsline {figure}{\numberline {5.9}{\ignorespaces WoE Bins Distribution\relax }}{56}{figure.caption.56}%
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Feature Selection Print Statement\relax }}{65}{figure.caption.67}%
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Reccurrence of Selected Features\relax }}{66}{figure.caption.68}%
-\contentsline {figure}{\numberline {5.12}{\ignorespaces Distribution of Selected Features per Model\relax }}{67}{figure.caption.69}%
-\contentsline {figure}{\numberline {5.13}{\ignorespaces Model Selection Print Statement\relax }}{71}{figure.caption.73}%
-\contentsline {figure}{\numberline {5.14}{\ignorespaces F1 score distribution\relax }}{73}{figure.caption.75}%
-\contentsline {figure}{\numberline {5.15}{\ignorespaces F1 score distribution - without outliers\relax }}{74}{figure.caption.76}%
-\contentsline {figure}{\numberline {5.16}{\ignorespaces Threshold distribution\relax }}{74}{figure.caption.77}%
-\contentsline {figure}{\numberline {5.17}{\ignorespaces Threshold distribution - without outliers\relax }}{75}{figure.caption.78}%
-\contentsline {figure}{\numberline {5.18}{\ignorespaces Execution time distribution\relax }}{76}{figure.caption.79}%
-\contentsline {figure}{\numberline {5.19}{\ignorespaces Execution time vs. F1 Scatterplot\relax }}{77}{figure.caption.80}%
-\contentsline {figure}{\numberline {5.20}{\ignorespaces Confusion Matrix\relax }}{80}{figure.caption.82}%
-\contentsline {figure}{\numberline {5.21}{\ignorespaces ROC Curve\relax }}{83}{figure.caption.85}%
-\contentsline {figure}{\numberline {5.22}{\ignorespaces Feature Importance\relax }}{84}{figure.caption.86}%
-\contentsline {figure}{\numberline {5.23}{\ignorespaces SHAP Summary Plot\relax }}{86}{figure.caption.87}%
-\contentsline {figure}{\numberline {5.24}{\ignorespaces Flask Web Application Form\relax }}{90}{figure.caption.88}%
-\contentsline {figure}{\numberline {5.25}{\ignorespaces Flask Web Application - Prediction Result\relax }}{91}{figure.caption.89}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Machine Learning Framework\relax }}{30}{figure.caption.29}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Repository Structure\relax }}{31}{figure.caption.30}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Default status distribution\relax }}{37}{figure.caption.36}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Conditional distribution of numeric features\relax }}{39}{figure.caption.38}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Conditional distribution of categorical features\relax }}{42}{figure.caption.41}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Nullity dendrogram\relax }}{46}{figure.caption.49}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Spearman Correlation Matrix\relax }}{47}{figure.caption.51}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces ADASYN Impact of Categorical Features' Distribution\relax }}{54}{figure.caption.55}%
+\contentsline {figure}{\numberline {5.9}{\ignorespaces WoE Bins Distribution\relax }}{58}{figure.caption.56}%
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Feature Selection Print Statement\relax }}{67}{figure.caption.67}%
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Reccurrence of Selected Features\relax }}{68}{figure.caption.68}%
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Distribution of Selected Features per Model\relax }}{69}{figure.caption.69}%
+\contentsline {figure}{\numberline {5.13}{\ignorespaces Model Selection Print Statement\relax }}{73}{figure.caption.73}%
+\contentsline {figure}{\numberline {5.14}{\ignorespaces F1 score distribution\relax }}{75}{figure.caption.75}%
+\contentsline {figure}{\numberline {5.15}{\ignorespaces F1 score distribution - without outliers\relax }}{76}{figure.caption.76}%
+\contentsline {figure}{\numberline {5.16}{\ignorespaces Threshold distribution\relax }}{76}{figure.caption.77}%
+\contentsline {figure}{\numberline {5.17}{\ignorespaces Threshold distribution - without outliers\relax }}{77}{figure.caption.78}%
+\contentsline {figure}{\numberline {5.18}{\ignorespaces Execution time distribution\relax }}{78}{figure.caption.79}%
+\contentsline {figure}{\numberline {5.19}{\ignorespaces Execution time vs. F1 Scatterplot\relax }}{79}{figure.caption.80}%
+\contentsline {figure}{\numberline {5.20}{\ignorespaces Confusion Matrix\relax }}{82}{figure.caption.82}%
+\contentsline {figure}{\numberline {5.21}{\ignorespaces ROC Curve\relax }}{85}{figure.caption.85}%
+\contentsline {figure}{\numberline {5.22}{\ignorespaces Feature Importance\relax }}{86}{figure.caption.86}%
+\contentsline {figure}{\numberline {5.23}{\ignorespaces SHAP Summary Plot\relax }}{88}{figure.caption.87}%
+\contentsline {figure}{\numberline {5.24}{\ignorespaces Flask Web Application Form\relax }}{92}{figure.caption.88}%
+\contentsline {figure}{\numberline {5.25}{\ignorespaces Flask Web Application - Prediction Result\relax }}{93}{figure.caption.89}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

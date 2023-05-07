@@ -212,8 +212,7 @@ Within classifying new instances, the random forest algorithm predicts the class
 \begin{equation}
     \operatorname{Pr}\left(Y=1 \mid X \right) = \frac{1}{B} \sum_{b=1}^{B} \operatorname{Pr}\left(Y=1 \mid X, T_b \right)
 \end{equation}
-where $B$ is the number of trees and $T_b$ is the $b$-th tree.
-
+where $B$ is the number of trees and $T_b$ is the $b$-th tree. Such algoritm is depicted on the \autoref{fig:rf-example} for the visual representation.
 \begin{figure}[H]
     \centering
     \caption{Random Forest Diagram}\vspace{0.5em}
@@ -222,11 +221,34 @@ where $B$ is the number of trees and $T_b$ is the $b$-th tree.
 
     \centering{\begin{source}\citep{TIBCO2023}\end{source}}\vspace{-1em}
 \end{figure}
-
-\textbf{TBD}
 \subsection{Gradient Boosting}
+In contrast to Random Forest whose trees are trained independently, i.e., in a parallel way, Gradient Boosting trains trees are trained in a sequential way, where each tree is trained on the residuals of the previous tree \citep{ayyadevara2018pro}, as a sequential building series of dependent weak learners, i.e., decision trees, in order to create a strong learner.
 
-\textbf{TBD}
+According to Dias \citep{dias2018comparison}, before adding any weak learners, first we need to initialize a model $F_0(x)$ which is a constant value computed by minimizing the sum of the loss function $L$ over all training samples, i.e., we look for such $\gamma$ constant which minimizes the loss function $L$, hence:
+\begin{equation}
+    F_{0}(x) = \arg \min _{\gamma} \sum_{i=1}^{n} L\left(y_{i}, \gamma\right)
+\end{equation}
+Then, for $m \in M$, where $M$ is the total number of iterations or the number of tree estimators:
+\begin{itemize}\setlength\itemsep{0em}
+    \item[1.] Compute pseudo--reisduals for each training sample pair $(x_i, y_i)$ as the negative gradient of the loss function $L$ with respect to the the prediction $F_{m-1}(x)$ of the previous model $F_{m-1}(x)$, hence:
+\end{itemize}
+\begin{equation}
+    r_{i,m} = -\left[\frac{\partial L\left(y_{i}, F\left(x_{i}\right)\right)}{\partial F\left(x_{i}\right)}\right]_{F(x)=F_{m-1}(x)}
+\end{equation}
+\begin{itemize}\setlength\itemsep{0em}
+    \item[2.] Train a weak learner $h_m(x)$ on the with the training data as features and the pseudo--residuals as the target values $(x_i, r_{i,m})$, and then compute the learning rate $\gamma_m$ which minimizes the loss function $L$ when adding the weak learner $h_m(x)$ to the previous model $F_{m-1}(x)$, hence:
+\end{itemize}
+\begin{equation}
+    \gamma_{m} = \arg \min _{\gamma} \sum_{i=1}^{n} L\left(y_{i}, F_{m-1}\left(x_{i}\right)+\gamma h\left(x_{i}\right)\right)
+\end{equation}
+\begin{itemize}\setlength\itemsep{0em}
+    \item[3.] Update the model $F_m(x)$ by adding the weak learner $h_m(x)$ with the learning rate $\gamma_m$, hence:
+\end{itemize}
+\begin{equation}
+    F_m(x) = F_{m-1}(x) + \gamma_m h(x)
+\end{equation}
+Afterwards, such algorithm outputs the final model $F_M(x)$ as a combination of the initial model and the $M$ weak learners.
+
 \subsection{Support Vector Machine}
 
 Support Vector Machine (henceforth SVM) is machine learning algorithm which can handle both linear and non--linear classification problems and tries to transform original training data into a higher dimension, where the class points are linearly separable by a (linear) decision boundary, also known as hyperplane \citep{han2011data}.
@@ -501,9 +523,17 @@ As the $AUC$ is an area present underneath the ROC curve, mathematically, it can
 The Kolmogorov-Smirnov (KS) is non--parametric metric for assessing discriminant power of a model as it measures distance between the cumulative distribution functions (CDF) between two classes, and is quantified as a maximum vertical absolute difference between such two CDF's \citep{adeodato2016equivalence}.
 In credit risk modelling terms, we can express KS as follows:
 \begin{equation}\label{eq}
-    \text{Kolmogorov Smirnov} = \max_{0 \le j \le 1} \left| F_D \left(j \right) - F_{ND} \left(j \right) \right|
+    \text{Kolmogorov Smirnov} = \max_{0 \le t \le 1} \left| F_D \left(t \right) - F_{ND} \left(t \right) \right|
 \end{equation}
-where $F_D$ and $F_{ND}$ are the cumulative distribution functions of default and non-default cases, respectively, and $j$ is the probability score threshold which ranges between 0 and 1.
+where $F_D$ and $F_{ND}$ are the cumulative distribution functions of default and non-default cases, respectively, and $t$ is the probability score threshold which ranges between 0 and 1. $F_D$ and $F_{ND}$ are defined as follows:
+\begin{equation}\label{eq}
+    F_D \left(t \right) = \frac{1}{M_D} \sum_{i=1}^{M_D} I \left[f(x_i) \le t \right]
+\end{equation}
+\begin{equation}\label{eq}
+    F_{ND} \left(t \right) = \frac{1}{M_{ND}} \sum_{i=1}^{M_D} I \left[f(x_i) \le t \right]
+\end{equation}
+where $M_D$ and $M_{ND}$ refer to the number of default and non-default cases, respectively, and $I$ is the indicator function which is equal to 1 if the condition is true and 0 otherwise \citep{doumpos2019analytical}.
+ 
 \subsection{Somer's D}
 
 The Somers' D is a metric which is part of the Kendall family of ranking measures. Particularly, assuming X-Y pairs, a Kendall's $\tau_{a}$ is defined as:
