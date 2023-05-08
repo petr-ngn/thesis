@@ -10,12 +10,12 @@
 \contentsline {subsection}{\numberline {2.3.1}Logistic Regression}{3}{subsection.2.3.1}%
 \contentsline {subsection}{\numberline {2.3.2}Decision Tree}{5}{subsection.2.3.2}%
 \contentsline {subsection}{\numberline {2.3.3}Naive Bayes}{7}{subsection.2.3.3}%
-\contentsline {subsection}{\numberline {2.3.4}K-Nearest Neighbors}{9}{subsection.2.3.4}%
+\contentsline {subsection}{\numberline {2.3.4}K-Nearest Neighbors}{10}{subsection.2.3.4}%
 \contentsline {subsection}{\numberline {2.3.5}Random Forest}{11}{subsection.2.3.5}%
 \contentsline {subsection}{\numberline {2.3.6}Gradient Boosting}{12}{subsection.2.3.6}%
 \contentsline {subsection}{\numberline {2.3.7}Support Vector Machine}{13}{subsection.2.3.7}%
-\contentsline {subsection}{\numberline {2.3.8}Neural Network}{15}{subsection.2.3.8}%
-\contentsline {section}{\numberline {2.4}Evaluation Metrics}{17}{section.2.4}%
+\contentsline {subsection}{\numberline {2.3.8}Neural Network}{16}{subsection.2.3.8}%
+\contentsline {section}{\numberline {2.4}Evaluation Metrics}{18}{section.2.4}%
 \contentsline {subsection}{\numberline {2.4.1}Confusion Matrix and Derived Metrics}{18}{subsection.2.4.1}%
 \contentsline {subsubsection}{Accuracy}{19}{section*.22}%
 \contentsline {subsubsection}{Recall}{20}{section*.23}%
@@ -27,55 +27,55 @@
 \contentsline {subsubsection}{AUC}{23}{section*.29}%
 \contentsline {subsection}{\numberline {2.4.3}Kolmogorov-Smirnov Distance}{24}{subsection.2.4.3}%
 \contentsline {subsection}{\numberline {2.4.4}Somer's D}{25}{subsection.2.4.4}%
-\contentsline {subsection}{\numberline {2.4.5}Brier Score Loss}{25}{subsection.2.4.5}%
+\contentsline {subsection}{\numberline {2.4.5}Brier Score Loss}{26}{subsection.2.4.5}%
 \contentsline {subsection}{\numberline {2.4.6}Jaccard Score}{26}{subsection.2.4.6}%
 \contentsline {subsection}{\numberline {2.4.7}Log Loss}{26}{subsection.2.4.7}%
 \contentsline {section}{\numberline {2.5}ADASYN Oversampling}{27}{section.2.5}%
-\contentsline {section}{\numberline {2.6}Optimal Binning}{29}{section.2.6}%
+\contentsline {section}{\numberline {2.6}Optimal Binning}{30}{section.2.6}%
 \contentsline {section}{\numberline {2.7}Hyperparameter Bayesian Optimization}{32}{section.2.7}%
 \contentsline {section}{\numberline {2.8}Forward Sequential Feature Selection}{34}{section.2.8}%
-\contentsline {chapter}{\numberline {3}Literature Review}{36}{chapter.3}%
-\contentsline {chapter}{\numberline {4}Hypotheses}{37}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Empirical Analysis - Machine Learning Implementation}{38}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Repository and Environment Structure}{40}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Data Exploration}{43}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Dataset Description}{43}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}Distribution Analysis}{45}{subsection.5.2.2}%
-\contentsline {subsubsection}{Default Distribution}{45}{section*.37}%
-\contentsline {subsubsection}{Numeric Features' Distribution}{46}{section*.39}%
-\contentsline {subsubsection}{Categorical Features' Distribution}{50}{section*.42}%
-\contentsline {subsection}{\numberline {5.2.3}Association Analysis}{51}{subsection.5.2.3}%
-\contentsline {subsubsection}{Association between default status and numeric features}{51}{section*.44}%
-\contentsline {subsubsection}{Association between default status and categorical features}{53}{section*.46}%
-\contentsline {subsubsection}{Association between default status and missing values}{53}{section*.48}%
-\contentsline {subsubsection}{Missing Values Association}{54}{section*.50}%
-\contentsline {subsubsection}{Multicolinearity Analysis}{55}{section*.52}%
-\contentsline {section}{\numberline {5.3}Data Preprocessing}{57}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}Data Split and ADASYN Oversampling}{57}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}Optimal Binning and Weight--of--Evidence}{61}{subsection.5.3.2}%
-\contentsline {section}{\numberline {5.4}Modelling}{64}{section.5.4}%
-\contentsline {subsection}{\numberline {5.4.1}Hyperparameter Bayesian Optimization}{64}{subsection.5.4.1}%
-\contentsline {subsubsection}{Logistic Regression}{65}{section*.58}%
-\contentsline {subsubsection}{Decision Tree}{67}{section*.60}%
-\contentsline {subsubsection}{Gaussian Naive Bayes}{67}{section*.62}%
-\contentsline {subsubsection}{K--Nearest Neighbors}{67}{section*.64}%
-\contentsline {subsubsection}{Random Forest}{68}{section*.66}%
-\contentsline {subsubsection}{Gradient Boosting}{69}{section*.68}%
-\contentsline {subsubsection}{Support Vector Machine}{70}{section*.70}%
-\contentsline {subsubsection}{Multi--Layer Percepton}{70}{section*.72}%
-\contentsline {subsection}{\numberline {5.4.2}Sequential Feature Selection}{72}{subsection.5.4.2}%
-\contentsline {subsection}{\numberline {5.4.3}Model Selection}{75}{subsection.5.4.3}%
-\contentsline {subsubsection}{Metrics Space}{76}{section*.77}%
-\contentsline {subsubsection}{Model Selection Results}{78}{section*.79}%
-\contentsline {subsection}{\numberline {5.4.4}Model Recalibration}{87}{subsection.5.4.4}%
-\contentsline {section}{\numberline {5.5}Model Evaluation}{88}{section.5.5}%
-\contentsline {subsection}{\numberline {5.5.1}Model's Performance Assessment}{88}{subsection.5.5.1}%
-\contentsline {subsection}{\numberline {5.5.2}Model Explainability}{91}{subsection.5.5.2}%
-\contentsline {section}{\numberline {5.6}Machine Learning Deployment}{95}{section.5.6}%
-\contentsline {subsection}{\numberline {5.6.1}Final Model Recalibration}{95}{subsection.5.6.1}%
-\contentsline {subsection}{\numberline {5.6.2}Flask and HTML Web Application}{95}{subsection.5.6.2}%
-\contentsline {chapter}{\numberline {6}Hypotheses' Testing}{101}{chapter.6}%
-\contentsline {chapter}{\numberline {7}Conclusion}{102}{chapter.7}%
-\contentsline {chapter}{Bibliography}{103}{chapter.7}%
+\contentsline {chapter}{\numberline {3}Literature Review}{37}{chapter.3}%
+\contentsline {chapter}{\numberline {4}Hypotheses}{38}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Empirical Analysis - Machine Learning Implementation}{39}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Repository and Environment Structure}{41}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Data Exploration}{44}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Dataset Description}{44}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Distribution Analysis}{46}{subsection.5.2.2}%
+\contentsline {subsubsection}{Default Distribution}{46}{section*.37}%
+\contentsline {subsubsection}{Numeric Features' Distribution}{47}{section*.39}%
+\contentsline {subsubsection}{Categorical Features' Distribution}{51}{section*.42}%
+\contentsline {subsection}{\numberline {5.2.3}Association Analysis}{52}{subsection.5.2.3}%
+\contentsline {subsubsection}{Association between default status and numeric features}{52}{section*.44}%
+\contentsline {subsubsection}{Association between default status and categorical features}{54}{section*.46}%
+\contentsline {subsubsection}{Association between default status and missing values}{54}{section*.48}%
+\contentsline {subsubsection}{Missing Values Association}{55}{section*.50}%
+\contentsline {subsubsection}{Multicolinearity Analysis}{56}{section*.52}%
+\contentsline {section}{\numberline {5.3}Data Preprocessing}{58}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Data Split and ADASYN Oversampling}{58}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Optimal Binning and Weight--of--Evidence}{62}{subsection.5.3.2}%
+\contentsline {section}{\numberline {5.4}Modelling}{65}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Hyperparameter Bayesian Optimization}{65}{subsection.5.4.1}%
+\contentsline {subsubsection}{Logistic Regression}{66}{section*.58}%
+\contentsline {subsubsection}{Decision Tree}{68}{section*.60}%
+\contentsline {subsubsection}{Gaussian Naive Bayes}{68}{section*.62}%
+\contentsline {subsubsection}{K--Nearest Neighbors}{68}{section*.64}%
+\contentsline {subsubsection}{Random Forest}{69}{section*.66}%
+\contentsline {subsubsection}{Gradient Boosting}{70}{section*.68}%
+\contentsline {subsubsection}{Support Vector Machine}{71}{section*.70}%
+\contentsline {subsubsection}{Multi--Layer Percepton}{71}{section*.72}%
+\contentsline {subsection}{\numberline {5.4.2}Sequential Feature Selection}{73}{subsection.5.4.2}%
+\contentsline {subsection}{\numberline {5.4.3}Model Selection}{76}{subsection.5.4.3}%
+\contentsline {subsubsection}{Metrics Space}{77}{section*.77}%
+\contentsline {subsubsection}{Model Selection Results}{79}{section*.79}%
+\contentsline {subsection}{\numberline {5.4.4}Model Recalibration}{88}{subsection.5.4.4}%
+\contentsline {section}{\numberline {5.5}Model Evaluation}{89}{section.5.5}%
+\contentsline {subsection}{\numberline {5.5.1}Model's Performance Assessment}{89}{subsection.5.5.1}%
+\contentsline {subsection}{\numberline {5.5.2}Model Explainability}{92}{subsection.5.5.2}%
+\contentsline {section}{\numberline {5.6}Machine Learning Deployment}{96}{section.5.6}%
+\contentsline {subsection}{\numberline {5.6.1}Final Model Recalibration}{96}{subsection.5.6.1}%
+\contentsline {subsection}{\numberline {5.6.2}Flask and HTML Web Application}{96}{subsection.5.6.2}%
+\contentsline {chapter}{\numberline {6}Hypotheses' Testing}{102}{chapter.6}%
+\contentsline {chapter}{\numberline {7}Conclusion}{103}{chapter.7}%
+\contentsline {chapter}{Bibliography}{104}{chapter.7}%
 \contentsline {chapter}{\numberline {A}Title of Appendix A}{I}{appendix.A}%
 \contentsline {chapter}{\numberline {B}Project's website}{II}{appendix.B}%

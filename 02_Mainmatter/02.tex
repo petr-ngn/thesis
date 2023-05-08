@@ -164,6 +164,15 @@ respectively:
 \begin{equation}
     \operatorname{Pr}\left(Y=1 \mid X \right) = \operatorname{Pr}\left(Y=1\right) \times \prod_{i=1}^{n} \operatorname{Pr}\left(X_i \mid Y=1\right)
 \end{equation}
+
+This algorithm works well if the features are categorical.
+However, most of the datasets contain continuous features as well.
+Therefore, we introduce \textbf{Gaussian Naive Bayes} algorithm which is suitable for continuous features. Such algorithm assumes that the features follow Normal (Gaussian) distribution, given the class label \citep{jahromi2017non}.
+Assuming the class event $Y=1$, we can derive probability density function of particular value $x$ of the continuous feature $X$ as:
+\begin{equation}
+    \operatorname{Pr}\left(X = x \mid Y = 1\right) = \frac{1}{\sqrt{2 \pi \sigma_{X \mid Y=1}^{2}}} \exp \left(-\frac{\left(x - \mu_{X \mid Y=1}\right)^{2}}{2 \sigma_{X \mid Y=1}^{2}}\right)
+\end{equation}
+where $\mu_{X \mid Y=1}$ and $\sigma_{X \mid Y=1}$ is the mean and variance of $X$, respectively, given the the class event $Y=1$.
 \subsection{K-Nearest Neighbors}
 \label{subsec:knn-theory}
 
