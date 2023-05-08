@@ -1,4 +1,4 @@
-\begin{thebibliography}{65}
+\begin{thebibliography}{71}
 \newcommand{\enquote}[1]{``#1''}
 \providecommand{\natexlab}[1]{#1}
 
@@ -326,11 +326,53 @@
   \url{https://scikit-learn.org/stable/modules/generated/sklearn.feature_selection.SequentialFeatureSelector.html#sklearn.feature_selection.SequentialFeatureSelector}.
 \newblock Retrieved April 28, 2023.
 
-\bibitem[{{scikit-learn}(2023{\natexlab{b}})}]{scikit-lr}
+\bibitem[{{scikit-learn}(2023{\natexlab{b}})}]{scikit-gb}
 \textsc{{scikit-learn}} (2023{\natexlab{b}}):
-  \enquote{sklearn.linear\_model.logisticregression.}
+  \enquote{sklearn.ensemble.gradientboostingclassifier.}
+\newblock
+  \url{https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingClassifier.html#sklearn.ensemble.GradientBoostingClassifier}.
+\newblock Retrieved April 28, 2023.
+
+\bibitem[{{scikit-learn}(2023{\natexlab{c}})}]{scikit-rf}
+\textsc{{scikit-learn}} (2023{\natexlab{c}}):
+  \enquote{sklearn.ensemble.randomforestclassifier.}
 \newblock
   \url{https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html#sklearn.linear_model.LogisticRegression}.
+\newblock Retrieved April 28, 2023.
+
+\bibitem[{{scikit-learn}(2023{\natexlab{d}})}]{scikit-lr}
+\textsc{{scikit-learn}} (2023{\natexlab{d}}):
+  \enquote{sklearn.linear\_model.logisticregression.}
+\newblock
+  \url{https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html#sklearn.ensemble.RandomForestClassifier}.
+\newblock Retrieved April 28, 2023.
+
+\bibitem[{{scikit-learn}(2023{\natexlab{e}})}]{scikit-gnb}
+\textsc{{scikit-learn}} (2023{\natexlab{e}}):
+  \enquote{sklearn.naive\_bayes.gaussiannb.}
+\newblock
+  \url{https://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.GaussianNB.html#sklearn.naive_bayes.GaussianNB}.
+\newblock Retrieved April 28, 2023.
+
+\bibitem[{{scikit-learn}(2023{\natexlab{f}})}]{scikit-knn}
+\textsc{{scikit-learn}} (2023{\natexlab{f}}):
+  \enquote{sklearn.neighbors.kneighborsclassifier.}
+\newblock
+  \url{https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html#sklearn.neighbors.KNeighborsClassifier}.
+\newblock Retrieved April 28, 2023.
+
+\bibitem[{{scikit-learn}(2023{\natexlab{g}})}]{scikit-mlp}
+\textsc{{scikit-learn}} (2023{\natexlab{g}}):
+  \enquote{sklearn.neural\_network.mlpclassifier.}
+\newblock
+  \url{https://scikit-learn.org/stable/modules/generated/sklearn.neural_network.MLPClassifier.html#sklearn.neural_network.MLPClassifier}.
+\newblock Retrieved April 28, 2023.
+
+\bibitem[{{scikit-learn}(2023{\natexlab{h}})}]{scikit-dt}
+\textsc{{scikit-learn}} (2023{\natexlab{h}}):
+  \enquote{sklearn.tree.decisiontreeclassifier.}
+\newblock
+  \url{https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html#sklearn.tree.DecisionTreeClassifier}.
 \newblock Retrieved April 28, 2023.
 
 \bibitem[{Subasi(2020)}]{subasi2020practical}

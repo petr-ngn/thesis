@@ -55,18 +55,24 @@
 \contentsline {subsubsection}{Python Implementation}{63}{section*.59}%
 \contentsline {subsubsection}{Logistic Regression}{63}{section*.60}%
 \contentsline {subsubsection}{Decision Tree}{65}{section*.62}%
-\contentsline {subsection}{\numberline {5.4.2}Feature Selection}{67}{subsection.5.4.2}%
-\contentsline {subsection}{\numberline {5.4.3}Model Selection}{72}{subsection.5.4.3}%
-\contentsline {subsubsection}{Metrics Space}{73}{section*.73}%
-\contentsline {subsubsection}{Model Selection Results}{75}{section*.75}%
-\contentsline {subsection}{\numberline {5.4.4}Model Recalibration}{84}{subsection.5.4.4}%
-\contentsline {section}{\numberline {5.5}Model Evaluation}{85}{section.5.5}%
-\contentsline {subsection}{\numberline {5.5.1}Model's Performance Assessment}{85}{subsection.5.5.1}%
-\contentsline {subsection}{\numberline {5.5.2}Model Explainability}{88}{subsection.5.5.2}%
-\contentsline {section}{\numberline {5.6}Machine Learning Deployment}{92}{section.5.6}%
-\contentsline {subsection}{\numberline {5.6.1}Final Model Recalibration}{92}{subsection.5.6.1}%
-\contentsline {subsection}{\numberline {5.6.2}Flask and HTML Web Application}{92}{subsection.5.6.2}%
-\contentsline {chapter}{\numberline {6}Conclusion}{98}{chapter.6}%
-\contentsline {chapter}{Bibliography}{104}{chapter*.93}%
+\contentsline {subsubsection}{Gaussian Naive Bayes}{65}{section*.64}%
+\contentsline {subsubsection}{K--Nearest Neighbors}{66}{section*.66}%
+\contentsline {subsubsection}{Random Forest}{66}{section*.68}%
+\contentsline {subsubsection}{Gradient Boosting}{67}{section*.70}%
+\contentsline {subsubsection}{Support Vector Machine}{68}{section*.72}%
+\contentsline {subsubsection}{Multi--Layer Percepton}{68}{section*.74}%
+\contentsline {subsection}{\numberline {5.4.2}Feature Selection}{69}{subsection.5.4.2}%
+\contentsline {subsection}{\numberline {5.4.3}Model Selection}{74}{subsection.5.4.3}%
+\contentsline {subsubsection}{Metrics Space}{75}{section*.79}%
+\contentsline {subsubsection}{Model Selection Results}{77}{section*.81}%
+\contentsline {subsection}{\numberline {5.4.4}Model Recalibration}{86}{subsection.5.4.4}%
+\contentsline {section}{\numberline {5.5}Model Evaluation}{87}{section.5.5}%
+\contentsline {subsection}{\numberline {5.5.1}Model's Performance Assessment}{87}{subsection.5.5.1}%
+\contentsline {subsection}{\numberline {5.5.2}Model Explainability}{90}{subsection.5.5.2}%
+\contentsline {section}{\numberline {5.6}Machine Learning Deployment}{94}{section.5.6}%
+\contentsline {subsection}{\numberline {5.6.1}Final Model Recalibration}{94}{subsection.5.6.1}%
+\contentsline {subsection}{\numberline {5.6.2}Flask and HTML Web Application}{94}{subsection.5.6.2}%
+\contentsline {chapter}{\numberline {6}Conclusion}{100}{chapter.6}%
+\contentsline {chapter}{Bibliography}{107}{chapter*.99}%
 \contentsline {chapter}{\numberline {A}Title of Appendix A}{I}{appendix.A}%
 \contentsline {chapter}{\numberline {B}Project's website}{II}{appendix.B}%
