@@ -542,8 +542,8 @@ In this section, the process of preprocessing data is described as the crucial s
 \subsection{Data Split and ADASYN Oversampling}
 \label{subsec:data-split-ADASYN}
 
-To ensure appropriate model training and unbiased evaluation, it is necessary to split data into separate sets for various purposes. Specifically, the dataset is split into three sets: (1) training est for training the model, perform feature selection or hyperparameter tuning, (2) validation for hyperparameter tuning, and (3) test set for assess the model performance on the unseen data \citep{subasi2020practical}.
-In this thesis, the data is plit into training, validation and test sets in ratio of 70:!5:15, which ensures sufficient amount of data for training, hence the model would be able to generalize well, while keeping the validation and test sets large enough to provide reliable evaluation of the model's performance.
+To ensure appropriate model training and unbiased evaluation, it is necessary to split data into separate sets for various purposes. Specifically, the dataset is split into three sets: (1) training set for training the model, perform feature selection or hyperparameter tuning, (2) validation for hyperparameter tuning, and (3) test set for assess the model performance on the unseen data \citep{subasi2020practical}.
+In this thesis, the data is plit into training, validation and test sets in ratio of 70:15:15, which ensures sufficient amount of data for training, hence the model would be able to generalize well, while keeping the validation and test sets large enough to provide reliable evaluation of the model's performance.
 
 The data is split using stratified split to preserve the default status distribution, which is highly imbalanced.
 Stratification ensures that the distribution of defaults and non-defaults remains the same across all sets, thereby avoiding overfitting and data leakage. Using stratification, each set had 80 \% non-defaults and 20 \% defaults. This method enables accurate prediction since the model is trained and evaluated on the same population \citep{igareta2021strat}.
@@ -921,9 +921,11 @@ Criterion & MSE, Friedman MSE \\
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{table}
 
-Likewise Logistic Regression, SVM also allows to tune the \textbf{\texttt{C}} hyperparameter which is the penalty parameter of the error term, i.e., the misclassification or error term, as well as the \textbf{\texttt{Kernel}} hyperparameter which specifies the kernel type to be used in the algorithm.
-
 \subsubsection{Support Vector Machine}
+Likewise Logistic Regression, SVM also allows to tune the \textbf{\texttt{C}} hyperparameter for the regularization, as well as the \textbf{\texttt{Kernel}} hyperparameter which specifies the kernel type to be used in the algorithm in order to map the data into higher dimensional space in order to find the optimal hyperplane which separates the classes.
+If the kernel is $d$-degree polynomial, we can also tune the \textbf{\texttt{Degree}} hyperparameter which specifies the degree of the polynomial kernel function.
+SVM also has the \textbf{\texttt{Class weight}} hyperparameter which assigns the weights to the input data based on the class frequencies in order to balance the classes.
+
 
 \begin{table}[H]
 \small
@@ -939,7 +941,6 @@ Likewise Logistic Regression, SVM also allows to tune the \textbf{\texttt{C}} hy
 C factor & <$1\times 10^{-6}$, 5> \\
 Kernel & Linear, Poly, RBF, Sigmoid \\
 Degree & <1, 10> \\
-Decision function shape & OVR, OVO \\
 Class weight & balanced, None \\
 \hline
 \bottomrule
@@ -980,6 +981,7 @@ Learning rate & Constant, Adaptive, Invscaling \\
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{table}
 
+\newpage
 \subsection{Sequential Feature Selection}
 \label{subsec:feature-selection}
 

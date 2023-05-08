@@ -63,7 +63,7 @@
 \contentsline {subsubsection}{Gradient Boosting}{69}{section*.68}%
 \contentsline {subsubsection}{Support Vector Machine}{70}{section*.70}%
 \contentsline {subsubsection}{Multi--Layer Percepton}{70}{section*.72}%
-\contentsline {subsection}{\numberline {5.4.2}Sequential Feature Selection}{71}{subsection.5.4.2}%
+\contentsline {subsection}{\numberline {5.4.2}Sequential Feature Selection}{72}{subsection.5.4.2}%
 \contentsline {subsection}{\numberline {5.4.3}Model Selection}{75}{subsection.5.4.3}%
 \contentsline {subsubsection}{Metrics Space}{76}{section*.77}%
 \contentsline {subsubsection}{Model Selection Results}{78}{section*.79}%
@@ -75,6 +75,6 @@
 \contentsline {subsection}{\numberline {5.6.1}Final Model Recalibration}{95}{subsection.5.6.1}%
 \contentsline {subsection}{\numberline {5.6.2}Flask and HTML Web Application}{95}{subsection.5.6.2}%
 \contentsline {chapter}{\numberline {6}Conclusion}{101}{chapter.6}%
-\contentsline {chapter}{Bibliography}{108}{chapter*.97}%
+\contentsline {chapter}{Bibliography}{102}{chapter.6}%
 \contentsline {chapter}{\numberline {A}Title of Appendix A}{I}{appendix.A}%
 \contentsline {chapter}{\numberline {B}Project's website}{II}{appendix.B}%
