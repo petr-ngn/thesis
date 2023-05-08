@@ -1,4 +1,4 @@
-\begin{thebibliography}{71}
+\begin{thebibliography}{74}
 \newcommand{\enquote}[1]{``#1''}
 \providecommand{\natexlab}[1]{#1}
 
@@ -18,6 +18,13 @@
 \bibitem[{Ayyadevara(2018)}]{ayyadevara2018pro}
 \textsc{Ayyadevara}, V.~K. (2018): \enquote{Pro machine learning algorithms.}
 \newblock \emph{Apress: Berkeley, CA, USA} .
+
+\bibitem[{Baesens \emph{et~al.}(2016)Baesens, Roesch, \&
+  Scheule}]{baesens2016credit}
+\textsc{Baesens}, B., D.~\textsc{Roesch}, \& H.~\textsc{Scheule} (2016):
+  \emph{Credit risk analytics: Measurement techniques, applications, and
+  examples in SAS}.
+\newblock John Wiley \& Sons.
 
 \bibitem[{Bera \emph{et~al.}(2021)Bera, Pratap, \&
   Verma}]{bera2021dimensionality}
@@ -305,6 +312,12 @@
 \newblock Medium.
 \newblock Retrieved May 1, 2023.
 
+\bibitem[{Prati \emph{et~al.}(2009)Prati, Batista, \& Monard}]{prati2009data}
+\textsc{Prati}, R.~C., G.~E. \textsc{Batista}, \& M.~C. \textsc{Monard} (2009):
+  \enquote{Data mining with imbalanced class distributions: concepts and
+  methods.}
+\newblock In \enquote{IICAI,} pp. 359--376.
+
 \bibitem[{Provost \& Fawcett(2013)}]{provost2013data}
 \textsc{Provost}, F. \& T.~\textsc{Fawcett} (2013): \emph{Data Science for
   Business: What you need to know about data mining and data-analytic
@@ -340,39 +353,45 @@
   \url{https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html#sklearn.linear_model.LogisticRegression}.
 \newblock Retrieved April 28, 2023.
 
-\bibitem[{{scikit-learn}(2023{\natexlab{d}})}]{scikit-lr}
+\bibitem[{{scikit-learn}(2023{\natexlab{d}})}]{scikit-gnb}
 \textsc{{scikit-learn}} (2023{\natexlab{d}}):
-  \enquote{sklearn.linear\_model.logisticregression.}
-\newblock
-  \url{https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html#sklearn.ensemble.RandomForestClassifier}.
-\newblock Retrieved April 28, 2023.
-
-\bibitem[{{scikit-learn}(2023{\natexlab{e}})}]{scikit-gnb}
-\textsc{{scikit-learn}} (2023{\natexlab{e}}):
   \enquote{sklearn.naive\_bayes.gaussiannb.}
 \newblock
   \url{https://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.GaussianNB.html#sklearn.naive_bayes.GaussianNB}.
 \newblock Retrieved April 28, 2023.
 
-\bibitem[{{scikit-learn}(2023{\natexlab{f}})}]{scikit-knn}
-\textsc{{scikit-learn}} (2023{\natexlab{f}}):
+\bibitem[{{scikit-learn}(2023{\natexlab{e}})}]{scikit-knn}
+\textsc{{scikit-learn}} (2023{\natexlab{e}}):
   \enquote{sklearn.neighbors.kneighborsclassifier.}
 \newblock
   \url{https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html#sklearn.neighbors.KNeighborsClassifier}.
 \newblock Retrieved April 28, 2023.
 
-\bibitem[{{scikit-learn}(2023{\natexlab{g}})}]{scikit-mlp}
-\textsc{{scikit-learn}} (2023{\natexlab{g}}):
+\bibitem[{{scikit-learn}(2023{\natexlab{f}})}]{scikit-mlp}
+\textsc{{scikit-learn}} (2023{\natexlab{f}}):
   \enquote{sklearn.neural\_network.mlpclassifier.}
 \newblock
   \url{https://scikit-learn.org/stable/modules/generated/sklearn.neural_network.MLPClassifier.html#sklearn.neural_network.MLPClassifier}.
 \newblock Retrieved April 28, 2023.
 
-\bibitem[{{scikit-learn}(2023{\natexlab{h}})}]{scikit-dt}
-\textsc{{scikit-learn}} (2023{\natexlab{h}}):
+\bibitem[{{scikit-learn}(2023{\natexlab{g}})}]{scikit-dt}
+\textsc{{scikit-learn}} (2023{\natexlab{g}}):
   \enquote{sklearn.tree.decisiontreeclassifier.}
 \newblock
   \url{https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html#sklearn.tree.DecisionTreeClassifier}.
+\newblock Retrieved April 28, 2023.
+
+\bibitem[{{scikit-learn}(2023{\natexlab{h}})}]{scikit-opt}
+\textsc{{scikit-learn}} (2023{\natexlab{h}}): \enquote{skopt.bayessearchcv.}
+\newblock
+  \url{https://scikit-optimize.github.io/stable/modules/generated/skopt.BayesSearchCV.html#}.
+\newblock Retrieved April 28, 2023.
+
+\bibitem[{{scikit-optimize}(2023)}]{scikit-lr}
+\textsc{{scikit-optimize}} (2023):
+  \enquote{sklearn.linear\_model.logisticregression.}
+\newblock
+  \url{https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html#sklearn.ensemble.RandomForestClassifier}.
 \newblock Retrieved April 28, 2023.
 
 \bibitem[{Subasi(2020)}]{subasi2020practical}

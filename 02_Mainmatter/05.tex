@@ -123,7 +123,7 @@ Some \lstinline{Scikit-learn} or \lstinline{Scikit-optimize} objects have option
 This section is focused on exploration of the analyzed loan dataset, particularly on dataset description, distribution analysis and association analysis, in order to infer potential valuable insights and hypotheses which can be used in the preprocessing or modelling part.
 
 \subsection{Dataset Description}
-The analyzed dataset pertains to the HMEQ dataset which contains loan application information and default status of 5,960 US home equity loans. Such dataset was acquired from Credit Risk Analytics platform. Since this dataset regards the loan application scoring data, using macroeconomic or other external data is omitted due to the dataset characteristics as well as modelling with behavioral scoring.
+The analyzed dataset pertains to the HMEQ dataset which contains loan application information and default status of 5,960 US home equity loans. Such dataset was acquired from Credit Risk Analytics website\footnote{\url{http://www.creditriskanalytics.net/datasets-private2.html}} \citep{baesens2016credit}. Since this dataset regards the loan application scoring data, using macroeconomic or other external data is omitted due to the dataset characteristics as well as modelling with behavioral scoring.
 Thus our goal is to predict whether the loan applicant will or would default based on provided information from the loan application.
 
 As can be seen in \autoref{tab:dataset}, the dataset contains 13 columns, 12 features and 1 target variable \texttt{BAD} indicating whether the loan was in default (\texttt{1}) or not (\texttt{0}). 
@@ -170,7 +170,7 @@ DEBTINC & Debt-to-income ratio & numeric \\
 \end{tabular}
 \end{center}
 \begin{center} % Center the source
-\source{\url{http://www.creditriskanalytics.net/datasets-private2.html}}
+\source{\citep{baesens2016credit}}
 \end{center}
 \end{table}
 
@@ -509,7 +509,7 @@ Therefore, it can be inferred that a significant number of loan applicants tend 
     \centering
     \caption{Nullity dendrogram}\vspace{0.5em}
     \label{fig:dendrogram}
-    \includegraphics[width=150mm]{Figures/NA_Dendrogram.jpg}
+    \includegraphics[width=140mm]{Figures/NA_Dendrogram.jpg}
     \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
 
@@ -545,58 +545,9 @@ In this section, the process of preprocessing data is described as the crucial s
 To ensure appropriate model training and unbiased evaluation, it is necessary to split data into separate sets for various purposes. Specifically, the dataset is split into three sets: (1) training est for training the model, perform feature selection or hyperparameter tuning, (2) validation for hyperparameter tuning, and (3) test set for assess the model performance on the unseen data \citep{subasi2020practical}.
 In this thesis, the data is plit into training, validation and test sets in ratio of 70:!5:15, which ensures sufficient amount of data for training, hence the model would be able to generalize well, while keeping the validation and test sets large enough to provide reliable evaluation of the model's performance.
 
-The data is split using stratified split to preserve the default status distribution, which was highly imbalanced.
+The data is split using stratified split to preserve the default status distribution, which is highly imbalanced.
 Stratification ensures that the distribution of defaults and non-defaults remains the same across all sets, thereby avoiding overfitting and data leakage. Using stratification, each set had 80 \% non-defaults and 20 \% defaults. This method enables accurate prediction since the model is trained and evaluated on the same population \citep{igareta2021strat}.
-
-\subsubsection{ADASYN Oversampling}
-
-However, stratification alone may not be sufficient for dealing with imbalanced classes. One would use random undersampling or random oversampling to deal with the class imbalanced issue. The former randomly eliminates majority class instances whereas the latter randomly duplicates minority class instances.
-However, both have particular drawbacks, as the random under-sampling may lead to a a significant loss of information, and random oversampling is lead to the high degree of repetation of minority instances. Both then could lead to model's overfitting and detoriation in model's performance \citep{ma2013imbalanced}.
-This might be a significant issue when the target variable distribution is heavily imbalanced - assume that we have a dataset of 1,000 instances where 990 instances belongs to majority class and 10 instances to minority class.
-If we perform random undersampling in order to balance the target variable distribution, we would have to remove 980 instances and end up with undersampled dataset of 20 instances, which is not acceptable for model training.
-On the other hand, if we perform random oversampling, we would end up with 1,980 instances, where 980 instances would be the same as in the original dataset, which would lead to the model's overfitting.
-
-Therefore, the Adaptive Synthetic Sampling (henceforth ADASYN) technique is used for oversampling the minority class.
-ADASYN generates synthetic instances of the minority class based on the nearest neighbors of the minority class instances.
-Such approach is more effective than Synthetic Minority Oversampling Technique (henceforth SMOTE) which also uses nearest neighbors to generate synthetic instances of minority class, as it generates more synthetic instances which are hard--to--learn by K-Nearest Neighbors given the density distributtions, whereby SMOTE generates synthetic instances uniformly for each minority instance.
- \citep{adasynhaibo}. 
-In other words, ADASYN generates more synthetic instances in regions where the density of the majority class within $K$ nearest neighbors of minority instance is higher and fewer synthetic instances in regions where the density is lower, thereby ADASYN focuses on generating more hard--to--learn minority instances.
-Thereby, it makes easier for the machine learning model to learn the decision boundary between the minority and majority classes and boost the model's performance by focusing on hard--to--learn instances \citep{adasynhaibo}. 
-The oversampling is performed on the training set only after the split to avoid data leakage and biased evaluation.
-
-Before oversampling algorithm's execution, first we need to calculate the number of instances of minority class to be synthetically generated in order to balance the target variable distribution. The number of instances to be generated $G$ is calculated as follows:
-\begin{equation}\label{eq}
-    G = \left(m_{l} - m_{s}\right) \times \beta
-\end{equation}
-where $m_l$ is the number of majority class instances, $m_s$ is the number of minority class instances and $\beta$ indicates the desired ratio between the numbers of majority and minority class instances after oversampling.
-
-Then for each minority class instance $x_i$, using K-nearest Neighbors with Euclidean distance calculate the ratio $r_i$ as:
-\begin{equation}\label{eq}
-   r_{i} = \frac{\delta_{i}} {K}
-\end{equation}
-where $\delta_{i}$ is the number of majority class instances within the $K$ nearest neighbors of $x_i$.
-In such case, higher $r_i$ indicates dominance of the majority class in given specific neighborhood of $x_i$ \citep{nian2018introduction}.
-Subsequently, all the $r_i$ ratios are normalized as:
-\begin{equation}\label{eq}
-    \hat{r}_{i} = \frac{r{i}}{\displaystyle\sum_{i=1}^{m_{s}} r_{i}}
-\end{equation}
-In such way that sum of all the normalized $\hat{r}_i$ ratios is equal to 1. Hence, we can denote $\hat{r}_i$ as the density distribution.
-\begin{equation}\label{eq}
-    \sum_{i=1}^{m_{s}} \hat{r}_{i} = 1
-\end{equation}
-
-Finally, the oversampling process is initialized.
-For each minority class instance $x_i$, calculate the number of instances to be synthetically generated based on the respective density distribution $\hat{r}_i$ and the total number of instances to be synthetically generated $G$. Thus, for the minority classes with higher density, it generates more synthetic instances, since those instances are hard--to--classify by the K-Nearest Neighbors.
-\begin{equation}\label{eq}
-    G_i = G \times \hat{r}_{i}
-\end{equation}
-Further, for each minority class instance $x$, generate $G_i$ synthetic instances $s_i$ as follows:
-\begin{equation}\label{eq}
-    s_i = x_i + \left(x_{zi} - x_{i} \right) \times \lambda
-\end{equation}
-where $x_{zi}$ represents the radnomly chosen minority class instance within the $K$ nearest neares neighbors for $x_i$, and $\lambda \in \left[0,1\right]$ is a random number.
-
-
+However, stratification alone may not be sufficient for dealing with imbalanced classes. Therefore, ADASYN oversampling is performed as described in \autoref{sec:adasyntheory}. Note that ADASYN oversampling is performed on the training set only after the split to avoid data leakage and biased evaluation.
 
 In Python, the data are divided and oversampled using a custom function \lstinline{data_split()}.
 This function first employs the \lstinline{train_test_split()} function from the \lstinline{scikit-learn} module to split the data into training, validation, and test sets with a stratification technique.
@@ -704,46 +655,17 @@ Therefore, default instances which either are managers or applied for a loan due
 \end{figure}
 
 
+
+\newpage
 \subsection{Optimal Binning and Weight--of--Evidence}
 \label{subsec:prep-optbinning}
+As already described in autoref{sec:optbinningtheory}, the optimal binning is employed as a data preprocessing step in this thesis.
+Particularly, we employ \lstinline{BinningProcess} class from the \lstinline{optbinning} module in Python - such class optimally discretizes the continuous features into interval bins and optimally groups categorical features' categories into sub-group categories with respect to the target variable while maximizing Information Value, and afterwards such bins are encoded using WoE \citep{navas2020optimal}. Besides discretizing and grouping, it also creates special bins for capturing missing values.
 
-In the context of data preprocessing, it is crucial to consider the most appropriate feature transformation method that optimizes the performance of machine learning models.
-Although common approaches such as dummy encoding, standardization, logarithmic transformation, and normalization are widely used, they may not always be suitable for a given dataset due to the presence of certain characteristics.
-For instance, dummy encoding (also known as one--hot encoding) may not be suitable for categorical features with a large number of categories as it could lead to the curse of dimensionality, therefore, it may result in the decrease of model's performance \citep{bera2021dimensionality}.
-Standardization may not be appropriate for features with a large number of outliers as it may result in a loss of information.
-Similarly, logarithmic transformation may not be appropriate for features with a large number of zeros, and normalization may not be suitable for features with a significant number of outliers.
 
-Therefore, alternative approaches such as discretization or binning are increasingly being used. Binning is a categorization process to transform a continuous variable into a small set of groups or bins \citep{zeng2014necessary}. This approach enables the identification of outliers within bins and reduce their impact, and additionally, it can capture missing values without requiring the removal or imputation of such values.
-As a result, binning is a more flexible and versatile feature transformation method that can effectively handle different types of datasets and is particularly useful in cases where other methods may not be appropriate.
+In this thesis, this data preprocessing step is wrapped into a custom function \lstinline{woe_binning()} in Python.
+First, the  \lstinline{BinningProcess} class is fitted on the training set only in order to avoid data leakage, while it learns the split points for binning, event rates, WoE coefficients etc, and afterwards, such fitted  \lstinline{BinningProcess} class is used to transform training, validation and test set.
 
-In this thesis, we employ the \lstinline{BinningProcess} from the \lstinline{optbinning} module in Python for an optimal binning of both numeric and categorical features with respect to the target variable, developed by Guillermo Navas--Palencia \citep{navas2020optimal}. 
-This approach involves grouping the values of a continuous variable into discrete intervals, or "bins", based on their relationship with the target variable.
-Similarly, for categorical features, the approach involves grouping the categories based on their relationship with the target variable.
-In general, the optimal binning is solved by iteratively merging an initial granular discretization until imposed constraints are satisfied. Particularly, the optimal binning process consists of two phases - pre--binning process (for generating initial granular discretization) and subsequent optimization (for satisfying imposed constraints).
-The former phase usually uses decision tree to generate initial split points to create pre--bins which are further merged while maximizing Information Value (also known as Jeffreys' divergence) while accounting for the constraints. \citep{navas2020optimal} Such constraints are:
-\begin{itemize}\setlength\itemsep{0em} 
-    \item Creation of separate bins for missing values: Since missing values can have a significant impact on the target variable, hence is important to create a separate bin for them.
-    \item Minimum bin size constraint - at least 5 \% of the total number of instances: Such constraint ensures a bin's representativness.
-    \item Each bin should have at least one instance of each target class: Application of such constraint allows to compute divergence measure.
-\end{itemize}
-Thus, the optimal binning process, the goal is the maximize discriminatory power among bins, i.e., divergence measure.
-For more information about optimal binning, please refer to \citep{navas2020optimal}.
-
-After the binning process, the bins as categorical values needed to be encoded into numeric values. The most common approach in credit risk modelling is Weight--of--Evidence (henceforth WoE) encoding. The WoE is a commonly used measure of the strength of association between a binary target variable and an independent variable.
-According to Witzany \citep{witzany2017credit}, the WoE of categorical value $c$ can be expressed as the change between the overal log odds ratio and the log odds ratio given the value $c$, hence:
-\begin{equation}\label{eq}
-    WoE\left(c\right) = \ln\left(\operatorname{Pr}\left(c \mid Y = 0 \right) \right) - \ln\left(\operatorname{Pr}\left(c \mid Y = 1 \right) \right)
-\end{equation}
-Assuming feature $X$ and its respective bin $b_i$, thus $b_i \in X$, we can express WoE in terms of $b$ as follows:
-\begin{equation}\label{eq}
-    WoE_{X, b}= \ln \left(\frac{\Pr{\left(X = b\;\middle|\;Y = 0\right)}}{\Pr{\left(X = b\;\middle|\;Y = 1\right)}}\right)
-\end{equation}
-According to Navas--Palencia \citep{navas2020optimal}, the WoE for bin $i$ can be also computed as:
-\begin{equation}\label{eq}
-    WoE_{i} = \ln \left( \frac{r^{ND}_i / r^{ND}_T} {r^{D}_i / r^{D}_T}  \right)
-\end{equation}
-where $r^{ND}_i$ is the number of non--default instances in given bin $i$, $r^{D}_i$ is the number of default instances in the given bin $i$, $r^{ND}_T$ is the total number of non--default instances in whole sample and $r^{D}_T$ is the total number of default instances in whole sample.
-Thus, positive WoE value is indicates larger distribution of non--defaults, i.e. higher likelihood of non--default, while negative WoE value indicates larger distribution of defaults, i.e., higher likelihood of default. 
 
 The following \autoref{fig:woedist} depicts the distribution of WoE bins for each feature. It can be observed that binning captures either linear, non-linear, monotonic, or non-monotonic relationships between the default status and the numeric features in terms of WoE.
 Regarding the \texttt{DELINQ} feature, a monotonic relationship can be observed, where the higher number of delinquent credit lines, the lower the WoE coefficient, indicating a larger distribution of defaults with respect to non-defaults in the given bin.
@@ -755,12 +677,11 @@ Regarding applicants who have recently started working at their new job, it is p
 Thus, in the given dataset, applicants who have recently started working at their new job have a relatively higher total number of years of work experience, making them more creditworthy and less likely to default. On the other hand, for applicants who have been working at their present job between 1 and 19 years, the WoE coefficient is negative.
 This relationship seems to be complex and can be influenced by other factors not present in the dataset, such as the applicant's age, total number of years of work experience, education, etc.
 
-Both numeric and categorical features contain a separate bin capturing missing values, which can be a useful indicator when training a model. This is evident in the \texttt{DEBTINC} feature, where the bin capturing missing values has the most negative WoE coefficient, indicating that there is a larger distribution of defaulters compared to non-defaulters.
+As already mentioned numeric and categorical features contain a separate bin capturing missing values, which can be a useful indicator when training a model. This is evident in the \texttt{DEBTINC} feature, where the bin capturing missing values has the most negative WoE coefficient, indicating that there is a larger distribution of defaulters compared to non-defaulters.
 This finding was already raised in \autoref{subsubsec:target-na-ass} in terms of the strong and statistically significant association between the default status and the missing values in \texttt{DEBTINC}.
 
 Within the \texttt{JOB} feature, specifically regarding the \texttt{Mgr} category, we can observe the direct impact of ADASYN oversampling as already described by \autoref{tab:adasynimpact}.
 Since ADASYN generated more default class instances for original default instances who are managers, this results in higher default rate within such job category, thus to the larger distribution of defaulters compared to non--defaulters, which is quantified in the negative WoE value.
-
 
 \textbf{QUESTION FOR SUPERVISOR: should I also decsribe the WoE distribution for other features as well or is this sufficient?}
 
@@ -790,58 +711,16 @@ In Python, 8 different machine learning models from \lstinline{Scikit-learn} mod
 \end{itemize}
 
 \subsection{Hyperparameter Bayesian Optimization}
-
-Most of the machine learning models are configured by a set of hyperparameters which are not learned during the training process but need to be set beforehand. Such hyperparameters' values must be carefully chosen and considerably impact model's performance \citep{bischl2023hyperparameter}.
-It is needed to point that the difference between parameter and hyperparameter - while paramater value is learnt during the training process from the data, on the other hand, hyperparameter value is set before the training process and cannot be learnt from the data \citep{owen2022hyperparameter}. In case of logistic regression, the parameters are estimated coefficients and intercept, while the hyperparameters are for instance regularization parameter, optimization solver etc.
-
-Thus, it is recommended to select optimal hyperparameter values instead of relying on default hyperparameters.
-Nonetheless, selecting optimal hyperparameter values can be very challenging, especially when there are many hyperparameters to tune.
-Fortunately, in machine learning practice already exist several methods how to choose the best hyperparameters' values. The most common ones are Grid Search and Random Search.
-The former approach tries all the possible combinations of hyperparameters' values from predetermined hyperparameter space, which can be very computationally expensive, when the number of hyperparameters is large \citep{marinov2019hyperparameter}, when the space of hyperparameter's values is too wide or when the dataset is too large.
-Regarding the latter approach, instead of trying al the possible combinations from the grid, it randomly selects samples of hyperparameters combinations. Although such approach can be less computationally expensive, it does not guarantee to find the global optimum.
-Another issue pertaining to both approach is that they do not consider any information from previous iterations and rather check all possible hyperparameter combinations or randomly select hyperparameter combinations, respectively.
-
-The compromise for such drawbacks is hyperparameter tuning with Bayesian Optimization, which is able to find the best hyperparameters' values in less time and with less computational resources than Grid Search and also, it leads to better model's performance than Random Search despite the longer optimization time \citep{drahokoupil2022application}.
-Bayesian Optimization is a hyperparameter tuning method which uses infromation from previous iterations in order to make more informed decsion about which hyperparameters' values to try next.
-The main property of hyperparameter tuning is the objective function which we want to optimize (i.e., maximize or minimize in case of a score and loss, respectively), which input is the hyperparameters' values and the output is the score or loss. However, the objective function is not known beforehand and is very computionally expensive to evaluate.
-
-
-Therefore, Bayesian Optimization uses a surrogate function which is the approximation and probability representation of the objective function. The most common surrogate function is the Gaussian Process (henceforth GP) which is able to produce accurate approximations as well as the uncertainty around the approximations \citep{wang2020bayesian}.
-According to Owen \citep{owen2022hyperparameter}, GP is utilized as the prior for the objective function along the posterior, which we want to update while.
-In other words, the prior captures the initial belief about the objective function, while the posterior is the updated distribution combining the prior belief and the observed evaluations of the objective function, i.e., it reflects the current belief about the objective function, hence the relation between the hyperparameters' values and the score or loss.
-GP is the generalization of the normal distribution and describes the distribution over functions (not the distribution of a random variable), hence the objective function $f$ follows a normal distribution with noise as:
-\begin{equation}\label{eq}
-    y = f\left(x\right) + \epsilon
-\end{equation}
-Let us nedote, set $f_{1:n} = \{ f\left(x_1\right), f\left(x_2\right), \ldots, f\left(x_n\right)\}$ as a set of $n$ observations of the objective function, where $m\left(x_{1:n}\right)$ is the mean function and $K$ is the covariance kernel. Hence, such set follows normal distribution as well:
-\begin{equation}\label{eq}
-    f_{1:n} \sim N\left(m\left(x_{i:n}\right), K\right)
-\end{equation}
-Henceforht, the distribution of prediction generated by GP also follows normal distribution as:
-\begin{equation}\label{eq}
-    p\left(y \mid x, D\right) \mid N\left(y \mid \mu^{*}, \sigma^{*2}\right)
-\end{equation}
-where $\mu^{*}$ and $\sigma^{*2}$ can by analytically derived from the $K$ kernel, and $D$ represents observed data regarding the previously evaluated iterions of hyperparameters' values.
-
-Furthermore, Bayesian Optimization also employs acquisition function which accounts for which set of hyperparameters should be used in the next iteration \citep{owen2022hyperparameter}. Particularly, the next hyperparameters' set is chosen based on the location where the acquisition function is maximized.
-The most common acquisition function is the Expected Improvement (henceforth EI), which is according to Owen \citep{owen2022hyperparameter} defined as follows assuming that $ \sigma\left(x\right) \neq 0$:
-\begin{equation}\label{eq}
-    EI(x) = \left(\mu\left(x\right) - f\left(x^{+}\right)\right) \times \Phi\left(Z\right) + \sigma\left(x\right) \times \phi\left(Z\right)
-\end{equation}
-where $\sigma\left(x\right)$ is the uncertainty, $\mu\left(x\right)$ is the expected performance which are both captured by surrogate model. $f\left(x^{+}\right)$ indicates the current best value of the objective function, $\Phi\left(Z\right)$ and $\phi\left(Z\right)$ are the cumulative distribution function and probability density function of the standard normal distribution, respectively.
-Moreover, EI allows to balance between exploration and exploitation, where the former refers to the searching for the uknown regions where the objective function may have higher values, i.e, the hyperparameters' values which have not been evaluated yet, while the latter refers to the searching near the best observed values of the objective function, i.e.,near by the hyperparameters' values which have been evaluated already.
-Referring to Owen \citep{owen2022hyperparameter}, higher expected performance $\mu\left(x\right)$ compared to the current best value $f\left(x^{+}\right)$ will favor the exploitation process, whereby a very high uncertainty $\sigma\left(x\right)$ will support exploration process.
-
-\subsubsection{Python Implementation}
-
+In this thesis, hyperparameter tuning of models is performed using Bayesian Optimization as described in \autoref{sec:bayesoptheory}.
 In Python, a custom function, \lstinline{bayesian_optimization()}, is implemented to perform hyperparameter tuning using Bayesian Optimization.
-This function utilizes \lstinline{BayesSearchCV} class from the \lstinline{Scikit-optimize} module, with a 10-fold stratified cross-validation scheme and 50 iterations, while maximizing the F1 score.
-For each model, the Bayesian Optimization algorithm performs 50 iterations, searching for the best hyperparameters values that maximize the F1 score. Within each iteration, a 10-fold stratified cross-validation is conducted to evaluate the model's F1 score.
-
+This function utilizes \lstinline{BayesSearchCV} class from the \lstinline{Scikit-optimize} module, with a 10-fold stratified cross-validation scheme and 50 iterations, while maximizing the F1 score. As a surrogate function, Gaussian Process is used \citep{scikit-opt}.
 The use of \lstinline{BayesSearchCV} with stratified cross-validation in the hyperparameter tuning process provides a robust and reliable approach to selecting the optimal hyperparameters for the model, while the incorporation of Bayesian Optimization enables the efficient exploration of the hyperparameter space.
-By maximizing the F1 score, the hyperparameters selected through this process will result in a model with improved performance.
+By maximizing the F1 score, the hyperparameters selected through this process will result in a model with improved performance. Note, that the hyperparameter tuning is performed solely on training set in order to preserve the independence of the validation and test set, and avoid the information/data leakage as well.
 
-
+For each model, the Bayesian Optimization algorithm performs 50 iterations while searching for the best hyperparameters values that maximize the F1 score. Within each iteration, a 10-fold stratified cross-validation is conducted to evaluate the model's cross--validation F1 score.
+Moreover, for each model, we specify the hyperparameter space, i.e., particular hyperparameters to be tuned and their possible ranges which the hyperparameter can take. The ranges are specified using \lstinline{Integer} class to define interval of integers, \lstinline{Real} to define interval of float numbers, and \lstinline{Categorical} to define a list of possible (categorical) values.
+Note that not all the available hyperparameters are tuned, but only the most relevants due to the time complexity of the Bayesian Optimization algorithm.
+The definition of hyperparameter space for each model is described further in the following subsubsections.
 
 \subsubsection{Logistic Regression}
 The first hyperparameter \textbf{\texttt{Intercept}} allows to specify whether the intercept should be estimated or not.
@@ -1101,25 +980,10 @@ Learning rate & Constant, Adaptive, Invscaling \\
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{table}
 
-\subsection{Feature Selection}
+\subsection{Sequential Feature Selection}
 \label{subsec:feature-selection}
 
-In subsection, the process of selecting optimal features is described. Such process is called feature selection and can be defined as the process of detecting the most relevant features and discarding the noisy redundant ones. Instead of using all the features in dataset, we use only the subset of the most relevant ones, which can further reduce the dimensionality of dataset, boost model performance, save computational resources and reduce overfitting \citep{bolon2015feature}.
-
-With respect to the target variable, we distinguish 2 most common types of feature selection approaches: (1) filter methods and (2) warapper methods.
-Using the former approach, the feature selection is independent on a machine learning model itself, but rather is performed using univariate statistical tests, such as correlation measures, Chi--square test, Fisher score and others \citep{kaushik2016introduction}, and chooses those ones with the highest or lowest values.
-This approach is used when we prefer lower computational cost and faster feature selection process, but since it does no take into account the model itself, it does not have to able to select the features which would be optimal for particular model.
-Regarding the latter approach, the feature selection is based on a specific machine learning model and follows a greedy search approach by evaluating all the possible combinations of features against the evaluation metric criteria \citep{Verma2020}. Although, such approach is very computationally expensive, it is able to select the optimal features for a particular model.
-
-The most common wrapper method for feature selection is Recursive Feature Elimination (henceforth RFE). Such method takes a machine learning model as an base estimator, fit the model on whole set of features, computes and ranks their coefficients or feature importances, eliminates the least important features and repeats the process until the desired number of features is reached \citep{Brownlee2020} or until the stop criteria is met.
-However, the drawback of RFE is that it always requires feature importances or coefficients to compute, which is not suitable for models which do not produce any coefficients nor feature importances, such as KNN or Naive Bayes. Therefore, this approach is not implemented in this thesis.
-
-Instead, the feature selection is performed with Sequential Feature Selection (henceforth SFS). Such method is iteratively adding (or removes) features the set sequentially. Hence, there are two approaches, Forward SFS and Backward SFS.
-The former approach keeps adding features to the set until the desired number of features is reached, while the latter approach starts with the whole set of features and removes them until the desired number of features is reached.
-In this thesis, Forward SFS is used since it was way more computationally efficient than Backward SFS within author's analysis. Forward SFS starts with an empty set of features and afterwards, variant features are sequentially added until the desired number of features is reached  or until the addition of extra features does not reduce the criterion \citep{Verma2021}. 
-According to Scikit-learn's documentation \citep{sfs}, at each stage, SFS chooses the best feature to add based on the cross--validation score. 
-
-
+As the feature selection approach, Forward Sequential Feature Selection is employed in order to choose the optimal set of features as described in \autoref{sec:fsfstheory}.
 Within machine learning implemenation, instead of fitting Forward SFS only with one model, Forward SFS is fitted for each input model in order to obtain the best subsets of features for each model, assuming the importance of each features varies across the models.
 Instead of using input models with default hyperparameters, each model is tuned with Bayesian Optimization in order to obtain the optimal hyperparameters for each model, which would further improve the performance of each model within SFS and therefore, it would lead to the more optimal selection of features.
 The custom feature selection algorithm is stated in Algorithm \autoref{alg:feature_selection}, thus, when having $n$ input models, it returns $n$  subsets of optimal features, one per each model:
@@ -1134,11 +998,11 @@ The custom feature selection algorithm is stated in Algorithm \autoref{alg:featu
 \end{algorithmic}
 \end{algorithm}
 Particularly, each input model is first tuned on the training set with Bayesian Optimization with 50 iterations and 10--fold stratified cross validation (in order to preserve the target variable distribution across the folds) while maximizing the F1 score - within author's machine learning implemenation, his custom function \lstinline{bayesian_optimization()} is used.
-Once the model is tuned, the Forward SFS is fitted with such tuned model on the same training set with 10--fold stratified cross validation while maximizing the F1 score. Instead of selecting the fixed number of features, Scikit-learn's \lstinline{SequentialFeatureSelector}  class allows to set a stop criterion (\lstinline{tol} parameter) which stops adding features if the objective score function is not increasing between two consecutive feature additions \citep{sfs}.
-
+Once the model is tuned, the Forward SFS is fitted with such tuned model on the same training set with 10--fold stratified cross validation while maximizing the F1 score. Instead of selecting the fixed number of features, Scikit-learn's \lstinline{SequentialFeatureSelector} class allows to set a stop criterion (\lstinline{tol} parameter) which stops adding features if the objective score function is not increasing at least by \lstinline{tol} between two consecutive feature additions \citep{sfs}.
+Such paramaeter is set to the value which is close to zero, therefore the feature selection stops when the objective score function is not increasing anymore.
 
 Such feature selection algorithm is wrapped into author's custom function \lstinline{SFS_feature_selection()}.
-This function iteratively prints the process of the feature selection as can be seen in \autoref{fig:featselectprint}, including the current step (Bayesian Optimization or Feature Selection), the execution time in muntes, and the selected features for each model. Since we have 8 input models, we get 8 optimal subset of features.
+This function iteratively prints the process of the feature selection as can be seen in \autoref{fig:featselectprint}, including the current step (Bayesian Optimization or Feature Selection), the execution time in minutes, and the selected features per each model. Since we have 8 input models, we get 8 optimal subsets of features.
 
 \begin{figure}[H]
 \centering\caption{Feature Selection Print Statement}
@@ -1191,7 +1055,7 @@ Execution time: 0.4152 minutes
 
 
 The following \autoref{fig:fsrec} depicts the reccurrence of the selected features. As can be seen, features such as \texttt{CLAGE}, \texttt{DEBTINC}, \texttt{DELINQ} and \texttt{JOB} were selected by each model. 
-On the other hand, features such as \texttt{LOAN} and \texttt{REASON} were selected by only four times. Therefore, it can be expected that such features which were selected every time will have significant impact in predictions.
+On the other hand, features such as \texttt{LOAN} and \texttt{REASON} were selected only four times. Therefore, it can be expected that such features which were selected every time will have significant impact in predictions.
 \begin{figure}[H]
 \centering
 \caption{Reccurrence of Selected Features}\vspace{0.5em}
@@ -1201,7 +1065,7 @@ On the other hand, features such as \texttt{LOAN} and \texttt{REASON} were selec
 \end{figure}
 
 
-According to \autoref{fig:fsdistmod}, models such as K--Nearest Neighbors, Random Forest, Gradient Boosting and Support Vector Machine chose almost all the features as one feature feature was eliminated. On the other hand, Gaussian Naive Bayes chose only 6. It seems to be that most of the features are important as each model has selected a higher amount of features.
+According to \autoref{fig:fsdistmod}, models such as K--Nearest Neighbors, Random Forest, Gradient Boosting and Support Vector Machine chose almost all the features as onlt one feature feature was eliminated. On the other hand, Gaussian Naive Bayes chose only 6. It seems to be that most of the features are important as each model has selected a higher amount of features.
 It is evident the more comples and/or black--box models require more features in contrast to transparant models such as Logistic Regression or Gaussian Naive Bayes.
 
 \begin{figure}[H]
@@ -1214,7 +1078,7 @@ It is evident the more comples and/or black--box models require more features in
 
 \subsection{Model Selection}
 
-In combination with the pre--selected subsets of features, the next step regards the selection of the final model. The algorithm process is described in Algorithm  \autoref{alg:model_selection} below:
+In combination with the pre--selected subsets of features, the next step regards the selection of the final model which will be further used within an evaluation and the deployment. The algorithm process is described in Algorithm  \autoref{alg:model_selection} below:
 \begin{algorithm}[H]
 \caption{Model Selection Algorithm}
 \label{alg:model_selection}
@@ -1524,8 +1388,6 @@ To summarize this subsection, the best and final model is the Gradient Boosting 
 \newpage
 \subsection{Model Recalibration}
 
-\textbf{ADD BRIEF THEORY ABOUT THE SHAP VALUES}
-
 In order to ensure that the final model performs well on unseen data, it is common practice to employ the recalibration approach, which involves retraining the model on both the training and validation sets.
 By doing so, the sample size used for training is increased. As such, the retraining (or so called recalibration) model lead (or are expected to lead) to markedly improved model performance \citep{de2023predicting}.
 The recalibrated model is then used to evaluate the performance of the final model on the test set, which is the ultimate measure of a model's performance.
@@ -1549,7 +1411,7 @@ During the evaluation, the recalibrated classification threshold of 0.45109, det
 
 
 
-In \autoref{fig:confmat}, the confusion matrix for the final model, based on the test set and using the recalibrated threshold, is presented. The matrix shows that the model is generalizing well, having correctly predicted 140 defaults and misclassified only 38 defaults and further, correctly predicted 686 non--defaults and misclassified only 30 non--defaults. Such a result indicates that the model is a good fit for the data and can provide useful predictions for the problem at hand.
+In \autoref{fig:confmat}, the confusion matrix for the final model, based on the test set and using the recalibrated threshold, is presented. The matrix shows that the model is generalizing well, having correctly predicted 145 defaults and misclassified only 33 defaults and further, correctly predicted 683 non--defaults and misclassified only 33 non--defaults. Such a result indicates that the model is a good fit for the data and can provide useful predictions for the problem at hand.
 
 \begin{figure}[H]
 \centering
@@ -1653,7 +1515,7 @@ According to Bonaccorso \citep{bonaccorso2020mastering}, feature importance is t
 where $ \text{FI}\left(\bar{x}^{\left(i\right)}\right)$ referes to the feature importance of the feature $i$, $n(j)$ is the number of samples reaching the node $j$, $\delta I_{j}^{i}$ represents the impurity reduction at node $j$ after the splitting using the feature $j$, $M$ is total number of samples in the dataset used to built the model, and $N$ refers to the number of tree estimators used within an ensemble model.
 
 The following \autoref{fig:fi} depicts the feature importances of all the selected features on which the model was trained.
-The two most important features used in the final model are \texttt{DEBTINC} and \texttt{DEROG}, which are crucial delinquency indicators in determining whether a borrower would be able to repay their loan. These two features have a significant impact on the model's ability to accurately predict loan defaults, with high feature importance scores. This is also in line with the findings from the exploratory analysis, WoE distribution or feature selection.
+The two most important features used in the final model are \texttt{DEBTINC} and \texttt{DELINQ}, which are crucial delinquency indicators in determining whether a borrower would be able to repay their loan. These two features have a significant impact on the model's ability to accurately predict loan defaults, with high feature importance scores. This is also in line with the findings from the exploratory analysis, WoE distribution or feature selection.
 \begin{figure}[H]
 \centering
 \caption{Feature Importance}\vspace{0.5em}

@@ -591,3 +591,156 @@ Logically, the lower Log loss value, the better performance of the model is. As 
     \includegraphics[width=130mm]{Figures/logloss.jpg}
     \centering{\begin{source}Author's simulation in Python\end{source}}\vspace{-1em}
 \end{figure}
+
+
+
+\section{ADASYN Oversampling}
+\label{sec:adasyntheory}
+Since this thesis pertains to the dataset of defaulted loans, which target variable distribution is heavily skewed, i.e., the class is strongly imbalanced as the frequency distribution of the majority class is significantly higher than the frequency distribution of the minority class. In case of defaulted loans, the majority class would be non--default status and the minority class would be default status.
+This can cause serious degradation in model's performance as most of the models assume well--balanced class distributions, hence such models would be biased towards the majority class and would not be able to predict the minority class accurately \citep{prati2009data}.
+
+To overcome this issue, one would use random undersampling or random oversampling to deal with the class imbalanced issue. The former randomly eliminates majority class instances whereas the latter randomly duplicates minority class instances.
+However, both have particular drawbacks, as the random under-sampling may lead to a a significant loss of information, and random oversampling is lead to the high degree of repetation of minority instances. Both then could lead to model's overfitting and detoriation in model's performance \citep{ma2013imbalanced}.
+This might be a significant issue when the target variable distribution is heavily imbalanced - assume that we have a dataset of 1,000 instances where 990 instances belongs to majority class and 10 instances to minority class.
+If we perform random undersampling in order to balance the target variable distribution, we would have to remove 980 instances and end up with undersampled dataset of 20 instances, which is not acceptable for model training.
+On the other hand, if we perform random oversampling, we would end up with 1,980 instances, where 980 instances would be the same as in the original dataset, which would lead to the model's overfitting.
+
+Therefore, the Adaptive Synthetic Sampling (henceforth ADASYN) technique is used for oversampling the minority class.
+ADASYN generates synthetic instances of the minority class based on the nearest neighbors of the minority class instances.
+Such approach is more effective than Synthetic Minority Oversampling Technique (henceforth SMOTE) which also uses nearest neighbors to generate synthetic instances of minority class, as it generates more synthetic instances which are hard--to--learn by K-Nearest Neighbors given the density distributtions, whereby SMOTE generates synthetic instances uniformly for each minority instance.
+ \citep{adasynhaibo}. 
+
+In other words, ADASYN generates more synthetic instances in regions where the density of the majority class within $K$ nearest neighbors of minority instance is higher and fewer synthetic instances in regions where the density is lower, thereby ADASYN focuses on generating more hard--to--learn minority instances.
+Thereby, it makes easier for the machine learning model to learn the decision boundary between the minority and majority classes and boost the model's performance by focusing on hard--to--learn instances \citep{adasynhaibo}.
+
+Before oversampling algorithm's execution, first we need to calculate the number of instances of minority class to be synthetically generated in order to balance the target variable distribution. The number of instances to be generated $G$ is calculated as follows:
+\begin{equation}\label{eq}
+    G = \left(m_{l} - m_{s}\right) \times \beta
+\end{equation}
+where $m_l$ is the number of majority class instances, $m_s$ is the number of minority class instances and $\beta$ indicates the desired ratio between the numbers of majority and minority class instances after oversampling.
+
+Then for each minority class instance $x_i$, using K-nearest Neighbors with Euclidean distance calculate the ratio $r_i$ as:
+\begin{equation}\label{eq}
+   r_{i} = \frac{\delta_{i}} {K}
+\end{equation}
+where $\delta_{i}$ is the number of majority class instances within the $K$ nearest neighbors of $x_i$.
+In such case, higher $r_i$ indicates dominance of the majority class in given specific neighborhood of $x_i$ \citep{nian2018introduction}.
+Subsequently, all the $r_i$ ratios are normalized as:
+\begin{equation}\label{eq}
+    \hat{r}_{i} = \frac{r{i}}{\displaystyle\sum_{i=1}^{m_{s}} r_{i}}
+\end{equation}
+In such way that sum of all the normalized $\hat{r}_i$ ratios is equal to 1. Hence, we can denote $\hat{r}_i$ as the density distribution.
+\begin{equation}\label{eq}
+    \sum_{i=1}^{m_{s}} \hat{r}_{i} = 1
+\end{equation}
+
+Finally, the oversampling process is initialized.
+For each minority class instance $x_i$, calculate the number of instances to be synthetically generated based on the respective density distribution $\hat{r}_i$ and the total number of instances to be synthetically generated $G$. Thus, for the minority classes with higher density, it generates more synthetic instances, since those instances are hard--to--classify by the K-Nearest Neighbors.
+\begin{equation}\label{eq}
+    G_i = G \times \hat{r}_{i}
+\end{equation}
+Further, for each minority class instance $x$, generate $G_i$ synthetic instances $s_i$ as follows:
+\begin{equation}\label{eq}
+    s_i = x_i + \left(x_{zi} - x_{i} \right) \times \lambda
+\end{equation}
+where $x_{zi}$ represents the radnomly chosen minority class instance within the $K$ nearest neares neighbors for $x_i$, and $\lambda \in \left[0,1\right]$ is a random number.
+
+\section{Optimal Binning}
+\label{sec:optbinningtheory}
+In the context of data preprocessing, it is crucial to consider the most appropriate feature transformation method that optimizes the performance of machine learning models.
+Although common approaches such as dummy encoding, standardization, logarithmic transformation, and normalization are widely used, they may not always be suitable for a given dataset due to the presence of certain characteristics.
+For instance, dummy encoding (also known as one--hot encoding) may not be suitable for categorical features with a large number of categories as it could lead to the curse of dimensionality, therefore, it may result in the decrease of model's performance \citep{bera2021dimensionality}.
+Standardization may not be appropriate for features with a large number of outliers as it may result in a loss of information.
+Similarly, logarithmic transformation may not be appropriate for features with a large number of zeros, and normalization may not be suitable for features with a significant number of outliers.
+
+Therefore, alternative approaches such as discretization or binning are increasingly being used. Binning is a categorization process to transform a continuous variable into a small set of groups or bins \citep{zeng2014necessary}. This approach enables the identification of outliers within bins and reduce their impact, and additionally, it can capture missing values without requiring the removal or imputation of such values.
+As a result, binning is a more flexible and versatile feature transformation method that can effectively handle different types of datasets and is particularly useful in cases where other methods may not be appropriate.
+
+In this thesis, we employ the \lstinline{BinningProcess} from the \lstinline{optbinning} module in Python for an optimal binning of both numeric and categorical features with respect to the target variable, developed by Guillermo Navas--Palencia \citep{navas2020optimal}. 
+This approach involves grouping the values of a continuous variable into discrete intervals, or "bins", based on their relationship with the target variable.
+Similarly, for categorical features, the approach involves grouping the categories based on their relationship with the target variable.
+In general, the optimal binning is solved by iteratively merging an initial granular discretization until imposed constraints are satisfied. Particularly, the optimal binning process consists of two phases - pre--binning process (for generating initial granular discretization) and subsequent optimization (for satisfying imposed constraints).
+The former phase usually uses decision tree to generate initial split points to create pre--bins which are further merged while maximizing Information Value (also known as Jeffreys' divergence) while accounting for the constraints. \citep{navas2020optimal} Such constraints are:
+\begin{itemize}\setlength\itemsep{0em} 
+    \item Creation of separate bins for missing values: Since missing values can have a significant impact on the target variable, hence is important to create a separate bin for them.
+    \item Minimum bin size constraint - at least 5 \% of the total number of instances: Such constraint ensures a bin's representativness.
+    \item Each bin should have at least one instance of each target class: Application of such constraint allows to compute divergence measure.
+\end{itemize}
+Thus, the optimal binning process, the goal is the maximize discriminatory power among bins, i.e., divergence measure.
+For more information about optimal binning, please refer to \citep{navas2020optimal}.
+
+After the binning process, the bins as categorical values needed to be encoded into numeric values. The most common approach in credit risk modelling is Weight--of--Evidence (henceforth WoE) encoding. The WoE is a commonly used measure of the strength of association between a binary target variable and an independent variable.
+According to Witzany \citep{witzany2017credit}, the WoE of categorical value $c$ can be expressed as the change between the overal log odds ratio and the log odds ratio given the value $c$, hence:
+\begin{equation}\label{eq}
+    WoE\left(c\right) = \ln\left(\operatorname{Pr}\left(c \mid Y = 0 \right) \right) - \ln\left(\operatorname{Pr}\left(c \mid Y = 1 \right) \right)
+\end{equation}
+Assuming feature $X$ and its respective bin $b_i$, thus $b_i \in X$, we can express WoE in terms of $b$ as follows:
+\begin{equation}\label{eq}
+    WoE_{X, b}= \ln \left(\frac{\Pr{\left(X = b\;\middle|\;Y = 0\right)}}{\Pr{\left(X = b\;\middle|\;Y = 1\right)}}\right)
+\end{equation}
+According to Navas--Palencia \citep{navas2020optimal}, the WoE for bin $i$ can be also computed as:
+\begin{equation}\label{eq}
+    WoE_{i} = \ln \left( \frac{r^{ND}_i / r^{ND}_T} {r^{D}_i / r^{D}_T}  \right)
+\end{equation}
+where $r^{ND}_i$ is the number of non--default instances in given bin $i$, $r^{D}_i$ is the number of default instances in the given bin $i$, $r^{ND}_T$ is the total number of non--default instances in whole sample and $r^{D}_T$ is the total number of default instances in whole sample.
+Thus, positive WoE value is indicates larger distribution of non--defaults, i.e. higher likelihood of non--default, while negative WoE value indicates larger distribution of defaults, i.e., higher likelihood of default.
+
+\section{Hyperparameter Bayesian Optimization}
+\label{sec:bayesoptheory}
+Most of the machine learning models are configured by a set of hyperparameters which are not learned during the training process but need to be set beforehand. Such hyperparameters' values must be carefully chosen and considerably impact model's performance \citep{bischl2023hyperparameter}.
+It is needed to point that the difference between parameter and hyperparameter - while paramater value is learnt during the training process from the data, on the other hand, hyperparameter value is set before the training process and cannot be learnt from the data \citep{owen2022hyperparameter}. In case of logistic regression, the parameters are estimated coefficients and intercept, while the hyperparameters are for instance regularization parameter, optimization solver etc.
+
+Thus, it is recommended to select optimal hyperparameter values instead of relying on default hyperparameters.
+Nonetheless, selecting optimal hyperparameter values can be very challenging, especially when there are many hyperparameters to tune.
+Fortunately, in machine learning practice already exist several methods how to choose the best hyperparameters' values. The most common ones are Grid Search and Random Search.
+The former approach tries all the possible combinations of hyperparameters' values from predetermined hyperparameter space, which can be very computationally expensive, when the number of hyperparameters is large \citep{marinov2019hyperparameter}, when the space of hyperparameter's values is too wide or when the dataset is too large.
+Regarding the latter approach, instead of trying al the possible combinations from the grid, it randomly selects samples of hyperparameters combinations. Although such approach can be less computationally expensive, it does not guarantee to find the global optimum.
+Another issue pertaining to both approach is that they do not consider any information from previous iterations and rather check all possible hyperparameter combinations or randomly select hyperparameter combinations, respectively.
+
+The compromise for such drawbacks is hyperparameter tuning with Bayesian Optimization, which is able to find the best hyperparameters' values in less time and with less computational resources than Grid Search and also, it leads to better model's performance than Random Search despite the longer optimization time \citep{drahokoupil2022application}.
+Bayesian Optimization is a hyperparameter tuning method which uses infromation from previous iterations in order to make more informed decsion about which hyperparameters' values to try next.
+The main property of hyperparameter tuning is the objective function which we want to optimize (i.e., maximize or minimize in case of a score and loss, respectively), which input is the hyperparameters' values and the output is the score or loss. However, the objective function is not known beforehand and is very computionally expensive to evaluate.
+
+
+Therefore, Bayesian Optimization uses a surrogate function which is the approximation and probability representation of the objective function. The most common surrogate function is the Gaussian Process (henceforth GP) which is able to produce accurate approximations as well as the uncertainty around the approximations \citep{wang2020bayesian}.
+According to Owen \citep{owen2022hyperparameter}, GP is utilized as the prior for the objective function along the posterior, which we want to update while.
+In other words, the prior captures the initial belief about the objective function, while the posterior is the updated distribution combining the prior belief and the observed evaluations of the objective function, i.e., it reflects the current belief about the objective function, hence the relation between the hyperparameters' values and the score or loss.
+GP is the generalization of the normal distribution and describes the distribution over functions (not the distribution of a random variable), hence the objective function $f$ follows a normal distribution with noise as:
+\begin{equation}\label{eq}
+    y = f\left(x\right) + \epsilon
+\end{equation}
+Let us nedote, set $f_{1:n} = \{ f\left(x_1\right), f\left(x_2\right), \ldots, f\left(x_n\right)\}$ as a set of $n$ observations of the objective function, where $m\left(x_{1:n}\right)$ is the mean function and $K$ is the covariance kernel. Hence, such set follows normal distribution as well:
+\begin{equation}\label{eq}
+    f_{1:n} \sim N\left(m\left(x_{i:n}\right), K\right)
+\end{equation}
+Henceforht, the distribution of prediction generated by GP also follows normal distribution as:
+\begin{equation}\label{eq}
+    p\left(y \mid x, D\right) \mid N\left(y \mid \mu^{*}, \sigma^{*2}\right)
+\end{equation}
+where $\mu^{*}$ and $\sigma^{*2}$ can by analytically derived from the $K$ kernel, and $D$ represents observed data regarding the previously evaluated iterions of hyperparameters' values.
+
+Furthermore, Bayesian Optimization also employs acquisition function which accounts for which set of hyperparameters should be used in the next iteration \citep{owen2022hyperparameter}. Particularly, the next hyperparameters' set is chosen based on the location where the acquisition function is maximized.
+The most common acquisition function is the Expected Improvement (henceforth EI), which is according to Owen \citep{owen2022hyperparameter} defined as follows assuming that $ \sigma\left(x\right) \neq 0$:
+\begin{equation}\label{eq}
+    EI(x) = \left(\mu\left(x\right) - f\left(x^{+}\right)\right) \times \Phi\left(Z\right) + \sigma\left(x\right) \times \phi\left(Z\right)
+\end{equation}
+where $\sigma\left(x\right)$ is the uncertainty, $\mu\left(x\right)$ is the expected performance which are both captured by surrogate model. $f\left(x^{+}\right)$ indicates the current best value of the objective function, $\Phi\left(Z\right)$ and $\phi\left(Z\right)$ are the cumulative distribution function and probability density function of the standard normal distribution, respectively.
+Moreover, EI allows to balance between exploration and exploitation, where the former refers to the searching for the uknown regions where the objective function may have higher values, i.e, the hyperparameters' values which have not been evaluated yet, while the latter refers to the searching near the best observed values of the objective function, i.e.,near by the hyperparameters' values which have been evaluated already.
+Referring to Owen \citep{owen2022hyperparameter}, higher expected performance $\mu\left(x\right)$ compared to the current best value $f\left(x^{+}\right)$ will favor the exploitation process, whereby a very high uncertainty $\sigma\left(x\right)$ will support exploration process.
+
+\section{Forward Sequential Feature Selection}
+\label{sec:fsfstheory}
+Instead of using all the features in dataset, we use only the subset of the most relevant ones, which can further reduce the dimensionality of dataset, boost model performance, save computational resources and reduce overfitting. Such process is called feature selection and can be defined as the process of detecting the most relevant features and discarding the noisy redundant ones. \citep{bolon2015feature}.
+
+With respect to the target variable, we distinguish 2 most common types of feature selection approaches: (1) filter methods and (2) warapper methods.
+Using the former approach, the feature selection is independent on a machine learning model itself, but rather is performed using univariate statistical tests, such as correlation measures, Chi--square test, Fisher score and others \citep{kaushik2016introduction}, and chooses those ones with the highest or lowest values.
+This approach is used when we prefer lower computational cost and faster feature selection process, but since it does no take into account the model itself, it does not have to able to select the features which would be optimal for particular model.
+Regarding the latter approach, the feature selection is based on a specific machine learning model and follows a greedy search approach by evaluating all the possible combinations of features against the evaluation metric criteria \citep{Verma2020}. Although, such approach is very computationally expensive, it is able to select the optimal features for a particular model.
+
+The most common wrapper method for feature selection is Recursive Feature Elimination (henceforth RFE). Such method takes a machine learning model as an base estimator, fit the model on whole set of features, computes and ranks their coefficients or feature importances, eliminates the least important features and repeats the process until the desired number of features is reached \citep{Brownlee2020} or until the stop criteria is met.
+However, the drawback of RFE is that it always requires feature importances or coefficients to compute, which is not suitable for models which do not produce any coefficients nor feature importances, such as KNN or Naive Bayes. Therefore, this approach is not implemented in this thesis.
+
+Instead, the feature selection is performed with Sequential Feature Selection (henceforth SFS). Such method is iteratively adding (or removes) features the set sequentially. Hence, there are two approaches, Forward SFS and Backward SFS.
+The former approach keeps adding features to the set until the desired number of features is reached, while the latter approach starts with the whole set of features and removes them until the desired number of features is reached.
+In this thesis, Forward SFS is used since it was way more computationally efficient than Backward SFS within author's analysis. Forward SFS starts with an empty set of features and afterwards, variant features are sequentially added until the desired number of features is reached  or until the addition of extra features does not reduce the criterion \citep{Verma2021}. 
+According to Scikit-learn's documentation \citep{sfs}, at each stage, SFS chooses the best feature to add based on the cross--validation score. 

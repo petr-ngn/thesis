@@ -5,47 +5,47 @@ The style file: Styles/Stylebib.bst
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: Styles/Bibliography.bib
 Warning--entry type for "igareta2021strat" isn't style-file defined
---line 1295 of file Styles/Bibliography.bib
+--line 1341 of file Styles/Bibliography.bib
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
-You've used 71 entries,
+You've used 74 entries,
             3042 wiz_defined-function locations,
-            966 strings with 16510 characters,
-and the built_in function-call counts, 40773 in all, are:
-= -- 3217
-> -- 1534
-< -- 147
-+ -- 542
-- -- 444
-* -- 3338
-:= -- 5946
-add.period$ -- 223
-call.type$ -- 71
-change.case$ -- 523
-chr.to.int$ -- 64
-cite$ -- 71
-duplicate$ -- 3277
-empty$ -- 3112
-format.name$ -- 821
-if$ -- 8147
+            978 strings with 16960 characters,
+and the built_in function-call counts, 42606 in all, are:
+= -- 3362
+> -- 1607
+< -- 153
++ -- 566
+- -- 465
+* -- 3493
+:= -- 6208
+add.period$ -- 233
+call.type$ -- 74
+change.case$ -- 547
+chr.to.int$ -- 67
+cite$ -- 74
+duplicate$ -- 3422
+empty$ -- 3254
+format.name$ -- 860
+if$ -- 8517
 int.to.chr$ -- 8
 int.to.str$ -- 1
-missing$ -- 539
-newline$ -- 306
-num.names$ -- 284
-pop$ -- 1066
+missing$ -- 562
+newline$ -- 319
+num.names$ -- 296
+pop$ -- 1117
 preamble$ -- 1
-purify$ -- 430
+purify$ -- 449
 quote$ -- 0
-skip$ -- 1506
+skip$ -- 1572
 stack$ -- 0
-substring$ -- 1498
-swap$ -- 1852
-text.length$ -- 97
+substring$ -- 1566
+swap$ -- 1931
+text.length$ -- 102
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 591
+type$ -- 615
 warning$ -- 0
-while$ -- 269
+while$ -- 281
 width$ -- 0
-write$ -- 848
+write$ -- 884
 (There was 1 warning)
