@@ -573,16 +573,6 @@ Henceforth, Brier Score Loss is defined as a mean squared error between the $Tru
     \text{Brier Score Loss} = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2
 \end{equation}
 Brier Score Loss ranges from 0 to 1, where the the ideal scenario would be Brier Score Loss of 0 - in such case, the model would be perfect predictive power.
-\subsection{Jaccard Score}
-Jaccard Score which is also known as Jaccard Index is a similarity metric as it measures similarity between the\textit{True} labels and predicted classes (0 or 1).
-Let us denote $y$ as a vector of \textit{True} labels and $\hat{y}$ as a vector of predicted classes.
-Hence, we can define Jaccard Score as the ratio of the size of intersection of $y$ and $\hat{y}$ to the size of union of $y$ and $\hat{y}$ \citep{leskovec2020mining}. Thus:
-\begin{equation}\label{eq}
-    \text{Jaccard Score} = \frac{|y \cap \hat{y} |}{|y \cup \hat{y} |}
-\end{equation}
-Likewise, Jaccard score ranges from 0 to 1 where the higher value indicates the higher similarity between the \textit{True} labels and predicted classes, hence the better model's performance.
-
-
 \subsection{Log Loss}
 \label{subsubsec:logloss}
 
