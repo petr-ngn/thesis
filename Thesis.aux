@@ -359,7 +359,8 @@
 \newlabel{eq}{{4.11}{76}{Metrics Space}{equation.4.4.11}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {4.17}{\ignorespaces Model Ranking Weights table}}{77}{table.caption.78}\protected@file@percent }
 \newlabel{tab:weightsrank}{{4.17}{77}{Model Ranking Weights table}{table.caption.78}{}}
-\newlabel{eq}{{4.12}{78}{Metrics Space}{equation.4.4.12}{}}
+\newlabel{eq:rankscorem}{{4.12}{78}{Metrics Space}{equation.4.4.12}{}}
+\newlabel{eq}{{4.13}{78}{Metrics Space}{equation.4.4.13}{}}
 \@writefile{toc}{\contentsline {subsubsection}{Model Selection Results}{78}{section*.79}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {4.13}{\ignorespaces Model Selection Print Statement\relax }}{79}{figure.caption.80}\protected@file@percent }
 \newlabel{fig:modselprint}{{4.13}{79}{Model Selection Print Statement\relax }{figure.caption.80}{}}
@@ -367,55 +368,65 @@
 \newlabel{tab:modelsectab}{{4.18}{80}{Model Selection table}{table.caption.81}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {4.14}{\ignorespaces F1 score distribution\relax }}{81}{figure.caption.82}\protected@file@percent }
 \newlabel{fig:f1dist}{{4.14}{81}{F1 score distribution\relax }{figure.caption.82}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.15}{\ignorespaces F1 score distribution - without outliers\relax }}{82}{figure.caption.83}\protected@file@percent }
-\newlabel{fig:f1distclean}{{4.15}{82}{F1 score distribution - without outliers\relax }{figure.caption.83}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.16}{\ignorespaces Threshold distribution\relax }}{82}{figure.caption.84}\protected@file@percent }
-\newlabel{fig:thresdist}{{4.16}{82}{Threshold distribution\relax }{figure.caption.84}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.17}{\ignorespaces Threshold distribution - without outliers\relax }}{83}{figure.caption.85}\protected@file@percent }
-\newlabel{fig:thresdistclean}{{4.17}{83}{Threshold distribution - without outliers\relax }{figure.caption.85}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.18}{\ignorespaces Execution time distribution\relax }}{84}{figure.caption.86}\protected@file@percent }
-\newlabel{fig:timedist}{{4.18}{84}{Execution time distribution\relax }{figure.caption.86}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.19}{\ignorespaces Execution time vs. F1 Scatterplot\relax }}{85}{figure.caption.87}\protected@file@percent }
-\newlabel{fig:scattertime}{{4.19}{85}{Execution time vs. F1 Scatterplot\relax }{figure.caption.87}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {4.19}{\ignorespaces Final Model Information\relax }}{86}{table.caption.88}\protected@file@percent }
-\newlabel{tab:finalmodelinfo}{{4.19}{86}{Final Model Information\relax }{table.caption.88}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.15}{\ignorespaces F1 score distribution - without outlier\relax }}{82}{figure.caption.83}\protected@file@percent }
+\newlabel{fig:f1distclean}{{4.15}{82}{F1 score distribution - without outlier\relax }{figure.caption.83}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.16}{\ignorespaces F1 score distribution (Black--box/White--box dimension) - without outlier\relax }}{82}{figure.caption.84}\protected@file@percent }
+\newlabel{fig:f1distcleanbbwb}{{4.16}{82}{F1 score distribution (Black--box/White--box dimension) - without outlier\relax }{figure.caption.84}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.17}{\ignorespaces Rank Score distribution\relax }}{83}{figure.caption.85}\protected@file@percent }
+\newlabel{fig:avgrankdist}{{4.17}{83}{Rank Score distribution\relax }{figure.caption.85}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.18}{\ignorespaces Rank Score distribution (Black--box/White--box dimension)\relax }}{84}{figure.caption.86}\protected@file@percent }
+\newlabel{fig:avgrankdistbbwb}{{4.18}{84}{Rank Score distribution (Black--box/White--box dimension)\relax }{figure.caption.86}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.19}{\ignorespaces Threshold distribution\relax }}{84}{figure.caption.87}\protected@file@percent }
+\newlabel{fig:thresdist}{{4.19}{84}{Threshold distribution\relax }{figure.caption.87}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.20}{\ignorespaces Threshold distribution - without outliers\relax }}{85}{figure.caption.88}\protected@file@percent }
+\newlabel{fig:thresdistclean}{{4.20}{85}{Threshold distribution - without outliers\relax }{figure.caption.88}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.21}{\ignorespaces Execution time distribution\relax }}{86}{figure.caption.89}\protected@file@percent }
+\newlabel{fig:timedist}{{4.21}{86}{Execution time distribution\relax }{figure.caption.89}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.22}{\ignorespaces Execution time distribution (Black--box/White--box dimension)\relax }}{86}{figure.caption.90}\protected@file@percent }
+\newlabel{fig:timedistbbwb}{{4.22}{86}{Execution time distribution (Black--box/White--box dimension)\relax }{figure.caption.90}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.23}{\ignorespaces Execution time vs. F1 Scatterplot - without outlier\relax }}{87}{figure.caption.91}\protected@file@percent }
+\newlabel{fig:scattertime}{{4.23}{87}{Execution time vs. F1 Scatterplot - without outlier\relax }{figure.caption.91}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.24}{\ignorespaces Execution time vs. F1 Scatterplot (Black--box/White--box dimension) - without outlier\relax }}{88}{figure.caption.92}\protected@file@percent }
+\newlabel{fig:scattertimebbwb}{{4.24}{88}{Execution time vs. F1 Scatterplot (Black--box/White--box dimension) - without outlier\relax }{figure.caption.92}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.19}{\ignorespaces Final Model Information\relax }}{89}{table.caption.93}\protected@file@percent }
+\newlabel{tab:finalmodelinfo}{{4.19}{89}{Final Model Information\relax }{table.caption.93}{}}
 \citation{de2023predicting}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.4}Model Recalibration}{87}{subsection.4.4.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.5}Model Evaluation}{88}{section.4.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.5.1}Model Performance Assessment}{88}{subsection.4.5.1}\protected@file@percent }
-\newlabel{subsec:modelperformance}{{4.5.1}{88}{Model Performance Assessment}{subsection.4.5.1}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.20}{\ignorespaces Confusion Matrix\relax }}{88}{figure.caption.89}\protected@file@percent }
-\newlabel{fig:confmat}{{4.20}{88}{Confusion Matrix\relax }{figure.caption.89}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {4.20}{\ignorespaces Metrics Evaluation}}{89}{table.caption.90}\protected@file@percent }
-\newlabel{tab:metricseval}{{4.20}{89}{Metrics Evaluation}{table.caption.90}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {4.21}{\ignorespaces Recalibration Impact on Metrics Evaluation}}{90}{table.caption.91}\protected@file@percent }
-\newlabel{tab:recab}{{4.21}{90}{Recalibration Impact on Metrics Evaluation}{table.caption.91}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.4}Model Recalibration}{90}{subsection.4.4.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.5}Model Evaluation}{91}{section.4.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5.1}Model Performance Assessment}{91}{subsection.4.5.1}\protected@file@percent }
+\newlabel{subsec:modelperformance}{{4.5.1}{91}{Model Performance Assessment}{subsection.4.5.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.25}{\ignorespaces Confusion Matrix\relax }}{91}{figure.caption.94}\protected@file@percent }
+\newlabel{fig:confmat}{{4.25}{91}{Confusion Matrix\relax }{figure.caption.94}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.20}{\ignorespaces Metrics Evaluation}}{92}{table.caption.95}\protected@file@percent }
+\newlabel{tab:metricseval}{{4.20}{92}{Metrics Evaluation}{table.caption.95}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.21}{\ignorespaces Recalibration Impact on Metrics Evaluation}}{93}{table.caption.96}\protected@file@percent }
+\newlabel{tab:recab}{{4.21}{93}{Recalibration Impact on Metrics Evaluation}{table.caption.96}{}}
 \citation{bonaccorso2020mastering}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.21}{\ignorespaces ROC Curve\relax }}{91}{figure.caption.92}\protected@file@percent }
-\newlabel{fig:roc}{{4.21}{91}{ROC Curve\relax }{figure.caption.92}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.5.2}Model Explainability}{91}{subsection.4.5.2}\protected@file@percent }
-\newlabel{eq}{{4.13}{91}{Model Explainability}{equation.4.5.13}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.22}{\ignorespaces Feature Importance\relax }}{92}{figure.caption.93}\protected@file@percent }
-\newlabel{fig:fi}{{4.22}{92}{Feature Importance\relax }{figure.caption.93}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.23}{\ignorespaces SHAP Summary Plot\relax }}{94}{figure.caption.94}\protected@file@percent }
-\newlabel{fig:shap}{{4.23}{94}{SHAP Summary Plot\relax }{figure.caption.94}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.6}Machine Learning Deployment}{95}{section.4.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.6.1}Final Model Recalibration}{95}{subsection.4.6.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.6.2}Flask and HTML Web Application}{95}{subsection.4.6.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4.24}{\ignorespaces Flask Web Application Form\relax }}{98}{figure.caption.95}\protected@file@percent }
-\newlabel{fig:flaskform}{{4.24}{98}{Flask Web Application Form\relax }{figure.caption.95}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.26}{\ignorespaces ROC Curve\relax }}{94}{figure.caption.97}\protected@file@percent }
+\newlabel{fig:roc}{{4.26}{94}{ROC Curve\relax }{figure.caption.97}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5.2}Model Explainability}{94}{subsection.4.5.2}\protected@file@percent }
+\newlabel{eq}{{4.14}{94}{Model Explainability}{equation.4.5.14}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.27}{\ignorespaces Feature Importance\relax }}{95}{figure.caption.98}\protected@file@percent }
+\newlabel{fig:fi}{{4.27}{95}{Feature Importance\relax }{figure.caption.98}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.28}{\ignorespaces SHAP Summary Plot\relax }}{97}{figure.caption.99}\protected@file@percent }
+\newlabel{fig:shap}{{4.28}{97}{SHAP Summary Plot\relax }{figure.caption.99}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.6}Machine Learning Deployment}{98}{section.4.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.6.1}Final Model Recalibration}{98}{subsection.4.6.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.6.2}Flask and HTML Web Application}{98}{subsection.4.6.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.29}{\ignorespaces Flask Web Application Form\relax }}{101}{figure.caption.100}\protected@file@percent }
+\newlabel{fig:flaskform}{{4.29}{101}{Flask Web Application Form\relax }{figure.caption.100}{}}
 \citation{ribeiro2016should}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.25}{\ignorespaces Flask Web Application - Prediction Result\relax }}{99}{figure.caption.96}\protected@file@percent }
-\newlabel{fig:flaskres}{{4.25}{99}{Flask Web Application - Prediction Result\relax }{figure.caption.96}{}}
-\newlabel{eq}{{4.14}{100}{Flask and HTML Web Application}{equation.4.6.14}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}Hypotheses' Testing}{101}{chapter.5}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.30}{\ignorespaces Flask Web Application - Prediction Result\relax }}{102}{figure.caption.101}\protected@file@percent }
+\newlabel{fig:flaskres}{{4.30}{102}{Flask Web Application - Prediction Result\relax }{figure.caption.101}{}}
+\newlabel{eq}{{4.15}{103}{Flask and HTML Web Application}{equation.4.6.15}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Hypotheses' Testing}{104}{chapter.5}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{chap:five}{{5}{101}{Hypotheses' Testing}{chapter.5}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {6}Conclusion}{102}{chapter.6}\protected@file@percent }
+\newlabel{chap:five}{{5}{104}{Hypotheses' Testing}{chapter.5}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}Conclusion}{105}{chapter.6}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{conclusion}{{6}{102}{Conclusion}{chapter.6}{}}
+\newlabel{conclusion}{{6}{105}{Conclusion}{chapter.6}{}}
 \bibstyle{Styles/Stylebib}
 \bibdata{Styles/Bibliography}
 \bibcite{adeodato2016equivalence}{{1}{2016}{{Adeodato \& Melo}}{{}}}
@@ -427,7 +438,7 @@
 \bibcite{bolon2015feature}{{7}{2015}{{Bol{\'o}n-Canedo \emph  {et~al.}}}{{Bol{\'o}n-Canedo, S{\'a}nchez-Maro{\~n}o, \& Alonso-Betanzos}}}
 \bibcite{bonaccorso2020mastering}{{8}{2020}{{Bonaccorso}}{{}}}
 \bibcite{boughorbel2017optimal}{{9}{2017}{{Boughorbel \emph  {et~al.}}}{{Boughorbel, Jarray, \& El-Anbari}}}
-\@writefile{toc}{\contentsline {chapter}{Bibliography}{103}{chapter.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{Bibliography}{106}{chapter.6}\protected@file@percent }
 \bibcite{brabec2020model}{{10}{2020}{{Brabec \emph  {et~al.}}}{{Brabec, Kom{\'a}rek, Franc, \& Machlica}}}
 \bibcite{Brownlee2020}{{11}{2020}{{Brownlee}}{{}}}
 \bibcite{brownlee2021failure}{{12}{2021}{{Brownlee}}{{}}}
@@ -500,5 +511,5 @@
 \@writefile{toc}{\contentsline {chapter}{\numberline {B}Project's website}{II}{appendix.B}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{TotPages}{{122}{II}{}{page.II}{}}
-\gdef \@abspage@last{122}
+\newlabel{TotPages}{{125}{II}{}{page.II}{}}
+\gdef \@abspage@last{125}

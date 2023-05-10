@@ -66,15 +66,15 @@
 \contentsline {subsection}{\numberline {4.4.3}Model Selection}{75}{subsection.4.4.3}%
 \contentsline {subsubsection}{Metrics Space}{76}{section*.77}%
 \contentsline {subsubsection}{Model Selection Results}{78}{section*.79}%
-\contentsline {subsection}{\numberline {4.4.4}Model Recalibration}{87}{subsection.4.4.4}%
-\contentsline {section}{\numberline {4.5}Model Evaluation}{88}{section.4.5}%
-\contentsline {subsection}{\numberline {4.5.1}Model Performance Assessment}{88}{subsection.4.5.1}%
-\contentsline {subsection}{\numberline {4.5.2}Model Explainability}{91}{subsection.4.5.2}%
-\contentsline {section}{\numberline {4.6}Machine Learning Deployment}{95}{section.4.6}%
-\contentsline {subsection}{\numberline {4.6.1}Final Model Recalibration}{95}{subsection.4.6.1}%
-\contentsline {subsection}{\numberline {4.6.2}Flask and HTML Web Application}{95}{subsection.4.6.2}%
-\contentsline {chapter}{\numberline {5}Hypotheses' Testing}{101}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Conclusion}{102}{chapter.6}%
-\contentsline {chapter}{Bibliography}{103}{chapter.6}%
+\contentsline {subsection}{\numberline {4.4.4}Model Recalibration}{90}{subsection.4.4.4}%
+\contentsline {section}{\numberline {4.5}Model Evaluation}{91}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}Model Performance Assessment}{91}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}Model Explainability}{94}{subsection.4.5.2}%
+\contentsline {section}{\numberline {4.6}Machine Learning Deployment}{98}{section.4.6}%
+\contentsline {subsection}{\numberline {4.6.1}Final Model Recalibration}{98}{subsection.4.6.1}%
+\contentsline {subsection}{\numberline {4.6.2}Flask and HTML Web Application}{98}{subsection.4.6.2}%
+\contentsline {chapter}{\numberline {5}Hypotheses' Testing}{104}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Conclusion}{105}{chapter.6}%
+\contentsline {chapter}{Bibliography}{106}{chapter.6}%
 \contentsline {chapter}{\numberline {A}Title of Appendix A}{I}{appendix.A}%
 \contentsline {chapter}{\numberline {B}Project's website}{II}{appendix.B}%

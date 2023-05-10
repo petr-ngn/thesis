@@ -1164,11 +1164,19 @@ Brier Score Loss  & 1 \\
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{table}
 
+Particularly, for each model a rank score is calculated in order to determine the final rank. The lower rank score indicates better model performance. For particular model $M$, the rank score as weighted sum of the individual ranks as follows:
+\begin{equation}\label{eq:rankscorem}
+    RankScore_{M} = \frac{\sum_{i=1}^{k} {r_i \times w_i}}{\sum_{i=1}^{k} {w_i}} 
+\end{equation}
+where $k$ is the number of metrics used to evaluated the model $M$, $r_i$ is the rank order of $i$--th metric for given model $M$ and $w_i$ is the weight assigned to the $i$--th metric.
+Such metric lies in interval $<1, k>$, where 1 would indicate a perfect model performance across the all metrics.
 
+\textbf{QUESTION: Should we also add this metric for better interpretability or is the metric defined above sufficient?}
+
+For better interpretability, we can normalize the rank scores which would range from 0 to 1 where 1 would indicate a perfect performance of the model.
 \begin{equation}\label{eq}
-    Rank_{M} = \frac{\sum_{i=1}^{k} {r_i \times w_i}}{\sum_{i=1}^{k} {w_i}} 
-    \end{equation}
-
+    NormRankScore_{M} = 1 - \frac{RankScore_{M} - RankScore_{MAX}}{RankScore_{MAX} - RankScore_{MIN}}
+\end{equation}
 
 \subsubsection{Model Selection Results}
 
@@ -1300,14 +1308,43 @@ Such outlier is removed in \autoref{fig:f1distclean} to gain a more general insi
 It can be observed that Gradient Boosting models have the highest F1 scores of around 80 \%.
 Another tree ensemble model, Random Forest, is performing well as the second best. However, more transparent models such as Logistic Regression and Naive Bayes are performing poorly, having F1 scores around 60 \%.
 Surprisingly, black box models such as Support Vector Machine and Neural Network are outperformed by the less complex KNN model.
-Nonetheless, given the relatively small sample size, KNN performs better than Neural Network and non-linear SVM on small datasets, whereas NN or non-linear SVM generally outperform KNN when it comes to large datasets.
+Nonetheless, given the relatively small sample size, KNN performs better than Neural Network and non-linear SVM on small datasets.
 \begin{figure}[H]
 \centering
-\caption{F1 score distribution - without outliers}\vspace{0.5em}
+\caption{F1 score distribution - without outlier}\vspace{0.5em}
 \label{fig:f1distclean}\
 \includegraphics[width=140mm]{Figures/F1_wo_outliers_Distribution.jpg}
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
+
+As depicted in \autoref{fig:f1distcleanbbwb}, the distribution of F1 score (without the outlier) across the model type. Although, both score distributions overlap, it is evident, that black--box models outperform white--box model in terms of F1 score in overall as expected.
+\begin{figure}[H]
+    \centering
+    \caption{F1 score distribution (Black--box/White--box dimension) - without outlier}\vspace{0.5em}
+    \label{fig:f1distcleanbbwb}\
+    \includegraphics[width=140mm]{Figures/F1_wo_outliers_Distribution_BB_WB.jpg}
+    \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
+\end{figure}
+
+We can also consider not only F1 score but also other metrics, which is quantified in the rank score calculated according to \autoref{eq:rankscorem}. As shown in \autoref{fig:avgrankdist}, we can observe that the order of models ranked by the rank score is identical as the order of the models ranked by F1 score in \autoref{fig:f1dist}.
+Hence, across all the metrics, the Gradient Boosting perform the best in overall while Gaussian Naive Bayes do not perform well at all.
+\begin{figure}[H]
+    \centering
+    \caption{Rank Score distribution}\vspace{0.5em}
+    \label{fig:avgrankdist}\
+    \includegraphics[width=140mm]{Figures/AVG_Rank_score_Distribution.jpg}
+    \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
+\end{figure}
+
+As expected, also, the black--box models are ranked higher than the white--box models according to the rank score as shown in \autoref{fig:avgrankdistbbwb}. This is evident also from \autoref{tab:modelsectab} where the black--box models, namely Gradient Boosting and Random Forest, dominated amongst the first 10 ranked models.
+\begin{figure}[H]
+    \centering
+    \caption{Rank Score distribution (Black--box/White--box dimension)}\vspace{0.5em}
+    \label{fig:avgrankdistbbwb}\
+    \includegraphics[width=140mm]{Figures/AVG_Rank_score_Distribution_BB_WB.jpg}
+    \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
+\end{figure}
+
 
 The optimal threshold distribution for each base model is presented in \autoref{fig:thresdist}. We can observe an outlier in KNN having a threshold value of 1, which explains the F1 score outlier found previously in \autoref{fig:f1dist}.
 \begin{figure}[H]
@@ -1327,9 +1364,12 @@ In order to obtain a better insight into the distribution of optimal thresholds,
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
 
-Upon examining the optimization time of each model, it can be observed that the transparent and non-complex models such as Logistic Regression, Gaussian Naive Bayes, or even Decision Tree, which take around only 1 minute to optimize themselves, also perform poorly, as already inspected in \autoref{fig:f1distclean}.
+
+
+
+Upon examining the execution time of each model, it can be observed that the transparent and non-complex models such as Logistic Regression, Gaussian Naive Bayes, or even Decision Tree, which take around only 1 minute to optimize themselves, also perform poorly, as already inspected in \autoref{fig:f1distclean}.
 Conversely, the most time-consuming models are undoubtedly the Neural Network models, which take around 30 minutes to optimize themselves. Other time-consuming models include Gradient Boosting and Support Vector Machine, which take around 13 and 11 minutes to optimize themselves, respectively.
-This finding suggests that longer optimization time does not necessarily lead to better performance, as the Neural Network models are significantly outperformed by several other models.
+This finding suggests that longer execution time does not necessarily lead to better performance, as the Neural Network models are significantly outperformed by several other models.
 \begin{figure}[H]
 \centering
 \caption{Execution time distribution}\vspace{0.5em}
@@ -1337,19 +1377,40 @@ This finding suggests that longer optimization time does not necessarily lead to
 \includegraphics[width=140mm]{Figures/EXECUTION_TIME_Distribution.jpg}
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
+We can inspect the execution from another perspective as shown in \autoref{fig:timedistbbwb}.
+It can be observed that black--box models take a significant amount of time ot opimize than the white--box models which is given due to the complexity of the black--box models.
+\begin{figure}[H]
+    \centering
+    \caption{Execution time distribution (Black--box/White--box dimension)}\vspace{0.5em}
+    \label{fig:timedistbbwb}\
+    \includegraphics[width=140mm]{Figures/EXECUTION_TIME_Distribution_WB_BB.jpg}
+    \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
+\end{figure}
 
-The execution time and the F1 score were inspected together using a scatterplot, as shown in \autoref{fig:scattertime}.
+
+The execution time and the F1 score are inspected together using a scatterplot, as shown in \autoref{fig:scattertime}. 
 A cluster of non-complex and transparent models, such as Logistic Regression, Gaussian Naive Bayes, Decision Tree, and KNN, can be observed around the vertical line near 0 execution time. These models are quick to optimize, but their F1 scores are generally low, except for KNN.
 Further, their variance in execution time is quite low, regardless of the feature subset they are optimized on.
 On the other hand, the Neural Network models always perform poorly, regardless of the length of the execution time. Furthermore, the variance of the F1 scores is quite low for these models, indicating that the execution time does not have a significant impact on the F1 score in the case of Neural Networks.
 
 \begin{figure}[H]
 \centering
-\caption{Execution time vs. F1 Scatterplot}\vspace{0.5em}
+\caption{Execution time vs. F1 Scatterplot - without outlier}\vspace{0.5em}
 \label{fig:scattertime}\
 \includegraphics[width=140mm]{Figures/Scatterplot_execution_time_F1_wo_outliers.jpg}
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
+Such separation of of the black--box and white--box models is more evident from \autoref{fig:scattertimebbwb} where the white--box models points are light blue-colored and the black--box models are purple-colored.
+While the execution time of white--box models seems to be constant regardless the score, the points of black--box models are more dispersed across the execution time--F1 dimension.
+
+\begin{figure}[H]
+    \centering
+    \caption{Execution time vs. F1 Scatterplot (Black--box/White--box dimension) - without outlier}\vspace{0.5em}
+    \label{fig:scattertimebbwb}\
+    \includegraphics[width=140mm]{Figures/Scatterplot_execution_time_F1_wo_outliers_BB_WB.jpg}
+    \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
+\end{figure}
+
 
 To summarize this subsection, the best and final model is the Gradient Boosting Classifier which was optimized on the subset of features selected by Multi-Layer Percepton - both the model information and its final hyperparameters' values are described in \autoref{tab:finalmodelinfo}. Such model is then used in the next modelling steps, including the recalibration, evaluation and deployment.
 \begin{table}[H]
