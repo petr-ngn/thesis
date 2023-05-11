@@ -1175,7 +1175,7 @@ Such metric lies in interval $<1, k>$, where 1 would indicate a perfect model pe
 
 For better interpretability, we can normalize the rank scores which would range from 0 to 1 where 1 would indicate a perfect performance of the model.
 \begin{equation}\label{eq}
-    NormRankScore_{M} = 1 - \frac{RankScore_{M} - RankScore_{MAX}}{RankScore_{MAX} - RankScore_{MIN}}
+    NormRankScore_{M} = 1 - \frac{RankScore_{M} - k}{k - 1}
 \end{equation}
 
 \subsubsection{Model Selection Results}

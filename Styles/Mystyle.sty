@@ -150,6 +150,9 @@
 \renewcommand{\appendixautorefname}{Appendix} %capital A at the beginning
 %-----<<< ------ >>>-----
 
+\def\UrlBreaks{\do\/\do-\do.}
+\usepackage{breakurl}
+
 %-----<<< REFERENCES >>>-----
 \newcommand{\assref}[1]{\hyperref[#1]{Assumption}~\mbox{\ref{#1}}} %Use \autoref for tables and figures
 \newcommand{\defref}[1]{\hyperref[#1]{Definition}~\mbox{\ref{#1}}}
