@@ -12,6 +12,112 @@ Datasets: Cases from the Loan Credit Scoring Domain
 
 Petr Teply, Michal Polena - Best classification algorithms in peer-to-peer lending
 
+
+\begin{table}[H]
+    \small
+    \setlength{\tabcolsep}{8pt}
+    \renewcommand{\arraystretch}{1.3}
+    \centering
+    \caption[Zurada Results]{Zurada Results}\label{tab:zuradaresults}
+    \begin{tabular}{r r r r}
+    \toprule
+    Model & Acc. & Rec. & AUC\\
+    \midrule
+    \hline
+    NN & 0.869 & 0.590 & 0.863 \\
+    DT & 0.889 & 0.548 & 0.844 \\
+    SVM & 0.848 & 0.346 & 0.810 \\
+    KNN & 0.791 & 0.334 & 0.826 \\
+    LR & 0.836 & 0.304 & 0.794 \\
+    \hline
+    \bottomrule
+    \end{tabular}
+    \vspace{0.35em}
+    
+    \centering{\begin{source}\citep{zurada2014classification}\end{source}}\vspace{-1em}
+\end{table}
+
+
+\begin{table}[H]
+    \small
+    \setlength{\tabcolsep}{8pt}
+    \renewcommand{\arraystretch}{1.3}
+    \centering
+    \caption[Zurada Results - Ranked]{Zurada Results - Ranked}\label{tab:zuradaresultsranks}
+    \begin{tabular}{r r r r r r}
+    \toprule
+    Model & Acc. & Rec. & AUC & Score & Rank \\
+    \midrule
+    \hline
+    NN & 2 & 1 & 1 & 1.33 & 1 \\ 
+    DT & 1 & 2 & 2 & 1.67 & 2 \\ 
+    SVM & 3 & 3 & 4 & 3.33 & 3 \\ 
+    KNN & 5 & 4 & 3 & 4.00 & 4 \\ 
+    LR & 4 & 5 & 5 & 4.67 & 5 \\ 
+    \hline
+    \bottomrule
+    \end{tabular}
+    \vspace{0.35em}
+    
+    \centering{\begin{source}Ranking of \citep{zurada2014classification}\end{source}}\vspace{-1em}
+\end{table}
+
+\begin{table}[H]
+    \small
+    \setlength{\tabcolsep}{8pt}
+    \renewcommand{\arraystretch}{1.3}
+    \centering
+    \caption[Serkan Results]{Serkan Results}\label{tab:serkanresults}
+    \begin{tabular}{r r r r r r}
+    \toprule
+    Model & Acc. & Rec. & Prec. & F1 & MCC \\
+    \midrule
+    \hline
+	
+	KNN & 0.953 & 0.789 & 0.980 & 0.874 & 0.853 \\
+    RF & 0.930 & 0.789 & 0.858 & 0.822 & 0.779 \\
+    SVM & 0.926 & 0.756 & 0.869 & 0.809 & 0.766 \\
+    DT & 0.898 & 0.683 & 0.792 & 0.734 & 0.674 \\
+    NB & 0.795 & 0.480 & 0.504 & 0.492 & 0.364 \\
+	LR & 0.705 & 0.691 & 0.381 & 0.491 & 0.334 \\
+	
+    \hline
+    \bottomrule
+    \end{tabular}
+    \vspace{0.35em}
+    
+    \centering{\begin{source}\citep{serkan2021bagging}\end{source}}\vspace{-1em}
+\end{table}
+
+\begin{table}[H]
+    \small
+    \setlength{\tabcolsep}{8pt}
+    \renewcommand{\arraystretch}{1.3}
+    \centering
+    \caption[Serkan Results - Ranked]{Serkan Results - Ranked}\label{tab:serkanresultsranks}
+    \begin{tabular}{r r r r r r r r}
+    \toprule
+    Model & Acc. & Rec. & Prec. & F1 & MCC & Score & Rank \\
+    \midrule
+    \hline
+	
+    KNN & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\ 
+    RT & 2 & 1 & 3 & 2 & 2 & 2 & 2 \\ 
+    SVM & 3 & 2 & 2 & 3 & 3 & 2.6 & 3 \\ 
+    DT & 4 & 4 & 4 & 4 & 4 & 4 & 4 \\ 
+    NB & 5 & 5 & 5 & 5 & 5 & 5 & 5 \\ 
+    LR & 6 & 3 & 6 & 6 & 6 & 5.4 & 6 \\ 
+	
+    \hline
+    \bottomrule
+    \end{tabular}
+    \vspace{0.35em}
+    
+    \centering{\begin{source}Ranking of \citep{serkan2021bagging}\end{source}}\vspace{-1em}
+\end{table}
+
+
+
 \section{Hypotheses}
 
 \noindent \textbf{Hypothesis 1:} The recalibration of the model enhaces model performance \citep{de2023predicting}.

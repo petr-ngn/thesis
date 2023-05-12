@@ -1,4 +1,4 @@
-\begin{thebibliography}{75}
+\begin{thebibliography}{77}
 \newcommand{\enquote}[1]{``#1''}
 \providecommand{\natexlab}[1]{#1}
 
@@ -14,6 +14,11 @@
   A.~\textsc{Hussain}, \& A.~\textsc{Aljaaf} (2020): \enquote{Supervised and
   unsupervised learning for data science.}
 \newblock \emph{Supervised and Unsupervised Learning for Data Science} .
+
+\bibitem[{Aras(2021)}]{serkan2021bagging}
+\textsc{Aras}, S. (2021): \enquote{Bagging and boosting classifiers for credit
+  risk evaluation.}
+\newblock \emph{REFLECTIONS OF ECONOMIC DEVELOPMENT} p. 121.
 
 \bibitem[{Ayyadevara(2018)}]{ayyadevara2018pro}
 \textsc{Ayyadevara}, V.~K. (2018): \enquote{Pro machine learning algorithms.}
@@ -457,5 +462,13 @@
 \textsc{Zeng}, G. (2014): \enquote{A necessary condition for a good binning
   algorithm in credit scoring.}
 \newblock \emph{Applied Mathematical Sciences} \textbf{8(65)}: pp. 3229--3242.
+
+\bibitem[{Zurada \emph{et~al.}(2014)Zurada, Kunene, \&
+  Guan}]{zurada2014classification}
+\textsc{Zurada}, J., N.~\textsc{Kunene}, \& J.~\textsc{Guan} (2014):
+  \enquote{The classification performance of multiple methods and datasets:
+  Cases from the loan credit scoring domain.}
+\newblock \emph{Journal of International Technology and Information Management}
+  \textbf{23(1)}: p.~5.
 
 \end{thebibliography}
