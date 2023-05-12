@@ -120,13 +120,13 @@ Some \lstinline{Scikit-learn} or \lstinline{Scikit-optimize} objects have option
 
 \newpage
 \section{Data Exploration}
-This section is focused on exploration of the analyzed loan dataset, particularly on dataset description, distribution analysis and association analysis, in order to infer potential valuable insights and hypotheses which can be used in the preprocessing or modelling part.
+This section is focused on exploration of the analyzed loan data set, particularly on data set description, distribution analysis and association analysis, in order to infer potential valuable insights and hypotheses which can be used in the preprocessing or modelling part.
 
-\subsection{Dataset Description}
-The analyzed dataset pertains to the HMEQ dataset which contains loan application information and default status of 5,960 US home equity loans. Such dataset was acquired from Credit Risk Analytics website\footnote{\url{http://www.creditriskanalytics.net/datasets-private2.html}} \citep{baesens2016credit}. Since this dataset regards the loan application scoring data, using macroeconomic or other external data is omitted due to the dataset characteristics as well as modelling with behavioral scoring.
+\subsection{Data Set Description}
+The analyzed data set pertains to the HMEQ data set which contains loan application information and default status of 5,960 US home equity loans. Such data set was acquired from Credit Risk Analytics website\footnote{\url{http://www.creditriskanalytics.net/datasets-private2.html}} \citep{baesens2016credit}. Since this data set regards the loan application scoring data, using macroeconomic or other external data is omitted due to the data set characteristics as well as modelling with behavioral scoring.
 Thus our goal is to predict whether the loan applicant will or would default based on provided information from the loan application.
 
-As can be seen in \autoref{tab:dataset}, the dataset contains 13 columns, 12 features and 1 target variable \texttt{BAD} indicating whether the loan was in default (\texttt{1}) or not (\texttt{0}). 
+As can be seen in \autoref{tab:data set}, the data set contains 13 columns, 12 features and 1 target variable \texttt{BAD} indicating whether the loan was in default (\texttt{1}) or not (\texttt{0}). 
 Amongst the 12 features, there are 10 numeric features and 2 categorical features, namely \texttt{REASON} which contains 2 categories - Debt consolidation (\texttt{DebtCon}) and Home improvement (\texttt{HomeImp}), and \texttt{JOB} which fontains following categories - Administration (\texttt{Office}), Sales, Manager (\texttt{Mgr}), Professional Executive (\texttt{ProfExe}), Self-employed (\texttt{Self}), and Other.
 
 
@@ -135,7 +135,7 @@ Amongst the 12 features, there are 10 numeric features and 2 categorical feature
 \setlength{\tabcolsep}{8pt}
 \renewcommand{\arraystretch}{1.3}
 \begin{center}
-\caption[Dataset columns]{Dataset columns}\label{tab:dataset}
+\caption[Data Set Columns]{Data Set Columns}\label{tab:dataset}
 \begin{tabular}{@{} l p{8cm} l @{}}
 \toprule
 \textbf{Variable} & \textbf{Description} & \textbf{Data type}\\
@@ -175,7 +175,7 @@ DEBTINC & Debt-to-income ratio & numeric \\
 \end{table}
 
 After the initial data inspection, data does not contain any duplicates but does contain missing values, which are summarized in \autoref{tab:natable}.
-Most of the missing values contains the feature \texttt{DEBTINC} with 1,267 missing observations, whereas columns indicating default status (\texttt{BAD}) or requested loan amount (\texttt{LOAN}) do not contain any missing values, which is expected as the bank should have the available information about their loans whether they have defaulted or not, and since this dataset pertains to the application scoring, when applying for a loan, an applicant should always fill out the requested loan amount.
+Most of the missing values contains the feature \texttt{DEBTINC} with 1,267 missing observations, whereas columns indicating default status (\texttt{BAD}) or requested loan amount (\texttt{LOAN}) do not contain any missing values, which is expected as the bank should have the available information about their loans whether they have defaulted or not, and since this data set pertains to the application scoring, when applying for a loan, an applicant should always fill out the requested loan amount.
 
 \begin{table}[H]
 \small
@@ -213,7 +213,7 @@ DEBTINC & 1267 & 21.26 \% \\
 \subsection{Distribution Analysis}
 \label{subsec:distribution}
 In this subsection, we inspect the distribution of our variables, including the target variable and the features.
-Such distribution inspection may help us to identify potential outliers, missing values, and other potential issues with the dataset.
+Such distribution inspection may help us to identify potential outliers, missing values, and other potential issues with the data set.
 
 \subsubsection{Default Distribution}
 
@@ -311,7 +311,7 @@ Such associations are further investigated in \autoref{subsubsec:target-na-ass}.
 \subsubsection{Categorical Features' Distribution}
 \label{subsubsec:catdist}
 
-Regarding the distribution of categorical features, the dataset includes 2 nominal features, namely \texttt{REASON} and \texttt{JOB}.
+Regarding the distribution of categorical features, the data set includes 2 nominal features, namely \texttt{REASON} and \texttt{JOB}.
 The conditional distribution of categorical features on the default status is visualized using barplots in \autoref{fig:catdist}.
 The plot indicates that most loan applicants applied for debt consolidation, while most job occupancies were labeled as \texttt{Other}.
 
@@ -439,7 +439,7 @@ Ultimately, the usefulness of a feature in predicting the target variable is det
 \subsubsection{Association between default status and missing values}
 \label{subsubsec:target-na-ass}
 
-Given that the loan dataset contains missing values, it is necessary to examine whether the missingness is associated with the default status. One possible approach is to encode the feature with missing values as a binary variable, where 1 indicates the presence of a missing value and 0 otherwise.
+Given that the loan data set contains missing values, it is necessary to examine whether the missingness is associated with the default status. One possible approach is to encode the feature with missing values as a binary variable, where 1 indicates the presence of a missing value and 0 otherwise.
 
 To quantify the strength of association between the two binary variables, the Phi coefficient is used, which is defined as:
 
@@ -495,13 +495,13 @@ Therefore, we can anticipate that these features will be crucial indicators in d
 
 \subsubsection{Missing Values Association}
 Additionally, it is imperative to investigate the relationship between missing values and default status, as well as the interrelationship between the missing values themselves.
-A common approach to identifying patterns of missing data in a dataset is through the use of a dendrogram, which clusters variables hierarchically based on the occurrence of missing values.
+A common approach to identifying patterns of missing data in a data set is through the use of a dendrogram, which clusters variables hierarchically based on the occurrence of missing values.
 This method groups variables into clusters based on the similarity of their missing value patterns, such that variables with comparable patterns of missingness are clustered together.
 Conversely, variables with dissimilar patterns of missingness are placed in separate clusters.
 The dendrogram is constructed by merging the two closest clusters iteratively until all variables are in the same cluster.
 The distance between the clusters at each step of the merging process is shown on the y-axis of the dendrogram, and the order in which the variables are merged is displayed on the x-axis.
 
-In \autoref{fig:dendrogram}, the hierarchical clustering of the dataset's variables is illustrated, excluding the default status and requested loan amount feature \texttt{LOAN}, as these variables do not contain any missing values.
+In \autoref{fig:dendrogram}, the hierarchical clustering of the data set's variables is illustrated, excluding the default status and requested loan amount feature \texttt{LOAN}, as these variables do not contain any missing values.
 As depicted in the dendrogram, the \texttt{CLNO} and \texttt{CLAGE} features have the most similar patterns of missing values occurrences.
 Therefore, it can be inferred that a significant number of loan applicants tend to omit information regarding their number of credit lines (\texttt{CLNO}) and the age of their most recent credit line (\texttt{CLAGE}) when submitting their loan applications.
 
@@ -542,7 +542,7 @@ In this section, the process of preprocessing data is described as the crucial s
 \subsection{Data Split and ADASYN Oversampling}
 \label{subsec:data-split-ADASYN}
 
-To ensure appropriate model training and unbiased evaluation, it is necessary to split data into separate sets for various purposes. Specifically, the dataset is split into three sets: (1) training set for training the model, perform feature selection or hyperparameter tuning, (2) validation for hyperparameter tuning, and (3) test set for assess the model performance on the unseen data \citep{subasi2020practical}.
+To ensure appropriate model training and unbiased evaluation, it is necessary to split data into separate sets for various purposes. Specifically, the data set is split into three sets: (1) training set for training the model, perform feature selection or hyperparameter tuning, (2) validation for hyperparameter tuning, and (3) test set for assess the model performance on the unseen data \citep{subasi2020practical}.
 In this thesis, the data is plit into training, validation and test sets in ratio of 70:15:15, which ensures sufficient amount of data for training, hence the model would be able to generalize well, while keeping the validation and test sets large enough to provide reliable evaluation of the model's performance.
 
 The data is split using stratified split to preserve the default status distribution, which is highly imbalanced.
@@ -559,11 +559,11 @@ However, the \lstinline{ADASYN()} class from \lstinline{imblearn} is not designe
 \item Impute the missing values with arbitrary values:
 \begin{itemize}
 \item Categorical features: string \lstinline{'N/A'};
-\item Numeric features: number \lstinline{99999999999999} - such value is chosen since it is highly unlikely to be present in the dataset.
+\item Numeric features: number \lstinline{99999999999999} - such value is chosen since it is highly unlikely to be present in the data set.
 \end{itemize}
 \item Convert the categorical features into dummy variables;
 \item Join the numeric features with the dummy variables;
-\item Perform the oversampling on the joined dataset;
+\item Perform the oversampling on the joined data set;
 \item Convert the dummy variables back into categorical features;
 \item Retrieve back the missing values:
 \begin{itemize}
@@ -674,8 +674,8 @@ Thus, the higher the number of delinquent credit lines, the higher the likelihoo
 A non-linear relationship can be observed with respect to the \texttt{YOJ} feature, where the WoE coefficient is positive for applicants who have recently started working at their new job (i.e., number of years at the present job is less than 1) and for applicants who have been working at their current job for a relatively long time (i.e., number of years at the present job is higher than 19).
 Thus, applicants who have been working for a longer time have stable income and are more creditworthy and less likely to default.
 Regarding applicants who have recently started working at their new job, it is possible that they are less likely to default since the \texttt{YOJ} feature does not capture the applicant's total number of years of work experience, but only the number of years at the present job.
-Thus, in the given dataset, applicants who have recently started working at their new job have a relatively higher total number of years of work experience, making them more creditworthy and less likely to default. On the other hand, for applicants who have been working at their present job between 1 and 19 years, the WoE coefficient is negative.
-This relationship seems to be complex and can be influenced by other factors not present in the dataset, such as the applicant's age, total number of years of work experience, education, etc.
+Thus, in the given data set, applicants who have recently started working at their new job have a relatively higher total number of years of work experience, making them more creditworthy and less likely to default. On the other hand, for applicants who have been working at their present job between 1 and 19 years, the WoE coefficient is negative.
+This relationship seems to be complex and can be influenced by other factors not present in the data set, such as the applicant's age, total number of years of work experience, education, etc.
 
 As already mentioned numeric and categorical features contain a separate bin capturing missing values, which can be a useful indicator when training a model. This is evident in the \texttt{DEBTINC} feature, where the bin capturing missing values has the most negative WoE coefficient, indicating that there is a larger distribution of defaulters compared to non-defaulters.
 This finding was already raised in \autoref{subsubsec:target-na-ass} in terms of the strong and statistically significant association between the default status and the missing values in \texttt{DEBTINC}.
@@ -1130,7 +1130,7 @@ To accomplish this, models can be ranked based on their performance on each indi
 The weights have been set expertly and are summarized in \autoref{tab:weightsrank}.
 
 Specifically, the highest weight (1.5) is assigned to the F1 score, which provides a balanced measure of a model's performance with respect to both False Positives and False Negatives.
-This metric is commonly used in classification tasks, particularly in imbalanced datasets, such as the validation set in our case, which has not been oversampled.
+This metric is commonly used in classification tasks, particularly in imbalanced data sets, such as the validation set in our case, which has not been oversampled.
 In addition to the F1 score, higher weight is assigned to the Recall score as well (1.2), which is a metric that penalizes False Negatives.
 False Negatives occur when the model predicts a negative result (i.e., no default) for an instance that is actually positive (i.e., default).
 In the context of loan applications, one may prefer to reject a loan applicant who would not have defaulted (False Positive) rather than approving the application of a client who would have defaulted (False Negative). Therefore, it is appropriate to give higher weight to Recall in order to reduce the likelihood of False Negatives.
@@ -1308,7 +1308,7 @@ Such outlier is removed in \autoref{fig:f1distclean} to gain a more general insi
 It can be observed that Gradient Boosting models have the highest F1 scores of around 80 \%.
 Another tree ensemble model, Random Forest, is performing well as the second best. However, more transparent models such as Logistic Regression and Naive Bayes are performing poorly, having F1 scores around 60 \%.
 Surprisingly, black box models such as Support Vector Machine and Neural Network are outperformed by the less complex KNN model.
-Nonetheless, given the relatively small sample size, KNN performs better than Neural Network and non-linear SVM on small datasets.
+Nonetheless, given the relatively small sample size, KNN performs better than Neural Network and non-linear SVM on small data sets.
 \begin{figure}[H]
 \centering
 \caption{F1 score distribution - without outlier}\vspace{0.5em}
@@ -1577,7 +1577,7 @@ According to Bonaccorso \citep{bonaccorso2020mastering}, feature importance is t
 \begin{equation}\label{eq}
     \text{FI}\left(\bar{x}^{\left(i\right)}\right) = \frac{1}{N} \displaystyle\sum_{k=1}^{N} \displaystyle\sum_{j=1}^{L} \frac{n(j)}{M} \delta I_{j}^{i}
 \end{equation}
-where $ \text{FI}\left(\bar{x}^{\left(i\right)}\right)$ referes to the feature importance of the feature $i$, $n(j)$ is the number of samples reaching the node $j$, $\delta I_{j}^{i}$ represents the impurity reduction at node $j$ after the splitting using the feature $j$, $M$ is total number of samples in the dataset used to built the model, and $N$ refers to the number of tree estimators used within an ensemble model.
+where $ \text{FI}\left(\bar{x}^{\left(i\right)}\right)$ referes to the feature importance of the feature $i$, $n(j)$ is the number of samples reaching the node $j$, $\delta I_{j}^{i}$ represents the impurity reduction at node $j$ after the splitting using the feature $j$, $M$ is total number of samples in the data set used to built the model, and $N$ refers to the number of tree estimators used within an ensemble model.
 
 The following \autoref{fig:fi} depicts the feature importances of all the selected features on which the model was trained.
 The two most important features used in the final model are \texttt{DEBTINC} and \texttt{DELINQ}, which are crucial delinquency indicators in determining whether a borrower would be able to repay their loan. These two features have a significant impact on the model's ability to accurately predict loan defaults, with high feature importance scores. This is also in line with the findings from the exploratory analysis, WoE distribution or feature selection.
@@ -1622,7 +1622,7 @@ By understanding the relative importance of each feature, we can gain deeper ins
 This section describes the process of taking a trained machine learning model and making it available for use in the real world. It involves taking the model from a development environment and integrating it into a production environment where it can be used to make predictions or decisions based on new data. In this thesis, the machine learning model is deployed as web application using Flask and HTML.
 \subsection{Final Model Recalibration}
 Before deploying the model in a production setting, a meticulous process is undertaken to ensure optimal performance.
-This involves conducting a final recalibration of the model using the entire dataset, comprising the training, validation, and test sets.
+This involves conducting a final recalibration of the model using the entire data set, comprising the training, validation, and test sets.
 The purpose of this recalibration is to fine-tune the model parameters, thereby maximizing its ability to generalize and yield accurate predictions.
 
 The test set, which has been employed previously during the model evaluation phase, is incorporated into the recalibration process without any risk of data leakage.
@@ -1678,7 +1678,7 @@ Particularly, the web application returns whether the loan application would be 
 \end{figure}
 
 Besides the prediction results, it also displays the Local Interpretable Model-Agnostic Explanations (henceforth LIME) of the black--box model (Gradient Boosting) with respect to the inputs submitted within the form.
-LIME focuses on the local explainability of the black box model around the black--box prediction as it generates a new dataset consisting of perturbed samples around the given prediction and then trains a surrogate linear model on the new dataset.
+LIME focuses on the local explainability of the black box model around the black--box prediction as it generates a new data set consisting of perturbed samples around the given prediction and then trains a surrogate linear model on the new data set.
 Such local interpretable, surrogate model should be a good approximation of the black box model in the vicinity of the given prediction, i.e., the local interpretable model is then used to explain the prediction of the black box model \citep{ribeiro2016should}.
 
 The LIME explanation of input instances $x$ is given as follows:

@@ -1,4 +1,4 @@
-\begin{thebibliography}{77}
+\begin{thebibliography}{79}
 \newcommand{\enquote}[1]{``#1''}
 \providecommand{\natexlab}[1]{#1}
 
@@ -236,6 +236,14 @@
   with an example (or how to select the right variables?).}
 \newblock Accessed: April 30, 2023.
 
+\bibitem[{Kazemi \emph{et~al.}(2023)Kazemi, Khalili-Damghani, \&
+  Sadi-Nezhad}]{kazemi2023estimation}
+\textsc{Kazemi}, H.~R., K.~\textsc{Khalili-Damghani}, \&
+  S.~\textsc{Sadi-Nezhad} (2023): \enquote{Estimation of optimum thresholds for
+  binary classification using genetic algorithm: An application to solve a
+  credit scoring problem.}
+\newblock \emph{Expert Systems} \textbf{40(3)}: p. e13203.
+
 \bibitem[{Kornbrot(2014)}]{kornbrot2014point}
 \textsc{Kornbrot}, D. (2014): \enquote{Point biserial correlation.}
 \newblock \emph{Wiley StatsRef: Statistics Reference Online} .
@@ -299,6 +307,14 @@
 \textsc{Owen}, L. (2022): \emph{Hyperparameter Tuning with Python}.
 \newblock Packt Publishing, 1st edition.
 \newblock Original work published 2022.
+
+\bibitem[{Owusu \emph{et~al.}(2023)Owusu, Quainoo, Mensah, \&
+  Appati}]{owusu2023deep}
+\textsc{Owusu}, E., R.~\textsc{Quainoo}, S.~\textsc{Mensah}, \& J.~K.
+  \textsc{Appati} (2023): \enquote{A deep learning approach for loan default
+  prediction using imbalanced dataset.}
+\newblock \emph{International Journal of Intelligent Information Technologies
+  (IJIIT)} \textbf{19(1)}: pp. 1--16.
 
 \bibitem[{Patle \& Chouhan(2013)}]{patle2013svm}
 \textsc{Patle}, A. \& D.~S. \textsc{Chouhan} (2013): \enquote{Svm kernel
