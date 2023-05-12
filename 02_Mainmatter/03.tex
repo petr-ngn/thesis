@@ -11,18 +11,21 @@ Another way to address such imbalance issue is changing the classication cut--of
 By default, the cut--off point is set to 0.5, which means that the predicted probability of default is greater than 0.5. Kazemi and others \citep{kazemi2023estimation} demonstrated that utilization the customized cut--off points leads to a more accurate classification compared to the default threshold value of 0.5, based on German and Australian credit data sets available to the public in the UCI machine learning data repository.
 
 
-Therefore, the studies which address the imbalanced data sets are also included in this thesis. The imbalanced data sets are also addressed in the context of the studies which analyze the HMEQ data set, since the default status distribution is also imbalanced in this data set.
+Whether to choose transparent, white--box model such as logistic regression or a complex, black--box model such as ensemble models or nerual network depends on various factors, such as type of the data set, sample size, data preprocessing techniques, hyperparameter tuning, or even a software used to implement the model.
+While Tepl\'{y} and Polena \citep{teply2020best} suggest that Logistic Regression is the best performing model on peer-to-peer loans data from Lending Club, Aniceto and others \citep{aniceto2020machine} demonstrate that the ensemble models, namely Random Forest and AdaBoost, outperformed the Logistic Regression on a large Brazilian bank's loan data set.
 
-Petr Teply, Michal Polena - Best classification algorithms in peer-to-peer lending
 
 
-Another research of Aras \citep{serkan2021bagging} also studies the HMEQ data set.
-Particularly, the author performed imputation of missing values with mode and mean, respectively and for an evalutation, author used test size of size 596 instances.
+In this thesis, a dataset of US home equity loans (HMEQ) is analyzed, which is further described in \autoref{subsec:datadescript}.
+Regarding the studies pertaining to the HMEQ data set, the study of Aras \citep{serkan2021bagging} and the study of Zurada \citep{zuradaresults} are deemed to best the most relevant to this thesis.
+
+
+With respect to the former study, the author performed imputation of missing values with mode and mean, respectively and for an evalutation, and used test size of size 596 instances.
 Author also performed an oversampling on the training set using Random Oversampling in order to balanced the default status distribution.
 Regarding the fitted models which are also used in this thesis, the author used KNN, Random Forest (RF), SVM, Decision Tree (DT), Gaussian Naive Bayes (GNB) and Logistic Regression (LR).
 Such models were also tuned using Grid Search method with 10--fold cross validation.
 
-Within the evalutation, author used Accuracy (Acc.), Recall (Rec.), Precision (Prec.), F1 and Matthews Correlation Coefficient (MCC) metrics. The particular results are summarized in \autoref{tab:serkanresults}.
+Within the evalutation, author assessed Accuracy (Acc.), Recall (Rec.), Precision (Prec.), F1 and Matthews Correlation Coefficient (MCC) metrics. The particular results are summarized in \autoref{tab:serkanresults}.
 Since the default distribution is imbalanced on the test set, the most relevant metrics are F1 and MCC.
 As can be seen, only three models exceeded the 0.8 and 0.75 threshold for F1 and MCC, respectively, namely KNN, RF and SVM. Whereas Gaussian Naive Bayes and Logistic Regression performed poorly as they did not even exceeded 0.5 threshold for F1 and MCC, respectively.
 However, it is not appropriate to compare the computed the metrics with the results of this thesis, since the test set size is different, did not performed feature selection and probably used a default classification threshold of 0.5.
@@ -31,7 +34,7 @@ However, it is not appropriate to compare the computed the metrics with the resu
     \setlength{\tabcolsep}{8pt}
     \renewcommand{\arraystretch}{1.3}
     \centering
-    \caption[Serkan Results]{Serkan Results}\label{tab:serkanresults}
+    \caption[Evaluation Results \citep{serkan2021bagging}]{Evaluation Results \citep{serkan2021bagging}}\label{tab:serkanresults}
     \begin{tabular}{r r r r r r}
     \toprule
     Model & Acc. & Rec. & Prec. & F1 & MCC \\
@@ -62,7 +65,7 @@ Therefore, according to Aras, it is expected that KNN and the black--box models 
     \setlength{\tabcolsep}{8pt}
     \renewcommand{\arraystretch}{1.3}
     \centering
-    \caption[Serkan Results - Ranked]{Serkan Results - Ranked}\label{tab:serkanresultsranks}
+    \caption[Evaluation Results - Ranked \citep{serkan2021bagging}]{Evaluation Results - Ranked \citep{serkan2021bagging}}\label{tab:serkanresultsranks}
     \begin{tabular}{r r r r r r r r}
     \toprule
     Model & Acc. & Rec. & Prec. & F1 & MCC & Score & Rank \\
@@ -85,19 +88,19 @@ Therefore, according to Aras, it is expected that KNN and the black--box models 
 \end{table}
 
 
-Another study which also analyzes HMEQ data set is reasearch coduncted by Zurada and others \citep{zurada2014classification}. Likewise Aras, they also analyzed various classification models, but only relevant ones to this thesis are further discussed.
+The latter study pertains to the reasearch conducted by Zurada and others \citep{zurada2014classification}. Likewise Aras, they also analyzed various classification models, but only relevant ones to this thesis are further discussed.
 Namely, the authors trained Neural Network (NN), Decision Tree (DT), Support Vector Machine (SVM), K--Nearest Neighbors (KNN) and Logistic Regression (LR), using Weka software.
 Authors did not mention which imputation technique did they use, nor the data split ratio (i.e., the test size used for an evulation), but likwise Aras, they conducted a hyperparameter tuning using Grid Search with 10--fold cross validation.
 
 The evalulation results are depicted in \autoref{tab:zuradaresults}, namely the computed metrics such as Accuracy (Acc.), Recall (Rec.) and AUC.
-As can be seen, KNN model which was the best one in case of Zurada's study, yielded a very deteriorated performance, while Logistic regression still performed badly.
-On the other hand the Neural Network was the best performing model as a black--box model. Surprisingly, also Decision Tree showcased relatively high performance  in contrast to Zurada's study, where Decision Tree's performace was weak.
+As can be seen, KNN model, which was the best one in case of Zurada's study, yielded a very deteriorated performance, while Logistic regression still performed badly.
+On the other hand the Neural Network was the best performing model as a black--box model. Surprisingly, also Decision Tree showcased relatively high performance in contrast to Zurada's study, where Decision Tree's performace was quite weak.
 \begin{table}[H]
     \small
     \setlength{\tabcolsep}{8pt}
     \renewcommand{\arraystretch}{1.3}
     \centering
-    \caption[Zurada Results]{Zurada Results}\label{tab:zuradaresults}
+    \caption[Evaluation Results \citep{zurada2014classification}]{Evaluation Results \citep{zurada2014classification}}\label{tab:zuradaresults}
     \begin{tabular}{r r r r}
     \toprule
     Model & Acc. & Rec. & AUC\\
@@ -116,14 +119,14 @@ On the other hand the Neural Network was the best performing model as a black--b
     \centering{\begin{source}\citep{zurada2014classification}\end{source}}\vspace{-1em}
 \end{table}
 
-The same interpretation can be derived if we rank the results in the same way as in Zurada's study, as shown in \autoref{tab:zuradaresultsranks}.
+The same interpretation can be derived from ranking the results in the same way as in Zurada's study, as shown in \autoref{tab:zuradaresultsranks}.
 Hence, it is expected that Neural Network would perform well on the HMEQ data set, while Logistic Regression's performance would be unsatisfactory.
 \begin{table}[H]
     \small
     \setlength{\tabcolsep}{8pt}
     \renewcommand{\arraystretch}{1.3}
     \centering
-    \caption[Zurada Results - Ranked]{Zurada Results - Ranked}\label{tab:zuradaresultsranks}
+    \caption[Evaluation Results - Ranked \citep{zurada2014classification}]{Evaluation Results - Ranked \citep{zurada2014classification}}\label{tab:zuradaresultsranks}
     \begin{tabular}{r r r r r r}
     \toprule
     Model & Acc. & Rec. & AUC & Score & Rank \\
@@ -142,27 +145,68 @@ Hence, it is expected that Neural Network would perform well on the HMEQ data se
     \centering{\begin{source}Ranking of \citep{zurada2014classification}\end{source}}\vspace{-1em}
 \end{table}
 
+Although, both Zurada and Aras ranked the Logistic Regression as the worst performing model and SVM was ranked according to them as the third best model, they did not agree on the ranking of Decision Tree and KNN models.
+Such a disagreement can be attributed to the fact they both used different data preprocessing techniques, as well as different hyperparameters' spaces for fine tuning the models and probably also different softwares, random seed, and data split.
+We also need to account for a relatively small sample size of the HMEQ data set, which can lead to a high variance in the results.
+Therefore, several steps and procedures are applied in this thesis in order to ensure the reliable and robust results and estimates, which are further described in \autoref{sec:modelling}.
 
 \section{Hypotheses}
 
-\noindent \textbf{Hypothesis 1:} The recalibration of the model enhaces model performance \citep{de2023predicting}.
-\url{file:///C:/Users/ngnpe/Downloads/Predicting_Readmission_or_Death_After_Discharge_Fr%20(1).pdf}
+In this section, we formulate the hypotheses, which are partially derived from the literature review disscused above and are further tested, i.e., rejected or not rejected, in \autoref{chap:five} based on the empirical analysis regarding the machine learning implementation in \autoref{chap:four}.
+\vspace{0.3cm}
+
+\noindent \textbf{Hypothesis \#1:} \textit{The recalibration of the model enhaces model performance on HMEQ data set.}
+
+The study of de Hond and others \citep{de2023predicting} focuses on the model re-training (recalibration) in order to improve the model performance, based on the health record data from Leiden University Medical Center and Amsterdam University Medical Center fore prediction of readmissions or deaths after ICU discharge.
+Such effect is being achieved by either re-training the model on the and newest additional data, hence by increasing the sample size within the model training, we expect the model's predictive power to be enhanced. Such approach is further discussed in \autoref{subsec:modelrecal} and assessed in \autoref{subsec:modelperformance}.
+\vspace{0.3cm}
+
+
+\noindent \textbf{Hypothesis \#2:} \textit{Either Neural Network or KNN model outperforms all the models on HMEQ data set.}
+
+Based on the studies of Aras \citep{serkan2021bagging} and Zurada and others \citep{zurada2014classification}, the highest ranked models in terms of performance were KNN and Neural Network, respectively. Those two models outperformed the traditional Logistic Regression, and incase of Aras, KNN also outperformed Decision Tree, Gaussian Naive Bayes, SVM and even Random Forest.
+Therefore, we expect that at least one of those two models will outperform all the other models on the HMEQ data set.
+
+\vspace{0.3cm}
+
+\noindent \textbf{Hypothesis \#3:} \textit{Black--box models perform better than the white--box models on HMEQ data set.}
 
 \textbf{TBD}
+\vspace{0.3cm}
 
-\noindent \textbf{Hypothesis 2:} The Neural Network model outperforms all the models.
+\noindent \textbf{Hypothesis \#4:} \textit{The longer execution time of a model, the better performance on HMEQ data set.}
 
-\textbf{TBD}
+Although, the research paper's objective of Wu and others \citep{wu2018accurate} does not directly regard the relationship between the training (execution) time and the model performance, but rather the accuracy of indoor localization techniques in two different environments.
+Howeover, such study also inspects the evaluation of Bayes Net, SVM and Random Forest models, including their execution time. As shown in \autoref{tab:wuexec}, we can observe that there is a trade-off between model performance and the execution time, as the SVM has the highest accuracy and moderate execution time, while the Bayes Net has the lowest accuracy, but also the shortest execution time.
+Therefore, we expect a positive association between the execution time and the model performance.
 
-\noindent \textbf{Hypothesis 3:} Black--box models perform better than the white--box models.
+\begin{table}[H]
+    \small
+    \setlength{\tabcolsep}{8pt}
+    \renewcommand{\arraystretch}{1.3}
+    \centering
+    \caption[Accuracy vs. Execution Time \citep{wu2018accurate}]{Accuracy vs. Execution Time \citep{wu2018accurate}}\label{tab:wuexec}
+    \begin{tabular}{r r r}
+    \toprule
+    Model & Acc. & Time (seconds) \\
+    \midrule
+    \hline
+    Bayes Net & 0.8521 / 0.8474 & 0.56 / 1.15 \\
+    SVM & 0.9328 / 0.9590 & 1.79 / 3.21 \\
+    RF & 0.9070 / 0.9574 & 4.92 / 8.84 \\
 
-\textbf{TBD}
+    \hline
+    \bottomrule
+    \end{tabular}
+    \vspace{0.35em}
+    
+    \centering{\begin{source}Ranking of \citep{wu2018accurate}\end{source}}\vspace{-1em}
+\end{table}
 
-\noindent \textbf{Hypothesis 4:} The longer execution time of a model, the better performance \citep{wu2018accurate}.
-\url{file:///C:/Users/ngnpe/Downloads/Accurate_Indoor_Localization_Based_on_CSI_and_Visi.pdf}
+\vspace{0.3cm}
 
-\textbf{TBD}
+\noindent \textbf{Hypothesis \#5:} \textit{The main default drivers are the debt and/or delinquency features on HMEQ data set.}
 
-\noindent \textbf{Hypothesis 5:} The main default drivers are the debt and/or delinquency variables.
-
-\textbf{TBD}
+In the study of Zurada and others \citep{zurada2014classification}, the authors also inspect the significance of features in order to reduce the dimensionality. In particular, the authors employed both using correlation analysis with the target as well as ranking according to information gain.
+In case of HMEQ data set, the most significant features are debt--to--income ratio, number of derogatory public records and number of delinquent credit lines.
+Thus, these features are expected to be the most important indicators when predicting a default.

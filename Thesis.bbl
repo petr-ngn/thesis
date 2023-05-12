@@ -1,4 +1,4 @@
-\begin{thebibliography}{79}
+\begin{thebibliography}{81}
 \newcommand{\enquote}[1]{``#1''}
 \providecommand{\natexlab}[1]{#1}
 
@@ -14,6 +14,12 @@
   A.~\textsc{Hussain}, \& A.~\textsc{Aljaaf} (2020): \enquote{Supervised and
   unsupervised learning for data science.}
 \newblock \emph{Supervised and Unsupervised Learning for Data Science} .
+
+\bibitem[{Aniceto \emph{et~al.}(2020)Aniceto, Barboza, \&
+  Kimura}]{aniceto2020machine}
+\textsc{Aniceto}, M.~C., F.~\textsc{Barboza}, \& H.~\textsc{Kimura} (2020):
+  \enquote{Machine learning predictivity applied to consumer creditworthiness.}
+\newblock \emph{Future Business Journal} \textbf{6(1)}: pp. 1--14.
 
 \bibitem[{Aras(2021)}]{serkan2021bagging}
 \textsc{Aras}, S. (2021): \enquote{Bagging and boosting classifiers for credit
@@ -426,6 +432,12 @@
 \textsc{Tatsat}, H., S.~\textsc{Puri}, \& B.~\textsc{Lookabaugh} (2020):
   \emph{Machine Learning and Data Science Blueprints for Finance}.
 \newblock O'Reilly Media.
+
+\bibitem[{Tepl\'{y} \& Polena(2020)}]{teply2020best}
+\textsc{Tepl\'{y}}, P. \& M.~\textsc{Polena} (2020): \enquote{Best
+  classification algorithms in peer-to-peer lending.}
+\newblock \emph{The North American Journal of Economics and Finance}
+  \textbf{51}: p. 100904.
 
 \bibitem[{TIBCO-Software(2023)}]{TIBCO2023}
 \textsc{TIBCO-Software} (2023): \enquote{What is a random forest?}
