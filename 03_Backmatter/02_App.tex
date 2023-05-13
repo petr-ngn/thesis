@@ -1,10 +1,2648 @@
-\chapter{Project's website}
+\KOMAoptions{paper=landscape,DIV=last}
+\newgeometry{hmargin=2.5cm,bottom=25mm,height=150mm, includehead}
+\fancyheadoffset{0pt}
+\chapter{Source Codes}
 
-You can create a special website for your project which contains empirical data and MatLab/R/Stata source codes, see \href{http://meta-analysis.cz/sigma/}{meta-analysis.cz/sigma}, for example.
-Stating in your thesis that the data and source codes are available upon request is enough but please, have them prepared for such requests. The faculty does not allow enclosed DVD.
 
-\begin{itemize}
-		\item File 1: Master's thesis
-    \item File 2: Empirical data    
-		\item File 3: Source codes
-\end{itemize}
+\section{Python Notebook Code}
+\begin{lstlisting}[basicstyle=\footnotesize\ttfamily]
+import warnings
+
+warnings.filterwarnings("ignore")
+
+import os
+import numpy as np
+import pandas as pd
+import matplotlib
+import matplotlib.pyplot as plt
+from matplotlib import ticker
+import seaborn as sns
+import time
+import math
+import missingno
+from itertools import combinations
+
+from scipy.stats import chi2_contingency, ks_2samp, pointbiserialr, somersd
+from imblearn.over_sampling import ADASYN
+
+from optbinning import BinningProcess
+
+from sklearn.model_selection import train_test_split, StratifiedKFold
+from sklearn.feature_selection import SequentialFeatureSelector
+from sklearn.metrics import (
+	accuracy_score,
+	recall_score,
+	precision_score,
+	f1_score,
+	matthews_corrcoef,
+	brier_score_loss,
+	confusion_matrix,
+	roc_curve,
+	roc_auc_score,
+	log_loss,
+)
+
+
+from sklearn.linear_model import LogisticRegression
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.naive_bayes import GaussianNB
+from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.svm import SVC
+from sklearn.neural_network import MLPClassifier
+
+from skopt import BayesSearchCV
+from skopt.space import Real, Categorical, Integer
+import shap
+
+import lime
+import dill
+
+data = pd.read_csv("./data/raw_data.csv")
+\end{lstlisting}
+\subsection{Data Exploration}
+\begin{lstlisting}[basicstyle=\footnotesize\ttfamily]
+data.info()
+
+no_duplicates = data.duplicated(subset = [col for col in data.columns if col != 'BAD']).sum()
+print(f"Duplicates check: {no_duplicates} duplicated rows.")
+
+
+def categorical_numeric_vars(df: pd.DataFrame, target:str = "BAD") -> tuple[list, list]:
+    
+    cat_vars = [col for col in df.columns if df[col].dtypes == "O" and col != target]
+    num_vars = [col for col in df.columns if col not in cat_vars + [target]]
+
+    print(f"Categorical features: {', '.join(cat_vars)}")
+    print(f"Numeric features: {', '.join(num_vars)}")
+
+    return (cat_vars, num_vars)
+
+cat_vars, num_vars = categorical_numeric_vars(data)
+
+
+def default_distribution_plot(df, target="BAD", export=True):
+    
+    matplotlib.rcParams["mathtext.fontset"] = "stix"
+    matplotlib.rcParams["font.family"] = "STIXGeneral"
+    
+    # Replacing the Booleans with non-default/default strings for visualization
+    df_plot = df[[target]].copy().replace({0: "Non-default", 1: "Default"})
+
+    # Figure's initialization
+    fig, ax = plt.subplots(figsize=(8, 6))
+    
+    # Default distribution
+    sns.countplot(data=df_plot, x=target, palette="BuPu",
+                  order=list(df_plot[target].unique())[::-1], ax=ax)
+    
+    # Increase the fontsize for xlabel and ylabel
+    ax.set_ylabel(ax.yaxis.label.get_text(), fontsize=17)
+    ax.set_xlabel(ax.xaxis.label.get_text(), fontsize=17)
+
+    # Increase the fontsize for xticks and yticks
+    plt.xticks(fontsize=17)
+    plt.yticks(fontsize=17)
+
+    # Removing upper and right axes spines
+    ax.spines["top"].set_visible(False)
+    ax.spines["right"].set_visible(False)
+
+    plt.tight_layout()
+    
+    # Exporting plot
+    if export:
+        os.makedirs("./plots/", exist_ok=True)
+        plt.savefig(f"./plots/Default_Distribution.jpg", dpi=300)
+
+    plt.show()
+
+default_distribution_plot(data)
+
+
+def numeric_distribution_plot(df: pd.DataFrame, num_vars: list,
+                                 plot_type: str, target: str = "BAD", 
+                                 export: bool = True):
+
+    def custom_int_formatter(x, pos):
+        return f"{x:.0f}"
+
+    #Possible plot types
+    plot_types = {"boxplot": sns.boxplot,
+                  "violinplot": sns.violinplot,
+                  "histogram": sns.histplot}
+
+    #Plot type parameter check
+    if plot_type not in plot_types.keys():
+		plot_types = ','.join([key for key in plot_types.keys()])
+        raise ValueError(f"Invalid plot type. Please, select one of these available plot types: {plot_types}")
+
+        
+    matplotlib.rcParams["mathtext.fontset"] = "stix"
+    matplotlib.rcParams["font.family"] = "STIXGeneral"
+    
+    #Plot either boxplots or violinplots
+    if plot_type in ["boxplot", "violinplot"]:
+        
+        #replace 0/1's with (Non)-default texts for visualization's sake.
+        df_plot = df.copy()
+        df_plot[target] = df_plot[target].replace({0: "Non-default", 1: "Default"})
+
+        #Figure's and axes' initialization
+        fig, axs = plt.subplots(nrows = 5, ncols = 2, figsize = (12, 20))
+
+        for ax, var in zip(axs.ravel(), num_vars):
+            
+            #Boxplot/violinplot
+            plot_types[plot_type](data = df_plot, x = target, y = var, ax = ax,
+                                  palette = "BuPu", order = ["Non-default", "Default"])
+
+            ax.set_title(f"Distribution of {var}", size = 19, fontweight = "bold")
+            ax.tick_params(axis = "both", which = "major", labelsize = 18)
+            ax.set(xlabel = None)
+            ax.set(ylabel = None)
+            ax.spines["top"].set_visible(False)
+            ax.spines["right"].set_visible(False)
+            ax.yaxis.set_major_formatter(matplotlib.ticker.FuncFormatter(custom_int_formatter))
+        
+        plt.tight_layout()
+
+        #Exporting the plots
+        if export:
+            os.makedirs("./plots/", exist_ok = True)
+            plt.savefig(f"./plots/Numeric_Features_Distribution_{plot_type.capitalize()}s.jpg", dpi = 300)
+        plt.show()
+
+
+    #Plot histograms
+    elif plot_type == "histogram":
+        def integer_formatter(x, pos):
+            return f"{int(x)}"
+
+        #Figure's and axes' initialization
+        fig, axs = plt.subplots(nrows = len(num_vars), ncols = 2, figsize = (12, 25))
+
+        #Column index
+        col_ind = 0
+        # Axis index
+        # (if the value is even, the plot will be located on the left side, otherwise on the right side)
+        axis_count = 0
+
+        for ax in axs.ravel():
+
+            #Accessing the feature name.
+            var = num_vars[col_ind]
+            #Subsetting the data based on the feature.
+            var_series = df[var]
+
+            # Calculating the bin size for given feature ensuring that both conditional plots
+            # (left and right) will have the same number of bins.
+            # Using rule of thumb (Scott, 1979)
+            # https://stackoverflow.com/questions/33458566/how-to-choose-bins-in-matplotlib-histogram
+       
+            R = var_series.max() - var_series.min() #Range of the feature's values
+            n = len(var_series) #Number of feature's values
+            sigma = var_series.std() #Standard deviation of the feature's values
+        
+            #Number of bins
+            no_bins = int(R*(n**(1/3))/(3.49*sigma))
+
+            # The left side (even axis_count) depicts the features' distribution
+            # conditional on the non-default cases.
+            if axis_count % 2 == 0:
+                #Subsetting the data for non-default cases only.
+                df_subset= df.query(f"{target} == 0")
+                #Number of missing values within given feature
+                no_missings = df_subset[var].isna().sum()
+                # Percentage of missing values within subset of given feature
+                # (i.e., percentage of missing values of given feature within the non-default cases)
+                pct_missings = no_missings/df_subset.shape[0] * 100
+
+                # Histogram with kernel density function
+                # binrange to ensure that both left and right plot will have the same data range.
+                plot_types[plot_type](data = df_subset, x = var, ax = ax, bins = no_bins,
+                                binrange = ((var_series.min(), var_series.max())),
+                                kde = True, color = "lightblue")
+ 
+                ax.set_title(f"Distribution of {var} (Non-default cases)", size = 17, fontweight = "bold")
+                ax.tick_params(axis = "both", which = "major", labelsize = 15, rotation = 30)
+                ax.set(xlabel = None)
+                ax.set_ylabel(ax.get_ylabel(), fontsize=15)
+                ax.xaxis.set_major_formatter(ticker.FuncFormatter(integer_formatter))
+                ax.spines["top"].set_visible(False)
+                ax.spines["right"].set_visible(False)
+
+                #Inserting a text box with an information about the missing values.
+                ax.text(0.7, 0.9, f"Number of NA's: {no_missings} ({pct_missings:.1f}%)",
+                       horizontalalignment = "center", verticalalignment = "center",
+                       fontsize = 14,
+                       transform = ax.transAxes, bbox = dict(facecolor = "pink", alpha = 0.3))
+
+            # The right side (odd axis_count) depicts the features' distribution
+            # conditional on the default cases.
+            else:
+                #Subsetting the data for default cases only.
+                df_subset = df.query(f"{target} == 1")
+                #Number of missing values within given feature
+                no_missings = df_subset[var].isna().sum()
+                # Percentage of missing values within subset of given feature
+                # (i.e., percentage of missing values of given feature within the default cases)
+                pct_missings = no_missings/df_subset.shape[0] * 100
+
+                # Histogram with kernel density function
+                # binrange to ensure that both left and right plot will have the same data range.
+                sns.histplot(data = df_subset, x = var, ax = ax, bins = no_bins,
+                                binrange = ((var_series.min(), var_series.max())),
+                                kde = True, color = "mediumpurple")
+                
+                ax.set_title(f"Distribution of {var} (Default cases)", size = 17, fontweight = "bold")
+                ax.tick_params(axis = "both", which = "major", labelsize = 15, rotation = 30)
+                ax.set(xlabel = None)
+                ax.set_ylabel(ax.get_ylabel(), fontsize=15)
+                ax.xaxis.set_major_formatter(ticker.FuncFormatter(integer_formatter))
+                ax.spines["top"].set_visible(False)
+                ax.spines["right"].set_visible(False)
+
+                #Inserting a text box with an information about the missing values.
+                ax.text(0.7, 0.9, f"Number of NA's: {no_missings} ({pct_missings:.1f}%)",
+                        horizontalalignment = "center", verticalalignment = "center",
+                        fontsize = 14,
+                        transform = ax.transAxes, bbox = dict(facecolor = "pink", alpha = 0.3))
+                
+                #Proceeding with the next feature
+                col_ind += 1
+
+            #Switching to the left/right side of the figure
+            axis_count +=1
+        
+        plt.tight_layout()
+        
+        #Exporting the plots
+        if export:
+            os.makedirs("./plots/", exist_ok = True)
+            plt.savefig(f"./plots/Numeric_Features_Distribution_{plot_type.capitalize()}s.jpg", dpi = 300)
+    
+        plt.show()
+
+
+numeric_distribution_plot(data, num_vars, plot_type = "boxplot")
+numeric_distribution_plot(data, num_vars, plot_type = "violinplot")
+numeric_distribution_plot(data, num_vars, plot_type = "histogram")
+
+
+def normality_test(data: pd.DataFrame, num_vars: list) -> pd.DataFrame:
+
+    from scipy.stats import shapiro
+
+    output_df = pd.DataFrame(columns = ["Feature", "Shapiro-Wilk", "Significance", "Result"])
+    
+    for i, col in enumerate(num_vars):
+        temp_df = data.copy()
+        temp_df = temp_df[temp_df[col].notna()].copy()
+
+        output_df.loc[i, "Feature"] = col
+
+        shapiro_stat, shapiro_p = shapiro(temp_df[col])
+        shapiro_significance_stars = "***" if shapiro_p < 0.01 else "**" if shapiro_p < 0.05 \ 
+		                            else "*" if shapiro_p < 0.1 else ""
+        shapiro_significance_result = "Normally distributed" if shapiro_p > 0.05 \
+                                       else "Not normally distributed"
+
+        output_df.loc[i, "Shapiro-Wilk"] = round(shapiro_stat,4)
+        output_df.loc[i, "Significance"] = shapiro_significance_stars
+        output_df.loc[i, "Result"] = shapiro_significance_result
+        
+    return output_df
+
+
+normality_test(data, num_vars)
+
+
+def num_na_table(df: pd.DataFrame, num_vars: list, target: str = "BAD") -> pd.DataFrame:
+    output_df = pd.DataFrame(index = num_vars,
+                      columns = ["# of NA's (Y=0)", "# of NA's (Y=1)",  "% of NA's (Y=0)", "% of NA's (Y=1)"])
+    for num in num_vars:
+        output_df.loc[num, "# of NA's (Y=0)"] = df.query(f"{target} == 0")[num].isna().sum()
+        output_df.loc[num, "# of NA's (Y=1)"] = df.query(f"{target} == 1")[num].isna().sum()
+
+        pct_nd = df.query(f"{target} == 0")[num].isna().sum()/df.query(f"{target} == 0").shape[0] * 100
+        pct_d = df.query(f"{target} == 1")[num].isna().sum()/df.query(f"{target} == 1").shape[0] * 100
+        output_df.loc[num, "% of NA's (Y=0)"] = pct_nd
+        output_df.loc[num, "% of NA's (Y=1)"] = pct_d
+
+    return output_df
+
+num_na_table(data, num_vars)
+
+
+def categorical_distribution_plot(df: pd.DataFrame, cat_vars: list,
+                                  target: str = "BAD", export: bool = True):
+    
+    #Figure's and axes' initialization
+    fig, axs = plt.subplots(nrows = len(cat_vars),ncols = 2, figsize = (11, 10))
+
+    #Column index
+    col_ind = 0
+    # Axis index
+    # (if the value is even, the plot will be located on the left side, otherwise on the right side)
+    axis_count = 0
+    
+    matplotlib.rcParams["mathtext.fontset"] = "stix"
+    matplotlib.rcParams["font.family"] = "STIXGeneral"
+    
+    for ax in axs.ravel():
+
+        #Accessing the feature name
+        var = cat_vars[col_ind]
+        # Subsetting the data based on the feature with subsequent replacing missing values
+        # with N/A's strings (for visualization's sake).
+        var_target_df = df[[var, target]].copy().fillna("N/A")
+        
+        #If the feature has some missing values, put the N/A category at the end of the plot.
+        if var_target_df.query(f"{var} == 'N/A'").shape[0] != 0:
+            categories = [cat for cat in var_target_df[var].unique() if cat != "N/A"] + ["N/A"]
+        else:
+            categories = var_target_df[var].unique()
+
+        # The left side (even axis_count) depicts the features' distribution
+        # conditional on the non-default cases.
+        if axis_count % 2 == 0:
+
+            sns.countplot(data = var_target_df.query(f"{target} == 0"), x = var,
+                          ax = ax, order = categories, color = "lightblue")
+
+            ax.set_title(f"Distribution of {var} (Non-default cases)", size = 19, fontweight = "bold")
+            ax.tick_params(axis = "both", which = "major", labelsize = 18)
+            ax.tick_params(axis = "x", rotation = 30, which = "major", labelsize = 18)
+            ax.set(xlabel = None)
+            ax.set_ylabel(ax.get_ylabel(), fontsize=15)
+            ax.spines["top"].set_visible(False)
+            ax.spines["right"].set_visible(False)
+                        
+        
+        # The right side (odd axis_count) depicts the features' distribution
+        # conditional on the default cases.
+        else:
+            
+            sns.countplot(data = var_target_df.query(f"{target} == 1"), x = var,
+                          ax = ax, order = categories, color = "mediumpurple")
+
+            ax.set_title(f"Distribution of {var} (Default cases)", size = 19, fontweight = "bold")
+            ax.tick_params(axis = "both", which = "major", labelsize = 18)
+            ax.tick_params(axis = "x", rotation = 30, which = "major", labelsize = 18)
+            ax.set_ylabel(ax.get_ylabel(), fontsize=15)
+            ax.set(xlabel = None)
+            ax.spines["top"].set_visible(False)
+            ax.spines["right"].set_visible(False)
+
+            #Proceeding with the next feature
+            col_ind += 1
+
+        #Switching to the left/right side of the figure
+        axis_count += 1
+
+    plt.tight_layout()
+
+    #Exporting the plots
+    if export:
+        os.makedirs("./plots/", exist_ok = True)
+        plt.savefig(f"./plots/Categorical_Features_Distribution.jpg", dpi = 300)
+        
+    plt.show()
+
+
+categorical_distribution_plot(data, cat_vars)
+
+
+def cat_na_table(df: pd.DataFrame, cat_var: str, target: str = "BAD") -> pd.DataFrame:
+    temp_df = df.copy()
+    temp_df[cat_var] = temp_df[cat_var].fillna("N/A") 
+    output_df = pd.DataFrame(index = list(temp_df[cat_var].unique()),
+                             columns = ["# (Y=0)", "# (Y=1)",  "% (Y=0)", "% (Y=1)"])
+
+    for cat in output_df.index:
+        output_df.loc[cat, "# (Y=1)"] = temp_df.query(f"{target} == 1 and {cat_var} == '{cat}'").shape[0]
+        output_df.loc[cat, "# (Y=0)"] = temp_df.query(f"{target} == 0 and {cat_var} == '{cat}'").shape[0]
+        pct_d = round(output_df.loc[cat, "# (Y=1)"]/temp_df.query(f"{target} == 1").shape[0], 4)* 100
+        pct_nd = round(output_df.loc[cat, "# (Y=0)"]/temp_df.query(f"{target} == 0").shape[0] , 4)* 100
+        output_df.loc[cat, "% (Y=1)"] = pct_d
+        output_df.loc[cat, "% (Y=0)"] = pct_nd
+
+    return output_df
+
+cat_na_table(data, "JOB")
+cat_na_table(data, "REASON")
+
+def point_biserial_corr_table(data: pd.DataFrame, num_features, target = 'BAD') -> pd.DataFrame:
+    
+    output_df = pd.DataFrame(columns = ['Feature', 'Point-Biserial Correlation', 'Significance'])
+    for i, col in enumerate(num_features):
+        
+        temp_df = data[data[col].notna()].copy()
+        coef, p_value = pointbiserialr(temp_df[target], temp_df[col])
+        output_df.loc[i, 'Feature'] = col
+        output_df.loc[i, 'Point-Biserial Correlation'] = round(coef, 3)
+
+        significance_stars =  '***' if p_value <= 0.01 else '**' if p_value <= 0.05 else \
+		              '*' if p_value <= 0.1 else ' '
+        output_df.loc[i, 'Significance'] = significance_stars
+
+    return output_df
+    
+
+point_biserial_corr_table(data, num_vars)
+
+
+def cramer_v_table(data: pd.DataFrame, cat_features, target = 'BAD') -> pd.DataFrame:
+    
+    output_df = pd.DataFrame(columns = ['Variable #1',  'Variable #2', "Cramer's V", 'Significance'])
+
+    pairs = list(combinations(cat_features + [target], 2))
+
+    pairs =  [sorted(pair) for pair in pairs]
+
+    pairs = sorted(pairs)
+
+    for i, pair in enumerate(pairs):
+        temp_df = data.copy()
+        temp_df = temp_df[temp_df[pair[0]].notna()]
+        temp_df = temp_df[temp_df[pair[1]].notna()]
+
+        cross_tab = pd.crosstab(temp_df[pair[0]], temp_df[pair[1]])
+        chi2, p_value, *_ = chi2_contingency(cross_tab, correction = False)
+
+        N = cross_tab.sum().sum()
+        k = min(cross_tab.shape)
+        cr_v = np.sqrt((chi2/N) / (k-1))
+
+        significance_stars =  '***' if p_value <= 0.01 else '**' if p_value <= 0.05 else \
+		               '*' if p_value <= 0.1 else ' '
+
+        output_df.loc[i, 'Variable #1'] = pair[0]
+        output_df.loc[i, 'Variable #2'] = pair[1]
+        output_df.loc[i, "Cramer's V"] = round(cr_v, 3)
+
+        significance_stars =  '***' if p_value <= 0.01 else '**' if p_value <= 0.05 else \
+		              '*' if p_value <= 0.1 else ' '
+        output_df.loc[i, 'Significance'] = significance_stars
+
+    return output_df
+
+
+cramer_v_table(data, cat_vars)
+
+
+def phi_correlation(var1, var2) -> float:
+
+    cross_tab = pd.crosstab(var1, var2)
+
+    chi2, p_value, *_ = chi2_contingency(cross_tab)
+    n = cross_tab.sum().sum() 
+
+    phi = np.sqrt(chi2/n)
+    
+    return phi
+
+
+def na_phi_corr_table(data: pd.DataFrame, target = 'BAD') -> pd.DataFrame:
+
+    output_df = pd.DataFrame(columns = ['Feature', 'Phi Correlation', 'Significance'])
+
+    for i, col in enumerate(data.drop(target, axis = 1).columns):
+        na_indicator = [1 if pd.isnull(i) else 0 for i in data[col]]
+        cross_tab = pd.crosstab(data[target], na_indicator)
+        chi2, p_value, *_ = chi2_contingency(cross_tab)
+        n = cross_tab.sum().sum() 
+
+        phi = np.sqrt(chi2/n)
+        significance_stars =  '***' if p_value <= 0.01 else '**' if p_value <= 0.05 else \
+		              '*' if p_value <= 0.1 else ' '
+
+        output_df.loc[i, 'Feature'] = col
+        output_df.loc[i, 'Phi Correlation'] = round(phi, 3)
+        output_df.loc[i, 'Significance'] = significance_stars
+
+    return output_df
+
+na_phi_corr_table(data)
+
+
+def spearman_corr_matrix_plot(df: pd.DataFrame, num_var: list, export: bool = True):
+    
+    #Figure's initialization
+    plt.figure(figsize = (16,13))
+    matplotlib.rcParams['mathtext.fontset'] = 'stix'
+    matplotlib.rcParams['font.family'] = 'STIXGeneral'
+    #Corelation matrix heatmap
+    heatmap = sns.heatmap(df[num_var].corr(method = "spearman"), vmin = -1, vmax = 1,
+                        mask = np.triu(np.ones_like(df[num_var].corr())),
+                        annot = True, cmap  = "coolwarm",  fmt = ".3f",
+                        xticklabels = num_var, yticklabels = num_var,
+                        annot_kws={"size": 19})
+
+    plt.xticks(fontsize = 19)
+    plt.yticks(fontsize = 19)
+
+    cbar = heatmap.collections[0].colorbar
+    cbar.ax.tick_params(labelsize=19)
+    
+    plt.tight_layout()
+
+    #Exporting the plots
+    if export:
+        os.makedirs("./plots/", exist_ok = True)
+        plt.savefig(f"./plots/Spearman_Correlation_Matrix_Numeric_Features.jpg", dpi = 300)
+    
+    plt.show()
+
+
+spearman_corr_matrix_plot(data, num_vars)
+
+
+def na_dendrogram(df:pd.DataFrame, export:bool = True, plot_suffix:str = ""):
+
+    matplotlib.rcParams['mathtext.fontset'] = 'stix'
+    matplotlib.rcParams['font.family'] = 'STIXGeneral'
+
+    #True/False values indicating whether a column has some NA's.
+    na_columns_indicators = df.describe(include = "all").T["count"] < df.shape[0]
+    #Filtering the column names having NA's.
+    na_columns = df.columns[na_columns_indicators]
+    #Subsetting the data based on the NA's columns.
+    final_df_dendogram = df[na_columns]
+
+    #Plotting the dendrogram
+    missingno.dendrogram(final_df_dendogram, orientation = "top", figsize = (10, 6), fontsize = 11)
+    #plt.title("Dendrogram of variables having NA's", size = 13, fontweight = "bold")
+    plt.yticks(fontsize=17)
+    plt.xticks(rotation=45, fontsize=17)
+
+    plt.tight_layout()
+
+    #Exporting the plot
+    if export:
+        os.makedirs("./plots/", exist_ok = True)
+        plt.savefig(f"./plots/NA_Dendrogram{plot_suffix}.jpg", dpi = 300)
+    
+    plt.show()
+
+na_dendrogram(data)
+na_dendrogram(data[data['BAD'] == 1], plot_suffix = "_defaults")
+\end{lstlisting}
+
+\subsection{Data Preprocessing}
+\begin{lstlisting}[language=Python, basicstyle=\footnotesize\ttfamily]
+	def data_split(
+		df: pd.DataFrame,
+		test_size: float,
+		validation_size: float,
+		seed: int,
+		num_vars,
+		cat_vars,
+		oversampling: str = "None",
+		target: str = "BAD",
+	) -> tuple[pd.DataFrame, pd.Series, pd.DataFrame, pd.Series, pd.DataFrame, pd.Series]:
+	
+		# Separating the target variable (Y) and the features (X)
+		Y = df[target]
+		X = df.drop(target, axis=1)
+	
+		# Stratified split into training set, validation set and test set
+		X_temp, X_test, y_temp, y_test = train_test_split(
+			X, Y, stratify=Y, test_size=test_size, random_state=seed
+		)
+		X_train, X_valid, y_train, y_valid = train_test_split(
+			X_temp, y_temp, stratify=y_temp, test_size=validation_size, random_state=seed
+		)
+	
+		# ADASYN Oversampling
+		if oversampling == "ADASYN":
+	
+			# ADASYN initialization
+			adasyn = ADASYN(random_state=seed, n_jobs=-1)
+	
+			# Temporary imputing of missing values
+			# (separately for categorical and numeric features)
+			# ADASYN cannot work with NA's, thus we replace them with arbitrary values.
+			X_train_imputed = pd.concat(
+				(
+					X_train[cat_vars].copy().fillna("NAN"),
+					X_train[num_vars].copy().fillna(99999999999999),
+				),
+				axis=1,
+			)[X_train.columns].copy()
+	
+			# Dummy encoding of categorical features
+			# ADASYN cannot work with categorical features, thus we need to encode them.
+			for cat in cat_vars:
+				X_cat_dummies = pd.get_dummies(X_train_imputed[[cat]])
+				X_train_imputed = X_train_imputed.drop(cat, axis=1)
+				X_train_imputed = pd.concat((X_train_imputed, X_cat_dummies), axis=1)
+	
+			# Oversampling on the training set.
+			X_train_final, y_train_final = adasyn.fit_resample(
+				X_train_imputed, pd.DataFrame(y_train)
+			)
+	
+			# Converting dummies back into the original categorical features.
+			for cat in cat_vars:
+				X_train_final[cat] = (
+					X_train_final.loc[
+						:, [col for col in X_train_final.columns if cat in col]
+					]
+					.idxmax(axis=1)
+					.str.replace(f"{cat}_", "")
+				)
+				X_train_final = X_train_final.drop(
+					[col for col in X_train_final.columns if f"{cat}_" in col], axis=1
+				)
+	
+			# Replacing the NA's strings back to NA's with respect to the categorical features.
+			X_train_final = X_train_final.replace({"NAN": np.nan})
+	
+			# Replacing back the missing values (99999999999999) with NA's in such case
+			# whether the value is exceeding the maximum value of given numeric feature before imputing.
+			for num in num_vars:
+				max_value = X_train[num].max()
+				X_train_final[num] = X_train_final[num].apply(
+					lambda x: np.nan if x > max_value else x
+				)
+	
+			y_train_final = y_train_final[target]
+	
+			X_train_final = X_train_final.reindex(columns=X_train.columns)
+	
+			return X_train_final, y_train_final, X_valid, y_valid, X_test, y_test
+	
+		# No oversampling
+		else:
+	
+			return X_train, y_train, X_valid, y_valid, X_test, y_test
+
+
+seed = 42
+test_size = 0.15
+validation_size = test_size/(1 - test_size)
+
+(
+    X_train,
+    y_train,
+    X_valid,
+    y_valid,
+    X_test,
+    y_test,
+) = data_split(data, test_size, validation_size, seed, num_vars, cat_vars, oversampling="ADASYN")
+
+(
+    X_train_orig,
+    y_train_orig,
+    X_valid_orig,
+    y_valid_orig,
+    X_test_orig,
+    y_test_orig,
+) = data_split(data, test_size, validation_size, seed, num_vars, cat_vars)
+
+
+def print_data_info(**kwargs):
+    
+    for name, _set in kwargs.items():
+
+        no_dashes = 50
+        no_dashes_name_left = int((no_dashes - len(name) - 1)/2)*"-"
+        no_dashes_name_right  = f"{(no_dashes - len(name) - len(no_dashes_name_left) - 2)*'-'}"
+
+        data_info = f"{_set['features'].shape[0]} instances, {_set['features'].shape[1]} features"
+        no_dashes_data_info_left = int((no_dashes - len(data_info) - 1)/2)*"-"
+        no_dashes_data_info_right = f'{(no_dashes - len(data_info) - len(no_dashes_data_info_left) - 2)*"-"}'
+        pct_d = np.sum(_set['target']) / _set['target'].shape[0]*100:
+        pct_nd = np.sum(_set['target'] == 0)/ _set['target'].shape[0]*100
+        target_info = f"Default: {pct_d:.2f}%  | Non-default: {pct_nd:.2f}%"
+        no_dashes_target_info_left = int((no_dashes - len(target_info) - 1)/2)*"-"
+        length_dashes_target_info_right = (no_dashes - len(target_info) - len(no_dashes_target_info_left) - 2)
+        no_dashes_target_info_right = f'{length_dashes_target_info_right*"-"}'
+
+
+        print(no_dashes*"-")
+        print(f"{no_dashes_name_left} {name} {no_dashes_name_right}")
+        print(f"{no_dashes_data_info_left} {data_info} {no_dashes_data_info_right}")
+        print(f"{no_dashes_target_info_left} {target_info} {no_dashes_target_info_right}")
+        print(no_dashes*"-", "\n")
+
+print_data_info(Training = {'features': X_train, 'target': y_train},
+                Validation = {'features': X_valid, 'target': y_valid},
+                Test = {'features': X_test, 'target': y_test})
+
+
+				def woe_binning(
+					x_train_set: pd.DataFrame,
+					y_train_labels: pd.Series,
+					cat_vars: list,
+					export: bool = True,
+					**kwargs,
+				) -> tuple[dict, pd.DataFrame]:
+				
+					binning_path = "./models/feature_preprocessing"
+					final_objects_path = "./models/objects_FINAL"
+				
+					# Initializing the binning process object.
+					bn = BinningProcess(
+						variable_names=list(x_train_set.columns),
+						categorical_variables=cat_vars
+					)
+				
+					# Fitting the binning on training set.
+					bn.fit(x_train_set, y_train_labels)
+				
+					# DataFrame including binned categories' information.
+					bins_woe = pd.DataFrame()
+				
+					for i in x_train_set.columns:
+				
+						var = bn.get_binned_variable(i).binning_table.build()
+						var = var[(~var["Bin"].isin(["Special", "Totals"]))]
+						var["Variable"] = i
+				
+						bins_woe = pd.concat((bins_woe, var))
+				
+					bins_woe = bins_woe.loc[:, ~bins_woe.columns.isin(["JS"])]
+				
+					if export:
+						for save_path in [binning_path, final_objects_path]:
+							os.makedirs(save_path, exist_ok=True)
+							bn.save(f"{save_path}/binning_woe_object.h5")
+							bins_woe.to_csv(f"{save_path}/woe_bins.csv",
+							   index = False)
+				
+					# Transforming both training set and test set
+					# based on the fitted training binning.
+					def woe_bin_transform(bn_fit, x_set):
+						x_set_binned = bn_fit.transform(x_set, metric="woe")
+						x_set_binned.index = x_set.index
+				
+						return x_set_binned
+				
+					X_binned_sets = {"X_train_binned": woe_bin_transform(bn, x_train_set)}
+					x_set_copy = X_binned_sets["X_train_binned"].copy()
+				
+					for col in x_set_copy.columns:
+						na_woe = (bins_woe
+						         .query('Variable == @col and Bin == "Missing"')["WoE"]
+							 .values[0]
+							 )
+						x_set_copy.loc[x_train_set[col].isna(), col] = na_woe
+					X_binned_sets["X_train_binned"] = x_set_copy
+				
+					for name, x_set in kwargs.items():
+						X_binned_sets[f"{name}_binned"] = woe_bin_transform(bn, x_set)
+						x_set_copy = X_binned_sets[f"{name}_binned"].copy()
+						for col in x_set_copy.columns:
+							na_woe = (bins_woe
+							         .query('Variable == @col and Bin == "Missing"')
+								 ["WoE"]
+					           		 .values[0])
+							x_set_copy.loc[x_set[col].isna(), col] = na_woe
+						X_binned_sets[f"{name}_binned"] = x_set_copy
+				
+					return (X_binned_sets, bins_woe, bn)
+
+				
+X_binned_sets, woe_bins, binning_transformator = woe_binning(X_train, y_train, cat_vars,
+                                                             X_valid = X_valid, X_test = X_test)
+X_train_binned, X_valid_binned, X_test_binned = (xset for i, xset in X_binned_sets.items())
+
+X_binned_sets_orig, woe_bins_orig, binning_transformator_orig = woe_binning(X_train_orig, y_train_orig,
+                                                                            export = False, cat_vars,
+                                                                            X_valid = X_valid_orig,
+                                                                            X_test = X_test_orig)
+X_train_binned_orig, X_valid_binned_orig, X_test_binned_orig = (xset for i, xset in X_binned_sets_orig.items())
+
+
+def prep_data_export(features: tuple, labels: tuple,
+                     ind_sets: tuple = ("Training", "Validation", "Test"),
+                     csv_name:str = '') -> pd.DataFrame:
+
+    df_list = []
+    
+    #Join each pair of features and labels data, assign to it a set indicator,
+        # append to the list and then,
+        #  transform that list into a data frame (and export it).
+    for feat, lab, ind in zip(features, labels, ind_sets):
+        
+        temp = pd.concat((lab, feat), axis = 1)
+        temp["set"] = ind
+        df_list.append(temp)
+    
+    dfs = [df for df in df_list]
+
+    final_df = pd.concat(dfs, axis = 0).sort_index()
+
+    if len(csv_name) != 0:
+        os.makedirs("./data/", exist_ok = True)
+        final_df.to_csv(f"./data/{csv_name}.csv", index = False)
+    
+    return final_df
+
+
+interim = prep_data_export((X_train_binned, X_valid_binned, X_test_binned),
+                            (y_train, y_valid, y_test),
+                            ("Training", "Validation", "Test"),
+                            csv_name = "interim_data")
+
+
+def categorical_distribution_plot_OS(df_orig: pd.DataFrame, df_os, cat_vars: list,
+                                  target: str = "BAD", class_val = 1, export: bool = False):
+    
+    #Figure's and axes' initialization
+    fig, axs = plt.subplots(nrows = len(cat_vars),ncols = 2, figsize = (14, 10))
+
+    #Column index
+    col_ind = 0
+    #Axis index (if the value is even, the plot will be located on the left side, otherwise on the right side)
+    axis_count = 0
+    
+    matplotlib.rcParams['mathtext.fontset'] = 'stix'
+    matplotlib.rcParams['font.family'] = 'STIXGeneral'
+
+    class_title_name = 'Default' if class_val == 1 else 'Non-Default'
+    
+    for ax in axs.ravel():
+
+        #Accessing the feature name
+        var = cat_vars[col_ind]
+        # Subsetting the data based on the feature with subsequent replacing missing values#
+        # with N/A's strings (for visualization's sake).
+        var_target_df_orig = df_orig[[var, target]].copy().fillna("N/A")
+        var_target_df_os = df_os[[var, target]].copy().fillna("N/A")
+        
+        #If the feature has some missing values, put the N/A category at the end of the plot.
+        if var_target_df_orig.query(f"{var} == 'N/A'").shape[0] != 0:
+            categories_orig = [cat for cat in var_target_df_orig[var].unique() if cat != "N/A"] + ["N/A"]
+        else:
+            categories_orig = var_target_df_orig[var].unique()
+
+        #If the feature has some missing values, put the N/A category at the end of the plot.
+        if var_target_df_os.query(f"{var} == 'N/A'").shape[0] != 0:
+            categories_os = [cat for cat in var_target_df_os[var].unique() if cat != "N/A"] + ["N/A"]
+        else:
+            categories_os = var_target_df_os[var].unique()
+
+        # The left side (even axis_count) depicts the features' distribution
+        # conditional on the non-default cases.
+        if axis_count % 2 == 0:
+
+            sns.countplot(data = var_target_df_orig.query(f"{target} == {class_val}"), x = var,
+                          ax = ax, order = categories_orig, color = "lightblue")
+
+            ax.set_title(f"Distribution of {var} ({class_title_name} cases)", size = 19, fontweight = "bold")
+            ax.tick_params(axis = "both", which = "major", labelsize = 18)
+            ax.tick_params(axis = "x", rotation = 30, which = "major", labelsize = 18)
+            ax.set(xlabel = None)
+            ax.set_ylabel(ax.get_ylabel(), fontsize=18)
+            ax.spines["top"].set_visible(False)
+            ax.spines["right"].set_visible(False)
+                        
+        
+        #The right side (odd axis_count) depicts the features' distribution conditional on the default cases.
+        else:
+            
+            sns.countplot(data = var_target_df_os.query(f"{target} == {class_val}"), x = var,
+                          ax = ax, order = categories_os, color = "mediumpurple")
+
+            ax.set_title(f"Distribution of {var} ({class_title_name} cases) - Oversampled",
+                         size = 19, fontweight = "bold")
+            ax.tick_params(axis = "both", which = "major", labelsize = 18)
+            ax.tick_params(axis = "x", rotation = 30, which = "major", labelsize = 18)
+            ax.set_ylabel(ax.get_ylabel(), fontsize=18)
+            ax.set(xlabel = None)
+            ax.spines["top"].set_visible(False)
+            ax.spines["right"].set_visible(False)
+
+            #Proceeding with the next feature
+            col_ind += 1
+
+        #Switching to the left/right side of the figure
+        axis_count += 1
+
+    plt.tight_layout()
+
+    #Exporting the plots
+    if export:
+        os.makedirs("./plots/", exist_ok = True)
+        plt.savefig(f"./plots/Categorical_Features_Distribution_OS_{class_title_name}.jpg", dpi = 300)
+        
+    plt.show()
+
+
+categorical_distribution_plot_OS(pd.concat((X_train_orig, y_train_orig), axis = 1),
+                                 pd.concat((X_train, y_train), axis = 1),
+                                   cat_vars, class_val = 1, export = True)
+
+df_temp = pd.DataFrame(columns = ['Feature', 'Category', '# (Y=1)', '# (Y=1) - Oversampled',
+                                  '% (Y=1)','% (Y=1) - Oversampled'])
+i = 0
+orig_temp_df = pd.concat((X_train_orig, y_train_orig), axis = 1).copy()
+temp_df = pd.concat((X_train, y_train), axis = 1).copy()
+for cat_var in cat_vars:
+    orig_temp_df[cat_var] = orig_temp_df[cat_var].fillna("N/A")
+    temp_df[cat_var] = temp_df[cat_var].fillna("N/A")
+
+    for category in orig_temp_df[cat_var].unique():
+        df_temp.loc[i, 'Feature'] = cat_var
+        df_temp.loc[i, 'Category'] = category
+
+        count_d = orig_temp_df.query(f"{cat_var} == '{category}' and BAD == 1").shape[0]
+        count_d_os = temp_df.query(f"{cat_var} == '{category}' and BAD == 1").shape[0]
+        df_temp.loc[i, '# (Y=1)'] = count_d
+        df_temp.loc[i, '# (Y=1) - Oversampled'] = count_d_os
+
+        pct_d = df_temp.loc[i, '# (Y=1)'] /  orig_temp_df.query("BAD == 1").shape[0]
+        pct_d_os = df_temp.loc[i, '# (Y=1) - Oversampled'] /  temp_df.query("BAD == 1").shape[0]
+        df_temp.loc[i, '% (Y=1)'] = round(pct_d * 100, 2)
+        df_temp.loc[i, '% (Y=1) - Oversampled'] = round(pct_d_os * 100, 2)
+        i += 1
+
+df_temp['rel diff'] = df_temp['% (Y=1) - Oversampled'] - df_temp['% (Y=1)']
+df_temp.reindex(df_temp['rel diff'].abs().sort_values(ascending=False).index)
+
+
+
+def numeric_distribution_plot_OS(df_orig: pd.DataFrame, df_os: pd.DataFrame, num_vars: list,
+                                 plot_type: str, target: str = "BAD", class_val = 1,
+                                 export: bool = True):
+
+    #Possible plot types
+    plot_types = {"boxplot": sns.boxplot,
+                  "violinplot": sns.violinplot
+                  }
+
+    #Figure's and axes' initialization
+    fig, axs = plt.subplots(nrows = len(num_vars),ncols = 2, figsize = (11, 45))
+
+    #Column index
+    col_ind = 0
+    #Axis index (if the value is even, the plot will be located on the left side, otherwise on the right side)
+    axis_count = 0
+
+    matplotlib.rcParams['mathtext.fontset'] = 'stix'
+    matplotlib.rcParams['font.family'] = 'STIXGeneral'
+
+    class_title_name = 'Default' if class_val == 1 else 'Non-Default'
+
+    for ax in axs.ravel():
+
+        #Accessing the feature name
+        var = num_vars[col_ind]
+
+        # The left side (even axis_count) depicts the features' distribution
+        # conditional on the non-default cases.
+        if axis_count % 2 == 0:
+
+            plot_types[plot_type](data = df_orig.loc[df_orig[target] == class_val], y = var, ax = ax,
+                                  color = "lightblue")
+
+            ax.set_title(f"Distribution of {var} ({class_title_name} cases)", size = 17)
+            ax.tick_params(axis = "both", which = "major", labelsize = 15)
+            ax.tick_params(axis = "x", rotation = 30, which = "major", labelsize = 15)
+            ax.set(xlabel = None)
+            ax.set_ylabel(ax.get_ylabel(), fontsize=15)
+            ax.spines["top"].set_visible(False)
+            ax.spines["right"].set_visible(False)
+
+        #The right side (odd axis_count) depicts the features' distribution conditional on the default cases.
+        else:
+
+            plot_types[plot_type](data = df_os.loc[df_os[target] == class_val], y = var, ax = ax,
+                                  color = "mediumpurple")
+
+            ax.set_title(f"Distribution of {var} ({class_title_name} cases) - Oversampled", size = 17)
+            ax.tick_params(axis = "both", which = "major", labelsize = 15)
+            ax.tick_params(axis = "x", rotation = 30, which = "major", labelsize = 15)
+            ax.set_ylabel(ax.get_ylabel(), fontsize=15)
+            ax.set(xlabel = None)
+            ax.spines["top"].set_visible(False)
+            ax.spines["right"].set_visible(False)
+
+            #Proceeding with the next feature
+            col_ind += 1
+
+        #Switching to the left/right side of the figure
+        axis_count += 1
+
+    plt.tight_layout()
+
+    #Exporting the plots
+    if export:
+        os.makedirs("./plots/", exist_ok = True)
+        plt.savefig(f"./plots/Numeric_Features_Distribution_{plot_type.capitalize()}s.jpg", dpi = 300)
+
+    plt.show()
+
+
+numeric_distribution_plot_OS(pd.concat((X_train_orig, y_train_orig), axis = 1),
+                                pd.concat((X_train, y_train), axis = 1), num_vars,
+                                plot_type = "violinplot", export = False)
+
+def woe_bins_plot(bins_woe: pd.DataFrame, export: bool = True):
+    
+    matplotlib.rcParams['mathtext.fontset'] = 'stix'
+    matplotlib.rcParams['font.family'] = 'STIXGeneral'
+    
+
+    fig, axs = plt.subplots(nrows = 4, ncols = 3, figsize = (13, 22))
+    
+    for i, ax in zip(bins_woe["Variable"].unique(), axs.ravel()):
+    
+        temp = bins_woe.loc[bins_woe["Variable"] == i]
+        sns.barplot(x = temp.index, y = "WoE", data = temp, ax = ax, palette = "BuPu")
+        ax.axhline(y = 0, color = "black", linewidth = 1)
+
+        
+        cat = False
+
+        for j in temp["Bin"]:
+            if isinstance(j, np.ndarray):
+                cat = True
+                break
+        if cat == False:
+            labels = list(temp["Bin"])
+ 
+        elif cat == True:
+            temp_bins = [k if type(k) == str else str(list(k)) for k in temp["Bin"]]
+            labels = [k..replace("[", "").replace("]", "").replace("'","") for k in temp_bins]
+        
+        ax.set_title(i, size = 20, fontweight = "bold")
+        ax.set_xticklabels(labels, rotation = 75, size = 19)
+        ax.set_yticklabels(['%.2f' % y for y in ax.get_yticks()], size = 19)
+        ax.set_xlabel(ax.get_xlabel(), fontsize=19)
+        ax.set_ylabel(ax.get_ylabel(), fontsize=19)
+
+        ax.spines["top"].set_visible(False)
+        ax.spines["right"].set_visible(False)
+    
+
+    fig.tight_layout()
+
+    
+    if export:
+        os.makedirs("./plots/", exist_ok = True)
+        plt.savefig(f"./plots/WoE_Distribution.jpg", dpi = 300)
+
+    plt.show()
+
+
+woe_bins_plot(woe_bins)
+\end{lstlisting}
+\subsection{Modelling}
+\begin{lstlisting}[language=Python, basicstyle=\footnotesize\ttfamily]
+models_dict = {
+               "LR": LogisticRegression(random_state = seed, n_jobs = -1),
+               "DT": DecisionTreeClassifier(random_state = seed),
+               "GNB": GaussianNB(),
+               "KNN": KNeighborsClassifier(n_jobs = -1), 
+               "RF": RandomForestClassifier(random_state = seed, n_jobs = -1),
+               "GB": GradientBoostingClassifier(random_state = seed),
+               "SVM": SVC(probability = True, random_state = seed),
+               "MLP": MLP(random_state = seed)
+              }
+
+
+def bayesian_optimization(model, x_train: pd.DataFrame, y_train:
+                          pd.Series, seed: int, objective_function: str = "f1"):
+    
+    estimator = model
+
+    #Adjustment of max_features hyperparameter within the final model selection.
+    max_features = len(x_train.columns)
+
+    #Defining a searching space of possible ranges of hyperparameters, given the model.
+    
+    if type(model) == type(RandomForestClassifier()):
+
+        search_space = {
+                        "n_estimators": Integer(100, 1000),
+                        "criterion": Categorical(["gini", "entropy", "log_loss"]),
+                        "max_depth": Integer(1, 10),
+                        "max_features": Integer(1, max_features),
+                        "class_weight": Categorical(["balanced", "balanced_subsample", None]),
+                        "bootstrap": Categorical([True, False]),
+                        "ccp_alpha": Real(0.000000000001, 0.5, prior="log-uniform"),
+                        }
+
+
+
+    elif type(model) == type(GradientBoostingClassifier()):
+
+        search_space = {
+                        "n_estimators": Integer(100, 1000),
+                        "loss": Categorical(["log_loss", "exponential"]),
+                        "max_depth": Integer(1, 10),
+                        "learning_rate":Real(0.0001, 0.2, prior="log-uniform"),
+                        "max_features": Integer(1, max_features),
+                        "criterion": Categorical(["friedman_mse", "squared_error"]),
+                        }
+
+
+
+    elif type(model) == type(LogisticRegression()):
+
+        search_space = {
+                        "fit_intercept": Categorical([True, False]),
+                        "C": Real(0.000001, 5, prior = "log-uniform"),
+                        "penalty": Categorical(["l1", "l2", "none", "elasticnet"]),
+                        "solver": Categorical(["lbfgs", "liblinear", "newton-cg", "sag", "saga"]),
+                        "class_weight": Categorical(["balanced", None])
+                        }
+
+        for solver in ["lbfgs", "liblinear", "newton-cg", "sag", "saga"]:
+            if solver == "lbfgs" or solver == "newton-cg":
+                search_space["penalty"] = Categorical(["l2", "none"])
+            elif solver == "sag":
+                search_space["penalty"] = Categorical(["l2", "elasticnet"])
+                search_space["l1_ratio"] = Real(0, 1, prior = "uniform")
+            elif solver == "liblinear":
+                search_space["penalty"] = Categorical(["l1", "l2", "none", "elasticnet"])
+                if search_space["penalty"] == "l2":
+                    search_space["dual"] = Categorical([True, False])
+                if search_space["fit_intercept"]:
+                    search_space["intercept_scaling"] = Real(0.1, 100.0, prior="log-uniform")
+            else:
+                search_space["penalty"] = Categorical(["l1", "l2", "none", "elasticnet"])
+                search_space["l1_ratio"] = Real(0, 1, prior = "uniform")
+                search_space["solver"] = Categorical(["saga"])
+
+
+
+
+    elif type(model) == type(SVC()):
+        search_space = {
+                        "C": Real(0.000001, 5, prior = "log-uniform"),
+                        "kernel": Categorical(["linear", "poly", "rbf", "sigmoid"]),
+                        "degree": Integer(1, 10),
+                        "class_weight": Categorical(["balanced", None])
+                       }
+
+
+    elif type(model) == type(MLPClassifier()):
+        search_space = {
+                        "hidden_layer_sizes": Integer(5, 500),
+                        "activation": Categorical(["logistic", "identity", "tanh", "relu"]),
+                        "solver": Categorical(["lbfgs", "sgd", "adam"]),
+                        "learning_rate": Categorical(["constant", "invscaling", "adaptive"]),
+                       }
+        
+
+
+    elif type(model) == type(DecisionTreeClassifier()):
+        
+        search_space = {
+                        "criterion": Categorical(["gini", "entropy"]),
+                        "max_depth": Integer(1, 10),
+                        "max_features": Integer(1, max_features),
+                        }  
+        
+
+
+    elif type(model) == type(GaussianNB()):
+
+        search_space = {
+                        "var_smoothing": Real(1e-9, 1e-6, prior = "log-uniform")
+                       }
+
+
+
+    elif type(model) == type(KNeighborsClassifier()):
+
+        search_space = {
+                        'n_neighbors': Integer(5, 20),
+                        'weights':  Categorical(['uniform', 'distance']),
+                        'metric': Categorical(['minkowski', 'manhattan', 'euclidean']),
+                        'p': Integer(1, 5)
+                       }
+
+        
+    #Initialization of the stratified 10-fold cross validation.
+    stratified_cv = StratifiedKFold(n_splits = 10, shuffle = True, random_state = seed)
+
+    # Initialization of the Bayesian Optimization.
+    # using the stratified 10-fold cross validation and given model,
+    # while maximizing the objective function F1 score.
+    bayescv = BayesSearchCV(estimator = estimator,
+                            search_spaces = search_space,
+                            scoring = objective_function, cv = stratified_cv,
+                            n_jobs = -1, n_iter = 50,
+                            random_state = seed)
+
+    #Fitting the Bayesian optimization algorithm on the training data.
+    bayescv.fit(x_train, y_train)
+
+    #Outputs the model with the best tuned hyperparameters with respect to F1 score.
+    return bayescv.best_estimator_
+
+
+def SFS_feature_selection(x_train:pd.DataFrame, y_train:pd.Series,
+                   models_dict:dict, seed:int, objective_function: str = "f1", 
+                   sfs_method: str = 'forward', export:bool = True) -> pd.DataFrame:
+    
+    #Printing output settings and functions
+    dashes = 115 * "-"
+    count = 1
+
+    def print_FS(name: str, dashes: str,
+                 count: int, models_dict: dict):
+
+        print(dashes)
+        order = f"{count}/{len(models_dict.keys())}"
+        no_dashes_left = int((len(dashes) - len(order) - 1)/2)*"-"
+        no_dashes_right  = f"{(len(dashes) - len(order) - len(no_dashes_left) - 2)*'-'}"
+        print(f"{no_dashes_left} {order} {no_dashes_right}")
+        print(dashes)
+
+        text_ = f"FEATURE SELECTION WITH {name.upper()}"
+        
+        no_dashes_left_ = int((len(dashes) - len(text_) - 1)/2)*"-"
+        no_dashes_right_  = f"{(len(dashes) - len(text_) - len(no_dashes_left_) - 2)*'-'}"
+        print(f'{no_dashes_left_} {text_} {no_dashes_right_}')
+        print(dashes)
+        print(dashes, "\n")
+
+    def print_FS_exec_time(time, number_features: int,
+                        selected_feats: list, dashes: str):
+
+        print(f'    Execution time: {round(time, 4)} minutes', "\n")
+        print(f'    {number_features} features selected: {", ".join(selected_feats)}', "\n")
+        print(dashes)
+        print(dashes, "\n")
+        print()
+
+
+    #Definitions of paths for exported files    
+    opt_models_path = "./models/feature_selection/opt_models"
+    feat_select_path = "./models/feature_selection/feat_select_objects"
+    df_feat_select_path = "./models/feature_selection"
+    
+    # Empty list for storing all the models with their tuned hyperparameters,
+    # number of features selected, and names of selected features.
+    models_feats_list = []
+
+    # For each model, tune its hyperparameters using Bayesian Optimization.
+    # Then use the tuned model for feature selection using Forward Sequential Feature Selector,
+    # while maximizing an objective function F1 Score.
+    for model_name, model in models_dict.items():
+
+        print_FS(model_name, dashes, count, models_dict)
+
+        start = time.time()
+        print("    1/4 ... Starting Bayesian Optimization on the whole set of features")
+
+        #Tuning the hyperparameters of the model using Bayesian Optimization.
+        tuned_model = bayesian_optimization(model, x_train, y_train, seed, objective_function)
+
+        print("    2/4 ... Bayesian Optimization finished")
+
+        #Initialization of the stratified 10-fold cross validation.
+        stratified_cv = StratifiedKFold(n_splits = 10, shuffle = True, random_state = seed)
+
+        print(f"    3/4 ... Starting {sfs_method.capitalize()} Sequential Feature Selection")
+
+        # Initialization of the Forward Sequential Feature Selector 10-fold Cross Validation
+        # in order to select the optimal number of features
+        # based on the model with tuned hyperparameters and maximizing F1 score function.
+        # Instead of selected a fixed number of features, we use an auto selection which stops adding features 
+        # when the objective function (F1) is not incremented by at least "tol"
+        # between two consecutive feature additions.
+                
+        sfs = SequentialFeatureSelector(tuned_model, n_features_to_select = "auto",
+                                        direction = sfs_method, scoring = objective_function,
+                                        cv = stratified_cv, n_jobs = -1, tol = 0.0000000000000000001)
+        sfs.fit(x_train, y_train)
+
+        print(f"    4/4 ... {sfs_method.capitalize()} Sequential Feature Selection with finished", "\n")
+        end = time.time()
+
+        #Extracting the final selected features and number of the selected features.
+        selected_feats = x_train.columns[sfs.get_support()].tolist()
+        number_features = len(selected_feats)
+
+        print_FS_exec_time((end - start)/60, number_features, selected_feats, dashes)
+
+        #Exporting both fitted tuned model and feature selection object.
+        if export:
+            for save_path, export_obj, save_name in zip([opt_models_path, feat_select_path],
+                                                        [tuned_model, sfs],
+                                                        ["FS_tuned", "SFS_with"]):
+        
+                os.makedirs(save_path, exist_ok = True)
+                with open(f'{save_path}/{save_name}_{model_name}.h5', "wb") as save_obj:
+                    dill.dump(export_obj, save_obj)
+
+        #Appeding all the model's information from both Bayesian Optimization an Sequential Feature Selection.
+        models_feats_list.append([model_name, #name of the tuned base model
+                                  number_features, #number of selected features
+                                  selected_feats, #list of selected features' names
+                                  (end - start)/60 #execution time
+                                  ])
+
+        count += 1
+        
+    # Storing all the models with their tuned hyperparameters,
+    # number of features selected, and names of selected features.
+    feat_sel_cols = ["model_name",
+                     "n_features", "final_features", "execution_time"]
+
+    feat_sel = pd.DataFrame(models_feats_list, columns = feat_sel_cols)
+    
+    # Exporting the data frame storing all the models' information
+    # from both Bayesian Optimization an Sequential Feature Selection.
+    if export:
+        with open(f"{df_feat_select_path}/feat_selection_df_ORIGINAL.pkl", "wb") as feat_select_df_save:
+            dill.dump(feat_sel, feat_select_df_save)
+
+    return feat_sel
+
+
+feat_selection_df = SFS_feature_selection(X_train_binned, y_train, models_dict, seed)
+
+
+def selected_features_recurrence(df: pd.DataFrame, export: bool = True):
+
+    matplotlib.rcParams['mathtext.fontset'] = 'stix'
+    matplotlib.rcParams['font.family'] = 'STIXGeneral'
+    
+    df_plot = (
+                pd.get_dummies(df["final_features"]
+                               .apply(pd.Series)
+                               .stack()
+                              )
+                .sum(level = 0)
+                .sum()
+                .reset_index()
+                .rename(columns = {"index": "Model", 0: "Count"})
+                .sort_values("Count", ascending = False)
+              )
+    
+    fig, ax = plt.subplots(nrows = 1, ncols = 1, figsize = (11, 7))
+
+    
+    
+    df_plot.plot.bar(x = "Model", y = "Count", color = "mediumpurple",
+                     legend = False, ax = ax, zorder = 2)
+    
+    ax.grid(which = "major", axis = "y", linestyle = "--", zorder = 0)
+    
+    # set title and axis labels
+    #plt.title("Recurrence of the selected features", size = 13, fontweight = "bold")
+    #plt.xlabel("Features", size = 14)
+    plt.xlabel(None)
+    plt.ylabel("Count", size = 20)
+    plt.yticks(range(1, df_plot['Count'].max() + 1), size = 20)
+    plt.xticks(size = 20, rotation = 45)
+    
+    plt.legend().set_visible(False)
+    
+        #Removing upper and right axes spines
+    axes = plt.gca()
+    axes.spines["top"].set_visible(False)
+    axes.spines["right"].set_visible(False)
+
+    plt.tight_layout()
+
+    if export:
+        os.makedirs("./plots/", exist_ok = True)
+        plt.savefig(f"./plots/Recurrence_Selected_Features.jpg", dpi = 300)
+
+    plt.show()
+
+
+selected_features_recurrence(feat_selection_df)
+
+def selected_features_dist(df: pd.DataFrame, export: bool = True):
+    
+    matplotlib.rcParams['mathtext.fontset'] = 'stix'
+    matplotlib.rcParams['font.family'] = 'STIXGeneral'
+    
+    df_plot = (
+        pd.concat(
+            (
+                df[["model_name"]],
+                pd.get_dummies(
+                    df["final_features"]
+                    .apply(pd.Series)
+                    .stack()
+                )
+                .sum(level=0)
+            ),
+            axis=1
+        )
+        .copy()
+    )
+
+    df_plot["totals"] = df_plot.drop("model_name", axis=1).sum(axis=1)
+    df_plot = (
+        df_plot
+        .sort_values(by="totals", ascending=False)
+        .drop("totals", axis=1)
+    )
+
+    fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(11, 7))
+    
+    colors = plt.cm.tab20.colors
+    
+    df_plot.plot(
+        x="model_name",
+        y=[col for col in df_plot.columns if col != "model_name"],
+        kind="bar",
+        stacked=True,
+        figsize=(10, 6),
+        ax=ax,
+        color=colors,
+        zorder=3
+    )
+
+    ax.grid(which="major", axis="y", linestyle="--", zorder=0)
+    #plt.title("Distribution of Selected Features", size=15, fontweight="bold")
+    plt.xlabel(None)
+    plt.ylabel("Number of selected features", size=19)
+    plt.xticks(size=19, rotation=0)
+    plt.yticks(range(1,
+                     df_plot[[col for col in df_plot.columns if col != "model_name"]].sum(axis=1).max() + 1),
+               size=19)
+    plt.legend(bbox_to_anchor=(1, 1), fontsize=14)
+
+    # Removing upper and right axes spines
+    axes = plt.gca()
+    axes.spines["top"].set_visible(False)
+    axes.spines["right"].set_visible(False)
+
+    plt.tight_layout()
+
+    if export:
+        os.makedirs("./plots/", exist_ok=True)
+        plt.savefig(f"./plots/Selected_Features_Distribution.jpg", dpi=300)
+
+    plt.show()
+
+
+selected_features_dist(feat_selection_df)
+
+
+def remove_duplicated_selected_feats(df:pd.DataFrame, export:bool = True) -> pd.DataFrame:
+
+   df_feat_select_path = "./models/feature_selection"
+   
+   #Filtering indices of duplicated selected features
+   feat_duplicated_ind = (
+                            df["final_features"]
+                           .apply( lambda x: ", ".join(x))
+                           .duplicated(keep = False)
+                           .values
+                          )
+   
+   if sum(feat_duplicated_ind) != 0:
+      #Keeping the model which was the fastest to execute and drop the others
+      duplicated_models = (
+                           df[feat_duplicated_ind]
+                           .sort_values("execution_time")
+                           .reset_index(drop = True)
+                        )
+    
+      drop_models = (
+                   duplicated_models
+                   .loc[1:,'model_name']
+                   .values
+                  )
+      
+      keep_model = duplicated_models.head(1)["model_name"].values[0]
+
+      models_name_join = ', '.join(duplicated_models["model_name"].tolist())
+      
+      final_feat_selection_df = (
+                                df[~df["model_name"].isin(drop_models)]
+                                .reset_index(drop = True)
+                                )
+      filter_row = (final_feat_selection_df["model_name"] == keep_model)
+      final_feat_selection_df.loc[filter_row, "model_name"] = models_name_join
+      
+   else:
+      final_feat_selection_df = df.copy()
+
+   if export:
+      with open(f"{df_feat_select_path}/feat_selection_df_FINAL.pkl", "wb") as feat_select_df_save:
+         dill.dump(final_feat_selection_df, feat_select_df_save)
+
+   return final_feat_selection_df
+
+
+feat_selection_df_FINAL = remove_duplicated_selected_feats(feat_selection_df)
+
+
+metrics_weights = {
+                    "descending_rank": {
+                                        "F1": 1.5,
+                                        "Recall": 1.2,
+                                        "Precision": 1,
+                                        "Accuracy": 1,
+                                        "AUC": 1,
+                                        "Somers D": 1,
+                                        "KS": 1,
+                                        "MCC": 1
+                                       },
+
+                    "ascending_rank": {
+                                        "Brier Score Loss": 1,
+                                        "Log Loss": 1
+                                       }
+                    }
+
+
+def calc_opt_threshold(model, x:pd.DataFrame, y:pd.Series) -> float:
+
+    y_scores = model.predict_proba(x)[:, 1]
+
+    fpr, tpr, thresholds = roc_curve(y, y_scores)
+
+    youden_index = tpr + (1 - fpr) - 1
+    threshold = thresholds[np.argmax(youden_index)]
+
+    return threshold
+
+
+
+def model_selection(x_train:pd.DataFrame, y_train:pd.Series,
+                    x_val:pd.DataFrame, y_val:pd.Series,
+                    models_dict:dict, feat_sel:pd.DataFrame,
+                    seed:int, metrics_weights:dict,
+                    target:str = "BAD", objective_function: str = "f1",
+                    export:bool = True) -> pd.DataFrame:
+    
+
+    #Printing output settings functions
+    dashes = 115 * "-"
+    count = 1
+
+    def print_model_selection(name: str, fs_name: str, feat_sel: pd.DataFrame,
+                              models_dict: dict, dashes: str, count: int):
+        
+        print(dashes)
+
+        order = f"{count}/{len(models_dict.keys())*feat_sel.shape[0]}"
+        no_dashes_left = int((len(dashes) - len(order) - 1)/2)*"-"
+        no_dashes_right  = f"{(len(dashes) - len(order) - len(no_dashes_left) - 2)*'-'}"
+
+        print(f"{no_dashes_left} {order} {no_dashes_right}")
+
+        print(dashes)
+
+        text_ = f"BAYESIAN OPTIMIZATION OF {name.upper()}"
+        text__ = f"WITH FEATURES SELECTED BY {fs_name.upper()}"
+            
+        no_dashes_left_ = int((len(dashes) - len(text_) - 1)/2)*"-"
+        no_dashes_right_  = f"{(len(dashes) - len(text_) - len(no_dashes_left_) - 2)*'-'}"
+        no_dashes_left__ = int((len(dashes) - len(text__) - 1)/2)*"-"
+        no_dashes_right__  = f"{(len(dashes) - len(text__) - len(no_dashes_left__) - 2)*'-'}"     
+
+        print(f"{no_dashes_left_} {text_} {no_dashes_right_}")
+        print(f"{no_dashes_left__} {text__} {no_dashes_right__}")
+        print(dashes)
+        print(dashes, "\n")
+    
+
+    def exec_time_model_selection(name: str, opt_mod, time, evs_list: list,
+                                  threshold: float, dashes: str):
+        
+        print(f"    Execution time: {round(time, 4)} minutes", "\n")
+        print(f"    {objective_function.capitalize()} Score on Validation set: {evs_list[0]}", "\n")
+        print(f"    Optimal classification threshold: {round(threshold, 4)}", "\n")
+        print(f"    Tuned hyperparameters of {name}:", "\n")
+        for hyp, val in opt_mod.get_params().items():
+            print(f"        {hyp}: {val}")
+        print("")
+        print(dashes, "\n")
+    
+    #Path to save the model selection data frame.
+    model_selection_path = "./models/model_selection"
+
+    #Metrics space.
+    metrics = { 
+                "F1": f1_score,
+                "Precision": precision_score, 
+                "Recall": recall_score, 
+                "Accuracy": accuracy_score,
+                "AUC": roc_auc_score,
+                "Somers D": somersd,
+                "KS": ks_2samp, 
+                "MCC": matthews_corrcoef,
+                "Brier Score Loss": brier_score_loss,
+                "Log Loss": log_loss
+                }
+    
+    #Metrics categorization
+    probs_evs = ["AUC", "Brier Score Loss"]
+    class_evs = ["Precision", "Recall", "F1", "Accuracy", "MCC"]
+    
+    #List for storing the results of the model selection.
+    tuned_list = []
+
+
+    #For each model, optimize it on the each subset of optimal features on training set
+        # and then evaluate it on validation set with filtered features (using set of several metrics).
+    for model_name, model in models_dict.items():
+        
+        for _, row in feat_sel.iterrows():
+            
+            #Model name and feature selection method.
+            fs_name = row["model_name"]
+
+            #Final features
+            final_features = row["final_features"]
+
+            #Filtered training and validation sets based on the final features.
+            X_train_filtered = x_train[final_features]
+            X_val_filtered = x_val[final_features]
+
+            print_model_selection(model_name, fs_name, feat_sel, models_dict, dashes, count)
+            n_f = len(final_features)
+            print(f"    1/2 ... Starting Bayesian Optimization on the subset of features ({n_f} features):")
+            print(f'               {", ".join(final_features)}')
+
+            start = time.time()
+
+            #Bayesian Optimization
+            tuned_model = bayesian_optimization(model, X_train_filtered, y_train, seed, objective_function)
+
+            end = time.time()
+
+            #Optimal threshold calculation
+            threshold = calc_opt_threshold(tuned_model, X_train_filtered, y_train)
+            
+            #Predicted probabilities and classes on validation set (using optimal threshold)
+            y_val_scores = tuned_model.predict_proba(X_val_filtered)[:, 1]
+            y_val_preds = pd.Series(y_val_scores).apply(lambda x: 1 if x > threshold else 0)
+
+            #List for storing calculated evaluation metrics.
+            evs_list = []
+
+            #Metrics calculation on validation set.
+            for metric_name, metric in metrics.items():
+                if metric_name in probs_evs:
+                    evs_list.append(metric(y_val, y_val_scores))
+                elif metric_name in class_evs:
+                    evs_list.append(metric(y_val, y_val_preds))
+                elif metric_name == 'Log Loss':
+                    evs_list.append(metric(y_val, tuned_model.predict_proba(X_val_filtered)))
+                elif metric_name == "Somers D":
+                    evs_list.append(metric(y_val, y_val_scores).statistic)
+                elif metric_name == "KS":
+                    X_Y_concat = pd.concat((y_val, X_val_filtered), axis = 1)
+                    X_Y_concat["prob"] =  y_val_scores
+                    evs_list.append(metric(X_Y_concat.loc[X_Y_concat[target] == 1, "prob"],
+                                           X_Y_concat.loc[X_Y_concat[target] == 0, "prob"]).statistic)
+
+            #Storing the results of the model selection.
+            tuned_list.append([model_name,
+                               fs_name,
+                               tuned_model,
+                               len(final_features),
+                               final_features,
+                               (end - start)/60,
+                               threshold] + 
+                               evs_list
+                               )
+
+           #Exporting the final tuned model in .h5 format 
+            if export:
+                os.makedirs(model_selection_path, exist_ok = True)
+                os.makedirs(f"{model_selection_path}/models", exist_ok = True)
+
+                with open(f"{model_selection_path}/models/{model_name}_with_{fs_name}.h5", "wb") as mod_save:
+                    dill.dump(tuned_model, mod_save)
+
+            
+            print("    2/2... Bayesian Optimization finished", "\n")
+
+            exec_time_model_selection(model_name, tuned_model, (end - start)/60, evs_list, threshold, dashes)
+
+            count += 1
+
+    #Model selection data frame.
+    model_sel_cols = ["tuned_model_name", "fs_model_name",
+                      "sfs_object", "n_features",
+                      "final_features", "execution_time",
+                      "threshold"] + list(metrics.keys())
+    
+    model_selection_df = pd.DataFrame(tuned_list, columns = model_sel_cols)
+            
+    #Ranking the models based on the evaluation metrics and the provided weights.
+    for dict_name, metric_weight_dict in metrics_weights.items():
+
+        #Ranking each metric.
+        for metric in metric_weight_dict.keys():
+                
+                # Ranking the models whether the metric is ascending or descending
+                # (score metrics are descending, loss metrics are ascending).
+                order = True if dict_name == "ascending_rank" else False
+
+                #Ranking
+                model_selection_df[f"{metric}_rank"] = (
+                                                        model_selection_df[[metric]]
+                                                        .rank(ascending = order)
+                                                        )
+    
+    #Accessing individual ranking metrics columns.
+    ranked_cols = [rank for rank in model_selection_df.columns if "_rank" in rank]
+
+    unnested_metric_weights = {k: v for in_dict in metrics_weights.values() for k, v in in_dict.items()}
+
+
+    for i, row in model_selection_df[ranked_cols].iterrows():
+
+        numerator = sum([row[col] * unnested_metric_weights[col.split("_")[0]] for col in ranked_cols])
+        deniminator = sum(unnested_metric_weights.values())
+
+        model_selection_df.loc[i, "avg_rank"] = numerator / deniminator
+        
+
+    model_selection_df['final_rank'] = model_selection_df['avg_rank'].rank(ascending = True)
+
+    #Ordering the model selection data frame based on the final ranking.
+    model_selection_df = (
+                           model_selection_df
+                          .drop(ranked_cols, axis = 1)
+                          .sort_values("final_rank")
+                          .reset_index(drop = True)
+                          )
+    
+    #Exporting the model selection data frame.
+    if export:
+        with open(f"{model_selection_path}/model_selection_df.pkl", "wb") as model_select_df_save:
+            dill.dump(model_selection_df, model_select_df_save)
+
+    return model_selection_df
+
+
+
+model_selection_df = model_selection(X_train_binned, y_train, X_valid_binned, y_valid,
+                                     models_dict, feat_selection_df_FINAL, seed, metrics_weights)
+
+
+(
+    model_selection_df
+    .loc[(model_selection_df
+          .loc[:, ~model_selection_df
+               .columns
+               .isin(["final_features"])]
+           .groupby("tuned_model_name")["final_rank"]
+           .idxmin()), 
+         ~model_selection_df
+         .columns
+         .isin(["final_features"])]
+    .sort_values("final_rank")
+)
+
+
+def plot_models_metrics(df: pd.DataFrame, metric: str, group_by: str = "tuned_model_name",
+                        plot_name: str = "", export:bool = True):
+
+    matplotlib.rcParams["mathtext.fontset"] = "stix"
+    matplotlib.rcParams["font.family"] = "STIXGeneral"
+
+    plt.figure(figsize = (10, 6))  # Increase the figsize values to make the plot bigger
+    sns.boxplot(data = df, x = metric, y = group_by, palette = "BuPu_r")
+
+    axes = plt.gca()
+    axes.spines["top"].set_visible(False)
+    axes.spines["right"].set_visible(False)
+    axes.set(ylabel = None)
+
+    # Increase the fontsize for xticks and yticks
+    plt.xticks(fontsize = 17)
+    plt.yticks(fontsize = 17)
+
+    # Increase the fontsize for x and y axis labels
+    if metric == "execution_time":
+        plt.xlabel(f"Execution time (in minutes)", fontsize = 17)
+    else:
+        plt.xlabel(metric, fontsize = 17)
+
+    plt.tight_layout()
+    
+    if export:
+        os.makedirs("./plots/", exist_ok=True)
+        plot_name_save = metric.upper() if len(plot_name) == 0 else plot_name.upper()
+        plt.savefig(f"./plots/{plot_name_save}_Distribution.jpg", dpi=300)
+
+    plt.show()
+
+
+plot_models_metrics(model_selection_df, "F1")
+plot_models_metrics(model_selection_df[model_selection_df["F1"]>model_selection_df["F1"].min()],
+                    "F1", plot_name = "F1_wo_outliers")
+
+plot_models_metrics(model_selection_df, "threshold")
+plot_models_metrics(model_selection_df[model_selection_df["threshold"] < model_selection_df["threshold"].max()],
+                    "threshold", plot_name = "threshold_wo_outliers")
+
+plot_models_metrics(model_selection_df, "execution_time")
+
+for col in ["Precision", "Recall", "Accuracy", "AUC", "Somers D", "KS", "MCC", "Brier Score Loss", "Log Loss"]:
+    plot_models_metrics(model_selection_df, col, export = "_".join([col]))
+
+
+def scatter_metrics_plot(df: pd.DataFrame, metric_1: str, metric_2: str,
+                         plot_name: str = "", export: bool = True):
+    
+    matplotlib.rcParams["mathtext.fontset"] = "stix"
+    matplotlib.rcParams["font.family"] = "STIXGeneral"
+    
+    plt.figure(figsize = (10, 7))
+    plot_df = df.copy()
+    sns.scatterplot(data = plot_df, x = metric_1, y = metric_2,
+                    hue = "tuned_model_name", palette = "Set2", s = 100, alpha = 0.7)
+    axes = plt.gca()
+    axes.spines["top"].set_visible(False)
+    axes.spines["right"].set_visible(False)
+
+    # Increase the fontsize for xticks and yticks
+    plt.xticks(fontsize=18)
+    plt.yticks(fontsize=18)
+
+    if metric_1 == "execution_time":
+        metric_xlabel = "Execution time (in minutes)"
+    else:
+        metric_xlabel = metric_1
+
+    if metric_2 == "execution_time":
+        metric_ylabel = "Execution time (in minutes)"
+    else:
+        metric_ylabel = metric_2
+
+    # Increase the fontsize for x and y axis labels
+    plt.xlabel(metric_xlabel, fontsize = 18)
+    plt.ylabel(metric_ylabel, fontsize = 18)
+
+    plt.legend(bbox_to_anchor = (1.2, 1.1), fontsize = 18)  # Increase the fontsize for the legend
+    plt.tight_layout()
+
+    if export:
+        os.makedirs("./plots/", exist_ok = True)
+        plt.savefig(f"./plots/Scatterplot_{metric_1}_{metric_2}{plot_name}.jpg", dpi = 300)
+    
+    plt.show()
+
+
+scatter_metrics_plot(model_selection_df, "execution_time", "F1")
+scatter_metrics_plot(model_selection_df[model_selection_df["F1"] > model_selection_df["F1"].min()],
+                     "execution_time", "F1", plot_name = "_wo_outliers")
+
+
+def print_final_model(df: pd.DataFrame, model_order: int = 0):
+
+    final_model_path = "./models/model_selection/models"
+
+    with open(os.path.join(final_model_path, f"{final_model_name}_with_{fs_model_name}.h5"), "rb") as mod_load:
+        final_model = dill.load(mod_load)
+
+    final_model_name = df.loc[model_order, "tuned_model_name"]
+    fs_model_name = df.loc[model_order, "fs_model_name"]
+    final_features = df.loc[model_order, "final_features"]
+    final_threshold, final_hyperparameters = df.loc[model_order, "threshold"], final_model.get_params()
+
+    #Final model
+
+    print(f"Final model: {final_model_name.upper()}")
+    print(f"Final model trained on features selected by: {fs_model_name.upper()}")
+    print(f"Final subset of features: {', '.join(final_features)}")
+    print(f"The final threshold: {final_threshold}")
+    print("Final hyperparameters:")
+
+    for hp_name, hp_value in final_hyperparameters.items():
+        print(f"{(len('Final hyperparameters:') + 2) * ' '}{hp_name}: {hp_value}")
+
+
+print_final_model(model_selection_df)
+
+
+def data_filter_join(hyp_tuning_df: pd.DataFrame, x_train: pd.DataFrame,
+                     x_valid: pd.DataFrame, x_test: pd.DataFrame,
+                     y_train: pd.Series, y_valid: pd.Series,
+                     model_order:int = 0) -> tuple[pd.Series, pd.DataFrame, pd.DataFrame]:
+    
+    #Final features
+    final_features = [feat for feat in hyp_tuning_df.loc[model_order, "final_features"]]
+
+    #Joined training and validation labels.
+    y_train_valid = pd.concat((y_train, y_valid))
+
+    #Filtered joined training and validation set based on final features.
+    x_train_valid_filtered = pd.concat((x_train, x_valid))[final_features]
+    
+    #Filtered test set based on final features.
+    x_test_filtered = x_test[final_features]
+
+    return (y_train_valid, x_train_valid_filtered, x_test_filtered)
+
+
+(
+  y_train_valid,
+  X_train_valid_binned_filtered,
+  X_test_binned_filtered
+) = data_filter_join(model_selection_df, X_train_binned, X_valid_binned, X_test_binned, y_train, y_valid)
+
+preprocessed = prep_data_export((X_train_valid_binned_filtered, X_test_binned_filtered),
+                                    (y_train_valid, y_test),
+                                    ("Training_Validation", "Test"),
+                                    csv_name = "preprocessed_data")
+
+
+def final_model_fit_eval(hyp_tuning_df: pd.DataFrame,
+                    x_fit: pd.DataFrame, y_fit: pd.Series,
+                    model_order: int = 0,
+                    save_model: bool = True):
+  
+    final_model_path = "./models/model_selection/models"
+    output_path = "./models/objects_FINAL"
+
+    final_model_name = hyp_tuning_df.loc[model_order, "tuned_model_name"]
+    fs_model_name = hyp_tuning_df.loc[model_order, "fs_model_name"]
+
+    #Final model
+    with open(os.path.join(final_model_path, f"{final_model_name}_with_{fs_model_name}.h5"), "rb") as mod_load:
+        final_model = dill.load(mod_load)
+
+    #Fitting the final model on the joined training and validation set
+    final_model.fit(x_fit, y_fit)
+    
+    if save_model:
+        with open(f"{output_path}/final_model_eval.h5", "wb") as mod_save:
+            dill.dump(final_model, mod_save)
+
+    return final_model
+
+
+final_model_eval = final_model_fit_eval(model_selection_df, X_train_valid_binned_filtered, y_train_valid)
+
+def get_final_features(model_selection_df: pd.DataFrame, model_order: int = 0) -> tuple[float, list]:
+
+    final_features = model_selection_df.loc[model_order, "final_features"]
+    
+    return final_features
+
+
+final_features = get_final_features(model_selection_df)
+
+opt_threshold = calc_opt_threshold(final_model_eval, X_train_valid_binned_filtered, y_train_valid)
+\end{lstlisting}
+
+\subsection{Evaluation}
+\begin{lstlisting}[language=Python, basicstyle=\footnotesize\ttfamily]
+def conf_mat(model, X: pd.DataFrame, y: pd.Series, threshold: float) -> pd.DataFrame:
+
+    y_scores = pd.Series(model.predict_proba(X)[:, 1])
+    y_preds = y_scores.apply(lambda x: 1 if x > threshold else 0)
+
+    confm = pd.DataFrame(
+                         confusion_matrix(y, y_preds),
+                         columns = ["Predicted - Non-Default", "Predicted - Default"],
+                         index = ["Actual - Non-Default", "Actual - Default"]
+                        )
+    return confm
+
+
+conf_matrix = conf_mat(final_model_eval, X_test_binned_filtered, y_test, opt_threshold)
+
+
+def conf_mat_plot(conf_matrix: pd.DataFrame, export:bool = True):
+
+    matplotlib.rcParams["mathtext.fontset"] = "stix"
+    matplotlib.rcParams["font.family"] = "STIXGeneral"
+    
+    plt.figure(figsize = (9, 7))
+    #plt.title("Confusion matrix", size = 13, fontweight = "bold")
+
+
+    ax = sns.heatmap(conf_matrix, annot=True, cmap = "BuPu", fmt = "g", annot_kws = {"size": 18})
+
+    cbar = ax.collections[0].colorbar
+    cbar.ax.tick_params(labelsize = 18)  # Set fontsize for color bar
+
+    plt.xticks(size = 18)
+    plt.yticks(size = 18)
+
+    plt.tight_layout()
+
+
+    if export:
+        os.makedirs("./plots", exist_ok=True)
+        plt.savefig(f"./plots/Confusion_Matrix.jpg", dpi=300)
+    plt.show()
+
+
+conf_mat_plot(conf_matrix)
+
+def evaluation_metrics(model, X: pd.DataFrame, y: pd.Series,
+                       threshold: float, target: str = "BAD") -> pd.DataFrame:
+
+    metrics = {
+                "F1": f1_score,
+                "Precision": precision_score, 
+                "Recall": recall_score, 
+                "Accuracy": accuracy_score,
+                "AUC": roc_auc_score,
+                "Somers D": somersd,
+                "KS": ks_2samp, 
+                "MCC": matthews_corrcoef,
+                "Brier Score Loss": brier_score_loss,
+                "Log Loss": log_loss
+                }
+
+
+    probs_evs = ["AUC","Brier Score Loss"]
+    class_evs = ["Precision", "Recall", "F1", "Accuracy", "MCC"]
+    evs_list = []
+
+    y_scores = model.predict_proba(X)[:, 1]
+    y_preds = pd.Series(y_scores).apply(lambda x: 1 if x > threshold else 0)
+    
+    for metric_name, metric in metrics.items():
+        if metric_name in probs_evs:
+            evs_list.append([metric_name, metric(y, y_scores)])
+        elif metric_name in class_evs:
+            evs_list.append([metric_name, metric(y, y_preds)])
+        elif metric_name == "Log Loss":
+            evs_list.append([metric_name, metric(y, model.predict_proba(X))])
+        elif metric_name == "Somers D":
+            evs_list.append([metric_name, metric(y, y_scores).statistic])
+        elif metric_name == "KS":
+            X_Y_concat = pd.concat((y, X), axis = 1)
+            X_Y_concat["prob"] =  y_scores
+            evs_list.append([metric_name, metric(X_Y_concat.loc[X_Y_concat[target] == 1, "prob"],
+                                                 X_Y_concat.loc[X_Y_concat[target] == 0, "prob"]).statistic])
+
+    evaluation_df = pd.DataFrame(evs_list, columns = ["Metric", "Score"])
+
+    return evaluation_df
+
+
+evaluation_metrics(final_model_eval, X_test_binned_filtered, y_test, opt_threshold)
+
+
+def ROC_curve_plot(model, X: pd.DataFrame, y: pd.Series, export:bool = True):
+
+    matplotlib.rcParams["mathtext.fontset"] = "stix"
+    matplotlib.rcParams["font.family"] = "STIXGeneral"
+
+    y_pred = model.predict_proba(X)[:, 1]
+    fpr, tpr, _ = roc_curve(y, y_pred)
+    auc = roc_auc_score(y, y_pred)
+    plt.figure(figsize = (10, 7))
+    plt.plot(fpr,tpr,label = f"AUC = {auc*100:.2f}%")
+    plt.plot([0, 1], [0, 1], "r--")
+    plt.ylabel("True Positive Rate",  size = 18)
+    plt.xlabel("False Positive Rate",  size = 18)
+    plt.xticks(size = 18)
+    plt.yticks(size = 18)
+    plt.legend(prop={'size': 16})
+    #plt.title("ROC curve", size = 13, fontweight = "bold")
+    plt.grid()
+    axes = plt.gca()
+    axes.spines["top"].set_visible(False)
+    axes.spines["right"].set_visible(False)
+
+
+    plt.tight_layout()
+
+    if export:
+        os.makedirs("./plots/", exist_ok = True)
+        plt.savefig(f"./plots/ROC_curve_FINAL.jpg", dpi = 300)
+    plt.show()
+
+
+ROC_curve_plot(final_model_eval, X_test_binned_filtered, y_test)
+
+
+def feature_importance_plot(model, features: list, export:bool = True):
+
+    matplotlib.rcParams["mathtext.fontset"] = "stix"
+    matplotlib.rcParams["font.family"] = "STIXGeneral"
+
+    importances = model.feature_importances_
+
+    plot_df = pd.DataFrame({"Feature": features, "Importance": importances})
+    plot_df = plot_df.sort_values("Importance", ascending = False)
+
+    plt.figure(figsize = (10, 6))
+    sns.barplot(plot_df, x = "Importance", y = "Feature", palette = "BuPu_r")
+    #plt.title("Feature Importances", fontsize = 15, fontweight = "bold")
+
+    axes = plt.gca()
+    axes.spines["top"].set_visible(False)
+    axes.spines["right"].set_visible(False)
+
+    axes.xaxis.label.set_size(18)
+    axes.yaxis.label.set_size(18)
+    plt.xticks(fontsize = 18)
+    plt.yticks(fontsize = 18)
+
+    plt.tight_layout()
+
+    if export:
+        os.makedirs("./plots/", exist_ok = True)
+        plt.savefig(f"./plots/Feature_Importances.jpg", dpi = 300)
+        
+    plt.show()
+
+
+feature_importance_plot(final_model_eval, final_features)
+
+
+def GBC_SHAP_plot(model, X: pd.DataFrame, export: bool = True):
+
+    matplotlib.rcParams["mathtext.fontset"] = "stix"
+    matplotlib.rcParams["font.family"] = "STIXGeneral"
+
+
+    explainer = shap.TreeExplainer(model, model_output = "probability", data = X)
+
+    shap_values = explainer.shap_values(X)
+
+    #Scaling the SHAP values in order to be between -1 and 1.
+    #max_abs_shap = np.max(np.abs(shap_values))
+    #scaled_shap_values = shap_values / max_abs_shap
+
+    # Set plot size here
+    plot_size = (16, 12)
+
+    # Create a summary plot and specify the plot_size
+# Set plot size
+    plot_size = (8, 8)
+
+    # Create a summary plot and specify the plot_size
+    summary_plot = shap.summary_plot(shap_values,
+                                    X.values,
+                                    feature_names = X.columns,
+                                    show = False,
+                                    plot_size = plot_size,
+                                    color_bar = True)
+
+    # Increase fontsize of labels and ticks
+    plt.gca().xaxis.label.set_size(18)
+    plt.gca().yaxis.label.set_size(18)
+    plt.xticks(fontsize = 18)
+    plt.yticks(fontsize = 18)
+
+    # Find the colorbar object and modify its fontsize
+    colorbar = plt.gcf().get_axes()[-1]
+    colorbar.tick_params(labelsize = 18)
+    colorbar.set_ylabel("Feature Value", fontsize = 18)  # Increase fontsize of the "Feature Value" label
+
+    plt.tight_layout()
+
+    if export:
+        os.makedirs("./plots/", exist_ok = True)
+        plt.savefig(f"./plots/SHAP_summary_plot.jpg", dpi = 1200)
+
+    plt.show()
+
+
+GBC_SHAP_plot(final_model_eval, X_test_binned_filtered)
+
+
+def final_model_fit_deploy(final_model, X: tuple, y: tuple, final_features: list,
+                           target = "BAD", export: bool = True):
+
+    df_list = []
+    output_path = "./models/objects_FINAL"
+
+    #Joining the features and labels from training, validation and test sets.
+    for feat, lab in zip(X, y):
+        temp = pd.concat((lab, feat), axis = 1)
+        df_list.append(temp)
+    dfs = [df for df in df_list]
+
+    #Final model fit.
+    final_df = pd.concat(dfs, axis = 0).sort_index()
+    X_final = final_df[final_features]
+    y_final = final_df[target]
+
+    final_model.fit(X_final, y_final)
+    
+    #Exporting the final model.
+    if export:
+        with open(f"{output_path}/final_model_deploy.h5", "wb") as mod_save:
+            dill.dump(final_model, mod_save)
+
+    #Final classification threshold
+    final_threshold = calc_opt_threshold(final_model, X_final, y_final)
+
+    return (final_model, final_threshold)
+
+(
+  final_model_deployment, final_threshold_deployment
+) = final_model_fit_deploy(final_model_eval,
+                           (X_train_valid_binned_filtered, X_test_binned_filtered),
+						   (y_train_valid, y_test),
+						   final_features)
+
+def flask_app_input_export(**kwargs):
+
+    with open(r"flask_app\inputs\inputs_flask_app_dict.pkl", "wb") as f:
+        dill.dump(kwargs, f)
+
+    with open(r"models\objects_FINAL\inputs_flask_app_dict.pkl", "wb") as f:
+        dill.dump(kwargs, f)
+		
+
+def lime_explanation(X: pd.DataFrame, export: bool = True):
+
+    explainer = lime.lime_tabular.LimeTabularExplainer(
+                                                        training_data = np.array(X),
+                                                        feature_names = X.columns,
+                                                        class_names = ["non-default", "default"],
+                                                        mode = "classification"
+                                                        )
+    
+    return explainer
+
+
+lime_explainer = lime_explanation(pd.concat((X_train_valid_binned_filtered, X_test_binned_filtered)))
+
+
+flask_app_input_export(woe_bins = woe_bins,
+                       binning_transformator = binning_transformator,
+                       final_model = final_model_deployment,
+                       threshold = final_threshold_deployment,
+                       final_features = final_features,
+                       categorical_features = cat_vars,
+                       input_df = pd.DataFrame(columns = X_train_binned.columns),
+                       lime_explainer = lime_explainer)
+\end{lstlisting}
+
+\section{Flask Web Application Code}
+\begin{lstlisting}[language=Python, basicstyle=\footnotesize\ttfamily]
+import warnings
+
+warnings.filterwarnings("ignore")
+from flask import Flask, render_template, request
+import pandas as pd
+import numpy as np
+import os
+import lime
+import dill
+import matplotlib
+import matplotlib.pyplot as plt
+
+
+app = Flask(__name__)
+
+
+current_dir = os.path.dirname(os.path.abspath(__file__))
+input_file_path = os.path.join(current_dir, "inputs", "inputs_flask_app_dict.pkl")
+
+with open(input_file_path, "rb") as f:
+	inputs = dill.load(f)
+
+with open(os.path.join(current_dir, "inputs", "explainer.pkl"), "rb") as f:
+	lime_explainer = dill.load(f)
+
+
+def lime_plot(input, model, lime_explainer):
+	def custom_lime_plot(exp, pos_color: str = "red", neg_color: str = "green"):
+
+		fig, ax = plt.subplots()
+		vals = [i[1] for i in exp.as_list()][::-1]
+		names = [
+			i[0].split(" <=")[0].split("< ")[-1].split(" >")[0] for i in exp.as_list()
+		][::-1]
+		feat_dict = {
+			"JOB": "Job occupancy",
+			"REASON": "Reason of loan application",
+			"LOAN": "Requested loan amount",
+			"MORTDUE": "Amount due on existing mortgage",
+			"VALUE": "Current property value",
+			"YOJ": "Years at present job",
+			"DEROG": "# of major derogatory reports",
+			"DELINQ": "# of delinquent credit lines",
+			"CLAGE": "Age of the oldest credit line",
+			"NINQ": "# of recent credit inquiries",
+			"CLNO": "# of credit lines",
+			"DEBTINC": "Debt-to-income ratio",
+		}
+		names = [feat_dict[i] for i in names]
+		colors = [pos_color if x > 0 else neg_color for x in vals]
+		pos = np.arange(len(vals)) + 0.5
+
+		ax.barh(pos, vals, align="center", color=colors)
+		ax.set_yticks(pos)
+		ax.set_yticklabels(names)
+
+		return fig
+
+	plt.rcParams["font.family"] = "Segoe UI"
+
+	exp = lime_explainer.explain_instance(
+		data_row=input, predict_fn=model.predict_proba
+	)
+
+	fig = custom_lime_plot(exp)
+	fig.set_size_inches(11, 9)
+
+	ax = plt.gca()
+	ax.spines["right"].set_visible(False)
+	ax.spines["top"].set_visible(False)
+	ax.set_ylabel("Feature", fontsize=21, color="#6c6c6c")
+	ax.set_xlabel("Contribution", fontsize=21, color="#6c6c6c")
+	ax.tick_params(axis="x", labelsize=20)
+	ax.tick_params(axis="y", labelsize=20)
+
+	plt.title("")
+	for xticklabel, yticklabel in zip(ax.get_xticklabels(), ax.get_yticklabels()):
+		xticklabel.set_color("#6c6c6c")
+		yticklabel.set_color("#6c6c6c")
+
+	fig.savefig(
+		os.path.join(current_dir, "static", "lime_explanation.png"),
+		format="png",
+		bbox_inches="tight",
+		dpi=300,
+		transparent=True,
+	)
+	plt.close(fig)
+
+
+@app.route("/")
+def home():
+	features = inputs["final_features"]
+	categorical_features = inputs["categorical_features"]
+	return render_template(
+		"index.html", variables=features, categorical_features=categorical_features
+	)
+
+
+@app.route("/predict", methods=["POST"])
+def predict():
+	(
+		woe_bins,
+		woe_binning,
+		model,
+		threshold,
+		final_features,
+		categorical_features,
+		input_df,
+	) = (input for _, input in inputs.items())
+
+	for feature in input_df.columns:
+		if feature in final_features:
+			if feature in categorical_features:
+				input_df.loc[0, feature] = (
+					str(request.form[feature]) if request.form[feature] else np.nan
+				)
+			elif feature == "LOAN":
+				input_df.loc[0, feature] = (
+					int(request.form[feature]) if request.form[feature] else np.nan
+				)
+			else:
+				input_df.loc[0, feature] = (
+					float(request.form[feature]) if request.form[feature] else np.nan
+				)
+		else:
+			input_df.loc[0, feature] = np.nan
+
+	input_df_woe = woe_binning.transform(input_df, metric="woe")
+
+	for feature in input_df_woe.columns:
+		na_woe = woe_bins.query('Variable == @feature and Bin == "Missing"')[
+			"WoE"
+		].values[0]
+		input_df_woe.loc[input_df[feature].isna(), feature] = na_woe
+
+	input_df_woe_FINAL = input_df_woe[final_features]
+	pred_score = model.predict_proba(input_df_woe_FINAL)[:, 1]
+
+	result = [
+		"Loan application denied" if i > threshold else "Loan application approved"
+		for i in pred_score
+	]
+
+	lime_plot(input_df_woe_FINAL.iloc[0], model, lime_explainer)
+
+	return render_template(
+		"results.html",
+		prediction=round(pred_score[0] * 100, 2),
+		predicted_class=result[0],
+	)
+
+
+if __name__ == "__main__":
+	app.run(debug=True)	
+\end{lstlisting}
+
+\section{HTML UI Codes}
+\subsection{\lstinline{index.html}}
+\begin{lstlisting}[language=HTML, basicstyle=\footnotesize\ttfamily]
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				font-family: Arial, sans-serif;
+				background-color: #f3f3f3;
+				color: #444;
+			}
+			form {
+				margin: 20px auto;
+				padding: 30px;
+				background-color: #ffffff;
+				border: 1px solid #e6e6e6;
+				box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.1);
+				max-width: 700px;
+				border-radius: 5px;
+			}
+			h1 {
+				text-align: center;
+				color: #333;
+				margin-bottom: 20px;
+			}
+
+			p {
+				text-align: center;
+				color: #666;
+				margin-bottom: 30px;
+			}
+
+			label {
+				display: block;
+				margin-bottom: 5px;
+				color: #555;
+			}
+
+			input[type="number"],
+			select {
+				padding: 10px 20px;
+				font-size: 16px;
+				border: 1px solid #ccc;
+				border-radius: 4px;
+				width: 100%;
+				box-sizing: border-box;
+				margin: 10px 0;
+				transition: border 0.3s;
+			}
+
+			input[type="submit"] {
+				background-color: #4caf50;
+				color: white;
+				padding: 12px 30px;
+				border: none;
+				border-radius: 4px;
+				cursor: pointer;
+				margin-top: 30px;
+				width: auto;
+				transition: background-color 0.3s;
+				display: block;
+				margin-left: auto;
+				margin-right: auto;
+			}
+
+			input[type="submit"]:hover {
+				background-color: #45a049;
+			}
+
+			select:hover,
+			input[type="number"]:hover,
+			select:focus,
+			input[type="number"]:focus {
+				border-color: #4caf50;
+			}
+			.form-grid {
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				gap: 20px;
+			}
+
+			.form-grid > div {
+				grid-column: span 1;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Default Prediction Application</h1>
+		<p><b>Author:</b> Petr Nguyen</p>
+		<form method="POST" action="/predict">
+			<div class="form-grid">
+				{% for variable in variables %}
+				<div>
+					{% if variable == 'JOB' %}
+					<label for="JOB">Job occupancy:</label>
+					<select name="JOB">
+						<option value=""></option>
+						<option value="Mgr">Manager</option>
+						<option value="Office">Office worker</option>
+						<option value="ProfExe">Professional/Executive</option>
+						<option value="Sales">Sales</option>
+						<option value="Self">Self-employed</option>
+						<option value="Other">Other</option>
+					</select>
+					<br />
+					{% elif variable == 'REASON' %}
+					<label for="REASON">Reason of loan application:</label>
+					<select name="REASON">
+						<option value=""></option>
+						<option value="DebtCon">Debt Consolidation</option>
+						<option value="HomeImp">Home Improvement</option>
+					</select>
+					<br />
+					{% elif variable == 'LOAN' %}
+					<label for="LOAN">Requested loan amount:</label>
+					<input type="number" name="LOAN" min="0" required /><br />
+					{% elif variable == 'MORTDUE' %}
+					<label for="MORTDUE">Amount due on existing mortgage:</label>
+					<input type="number" name="MORTDUE" min="0" /><br />
+					{% elif variable =='VALUE' %}
+					<label for="VALUE">Current property value:</label>
+					<input type="number" name="VALUE" min="0" /><br />
+					{% elif variable == 'YOJ' %}
+					<label for="YOJ">Number of years at present job:</label>
+					<input type="number" name="YOJ" min="0" step="0.1" /><br />
+					{% elif variable == 'DEROG' %}
+					<label for="DEROG">Number of major derogatory reports:</label>
+					<input type="number" name="DEROG" min="0" /><br />
+					{% elif variable == 'DELINQ' %}
+					<label for="DELINQ">Number of delinquent credit lines:</label>
+					<input type="number" name="DELINQ" min="0" /><br />
+					{% elif variable == 'CLAGE' %}
+					<label for="CLAGE">Age of the oldest credit line (in months):</label>
+					<input type="number" name="CLAGE" min="0" /><br />
+					{% elif variable == 'NINQ' %}
+					<label for="NINQ">Number of recent credit inquiries:</label>
+					<input type="number" name="NINQ" min="0" /><br />
+					{% elif variable == 'CLNO' %}
+					<label for="CLNO">Number of credit lines:</label>
+					<input type="number" name="CLNO" min="0" /><br />
+					{% elif variable == 'DEBTINC' %}
+					<label for="DEBTINC">Debt-to-income ratio:</label>
+					<input type="number" name="DEBTINC" min="0" step="0.0000001" /><br />
+					{% endif %}
+				</div>
+				{% endfor %}
+			</div>
+			<input type="submit" value="Submit" />
+		</form>
+	</body>
+</html>	
+\end{lstlisting}
+
+\subsection{\lstinline{results.html}}
+
+\begin{lstlisting}[language=HTML, basicstyle=\footnotesize\ttfamily]
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Default Prediction - Result</title>
+		<style>
+			body {
+				font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+				background-color: #f5f5f5;
+				color: #333;
+			}
+			h1 {
+				text-align: center;
+				color: #4c4c4c;
+				font-size: 2.5em;
+				margin-top: 50px;
+			}
+			p {
+				text-align: center;
+				color: #6c6c6c;
+				font-size: 1.5em;
+				margin-top: 50px;
+			}
+			.box {
+				background-color: #ccc;
+				width: 200px;
+				height: 200px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				font-size: 24px;
+				font-weight: bold;
+				text-align: center;
+				text-decoration: none;
+				color: #333;
+			}
+			img {
+				max-width: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Default Prediction Result</h1>
+		<p>Result: <b>{{predicted_class}}!</b></p>
+		<p>The probability of default is <b>{{ prediction }}%</b></p>
+
+		<img src="{{ url_for('static', filename='lime_explanation.png') }}" 
+				alt="LIME Explanation" width="50%" style="display: block; margin: auto;" />
+	</body>
+</html>	
+\end{lstlisting}
+
+\KOMAoptions{paper=portrait,DIV=last}
+\restoregeometry
+\fancyheadoffset{0pt}
