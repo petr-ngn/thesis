@@ -249,6 +249,10 @@ Referring to the feature \texttt{DEBTINC}, it does not exhibit any extreme value
 From this, it can be inferred that if the debt-to-income ratio is too high, indicating that the applicant's income is not sufficient to cover their debt, the loan is more likely to end in default.
 The association between the default status and the numeric features is further investigated in \autoref{subsubsec:target-num-ass}.
 
+Since the features are positively skewed a lot, they do not follow Guassian (normal) distribution. Additionally, Shapiro--Wilk test is conducted in order to assessed whether the features' distributions are significantly different from a normal distribution.
+According to such test, all the numeric features' distributions do not follow normal distribution on 1\% statistical significance level.
+For a reference, see \autoref{tab:normalitytest} in \autoref{chap:app1}.
+
 \begin{figure}[H]
 \centering
 \caption{Conditional distribution of numeric features}\vspace{0.5em}
