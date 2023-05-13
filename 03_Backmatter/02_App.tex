@@ -2276,7 +2276,7 @@ flask_app_input_export(woe_bins = woe_bins,
                        lime_explainer = lime_explainer)
 \end{lstlisting}
 
-\section{Front--end: Flask Web Application Code (\lstinline{app.py})}
+\section{Back--end: Flask Web Application Code (\lstinline{app.py})}
 \begin{lstlisting}[language=Python, basicstyle=\footnotesize\ttfamily]
 import warnings
 
@@ -2300,9 +2300,7 @@ input_file_path = os.path.join(current_dir, "inputs", "inputs_flask_app_dict.pkl
 with open(input_file_path, "rb") as f:
 	inputs = dill.load(f)
 
-with open(os.path.join(current_dir, "inputs", "explainer.pkl"), "rb") as f:
-	lime_explainer = dill.load(f)
-
+lime_explainer = inputs["lime_explainer""]    
 
 def lime_plot(input, model, lime_explainer):
 	def custom_lime_plot(exp, pos_color: str = "red", neg_color: str = "green"):
@@ -2435,7 +2433,7 @@ if __name__ == "__main__":
 	app.run(debug=True)	
 \end{lstlisting}
 
-\section{Back--end: HTML Codes}
+\section{Front--end: HTML Codes}
 \subsection{Application Form (\lstinline{index.html})}
 \begin{lstlisting}[language=HTML, basicstyle=\footnotesize\ttfamily]
 <!DOCTYPE html>
