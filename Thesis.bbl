@@ -1,4 +1,4 @@
-\begin{thebibliography}{81}
+\begin{thebibliography}{82}
 \newcommand{\enquote}[1]{``#1''}
 \providecommand{\natexlab}[1]{#1}
 
@@ -259,6 +259,12 @@
   \enquote{A note on platt’s probabilistic outputs for support vector
   machines.}
 \newblock \emph{Machine learning} \textbf{68}: pp. 267--276.
+
+\bibitem[{Loyola-Gonzalez(2019)}]{loyola2019black}
+\textsc{Loyola-Gonzalez}, O. (2019): \enquote{Black-box vs. white-box:
+  Understanding their advantages and weaknesses from a practical point of
+  view.}
+\newblock \emph{IEEE access} \textbf{7}: pp. 154096--154113.
 
 \bibitem[{Malley \emph{et~al.}(2011)Malley, Kruppa, Dasgupta, Malley, \&
   Ziegler}]{randomforestmalley}
