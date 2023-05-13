@@ -5,12 +5,11 @@ The style file: Styles/Stylebib.bst
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: Styles/Bibliography.bib
 Warning--entry type for "igareta2021strat" isn't style-file defined
---line 1485 of file Styles/Bibliography.bib
-Warning--I didn't find a database entry for "zuradaresults"
+--line 1505 of file Styles/Bibliography.bib
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 You've used 81 entries,
             3042 wiz_defined-function locations,
-            1022 strings with 18478 characters,
+            1021 strings with 18465 characters,
 and the built_in function-call counts, 48334 in all, are:
 = -- 3808
 > -- 1831
@@ -49,4 +48,4 @@ warning$ -- 0
 while$ -- 320
 width$ -- 0
 write$ -- 970
-(There were 2 warnings)
+(There was 1 warning)

@@ -1,26 +1,66 @@
 \chapter{Hypotheses' Testing}
 \label{chap:five}
 
-\noindent \textbf{Hypothesis \#1:} \textit{The recalibration of the model \underline{does} enhaces model performance on HMEQ data set.}
+\noindent \textbf{Result \#1:} \textit{The recalibration of the model \underline{does} enhaces model performance on HMEQ data set.}
 
-\textbf{TBD}
+We fail to reject the \textbf{Hypothesis \#1} because all we observe improvements in the metrics within evaluation on test set when the final model was re-trained on the joined training and validation set instead solely On the training set.
+Particularly, all the score metrics and loss metrics have increased and decreased, respectively, as can be seen in \autoref{tab:recab}.
+
 \vspace{0.3cm}
 
-\noindent \textbf{Hypothesis \#2:} \textit{Neural Network and KNN model \underline{do not} outperform all the models on HMEQ data set.}
+\noindent \textbf{Result \#2:} \textit{Neural Network and KNN model \underline{do not} outperform all the models on HMEQ data set.}
 
-\textbf{TBD}
+We reject the \textbf{Hypothesis \#2} as the final model, which is the best performing, is the Gradient Boosting model as described in \autoref{tab:finalmodelinfo}.
+KNN was also outperformed by the Random Forest and in case of Neural Network, it was outperformed by SVM as well as can be seen in 
+\autoref{fig:avgrankdist}.
+If we aggregate the model selection results, we can observe that the best KNN model had the 11th highest rank, while Neural Network (MLP) exhibited unsatisfactory performance with the 22nd highest rank as can be seen in \autoref{tab:maxranks}.
+
+\begin{table}[H]
+    \small
+    \setlength{\tabcolsep}{8pt}
+    \renewcommand{\arraystretch}{1.3}
+    \centering
+        \caption[Aggregated Ranks of Models]{Aggregated Ranks of Models}\label{tab:maxranks}
+        \begin{tabular}{r r}
+    \toprule
+    \textbf{Model} & \textbf{Rank}\\
+    \midrule
+    \hline
+    GB & 1 \\ 
+    RF & 6 \\ 
+    KNN & 11 \\ 
+    SVM & 19 \\ 
+    MLP & 22 \\ 
+    DT & 33 \\ 
+    LR & 40 \\
+    GNB & 55 \\
+    \hline
+    \bottomrule
+    \end{tabular}
+    \vspace{0.35em}
+
+        \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
+\end{table}
+
 \vspace{0.3cm}
 
-\noindent \textbf{Hypothesis \#3:} \textit{Black--box models \underline{does} perform better than the white--box models on HMEQ data set.}
+\noindent \textbf{Result \#3:} \textit{Black--box models \underline{does} perform better than the white--box models on HMEQ data set.}
 
-\textbf{TBD}
+We fail to reject the \textbf{Hypothesis \#3} as the black--box models truly outperformed the white--box models as can be seen in \autoref{fig:avgrankdistbbwb} which depicts the distribution of ranks for both black--box and white--box models.
+Most of the white--box models were ranked in the bottom half within the model selection, whereas the 10 best performing models consisted out of black--box models only, namely Gradient Boosting and Random Forest.
+Even though some black--box models' performances were weak and other white--box models exhibited relatively high ranks, we can still conclude that the black--box models outperformed the white--box models on average as the median of the black--box models' ranks is lower than the white--box models' median.
 \vspace{0.3cm}
 
-\noindent \textbf{Hypothesis \#4:} \textit{The longer execution time of a model \underline{does not} indicate better performance on HMEQ data set.}
+\noindent \textbf{Result \#4:} \textit{The longer execution time of a model \underline{does not} indicate better performance on HMEQ data set.}
 
-\textbf{TBD}
+We reject the \textbf{Hypothesis \#4} as according to \autoref{fig:timedist}, even though the Neural Network (MLP) model had the longest execution time on average, it underperformed several models such as Gradient Boosting, Random Forest, KNN and SVM which took significantly less time to execute. The same can be observed from \autoref{fig:scattertime}, where Neural Network performed poorly regardless the length of the execution time.
 \vspace{0.3cm}
 
 \noindent \textbf{Hypothesis \#5:} \textit{ debt and delinquency features are the main default drivers on HMEQ data set.}
 
-\textbf{TBD}
+We fail to reject the \textbf{Hypothesis \#5} according to \autoref{fig:fi} which depicts the feature importance of the final model (Gradient Boosting). As can be seen, the most important features are debt--to--income ratio \texttt{DEBTINC} and number of delinquent credit lines \texttt{DELINQ}.
+Based on the SHAP values depicted in \autoref{fig:shap}, we can observe that the negative values of texttt{DEBTINC} and \texttt{DELINQ} positively contribute to the model's predictions of the target variable, whereas the positive values negatively contribute to the model's predictions.
+In other words, the higher value of such features, the higher probability of default and vice versa.
+Since the features' values are encoded as WoE, the negative WoE values indicates larger distribution of defaulters compared to non--defaulters in given bins.
+Based on the WoE bins distribution in \autoref{fig:woedist}, we can observe negative WoE values for bins where the debt--to--income ratio is extremely high or is missing. Regarding to the number of delinquent credit lines, we can observe a negative WoE value for bin corresponding to the relatively high number of delinquent credit lines.
+Therefore, if the loan applicant has either high or missing debt--to--income ratio and/or relatively high number of delinquent credit lines,  he would be likely to default.

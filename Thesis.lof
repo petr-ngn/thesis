@@ -24,17 +24,17 @@
 \contentsline {figure}{\numberline {4.11}{\ignorespaces Reccurrence of Selected Features\relax }}{79}{figure.caption.84}%
 \contentsline {figure}{\numberline {4.12}{\ignorespaces Distribution of Selected Features per Model\relax }}{80}{figure.caption.85}%
 \contentsline {figure}{\numberline {4.13}{\ignorespaces Model Selection Print Statement\relax }}{84}{figure.caption.89}%
-\contentsline {figure}{\numberline {4.14}{\ignorespaces F1 score distribution\relax }}{86}{figure.caption.91}%
-\contentsline {figure}{\numberline {4.15}{\ignorespaces F1 score distribution - without outlier\relax }}{87}{figure.caption.92}%
-\contentsline {figure}{\numberline {4.16}{\ignorespaces F1 score distribution (Black--box/White--box dimension) - without outlier\relax }}{87}{figure.caption.93}%
-\contentsline {figure}{\numberline {4.17}{\ignorespaces Rank Score distribution\relax }}{88}{figure.caption.94}%
-\contentsline {figure}{\numberline {4.18}{\ignorespaces Rank Score distribution (Black--box/White--box dimension)\relax }}{89}{figure.caption.95}%
-\contentsline {figure}{\numberline {4.19}{\ignorespaces Threshold distribution\relax }}{89}{figure.caption.96}%
-\contentsline {figure}{\numberline {4.20}{\ignorespaces Threshold distribution - without outliers\relax }}{90}{figure.caption.97}%
-\contentsline {figure}{\numberline {4.21}{\ignorespaces Execution time distribution\relax }}{91}{figure.caption.98}%
-\contentsline {figure}{\numberline {4.22}{\ignorespaces Execution time distribution (Black--box/White--box dimension)\relax }}{91}{figure.caption.99}%
-\contentsline {figure}{\numberline {4.23}{\ignorespaces Execution time vs. F1 Scatterplot - without outlier\relax }}{92}{figure.caption.100}%
-\contentsline {figure}{\numberline {4.24}{\ignorespaces Execution time vs. F1 Scatterplot (Black--box/White--box dimension) - without outlier\relax }}{93}{figure.caption.101}%
+\contentsline {figure}{\numberline {4.14}{\ignorespaces F1 Score Distribution\relax }}{86}{figure.caption.91}%
+\contentsline {figure}{\numberline {4.15}{\ignorespaces F1 Score Distribution - without outlier\relax }}{87}{figure.caption.92}%
+\contentsline {figure}{\numberline {4.16}{\ignorespaces F1 Score Distribution (Black--box/White--box dimension) - without outlier\relax }}{87}{figure.caption.93}%
+\contentsline {figure}{\numberline {4.17}{\ignorespaces Rank Score Distribution\relax }}{88}{figure.caption.94}%
+\contentsline {figure}{\numberline {4.18}{\ignorespaces Rank Score Distribution (Black--box/White--box dimension)\relax }}{89}{figure.caption.95}%
+\contentsline {figure}{\numberline {4.19}{\ignorespaces Threshold Distribution\relax }}{89}{figure.caption.96}%
+\contentsline {figure}{\numberline {4.20}{\ignorespaces Threshold Distribution - without outlier\relax }}{90}{figure.caption.97}%
+\contentsline {figure}{\numberline {4.21}{\ignorespaces Execution Time Distribution\relax }}{91}{figure.caption.98}%
+\contentsline {figure}{\numberline {4.22}{\ignorespaces Execution Time Distribution (Black--box/White--box dimension)\relax }}{91}{figure.caption.99}%
+\contentsline {figure}{\numberline {4.23}{\ignorespaces Execution Time vs. F1 Scatterplot - without outlier\relax }}{92}{figure.caption.100}%
+\contentsline {figure}{\numberline {4.24}{\ignorespaces Execution Time vs. F1 Scatterplot (Black--box/White--box dimension) - without outlier\relax }}{93}{figure.caption.101}%
 \contentsline {figure}{\numberline {4.25}{\ignorespaces Confusion Matrix\relax }}{96}{figure.caption.103}%
 \contentsline {figure}{\numberline {4.26}{\ignorespaces ROC Curve\relax }}{99}{figure.caption.106}%
 \contentsline {figure}{\numberline {4.27}{\ignorespaces Feature Importance\relax }}{100}{figure.caption.107}%

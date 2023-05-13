@@ -1301,7 +1301,7 @@ GNB & RF & 11 & 23.25 & 0.3413 & 0.5864 & 0.4943 & 0.7207 & 0.7966 & 0.8288 & 0.
 In order to gain a more detailed understanding of the model selection results, the distribution of computed metrics is plotted. In \autoref{fig:f1dist}, the F1 score distribution is visualized for each input model. An outlier can be observed in KNN where the F1 score is 0.				
 \begin{figure}[H]
 \centering
-\caption{F1 score distribution}\vspace{0.5em}
+\caption{F1 Score Distribution}\vspace{0.5em}
 \label{fig:f1dist}\
 \includegraphics[width=140mm]{Figures/F1_Distribution.jpg}
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
@@ -1313,7 +1313,7 @@ Surprisingly, black box models such as Support Vector Machine and Neural Network
 Nonetheless, given the relatively small sample size, KNN performs better than Neural Network and non-linear SVM on small data sets.
 \begin{figure}[H]
 \centering
-\caption{F1 score distribution - without outlier}\vspace{0.5em}
+\caption{F1 Score Distribution - without outlier}\vspace{0.5em}
 \label{fig:f1distclean}\
 \includegraphics[width=140mm]{Figures/F1_wo_outliers_Distribution.jpg}
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
@@ -1322,7 +1322,7 @@ Nonetheless, given the relatively small sample size, KNN performs better than Ne
 As depicted in \autoref{fig:f1distcleanbbwb}, the distribution of F1 score (without the outlier) across the model type. Although, both score distributions overlap, it is evident, that black--box models outperform white--box model in terms of F1 score in overall as expected.
 \begin{figure}[H]
     \centering
-    \caption{F1 score distribution (Black--box/White--box dimension) - without outlier}\vspace{0.5em}
+    \caption{F1 Score Distribution (Black--box/White--box dimension) - without outlier}\vspace{0.5em}
     \label{fig:f1distcleanbbwb}\
     \includegraphics[width=140mm]{Figures/F1_wo_outliers_Distribution_BB_WB.jpg}
     \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
@@ -1332,7 +1332,7 @@ We can also consider not only F1 score but also other metrics, which is quantifi
 Hence, across all the metrics, the Gradient Boosting perform the best in overall while Gaussian Naive Bayes do not perform well at all.
 \begin{figure}[H]
     \centering
-    \caption{Rank Score distribution}\vspace{0.5em}
+    \caption{Rank Score Distribution}\vspace{0.5em}
     \label{fig:avgrankdist}\
     \includegraphics[width=140mm]{Figures/AVG_Rank_score_Distribution.jpg}
     \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
@@ -1341,7 +1341,7 @@ Hence, across all the metrics, the Gradient Boosting perform the best in overall
 As expected, also, the black--box models are ranked higher than the white--box models according to the rank score as shown in \autoref{fig:avgrankdistbbwb}. This is evident also from \autoref{tab:modelsectab} where the black--box models, namely Gradient Boosting and Random Forest, dominated amongst the first 10 ranked models.
 \begin{figure}[H]
     \centering
-    \caption{Rank Score distribution (Black--box/White--box dimension)}\vspace{0.5em}
+    \caption{Rank Score Distribution (Black--box/White--box dimension)}\vspace{0.5em}
     \label{fig:avgrankdistbbwb}\
     \includegraphics[width=140mm]{Figures/AVG_Rank_score_Distribution_BB_WB.jpg}
     \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
@@ -1351,7 +1351,7 @@ As expected, also, the black--box models are ranked higher than the white--box m
 The optimal threshold distribution for each base model is presented in \autoref{fig:thresdist}. We can observe an outlier in KNN having a threshold value of 1, which explains the F1 score outlier found previously in \autoref{fig:f1dist}.
 \begin{figure}[H]
 \centering
-\caption{Threshold distribution}\vspace{0.5em}
+\caption{Threshold Distribution}\vspace{0.5em}
 \label{fig:thresdist}\
 \includegraphics[width=140mm]{Figures/Threshold_Distribution.jpg}
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
@@ -1360,7 +1360,7 @@ The optimal threshold distribution for each base model is presented in \autoref{
 In order to obtain a better insight into the distribution of optimal thresholds, the outlier in KNN is excluded, resulting in the threshold distribution depicted in \autoref{fig:thresdistclean}. The optimal threshold values are mostly distributed below 0.5, indicating that the models are generally more conservative. The most conservative model is Gaussian Naive Bayes, which has a median threshold value around 0.25.
 \begin{figure}[H]
 \centering
-\caption{Threshold distribution - without outliers}\vspace{0.5em}
+\caption{Threshold Distribution - without outlier}\vspace{0.5em}
 \label{fig:thresdistclean}\
 \includegraphics[width=140mm]{Figures/Threshold_wo_outliers_Distribution.jpg}
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
@@ -1374,7 +1374,7 @@ Conversely, the most time-consuming models are undoubtedly the Neural Network mo
 This finding suggests that longer execution time does not necessarily lead to better performance, as the Neural Network models are significantly outperformed by several other models.
 \begin{figure}[H]
 \centering
-\caption{Execution time distribution}\vspace{0.5em}
+\caption{Execution Time Distribution}\vspace{0.5em}
 \label{fig:timedist}\
 \includegraphics[width=140mm]{Figures/EXECUTION_TIME_Distribution.jpg}
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
@@ -1383,7 +1383,7 @@ We can inspect the execution from another perspective as shown in \autoref{fig:t
 It can be observed that black--box models take a significant amount of time ot opimize than the white--box models which is given due to the complexity of the black--box models.
 \begin{figure}[H]
     \centering
-    \caption{Execution time distribution (Black--box/White--box dimension)}\vspace{0.5em}
+    \caption{Execution Time Distribution (Black--box/White--box dimension)}\vspace{0.5em}
     \label{fig:timedistbbwb}\
     \includegraphics[width=140mm]{Figures/EXECUTION_TIME_Distribution_WB_BB.jpg}
     \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
@@ -1397,7 +1397,7 @@ On the other hand, the Neural Network models always perform poorly, regardless o
 
 \begin{figure}[H]
 \centering
-\caption{Execution time vs. F1 Scatterplot - without outlier}\vspace{0.5em}
+\caption{Execution Time vs. F1 Scatterplot - without outlier}\vspace{0.5em}
 \label{fig:scattertime}\
 \includegraphics[width=140mm]{Figures/Scatterplot_execution_time_F1_wo_outliers.jpg}
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
@@ -1407,7 +1407,7 @@ While the execution time of white--box models seems to be constant regardless th
 
 \begin{figure}[H]
     \centering
-    \caption{Execution time vs. F1 Scatterplot (Black--box/White--box dimension) - without outlier}\vspace{0.5em}
+    \caption{Execution Time vs. F1 Scatterplot (Black--box/White--box dimension) - without outlier}\vspace{0.5em}
     \label{fig:scattertimebbwb}\
     \includegraphics[width=140mm]{Figures/Scatterplot_execution_time_F1_wo_outliers_BB_WB.jpg}
     \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
@@ -1642,19 +1642,20 @@ Nevertheless, the code for the application is available in the GitHub repository
 
 Furthermore, prior to deployment, we need to prepare several Python inputs for the web application, including:
 \begin{itemize}\setlength\itemsep{0em}
-\item Model - the final model recalibrated on the training, validation and test set.
-\item Threshold - the final classification threshold recalibrated on the training, validation and test set.
-\item Features - the final features used in the final model.
-\item Data Frame - the input tabular object used in the web application to store the loan applicant's inputs.
-\item Optimal Binning Transformator - fitted \lstinline{BinningProcess} object for binning and WoE-encoding of the loan applicant's inputs.
-\item WoE Bins - a set of bins and WoE values used for mapping the WoE values to missing values.
+\item \textbf{Model} - the final model recalibrated on the training, validation and test set.
+\item \textbf{Threshold} - the final classification threshold recalibrated on the training, validation and test set.
+\item \textbf{Features} - the final features used in the final model.
+\item \textbf{Data Frame} - the input tabular object used in the web application to store the loan applicant's inputs.
+\item \textbf{Optimal Binning Transformator} - fitted \lstinline{BinningProcess} object for binning and WoE-encoding of the loan applicant's inputs.
+\item \textbf{WoE Bins} - a set of bins and WoE values used for mapping the WoE values to missing values.
+\item \textbf{LIME explainer} - fitted \lstinline{LimeTabularExplainer} object for local explainability of model's prediction.
 \end{itemize}
 
-Such inputs required for the machine learning application are exported in the \lstinline{.pkl} format using the \lstinline{pickle} module. This format allows for efficient and easy-to-use serialization and deserialization of the inputs. The pickled file is then loaded directly into the Flask application.
+Such inputs required for the machine learning application are exported in the \lstinline{.pkl} format using the \lstinline{dill} module. This format allows for efficient and easy-to-use serialization and deserialization of the inputs. The pickled file is then loaded directly into the Flask application.
 
-For the back-end of the web application, Flask is used to deploy the machine learning model. The Flask application is coded in the \lstinline{app.py} file, which is stored in the \lstinline{flask_app} repository. The front-end of the web application is coded in HTML, with CSS and JavaScript elements used to enhance the user interface.
+For the back-end of the web application, Flask is used to deploy the machine learning model. The Flask application is written in the \lstinline{app.py} file, which is stored in the \lstinline{flask_app} directory. The front-end of the web application is coded in HTML, with CSS and JavaScript elements used to enhance the user interface.
 
-The web application first renders an HTML page, as shown in \autoref{fig:flaskform}.
+The web application first renders a HTML page, as shown in \autoref{fig:flaskform}.
 This page contains a loan application form, in which the user or the loan applicant fills in the respective field values that correspond to the features on which the machine learning model was trained.
 The form is designed to capture the necessary information required for the model to make a prediction about the loan applicant's application.
 Note that not all fields in the loan application form need to be filled out. This is because the missing values in certain features may indicate a higher risk of default. Conversely, one may choose to impose a restriction on the form, requiring all fields to be filled out. However, this could result in a lower number of received applications from delinquent clients, as they may not have all the necessary information to complete the form.
@@ -1669,7 +1670,7 @@ Note that not all fields in the loan application form need to be filled out. Thi
 \clearpage
 
 Once, the loan application form is submitted, the web application uses the pickled input to transform the data from the loan application form and use it in the recalibrated model in order to get the result, whether the given loan applicant would repay his loan based on predetermined threshold. The result is then displayed in the web application, as shown in \autoref{fig:flaskres}.
-Particularly, the web application returns whether the loan application would be denied or approved and also the probability score of default.
+Particularly, the web application returns whether the loan application would be denied or approved based on the model's output and also the probability score of default.
 
 \begin{figure}[H]
 \centering
@@ -1680,7 +1681,7 @@ Particularly, the web application returns whether the loan application would be 
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
 
-Besides the prediction results, it also displays the Local Interpretable Model-Agnostic Explanations (henceforth LIME) of the black--box model (Gradient Boosting) with respect to the inputs submitted within the form.
+Besides the prediction results, it also displays the Local Interpretable Model-Agnostic Explanations (henceforth LIME) of the black--box model with respect to the inputs submitted within the form.
 LIME focuses on the local explainability of the black box model around the black--box prediction as it generates a new data set consisting of perturbed samples around the given prediction and then trains a surrogate linear model on the new data set.
 Such local interpretable, surrogate model should be a good approximation of the black box model in the vicinity of the given prediction, i.e., the local interpretable model is then used to explain the prediction of the black box model \citep{ribeiro2016should}.
 
@@ -1693,6 +1694,6 @@ where $f$ is the original black--box model, $g$ is the surrogate model, $L$ is t
 
 
 The explanation is given in terms of the feature importance, which is represented by the magnitude of the feature's coefficient in the local interpretable model. The higher the magnitude of the coefficient, the more important the feature is in the prediction of the black box model.
-Therefore, as it is shown in \autoref{fig:flaskres}, the red bars indicate positive contribution to the probability of default whereas green bars indicate negative contribution to the probability of default. In other words, The features with red bars indicates that the client would not probably repay his loan and vice versa.
+Therefore, as it is shown in \autoref{fig:flaskres}, the red bars indicate positive contribution to the probability of default whereas green bars indicate negative contribution to the probability of default. In other words, The features with red bars indicate that the client would not probably repay his loan and vice versa.
 The contributions' magnitudes are in line with the findings from feature imporance or SHAP values which is focused on the global explainability of the black--box model (not local explainability), that features such as debt--to--income ratio (\texttt{DEBTINC}) or number of deliquent credit lines (\texttt{DELINQ}) have the largest impact of the probability default.
 Particularly, a high value of debt--to--income ratio causes higher probability default, whereas no delinquent credit lines leads to the lower probability default.
