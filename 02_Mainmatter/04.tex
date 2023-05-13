@@ -224,7 +224,7 @@ This may cause problems in the modelling part, as the model may be biased toward
 
 \begin{figure}[H]
 \centering
-\caption{Default status distribution}
+\caption{Default Distribution}
 \label{fig:defaultdist}
 \includegraphics[width=130mm]{Figures/Default_Distribution.jpg}\vspace{-1em}
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
@@ -255,7 +255,7 @@ For a reference, see \autoref{tab:normalitytest} in \autoref{chap:app1}.
 
 \begin{figure}[H]
 \centering
-\caption{Conditional distribution of numeric features}\vspace{0.5em}
+\caption{Conditional Distribution of Numeric Features}\vspace{0.5em}
 \label{fig:boxfeat}
 \includegraphics[width=140mm]{Figures/Numeric_Features_Distribution_Boxplots.jpg}
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
@@ -281,7 +281,7 @@ Such associations are further investigated in \autoref{subsubsec:target-na-ass}.
 % define a new column type 'L' for left alignment
 \newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}} % define a new column type 'R' for right alignment
 \begin{center}
-\caption[Numeric features NA's table]{Numeric features NA's table}\label{tab:nacont-table}
+\caption[Numeric features NA's Summary]{Numeric features NA's Summary}\label{tab:nacont-table}
 \begin{tabular}{l R{1cm}R{1cm}|R{1.5cm}R{1.5cm}}
     \toprule
     \textbf{Feature} & \textbf{$n_0$} & \textbf{$n_1$} & \textbf{$n_0/N_0$} & \textbf{$n_1/N_1$} \\
@@ -328,7 +328,7 @@ Hence, a moderate association between the \texttt{JOB} feature and the default s
 
 \begin{figure}[H]
 \centering
-\caption{Conditional distribution of categorical features}\vspace{0.5em}
+\caption{Conditional Distribution of Categorical Features}\vspace{0.5em}
 \label{fig:catdist}
 \includegraphics[width=140mm]{Figures/Categorical_Features_Distribution.jpg}
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
@@ -360,7 +360,7 @@ These findings support the observations made in \autoref{subsubsec:numdist} rega
     \setlength{\tabcolsep}{8pt}
     \renewcommand{\arraystretch}{1.3}
     \centering
-        \caption[Point--Biserial Correlation table]{Point--Biserial Correlation table}\label{tab:pointbi}
+        \caption[Point--Biserial Correlation - Numeric Features vs. Default]{Point--Biserial Correlation - Numeric Features vs. Default}\label{tab:pointbi}
         \begin{tabular}{@{} l r @{\hspace{1cm}} l @{}}
     \toprule
     \textbf{Feature} & \textbf{Coefficient} & \textbf{Significance}\\
@@ -421,7 +421,7 @@ Ultimately, the usefulness of a feature in predicting the target variable is det
         \setlength{\tabcolsep}{8pt}
         \renewcommand{\arraystretch}{1.3}
         \centering
-            \caption[Cramer's V Association table]{Cramer's V Association table}\label{tab:cramer-v}
+            \caption[Cramer's V Association - Categorical Features vs. Default]{Cramer's V Association - Categorical Features vs. Default}\label{tab:cramer-v}
             \begin{tabular}{@{} l r @{\hspace{1cm}} l @{}}
         \toprule
         \textbf{Feature} & \textbf{Coefficient} & \textbf{Significance}\\
@@ -458,7 +458,7 @@ Therefore, we can anticipate that these features will be crucial indicators in d
     \setlength{\tabcolsep}{8pt}
     \renewcommand{\arraystretch}{1.3}
     \centering
-        \caption[Phi Correlation Coefficient table]{Phi Correlation Coefficient table}\label{tab:phi-target}
+        \caption[Phi Correlation Coefficient - NA's vs. Default]{Phi Correlation Coefficient - NA's vs. Default}\label{tab:phi-target}
         \begin{tabular}{@{} l r @{\hspace{1cm}} l @{}}
     \toprule
     \textbf{Feature} & \textbf{Coefficient} & \textbf{Significance}\\
@@ -512,7 +512,7 @@ Therefore, it can be inferred that a significant number of loan applicants tend 
 
 \begin{figure}[H]
     \centering
-    \caption{Nullity dendrogram}\vspace{0.5em}
+    \caption{Nullity Dendrogram}\vspace{0.5em}
     \label{fig:dendrogram}
     \includegraphics[width=140mm]{Figures/NA_Dendrogram.jpg}
     \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
@@ -584,7 +584,7 @@ The following \autoref{tab:split} shows the default distribution of the individu
 \setlength{\tabcolsep}{8pt}
 \renewcommand{\arraystretch}{1.3}
 \centering
-    \caption[Sample sizes of split sets]{Sample sizes of split sets}\label{tab:split}
+    \caption[Data Split Summary]{Data Split Summary}\label{tab:split}
     \begin{tabular}{lrrr}
 \toprule
 \textbf{Set} & \textbf{\# instances} & \textbf{\% defaults} & \textbf{\% non--defaults}\\
@@ -1147,7 +1147,7 @@ Henceforth, the weights are assigned to different metrics based on their relevan
 \setlength{\tabcolsep}{8pt}
 \renewcommand{\arraystretch}{1.3}
 \centering
-    \caption[Model Ranking Weights table]{Model Ranking Weights table}\label{tab:weightsrank}
+    \caption[Model Ranking Weights]{Model Ranking Weights}\label{tab:weightsrank}
     \begin{tabular}{>{\raggedleft\arraybackslash}p{0.4\linewidth} l}
 \toprule
 \textbf{Metric} & \textbf{Weight}\\
@@ -1258,7 +1258,7 @@ The final output of the function \lstinline{model_selection()} is table which su
 \small
 \setlength{\tabcolsep}{8pt}
 \renewcommand{\arraystretch}{1.3}
-\caption[Model Selection table]{Model Selection Results}\label{tab:modelsectab}
+\caption[Model Selection Results]{Model Selection Results}\label{tab:modelsectab}
 \centering
 \scalebox{0.8}{
 
@@ -1317,7 +1317,7 @@ Surprisingly, black box models such as Support Vector Machine and Neural Network
 Nonetheless, given the relatively small sample size, KNN performs better than Neural Network and non-linear SVM on small data sets.
 \begin{figure}[H]
 \centering
-\caption{F1 Score Distribution - without outlier}\vspace{0.5em}
+\caption{F1 Score Distribution - \textit{without outlier}}\vspace{0.5em}
 \label{fig:f1distclean}\
 \includegraphics[width=140mm]{Figures/F1_wo_outliers_Distribution.jpg}
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
@@ -1326,7 +1326,7 @@ Nonetheless, given the relatively small sample size, KNN performs better than Ne
 As depicted in \autoref{fig:f1distcleanbbwb}, the distribution of F1 score (without the outlier) across the model type. Although, both score distributions overlap, it is evident, that black--box models outperform white--box model in terms of F1 score in overall as expected.
 \begin{figure}[H]
     \centering
-    \caption{F1 Score Distribution (Black--box/White--box dimension) - without outlier}\vspace{0.5em}
+    \caption{F1 Score Distribution (Black--box/White--box dimension) - \textit{without outlier}}\vspace{0.5em}
     \label{fig:f1distcleanbbwb}\
     \includegraphics[width=140mm]{Figures/F1_wo_outliers_Distribution_BB_WB.jpg}
     \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
@@ -1364,7 +1364,7 @@ The optimal threshold distribution for each base model is presented in \autoref{
 In order to obtain a better insight into the distribution of optimal thresholds, the outlier in KNN is excluded, resulting in the threshold distribution depicted in \autoref{fig:thresdistclean}. The optimal threshold values are mostly distributed below 0.5, indicating that the models are generally more conservative. The most conservative model is Gaussian Naive Bayes, which has a median threshold value around 0.25.
 \begin{figure}[H]
 \centering
-\caption{Threshold Distribution - without outlier}\vspace{0.5em}
+\caption{Threshold Distribution - \textit{without outlier}}\vspace{0.5em}
 \label{fig:thresdistclean}\
 \includegraphics[width=140mm]{Figures/Threshold_wo_outliers_Distribution.jpg}
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
@@ -1401,7 +1401,7 @@ On the other hand, the Neural Network models always perform poorly, regardless o
 
 \begin{figure}[H]
 \centering
-\caption{Execution Time vs. F1 Scatterplot - without outlier}\vspace{0.5em}
+\caption{Execution Time vs. F1 Scatterplot - \textit{without outlier}}\vspace{0.5em}
 \label{fig:scattertime}\
 \includegraphics[width=140mm]{Figures/Scatterplot_execution_time_F1_wo_outliers.jpg}
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
@@ -1411,7 +1411,7 @@ While the execution time of white--box models seems to be constant regardless th
 
 \begin{figure}[H]
     \centering
-    \caption{Execution Time vs. F1 Scatterplot (Black--box/White--box dimension) - without outlier}\vspace{0.5em}
+    \caption{Execution Time vs. F1 Scatterplot (Black--box/White--box dimension) - \textit{without outlier}}\vspace{0.5em}
     \label{fig:scattertimebbwb}\
     \includegraphics[width=140mm]{Figures/Scatterplot_execution_time_F1_wo_outliers_BB_WB.jpg}
     \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}

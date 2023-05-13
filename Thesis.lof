@@ -1,6 +1,6 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Logistic function\relax }}{5}{figure.caption.19}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Logistic Function\relax }}{5}{figure.caption.19}%
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Decision Tree's Nodes\relax }}{6}{figure.caption.20}%
 \contentsline {figure}{\numberline {2.3}{\ignorespaces Gini Impurity vs. Entropy\relax }}{7}{figure.caption.21}%
 \contentsline {figure}{\numberline {2.4}{\ignorespaces K-Nearest Neighbors with $k=4$\relax }}{12}{figure.caption.22}%
@@ -8,15 +8,15 @@
 \contentsline {figure}{\numberline {2.6}{\ignorespaces Support Vector Machine 2D Hyperplane\relax }}{15}{figure.caption.24}%
 \contentsline {figure}{\numberline {2.7}{\ignorespaces Neural Network Architecture\relax }}{17}{figure.caption.25}%
 \contentsline {figure}{\numberline {2.8}{\ignorespaces ROC Curve\relax }}{24}{figure.caption.32}%
-\contentsline {figure}{\numberline {2.9}{\ignorespaces Log Loss Function when $Y=1$\relax }}{28}{figure.caption.34}%
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Log Loss Function for $Y=1$\relax }}{28}{figure.caption.34}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Machine Learning Framework\relax }}{44}{figure.caption.40}%
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Repository Structure\relax }}{45}{figure.caption.41}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Default status distribution\relax }}{51}{figure.caption.47}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Conditional distribution of numeric features\relax }}{53}{figure.caption.49}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Conditional distribution of categorical features\relax }}{56}{figure.caption.52}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Nullity dendrogram\relax }}{60}{figure.caption.60}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Default Distribution\relax }}{51}{figure.caption.47}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Conditional Distribution of Numeric Features\relax }}{53}{figure.caption.49}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Conditional Distribution of Categorical Features\relax }}{56}{figure.caption.52}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Nullity Dendrogram\relax }}{60}{figure.caption.60}%
 \contentsline {figure}{\numberline {4.7}{\ignorespaces Spearman Correlation Matrix\relax }}{61}{figure.caption.62}%
 \contentsline {figure}{\numberline {4.8}{\ignorespaces ADASYN Impact of Categorical Features' Distribution\relax }}{65}{figure.caption.65}%
 \contentsline {figure}{\numberline {4.9}{\ignorespaces WoE Bins Distribution\relax }}{68}{figure.caption.66}%
@@ -25,16 +25,16 @@
 \contentsline {figure}{\numberline {4.12}{\ignorespaces Distribution of Selected Features per Model\relax }}{80}{figure.caption.85}%
 \contentsline {figure}{\numberline {4.13}{\ignorespaces Model Selection Print Statement\relax }}{84}{figure.caption.89}%
 \contentsline {figure}{\numberline {4.14}{\ignorespaces F1 Score Distribution\relax }}{86}{figure.caption.91}%
-\contentsline {figure}{\numberline {4.15}{\ignorespaces F1 Score Distribution - without outlier\relax }}{87}{figure.caption.92}%
-\contentsline {figure}{\numberline {4.16}{\ignorespaces F1 Score Distribution (Black--box/White--box dimension) - without outlier\relax }}{87}{figure.caption.93}%
+\contentsline {figure}{\numberline {4.15}{\ignorespaces F1 Score Distribution - \textit {without outlier}\relax }}{87}{figure.caption.92}%
+\contentsline {figure}{\numberline {4.16}{\ignorespaces F1 Score Distribution (Black--box/White--box dimension) - \textit {without outlier}\relax }}{87}{figure.caption.93}%
 \contentsline {figure}{\numberline {4.17}{\ignorespaces Rank Score Distribution\relax }}{88}{figure.caption.94}%
 \contentsline {figure}{\numberline {4.18}{\ignorespaces Rank Score Distribution (Black--box/White--box dimension)\relax }}{89}{figure.caption.95}%
 \contentsline {figure}{\numberline {4.19}{\ignorespaces Threshold Distribution\relax }}{89}{figure.caption.96}%
-\contentsline {figure}{\numberline {4.20}{\ignorespaces Threshold Distribution - without outlier\relax }}{90}{figure.caption.97}%
+\contentsline {figure}{\numberline {4.20}{\ignorespaces Threshold Distribution - \textit {without outlier}\relax }}{90}{figure.caption.97}%
 \contentsline {figure}{\numberline {4.21}{\ignorespaces Execution Time Distribution\relax }}{91}{figure.caption.98}%
 \contentsline {figure}{\numberline {4.22}{\ignorespaces Execution Time Distribution (Black--box/White--box dimension)\relax }}{91}{figure.caption.99}%
-\contentsline {figure}{\numberline {4.23}{\ignorespaces Execution Time vs. F1 Scatterplot - without outlier\relax }}{92}{figure.caption.100}%
-\contentsline {figure}{\numberline {4.24}{\ignorespaces Execution Time vs. F1 Scatterplot (Black--box/White--box dimension) - without outlier\relax }}{93}{figure.caption.101}%
+\contentsline {figure}{\numberline {4.23}{\ignorespaces Execution Time vs. F1 Scatterplot - \textit {without outlier}\relax }}{92}{figure.caption.100}%
+\contentsline {figure}{\numberline {4.24}{\ignorespaces Execution Time vs. F1 Scatterplot (Black--box/White--box dimension) - \textit {without outlier}\relax }}{93}{figure.caption.101}%
 \contentsline {figure}{\numberline {4.25}{\ignorespaces Confusion Matrix\relax }}{96}{figure.caption.103}%
 \contentsline {figure}{\numberline {4.26}{\ignorespaces ROC Curve\relax }}{99}{figure.caption.106}%
 \contentsline {figure}{\numberline {4.27}{\ignorespaces Feature Importance\relax }}{100}{figure.caption.107}%
