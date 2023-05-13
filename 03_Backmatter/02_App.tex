@@ -2300,7 +2300,7 @@ input_file_path = os.path.join(current_dir, "inputs", "inputs_flask_app_dict.pkl
 with open(input_file_path, "rb") as f:
 	inputs = dill.load(f)
 
-lime_explainer = inputs["lime_explainer""]    
+lime_explainer = inputs["lime_explainer"]    
 
 def lime_plot(input, model, lime_explainer):
 	def custom_lime_plot(exp, pos_color: str = "red", neg_color: str = "green"):
