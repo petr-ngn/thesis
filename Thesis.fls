@@ -1412,6 +1412,7 @@ INPUT c:/tex/texlive/texmf-dist/tex/latex/tools/verbatim.sty
 INPUT c:/tex/texlive/texmf-dist/tex/latex/tools/verbatim.sty
 INPUT c:/tex/texlive/texmf-dist/tex/latex/tools/verbatim.sty
 INPUT c:/tex/texlive/texmf-dist/tex/latex/tools/verbatim.sty
+INPUT c:/tex/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
 INPUT c:/tex/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 INPUT c:/tex/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 INPUT c:/tex/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
@@ -1873,8 +1874,6 @@ INPUT ./03_Backmatter/02_App.tex
 INPUT 03_Backmatter/02_App.tex
 INPUT c:/tex/texlive/texmf-dist/fonts/tfm/public/lm/ec-lmtk10.tfm
 INPUT c:/tex/texlive/texmf-dist/fonts/tfm/public/lm/ec-lmtk10.tfm
-INPUT c:/tex/texlive/texmf-dist/fonts/tfm/public/lm/ec-lmtti10.tfm
-INPUT c:/tex/texlive/texmf-dist/fonts/tfm/public/lm/ec-lmtk10.tfm
 INPUT c:/tex/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 INPUT c:/tex/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 INPUT c:/tex/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
@@ -1917,4 +1916,3 @@ INPUT c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmtk10.pfb
 INPUT c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmtt10.pfb
 INPUT c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmtt12.pfb
 INPUT c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmtt9.pfb
-INPUT c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmtti10.pfb
