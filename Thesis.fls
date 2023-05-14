@@ -1806,11 +1806,11 @@ INPUT ./Figures/EXECUTION_TIME_Distribution.jpg
 INPUT Figures/EXECUTION_TIME_Distribution.jpg
 INPUT ./Figures/EXECUTION_TIME_Distribution.jpg
 INPUT ./Figures/EXECUTION_TIME_Distribution.jpg
-INPUT ./Figures/EXECUTION_TIME_Distribution_WB_BB.jpg
-INPUT ./Figures/EXECUTION_TIME_Distribution_WB_BB.jpg
-INPUT Figures/EXECUTION_TIME_Distribution_WB_BB.jpg
-INPUT ./Figures/EXECUTION_TIME_Distribution_WB_BB.jpg
-INPUT ./Figures/EXECUTION_TIME_Distribution_WB_BB.jpg
+INPUT ./Figures/EXECUTION_TIME_Distribution_BB_WB.jpg
+INPUT ./Figures/EXECUTION_TIME_Distribution_BB_WB.jpg
+INPUT Figures/EXECUTION_TIME_Distribution_BB_WB.jpg
+INPUT ./Figures/EXECUTION_TIME_Distribution_BB_WB.jpg
+INPUT ./Figures/EXECUTION_TIME_Distribution_BB_WB.jpg
 INPUT ./Figures/Scatterplot_execution_time_F1_wo_outliers.jpg
 INPUT ./Figures/Scatterplot_execution_time_F1_wo_outliers.jpg
 INPUT Figures/Scatterplot_execution_time_F1_wo_outliers.jpg

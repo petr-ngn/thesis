@@ -1383,19 +1383,20 @@ This finding suggests that longer execution time does not necessarily lead to be
 \includegraphics[width=140mm]{Figures/EXECUTION_TIME_Distribution.jpg}
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
-We can inspect the execution from another perspective as shown in \autoref{fig:timedistbbwb}.
+We can inspect the execution time from another perspective as shown in \autoref{fig:timedistbbwb}.
 It can be observed that black--box models take a significant amount of time ot opimize than the white--box models which is given due to the complexity of the black--box models.
+Further we can notice that some of the black--box models took only few minutes to optimized themselves. This corresponds to KNN models and such exeuction is attributed to the small sample size as of dataset as well as lower dataset dimensionality (i.e., low number of features) and further given the lower number of $k$ neighbors (which is constrained to 10 at most).
 \begin{figure}[H]
     \centering
     \caption{Execution Time Distribution (Black--box/White--box dimension)}\vspace{0.5em}
     \label{fig:timedistbbwb}\
-    \includegraphics[width=140mm]{Figures/EXECUTION_TIME_Distribution_WB_BB.jpg}
+    \includegraphics[width=140mm]{Figures/EXECUTION_TIME_Distribution_BB_WB.jpg}
     \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
 
 
 The execution time and the F1 score are inspected together using a scatterplot, as shown in \autoref{fig:scattertime}. 
-A cluster of non-complex and transparent models, such as Logistic Regression, Gaussian Naive Bayes, Decision Tree, and KNN, can be observed around the vertical line near 0 execution time. These models are quick to optimize, but their F1 scores are generally low, except for KNN.
+A cluster of non-complex and transparent models, such as Logistic Regression, Gaussian Naive Bayes, and Decision Tree, can be observed around the vertical line near 0 execution time. These models are quick to optimize, but their F1 scores are generally low.
 Further, their variance in execution time is quite low, regardless of the feature subset they are optimized on.
 On the other hand, the Neural Network models always perform poorly, regardless of the length of the execution time. Furthermore, the variance of the F1 scores is quite low for these models, indicating that the execution time does not have a significant impact on the F1 score in the case of Neural Networks.
 
