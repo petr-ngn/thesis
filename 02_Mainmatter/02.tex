@@ -31,8 +31,10 @@ In order to avoid confusion and ensure clear understanding in this thesis, it is
 	\item \textbf{Weights} - Coefficient or parameters learnt during the training process.
 	\item \textbf{Supervised Learning} - Process reflecting the abilty of an algorithm to generelize knowledge from the data having with target or label cases, so that the algorithm can be used to predict new (unlabelled) cases \citep{alloghani2020supervised}.
     In other words, the learning process is supervised by the target variable, hence the output model can be used to predict the target variable for new data, either using classification (when having categorical target variable) or regression (when having continuous target variable).
-	\item \textbf{Cross--validation} - When being limited by the small dataset size, the data is split the data into $k$ folds (subsets) and the model is trained $k$ times, each time on $k-1$ folds and validated on the remaining fold, in order to btain reliable estimates of the model generalization error \citep{tatsat2020machine}.
+	\item \textbf{Cross--validation} - When being limited by the small dataset size, the data is split the data into $k$ folds (subsets) and the model is trained $k$ times, each time on $k-1$ folds and validated (evaluated) on the remaining fold, in order to obtain reliable estimates of the model generalization error \citep{tatsat2020machine}, or so called cross-validation score.
 	\item \textbf{Overfitting} - Situation, when the model has small error during the training, but also a high tet error \citep{forsyth2019applied}. The model is too complex just purely memorizes the data on which is trained on, but cannot generalize and predict well on unseen data.
+	\item \textbf{Black--box model} - Models which are very accurate but also are very complex hard to interpret \citep{pintelas2020grey}.
+	\item \textbf{White--box model} -Models which are comprehensible and transparent but usally are less accurate \citep{pintelas2020grey}.
 \end{itemize}
 
 \section{Algorithms}
