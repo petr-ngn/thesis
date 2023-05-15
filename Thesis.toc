@@ -81,8 +81,8 @@
 \contentsline {chapter}{\numberline {5}Hypotheses' Testing and Future Recommendations}{112}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Hypotheses' Testing}{112}{section.5.1}%
 \contentsline {section}{\numberline {5.2}Future Recommendations}{114}{section.5.2}%
-\contentsline {chapter}{\numberline {6}Conclusion}{116}{chapter.6}%
-\contentsline {chapter}{Bibliography}{117}{chapter.6}%
+\contentsline {chapter}{\numberline {6}Conclusion}{117}{chapter.6}%
+\contentsline {chapter}{Bibliography}{118}{chapter.6}%
 \contentsline {chapter}{\numberline {A}Additional Figures and Tables}{I}{appendix.A}%
 \contentsline {chapter}{\numberline {B}Source Codes}{II}{appendix.B}%
 \contentsline {section}{\numberline {B.1}Python Notebook Code (\lstinline {Masters_Thesis.ipynb})}{II}{section.B.1}%
