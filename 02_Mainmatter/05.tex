@@ -4,19 +4,19 @@ In this chapter, we assess the hypotheses stated in \autoref{sec:hypo} based on 
 Moreover, in response to the outcomes derived from this thesis, we proffer suggestions for subsequent studies. These recommendations, shaped by our findings, serve as a roadmap to guide future investigations within this field.
 
 \section{Hypotheses' Testing}
-\noindent \textbf{Result \#1:} \textit{The recalibration of the model \underline{does} enhaces model performance on HMEQ data set.}
+\noindent \textbf{Result \#1:} \textit{The recalibration of the model \underline{DOES} enhaces model performance on HMEQ data set.}
 
-We fail to reject the \textbf{Hypothesis \#1} because all we observe improvements in the metrics within evaluation on test set when the final model was re-trained on the joined training and validation set instead solely On the training set.
-Particularly, all the score metrics and loss metrics have increased and decreased, respectively, as can be seen in \autoref{tab:recab}.
+We fail to reject the \textbf{Hypothesis \#1} because all we observe improvements across the metrics within evaluation on test set when the final model was re-trained on the joined training and validation set instead solely on the training set.
+In particular, all the score metrics and loss metrics have increased and decreased, respectively, as can be seen in \autoref{tab:recab}. Hereby, we can confirm that the recalibration of the model truly boost the model predictive power on HMEQ data set.
 
 \vspace{0.3cm}
 
-\noindent \textbf{Result \#2:} \textit{Neural Network and KNN model \underline{do not} outperform all the models on HMEQ data set.}
+\noindent \textbf{Result \#2:} \textit{Neural Network and KNN model \underline{DO NOT} outperform all the models on HMEQ data set.}
 
 We reject the \textbf{Hypothesis \#2} as the final model, which is the best performing, is the Gradient Boosting model as described in \autoref{tab:finalmodelinfo}.
-KNN was also outperformed by the Random Forest and in case of Neural Network, it was outperformed by SVM as well as can be seen in 
-\autoref{fig:avgrankdist}.
+KNN was also outperformed by the Random Forest and in case of Neural Network, it was outperformed by SVM as well as can be seen in \autoref{fig:avgrankdist}.
 If we aggregate the model selection results by looking the highest rank per each model, we can observe that the best KNN model had the 11th highest rank, while Neural Network (MLP) exhibited unsatisfactory performance with the 22nd highest rank as can be seen in \autoref{tab:maxranks}.
+Therefore, our results are not in with line with the outcomes of respective studies \citep{serkan2021bagging,zurada2014classification} which reported that Neural Network and KNN model outperformed all the models on HMEQ data set, respectively.
 
 \begin{table}[H]
     \small
@@ -47,19 +47,19 @@ If we aggregate the model selection results by looking the highest rank per each
 
 \vspace{0.3cm}
 
-\noindent \textbf{Result \#3:} \textit{Black--box models \underline{does} perform better than the white--box models on HMEQ data set.}
+\noindent \textbf{Result \#3:} \textit{Black--box models \underline{DOES} perform better than the white--box models on HMEQ data set.}
 
 We fail to reject the \textbf{Hypothesis \#3} as the black--box models truly outperformed the white--box models as can be seen in \autoref{fig:avgrankdistbbwb} which depicts the distribution of ranks for both black--box and white--box models.
 Most of the white--box models were ranked in the bottom half within the model selection, whereas the 10 best performing models consisted out of black--box models only, namely Gradient Boosting and Random Forest.
 Even though that some black--box models' performances were weak and other white--box models exhibited relatively high ranks, we can still conclude that the black--box models outperformed the white--box models on average as the median of the black--box models' ranks is lower than the white--box models' median.
 \vspace{0.3cm}
 
-\noindent \textbf{Result \#4:} \textit{The longer execution time of a model \underline{does not} indicate better performance on HMEQ data set.}
+\noindent \textbf{Result \#4:} \textit{The longer execution time of a model \underline{DOES NOT} indicate better performance on HMEQ data set.}
 
 We reject the \textbf{Hypothesis \#4} as according to \autoref{fig:timedist}, even though the Neural Network (MLP) model had the longest execution time on average, it underperformed several models such as Gradient Boosting, Random Forest, KNN and SVM which took significantly less time to execute. The same can be observed from \autoref{fig:scattertime}, where Neural Network performed poorly regardless the length of the execution time.
 \vspace{0.3cm}
 
-\noindent \textbf{Hypothesis \#5:} \textit{ debt and delinquency features are the main default drivers on HMEQ data set.}
+\noindent \textbf{Result \#5:} \textit{Debt and delinquency features \underline{ARE} the main default drivers on HMEQ data set.}
 
 We fail to reject the \textbf{Hypothesis \#5} according to \autoref{fig:fi} which depicts the feature importance of the final model (Gradient Boosting). As can be seen, the most important features are debt--to--income ratio \texttt{DEBTINC} and number of delinquent credit lines \texttt{DELINQ}.
 Based on the SHAP values depicted in \autoref{fig:shap}, we can observe that the negative values of texttt{DEBTINC} and \texttt{DELINQ} positively contribute to the model's predictions of the target variable, whereas the positive values negatively contribute to the model's predictions.
@@ -69,7 +69,7 @@ Based on the WoE bins distribution in \autoref{fig:woedist}, we can observe nega
 Therefore, if the loan applicant has either high or missing debt--to--income ratio and/or relatively high number of delinquent credit lines,  he would be likely to default.
 
 \section{Future Recommendations}
-Given this complex and custom machine learning solution applied in this thesis, it also comes with further limitations and drawbacks which we would like to address in this section and provide suggestions for future studies.
+Despite the complexity of the custom machine learning solution applied in this thesis, and the hundreds of hours invested by the author, it still has its limitations and drawbacks. We aim to address these issues in this section and provide suggestions for future studies.
 \begin{enumerate}\setlength\itemsep{0em}
     \item \textbf{Use more relevant and actual data} - Given the nature of the data set analyzed in this thesis, it might not be the most relevant for the current market situation.
     \item \textbf{Use bigger data} - Since the real bank data sets often contain hunders of thousands or even millions of instances, and the number of features can be in hundreds or even higher, it would be beneficial to use bigger data sets to train the models on.
