@@ -733,9 +733,9 @@ The definition of hyperparameter space for each model is described further in th
 
 \subsubsection{Logistic Regression}
 The first hyperparameter \textbf{\texttt{Intercept}} allows to specify whether the intercept should be estimated or not.
-
+$C$ is the regularization strength, and it is used to specify the regularization penalty, i.e., the hyperparameter \textbf{\texttt{Penalty}}.
+If the penalty is set to $ElasticNet$, we can also tune $L1$ ratio, which refers to the $\alpha$ parameter in in \autoref{eq:elasticnet}
 Moreover, the  \textbf{\texttt{Class weight}} hyperparameter is a hyperparameter which allows to assign higher importance to the minority class instances during the training process.
-
 
 Furthermore, \textbf{\texttt{Solver}} hyperparameter is used to specify which optimization algorithm should be used to estimate the coefficients' values.
 According to Hale \citep{hale2019dont}, Scikit-learn provides five solvers for Logistic Regression, namely \textit{lbfgs} (Limited-memory Broyden-Fletcher-Goldfarb-Shanno) which approximates the second derivative matrix updates with gradient evaluations, \textit{liblinear} (Library for Large Linear Classification) which uses coordinate descent algorithm, \textit{newton-cg},
@@ -946,9 +946,8 @@ Class weight & balanced, None \\
 
 
 \subsubsection{Multi--Layer Percepton}
-\textbf{TBD}
-
-In the MLP, we tune the activation function applied in the hidden layers, namely Logistic, ReLU, Tanh which were already described in \autoref{subssec:nn}, and further Identity which is just a linear activation function, hence $f(z) = z$.
+Regarding the MLP, we use one hidden layer where we tune the number of units as represented by the \textbf{\texttt{Hidden layer size}} hyperparameter.
+We also tune the \textbf{\texttt{Activation function}} applied in the hidden layer, namely Logistic, ReLU, Tanh which were already described in \autoref{subssec:nn}, and further Identity which is just a linear activation function, hence $f(z) = z$.
 Regarding the optimization algorithm which refers to \textbf{\texttt{Solver}} hyperparameter, we can choose between \textit{lbgfs}, \textit{sgd} (Stochastic Gradient Descent) and \textit{adam} (Adaptive Moment Estimation).
 The \textbf{\texttt{Learning rate}} can be either constant (i.e, 0.001), inversely scaled, i.e., gradually and inversely decreased with and inverse scaling exponent $t$ (where $t$ refers to the time step, by default $t=0.5$), or adaptive, i.e., the learning rate is kept constant as long as the training loss keeps decreasing, otherwise it is divided by 5 \citep{scikit-mlp}.
 

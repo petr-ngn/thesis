@@ -13,7 +13,7 @@
 \contentsline {section}{\numberline {2.2}Machine Learning Terminology}{3}{section.2.2}%
 \contentsline {section}{\numberline {2.3}Algorithms}{4}{section.2.3}%
 \contentsline {subsection}{\numberline {2.3.1}Logistic Regression}{4}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}Decision Tree}{7}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.2}Decision Tree}{6}{subsection.2.3.2}%
 \contentsline {subsection}{\numberline {2.3.3}Naive Bayes}{9}{subsection.2.3.3}%
 \contentsline {subsection}{\numberline {2.3.4}K-Nearest Neighbors}{11}{subsection.2.3.4}%
 \contentsline {subsection}{\numberline {2.3.5}Random Forest}{13}{subsection.2.3.5}%
@@ -66,7 +66,7 @@
 \contentsline {subsubsection}{Random Forest}{74}{section*.75}%
 \contentsline {subsubsection}{Gradient Boosting}{75}{section*.77}%
 \contentsline {subsubsection}{Support Vector Machine}{76}{section*.79}%
-\contentsline {subsubsection}{Multi--Layer Percepton}{76}{section*.81}%
+\contentsline {subsubsection}{Multi--Layer Percepton}{77}{section*.81}%
 \contentsline {subsection}{\numberline {4.4.2}Sequential Feature Selection}{78}{subsection.4.4.2}%
 \contentsline {subsection}{\numberline {4.4.3}Model Selection}{81}{subsection.4.4.3}%
 \contentsline {subsubsection}{Metrics Space}{82}{section*.86}%
