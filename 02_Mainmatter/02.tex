@@ -612,18 +612,18 @@ Logically, the lower Log loss value, the better performance of the model is. As 
 
 \section{ADASYN Oversampling}
 \label{sec:adasyntheory}
-Since this thesis pertains to the data set of defaulted loans, which target variable distribution is heavily skewed, i.e., the class is strongly imbalanced as the frequency distribution of the majority class is significantly higher than the frequency distribution of the minority class. In case of defaulted loans, the majority class would be non--default status and the minority class would be default status.
+Since this thesis pertains to the data set of defaulted loans, which target variable distribution is heavily skewed, it is needed to emphasize the imbalanced class issue, i.e., the class is strongly imbalanced as the frequency distribution of the majority class is significantly higher than the frequency distribution of the minority class. In case of defaulted loans, the majority class would be non--default status and the minority class would be default status.
 This can cause serious degradation in model's performance as most of the models assume well--balanced class distributions, hence such models would be biased towards the majority class and would not be able to predict the minority class accurately \citep{prati2009data}.
 
-To overcome this issue, one would use random undersampling or random oversampling to deal with the class imbalanced issue. The former randomly eliminates majority class instances whereas the latter randomly duplicates minority class instances.
+To overcome this issue, one would use Random Undersampling or Random Oversampling to deal with the class imbalanced issue. The former randomly eliminates majority class instances whereas the latter randomly duplicates minority class instances.
 However, both have particular drawbacks, as the random under-sampling may lead to a a significant loss of information, and random oversampling is lead to the high degree of repetation of minority instances. Both then could lead to model's overfitting and detoriation in model's performance \citep{ma2013imbalanced}.
 This might be a significant issue when the target variable distribution is heavily imbalanced - assume that we have a data set of 1,000 instances where 990 instances belongs to majority class and 10 instances to minority class.
 If we perform random undersampling in order to balance the target variable distribution, we would have to remove 980 instances and end up with undersampled data set of 20 instances, which is not acceptable for model training.
 On the other hand, if we perform random oversampling, we would end up with 1,980 instances, where 980 instances would be the same as in the original data set, which would lead to the model's overfitting.
 
-Therefore, the Adaptive Synthetic Sampling (henceforth ADASYN) technique is used for oversampling the minority class.
+Therefore, the Adaptive Synthetic Sampling (henceforth ADASYN) technique is used for oversampling the minority class in this thesis.
 ADASYN generates synthetic instances of the minority class based on the nearest neighbors of the minority class instances.
-Such approach is more effective than Synthetic Minority Oversampling Technique (henceforth SMOTE) which also uses nearest neighbors to generate synthetic instances of minority class, as it generates more synthetic instances which are hard--to--learn by K-Nearest Neighbors given the density distributtions, whereby SMOTE generates synthetic instances uniformly for each minority instance.
+Such approach is more effective than Synthetic Minority Oversampling Technique (henceforth SMOTE) which also uses nearest neighbors to generate synthetic instances of minority class, however, ADASYN generates more synthetic instances which are hard--to--learn by K-Nearest Neighbors given the density distributtions, whereby SMOTE generates synthetic instances uniformly for each minority class instance.
  \citep{adasynhaibo}. 
 
 In other words, ADASYN generates more synthetic instances in regions where the density of the majority class within $K$ nearest neighbors of minority instance is higher and fewer synthetic instances in regions where the density is lower, thereby ADASYN focuses on generating more hard--to--learn minority instances.
@@ -635,7 +635,7 @@ Before oversampling algorithm's execution, first we need to calculate the number
 \end{equation}
 where $m_l$ is the number of majority class instances, $m_s$ is the number of minority class instances and $\beta$ indicates the desired ratio between the numbers of majority and minority class instances after oversampling.
 
-Then for each minority class instance $x_i$, using K-nearest Neighbors with Euclidean distance calculate the ratio $r_i$ as:
+Then, for each minority class instance $x_i$, using $K$-Nearest Neighbors with Euclidean distance calculate the ratio $r_i$ as:
 \begin{equation}\label{eq}
    r_{i} = \frac{\delta_{i}} {K}
 \end{equation}
@@ -661,31 +661,30 @@ Further, for each minority class instance $x$, generate $G_i$ synthetic instance
 \end{equation}
 where $x_{zi}$ represents the radnomly chosen minority class instance within the $K$ nearest neares neighbors for $x_i$, and $\lambda \in \left[0,1\right]$ is a random number.
 
+\newpage
 \section{Optimal Binning}
 \label{sec:optbinningtheory}
 In the context of data preprocessing, it is crucial to consider the most appropriate feature transformation method that optimizes the performance of machine learning models.
 Although common approaches such as dummy encoding, standardization, logarithmic transformation, and normalization are widely used, they may not always be suitable for a given data set due to the presence of certain characteristics.
 For instance, dummy encoding (also known as one--hot encoding) may not be suitable for categorical features with a large number of categories as it could lead to the curse of dimensionality, therefore, it may result in the decrease of model's performance \citep{bera2021dimensionality}.
 Standardization may not be appropriate for features with a large number of outliers as it may result in a loss of information.
-Similarly, logarithmic transformation may not be appropriate for features with a large number of zeros, and normalization may not be suitable for features with a significant number of outliers.
 
 Therefore, alternative approaches such as discretization or binning are increasingly being used. Binning is a categorization process to transform a continuous variable into a small set of groups or bins \citep{zeng2014necessary}. This approach enables the identification of outliers within bins and reduce their impact, and additionally, it can capture missing values without requiring the removal or imputation of such values.
-As a result, binning is a more flexible and versatile feature transformation method that can effectively handle different types of data sets and is particularly useful in cases where other methods may not be appropriate.
 
 In this thesis, we employ the \lstinline{BinningProcess} from the \lstinline{optbinning} module in Python for an optimal binning of both numeric and categorical features with respect to the target variable, developed by Guillermo Navas--Palencia \citep{navas2020optimal}. 
 This approach involves grouping the values of a continuous variable into discrete intervals, or "bins", based on their relationship with the target variable.
 Similarly, for categorical features, the approach involves grouping the categories based on their relationship with the target variable.
 In general, the optimal binning is solved by iteratively merging an initial granular discretization until imposed constraints are satisfied. Particularly, the optimal binning process consists of two phases - pre--binning process (for generating initial granular discretization) and subsequent optimization (for satisfying imposed constraints).
-The former phase usually uses decision tree to generate initial split points to create pre--bins which are further merged while maximizing Information Value (also known as Jeffreys' divergence) while accounting for the constraints. \citep{navas2020optimal} Such constraints are:
+The former phase usually uses decision tree to generate initial split points to create pre--bins which are further merged while maximizing Information Value (also known as Jeffreys' divergence) while accounting for the constraints. As Navas--Palencia states \citep{navas2020optimal}, Such constraints are:
 \begin{itemize}\setlength\itemsep{0em} 
-    \item Creation of separate bins for missing values: Since missing values can have a significant impact on the target variable, hence is important to create a separate bin for them.
-    \item Minimum bin size constraint - at least 5 \% of the total number of instances: Such constraint ensures a bin's representativness.
-    \item Each bin should have at least one instance of each target class: Application of such constraint allows to compute divergence measure.
+    \item \textbf{Creation of separate bins for missing values:} Since missing values can have a significant impact on the target variable, hence is important to create a separate bin for them.
+    \item \textbf{Minimum bin size constraint:} At least 5 \% of the total number of instances should be observed within given bin. Such constraint ensures a bin's representativness.
+    \item \textbf{Each bin should have at least one instance of each target class:} Application of such constraint allows to compute divergence measure.
 \end{itemize}
-Thus, the optimal binning process, the goal is the maximize discriminatory power among bins, i.e., divergence measure.
+Thus, using the optimal binning process, the goal is the maximize discriminatory power among bins, i.e., divergence measure.
 For more information about optimal binning, please refer to \citep{navas2020optimal}.
 
-After the binning process, the bins as categorical values needed to be encoded into numeric values. The most common approach in credit risk modelling is Weight--of--Evidence (henceforth WoE) encoding. The WoE is a commonly used measure of the strength of association between a binary target variable and an independent variable.
+After the binning process, the bins as categorical values need to be encoded into numeric values. The most common approach in credit risk modelling is Weight--of--Evidence (henceforth WoE) encoding. The WoE is a commonly used measure of the strength of association between a binary target variable and an independent variable.
 According to Witzany \citep{witzany2017credit}, the WoE of categorical value $c$ can be expressed as the change between the overal log odds ratio and the log odds ratio given the value $c$, hence:
 \begin{equation}\label{eq}
     WoE\left(c\right) = \ln\left(\operatorname{Pr}\left(c \mid Y = 0 \right) \right) - \ln\left(\operatorname{Pr}\left(c \mid Y = 1 \right) \right)

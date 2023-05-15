@@ -35,7 +35,7 @@
 \contentsline {subsection}{\numberline {2.4.5}Brier Score Loss}{27}{subsection.2.4.5}%
 \contentsline {subsection}{\numberline {2.4.6}Log Loss}{27}{subsection.2.4.6}%
 \contentsline {section}{\numberline {2.5}ADASYN Oversampling}{28}{section.2.5}%
-\contentsline {section}{\numberline {2.6}Optimal Binning}{30}{section.2.6}%
+\contentsline {section}{\numberline {2.6}Optimal Binning}{31}{section.2.6}%
 \contentsline {section}{\numberline {2.7}Hyperparameter Bayesian Optimization}{33}{section.2.7}%
 \contentsline {section}{\numberline {2.8}Forward Sequential Feature Selection}{35}{section.2.8}%
 \contentsline {chapter}{\numberline {3}Literature Review}{37}{chapter.3}%
