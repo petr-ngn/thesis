@@ -1,4 +1,4 @@
-\begin{thebibliography}{86}
+\begin{thebibliography}{87}
 \newcommand{\enquote}[1]{``#1''}
 \providecommand{\natexlab}[1]{#1}
 
@@ -516,6 +516,12 @@
   K.~\textsc{Liu}, Q.~\textsc{Xuan}, \& Y.~\textsc{Xiang} (2018):
   \enquote{Accurate indoor localization based on csi and visibility graph.}
 \newblock \emph{Sensors} \textbf{18(8)}: p. 2549.
+
+\bibitem[{Zaidi(2022)}]{zaidi2022mathematical}
+\textsc{Zaidi}, A. (2022): \enquote{Mathematical justification on the origin of
+  the sigmoid in logistic regression.}
+\newblock \emph{Central European Management Journal} \textbf{30(4)}: pp.
+  1327--1337.
 
 \bibitem[{Zeng(2014)}]{zeng2014necessary}
 \textsc{Zeng}, G. (2014): \enquote{A necessary condition for a good binning

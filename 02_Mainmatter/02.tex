@@ -32,10 +32,10 @@ In order to avoid confusion and ensure clear understanding in this thesis, it is
 	\item \textbf{Weights} - Coefficient or parameters learnt during the training process.
 	\item \textbf{Supervised Learning} - Process reflecting the abilty of an algorithm to generelize knowledge from the data having with target or label cases, so that the algorithm can be used to predict new (unlabelled) cases \citep{alloghani2020supervised}.
     In other words, the learning process is supervised by the target variable, hence the output model can be used to predict the target variable for new data, either using classification (when having categorical target variable) or regression (when having continuous target variable).
-	\item \textbf{Cross--validation} - When being limited by the small dataset size, the data is split the data into $k$ folds (subsets) and the model is trained $k$ times, each time on $k-1$ folds and validated (evaluated) on the remaining fold, in order to obtain reliable estimates of the model generalization error \citep{tatsat2020machine}, or so called cross-validation score.
-	\item \textbf{Overfitting} - Situation, when the model has small error during the training, but also a high tet error \citep{forsyth2019applied}. The model is too complex just purely memorizes the data on which is trained on, but cannot generalize and predict well on unseen data.
+	\item \textbf{Cross--validation} - When being limited by the small data set size, the data is split into $k$ folds (subsets) and the model is trained $k$ times, each time on $k-1$ folds and validated (evaluated) on the remaining fold, in order to obtain reliable estimates of the model generalization error \citep{tatsat2020machine}, or so called cross-validation score.
+	\item \textbf{Overfitting} - Situation, when the model has small error during the training, but also a high tet error \citep{forsyth2019applied}. The model is too complex and just purely memorizes the data on which is trained on, but cannot generalize and predict well on unseen data.
 	\item \textbf{Black--box model} - Models which are very accurate but also are very complex hard to interpret \citep{pintelas2020grey}.
-	\item \textbf{White--box model} -Models which are comprehensible and transparent but usally are less accurate \citep{pintelas2020grey}.
+	\item \textbf{White--box model} - Models which are comprehensible and transparent but usally are less accurate \citep{pintelas2020grey}.
 \end{itemize}
 
 \section{Algorithms}
@@ -46,7 +46,7 @@ In this section, several algorithms, which are used in the machine learning impl
 \label{subsubsec:logisticregression}
 Despite the algorithm's name, it is actually not a regression but rather a classification model.
 In contrast, a linear regression's target variable is continuous whereas regarding a logistic regression, the target variable is categorical (or rather dichotomous in case of binary classification) \citep{wendler2021data}.
-For the probability estimation it is using a logistic, or so-called sigmoid function, which maps any real value within the range of 0 to 1 and takes a S-shaped curve as can be seen in \autoref{fig:sigmoid}.
+For a probability score prediction, it uses a logistic, or so-called sigmoid function, which maps any real value into a probability and takes a S-shaped curve \citep{zaidi2022mathematical}, as can be seen in \autoref{fig:sigmoid}.
 
 \begin{figure}[H]
     \centering
@@ -56,8 +56,7 @@ For the probability estimation it is using a logistic, or so-called sigmoid func
     \centering{\begin{source}Author's simulation in Python\end{source}}\vspace{-1em}
 \end{figure}
 
-The linear form of the logistic regression with n features can be written as:
-
+The linear form of the logistic regression with $n$ features can be written as:
 \begin{equation}\label{eq}
     \ln\left(\frac{P}{1-P}\right) = \beta_0  + \sum_{i=1}^{n} \beta_i X_i
 \end{equation}
@@ -67,7 +66,7 @@ where $P$ is the probability of the occurred event, conditional on the set of gi
     P = \operatorname{Pr}(Y=1 \mid X)
 \end{equation}
 
-Therefore, the term within the natural logarithm are the odds or more particularly, the ratio of the probability of the event with respect to the probability of non-event, both conditional on the same set of given features.
+Therefore, the term within the natural logarithm is the odds or more particularly, the ratio of the probability of the event with respect to the probability of non-event, both conditional on the same set of given features.
 \begin{equation}\label{eq}
     \begin{aligned}
     \frac{P}{1-P}  {} & = \frac{\operatorname{Pr}(Y=1 \mid X_1,X_2,\ldots,X_n)}{1-\operatorname{Pr}(Y=1 \mid X_1,X_2,\ldots,X_n)} \\
@@ -76,7 +75,6 @@ Therefore, the term within the natural logarithm are the odds or more particular
     \end{equation}
 
 Referring to the previous equations, solving for $P$, henceforth we get a final equation for computing the probability of occurred event with usage of logistic regression:
-
 \begin{equation}\label{eq}
 P = \frac{1}{1+e^{-\left(\beta_0 + \displaystyle\sum_{i=1}^{n} \beta_i X_i\right)}}
 \end{equation}
@@ -84,11 +82,11 @@ P = \frac{1}{1+e^{-\left(\beta_0 + \displaystyle\sum_{i=1}^{n} \beta_i X_i\right
 \subsection{Decision Tree}
 \label{subsec:dt}
 
-Decision tree (DT) is a rule--based algorithm which aims to partition the data into smaller and more homogeneous subsets. Such tree contains nodes, which are also visualized in \autoref{fig:dtnodes}, namely:
+Decision Tree is a rule--based algorithm which aims to partition the data into smaller and more homogeneous subsets. Such tree contains nodes, which are also visualized in \autoref{fig:dtnodes}, namely:
 \begin{itemize}\setlength\itemsep{0em}
-	\item Root node - the topmost node of the tree where the splitting begins.
-	\item Internal node - the non--terminal nodes as a result of the split and can be further split into another subsets.
-	\item Leaf node - the terminal nodes as a results of the split and cannot be further split into another subsets.
+	\item \textbf{Root node} - the topmost node of the tree where the splitting begins.
+	\item \textbf{Internal node} - the non--terminal nodes as a result of the split and can be further split into another subsets.
+	\item \textbf{Leaf node} - the terminal nodes as a results of the split and cannot be further split into another subsets.
 \end{itemize}
 \begin{figure}[H]
     \centering
@@ -123,13 +121,12 @@ Both impurity measures are depicted in \autoref{fig:impurity} which we want to b
     \centering{\begin{source}Author's simulation in Python\end{source}}\vspace{-1em}
 \end{figure}
 
-After the training, the DT predicts the target variable based on the rules which are stored in the tree.
+After the training, Decision Tree predicts the target variable based on the rules which are stored in the tree.
 The prediction process starts from the root node and continues until the leaf node is reached. Within the leaf node, the prediction can be either the most frequent class within the node or the probability of the occurrence of the event, i.e., the proportion of defaulters within given node.
 
 \subsection{Naive Bayes}
 
-Naive Bayes is a classification and probabilistic machine learning algorithm which is based on the Bayes theorem:
-
+Naive Bayes is a classification and probabilistic machine learning algorithm which is based on Bayes theorem which is defined as:
 \begin{equation}\label{eq}
     \operatorname{Pr}\left(C=c \mid E \right) = \frac{\operatorname{Pr}\left(C=c\right) \times \operatorname{Pr}\left(E \mid C=c\right)}{\operatorname{Pr}\left(E\right)}
 \end{equation}
@@ -137,25 +134,24 @@ Naive Bayes is a classification and probabilistic machine learning algorithm whi
 where:
 \begin{itemize}\setlength\itemsep{0em}
 	\item $\operatorname{Pr}\left(C=c \mid E \right)$ is the posterior probability which is the probability that the target variable $C$ takes on the class of interest $c$ after taking the evidence $E$.
-	\item $\operatorname{Pr}\left(C=c\right)$  is the prior probability of the class $c$ is the probability we would assign to the class $c$ before seeing any evidence $E$.
+	\item $\operatorname{Pr}\left(C=c\right)$  is the prior probability of the class $c$, i.e.,the probability we would assign to the class $c$ before seeing any evidence $E$.
 	\item $\operatorname{Pr}\left(E \mid C=c\right)$ is the probability of seeing the evidence $E$ conditional on the given class $c$.
 	\item $\operatorname{Pr}\left(E\right)$ is the probability of the evidence $E$.
 \end{itemize}
 
 With regards to the binary classification, we can substitute $Y$ as a target variable instead $C$, and set of features $X$ which will refer to the set of evidence $E$., henceforth the probability of $Y$ using the Naive Bayes algorithm can be mathematically expressed as:
-
 \begin{equation}\label{eq}
     \operatorname{Pr}\left(Y \mid X \right) = \frac{\operatorname{Pr}\left(Y\right) \times \operatorname{Pr}\left(X \mid Y \right)}{\operatorname{Pr}\left(X\right)}
 \end{equation}
 
 One of the assumptions of this algorithm is the conditional probabilistic independence among the features.
 Since all the $X$ features' values combinations do not have to appear at all, we assume their independence \citep{cichosz2014data}.
-Therefore, instead of computing the probability of all features together, conditional on the class event, for each feature $X$ we the conditional joint probability of $X$ given the class event. Hence:
+Therefore, instead of computing the probability of all features together, conditional on the class event, for each feature $X$ we compute the conditional joint probability of $X$ given the class event. Hence:
 \begin{equation}\label{eq}
     \operatorname{Pr}\left(X  \mid Y \right) = \prod_{i=1}^{n} \operatorname{Pr}\left(X_i \mid Y\right)
 \end{equation}
 
-Furthermore, the second adjustment is applied to the denominator of the Bayes theorem, i.e., $\operatorname{Pr}\left(X\right)$ - since such probability is constant over all the values of the class event, we can omit it from the equation. Therefore, the probability of the class event $Y$ can be expressed as:
+Furthermore, the second adjustment is applied to the denominator of the Bayes theorem, i.e., $\operatorname{Pr}\left(X\right)$ - since such probability is constant over all the values of the class event, we can omit it from the equation. Therefore, the posterior probability of the class event $Y$ conditional on the subset of features $X$ can be expressed as:
 \begin{equation}\label{eq}
     \operatorname{Pr}\left(Y \mid X \right) = \prod_{i=1}^{n} \operatorname{Pr}\left(X_i \mid Y\right) \times \operatorname{Pr}\left(Y\right)
 \end{equation}
@@ -169,7 +165,7 @@ Specifically, based on the new instance's features $X$, we determine the compute
 \begin{equation}\label{eq:nb-corrected}
     \operatorname{Pr}\left(Y \mid X \right) = \operatorname{argmax}_{y \in Y} \operatorname{Pr}\left(X \mid Y = y\right) \times \operatorname{Pr}(Y = y)
 \end{equation}
-Specifically, in terms of binary classification for prediction of given class, whether it is default or non--default, we can compute the probability of the default event ($1$) and non--default event ($0$) and choose the class with the higher probability.
+Specifically, in terms of binary classification for prediction of given class, whether it is default or non--default, we can compute the probability of the default event ($1$) and non--default event ($0$), and choose the class with the higher probability.
 \begin{equation}\label{eq}
     \operatorname{Pr}\left(Y \mid X \right)  = \max \left(\operatorname{Pr}\left(Y=1 \mid X\right), \operatorname{Pr}\left(Y=0 \mid X\right)\right)
 \end{equation}
@@ -182,23 +178,24 @@ respectively:
     \operatorname{Pr}\left(Y=1 \mid X \right) = \operatorname{Pr}\left(Y=1\right) \times \prod_{i=1}^{n} \operatorname{Pr}\left(X_i \mid Y=1\right)
 \end{equation}
 
-This algorithm works well if the features are categorical.
-However, most of the datasets contain continuous features as well.
+This algorithm works well only if the features are categorical.
+However, most of the data sets contain continuous features as well.
 Therefore, we introduce \textbf{Gaussian Naive Bayes} algorithm which is suitable for continuous features. Such algorithm assumes that the features follow Normal (Gaussian) distribution, given the class label \citep{jahromi2017non}.
 Assuming the class event $Y=1$, we can derive probability density function of particular value $x$ of the continuous feature $X$ as:
 \begin{equation}\label{eq:lastgnb}
     \operatorname{Pr}\left(X = x \mid Y = 1\right) = \frac{1}{\sqrt{2 \pi \sigma_{X \mid Y=1}^{2}}} \exp \left(-\frac{\left(x - \mu_{X \mid Y=1}\right)^{2}}{2 \sigma_{X \mid Y=1}^{2}}\right)
 \end{equation}
 where $\mu_{X \mid Y=1}$ and $\sigma_{X \mid Y=1}$ is the mean and variance of $X$, respectively, given the the class event $Y=1$.
+Afterwards, $\operatorname{Pr}\left(X = x \mid Y = 1\right)$ derived from the Gaussian distribution can be substituted into \autoref{eq:lastnbmax1}.
 \subsection{K-Nearest Neighbors}
 \label{subsec:knn-theory}
 
-The goal of K-nearest Neighbors algorithm (also known as KNN) is to find $k$ instances that are most similar to particular instances y in the n-dimensional space, where n is the number of features.
+The goal of K-nearest Neighbors algorithm (henceforth KNN) is to find $k$ instances that are most similar to particular instances $y$ in the $n$--dimensional space, where $n$ is the number of features.
 The principle of this algorithm consists in the similarity between the instances as it assumes that the similar instances are close to each other.
-Based on the predetermined $k$ neighbors, it will predict the class based on the k nearest instances.
+Based on the predetermined $k$ neighbors, it will predict the class based on the $k$ nearest instances.
 
 
-There are several ways how to measure the distance. The most used one is the Euclidean distance. Geometrically, it is a straight line between the two points  and within two-dimensional space, it can be derived from the Pythagorean theorem, where the hypotenuse is the straight line measuring the distance. In the n-dimensional space, we take the sum the squared differences between the data points $x$ and $y$, underneath the square root in order to compute the total Euclidean distance.
+There are several ways how to measure the distance. The most used one is the Euclidean distance. Geometrically, it is a straight line between the two points  and within two-dimensional space, it can be derived from the Pythagorean theorem, where the hypotenuse is the straight line measuring the distance. In the $n$-dimensional space, we take the sum the squared differences between the data points $x$ and $y$, underneath the square root in order to compute the total Euclidean distance.
 \begin{equation}\label{eq}
 d_{Euclidean}(x,y) = \sqrt{\sum\limits_{i=1}^{n} (x_i - y_i)^2}
 \end{equation}
@@ -210,17 +207,17 @@ d_{Manhattan}(x,y) = \sqrt{\sum\limits_{i=1}^{n} |x_i - y_i|}
 \end{equation}
 
 The last measure is the Minkowski distance which is the generalized form Euclidean or Manhattan distance respectively.
-It depends on p which represents the order of the norm. Hence, the Euclidean distance has the second order of the norm, whereas Manhattan distance has the first order of the norm.
+It depends on $p$ which represents the order of the norm. Hence, the Euclidean distance has the second order of the norm, whereas Manhattan distance has the first order of the norm.
 \begin{equation}\label{eq}
 d_{Minkowski}(x,y) = \sqrt[p]{\sum\limits_{i=1}^{n} |x_i - y_i|^p}
 \end{equation}
 
 Within the training process, KNN memorizes training instances and afterwards when it encounters a new instance, it tries to search for such training instance(s) which most strongly resembles the new instance \citep{witten2011data}.
-Therefore, After the training process, when it comes to the prediction, the KNN compares the new instance to the training instances, calculates the distances between the the new input and the training instances, and predicts the class based on on the majority voting within the $k$ nearest neighbors, or predicts the probability scores as the fraction of positive instances within the $k$ nearest neighbors.
+Therefore, After the training process, when it comes to the prediction, the KNN compares the new instance to the training instances, calculates the distances between the the new input and the training instances, and predicts the class based on on the majority voting within the $k$ nearest neighbors, or predicts the probability score as the fraction of positive instances within the $k$ nearest neighbors.
 
 
-On the following \autoref{fig:knn-example}, let us consider 2--dimensional space and that $k$ is equal to 4, hence we are looking at four nearest neighbors for such new instance. Further, let us consider two classes - red squares and green triangles.
-By looking at the four nearest neighbors, we can observe that three out of the nearest neighbors are the red triangles.
+In the following \autoref{fig:knn-example}, let us consider 2--dimensional space and that $k$ is equal to 4, hence we are looking at four nearest neighbors for such new instance. Further, let us consider two classes - red squares and green triangles.
+By looking at the four nearest neighbors, we can observe that three out of the four nearest neighbors are the red triangles.
 Therefore, when applying majority voting, KNN would predict such instance as a red triangle, or would predict a probability score of 0.75 for the red triangle.
 
 \begin{figure}[H]
@@ -233,7 +230,7 @@ Therefore, when applying majority voting, KNN would predict such instance as a r
 \end{figure}
 \subsection{Random Forest}
 
-Random forest is an ensemble algorithm which is a collection of decision trees where each tree is independently trained on on a bootstrap sample of the training data \citep{han2011data}, i.e., on a on a set which is randomly sampled from the training data with replacement which has the same size as the training data. In such way, each bootstrap sample is unique and can contain duplicates of the original data or does not have to contain all the original data.
+Random forest is an ensemble algorithm which is a collection of decision trees where each tree is independently trained on on a bootstrap sample of the training data \citep{han2011data}, i.e., on a on a set which is randomly sampled from the training data with replacement and which has the same size as the training data. In such way, each bootstrap sample is unique and can contain duplicates of the original data or does not have to contain all the original data.
 Another aspect of randomness in such algorithm, particularly in the variability within trees, is the number of features considered for the split at each node.
 Instead of considering all the features of the length $M$, it randomly selects a subset of features of the length $m$ (where $m<M$) and chooses the best split from the subset.
 The training process of individual decision tree is the same as described in \autoref{subsec:dt}.
@@ -247,7 +244,7 @@ where $B$ is the number of trees and $T_b$ is the $b$-th tree. Such algoritm is 
     \centering
     \caption{Random Forest Diagram}\vspace{0.5em}
     \label{fig:rf-example}\
-    \includegraphics[width=135mm]{Figures/random-forest-diagram.jpg}
+    \includegraphics[width=120mm]{Figures/random-forest-diagram.jpg}
 
     \centering{\begin{source}\citep{TIBCO2023}\end{source}}\vspace{-1em}
 \end{figure}
@@ -266,7 +263,7 @@ Then, for $m \in M$, where $M$ is the total number of iterations or the number o
     r_{i,m} = -\left[\frac{\partial L\left(y_{i}, F\left(x_{i}\right)\right)}{\partial F\left(x_{i}\right)}\right]_{F(x)=F_{m-1}(x)}
 \end{equation}
 \begin{itemize}\setlength\itemsep{0em}
-    \item[2.] Train a weak learner $h_m(x)$ on the with the training data as features and the pseudo--residuals as the target values $(x_i, r_{i,m})$, and then compute the learning rate $\gamma_m$ which minimizes the loss function $L$ when adding the weak learner $h_m(x)$ to the previous model $F_{m-1}(x)$, hence:
+    \item[2.] Train a weak learner $h_m(x)$ with the training data as features and the pseudo--residuals as the target values $(x_i, r_{i,m})$, and then compute the learning rate $\gamma_m$ which minimizes the loss function $L$ when adding the weak learner $h_m(x)$ to the previous model $F_{m-1}(x)$, hence:
 \end{itemize}
 \begin{equation}
     \gamma_{m} = \arg \min _{\gamma} \sum_{i=1}^{n} L\left(y_{i}, F_{m-1}\left(x_{i}\right)+\gamma h\left(x_{i}\right)\right)
@@ -303,12 +300,12 @@ In order to maximize the margin, we maximize following term as we want to maximi
 \begin{equation}
     \min {\frac{2}{\|W\|}}
 \end{equation}
-When the data are not linearly separable, SVM transforms the original data points into a higher dimensional space using non--linear mapping functions, also known as kernels \citep{han2011data}.
+When the data are not linearly separable, SVM transforms the original data points into a higher dimensional space using non--linear mapping function, also known as kernel \citep{han2011data}.
 In general, kernel function for the training tuples $(X_i,X_j)$ can be expressed as:
 \begin{equation}
     K(X_i,X_j) = \phi(X_i) \cdot \phi(X_j)
 \end{equation}
-where $\phi$ mapping function for high--dimensional transformation of the feature space. According to Patle, \citep{patle2013svm} the most common kernel functions. where $\gamma$ and $r$ and $d$ represent the kernel parameters, are:
+where $\phi$ is mapping function for high--dimensional projection of the feature space. According to Patle \citep{patle2013svm}, the most common kernel functions. where $\gamma$ and $r$ and $d$ represent the kernel parameters, are:
 \begin{itemize}\setlength\itemsep{0em}
     \item $d$--degree polynomial kernel:
 \end{itemize}
@@ -327,13 +324,14 @@ where $\phi$ mapping function for high--dimensional transformation of the featur
 \begin{equation}
     K(X_i,X_j) = \tanh(\gamma X_i \cdot X_j + r)
 \end{equation}
-In some cases, the data cannot be linearly separable in higher dimensional space, i.e., we need to account for some potential errors, thus we introduce regularization factor $C$  for penalizing the errors $\xi$, therefore, in order to maximize the margin as well as to allow for errors, we minizes the following term:
+In some cases, the data cannot be linearly separable in higher dimensional space, i.e., we need to account for some potential errors, thus we introduce regularization factor $C$  for penalizing the errors $\xi$.
+Therefore, in order to maximize the margin as well as to allow for errors, we minize the following term:
 \begin{equation}
     \min \frac{1}{2} \|W\| + C \sum_{i=1}^{N} \xi
 \end{equation}
 Hence, by minimizing $\frac{1}{2} \|W\|$ we minimize the weights (i.e, maximize the margin), by minimizing $\xi$ we reduce the number of training error, and by tuning $C$ we balance between these two properties \citep{hsu2002comparison}. 
 
-Note, that SVM do not predicted probability scores by default, but rather predicted classes based on the location whether the given data points are above or below the hyperplane.
+Note, that SVM does not predict probability scores by default, but rather predicted classes based on the location whether the given data points are above or below the hyperplane.
 In order to obtain SVM's probabilities. as stated by Lin \citep{lin2007note}, the Platt scaling \citep{platt1999probabilistic} can be applied as a surrogate model to estimate probability outputs. Particularly, it fits a logistic regression model with true labels as target variable and predictions produced by SVM as features to predict the probability scores.
 Hence:
 \begin{equation}
@@ -343,9 +341,9 @@ where, $A$ and $B$ are the coefficients of the logistic regression model.
 
 \subsection{Neural Network}
 \label{subssec:nn}
-Neural Network is a black--box machine learning algorithm which can handle very complex and non--linear relationship between. It contains several layers where each unit have a certain number of units. In general, we distinguish 3 type of layers as also visualized in \autoref{fig:nn-example}
+Neural Network is a black--box machine learning algorithm which can handle very complex and non--linear relationship between. It contains several layers where each layer has a certain number of units (neurons). In general, we distinguish 3 type of layers as also visualized in \autoref{fig:nn-example}:
 \begin{itemize}\setlength\itemsep{0em}
-    \item \textbf{Input layer} - The initial layer wghich contains $n$ units, where $n$ is the number of features within the dataset.
+    \item \textbf{Input layer} - The initial layer wghich contains $n$ units, where $n$ is the number of features within the data set.
     \item \textbf{Output layer} - The final final layer which contains $m$ units, where $m$ is the number of classes within the target variable. Since we assume only binary classification algorithms, therefore the output layer contains only one unit.
     \item \textbf{Hiden layer} - The intermediate layer which is always between the two layers - either between the input and output layer or even between other hidden layers.
     \end{itemize}
@@ -360,14 +358,14 @@ Neural Network is a black--box machine learning algorithm which can handle very 
 \end{figure}
 
 The most common type of hidden layer is the fully connected layer where each unit is connected to each unit of the previous layer and to each unit in the next layer.
-Thus, each unit receives the inputs from the previous layer, performs the computation and feed the output to the next layer - such process is called \textit{feed--forward}, thus feed--forward neural networks \citep{charu2018neural}.
+Thus, each unit receives the inputs from the previous layer, performs the computation and feed the output to the next layer - such process is called \textit{feed--forward}, hence feed--forward neural networks \citep{charu2018neural}.
 Within the receiving the inputs, let us assume an integration function $g$ which performs a linear combination of the inputs $x$ and the weights $w$, and adds a bias term $b$.
-Therefore, the ouput value $z$ of the single unit in hidden layer is calculated as:
+Therefore, the output value $z$ of the single unit in hidden layer is calculated as:
 \begin{equation}
     z = g\left(X,w\right)= b + \sum_{m=1}^{M} w_m x_m
 \end{equation}
 where $M$ indicates the number of units in the previous layer.
-Before the output value $z$ is passed to the next layer, it is transformed by an activation function $f$ which is usually a non--linear function. The most common activation functions are:
+Before the output value $z$ is passed to the next layer, it is transformed by an activation function $f$ which is usually a non--linear function. The most common non--linear activation functions are:
 \begin{itemize}\setlength\itemsep{0cm}
 \item \textbf{ReLU} - Rectified Linear Unit (henceforth ReLU) is half--linear function which is rectified from the negative values to zero. The ReLU function is defined as:
 \end{itemize}
@@ -480,7 +478,7 @@ Similarly, Precision also ranges from 0 to 1 and can be derived from the confusi
 \subsubsection{F1 Score}
 F1 score incorporates both Recall and Precision into a single value and takes on values between 0 and 1 as well.
 Is it defined as a weighted harmonic mean of these two metrics \citep{brabec2020model} (where both Recall and Precision have uniform weights), and the goal is to minimize False Positives and False Negatives at the same time as within accuracy.
-Nevertheless, F1 score is deemed as more appropriate metric when dealing with imbalanced class as it provides more balanced evaluation of model's performance in imbalanced datasets compared to accuracy.
+Nevertheless, F1 score is deemed as more appropriate metric when dealing with imbalanced class as it provides more balanced evaluation of model's performance in imbalanced data sets compared to accuracy.
 \begin{equation}\label{eq}
     F1 = \frac{2 \times Precision \times Recall}{Precision + Recall} = \frac{2 \times TP}{2 \times TP + FP + FN}
 \end{equation}
@@ -612,14 +610,14 @@ Logically, the lower Log loss value, the better performance of the model is. As 
 
 \section{ADASYN Oversampling}
 \label{sec:adasyntheory}
-Since this thesis pertains to the dataset of defaulted loans, which target variable distribution is heavily skewed, i.e., the class is strongly imbalanced as the frequency distribution of the majority class is significantly higher than the frequency distribution of the minority class. In case of defaulted loans, the majority class would be non--default status and the minority class would be default status.
+Since this thesis pertains to the data set of defaulted loans, which target variable distribution is heavily skewed, i.e., the class is strongly imbalanced as the frequency distribution of the majority class is significantly higher than the frequency distribution of the minority class. In case of defaulted loans, the majority class would be non--default status and the minority class would be default status.
 This can cause serious degradation in model's performance as most of the models assume well--balanced class distributions, hence such models would be biased towards the majority class and would not be able to predict the minority class accurately \citep{prati2009data}.
 
 To overcome this issue, one would use random undersampling or random oversampling to deal with the class imbalanced issue. The former randomly eliminates majority class instances whereas the latter randomly duplicates minority class instances.
 However, both have particular drawbacks, as the random under-sampling may lead to a a significant loss of information, and random oversampling is lead to the high degree of repetation of minority instances. Both then could lead to model's overfitting and detoriation in model's performance \citep{ma2013imbalanced}.
-This might be a significant issue when the target variable distribution is heavily imbalanced - assume that we have a dataset of 1,000 instances where 990 instances belongs to majority class and 10 instances to minority class.
-If we perform random undersampling in order to balance the target variable distribution, we would have to remove 980 instances and end up with undersampled dataset of 20 instances, which is not acceptable for model training.
-On the other hand, if we perform random oversampling, we would end up with 1,980 instances, where 980 instances would be the same as in the original dataset, which would lead to the model's overfitting.
+This might be a significant issue when the target variable distribution is heavily imbalanced - assume that we have a data set of 1,000 instances where 990 instances belongs to majority class and 10 instances to minority class.
+If we perform random undersampling in order to balance the target variable distribution, we would have to remove 980 instances and end up with undersampled data set of 20 instances, which is not acceptable for model training.
+On the other hand, if we perform random oversampling, we would end up with 1,980 instances, where 980 instances would be the same as in the original data set, which would lead to the model's overfitting.
 
 Therefore, the Adaptive Synthetic Sampling (henceforth ADASYN) technique is used for oversampling the minority class.
 ADASYN generates synthetic instances of the minority class based on the nearest neighbors of the minority class instances.
@@ -664,13 +662,13 @@ where $x_{zi}$ represents the radnomly chosen minority class instance within the
 \section{Optimal Binning}
 \label{sec:optbinningtheory}
 In the context of data preprocessing, it is crucial to consider the most appropriate feature transformation method that optimizes the performance of machine learning models.
-Although common approaches such as dummy encoding, standardization, logarithmic transformation, and normalization are widely used, they may not always be suitable for a given dataset due to the presence of certain characteristics.
+Although common approaches such as dummy encoding, standardization, logarithmic transformation, and normalization are widely used, they may not always be suitable for a given data set due to the presence of certain characteristics.
 For instance, dummy encoding (also known as one--hot encoding) may not be suitable for categorical features with a large number of categories as it could lead to the curse of dimensionality, therefore, it may result in the decrease of model's performance \citep{bera2021dimensionality}.
 Standardization may not be appropriate for features with a large number of outliers as it may result in a loss of information.
 Similarly, logarithmic transformation may not be appropriate for features with a large number of zeros, and normalization may not be suitable for features with a significant number of outliers.
 
 Therefore, alternative approaches such as discretization or binning are increasingly being used. Binning is a categorization process to transform a continuous variable into a small set of groups or bins \citep{zeng2014necessary}. This approach enables the identification of outliers within bins and reduce their impact, and additionally, it can capture missing values without requiring the removal or imputation of such values.
-As a result, binning is a more flexible and versatile feature transformation method that can effectively handle different types of datasets and is particularly useful in cases where other methods may not be appropriate.
+As a result, binning is a more flexible and versatile feature transformation method that can effectively handle different types of data sets and is particularly useful in cases where other methods may not be appropriate.
 
 In this thesis, we employ the \lstinline{BinningProcess} from the \lstinline{optbinning} module in Python for an optimal binning of both numeric and categorical features with respect to the target variable, developed by Guillermo Navas--Palencia \citep{navas2020optimal}. 
 This approach involves grouping the values of a continuous variable into discrete intervals, or "bins", based on their relationship with the target variable.
@@ -709,7 +707,7 @@ It is needed to point that the difference between parameter and hyperparameter -
 Thus, it is recommended to select optimal hyperparameter values instead of relying on default hyperparameters.
 Nonetheless, selecting optimal hyperparameter values can be very challenging, especially when there are many hyperparameters to tune.
 Fortunately, in machine learning practice already exist several methods how to choose the best hyperparameters' values. The most common ones are Grid Search and Random Search.
-The former approach tries all the possible combinations of hyperparameters' values from predetermined hyperparameter space, which can be very computationally expensive, when the number of hyperparameters is large \citep{marinov2019hyperparameter}, when the space of hyperparameter's values is too wide or when the dataset is too large.
+The former approach tries all the possible combinations of hyperparameters' values from predetermined hyperparameter space, which can be very computationally expensive, when the number of hyperparameters is large \citep{marinov2019hyperparameter}, when the space of hyperparameter's values is too wide or when the data set is too large.
 Regarding the latter approach, instead of trying al the possible combinations from the grid, it randomly selects samples of hyperparameters combinations. Although such approach can be less computationally expensive, it does not guarantee to find the global optimum.
 Another issue pertaining to both approach is that they do not consider any information from previous iterations and rather check all possible hyperparameter combinations or randomly select hyperparameter combinations, respectively.
 
@@ -746,7 +744,7 @@ Referring to Owen \citep{owen2022hyperparameter}, higher expected performance $\
 
 \section{Forward Sequential Feature Selection}
 \label{sec:fsfstheory}
-Instead of using all the features in dataset, we use only the subset of the most relevant ones, which can further reduce the dimensionality of dataset, boost model performance, save computational resources and reduce overfitting. Such process is called feature selection and can be defined as the process of detecting the most relevant features and discarding the noisy redundant ones. \citep{bolon2015feature}.
+Instead of using all the features in data set, we use only the subset of the most relevant ones, which can further reduce the dimensionality of data set, boost model performance, save computational resources and reduce overfitting. Such process is called feature selection and can be defined as the process of detecting the most relevant features and discarding the noisy redundant ones. \citep{bolon2015feature}.
 
 With respect to the target variable, we distinguish 2 most common types of feature selection approaches: (1) filter methods and (2) warapper methods.
 Using the former approach, the feature selection is independent on a machine learning model itself, but rather is performed using univariate statistical tests, such as correlation measures, Chi--square test, Fisher score and others \citep{kaushik2016introduction}, and chooses those ones with the highest or lowest values.
