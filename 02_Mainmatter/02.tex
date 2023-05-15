@@ -22,6 +22,7 @@
 \textbf{TBD}
 
 \section{Machine Learning Terminology}
+\label{sec:mlterms}
 In order to avoid confusion and ensure clear understanding in this thesis, it is necessary to provide precise definitions for machine learning terminology that may be easily confused with statistical terminology due to their similar meanings but different naming conventions.
 \begin{itemize}\setlength\itemsep{0em}
 	\item \textbf{Target variable} - Dependent variable, output variable or response variable, which we want to predict or classify ($Y$). In this case we want to predict a defaut status (Yes or No).
@@ -177,7 +178,7 @@ where:
     \operatorname{Pr}\left(Y=0 \mid X \right) = \operatorname{Pr}\left(Y=0\right) \times \prod_{i=1}^{n} \operatorname{Pr}\left(X_i \mid Y=0\right)
 \end{equation}
 respectively:
-\begin{equation}
+\begin{equation}\label{eq:lastnbmax1}
     \operatorname{Pr}\left(Y=1 \mid X \right) = \operatorname{Pr}\left(Y=1\right) \times \prod_{i=1}^{n} \operatorname{Pr}\left(X_i \mid Y=1\right)
 \end{equation}
 
@@ -185,7 +186,7 @@ This algorithm works well if the features are categorical.
 However, most of the datasets contain continuous features as well.
 Therefore, we introduce \textbf{Gaussian Naive Bayes} algorithm which is suitable for continuous features. Such algorithm assumes that the features follow Normal (Gaussian) distribution, given the class label \citep{jahromi2017non}.
 Assuming the class event $Y=1$, we can derive probability density function of particular value $x$ of the continuous feature $X$ as:
-\begin{equation}
+\begin{equation}\label{eq:lastgnb}
     \operatorname{Pr}\left(X = x \mid Y = 1\right) = \frac{1}{\sqrt{2 \pi \sigma_{X \mid Y=1}^{2}}} \exp \left(-\frac{\left(x - \mu_{X \mid Y=1}\right)^{2}}{2 \sigma_{X \mid Y=1}^{2}}\right)
 \end{equation}
 where $\mu_{X \mid Y=1}$ and $\sigma_{X \mid Y=1}$ is the mean and variance of $X$, respectively, given the the class event $Y=1$.

@@ -1,4 +1,4 @@
-\begin{thebibliography}{83}
+\begin{thebibliography}{86}
 \newcommand{\enquote}[1]{``#1''}
 \providecommand{\natexlab}[1]{#1}
 
@@ -36,6 +36,11 @@
   \emph{Credit risk analytics: Measurement techniques, applications, and
   examples in SAS}.
 \newblock John Wiley \& Sons.
+
+\bibitem[{Bathaee(2017)}]{bathaee2017artificial}
+\textsc{Bathaee}, Y. (2017): \enquote{The artificial intelligence black box and
+  the failure of intent and causation.}
+\newblock \emph{Harv. JL \& Tech.} \textbf{31}: p. 889.
 
 \bibitem[{Bera \emph{et~al.}(2021)Bera, Pratap, \&
   Verma}]{bera2021dimensionality}
@@ -176,6 +181,12 @@
 \newblock
   \url{https://learnwithgauhar.com/decision-tree-a-classification-algorithm/}.
 \newblock Accessed on April 30, 2023.
+
+\bibitem[{Goethals \emph{et~al.}(2022)Goethals, Martens, \&
+  Evgeniou}]{goethals2022non}
+\textsc{Goethals}, S., D.~\textsc{Martens}, \& T.~\textsc{Evgeniou} (2022):
+  \enquote{The non-linear nature of the cost of comprehensibility.}
+\newblock \emph{Journal of Big Data} \textbf{9(1)}: p.~30.
 
 \bibitem[{Hale(2019)}]{hale2019dont}
 \textsc{Hale}, J. (2019): \enquote{Don't sweat the solver stuff.}
@@ -327,6 +338,13 @@
   prediction using imbalanced dataset.}
 \newblock \emph{International Journal of Intelligent Information Technologies
   (IJIIT)} \textbf{19(1)}: pp. 1--16.
+
+\bibitem[{Park(2013)}]{park2013introduction}
+\textsc{Park}, H.-A. (2013): \enquote{An introduction to logistic regression:
+  from basic concepts to interpretation with particular attention to nursing
+  domain.}
+\newblock \emph{Journal of Korean Academy of Nursing} \textbf{43(2)}: pp.
+  154--164.
 
 \bibitem[{Patle \& Chouhan(2013)}]{patle2013svm}
 \textsc{Patle}, A. \& D.~S. \textsc{Chouhan} (2013): \enquote{Svm kernel
