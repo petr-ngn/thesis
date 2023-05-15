@@ -978,7 +978,7 @@ Learning rate & Constant, Adaptive, Invscaling \\
 \subsection{Sequential Feature Selection}
 \label{subsec:feature-selection}
 
-As the feature selection approach, Forward Sequential Feature Selection is employed in order to choose the optimal set of features as described in \autoref{sec:fsfstheory}.
+As the feature selection approach, Forward Sequential Feature Selection (henceforth SFS) is employed in order to choose the optimal set of features as described in \autoref{sec:fsfstheory}.
 Within machine learning implemenation, instead of fitting Forward SFS only with one model, Forward SFS is fitted for each input model in order to obtain the best subsets of features for each model, assuming the importance of each features varies across the models.
 Instead of using input models with default hyperparameters, each model is tuned with Bayesian Optimization in order to obtain the optimal hyperparameters for each model, which would further improve the performance of each model within SFS and therefore, it would lead to the more optimal selection of features.
 The custom feature selection algorithm is stated in Algorithm \autoref{alg:feature_selection}, thus, when having $n$ input models, it returns $n$  subsets of optimal features, one per each model:
@@ -1060,9 +1060,8 @@ On the other hand, features such as \texttt{LOAN} and \texttt{REASON} were selec
 \end{figure}
 
 
-According to \autoref{fig:fsdistmod}, models such as K--Nearest Neighbors, Random Forest, Gradient Boosting and Support Vector Machine chose almost all the features as onlt one feature feature was eliminated. On the other hand, Gaussian Naive Bayes chose only 6. It seems to be that most of the features are important as each model has selected a higher amount of features.
-It is evident the more comples and/or black--box models require more features in contrast to transparent models such as Logistic Regression or Gaussian Naive Bayes.
-
+According to \autoref{fig:fsdistmod}, models such as KNN, Random Forest, Gradient Boosting and SVM chose almost all the features as onlt one feature feature was eliminated. On the other hand, Gaussian Naive Bayes chose only 6. It seems to be that most of the features are important as each model has selected a higher amount of features.
+It is evident the more complex black--box models require more features in contrast to transparent models such as Logistic Regression or Gaussian Naive Bayes.
 \begin{figure}[H]
     \centering
     \caption{Distribution of Selected Features per Model}\vspace{0.5em}
