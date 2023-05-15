@@ -1630,6 +1630,7 @@ INPUT ./Figures/sigmoid.jpg
 INPUT ./Figures/sigmoid.jpg
 INPUT c:/tex/texlive/texmf-dist/fonts/tfm/public/lm/ec-lmr10.tfm
 INPUT c:/tex/texlive/texmf-dist/fonts/tfm/public/lm/ec-lmri10.tfm
+INPUT c:/tex/texlive/texmf-dist/fonts/tfm/public/lm/ec-lmtk10.tfm
 INPUT ./Figures/dtnodes.jpg
 INPUT ./Figures/dtnodes.jpg
 INPUT Figures/dtnodes.jpg
@@ -1746,7 +1747,6 @@ INPUT ./Figures/WoE_Distribution.jpg
 INPUT Figures/WoE_Distribution.jpg
 INPUT ./Figures/WoE_Distribution.jpg
 INPUT ./Figures/WoE_Distribution.jpg
-INPUT c:/tex/texlive/texmf-dist/fonts/tfm/public/lm/ec-lmtk10.tfm
 INPUT c:/tex/texlive/texmf-dist/fonts/tfm/public/lm/ec-lmtt10.tfm
 INPUT c:/tex/texlive/texmf-dist/fonts/tfm/public/lm/ec-lmri8.tfm
 INPUT c:/tex/texlive/texmf-dist/fonts/tfm/public/lm/ec-lmri7.tfm

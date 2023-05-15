@@ -1,25 +1,25 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Logistic Function\relax }}{5}{figure.caption.19}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Decision Tree's Nodes\relax }}{6}{figure.caption.20}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Gini Impurity vs. Entropy\relax }}{7}{figure.caption.21}%
-\contentsline {figure}{\numberline {2.4}{\ignorespaces K-Nearest Neighbors with $k=4$\relax }}{12}{figure.caption.22}%
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Random Forest Diagram\relax }}{13}{figure.caption.23}%
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Support Vector Machine 2D Hyperplane\relax }}{15}{figure.caption.24}%
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Neural Network Architecture\relax }}{17}{figure.caption.25}%
-\contentsline {figure}{\numberline {2.8}{\ignorespaces ROC Curve\relax }}{24}{figure.caption.32}%
-\contentsline {figure}{\numberline {2.9}{\ignorespaces Log Loss Function for $Y=1$\relax }}{28}{figure.caption.34}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Decision Tree's Nodes\relax }}{7}{figure.caption.20}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Gini Impurity vs. Entropy\relax }}{8}{figure.caption.21}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces K-Nearest Neighbors with $k=4$\relax }}{13}{figure.caption.22}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Random Forest Diagram\relax }}{14}{figure.caption.23}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Support Vector Machine 2D Hyperplane\relax }}{16}{figure.caption.24}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Neural Network Architecture\relax }}{18}{figure.caption.25}%
+\contentsline {figure}{\numberline {2.8}{\ignorespaces ROC Curve\relax }}{25}{figure.caption.32}%
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Log Loss Function for $Y=1$\relax }}{29}{figure.caption.34}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Machine Learning Framework\relax }}{45}{figure.caption.40}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Repository Structure\relax }}{46}{figure.caption.41}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Default Distribution\relax }}{52}{figure.caption.47}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Conditional Distribution of Numeric Features\relax }}{54}{figure.caption.49}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Conditional Distribution of Categorical Features\relax }}{57}{figure.caption.52}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Nullity Dendrogram\relax }}{61}{figure.caption.60}%
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Spearman Correlation Matrix\relax }}{62}{figure.caption.62}%
-\contentsline {figure}{\numberline {4.8}{\ignorespaces ADASYN Impact of Categorical Features' Distribution\relax }}{66}{figure.caption.65}%
-\contentsline {figure}{\numberline {4.9}{\ignorespaces WoE Bins Distribution\relax }}{69}{figure.caption.66}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Machine Learning Framework\relax }}{46}{figure.caption.40}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Repository Structure\relax }}{47}{figure.caption.41}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Default Distribution\relax }}{53}{figure.caption.47}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Conditional Distribution of Numeric Features\relax }}{55}{figure.caption.49}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Conditional Distribution of Categorical Features\relax }}{58}{figure.caption.52}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Nullity Dendrogram\relax }}{62}{figure.caption.60}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Spearman Correlation Matrix\relax }}{63}{figure.caption.62}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces ADASYN Impact of Categorical Features' Distribution\relax }}{67}{figure.caption.65}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces WoE Bins Distribution\relax }}{70}{figure.caption.66}%
 \contentsline {figure}{\numberline {4.10}{\ignorespaces Feature Selection Print Statement\relax }}{79}{figure.caption.83}%
 \contentsline {figure}{\numberline {4.11}{\ignorespaces Reccurrence of Selected Features\relax }}{80}{figure.caption.84}%
 \contentsline {figure}{\numberline {4.12}{\ignorespaces Distribution of Selected Features per Model\relax }}{81}{figure.caption.85}%

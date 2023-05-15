@@ -79,6 +79,26 @@ Referring to the previous equations, solving for $P$, henceforth we get a final 
 P = \frac{1}{1+e^{-\left(\beta_0 + \displaystyle\sum_{i=1}^{n} \beta_i X_i\right)}}
 \end{equation}
 
+Regarding the loss function minimized when estimating the model's parameters, the logistic regression uses the cross-entropy loss function, also known as log loss.
+This loss function is also used as an evaluation metric for the model's performance, which is described in \autoref{subsec:evalmetrics}.
+
+The next hyperparameter is the \textbf{\texttt{C penalty factor}} as a regularization term to prevent overfitting by adding such term to the objective loss function \citep{pramoditha2021mitigate}. Particularly, in case of Logistic Regression, $C$ penalty factor is the regularization term which penalizes the coefficients' magnitudes.
+The is related to the \textbf{\texttt{Penalty}} hyperparameter, which allows to specify the norm used in the penalization.
+The most common penalty is $L1$ (also known as Lasso) penalty which which takes the absolute value of the coefficients' magnitudes.
+The logistic regression's loss function is the cross--entropy (also known as Log Loss) which is further described in \autoref{subsubsec:logloss}. Then, the loss function with  $L1$ penalty is defined as follows:
+\begin{equation}\label{eq}
+    L(y, p)_{L1}  = L(y, p) + C \sum_{j=1}^{k} \mid w_j \mid
+\end{equation}
+Another penalty is $L2$ (also known as Ridge) penalty, which is more strict in penalization than $L1$ as it squares the coefficients' magnitudes. The loss function with $L2$ penalty is defined as follows:
+\begin{equation}\label{eq}
+    L(y, p)_{L2}  = L(y, p) + C \sum_{j=1}^{k} w_j^2
+\end{equation}
+The third penalty norm is the $ElasticNet$ which combines both $L1$ and $L2$. The loss function with $ElasticNet$ penalty is defined as follows:
+\begin{equation}\label{eq}
+    L(y, p)_{ElasticNet} = L(y, p) + C \sum_{j=1}^{k} \left[ \alpha \mid w_j \mid + (1-\alpha) w_j^2 \right]
+\end{equation}
+where $\alpha$ indicates the weight of $L1$ penalty in the $ElasticNet$ penalty and refers to the \textit{L1 ratio} hyperparameter.
+
 \subsection{Decision Tree}
 \label{subsec:dt}
 

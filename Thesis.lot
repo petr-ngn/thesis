@@ -1,23 +1,23 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {3.1}{\ignorespaces Evaluation Results \citep {serkan2021bagging}}}{39}{table.caption.35}%
-\contentsline {table}{\numberline {3.2}{\ignorespaces Evaluation Results - Ranked \citep {serkan2021bagging}}}{39}{table.caption.36}%
-\contentsline {table}{\numberline {3.3}{\ignorespaces Evaluation Results \citep {zurada2014classification}}}{40}{table.caption.37}%
-\contentsline {table}{\numberline {3.4}{\ignorespaces Evaluation Results - Ranked \citep {zurada2014classification}}}{40}{table.caption.38}%
-\contentsline {table}{\numberline {3.5}{\ignorespaces Accuracy vs. Execution Time \citep {wu2018accurate}}}{43}{table.caption.39}%
+\contentsline {table}{\numberline {3.1}{\ignorespaces Evaluation Results \citep {serkan2021bagging}}}{40}{table.caption.35}%
+\contentsline {table}{\numberline {3.2}{\ignorespaces Evaluation Results - Ranked \citep {serkan2021bagging}}}{40}{table.caption.36}%
+\contentsline {table}{\numberline {3.3}{\ignorespaces Evaluation Results \citep {zurada2014classification}}}{41}{table.caption.37}%
+\contentsline {table}{\numberline {3.4}{\ignorespaces Evaluation Results - Ranked \citep {zurada2014classification}}}{41}{table.caption.38}%
+\contentsline {table}{\numberline {3.5}{\ignorespaces Accuracy vs. Execution Time \citep {wu2018accurate}}}{44}{table.caption.39}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Data Set Columns}}{50}{table.caption.44}%
-\contentsline {table}{\numberline {4.2}{\ignorespaces Missing Values Summary}}{51}{table.caption.45}%
-\contentsline {table}{\numberline {4.3}{\ignorespaces Numeric features NA's Summary}}{56}{table.caption.50}%
-\contentsline {table}{\numberline {4.4}{\ignorespaces Point--Biserial Correlation - Numeric Features vs. Default}}{58}{table.caption.54}%
-\contentsline {table}{\numberline {4.5}{\ignorespaces Cramer's V Association - Categorical Features vs. Default}}{59}{table.caption.56}%
-\contentsline {table}{\numberline {4.6}{\ignorespaces Phi Correlation Coefficient - NA's vs. Default}}{60}{table.caption.58}%
-\contentsline {table}{\numberline {4.7}{\ignorespaces Data Split Summary}}{64}{table.caption.63}%
-\contentsline {table}{\numberline {4.8}{\ignorespaces ADASYN Impact on Categorical Features' Distribution}}{65}{table.caption.64}%
-\contentsline {table}{\numberline {4.9}{\ignorespaces Logistic Regression - Hyperparameter Space}}{72}{table.caption.68}%
+\contentsline {table}{\numberline {4.1}{\ignorespaces Data Set Columns}}{51}{table.caption.44}%
+\contentsline {table}{\numberline {4.2}{\ignorespaces Missing Values Summary}}{52}{table.caption.45}%
+\contentsline {table}{\numberline {4.3}{\ignorespaces Numeric features NA's Summary}}{57}{table.caption.50}%
+\contentsline {table}{\numberline {4.4}{\ignorespaces Point--Biserial Correlation - Numeric Features vs. Default}}{59}{table.caption.54}%
+\contentsline {table}{\numberline {4.5}{\ignorespaces Cramer's V Association - Categorical Features vs. Default}}{60}{table.caption.56}%
+\contentsline {table}{\numberline {4.6}{\ignorespaces Phi Correlation Coefficient - NA's vs. Default}}{61}{table.caption.58}%
+\contentsline {table}{\numberline {4.7}{\ignorespaces Data Split Summary}}{65}{table.caption.63}%
+\contentsline {table}{\numberline {4.8}{\ignorespaces ADASYN Impact on Categorical Features' Distribution}}{66}{table.caption.64}%
+\contentsline {table}{\numberline {4.9}{\ignorespaces Logistic Regression - Hyperparameter Space}}{73}{table.caption.68}%
 \contentsline {table}{\numberline {4.10}{\ignorespaces Decision Tree - Hyperparameter Space}}{73}{table.caption.70}%
-\contentsline {table}{\numberline {4.11}{\ignorespaces Gaussian Naive Bayes - Hyperparameter Space}}{73}{table.caption.72}%
+\contentsline {table}{\numberline {4.11}{\ignorespaces Gaussian Naive Bayes - Hyperparameter Space}}{74}{table.caption.72}%
 \contentsline {table}{\numberline {4.12}{\ignorespaces K--Nearest Neighbors - Hyperparameter Space}}{74}{table.caption.74}%
 \contentsline {table}{\numberline {4.13}{\ignorespaces Random Forest - Hyperparameter Space}}{75}{table.caption.76}%
 \contentsline {table}{\numberline {4.14}{\ignorespaces Gradient Boosting - Hyperparameter Space}}{76}{table.caption.78}%
