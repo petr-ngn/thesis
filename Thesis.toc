@@ -78,9 +78,11 @@
 \contentsline {section}{\numberline {4.6}Machine Learning Deployment}{106}{section.4.6}%
 \contentsline {subsection}{\numberline {4.6.1}Final Model Recalibration}{106}{subsection.4.6.1}%
 \contentsline {subsection}{\numberline {4.6.2}Flask and HTML Web Application}{106}{subsection.4.6.2}%
-\contentsline {chapter}{\numberline {5}Hypotheses' Testing}{111}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Conclusion}{114}{chapter.6}%
-\contentsline {chapter}{Bibliography}{115}{chapter.6}%
+\contentsline {chapter}{\numberline {5}Hypotheses' Testing and Future Recommendations}{111}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Hypotheses' Testing}{111}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Future Recommendations}{113}{section.5.2}%
+\contentsline {chapter}{\numberline {6}Conclusion}{115}{chapter.6}%
+\contentsline {chapter}{Bibliography}{116}{chapter.6}%
 \contentsline {chapter}{\numberline {A}Additional Figures and Tables}{I}{appendix.A}%
 \contentsline {chapter}{\numberline {B}Source Codes}{II}{appendix.B}%
 \contentsline {section}{\numberline {B.1}Python Notebook Code (\lstinline {Masters_Thesis.ipynb})}{II}{section.B.1}%

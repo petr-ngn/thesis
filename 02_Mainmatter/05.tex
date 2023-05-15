@@ -1,6 +1,9 @@
-\chapter{Hypotheses' Testing}
+\chapter{Hypotheses' Testing and Future Recommendations}
 \label{chap:five}
+In this chapter, we assess the hypotheses stated in \autoref{sec:hypo} based on the results derived from machine learning implementation described in \autoref{chap:four}.
+Moreover, in response to the outcomes derived from this thesis, we proffer suggestions for subsequent studies. These recommendations, shaped by our findings, serve as a roadmap to guide future investigations within this field.
 
+\section{Hypotheses' Testing}
 \noindent \textbf{Result \#1:} \textit{The recalibration of the model \underline{does} enhaces model performance on HMEQ data set.}
 
 We fail to reject the \textbf{Hypothesis \#1} because all we observe improvements in the metrics within evaluation on test set when the final model was re-trained on the joined training and validation set instead solely On the training set.
@@ -64,3 +67,16 @@ In other words, the higher value of such features, the higher probability of def
 Since the features' values are encoded as WoE, the negative WoE values indicates larger distribution of defaulters compared to non--defaulters in given bins.
 Based on the WoE bins distribution in \autoref{fig:woedist}, we can observe negative WoE values for bins where the debt--to--income ratio is extremely high or is missing. Regarding to the number of delinquent credit lines, we can observe a negative WoE value for bin corresponding to the relatively high number of delinquent credit lines.
 Therefore, if the loan applicant has either high or missing debt--to--income ratio and/or relatively high number of delinquent credit lines,  he would be likely to default.
+
+\section{Future Recommendations}
+Given this complex and custom machine learning solution applied in this thesis, it also comes with further limitations and drawbacks which we would like to address in this section and provide suggestions for future studies.
+\begin{enumerate}\setlength\itemsep{0em}
+    \item \textbf{Use more relevant and actual data} - Given the nature of the data set analyzed in this thesis, it might not be the most relevant for the current market situation.
+    \item \textbf{Use bigger data} - Since the real bank data sets often contain hunders of thousands or even millions of instances, and the number of features can be in hundreds or even higher, it would be beneficial to use bigger data sets to train the models on.
+    \item \textbf{Use behavioral scoring data} - The data set used in this thesis is based on the application data only, however, the behavioral scoring data is often used in the real--world applications as well. Therefore, it would be also beneficial to use another external data such as macroeconomic data for estimation of lifetime PD and therefore provide more reliable estimates.
+    \item \textbf{ML Development in Cloud} - This machine learning solution applied in this thesis was developed solely on the local machine while being limited by computational resources. Therefore, we recommend to use cloud computing services such as Amazon Web Services, Databricks or Google Cloud Platform to develop the machine learning solution in the cloud and therefore utilize the full potential of the cloud computing.
+    This also allows for using more efficient libraries when working with data such as PySpark.
+    \item \textbf{Use TensorFlow or PyTorch for NN development} - In this thesis, we used Neural Network from \lstinline{Scikit-learn} module. Howeover, in ML engineering, the Neural Networks are mostly developed using TensorFlow or Keras modules which are more efficient and provide more flexibility.
+    \item \textbf{Django for ML deployment} - Although Flask is a great tool for ML deployment, it is not suitable for production environment. Therefore, we recommend to use Django framework for ML deployment as it is more suitable for production environment.
+    \item \textbf{ML implementation in other credit risk modelling components} - Besides applying ML prediction models in credit risk for default prediction (i.e., PD), it would be also beneficial to apply ML models in other credit risk modelling components such as LGD and EAD, ECL or even for macroeceonomic forecasting.
+\end{enumerate}
