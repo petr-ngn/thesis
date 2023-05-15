@@ -1,4 +1,4 @@
-\begin{thebibliography}{87}
+\begin{thebibliography}{88}
 \newcommand{\enquote}[1]{``#1''}
 \providecommand{\natexlab}[1]{#1}
 
@@ -47,6 +47,12 @@
 \textsc{Bera}, D., R.~\textsc{Pratap}, \& B.~D. \textsc{Verma} (2021):
   \enquote{Dimensionality reduction for categorical data.}
 \newblock \emph{IEEE Transactions on Knowledge and Data Engineering} .
+
+\bibitem[{Bhattacharya(2022)}]{bhattacharya2022applied}
+\textsc{Bhattacharya}, A. (2022): \emph{Applied Machine Learning Explainability
+  Techniques: Make ML models explainable and trustworthy for practical
+  applications using LIME, SHAP, and more}.
+\newblock Packt Publishing Ltd.
 
 \bibitem[{Bischl \emph{et~al.}(2023)Bischl, Binder, Lang, Pielok, Richter,
   Coors, Thomas, Ullmann, Becker, Boulesteix

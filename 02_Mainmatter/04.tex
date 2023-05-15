@@ -1589,10 +1589,9 @@ The two most important features used in the final model are \texttt{DEBTINC} and
 Thus, understanding the impact of individual features on model performance can be useful in identifying areas for improvement, as well as in identifying the most significant factors that drive loan defaults.
 By focusing on these important features, lenders and policymakers can better understand and address the underlying factors that contribute to default risk, ultimately leading to better lending decisions and improved outcomes for borrowers and lenders alike.
 
-\textbf{ADD BRIEF THEORY ABOUT THE SHAP VALUES}
 
-To gain further insights into the impact of the features on the final model's predictions, the SHapley Additive exPlanations (henceforth SHAP) summary plot is displayed in \autoref{fig:shap}.
-The SHAP summary plot provides a clear visualization of the contribution each feature makes to a prediction and is used for a black box model explainability.
+To gain further insights into the impact of the features on the final model's predictions, the SHapley Additive exPlanations (henceforth SHAP) values can be calculated. Particularly, the SHAP value is defined as the mean marginal contribution of each feature value across all possible values in the feature space, while considering feature importance \citep{bhattacharya2022applied}.
+The following \autoref{fig:shap} depicts SHAP summary plot which provides a clear visualization of the contribution each feature makes to a prediction and global explainability of the model predictions.
 Each dot in the plot represents a feature and its corresponding SHAP value.
 The color of the dot represents the feature's value, with red indicating high values and blue indicating low values.
 The position of the dot on the x-axis represents the impact of the feature on the prediction, with features on the right-hand side contributing more positively to the prediction, and features on the left-hand side contributing more negatively.
