@@ -1,0 +1,929 @@
+% This file was created with JabRef 2.3.1.
+% Encoding: Cp1250
+
+@misc{narkhede2018understanding,
+author = {Narkhede, Sahil},
+title = {Understanding AUC - ROC curve},
+howpublished = {Medium},
+month = {June 26},
+year = {2018},
+url = {https://towardsdatascience.com/understanding-auc-roc-curve-68b2303cc9c5},
+note = {Retrieved April 28, 2023}
+}
+
+@article{wu2018accurate,
+  title={Accurate indoor localization based on CSI and visibility graph},
+  author={Wu, Zhefu and Jiang, Lei and Jiang, Zhuangzhuang and Chen, Bin and Liu, Kai and Xuan, Qi and Xiang, Yun},
+  journal={Sensors},
+  volume={18},
+  number={8},
+  pages={2549},
+  year={2018},
+  publisher={MDPI}
+}
+
+@inproceedings{prati2009data,
+  title={Data mining with imbalanced class distributions: concepts and methods.},
+  author={Prati, Ronaldo C and Batista, Gustavo EAPA and Monard, Maria Carolina},
+  booktitle={IICAI},
+  pages={359--376},
+  year={2009}
+}
+
+@book{forsyth2019applied,
+  title={Applied machine learning},
+  author={Forsyth, David},
+  year={2019},
+  publisher={Springer}
+}
+
+@ARTICLE{Bjorvatn2006,
+  author = {Bjorvatn, Kjetil and Eckel, Carsten},
+  title = {{Policy Competition for Foreign Direct Investment Between Asymmetric
+	Countries}},
+  journal = {European Economic Review},
+  year = {2006},
+  volume = {50},
+  pages = {1891-1907},
+  number = {7},
+  month = {October}
+}
+
+@inproceedings{patle2013svm,
+  title={SVM kernel functions for classification},
+  author={Patle, Arti and Chouhan, Deepak Singh},
+  booktitle={2013 International Conference on Advances in Technology and Engineering (ICATE)},
+  pages={1--9},
+  year={2013},
+  organization={IEEE}
+}
+
+@misc{TIBCO2023,
+author = {TIBCO--Software},
+title = {What is a Random Forest?},
+howpublished = {\url{https://www.tibco.com/reference-center/what-is-a-random-forest}},
+year = {2023},
+note = {Retrieved April 30, 2023}
+}
+
+@misc{Dilmegani2017,
+author = {Dilmegani, C.},
+title = {Dark side of neural networks explained [2023]},
+howpublished = {AIMultiple},
+year = {2017},
+month = {September 29},
+url = {https://research.aimultiple.com/how-neural-networks-work/},
+note = {Retrieved April 30, 2023}
+}
+
+@article{meyer2015support,
+  title={Support vector machines},
+  author={Meyer, David},
+  journal={The Interface to libsvm in package e1071},
+  volume={28},
+  pages={20},
+  year={2015}
+}
+
+@article{alloghani2020supervised,
+  title={Supervised and unsupervised learning for data science},
+  author={Alloghani, M and Al-Jumeily, D and Mustafina, J and Hussain, A and Aljaaf, AJ},
+  journal={Supervised and Unsupervised Learning for Data Science},
+  year={2020}
+}
+
+@misc{pramoditha2021mitigate,
+  author = {Pramoditha, Roshan},
+  title = {How to Mitigate Overfitting with Regularization},
+  year = {2021},
+  month = {September},
+  howpublished = {Medium},
+  url = {https://towardsdatascience.com/how-to-mitigate-overfitting-with-regularization-befcf4e41865},
+  note = {Retrieved May 1, 2023}
+}
+
+
+@article{platt1999probabilistic,
+  title={Probabilistic outputs for support vector machines and comparisons to regularized likelihood methods},
+  author={Platt, John and others},
+  journal={Advances in large margin classifiers},
+  volume={10},
+  number={3},
+  pages={61--74},
+  year={1999},
+  publisher={Cambridge, MA}
+}
+
+@article{hsu2002comparison,
+  title={A comparison of methods for multiclass support vector machines},
+  author={Hsu, Chih-Wei and Lin, Chih-Jen},
+  journal={IEEE transactions on Neural Networks},
+  volume={13},
+  number={2},
+  pages={415--425},
+  year={2002},
+  publisher={IEEE}
+}
+
+@book{tatsat2020machine,
+  title={Machine Learning and Data Science Blueprints for Finance},
+  author={Tatsat, Hariom and Puri, Sahil and Lookabaugh, Brad},
+  year={2020},
+  publisher={O'Reilly Media}
+}
+
+@article{lin2007note,
+  title={A note on Platt’s probabilistic outputs for support vector machines},
+  author={Lin, Hsuan-Tien and Lin, Chih-Jen and Weng, Ruby C},
+  journal={Machine learning},
+  volume={68},
+  pages={267--276},
+  year={2007},
+  publisher={Springer}
+}
+
+@misc{wang2020bayesian,
+author = {Wang, Wei},
+title = {Bayesian optimization concept explained in Layman terms},
+howpublished = {Medium},
+month = {March 18},
+year = {2020},
+url = {https://towardsdatascience.com/bayesian-optimization-concept-explained-in-layman-terms-1d2bcdeaf12f},
+note = {Accessed: April 29, 2023}
+}
+
+@inproceedings{ribeiro2016should,
+  title={" Why should i trust you?" Explaining the predictions of any classifier},
+  author={Ribeiro, Marco Tulio and Singh, Sameer and Guestrin, Carlos},
+  booktitle={Proceedings of the 22nd ACM SIGKDD international conference on knowledge discovery and data mining},
+  pages={1135-1144},
+  year={2016}
+}
+
+@book{cichosz2014data,
+  title={Data mining algorithms: explained using R},
+  author={Cichosz, Pawel},
+  year={2014},
+  publisher={John Wiley \& Sons}
+}
+
+@inproceedings{brabec2020model,
+  title={On model evaluation under non-constant class imbalance},
+  author={Brabec, Jan and Kom{\'a}rek, Tom{\'a}{\v{s}} and Franc, Vojt{\v{e}}ch and Machlica, Luk{\'a}{\v{s}}},
+  booktitle={Computational Science--ICCS 2020: 20th International Conference, Amsterdam, The Netherlands, June 3--5, 2020, Proceedings, Part IV 20},
+  pages={74--87},
+  year={2020},
+  organization={Springer}
+}
+
+@article{chicco2020advantages,
+  title={The advantages of the Matthews correlation coefficient (MCC) over F1 score and accuracy in binary classification evaluation},
+  author={Chicco, Davide and Jurman, Giuseppe},
+  journal={BMC genomics},
+  volume={21},
+  pages={1--13},
+  year={2020},
+  publisher={Springer}
+}
+
+@article{boughorbel2017optimal,
+  title={Optimal classifier for imbalanced data using Matthews Correlation Coefficient metric},
+  author={Boughorbel, Sabri and Jarray, Fethi and El-Anbari, Mohammed},
+  journal={PloS one},
+  volume={12},
+  number={6},
+  pages={e0177678},
+  year={2017},
+  publisher={Public Library of Science San Francisco, CA USA}
+}
+@article{adeodato2016equivalence,
+  title={On the equivalence between Kolmogorov-Smirnov and ROC curve metrics for binary classification},
+  author={Adeodato, Paulo JL and Melo, S{\'\i}lvio B},
+  journal={arXiv preprint arXiv:1606.00496},
+  year={2016}
+}
+
+@article{newson2002parameters,
+  title={Parameters behind “nonparametric” statistics: Kendall's tau, Somers’ D and median differences},
+  author={Newson, Roger},
+  journal={The Stata Journal},
+  volume={2},
+  number={1},
+  pages={45--64},
+  year={2002},
+  publisher={SAGE Publications Sage CA: Los Angeles, CA}
+}
+
+@misc{newson2014interpretation,
+  title={Interpretation of Somers' D under four simple models},
+  author={Newson, Roger B},
+  year={2014}
+}
+
+@misc{dembla2020intuition,
+author = {Dembla, G.},
+title = {Intuition behind log-loss score},
+howpublished = {Medium},
+month = {Nov},
+year = {2020},
+url = {https://towardsdatascience.com/intuition-behind-log-loss-score-4e0c9979680a},
+note = {Retrieved April 30, 2023}
+}
+
+@article{janitza2013auc,
+  title={An AUC-based permutation variable importance measure for random forests},
+  author={Janitza, Silke and Strobl, Carolin and Boulesteix, Anne-Laure},
+  journal={BMC bioinformatics},
+  volume={14},
+  number={1},
+  pages={1--11},
+  year={2013},
+  publisher={Springer}
+}
+
+@article{fawcett2006introduction,
+  title={An introduction to ROC analysis},
+  author={Fawcett, Tom},
+  journal={Pattern recognition letters},
+  volume={27},
+  number={8},
+  pages={861--874},
+  year={2006},
+  publisher={Elsevier}
+}
+
+@article{brownlee2021failure,
+  title={Failure of classification accuracy for imbalanced class distributions},
+  author={Brownlee, Jason},
+  journal={MachineLearningMastery.com},
+  year={2021},
+  month={January},
+  day={21},
+  url={https://machinelearningmastery.com/failure-of-accuracy-for-imbalanced-class-distributions/},
+  urldate={April 30, 2023}
+}
+
+@book{japkowicz2011evaluating,
+  title={Evaluating learning algorithms: a classification perspective},
+  author={Japkowicz, Nathalie and Shah, Mohak},
+  year={2011},
+  publisher={Cambridge University Press}
+}
+
+@book{han2011data,
+  title={Data Mining: Concepts and Techniques},
+  author={Han, J. and Kamber, M. and Pei, J.},
+  year={2011},
+  edition={3rd},
+  publisher={Morgan Kaufmann}
+}
+
+@book{bolon2015feature,
+  title={Feature selection for high-dimensional data},
+  author={Bol{\'o}n-Canedo, Ver{\'o}nica and S{\'a}nchez-Maro{\~n}o, Noelia and Alonso-Betanzos, Amparo},
+  year={2015},
+  publisher={Springer}
+}
+
+@misc{comotto2022evaluation,
+author = {Comotto, Federico},
+title = {Evaluation Metrics: Leave Your Comfort Zone and Try MCC and Brier Score},
+howpublished = {Medium},
+year = {2022},
+month = {January},
+day = {8},
+url = {https://towardsdatascience.com/evaluation-metrics-leave-your-comfort-zone-and-try-mcc-and-brier-score-86307fb1236a},
+note = {Retrieved April 30, 2023}
+}
+
+@misc{kaushik2016introduction,
+  author = {Kaushik, Sunil},
+  title = {Introduction to Feature Selection Methods with an Example (or How to Select the Right Variables?)},
+  year = {2016},
+  month = {December},
+  publisher = {Analytics Vidhya},
+  url = {https://www.analyticsvidhya.com/blog/2016/12/introduction-to-feature-selection-methods-with-an-example-or-how-to-select-the-right-variables/},
+  note = {Accessed: April 30, 2023}
+}
+
+@misc{Verma2020,
+author = {Verma, Vikas},
+title = {A comprehensive guide to feature selection using Wrapper methods in python},
+year = {2020},
+month = {October 24},
+howpublished = {\url{https://www.analyticsvidhya.com/blog/2020/10/a-comprehensive-guide-to-feature-selection-using-wrapper-methods-in-python/}},
+note = {Retrieved April 30, 2023},
+publisher = {Analytics Vidhya}
+}
+
+@article{drahokoupil2022application,
+author = {Drahokoupil, Jan},
+title = {Application of the XGBoost algorithm and Bayesian optimization for the Bitcoin price prediction during the COVID-19 period},
+journal = {FFA Working Papers},
+volume = {4},
+pages = {Article 2022.006},
+year = {2022},
+doi = {10.XXXX/xxx.2022.006}
+}
+
+@article{bergstra2011algorithms,
+  title={Algorithms for hyper-parameter optimization},
+  author={Bergstra, James and Bardenet, R{\'e}mi and Bengio, Yoshua and K{\'e}gl, Bal{\'a}zs},
+  journal={Advances in neural information processing systems},
+  volume={24},
+  year={2011}
+}
+
+@book{owen2022hyperparameter,
+  title={Hyperparameter Tuning with Python},
+  author={Owen, Laura},
+  year={2022},
+  publisher={Packt Publishing},
+  edition={1st},
+  url={https://www.perlego.com/book/3584350/hyperparameter-tuning-with-python-boost-your-machine-learning-models-performance-via-hyperparameter-tuning-pdf},
+  note={Original work published 2022}
+}
+
+@article{owusu2023deep,
+  title={A Deep Learning Approach for Loan Default Prediction Using Imbalanced Dataset},
+  author={Owusu, Ebenezer and Quainoo, Richard and Mensah, Solomon and Appati, Justice Kwame},
+  journal={International Journal of Intelligent Information Technologies (IJIIT)},
+  volume={19},
+  number={1},
+  pages={1--16},
+  year={2023},
+  publisher={IGI Global}
+}
+
+@article{kazemi2023estimation,
+  title={Estimation of optimum thresholds for binary classification using genetic algorithm: An application to solve a credit scoring problem},
+  author={Kazemi, Hamid Reza and Khalili-Damghani, Kaveh and Sadi-Nezhad, Soheil},
+  journal={Expert Systems},
+  volume={40},
+  number={3},
+  pages={e13203},
+  year={2023},
+  publisher={Wiley Online Library}
+}
+
+@article{zurada2014classification,
+  title={The classification performance of multiple methods and datasets: Cases from the loan credit scoring domain},
+  author={Zurada, Jozef and Kunene, Niki and Guan, Jian},
+  journal={Journal of International Technology and Information Management},
+  volume={23},
+  number={1},
+  pages={5},
+  year={2014}
+}
+
+@article{serkan2021bagging,
+  title={Bagging and boosting classifiers for credit risk evaluation},
+  author={Aras, Serkan},
+  journal={REFLECTIONS OF ECONOMIC DEVELOPMENT},
+  pages={121},
+  year={2021}
+}
+
+@inproceedings{marinov2019hyperparameter,
+  title={Hyperparameter optimisation with early termination of poor performers},
+  author={Marinov, Dobromir and Karapetyan, Daniel},
+  booktitle={2019 11th Computer Science and Electronic Engineering (CEEC)},
+  pages={160--163},
+  year={2019},
+  organization={IEEE}
+}
+
+@article{loyola2019black,
+  title={Black-box vs. white-box: Understanding their advantages and weaknesses from a practical point of view},
+  author={Loyola-Gonzalez, Octavio},
+  journal={IEEE access},
+  volume={7},
+  pages={154096--154113},
+  year={2019},
+  publisher={IEEE}
+}
+
+@book{bhattacharya2022applied,
+  title={Applied Machine Learning Explainability Techniques: Make ML models explainable and trustworthy for practical applications using LIME, SHAP, and more},
+  author={Bhattacharya, Aditya},
+  year={2022},
+  publisher={Packt Publishing Ltd}
+}
+
+@misc{nian2018introduction,
+  author = {Nian, Ruinian},
+  title = {An Introduction to {ADASYN} (with code!)},
+  howpublished = {Medium},
+  year = {2018},
+  month = {December 23},
+  note = {Retrieved on May 2, 2023 from \url{https://medium.com/@ruinian/an-introduction-to-adasyn-with-code-1383a5ece7aa}},
+}
+
+@article{de2023predicting,
+  title={Predicting Readmission or Death After Discharge From the ICU: External Validation and Retraining of a Machine Learning Model},
+  author={de Hond, Anne AH and Kant, Ilse MJ and Fornasa, Mattia and Cin{\`a}, Giovanni and Elbers, Paul WG and Thoral, Patrick J and Arbous, M Sesmu and Steyerberg, Ewout W},
+  journal={Critical Care Medicine},
+  volume={51},
+  number={2},
+  pages={291--300},
+  year={2023},
+  publisher={LWW}
+}
+
+@article{zaidi2022mathematical,
+  title={Mathematical justification on the origin of the sigmoid in logistic regression},
+  author={Zaidi, Abdelhamid},
+  journal={Central European Management Journal},
+  volume={30},
+  number={4},
+  pages={1327--1337},
+  year={2022}
+}
+
+@article{bathaee2017artificial,
+  title={The artificial intelligence black box and the failure of intent and causation},
+  author={Bathaee, Yavar},
+  journal={Harv. JL \& Tech.},
+  volume={31},
+  pages={889},
+  year={2017},
+  publisher={HeinOnline}
+}
+
+@article{goethals2022non,
+  title={The non-linear nature of the cost of comprehensibility},
+  author={Goethals, Sofie and Martens, David and Evgeniou, Theodoros},
+  journal={Journal of Big Data},
+  volume={9},
+  number={1},
+  pages={30},
+  year={2022},
+  publisher={Springer}
+}
+
+@article{park2013introduction,
+  title={An introduction to logistic regression: from basic concepts to interpretation with particular attention to nursing domain},
+  author={Park, Hyeoun-Ae},
+  journal={Journal of Korean Academy of Nursing},
+  volume={43},
+  number={2},
+  pages={154--164},
+  year={2013},
+  publisher={Korean Society of Nursing Science}
+}
+
+@article{pintelas2020grey,
+  title={A grey-box ensemble model exploiting black-box accuracy and white-box intrinsic interpretability},
+  author={Pintelas, Emmanuel and Livieris, Ioannis E and Pintelas, Panagiotis},
+  journal={Algorithms},
+  volume={13},
+  number={1},
+  pages={17},
+  year={2020},
+  publisher={MDPI}
+}
+
+@article{bera2021dimensionality,
+  title={Dimensionality reduction for categorical data},
+  author={Bera, Debajyoti and Pratap, Rameshwar and Verma, Bhisham Dev},
+  journal={IEEE Transactions on Knowledge and Data Engineering},
+  year={2021},
+  publisher={IEEE}
+}
+
+@article{bischl2023hyperparameter,
+  title={Hyperparameter optimization: Foundations, algorithms, best practices, and open challenges},
+  author={Bischl, Bernd and Binder, Martin and Lang, Michel and Pielok, Tobias and Richter, Jakob and Coors, Stefan and Thomas, Janek and Ullmann, Theresa and Becker, Marc and Boulesteix, Anne-Laure and others},
+  journal={Wiley Interdisciplinary Reviews: Data Mining and Knowledge Discovery},
+  volume={13},
+  number={2},
+  pages={e1484},
+  year={2023},
+  publisher={Wiley Online Library}
+}
+@article{navas2020optimal,
+  title={Optimal binning: mathematical programming formulation},
+  author={Navas-Palencia, Guillermo},
+  journal={arXiv preprint arXiv:2001.08025},
+  year={2020}
+}
+
+@book{witzany2017credit,
+  title={Credit risk management},
+  author={Witzany, Ji{\v{r}}{\'\i}},
+  year={2017},
+  publisher={Springer}
+}
+
+
+
+@article{esposito2021ghost,
+  title={GHOST: adjusting the decision threshold to handle imbalanced data in machine learning},
+  author={Esposito, Carmen and Landrum, Gregory A and Schneider, Nadine and Stiefl, Nikolaus and Riniker, Sereina},
+  journal={Journal of Chemical Information and Modeling},
+  volume={61},
+  number={6},
+  pages={2623--2640},
+  year={2021},
+  publisher={ACS Publications}
+}
+
+@book{subasi2020practical,
+  title={Practical machine learning for data analysis using python},
+  author={Subasi, Abdulhamit},
+  year={2020},
+  publisher={Academic Press}
+}
+
+@article{fluss2005estimation,
+  title={Estimation of the Youden Index and its associated cutoff point},
+  author={Fluss, Ronen and Faraggi, David and Reiser, Benjamin},
+  journal={Biometrical Journal: Journal of Mathematical Methods in Biosciences},
+  volume={47},
+  number={4},
+  pages={458--472},
+  year={2005},
+  publisher={Wiley Online Library}
+}
+@inproceedings{dias2018comparison,
+  title={A comparison of Gradient Boosting with Logistic Regression in Practical Cases},
+  author={Dias, P and Experian, Serasa and Melissa Forti, Bradesco and Witarsa, Marc and Experian, Serasa},
+  booktitle={URL: https://www. sas. com/content/dam/SAS/support/en/sasglobal-forum-proceedings/2018/1857-2018. pdf},
+  year={2018}
+}
+
+@article{doumpos2019analytical,
+  title={Analytical techniques in the assessment of credit risk},
+  author={Doumpos, Michalis and Lemonakis, Christos and Niklis, Dimitrios and Zopounidis, Constantin},
+  journal={EURO Advanced Tutorials on Operational Research. Cham: Springer International Publishing.[Google Scholar]},
+  year={2019},
+  publisher={Springer}
+}
+
+@article{zeng2014necessary,
+  title={A necessary condition for a good binning algorithm in credit scoring},
+  author={Zeng, Guoping},
+  journal={Applied Mathematical Sciences},
+  volume={8},
+  number={65},
+  pages={3229--3242},
+  year={2014}
+}
+
+@misc{charu2018neural,
+  title={Neural networks and deep learning: a textbook},
+  author={Charu, C Aggarwal},
+  year={2018},
+  publisher={Spinger}
+}
+
+@article{ayyadevara2018pro,
+  title={Pro machine learning algorithms},
+  author={Ayyadevara, V Kishore},
+  journal={Apress: Berkeley, CA, USA},
+  year={2018},
+  publisher={Springer}
+}
+
+@book{bonaccorso2020mastering,
+  title={Mastering Machine Learning Algorithms: Expert techniques for implementing popular machine learning algorithms, fine-tuning your models, and understanding how they work},
+  author={Bonaccorso, Giuseppe},
+  year={2020},
+  publisher={Packt Publishing Ltd}
+}
+
+@book{ma2013imbalanced,
+author = {He, Haibo and Ma, Yunqian},
+title = {Imbalanced Learning: Foundations, Algorithms, and Applications},
+year = {2013},
+isbn = {1118074629},
+publisher = {Wiley-IEEE Press}
+}
+
+@article{hale2019dont,
+  title={Don't sweat the solver stuff},
+  author={Hale, Jeremy},
+  journal={Medium},
+  year={2019},
+  month={September},
+  day={27},
+  url={https://towardsdatascience.com/dont-sweat-the-solver-stuff-aea7cddc3451},
+  note={Retrieved May 1, 2023}
+}
+
+@inproceedings{jahromi2017non,
+  title={A non-parametric mixture of Gaussian naive Bayes classifiers based on local independent features},
+  author={Jahromi, Ali Haghpanah and Taheri, Mohammad},
+  booktitle={2017 Artificial intelligence and signal processing conference (AISP)},
+  pages={209--212},
+  year={2017},
+  organization={IEEE}
+}
+
+@article{aniceto2020machine,
+  title={Machine learning predictivity applied to consumer creditworthiness},
+  author={Aniceto, Maisa Cardoso and Barboza, Flavio and Kimura, Herbert},
+  journal={Future Business Journal},
+  volume={6},
+  number={1},
+  pages={1--14},
+  year={2020},
+  publisher={SpringerOpen}
+}
+
+@article{teply2020best,
+  title={Best classification algorithms in peer-to-peer lending},
+  author={Tepl\'{y}, Petr and Polena, Michal},
+  journal={The North American Journal of Economics and Finance},
+  volume={51},
+  pages={100904},
+  year={2020},
+  publisher={Elsevier}
+}
+
+@misc{Brownlee2020,
+author = {Brownlee, Jason},
+title = {Recursive feature elimination (RFE) for feature selection in Python},
+year = {2020},
+month = {August 25},
+url = {https://machinelearningmastery.com/rfe-feature-selection-in-python/},
+note = {Retrieved April 28, 2023},
+publisher = {MachineLearningMastery.com}
+}
+@misc{sfs,
+title = {SequentialFeatureSelector},
+author = {{scikit-learn}},
+howpublished = {\url{https://scikit-learn.org/stable/modules/generated/sklearn.feature_selection.SequentialFeatureSelector.html#sklearn.feature_selection.SequentialFeatureSelector}},
+note = {Retrieved April 28, 2023},
+year = {2023},
+publisher = {scikit-learn}
+}
+
+@misc{scikit-opt,
+    title = {skopt.BayesSearchCV},
+    author = {{scikit-learn}},
+    year = {2023},
+    howpublished = {\url{https://scikit-optimize.github.io/stable/modules/generated/skopt.BayesSearchCV.html#}},
+    note = {Retrieved April 28, 2023},
+}
+
+@misc{scikit-lr,
+    title = {sklearn.linear\_model.LogisticRegression},
+    author = {{scikit-optimize}},
+    year = {2023},
+    howpublished = {\url{https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html#sklearn.ensemble.RandomForestClassifier}},
+    note = {Retrieved April 28, 2023},
+}
+
+@book{baesens2016credit,
+  title={Credit risk analytics: Measurement techniques, applications, and examples in SAS},
+  author={Baesens, Bart and Roesch, Daniel and Scheule, Harald},
+  year={2016},
+  publisher={John Wiley \& Sons}
+}
+
+@misc{scikit-svm,
+    title = {sklearn.svm.SVC},
+    author = {{scikit-learn}},
+    year = {2023},
+    howpublished = {\url{https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html#sklearn.svm.SVC}},
+    note = {Retrieved April 28, 2023},
+}
+
+@misc{scikit-mlp,
+    title = {sklearn.neural\_network.MLPClassifier},
+    author = {{scikit-learn}},
+    year = {2023},
+    howpublished = {\url{https://scikit-learn.org/stable/modules/generated/sklearn.neural_network.MLPClassifier.html#sklearn.neural_network.MLPClassifier}},
+    note = {Retrieved April 28, 2023},
+}
+
+@misc{scikit-gb,
+    title = {sklearn.ensemble.GradientBoostingClassifier},
+    author = {{scikit-learn}},
+    year = {2023},
+    howpublished = {\url{https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingClassifier.html#sklearn.ensemble.GradientBoostingClassifier}},
+    note = {Retrieved April 28, 2023},
+}
+
+@misc{scikit-rf,
+    title = {sklearn.ensemble.RandomForestClassifier},
+    author = {{scikit-learn}},
+    year = {2023},
+    howpublished = {\url{https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html#sklearn.linear_model.LogisticRegression}},
+    note = {Retrieved April 28, 2023},
+}
+
+@misc{scikit-knn,
+    title = {sklearn.neighbors.KNeighborsClassifier},
+    author = {{scikit-learn}},
+    year = {2023},
+    howpublished = {\url{https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html#sklearn.neighbors.KNeighborsClassifier}},
+    note = {Retrieved April 28, 2023},
+}
+
+@misc{scikit-gnb,
+    title = {sklearn.naive\_bayes.GaussianNB},
+    author = {{scikit-learn}},
+    year = {2023},
+    howpublished = {\url{https://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.GaussianNB.html#sklearn.naive_bayes.GaussianNB}},
+    note = {Retrieved April 28, 2023},
+}
+
+@misc{scikit-dt,
+    title = {sklearn.tree.DecisionTreeClassifier},
+    author = {{scikit-learn}},
+    year = {2023},
+    howpublished = {\url{https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html#sklearn.tree.DecisionTreeClassifier}},
+    note = {Retrieved April 28, 2023},
+}
+
+
+@misc{Verma2021,
+author = {Verma, Yash},
+title = {A complete guide to sequential feature selection},
+year = {2021},
+month = {August 29},
+howpublished = {\url{https://analyticsindiamag.com/a-complete-guide-to-sequential-feature-selection/}},
+note = {Retrieved April 28, 2023},
+publisher = {Analytics India Magazine}
+}
+
+@article{randomforestmalley,
+author = {Malley, James and Kruppa, J and Dasgupta, Abhijit and Malley, Karen and Ziegler, Andreas},
+year = {2011},
+month = {09},
+pages = {74-81},
+title = {Probability Machines Consistent Probability Estimation Using Nonparametric Learning Machines},
+volume = {51},
+journal = {Methods of information in medicine},
+doi = {10.3414/ME00-01-0052}
+}
+
+@misc{gauhar2020decision,
+  author = {Gauhar, Nida},
+  title = {Decision tree: A classification algorithm},
+  howpublished = {\url{https://learnwithgauhar.com/decision-tree-a-classification-algorithm/}},
+  year = {2020},
+  month = {December 24},
+  note = {Accessed on April 30, 2023}
+}
+
+@book{provost2013data,
+  title={Data Science for Business: What you need to know about data mining and data-analytic thinking},
+  author={Provost, Foster and Fawcett, Tom},
+  year={2013},
+  publisher={" O'Reilly Media, Inc."}
+}
+
+@book{witten2011data,
+  author = {Witten, Ian H. and Frank, Eibe and Hall, Mark and Pal, Christopher},
+  title = {Data Mining: Practical Machine Learning Tools and Techniques},
+  year = {2011},
+  edition = {4th},
+  publisher = {Morgan Kaufmann},
+}
+
+@book{wendler2021data,
+  author = {Wendler, Thomas and Gr{\"o}ttrup, Sascha},
+  title = {Data Mining with SPSS Modeler: Theory, Exercises and Solutions},
+  year = {2021},
+  publisher = {Springer},
+  address = {Cham},
+  isbn = {978-3-030-54338-9}
+}
+@book{mucherino2009data,
+  title={Data mining in agriculture},
+  author={Mucherino, Antonio and Papajorgji, Petraq and Pardalos, Panos M},
+  volume={34},
+  year={2009},
+  publisher={Springer Science \& Business Media}
+}
+
+@INPROCEEDINGS{adasynhaibo,
+  author={Haibo He and Yang Bai and Garcia, Edwardo A. and Shutao Li},
+  booktitle={2008 IEEE International Joint Conference on Neural Networks (IEEE World Congress on Computational Intelligence)}, 
+  title={ADASYN: Adaptive synthetic sampling approach for imbalanced learning}, 
+  year={2008},
+  volume={},
+  number={},
+  pages={1322-1328},
+  doi={10.1109/IJCNN.2008.4633969}}
+
+@online{igareta2021strat,
+  author = {Angel Igareta},
+  title = {Stratified Sampling: You May Have Been Splitting Your Dataset All Wrong},
+  year = {2021},
+  url = {https://towardsdatascience.com/stratified-sampling-you-may-have-been-splitting-your-dataset-all-wrong-8cfdd0d32502},
+  urldate = {2023-04-17}
+}
+
+@misc{scikit-learn-sequential-feature-selector,
+  title        = {SequentialFeatureSelector},
+  author       = {{Scikit-learn}},
+  howpublished = {\url{https://scikit-learn.org/stable/modules/generated/sklearn.feature_selection.SequentialFeatureSelector.html}},
+  year         = {n.d.},
+  urldate = {2023-04-17}
+}
+
+@article{rigatti2017random,
+  title={Random forest},
+  author={Rigatti, Steven J},
+  journal={Journal of Insurance Medicine},
+  volume={47},
+  number={1},
+  pages={31--39},
+  year={2017},
+  publisher={American Academy of Insurance Medicine 1700 Magnavox Way, Fort Wayne, IN 46804}
+}
+
+@ARTICLE{kornbrot2014point,
+  title={Point biserial correlation},
+  author={Diana Kornbrot},
+  journal={Wiley StatsRef: Statistics Reference Online},
+  year={2014},
+  publisher={Wiley Online Library}
+}
+
+
+@TECHREPORT{Blomstrom2003,
+  author = {Magnus Blomstrom and Ari Kokko},
+  title = {{The Economics of Foreign Direct Investment Incentives}},
+  institution = {National Bureau of Economic Research, Inc},
+  year = {2003},
+  type = {NBER Working Papers},
+  number = {9489},
+  month = Feb
+}
+
+@ARTICLE{Djankov2002,
+  author = {Simeon Djankov and Peter Murrell},
+  title = {{Enterprise Restructuring in Transition: A Quantitative Survey}},
+  journal = {Journal of Economic Literature},
+  year = {2002},
+  volume = {40},
+  pages = {739-792},
+  number = {3},
+  month = {September},
+  owner = {Administrator},
+  timestamp = {2008.07.05}
+}
+
+@ARTICLE{Haaparanta1996,
+  author = {Pertti Haaparanta},
+  title = {{Competition for Foreign Direct Investment}},
+  journal = {Journal of Public Economics},
+  year = {1996},
+  volume = {63},
+  pages = {141-53},
+  number = {1},
+  owner = {Administrator},
+  timestamp = {2007.09.04}
+}
+
+@ARTICLE{Haufler2006,
+  author = {Haufler, Andreas and Wooton, Ian},
+  title = {{The Effects of Regional Tax and Subsidy Coordination on Foreign
+	Direct Investment}},
+  journal = {European Economic Review},
+  year = {2006},
+  volume = {50},
+  pages = {285-305},
+  number = {2},
+  month = {February}
+}
+
+@ARTICLE{Stanley2001,
+  author = {T. D. Stanley},
+  title = {{Wheat from Chaff: Meta-analysis as Quantitative Literature Review}},
+  journal = {Journal of Economic Perspectives},
+  year = {2001},
+  volume = {15},
+  pages = {131-150},
+  number = {3},
+  month = {Summer},
+  owner = {Administrator},
+  timestamp = {2008.07.05},
+  url = {http://ideas.repec.org/a/aea/jecper/v15y2001i3p131-150.html}
+}
+
+@BOOK{Wells2001,
+  title = {{Using Tax Incentives to Compete for Foreign Investment: Are They
+	Worth the Cost}?},
+  publisher = {{FIAS}},
+  year = {2001},
+  author = {Wells, Louis T. and Allen, Nancy and Morisset, Jacques and Pirnia,
+	Neda},
+  address = {Washington, DC},
+  owner = {Administrator},
+  timestamp = {2008.01.01}
+}
+
+@comment{jabref-meta: selector_publisher:}
+
+@comment{jabref-meta: selector_author:}
+
+@comment{jabref-meta: selector_journal:}
+
+@comment{jabref-meta: selector_keywords:}
+
