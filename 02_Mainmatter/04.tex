@@ -518,6 +518,16 @@ Therefore, it can be inferred that a significant number of loan applicants tend 
     \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
 
+Note that the target variable is imbalanced, therefore, the dendrogram depicted in \autoref{fig:dendrogram} is not representative for the default cases. Therefore, we can also inspect the dendrogram for the default cases only, as shown in \autoref{fig:dendrogramdef}.
+As can be seen, the hierarchy has changed compared the hierarchy in \autoref{fig:dendrogram}. It can be observed that a significant number of loan applicated tend to ommit information regarding their number of credit lines (\texttt{CLNO}) and the number of delinquent credit lines (\texttt{DELINQ}) when submitting their loan applications. Especially regarding the second feature, this might indicate a common delinquency problem among the applicants and thus, higher probability of default.
+\begin{figure}[H]
+    \centering
+    \caption{Nullity Dendrogram (default cases)}\vspace{0.5em}
+    \label{fig:dendrogramdef}
+    \includegraphics[width=140mm]{Figures/NA_Dendrogram_defaults.jpg}
+    \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
+\end{figure}
+
 \subsubsection{Multicolinearity Analysis}
 
 To quantify the association between the numerical features, Pearson correlation coefficient is often used.
@@ -539,6 +549,8 @@ In the \autoref{fig:spearmancorr}, we can observe a very strong correlation betw
     \includegraphics[width=150mm]{Figures/Spearman_Correlation_Matrix_Numeric_Features.jpg}
     \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
+
+Regarding the association between categorical features, namely \texttt{REASON} and \texttt{JOB}, the Cramer's V coefficient is used. The Cramer's V coefficient results in a value of 0.149 while being statistically significant 1\% statistical significance level, thus we observe a weak association between the two features.
 
 \newpage
 \section{Data Preprocessing}
@@ -1677,5 +1689,5 @@ where $f$ is the original black--box model, $g$ is the surrogate model, $L$ is t
 
 The explanation is given in terms of the feature importance, which is represented by the magnitude of the feature's coefficient in the local interpretable model. The higher the magnitude of the coefficient, the more important the feature is in the prediction of the black box model.
 Therefore, as it is shown in \autoref{fig:flaskres}, the red bars indicate positive contribution to the probability of default whereas green bars indicate negative contribution to the probability of default. In other words, The features with red bars indicate that the client would not probably repay his loan and vice versa.
-The contributions' magnitudes are in line with the findings from feature imporance or SHAP values which is focused on the global explainability of the black--box model (not local explainability), that features such as debt--to--income ratio (\texttt{DEBTINC}) or number of deliquent credit lines (\texttt{DELINQ}) have the largest impact of the probability default.
+The contributions' magnitudes are in line with the findings from feature imporance or SHAP values which is focused on the global explainability of the black--box model (not local explainability), that features such as debt--to--income ratio (\texttt{DEBTINC}) or number of delinquent credit lines (\texttt{DELINQ}) have the largest impact of the probability default.
 Particularly, a high value of debt--to--income ratio causes higher probability default, whereas no delinquent credit lines leads to the lower probability default.

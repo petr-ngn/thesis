@@ -1731,6 +1731,11 @@ INPUT ./Figures/NA_Dendrogram.jpg
 INPUT Figures/NA_Dendrogram.jpg
 INPUT ./Figures/NA_Dendrogram.jpg
 INPUT ./Figures/NA_Dendrogram.jpg
+INPUT ./Figures/NA_Dendrogram_defaults.jpg
+INPUT ./Figures/NA_Dendrogram_defaults.jpg
+INPUT Figures/NA_Dendrogram_defaults.jpg
+INPUT ./Figures/NA_Dendrogram_defaults.jpg
+INPUT ./Figures/NA_Dendrogram_defaults.jpg
 INPUT ./Figures/Spearman_Correlation_Matrix_Numeric_Features.jpg
 INPUT ./Figures/Spearman_Correlation_Matrix_Numeric_Features.jpg
 INPUT Figures/Spearman_Correlation_Matrix_Numeric_Features.jpg
