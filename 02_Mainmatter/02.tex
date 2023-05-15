@@ -388,6 +388,7 @@ The training of neural network is an iterative process, where within each iterat
 Here comes another property of neural network which is the back--propagation, which updates all the weights and biases starting from the last layer by a small amount until the error is minimized as much as possible \citep{ayyadevara2018pro}.
 The error is then backpropagated through the network and the weights are updated. The process is repeated until the error is minimized.
 
+\newpage
 \section{Evaluation Metrics}
 
 This section focuses on particular measures through which it is possible to determine a predictive power of model in terms of its performance.
@@ -401,7 +402,7 @@ Confusion matrix is a table which summarizes the classification model's performa
 It is a square $n \times n$ matrix, where $n$ determines number of classes within the target variable.
 Let us denote the confusion matrix as $C\left(f\right)$ for classification algorithm $f$. 
 Its elements can be denoted as $c_{i,j}$ where $i$ and $j$ refer to the row and column indices, respectively, or more particularly, $i$ refers to the actual class and $j$ to the class predicted by the classifier $f$.
-Each element of the confusion matrix refers to the number of instances corresponding to actual class $i$ and predicted class $j$ \citep{japkowicz2011evaluating}. For instance, the element $c_2,1$ would refer to the number of instances which have the actual class $2$ but have been classified as class $1$.
+Each element of the confusion matrix refers to the number of instances corresponding to actual class $i$ and predicted class $j$ \citep{japkowicz2011evaluating}. For instance, the element $c_{2,1}$ would refer to the number of instances which have the actual class $2$ but have been classified as class $1$.
 Mathematically, the confusion matrix can be written as following:
 
 \begin{equation}\label{eq}
@@ -420,7 +421,7 @@ Or either in matrix form as:
 \end{equation}
 
 From the given matrix, the diagonal elements represent the numbers of correctly classified instances, whereas the non-diagonal elements represent the numbers of misclassified instances.
-Further, let us consider a binary classification - hence, the confusion matrix will have a form of $2\times 2$.
+Further, let us consider a binary classification - hence, the confusion matrix will have a form of $2\times 2$:
 
 \begin{equation}
     C_{2 \times 2} = \begin{bmatrix}
@@ -447,10 +448,12 @@ where:
 	\item $TN$ is the True Negative which refers to the number of instances which corresponds to the actual class $Negative$ and indeed have been correctly classified as class $Negative$.
 \end{itemize}
 
+From such confusion matrix, we can derive several metrics which are further described on the following pages:
+
 \subsubsection{Accuracy}
 Such metric ranges from 0 to 1 and it describes in relatives terms how many instances the model has correctly predicted. Thus, the goal is to minimize the number of False Positives and False Negatives, or in credit risk modelling terms, number of defaulters which the model has classified as non--defaulters and number of non--defaulters which the model has classified as defaulters.
-However, accuracy is inappropriate metric for evaluation when having imbalanced class, i.e., where the distribution of the target variable is skewed.
-In such case, the model can achieve a relatively high accuracy even though it is not able to predict the minority class correctly \citep{brownlee2021failure}, thus it would lead to the misleading results.
+However, Accuracy is inappropriate metric for evaluation when having imbalanced class, i.e., where the distribution of the target variable is skewed.
+In such case, the model can achieve a relatively high Accuracy even though it is not able to predict the minority class correctly \citep{brownlee2021failure}, thus it would lead to the misleading results.
 This is the case of the credit risk modelling, when the loan portfolio oftenly have a lot of non--defaults and few defaults.
 Therefore, it is deemed appropriate to consider other metrics when having imbalanced class.
 \begin{equation}\label{eq}
@@ -470,22 +473,22 @@ Mathematically based on the confusion matrix elements, it can be computed as:
 \subsubsection{Precision}
 This metric describes in relative terms how many predicted $Positive$ instances are actually $Positive$ out of all the predicted $Positive$ instances. Thus, the goal is to minimize the number of False Positives, i.e., number of non--defaulters which the model has classified as defaulters.
 A lower value of precision could therefore indicates that either the model is not able to predict correctly the $True$ classes (low number of True Positives) or its prediction of $True$ classes is noisy (high number of False Positives).
-Precision is another metric which should be used instead of accuracy when having imbalanced class as it tt measures the model's ability to correctly identify instances of the minority class while minimizing false positives (i.e., non--default instances which the model has classified as default).
+Precision is another metric which should be used instead of Accuracy when having imbalanced class as it tt measures the model's ability to correctly identify instances of the minority class while minimizing false positives (i.e., non--default instances which the model has classified as default).
 Similarly, Precision also ranges from 0 to 1 and can be derived from the confusion matrix as follows:
 \begin{equation}\label{eq}
     Precision = \frac{TP}{TP + FP}
 \end{equation}
 \subsubsection{F1 Score}
 F1 score incorporates both Recall and Precision into a single value and takes on values between 0 and 1 as well.
-Is it defined as a weighted harmonic mean of these two metrics \citep{brabec2020model} (where both Recall and Precision have uniform weights), and the goal is to minimize False Positives and False Negatives at the same time as within accuracy.
-Nevertheless, F1 score is deemed as more appropriate metric when dealing with imbalanced class as it provides more balanced evaluation of model's performance in imbalanced data sets compared to accuracy.
+Is it defined as a weighted harmonic mean of these two metrics \citep{brabec2020model} (where both Recall and Precision have uniform weights), and the goal is to minimize False Positives and False Negatives at the same time as within Accuracy.
+Nevertheless, F1 score is deemed as more appropriate metric when dealing with imbalanced class as it provides more balanced evaluation of model's performance in imbalanced data sets compared to Accuracy.
 \begin{equation}\label{eq}
     F1 = \frac{2 \times Precision \times Recall}{Precision + Recall} = \frac{2 \times TP}{2 \times TP + FP + FN}
 \end{equation}
 
 \subsubsection{Matthews Correlation Coefficient}
 The drawback of Recall, Precision and F1 score is they are asymmetric measures, i.e., they do not take into account the True Negatives.
-Therefore, such metrics' values will differ if we swap the positive and negative classes \citep{chicco2020advantages}, e.g., 1 would indicate non--default and vice versa.
+Therefore, such metrics' values will differ if we swap the positive and negative classes \citep{chicco2020advantages}, e.g., class 1 would indicate non--default and vice versa.
 In order to overcome such drawback, Matthews Correlation Coefficient can be used as it is symmetric and it takes into account all the four elements of the confusion matrix as well as it captures imbalanced class issue.
 Methodologically, Matthews Correlation Coefficient is defined as a discretization of Pearson correlation for the case of binary variables \citep{boughorbel2017optimal}.
 Pearson correlation coefficient is defined as:
@@ -508,7 +511,7 @@ ROC curve is two-dimensional visualization of the model performance and shows tr
 In order to construct ROC curve, we need to sort the instances by the predicted probability scores and based on the given probability score, we set a threshold - what will be above the threshold will be classified as $True$ instance and what is below the threshold will be classified as $False$ instance. Thus, each probability score threshold produces a differnt confusion matrix and hence, different $TPR$ and $FPR$ values \citep{fawcett2006introduction}.
 Thus, if the probability is 1, the threshold will be 1 as well and hence:
 \begin{itemize}\setlength\itemsep{0em}
-    \item $TPR$ will be 0 because there is no probability which is higher than 1 and hence, everything will be classified as $Negative$ which will result into $TP$ of 0, and subsequently into $Negative$ of 0 as well.
+    \item $TPR$ will be 0 because there is no probability which is higher than 1 and hence, everything will be classified as $Negative$ which will result into $TP$ of 0, and subsequently into $TPR$ of 0 as well.
 	\item $FPR$ will be 0, too - since everything will be classified as $Negative$, therefore $FP$ will be 0 which implies $FPR$ to be 0, too.
 \end{itemize}
 On the other hand, if the probability is 0, the threshold will be 0 as well and hence:
@@ -536,7 +539,6 @@ Intuitively, the best possible theoretical model would have $TPR$ of 1 and $FPR$
 $AUC$ is basically the representation of ROC curve as a single number as it aggregates the performance on all possible thresholds ranging from 0 to 1.
 $AUC$ can be interpreted as the probability that the randomly chosen actual $True$ instance is ranked higher than the randomly chosen actual $False$ instance \citep{janitza2013auc}.
 As the $AUC$ is an area present underneath the ROC curve, mathematically, it can be computed with the definite integral where $x$ is the given threshold:
-
 \begin{equation}\label{eq}
     AUC = \int_{0}^{1} TPR \left(FPR^{-1}\left(x \right)\right) dx
 \end{equation}
@@ -582,7 +584,7 @@ Therefore, Somers' D can be defined as the difference between the two conditiona
 In case of a binary classification, $X$ values would represent \textit{True} labels and $Y$ values would represent predicted probability scores as rank vectors. Such metric ranges from -1 to +1 (likewise as Matthews correlation coefficient +1). Thus, the higher value of Somers' D, the model's better ability to distinguish between borrowers who are likely to default and those who are not.
 
 \subsection{Brier Score Loss}
-Methodologically, Brier Score Loss is calculated in the same way as Mean Squared Error (MSE). However, Brier Score Loss is applied to the predicted probabilities (i.e., assumes that the target variable is dichotomous) \citep{comotto2022evaluation}, whereas MSE is rather used in regression tasks where is no assumption regarding the continuous target variable.
+Methodologically, Brier Score Loss is calculated in the same way as Mean Squared Error (henceforth MSE). However, Brier Score Loss is applied to the predicted probabilities (i.e., assumes that the target variable is dichotomous) \citep{comotto2022evaluation}, whereas MSE is rather used in regression tasks where is no assumption regarding the continuous target variable.
 Henceforth, Brier Score Loss is defined as a mean squared error between the $True$ labels ($y$) and the predicted probabilities ($\hat{y}$) as follows:
 \begin{equation}\label{eq}
     \text{Brier Score Loss} = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2

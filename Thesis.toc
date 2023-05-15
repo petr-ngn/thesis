@@ -20,7 +20,7 @@
 \contentsline {subsection}{\numberline {2.3.6}Gradient Boosting}{13}{subsection.2.3.6}%
 \contentsline {subsection}{\numberline {2.3.7}Support Vector Machine}{14}{subsection.2.3.7}%
 \contentsline {subsection}{\numberline {2.3.8}Neural Network}{16}{subsection.2.3.8}%
-\contentsline {section}{\numberline {2.4}Evaluation Metrics}{18}{section.2.4}%
+\contentsline {section}{\numberline {2.4}Evaluation Metrics}{19}{section.2.4}%
 \contentsline {subsection}{\numberline {2.4.1}Confusion Matrix and Derived Metrics}{19}{subsection.2.4.1}%
 \contentsline {subsubsection}{Accuracy}{20}{section*.26}%
 \contentsline {subsubsection}{Recall}{21}{section*.27}%
@@ -32,7 +32,7 @@
 \contentsline {subsubsection}{AUC}{24}{section*.33}%
 \contentsline {subsection}{\numberline {2.4.3}Kolmogorov-Smirnov Distance}{25}{subsection.2.4.3}%
 \contentsline {subsection}{\numberline {2.4.4}Somer's D}{26}{subsection.2.4.4}%
-\contentsline {subsection}{\numberline {2.4.5}Brier Score Loss}{26}{subsection.2.4.5}%
+\contentsline {subsection}{\numberline {2.4.5}Brier Score Loss}{27}{subsection.2.4.5}%
 \contentsline {subsection}{\numberline {2.4.6}Log Loss}{27}{subsection.2.4.6}%
 \contentsline {section}{\numberline {2.5}ADASYN Oversampling}{28}{section.2.5}%
 \contentsline {section}{\numberline {2.6}Optimal Binning}{30}{section.2.6}%
