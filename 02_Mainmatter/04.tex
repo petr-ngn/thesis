@@ -1163,13 +1163,6 @@ Particularly, for each model a rank score is calculated in order to determine th
 where $k$ is the number of metrics used to evaluated the model $M$, $r_i$ is the rank order of $i$--th metric for given model $M$ and $w_i$ is the weight assigned to the $i$--th metric.
 Such metric lies in interval $<1, k>$, where 1 would indicate a perfect model performance across the all metrics.
 
-\textbf{QUESTION: Should we also add this metric for better interpretability or is the metric defined above sufficient?}
-
-For better interpretability, we can normalize the rank scores which would range from 0 to 1 where 1 would indicate a perfect performance of the model.
-\begin{equation}\label{eq}
-    NormRankScore_{M} = 1 - \frac{RankScore_{M} - k}{k - 1}
-\end{equation}
-
 \subsubsection{Model Selection Results}
 
 
@@ -1299,8 +1292,6 @@ In order to gain a more detailed understanding of the model selection results, t
 Such outlier is removed in \autoref{fig:f1distclean} to gain a more general insight into the F1 score distribution.
 It can be observed that Gradient Boosting models have the highest F1 scores of around 80 \%.
 Another tree ensemble model, Random Forest, is performing well as the second best. However, more transparent models such as Logistic Regression and Naive Bayes are performing poorly, having F1 scores around 60 \%.
-Surprisingly, black box models such as Support Vector Machine and Neural Network are outperformed by the less complex KNN model.
-Nonetheless, given the relatively small sample size, KNN performs better than Neural Network and non-linear SVM on small data sets.
 \begin{figure}[H]
 \centering
 \caption{F1 Score Distribution - \textit{without outlier}}\vspace{0.5em}
@@ -1309,7 +1300,7 @@ Nonetheless, given the relatively small sample size, KNN performs better than Ne
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
 
-As depicted in \autoref{fig:f1distcleanbbwb}, the distribution of F1 score (without the outlier) across the model type. Although, both score distributions overlap, it is evident, that black--box models outperform white--box model in terms of F1 score in overall as expected.
+As depicted in \autoref{fig:f1distcleanbbwb}, it visualizes the distribution of F1 score (without the outlier) across the model type. Although, both score distributions overlap, it is evident, that black--box models outperform white--box model in terms of F1 score in overall as expected.
 \begin{figure}[H]
     \centering
     \caption{F1 Score Distribution (Black--box/White--box dimension) - \textit{without outlier}}\vspace{0.5em}
@@ -1319,7 +1310,7 @@ As depicted in \autoref{fig:f1distcleanbbwb}, the distribution of F1 score (with
 \end{figure}
 
 We can also consider not only F1 score but also other metrics, which is quantified in the rank score calculated according to \autoref{eq:rankscorem}. As shown in \autoref{fig:avgrankdist}, we can observe that the order of models ranked by the rank score is identical as the order of the models ranked by F1 score in \autoref{fig:f1dist}.
-Hence, across all the metrics, the Gradient Boosting perform the best in overall while Gaussian Naive Bayes do not perform well at all.
+Hence, across all the metrics, the Gradient Boosting perform the best in overall while Gaussian Naive Bayes does not perform well at all.
 \begin{figure}[H]
     \centering
     \caption{Rank Score Distribution}\vspace{0.5em}
@@ -1371,7 +1362,7 @@ This finding suggests that longer execution time does not necessarily lead to be
 \end{figure}
 We can inspect the execution time from another perspective as shown in \autoref{fig:timedistbbwb}.
 It can be observed that black--box models take a significant amount of time ot opimize than the white--box models which is given due to the complexity of the black--box models.
-Further we can notice that some of the black--box models took only few minutes to optimized themselves. This corresponds to KNN models and such exeuction is attributed to the small sample size as of dataset as well as lower dataset dimensionality (i.e., low number of features) and further given the lower number of $k$ neighbors (which is constrained to 10 at most).
+Further we can notice that some of the black--box models took only few minutes to optimized themselves. This corresponds to KNN models and it can be attributed to the small sample size as of data set as well as lower data set dimensionality (i.e., low number of features) and further given the lower number of $k$ neighbors (which is constrained to 10 at most as depicted in \autoref{tab:knnspace}).
 \begin{figure}[H]
     \centering
     \caption{Execution Time Distribution (Black--box/White--box dimension)}\vspace{0.5em}
@@ -1394,7 +1385,7 @@ On the other hand, the Neural Network models always perform poorly, regardless o
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
 Such separation of of the black--box and white--box models is more evident from \autoref{fig:scattertimebbwb} where the white--box models points are light blue-colored and the black--box models are purple-colored.
-While the execution time of white--box models seems to be constant regardless the score, the points of black--box models are more dispersed across the execution time--F1 dimension.
+While the score of white--box models seems to be constant regardless the execution time length, the points of black--box models are more dispersed across the execution time--F1 score dimension.
 
 \begin{figure}[H]
     \centering
@@ -1405,7 +1396,7 @@ While the execution time of white--box models seems to be constant regardless th
 \end{figure}
 
 
-To summarize this subsection, the best and final model is the Gradient Boosting Classifier which was optimized on the subset of features selected by Multi-Layer Percepton - both the model information and its final hyperparameters' values are described in \autoref{tab:finalmodelinfo}. Such model is then used in the next modelling steps, including the recalibration, evaluation and deployment.
+To summarize this subsection, the best and final model is the \textbf{Gradient Boosting Classifier} which was optimized on the subset of features selected by \textbf{MLP} - both the model information and its final hyperparameters' values are described in \autoref{tab:finalmodelinfo}. Such model is then used in the next modelling steps, including the recalibration, evaluation and deployment.
 \begin{table}[H]
     \small
     \setlength{\tabcolsep}{8pt}
