@@ -1611,7 +1611,6 @@ INPUT ./02_Mainmatter/01_Intro.tex
 INPUT 02_Mainmatter/01_Intro.tex
 INPUT ./02_Mainmatter/01_Intro.tex
 INPUT 02_Mainmatter/01_Intro.tex
-INPUT c:/tex/texlive/texmf-dist/fonts/tfm/public/lm/ec-lmr8.tfm
 INPUT ./02_Mainmatter/02.tex
 INPUT 02_Mainmatter/02.tex
 INPUT ./02_Mainmatter/02.tex
@@ -1665,6 +1664,7 @@ INPUT ./Figures/ROC_theory.jpg
 INPUT Figures/ROC_theory.jpg
 INPUT ./Figures/ROC_theory.jpg
 INPUT ./Figures/ROC_theory.jpg
+INPUT c:/tex/texlive/texmf-dist/fonts/tfm/public/lm/ec-lmr8.tfm
 INPUT c:/tex/texlive/texmf-dist/fonts/tfm/public/lm/ec-lmr6.tfm
 INPUT ./Figures/logloss.jpg
 INPUT ./Figures/logloss.jpg

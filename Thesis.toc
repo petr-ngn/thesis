@@ -6,14 +6,14 @@
 \contentsline {section}{\numberline {2.1}Credit Risk}{2}{section.2.1}%
 \contentsline {subsection}{\numberline {2.1.1}Regulation}{2}{subsection.2.1.1}%
 \contentsline {subsubsection}{Basel III}{2}{section*.15}%
-\contentsline {subsubsection}{IFRS 9}{2}{section*.16}%
-\contentsline {subsection}{\numberline {2.1.2}Credit Scoring}{2}{subsection.2.1.2}%
-\contentsline {subsubsection}{Application Scoring}{2}{section*.17}%
+\contentsline {subsubsection}{IFRS 9}{3}{section*.16}%
+\contentsline {subsection}{\numberline {2.1.2}Credit Scoring}{3}{subsection.2.1.2}%
+\contentsline {subsubsection}{Application Scoring}{3}{section*.17}%
 \contentsline {subsubsection}{Behavioral Scoring}{3}{section*.18}%
 \contentsline {section}{\numberline {2.2}Machine Learning Terminology}{3}{section.2.2}%
 \contentsline {section}{\numberline {2.3}Algorithms}{4}{section.2.3}%
 \contentsline {subsection}{\numberline {2.3.1}Logistic Regression}{4}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}Decision Tree}{6}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.2}Decision Tree}{7}{subsection.2.3.2}%
 \contentsline {subsection}{\numberline {2.3.3}Naive Bayes}{9}{subsection.2.3.3}%
 \contentsline {subsection}{\numberline {2.3.4}K-Nearest Neighbors}{11}{subsection.2.3.4}%
 \contentsline {subsection}{\numberline {2.3.5}Random Forest}{13}{subsection.2.3.5}%
