@@ -573,12 +573,12 @@ However, the \lstinline{ADASYN()} class from \lstinline{imblearn} is not designe
 \item Retrieve back the missing values:
 \begin{itemize}
 \item Categorical features: replace string \lstinline{'N/A'} with \lstinline{np.nan};
-\item Numeric features: for each feature $X$ if its value exceeds the original maximum value, then replace it with \lstinline{np.nan};
+\item Numeric features: for each feature $X$ if its value exceeds the its original maximum value, then replace it with \lstinline{np.nan};
 \end{itemize}
 \end{enumerate}
 
 
-The following \autoref{tab:split} shows the default distribution of the individual sets before and after oversampling. The training set after ADASYN oversampling was balanced, while the default distribution remained the same across the validation and test sets before and after oversampling, which is desirable due to stratification.
+The following \autoref{tab:split} shows the default distribution of the individual sets before and after oversampling. The default distribution in training set after ADASYN oversampling is balanced, while the default distribution remains the same across the validation and test sets, which is desirable due to stratification.
 \begin{table}[H]
 \small
 \setlength{\tabcolsep}{8pt}
@@ -664,12 +664,12 @@ Therefore, default instances which either are managers or applied for a loan due
 \newpage
 \subsection{Optimal Binning and Weight--of--Evidence}
 \label{subsec:prep-optbinning}
-As already described in autoref{sec:optbinningtheory}, the optimal binning is employed as a data preprocessing step in this thesis.
+As already described in \autoref{sec:optbinningtheory}, the optimal binning is employed as a data preprocessing step in this thesis.
 Particularly, we employ \lstinline{BinningProcess} class from the \lstinline{optbinning} module in Python - such class optimally discretizes the continuous features into interval bins and optimally groups categorical features' categories into sub-group categories with respect to the target variable while maximizing Information Value, and afterwards such bins are encoded using WoE \citep{navas2020optimal}. Besides discretizing and grouping, it also creates special bins for capturing missing values.
 
 
 In this thesis, this data preprocessing step is wrapped into a custom function \lstinline{woe_binning()} in Python.
-First, the  \lstinline{BinningProcess} class is fitted on the training set only in order to avoid data leakage, while it learns the split points for binning, event rates, WoE coefficients etc, and afterwards, such fitted  \lstinline{BinningProcess} class is used to transform training, validation and test set.
+First, the  \lstinline{BinningProcess} class is fitted on the training set only in order to avoid data leakage, while it learns the split points for binning, event rates, WoE coefficients etc., and afterwards, such fitted  \lstinline{BinningProcess} class is used to transform training, validation and test set.
 
 
 The following \autoref{fig:woedist} depicts the distribution of WoE bins for each feature. It can be observed that binning captures either linear, non-linear, monotonic, or non-monotonic relationships between the default status and the numeric features in terms of WoE.
