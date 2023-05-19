@@ -1,4 +1,4 @@
-\begin{thebibliography}{88}
+\begin{thebibliography}{89}
 \newcommand{\enquote}[1]{``#1''}
 \providecommand{\natexlab}[1]{#1}
 
@@ -147,10 +147,8 @@
 \bibitem[{Doumpos \emph{et~al.}(2019)Doumpos, Lemonakis, Niklis, \&
   Zopounidis}]{doumpos2019analytical}
 \textsc{Doumpos}, M., C.~\textsc{Lemonakis}, D.~\textsc{Niklis}, \&
-  C.~\textsc{Zopounidis} (2019): \enquote{Analytical techniques in the
-  assessment of credit risk.}
-\newblock \emph{EURO Advanced Tutorials on Operational Research. Cham: Springer
-  International Publishing.[Google Scholar]} .
+  C.~\textsc{Zopounidis} (2019): \emph{Analytical Techniques in the Assessment
+  of Credit Risk: An Overview of Methodologies and Applications}.
 
 \bibitem[{Drahokoupil(2022)}]{drahokoupil2022application}
 \textsc{Drahokoupil}, J. (2022): \enquote{Application of the xgboost algorithm
@@ -193,6 +191,11 @@
 \textsc{Goethals}, S., D.~\textsc{Martens}, \& T.~\textsc{Evgeniou} (2022):
   \enquote{The non-linear nature of the cost of comprehensibility.}
 \newblock \emph{Journal of Big Data} \textbf{9(1)}: p.~30.
+
+\bibitem[{Gregory(2012)}]{gregory2012counterparty}
+\textsc{Gregory}, J. (2012): \emph{Counterparty credit risk and credit value
+  adjustment: A continuing challenge for global financial markets}.
+\newblock John Wiley \& Sons.
 
 \bibitem[{Hale(2019)}]{hale2019dont}
 \textsc{Hale}, J. (2019): \enquote{Don't sweat the solver stuff.}
