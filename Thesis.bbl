@@ -1,4 +1,4 @@
-\begin{thebibliography}{95}
+\begin{thebibliography}{98}
 \newcommand{\enquote}[1]{``#1''}
 \providecommand{\natexlab}[1]{#1}
 
@@ -41,6 +41,17 @@
 \textsc{Bathaee}, Y. (2017): \enquote{The artificial intelligence black box and
   the failure of intent and causation.}
 \newblock \emph{Harv. JL \& Tech.} \textbf{31}: p. 889.
+
+\bibitem[{Beerbaum \& Ahmad(2015)}]{beerbaum2015credit}
+\textsc{Beerbaum}, D.~O. \& S.~\textsc{Ahmad} (2015): \enquote{Credit risk
+  according to ifrs 9: Significant increase in credit risk and implications for
+  financial institutions.}
+\newblock \emph{Available at SSRN 2654120} .
+
+\bibitem[{Bellini(2019)}]{bellini2019ifrs}
+\textsc{Bellini}, T. (2019): \emph{IFRS 9 and CECL Credit Risk Modelling and
+  Validation: A Practical Guide with Examples Worked in R and SAS}.
+\newblock Academic Press.
 
 \bibitem[{Bera \emph{et~al.}(2021)Bera, Pratap, \&
   Verma}]{bera2021dimensionality}
@@ -499,6 +510,12 @@
 \textsc{Tatsat}, H., S.~\textsc{Puri}, \& B.~\textsc{Lookabaugh} (2020):
   \emph{Machine Learning and Data Science Blueprints for Finance}.
 \newblock O'Reilly Media.
+
+\bibitem[{Temim(2016)}]{temim2016ifrs}
+\textsc{Temim}, J. (2016): \enquote{The ifrs 9 impairment model and its
+  interaction with the basel framework.}
+\newblock \emph{Moody’s Analytics Risk Perspectives} \textbf{8(1)}: pp.
+  13--33.
 
 \bibitem[{Tepl\'{y} \& Polena(2020)}]{teply2020best}
 \textsc{Tepl\'{y}}, P. \& M.~\textsc{Polena} (2020): \enquote{Best
