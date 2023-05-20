@@ -1,4 +1,4 @@
-\begin{thebibliography}{94}
+\begin{thebibliography}{95}
 \newcommand{\enquote}[1]{``#1''}
 \providecommand{\natexlab}[1]{#1}
 
@@ -387,6 +387,13 @@
   support vector machines and comparisons to regularized likelihood methods.}
 \newblock \emph{Advances in large margin classifiers} \textbf{10(3)}: pp.
   61--74.
+
+\bibitem[{Porretta \emph{et~al.}(2020)Porretta, Letizia, \&
+  Santoboni}]{porretta2020credit}
+\textsc{Porretta}, P., A.~\textsc{Letizia}, \& F.~\textsc{Santoboni} (2020):
+  \enquote{Credit risk management in bank: Impacts of ifrs 9 and basel 3.}
+\newblock \emph{Risk Governance and Control: Financial Markets \& Institutions}
+  \textbf{10(2)}: pp. 29--44.
 
 \bibitem[{Pramoditha(2021)}]{pramoditha2021mitigate}
 \textsc{Pramoditha}, R. (2021): \enquote{How to mitigate overfitting with
