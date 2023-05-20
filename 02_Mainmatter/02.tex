@@ -1,16 +1,23 @@
 \chapter{Theoretical Background}
 \label{chap:two}
-This chapter provides an in-depth theoretical exposition of credit risk modeling and pertinent machine learning concepts. Fundamental terminologies, a variety of algorithms, and key evaluation metrics for gauging model performance are discussed in detail.
-Additionally, this chapter explores more specialized topics including ADASYN oversampling techniques for addressing imbalanced datasets, Bayesian Optimization for hyperparameter tuning, Optimal Binning as a data preprocessing step, and Sequential Feature Selection methods to optimize model inputs. This foundational knowledge will inform our subsequent data analysis and modeling process.
+This chapter provides an in-depth theoretical exploration of both credit risk and pertinent topics within the field of machine learning. The former descrribes basic credit risk definition, its key components, underlying regulation as well as the credit scoring approaches.
+The latter includes clarification of machine learning terminology for enhanced understanding in later chapters, an introduction to various machine learning algorithms used in empirical analysis of this thesis, and a definition of the metrics used to evaluate machine learning algorithms.
+
+This chapter also delves into more sophisticated machine learning topics including the ADASYN oversampling methodology for handling imbalanced data sets, Bayesian Optimization for tuning the models' hyperparameters, Optimal Binning as a method for preprocessing data, and Forward Sequential Feature Selection as a technique for selecting the most optimal features.
 
 \section{Credit Risk}
 \label{sec:creditrisk}
 
-max 3-4 pages for this section.
-\textbf{TBD}
+According to Gregory \citep{gregory2012counterparty}, credit risk can be defined as the risk that the client may be unable to unwilling to make a payment or fulfil loan contractual obligations, which is often known generically as default.
+Howeover, default can have various forms and definitation. 
+The most common definition of default is based on days past due (DPD), particularly, the default event occurs when client is more than 90 days overdue on his loan \citep{brezigar2021modeling}.
 
-According to Gregory \citep{gregory2012counterparty}, credit risk can be defined as the risk that the client may be unable to unwilling to make a payment or fulfil loan contractual obligations.
-
+Bessis \citep{bessis2015} also defines default event which can result from the following events:
+\begin{itemize}\setlength\itemsep{0em}
+    \item Temporary or indefinite delay in payments;
+    \item Restructuring of debt obligations due to the deterioration of the borrower's creditworthiness;
+    \item Bankruptcy.
+\end{itemize}
 The main objective in credit risk modelling is to estimate (expected) credit loss, which has 3 components and is defined as follows:
 \begin{equation}
     ECL = PD \times EAD \times LGD
@@ -82,7 +89,8 @@ For a probability score prediction, it uses a logistic (sigmoid) function, which
     \centering
     \caption{Logistic Function}\vspace{0.5em}
     \label{fig:sigmoid}\
-    \includegraphics[width=130mm]{Figures/sigmoid.jpg}
+    \includegraphics[width=110mm]{Figures/sigmoid.jpg}
+
     \centering{\begin{source}Author's simulation in Python\end{source}}\vspace{-1em}
 \end{figure}
 
@@ -91,22 +99,21 @@ The linear form of the logistic regression with $n$ features can be written as:
     \ln\left(\frac{P}{1-P}\right) = \beta_0  + \sum_{i=1}^{n} \beta_i X_i
 \end{equation}
 
-where $P$ is the probability of the occurred event, conditional on the set of given features. Let us denote $Y=1$ as an observed target instance where the event occurred (e.g., default), then:
+where $P$ is the probability of the occurred event, conditional on the set of given features.
+
+Let us denote $Y=1$ as an observed target instance where the event occurred (e.g., default), then:
 \begin{equation}\label{eq}
     P = \operatorname{Pr}(Y=1 \mid X)
 \end{equation}
 
 Therefore, the term within the natural logarithm is the odds or more particularly, the ratio of the probability of the event with respect to the probability of non-event, both conditional on the same set of given features.
 \begin{equation}\label{eq}
-    \begin{aligned}
-    \frac{P}{1-P}  {} & = \frac{\operatorname{Pr}(Y=1 \mid X_1,X_2,\ldots,X_n)}{1-\operatorname{Pr}(Y=1 \mid X_1,X_2,\ldots,X_n)} \\
-    & = \frac{\operatorname{Pr}(Y=1 \mid X_1,X_2,\ldots,X_n)}{\operatorname{Pr}(Y=0 \mid X_1,X_2,\ldots,X_n)}
-\end{aligned}
-    \end{equation}
+    \frac{P}{1-P}  = \frac{\operatorname{Pr}(Y=1 \mid X_1,X_2,\ldots,X_n)}{\operatorname{Pr}(Y=0 \mid X_1,X_2,\ldots,X_n)}
+\end{equation}
 
 Referring to the previous equations, solving for $P$, henceforth we get a final equation for computing the probability of occurred event with usage of logistic regression:
 \begin{equation}\label{eq}
-P = \frac{1}{1+e^{-\left(\beta_0 + \displaystyle\sum_{i=1}^{n} \beta_i X_i\right)}}
+P = \frac{1}{1+e^{-\left(\beta_0 + \sum_{i=1}^{n} \beta_i X_i\right)}}
 \end{equation}
 
 Regarding the loss function minimized when estimating the model's parameters, the logistic regression uses the cross-entropy loss function, also known as log loss.
@@ -126,13 +133,12 @@ We distinguish 3 types of regularization (penalty) types:
     L(y, p)_{L2}  = L(y, p) + C \sum_{j=1}^{k} w_j^2
 \end{equation}
 \begin{itemize}\setlength\itemsep{0em}
-    \item \textbf{Elastic Net} - Combination of L1 and L2 regularizations.
+    \item \textbf{Elastic Net} - Combination of L1 and L2 regularizations, where $\alpha$ indicates the weight of $L1$ penalty.
 \end{itemize}
 \begin{equation}\label{eq:elasticnet}
     L(y, p)_{ElasticNet} = L(y, p) + C \sum_{j=1}^{k} \left[ \alpha \mid w_j \mid + (1-\alpha) w_j^2 \right]
 \end{equation}
-where $\alpha$ indicates the weight of $L1$ penalty in the $ElasticNet$ penalty.
-
+\newpage
 \subsection{Decision Tree}
 \label{subsec:dt}
 
@@ -171,13 +177,14 @@ Both impurity measures are depicted in \autoref{fig:impurity} which we want to b
     \centering
     \caption{Gini Impurity vs. Entropy}\vspace{0.5em}
     \label{fig:impurity}\
-    \includegraphics[width=130mm]{Figures/impurity.jpg}
+    \includegraphics[width=110mm]{Figures/impurity.jpg}
+
     \centering{\begin{source}Author's simulation in Python\end{source}}\vspace{-1em}
 \end{figure}
 
 After the training, Decision Tree predicts the target variable based on the rules which are stored in the tree.
 The prediction process starts from the root node and continues until the leaf node is reached. Within the leaf node, the prediction can be either the most frequent class within the node or the probability of the occurrence of the event, i.e., the proportion of defaulters within given node.
-
+\newpage
 \subsection{Naive Bayes}
 
 Naive Bayes is a classification and probabilistic machine learning algorithm which is based on Bayes theorem which is defined as:
@@ -185,13 +192,8 @@ Naive Bayes is a classification and probabilistic machine learning algorithm whi
     \operatorname{Pr}\left(C=c \mid E \right) = \frac{\operatorname{Pr}\left(C=c\right) \times \operatorname{Pr}\left(E \mid C=c\right)}{\operatorname{Pr}\left(E\right)}
 \end{equation}
 
-where:
-\begin{itemize}\setlength\itemsep{0em}
-	\item $\operatorname{Pr}\left(C=c \mid E \right)$ is the posterior probability which is the probability that the target variable $C$ takes on the class of interest $c$ after taking the evidence $E$.
-	\item $\operatorname{Pr}\left(C=c\right)$  is the prior probability of the class $c$, i.e.,the probability we would assign to the class $c$ before seeing any evidence $E$.
-	\item $\operatorname{Pr}\left(E \mid C=c\right)$ is the probability of seeing the evidence $E$ conditional on the given class $c$.
-	\item $\operatorname{Pr}\left(E\right)$ is the probability of the evidence $E$.
-\end{itemize}
+where $\operatorname{Pr}\left(C=c \mid E \right)$ is the posterior probability which is the probability that the target variable $C$ takes on the class of interest $c$ after taking the evidence $E$, $\operatorname{Pr}\left(C=c\right)$  is the prior probability of the class $c$, i.e.,the probability we would assign to the class $c$ before seeing any evidence $E$,  $\operatorname{Pr}\left(E \mid C=c\right)$ is the probability of seeing the evidence $E$ conditional on the given class $c$,
+and $\operatorname{Pr}\left(E\right)$ is the probability of the evidence $E$.
 
 With regards to the binary classification, we can substitute $Y$ as a target variable instead $C$, and set of features $X$ which will refer to the set of evidence $E$., henceforth the probability of $Y$ using the Naive Bayes algorithm can be mathematically expressed as:
 \begin{equation}\label{eq}
@@ -254,8 +256,8 @@ There are several ways how to measure the distance. The most used one is the Euc
 d_{Euclidean}(x,y) = \sqrt{\sum\limits_{i=1}^{n} (x_i - y_i)^2}
 \end{equation}
 
-Other distance measure is the Manhattan distance measure, which is known as a city block distance, referring to the real-life problems, more particularly in order to reach particular destination, we have to take the path in between the blocks.
-Mathematically, it is similar to the Euclidean distance, but instead of squared differences, it sums the absolute differences between the data points.
+Other distance measure is the Manhattan distance measure, also known as a city block distance.
+In contrast to the Euclidean distance, but instead of squared differences, it sums the absolute differences between the data points.
 \begin{equation}\label{eq}
 d_{Manhattan}(x,y) = \sqrt{\sum\limits_{i=1}^{n} |x_i - y_i|}
 \end{equation}
@@ -282,6 +284,7 @@ Therefore, when applying majority voting, KNN would predict such instance as a r
 
     \centering{\begin{source}\citep{mucherino2009data}\end{source}}\vspace{-1em}
 \end{figure}
+\newpage
 \subsection{Random Forest}
 
 Random forest is an ensemble algorithm which is a collection of decision trees where each tree is independently trained on on a bootstrap sample of the training data \citep{han2011data}, i.e., on a on a set which is randomly sampled from the training data with replacement and which has the same size as the training data. In such way, each bootstrap sample is unique and can contain duplicates of the original data or does not have to contain all the original data.
@@ -293,15 +296,9 @@ Within classifying new instances, the random forest algorithm predicts the class
 \begin{equation}
     \operatorname{Pr}\left(Y=1 \mid X \right) = \frac{1}{B} \sum_{b=1}^{B} \operatorname{Pr}\left(Y=1 \mid X, T_b \right)
 \end{equation}
-where $B$ is the number of trees and $T_b$ is the $b$-th tree. Such algoritm is depicted on the \autoref{fig:rf-example} for the visual representation.
-\begin{figure}[H]
-    \centering
-    \caption{Random Forest Diagram}\vspace{0.5em}
-    \label{fig:rf-example}\
-    \includegraphics[width=120mm]{Figures/random-forest-diagram.jpg}
+where $B$ is the number of trees and $T_b$ is the $b$-th tree.
 
-    \centering{\begin{source}\citep{TIBCO2023}\end{source}}\vspace{-1em}
-\end{figure}
+\newpage
 \subsection{Gradient Boosting}
 In contrast to Random Forest whose trees are trained independently, i.e., in a parallel way, Gradient Boosting trains trees are trained in a sequential way, where each tree is trained on the residuals of the previous tree \citep{ayyadevara2018pro}, as a sequential building series of dependent weak learners, i.e., decision trees, in order to create a strong learner.
 
@@ -332,7 +329,7 @@ Afterwards, such algorithm outputs the final model $F_M(x)$ as a combination of 
 
 \subsection{Support Vector Machine}
 
-Support Vector Machine (henceforth SVM) is machine learning algorithm which can handle both linear and non--linear classification problems and tries to transform original training data into a higher dimension, where the class points are linearly separable by a (linear) decision boundary, also known as hyperplane \citep{han2011data}.
+Support Vector Machine (henceforth SVM) can handle both linear and non--linear classification problems and tries to transform original training data into a higher dimension, where the class points are linearly separable by a (linear) decision boundary, also known as hyperplane \citep{han2011data}.
 In particular, SVM tries to maximize the margin which is the distance between the separating hyperplane and the support vectors, i.e., the training data points which are equally closest and parallel to such hyperplane \citep{tatsat2020machine}, as shown in \autoref{fig:svm-example}.
 
 \begin{figure}[H]
@@ -361,19 +358,19 @@ In general, kernel function for the training tuples $(X_i,X_j)$ can be expressed
 \end{equation}
 where $\phi$ is mapping function for high--dimensional projection of the feature space. According to Patle \citep{patle2013svm}, the most common kernel functions. where $\gamma$ and $r$ and $d$ represent the kernel parameters, are:
 \begin{itemize}\setlength\itemsep{0em}
-    \item $d$--degree polynomial kernel:
+    \item \textbf{ $d$--degree polynomial kernel:}
 \end{itemize}
 \begin{equation}
     K\left(X_i,X_j\right) = (1+X_i \cdot X_k)^{d}
 \end{equation}
 \begin{itemize}\setlength\itemsep{0em}
-    \item Gaussian radial basis kernel:
+    \item \textbf{Gaussian radial basis kernel:}
 \end{itemize}
 \begin{equation}
     K(X_i,X_j) = \exp\left(-\gamma \|X_i-X_j\|^{2}\right)
 \end{equation}
 \begin{itemize}\setlength\itemsep{0em}
-    \item Sigmoid kernel:
+    \item \textbf{Sigmoid kernel:}
 \end{itemize}
 \begin{equation}
     K(X_i,X_j) = \tanh(\gamma X_i \cdot X_j + r)
@@ -385,14 +382,13 @@ Therefore, in order to maximize the margin as well as to allow for errors, we mi
 \end{equation}
 Hence, by minimizing $\frac{1}{2} \|W\|$ we minimize the weights (i.e, maximize the margin), by minimizing $\xi$ we reduce the number of training error, and by tuning $C$ we balance between these two properties \citep{hsu2002comparison}. 
 
-Note, that SVM does not predict probability scores by default, but rather predicted classes based on the location whether the given data points are above or below the hyperplane.
-In order to obtain SVM's probabilities. as stated by Lin \citep{lin2007note}, the Platt scaling \citep{platt1999probabilistic} can be applied as a surrogate model to estimate probability outputs. Particularly, it fits a logistic regression model with true labels as target variable and predictions produced by SVM as features to predict the probability scores.
-Hence:
+Note, that SVM does not predict probability scores by default, but rather predict classes based on the location whether the given data points are above or below the hyperplane.
+In order to obtain SVM's probabilities, as stated by Lin \citep{lin2007note}, the Platt scaling \citep{platt1999probabilistic} can be applied as a surrogate model to estimate probabilities. Particularly, it fits logistic regression with true labels $Y$ as target variable and predictions produced by SVM ($f(x)$) as features. Therefore the predicted probability score can be expressed as:
 \begin{equation}
     \operatorname{Pr}\left(Y | f(x) \right) = \frac{1}{1 + \exp\left(A \cdot f(x) + B \right)} 
 \end{equation}
-where, $A$ and $B$ are the coefficients of the logistic regression model.
 
+\newpage
 \subsection{Neural Network}
 \label{subssec:nn}
 Neural Network is a black--box machine learning algorithm which can handle very complex and non--linear relationship between. It contains several layers where each layer has a certain number of units (neurons). In general, we distinguish 3 type of layers as also visualized in \autoref{fig:nn-example}:
@@ -459,13 +455,11 @@ Let us denote the confusion matrix as $C\left(f\right)$ for classification algor
 Its elements can be denoted as $c_{i,j}$ where $i$ and $j$ refer to the row and column indices, respectively, or more particularly, $i$ refers to the actual class and $j$ to the class predicted by the classifier $f$.
 Each element of the confusion matrix refers to the number of instances corresponding to actual class $i$ and predicted class $j$ \citep{japkowicz2011evaluating}. For instance, the element $c_{2,1}$ would refer to the number of instances which have the actual class $2$ but have been classified as class $1$.
 Mathematically, the confusion matrix can be written as following:
-
 \begin{equation}\label{eq}
 C = {c_{i,j} = \sum_{l=1}^{m}[(y_l=i) \land (f(x_l)=j)]}
 \end{equation}
 
 Or either in matrix form as:
-
 \begin{equation}\label{eq}
     C_{i \times j} = \begin{bmatrix}
     c_{1,1} & c_{1,2} & \cdots & c_{1,j} \\
@@ -477,7 +471,6 @@ Or either in matrix form as:
 
 From the given matrix, the diagonal elements represent the numbers of correctly classified instances, whereas the non-diagonal elements represent the numbers of misclassified instances.
 Further, let us consider a binary classification - hence, the confusion matrix will have a form of $2\times 2$:
-
 \begin{equation}
     C_{2 \times 2} = \begin{bmatrix}
     c_{1,1} & c_{1,2} \\
@@ -487,7 +480,6 @@ Further, let us consider a binary classification - hence, the confusion matrix w
 
 
 We can this rewrite confusion matrix, assuming 2 target variable classes $Positive$ and $Negative$, as:
-
 \begin{equation}
     C_{2 \times 2} = \begin{bmatrix}
     TP & FN \\
@@ -503,8 +495,9 @@ where:
 	\item $TN$ is the True Negative which refers to the number of instances which corresponds to the actual class $Negative$ and indeed have been correctly classified as class $Negative$.
 \end{itemize}
 
-From such confusion matrix, we can derive several metrics which are further described on the following pages:
+From such confusion matrix, we can derive several metrics which are further described on the following pages.
 
+\newpage
 \subsubsection{Accuracy}
 Such metric ranges from 0 to 1 and it describes in relatives terms how many instances the model has correctly predicted. Thus, the goal is to minimize the number of False Positives and False Negatives, or in credit risk modelling terms, number of defaulters which the model has classified as non--defaulters and number of non--defaulters which the model has classified as defaulters.
 However, Accuracy is inappropriate metric for evaluation when having imbalanced class, i.e., where the distribution of the target variable is skewed.
@@ -525,6 +518,7 @@ Mathematically based on the confusion matrix elements, it can be computed as:
     Recall = \frac{TP}{TP + FN}
 \end{equation}
 
+\newpage
 \subsubsection{Precision}
 This metric describes in relative terms how many predicted $Positive$ instances are actually $Positive$ out of all the predicted $Positive$ instances. Thus, the goal is to minimize the number of False Positives, i.e., number of non--defaulters which the model has classified as defaulters.
 A lower value of precision could therefore indicates that either the model is not able to predict correctly the $True$ classes (low number of True Positives) or its prediction of $True$ classes is noisy (high number of False Positives).
@@ -541,6 +535,7 @@ Nevertheless, F1 score is deemed as more appropriate metric when dealing with im
     F1 = \frac{2 \times Precision \times Recall}{Precision + Recall} = \frac{2 \times TP}{2 \times TP + FP + FN}
 \end{equation}
 
+\newpage
 \subsubsection{Matthews Correlation Coefficient}
 The drawback of Recall, Precision and F1 score is they are asymmetric measures, i.e., they do not take into account the True Negatives.
 Therefore, such metrics' values will differ if we swap the positive and negative classes \citep{chicco2020advantages}, e.g., class 1 would indicate non--default and vice versa.
@@ -555,6 +550,8 @@ Thus, assuming that $x$ is the vector of True labels and $y$ is the vector of pr
     MCC = \frac{TP \times TN - FP \times FN}{\sqrt{(TP + FP) (TP + FN) (TN + FP) (TN + FN)}}
 \end{equation}
 Matthews correlation coefficient ranges from -1 to 1, where 1 indicates perfect model's predictions, -1 indicates that model misclassifies all the instances and 0 indicates that model's predictions are not better than random guessing.
+
+\newpage
 \subsection{ROC Curve and AUC}
 \subsubsection{ROC Curve}
 In order to derive Area Under the Curve (henceforth AUC), first we need to define Receiver Operating Characteristics (henceforth ROC) curve.
@@ -577,9 +574,6 @@ On the other hand, if the probability is 0, the threshold will be 0 as well and 
 
 Thus, based on each threshold, the $TPR$ and $FPR$ will be to coordinates for single point within the graph and based on such points, we can construct the ROC curve, which can be depicted in \autoref{fig:roccurvetheory}.
 Note that the diagonal line represents a random model which randomly guesses the $Positive$ class half the time in such way, that $FPR$ and $TPR$ are the same, i.e., 0.5 \citep{fawcett2006introduction}.
-Logically, a decent model should perform better than the random model, thus it the ROC curve should be above the diagonal line.
-Intuitively, the best possible theoretical model would have $TPR$ of 1 and $FPR$ of 0, meaning that all the $True$ actual classes should be predicted as $True$ and all the $False$ actual classes should not be classified as $True$
- Within the ROC curve, the given curve reaches the left top corner which corresponds to the coordinates of $TPR$ and $FPR$.
 
  \begin{figure}[H]
     \centering
@@ -589,10 +583,16 @@ Intuitively, the best possible theoretical model would have $TPR$ of 1 and $FPR$
 
     \centering{\begin{source}Author's results in Python.\end{source}}\vspace{-1em}
 \end{figure}
+
+Logically, a decent model should perform better than the random model, thus it the ROC curve should be above the diagonal line.
+Intuitively, the best possible theoretical model would have $TPR$ of 1 and $FPR$ of 0, meaning that all the $True$ actual classes should be predicted as $True$ and all the $False$ actual classes should not be classified as $True$
+ Within the ROC curve, the given curve reaches the left top corner which corresponds to the coordinates of $TPR$ and $FPR$.
+ \newpage
 \subsubsection{AUC}
 
 $AUC$ is basically the representation of ROC curve as a single number as it aggregates the performance on all possible thresholds ranging from 0 to 1.
 $AUC$ can be interpreted as the probability that the randomly chosen actual $True$ instance is ranked higher than the randomly chosen actual $False$ instance \citep{janitza2013auc}.
+
 As the $AUC$ is an area present underneath the ROC curve, mathematically, it can be computed with the definite integral where $x$ is the given threshold:
 \begin{equation}\label{eq}
     AUC = \int_{0}^{1} TPR \left(FPR^{-1}\left(x \right)\right) dx
@@ -601,13 +601,15 @@ As the $AUC$ is an area present underneath the ROC curve, mathematically, it can
 
 Since ROC curve is a probability curve, thus it is considering distribution curve of $TP$ and distribution curve of $TN$, separated by particular threshold - hence, $TP$ would have probability scores above the given thresholds, whereas $TN$ would have probability scores below the threshold.
 If these curves do not overlap, meaning the model can perfectly distinguish between the $Positive$ and $Negative$ values, therefore the $AUC$ would be 1 and the ROC curve would reach the left top corner.
+
 However, this idealistic situation does not occur in the practice at all, but rather the two distributions are overlapping since the misclassification of the classes takes the place.
 The bigger overlap, the lower $AUC$ is.
+
 If the distributions are completely overlapping, it implies the $AUC$ of 0.5, meaning that the model cannot distinguish between the $Positive$ and $Negative$ classes, which is the worst scenario.
 On the other hand, if the distributions are totally opposite (meaning that the $TP$ instances would have probability scores below the given threshold, whereas the $TN$ instances would have probability scores above the given threshold), the $AUC$ would be 0 since the model is predicting the $Positive$ actual classes instead of $Negative$ and vice versa \citep{narkhede2018understanding}.
 
 
-
+\newpage
 \subsection{Kolmogorov-Smirnov Distance}
 
 The Kolmogorov-Smirnov (KS) Distance is non--parametric metric for assessing discriminant power of a model as it measures distance between the cumulative distribution functions (henceforth CDF) between two classes, and is quantified as a maximum vertical absolute difference between such two CDF's \citep{adeodato2016equivalence}.
@@ -630,8 +632,9 @@ The Somers' D is a metric which is part of the Kendall family of ranking measure
 \begin{equation}\label{eq}
     \tau\left(X,Y\right) = \text{E} \left[ \text{sign}(X_i - X_j) \text{sign} (Y_i - Y_j) \right]
 \end{equation}
-Equivalently, Kendall's $\tau_{a}$ can be defined as the difference between the probability that the two X-Y pairs are \textit{concordant} and the probability that they are \textit{discordant}. X-Y pair is concordant if the larger of the $X$ values is paired with with larger of the $Y$ values, i.e, $X_i < X_j$ and $Y_i < Y_j$.
-In contrast, X-Y pair is discordant if the larger of $X$ values is associated with smaller of $Y$ values or vice versa, i.e, $X_i < X_j$ and $Y_i > Y_j$, or $X_i > X_j$ and $Y_i < Y_j$ \citep{newson2002parameters}.
+Equivalently, Kendall's $\tau_{a}$ can be defined as the difference between the probability that the two X-Y pairs are \textit{concordant} and the probability that they are \textit{discordant}. X-Y pair is concordant if the larger of the $X$ values is paired with with larger of the $Y$ values, i.e., $X_i < X_j$ and $Y_i < Y_j$.
+In contrast, X-Y pair is discordant if the larger of $X$ values is associated with smaller of $Y$ values or vice versa, i.e., $X_i < X_j$ and $Y_i > Y_j$, or $X_i > X_j$ and $Y_i < Y_j$ \citep{newson2002parameters}.
+\newpage
 Therefore, Somers' D can be defined as the difference between the two conditional probabilities of concordance and discordance, given that the two $X$ values are unequal \citep{newson2014interpretation} as follows:
 \begin{equation}
     D\left(Y \mid X\right) = \frac{\tau\left(X,Y\right)}{\tau\left(X,X\right)}
@@ -645,6 +648,8 @@ Henceforth, Brier Score Loss is defined as a mean squared error between the $Tru
     \text{Brier Score Loss} = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2
 \end{equation}
 Brier Score Loss ranges from 0 to 1, where the the ideal scenario would be Brier Score Loss of 0 - in such case, the model would be perfect predictive power.
+
+\newpage
 \subsection{Log Loss}
 \label{subsubsec:logloss}
 
@@ -664,7 +669,7 @@ Logically, the lower Log loss value, the better performance of the model is. As 
 \end{figure}
 
 
-
+\newpage
 \section{ADASYN Oversampling}
 \label{sec:adasyntheory}
 Since this thesis pertains to the data set of defaulted loans, which target variable distribution is heavily skewed, it is needed to emphasize the imbalanced class issue, i.e., the class is strongly imbalanced as the frequency distribution of the majority class is significantly higher than the frequency distribution of the minority class. In case of defaulted loans, the majority class would be non--default status and the minority class would be default status.
@@ -730,7 +735,8 @@ In this thesis, we employ the \lstinline{BinningProcess} from the \lstinline{opt
 This approach involves grouping the values of a continuous variable into discrete intervals, or "bins", based on their relationship with the target variable.
 Similarly, for categorical features, the approach involves grouping the categories based on their relationship with the target variable.
 In general, the optimal binning is solved by iteratively merging an initial granular discretization until imposed constraints are satisfied. Particularly, the optimal binning process consists of two phases - pre--binning process (for generating initial granular discretization) and subsequent optimization (for satisfying imposed constraints).
-The former phase usually uses decision tree to generate initial split points to create pre--bins which are further merged while maximizing Information Value (also known as Jeffreys' divergence) while accounting for the constraints. As Navas--Palencia states \citep{navas2020optimal}, Such constraints are:
+The former phase usually uses decision tree to generate initial split points to create pre--bins which are further merged while maximizing Information Value (also known as Jeffreys' divergence) while accounting for the constraints.
+As Navas--Palencia states \citep{navas2020optimal}, such constraints are:
 \begin{itemize}\setlength\itemsep{0em} 
     \item \textbf{Creation of separate bins for missing values:} Since missing values can have a significant impact on the target variable, hence is important to create a separate bin for them.
     \item \textbf{Minimum bin size constraint:} At least 5 \% of the total number of instances should be observed within given bin. Such constraint ensures a bin's representativness.
@@ -755,6 +761,7 @@ According to Navas--Palencia \citep{navas2020optimal}, the WoE for bin $i$ can b
 where $r^{ND}_i$ is the number of non--default instances in given bin $i$, $r^{D}_i$ is the number of default instances in the given bin $i$, $r^{ND}_T$ is the total number of non--default instances in whole sample and $r^{D}_T$ is the total number of default instances in whole sample.
 Thus, positive WoE value is indicates larger distribution of non--defaults, i.e. higher likelihood of non--default, while negative WoE value indicates larger distribution of defaults, i.e., higher likelihood of default.
 
+\newpage
 \section{Hyperparameter Bayesian Optimization}
 \label{sec:bayesoptheory}
 Most of the machine learning models are configured by a set of hyperparameters which are not learned during the training process but need to be set beforehand. Such hyperparameters' values must be carefully chosen and considerably impact model's performance \citep{bischl2023hyperparameter}.
@@ -798,6 +805,7 @@ where $\sigma\left(x\right)$ is the uncertainty, $\mu\left(x\right)$ is the expe
 Moreover, EI allows to balance between exploration and exploitation, where the former refers to the searching for the uknown regions where the objective function may have higher values, i.e, the hyperparameters' values which have not been evaluated yet, while the latter refers to the searching near the best observed values of the objective function, i.e.,near by the hyperparameters' values which have been evaluated already.
 Referring to Owen \citep{owen2022hyperparameter}, higher expected performance $\mu\left(x\right)$ compared to the current best value $f\left(x^{+}\right)$ will favor the exploitation process, whereby a very high uncertainty $\sigma\left(x\right)$ will support exploration process.
 
+\newpage
 \section{Forward Sequential Feature Selection}
 \label{sec:fsfstheory}
 Instead of using all the features in data set, we use only the subset of the most relevant ones, which can further reduce the dimensionality of data set, boost model performance, save computational resources and reduce overfitting. Such process is called feature selection and can be defined as the process of detecting the most relevant features and discarding the noisy redundant ones. \citep{bolon2015feature}.

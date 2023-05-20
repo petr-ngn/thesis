@@ -1615,13 +1615,13 @@ INPUT ./02_Mainmatter/02.tex
 INPUT 02_Mainmatter/02.tex
 INPUT ./02_Mainmatter/02.tex
 INPUT 02_Mainmatter/02.tex
-INPUT c:/tex/texlive/texmf-dist/fonts/tfm/public/lm/ec-lmr12.tfm
-INPUT c:/tex/texlive/texmf-dist/fonts/tfm/public/lm/ec-lmbx12.tfm
 INPUT c:/tex/texlive/texmf-dist/tex/latex/lm/ts1lmr.fd
 INPUT c:/tex/texlive/texmf-dist/tex/latex/lm/ts1lmr.fd
 INPUT c:/tex/texlive/texmf-dist/tex/latex/lm/ts1lmr.fd
 INPUT c:/tex/texlive/texmf-dist/tex/latex/lm/ts1lmr.fd
 INPUT c:/tex/texlive/texmf-dist/fonts/tfm/public/lm/ts1-lmr12.tfm
+INPUT c:/tex/texlive/texmf-dist/fonts/tfm/public/lm/ec-lmr12.tfm
+INPUT c:/tex/texlive/texmf-dist/fonts/tfm/public/lm/ec-lmbx12.tfm
 INPUT ./Figures/sigmoid.jpg
 INPUT ./Figures/sigmoid.jpg
 INPUT Figures/sigmoid.jpg
@@ -1644,11 +1644,6 @@ INPUT ./Figures/KNN_example.jpg
 INPUT Figures/KNN_example.jpg
 INPUT ./Figures/KNN_example.jpg
 INPUT ./Figures/KNN_example.jpg
-INPUT ./Figures/random-forest-diagram.jpg
-INPUT ./Figures/random-forest-diagram.jpg
-INPUT Figures/random-forest-diagram.jpg
-INPUT ./Figures/random-forest-diagram.jpg
-INPUT ./Figures/random-forest-diagram.jpg
 INPUT ./Figures/svmhyperplane.jpg
 INPUT ./Figures/svmhyperplane.jpg
 INPUT Figures/svmhyperplane.jpg

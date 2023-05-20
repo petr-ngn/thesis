@@ -109,6 +109,12 @@
   Conference, Amsterdam, The Netherlands, June 3--5, 2020, Proceedings, Part IV
   20,} pp. 74--87. Springer.
 
+\bibitem[{Brezigar-Masten \emph{et~al.}(2021)Brezigar-Masten, Masten, \&
+  Volk}]{brezigar2021modeling}
+\textsc{Brezigar-Masten}, A., I.~\textsc{Masten}, \& M.~\textsc{Volk} (2021):
+  \enquote{Modeling credit risk with a tobit model of days past due.}
+\newblock \emph{Journal of Banking \& Finance} \textbf{122}: p. 105984.
+
 \bibitem[{Brownlee(2020)}]{Brownlee2020}
 \textsc{Brownlee}, J. (2020): \enquote{Recursive feature elimination (rfe) for
   feature selection in python.}
@@ -528,11 +534,6 @@
   classification algorithms in peer-to-peer lending.}
 \newblock \emph{The North American Journal of Economics and Finance}
   \textbf{51}: p. 100904.
-
-\bibitem[{TIBCO-Software(2023)}]{TIBCO2023}
-\textsc{TIBCO-Software} (2023): \enquote{What is a random forest?}
-\newblock \url{https://www.tibco.com/reference-center/what-is-a-random-forest}.
-\newblock Retrieved April 30, 2023.
 
 \bibitem[{Van~Gestel \& Baesens(2009)}]{van2009credit}
 \textsc{Van~Gestel}, T. \& B.~\textsc{Baesens} (2009): \emph{Credit Risk
