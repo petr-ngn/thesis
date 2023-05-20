@@ -4,6 +4,7 @@ This chapter provides an in-depth theoretical exposition of credit risk modeling
 Additionally, this chapter explores more specialized topics including ADASYN oversampling techniques for addressing imbalanced datasets, Bayesian Optimization for hyperparameter tuning, Optimal Binning as a data preprocessing step, and Sequential Feature Selection methods to optimize model inputs. This foundational knowledge will inform our subsequent data analysis and modeling process.
 
 \section{Credit Risk}
+\label{sec:creditrisk}
 
 max 3-4 pages for this section.
 \textbf{TBD}
@@ -17,13 +18,19 @@ The main objective in credit risk modelling is to estimate (expected) credit los
 where $PD$ is the probability of default indicating likelihood of the client will not meet scheduled loan payments, $EAD$ is the exposure at at default is the amount size that is due to be repaid at the of default, and $LGD$ is loss given default indicating the loss in case of default occurrence \citep{doumpos2019analytical}.
 
 \subsection{Regulation}
-\textbf{TBD}
-
 \subsubsection{Basel II/III}
+\subsubsection{Standardized Approach}
+Basel Commitee on Banking Supervision (BCBS) introduced Capital Accord Basel II and Basel III in 2004 and 2010, respectively \citep{shakdwipee2017basel}, with a goal to set higher risk management and internal control standards for banks \citep{witzany2017credit}.
+Regarding credit risk modelling, the former Accord introduced two approaches how to model credit risk:
+\begin{itemize}\setlength\itemsep{0em}
+    \item \textbf{Standardized Approach} - The simplest approach which imposes risk weights based ot assets based on the external credit ratings from credit rating agencies (CRA's) \citep{konno2016alternative}.
+    \item \textbf{Internal Ratings Based (IRB)  Approach} - More sophisticated approach which allows to use internal rating systems to assess the parameters such as PD, LGD and EAD \citep{baesens2016credit}. Such approach is further divided into two sub-approaches:
+    \begin{itemize}\setlength\itemsep{0em}
+        \item \textbf{Foundation IRB approach} - Only PD is internally estimated by a bank, while LGD and EAD are determined by the Basel Accord or provided by the local regulator \citep{baesens2016credit}.
+        \item \textbf{Advanced IRB approach} - All the parameters, i.e., PD, LGD and EAD are estimated internally by a bank itself and also subject to regulatory satisfaction \citep{joseph2013advanced}.
+    \end{itemize}
+\end{itemize}
 
-\subsubsection{Standardized Approach}
-\subsubsection{Standardized Approach}
-\subsubsection{Standardized Approach}
 \subsubsection{IFRS 9}
 \textbf{TBD}
 
@@ -429,6 +436,7 @@ The error is then backpropagated through the network and the weights are updated
 
 \newpage
 \section{Evaluation Metrics}
+\label{sec:evaltheory}
 
 This section focuses on particular measures through which it is possible to determine a predictive power of model in terms of its performance.
 The are many ways, how to evaluate the model's performance, therefore, only the most common ones and the most relevant are further described.
@@ -797,4 +805,19 @@ However, the drawback of RFE is that it always requires feature importances or c
 Instead, the feature selection is performed with Sequential Feature Selection (henceforth SFS). Such method is iteratively adding (or removes) features the set sequentially. Hence, there are two approaches, Forward SFS and Backward SFS.
 The former approach keeps adding features to the set until the desired number of features is reached, while the latter approach starts with the whole set of features and removes them until the desired number of features is reached.
 In this thesis, Forward SFS is used since it was way more computationally efficient than Backward SFS within author's analysis. In particular, Forward SFS starts with an empty set of features and afterwards, variant features are sequentially added until the desired number of features is reached  or until the addition of extra features does not reduce the criterion \citep{Verma2021}. 
-According to Scikit-learn's documentation \citep{sfs}, at each stage, SFS chooses the best feature to add based on the cross--validation score. 
+According to Scikit-learn's documentation \citep{sfs}, at each stage, SFS chooses the best feature to add based on the cross--validation score.
+
+\newpage
+\section{Theoretical Summary}
+
+In this chapter, we we have introduced the theoretical background of the thesis.
+In particular, in \autoref{sec:creditrisk}, we have described the traditional credit risk parameters, i.e., PD, LGD, and EAD, as well as the credit risk regulation regarding Basel II/III and IFRS 9, and also scoring methods, namely application and behavioral scoring.
+Pertaining to the machine learning part, its terminology has been introduced in order to avoid any misunderstanding in the following chapters \autoref{sec:mlterms}.
+
+Furthermore, as classification algorithms, following 8 algorithms have been described in \autoref{sec:algorithms} and are also employed in empirical analysis of this thesis: Logistic Regression, Decision Tree, Gaussian Naive Bayes, KNN, Random Forest, Gradient Boosting, SVM and Neural Network.
+
+For assessment of model's performance, we have defined following metrics in \autoref{sec:evaltheory}, which are used in empirical analysis of this thesis: Accuracy, Precision, Recall, F1 score, Matthews Correlation Coefficient, AUC, Kolmogorov--Smirnov Distance, Somers' D, Brier Score Loss and Log Loss.
+
+Moreover, another advanced machine learning techniques have been presented, particularly, ADASYN oversampling for dealing with imblanaced, i.e., skewed distribution of the target variable (\autoref{sec:adasyntheory}), Optimal Binning for data preprocessing using discretization with respect to the target variable (\autoref{sec:optbinningtheory}),
+Bayesian Optimization for hyperparameter tuning of models (\autoref{sec:bayesoptheory}), and lastly, Forward Sequential Feature Selection for selecting subsets of optimal features (\autoref{sec:fsfstheory}).
+All these techniques are employed in empirical analysis of this thesis as welll.

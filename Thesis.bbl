@@ -1,4 +1,4 @@
-\begin{thebibliography}{89}
+\begin{thebibliography}{92}
 \newcommand{\enquote}[1]{``#1''}
 \providecommand{\natexlab}[1]{#1}
 
@@ -257,6 +257,11 @@
   algorithms: a classification perspective}.
 \newblock Cambridge University Press.
 
+\bibitem[{Joseph(2013)}]{joseph2013advanced}
+\textsc{Joseph}, C. (2013): \emph{Advanced credit risk analysis and
+  management}.
+\newblock John Wiley \& Sons.
+
 \bibitem[{Kaushik(2016)}]{kaushik2016introduction}
 \textsc{Kaushik}, S. (2016): \enquote{Introduction to feature selection methods
   with an example (or how to select the right variables?).}
@@ -269,6 +274,11 @@
   binary classification using genetic algorithm: An application to solve a
   credit scoring problem.}
 \newblock \emph{Expert Systems} \textbf{40(3)}: p. e13203.
+
+\bibitem[{Konno \& Itoh(2016)}]{konno2016alternative}
+\textsc{Konno}, Y. \& Y.~\textsc{Itoh} (2016): \enquote{An alternative to the
+  standardized approach for assessing credit risk under the basel accords.}
+\newblock \emph{Cogent Economics \& Finance} \textbf{4(1)}: p. 1220119.
 
 \bibitem[{Kornbrot(2014)}]{kornbrot2014point}
 \textsc{Kornbrot}, D. (2014): \enquote{Point biserial correlation.}
@@ -461,6 +471,12 @@
 \newblock
   \url{https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html#sklearn.ensemble.RandomForestClassifier}.
 \newblock Retrieved April 28, 2023.
+
+\bibitem[{Shakdwipee \& Mehta(2017)}]{shakdwipee2017basel}
+\textsc{Shakdwipee}, P. \& M.~\textsc{Mehta} (2017): \enquote{From basel i to
+  basel ii to basel iii.}
+\newblock \emph{International Journal of New Technology and Research (IJNTR)}
+  \textbf{3(1)}: pp. 66--70.
 
 \bibitem[{Subasi(2020)}]{subasi2020practical}
 \textsc{Subasi}, A. (2020): \emph{Practical machine learning for data analysis
