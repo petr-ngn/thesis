@@ -9,17 +9,17 @@
 \contentsline {subsubsection}{IFRS 9}{3}{section*.16}%
 \contentsline {subsection}{\numberline {2.1.2}Credit Scoring}{4}{subsection.2.1.2}%
 \contentsline {subsubsection}{Application Scoring}{4}{section*.17}%
-\contentsline {subsubsection}{Behavioral Scoring}{4}{section*.18}%
-\contentsline {section}{\numberline {2.2}Machine Learning Terminology}{5}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Algorithms}{6}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Logistic Regression}{6}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}Decision Tree}{8}{subsection.2.3.2}%
+\contentsline {subsubsection}{Behavioral Scoring}{5}{section*.18}%
+\contentsline {section}{\numberline {2.2}Machine Learning Terminology}{6}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Algorithms}{7}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Logistic Regression}{7}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Decision Tree}{9}{subsection.2.3.2}%
 \contentsline {subsection}{\numberline {2.3.3}Naive Bayes}{11}{subsection.2.3.3}%
-\contentsline {subsection}{\numberline {2.3.4}K-Nearest Neighbors}{13}{subsection.2.3.4}%
+\contentsline {subsection}{\numberline {2.3.4}K-Nearest Neighbors}{14}{subsection.2.3.4}%
 \contentsline {subsection}{\numberline {2.3.5}Random Forest}{15}{subsection.2.3.5}%
 \contentsline {subsection}{\numberline {2.3.6}Gradient Boosting}{16}{subsection.2.3.6}%
 \contentsline {subsection}{\numberline {2.3.7}Support Vector Machine}{17}{subsection.2.3.7}%
-\contentsline {subsection}{\numberline {2.3.8}Neural Network}{19}{subsection.2.3.8}%
+\contentsline {subsection}{\numberline {2.3.8}Neural Network}{20}{subsection.2.3.8}%
 \contentsline {section}{\numberline {2.4}Evaluation Metrics}{22}{section.2.4}%
 \contentsline {subsection}{\numberline {2.4.1}Confusion Matrix and Derived Metrics}{22}{subsection.2.4.1}%
 \contentsline {subsubsection}{Accuracy}{23}{section*.26}%

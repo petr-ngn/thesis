@@ -38,9 +38,13 @@ IFRS 9 also outlines three--stages approach considering changes in credit qualit
     \item \textbf{Stage 2} - The financial instrument is considered to be in Stage 2 if it has experienced a SICR since initial recognition, but it does not have objective evidence of impairment at the reporting date.
     \item \textbf{Stage 3} -  The financial instrument is considered to be in Stage 3 if it has objective evidence of impairment at reporting date.
 \end{itemize}
+In case of Stage 1, 12--month ECL is calculated, while in case of Stage 2 and Stage 3, lifetime ECL is calculated \citep{gornjak2017ifrs}.
+While the aim of IFRS 9 regards the financial reporting which should follow a general purpose to provide information to those outside the firm to support decision usefulness, whereas Basel II/III seeks to decrease the frequency and cost of bank failuers and to protect the financial system as whole by limiting the frequency and cost of systemic crises \citep{beerbaum2015credit}.
+
+For more information about the differences between IFRS 9 and Basel II/III, please, refer to the study of Beerbaum and Ahmad \citep{beerbaum2015credit}.
 
 \subsection{Credit Scoring}
-Credit scoring is an assessment of the credit quality of the client which uses techniques for finding the criteria that best discriminate between defaulters and non--defaulters \citep{bessis2015}.
+Credit scoring is an assessment of the credit quality of the client which uses techniques for finding the criteria that best discriminate between defaulters and non--defaulters \citep{bessis2015}. From such perspective, we distinguish two basic types of credit scoring:
 
 \subsubsection{Application Scoring}
 As the name indicates, the application scoring is used to assess the creditworthiness of the client at the moment of loan application  whiuch supports the decision whether a bank should approve or reject the loan application \citep{baesens2016credit}. The most common variables which are used in application scoring and can be acquired from the loan application are for instance: age, gender, marital status, income, employment status and others \citep{baesens2016credit}.
@@ -52,18 +56,18 @@ Behavioral scoring takes into account the observed client's recent or past behav
 \label{sec:mlterms}
 In order to avoid confusion and ensure clear understanding in this thesis, it is necessary to provide precise definitions for machine learning terminology that may be easily confused with statistical terminology due to their similar meanings but different naming conventions.
 \begin{itemize}\setlength\itemsep{0em}
-	\item \textbf{Target variable} - Dependent variable, output variable or response variable, which we want to predict or classify ($Y$). In this case we want to predict a defaut status (Yes or No).
+	\item \textbf{Target variable} - Dependent variable, output variable or response variable, which we want to predict or classify ($Y$).
 	\item \textbf{Feature} - Predictor, attribute, independent variable or explanatory variable ($X$), which we want to use to predict the target variable $Y$. In tabular data, one feature is represented by one column.
 	\item \textbf{instance} - Observation, example, record, data point, case or a row in tabular data.
 	\item \textbf{Training} - Fitting process, learning process or estimation of the model's parameters using the training data.
-	\item \textbf{Weights} - Coefficient or parameters learnt during the training process.
 	\item \textbf{Supervised Learning} - Process reflecting the abilty of an algorithm to generelize knowledge from the data having with target or label cases, so that the algorithm can be used to predict new (unlabelled) cases \citep{alloghani2020supervised}.
-    In other words, the learning process is supervised by the target variable, hence the output model can be used to predict the target variable for new data, either using classification (when having categorical target variable) or regression (when having continuous target variable).
-	\item \textbf{Cross--validation} - When being limited by the small data set size, the data is split into $k$ folds (subsets) and the model is trained $k$ times, each time on $k-1$ folds and validated (evaluated) on the remaining fold, in order to obtain reliable estimates of the model generalization error \citep{tatsat2020machine}, or so called cross-validation score.
-	\item \textbf{Overfitting} - Situation, when the model has small error during the training, but also a high tet error \citep{forsyth2019applied}. The model is too complex and just purely memorizes the data on which is trained on, but cannot generalize and predict well on unseen data.
+    In other words, the learning process is supervised by the target variable, hence the model can be used to predict the target variable for new data, either using classification (when having categorical target variable) or regression (when having continuous target variable).
+	\item \textbf{Cross--validation} - The data is split into $k$ folds (subsets) and the model is trained $k$ times, each time on $k-1$ folds and evaluated on the remaining fold, in order to obtain reliable estimates of the model generalization error \citep{tatsat2020machine}, or so called cross-validation score.
+	\item \textbf{Overfitting} - Situation, when the model has small error during the training, but also a high test error \citep{forsyth2019applied}. The model is too complex and just purely memorizes the data on which is trained on, but cannot generalize well on unseen data.
 	\item \textbf{Black--box model} - Models which are very accurate but also are very complex hard to interpret \citep{pintelas2020grey}.
 	\item \textbf{White--box model} - Models which are comprehensible and transparent but usally are less accurate \citep{pintelas2020grey}.
 \end{itemize}
+\newpage
 
 \section{Algorithms}
 \label{sec:algorithms}

@@ -1,4 +1,4 @@
-\begin{thebibliography}{98}
+\begin{thebibliography}{99}
 \newcommand{\enquote}[1]{``#1''}
 \providecommand{\natexlab}[1]{#1}
 
@@ -43,10 +43,10 @@
 \newblock \emph{Harv. JL \& Tech.} \textbf{31}: p. 889.
 
 \bibitem[{Beerbaum \& Ahmad(2015)}]{beerbaum2015credit}
-\textsc{Beerbaum}, D.~O. \& S.~\textsc{Ahmad} (2015): \enquote{Credit risk
+\textsc{Beerbaum}, D. \& S.~\textsc{Ahmad} (2015): \enquote{Credit risk
   according to ifrs 9: Significant increase in credit risk and implications for
   financial institutions.}
-\newblock \emph{Available at SSRN 2654120} .
+\newblock \emph{SSRN Electronic Journal} .
 
 \bibitem[{Bellini(2019)}]{bellini2019ifrs}
 \textsc{Bellini}, T. (2019): \emph{IFRS 9 and CECL Credit Risk Modelling and
@@ -206,6 +206,12 @@
 \textsc{Goethals}, S., D.~\textsc{Martens}, \& T.~\textsc{Evgeniou} (2022):
   \enquote{The non-linear nature of the cost of comprehensibility.}
 \newblock \emph{Journal of Big Data} \textbf{9(1)}: p.~30.
+
+\bibitem[{Gornjak(2017)}]{gornjak2017ifrs}
+\textsc{Gornjak}, M. (2017): \enquote{Comparison of ias 39 and ifrs 9: The
+  analysis of replacement.}
+\newblock \emph{International journal of managament, knowledge and learning}
+  \textbf{6}.
 
 \bibitem[{Gregory(2012)}]{gregory2012counterparty}
 \textsc{Gregory}, J. (2012): \emph{Counterparty credit risk and credit value
