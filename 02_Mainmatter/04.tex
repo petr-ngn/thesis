@@ -6,7 +6,7 @@ This chapter focuses on the main part of this thesis, particularly on the practi
 \item \textbf{Data Split} - Focus on the splitting of the data which are used separaterly in diferrent tasks such as model training, hyperparameter tuning, feature selection, model selection and model evaluation.
 \item \textbf{Optimal Binning and WoE Encoding} - Focus on the optimal binning and the WoE encoding of the features as the main part of the feature preprocessing.
 \item \textbf{Feature Selection} Focus on the feature selection in order to reduce the dimensionality of the data and to improve the performance of the machine learning models - each input model is tuned with Bayesian Optimization.
-\item \textbf{Model Selection} -Focusd on the model selection in order to find the best model based on the ranking - each input model is tuned with Bayesian Optimization on the subsets of selected features.
+\item \textbf{Model Selection} -Focus on the model selection in order to find the best model based on the ranking - each input model is tuned with Bayesian Optimization on the subsets of selected features.
 \item \textbf{Model Recalibration (Evaluation)} - Focus on the recalibration of the final model by re-training it on the joined training and validation sets, which will be further evaluated.
 \item \textbf{Model Evaluation} - Focus on the evaluation of the final model on the unseen data from test set in order to assess model's predictive power.
 \item \textbf{Model Recalibration (Deployment)} - Focus on the final recalibration of the final model by re-training it on the joined training, validation and test sets, which will be further deployed into a production.
@@ -69,13 +69,13 @@ The repository structure is shown in \autoref{fig:repostructure}.
 
 
 \begin{itemize}\setlength\itemsep{0em}
-\item \texttt{data} - directory containing the raw data, partially preprocessed data (\texttt{interim}) and the final preprocessed data.
-\item \texttt{flask\_app} - directory containing the Flask application which is used for the deployment of the model. Particularly, it contains the \texttt{app.py} file which is the main back-end file of the application, the \texttt{templates} and \texttt{static} subdirectories which contain the front-end HTML files for the application, and the \texttt{inputs} subdirectory which contains the input dictionary for the application (such as the trained model, threshold, final features etc.).
-\item \texttt{models} - directory containing the the subdirectories of the trained and fitted objects for features preprocessing, feature selection and model selection, including the final objects used in deployment.
-\item \texttt{plots} - directory containing the plots generated within the main Python notebook.
-\item \texttt{Masters\_Thesis.ipynb} - main Python notebook containing the main part of the machine learning Implementation, such as exploratory analysis, data preprocessing, training and evaluation of the models.
+\item \texttt{data} - Directory containing the raw data, partially preprocessed data (\texttt{interim}) and the final preprocessed data.
+\item \texttt{flask\_app} - Directory containing the Flask application which is used for the deployment of the model. Particularly, it contains the \texttt{app.py} file which is the main back-end file of the application, the \texttt{templates} and \texttt{static} subdirectories which contain the front-end HTML files for the application, and the \texttt{inputs} subdirectory which contains the input dictionary for the application (such as the trained model, threshold, final features etc.).
+\item \texttt{models} - Directory containing the the subdirectories of the trained and fitted objects for features preprocessing, feature selection and model selection, including the final objects used in deployment.
+\item \texttt{plots} - Directory containing the plots generated within the main Python notebook.
+\item \texttt{Masters\_Thesis.ipynb} - Main Python notebook containing the main part of the machine learning Implementation, such as exploratory analysis, data preprocessing, training and evaluation of the models.
 \item \texttt{README.md} - README file containing the description of the repository.
-\item \texttt{requirements.yml} - file containing the list of the required packages and their specific versions used in this project.
+\item \texttt{requirements.yml} - File containing the list of the required packages and their specific versions used in this project.
 \end{itemize}
 
 This particular solution is developed in Python version 3.10.9 and these are the main packages and modules used in this project:
@@ -1635,13 +1635,13 @@ Nevertheless, the code for the application is available in the GitHub repository
 
 Furthermore, prior to deployment, we need to prepare several Python inputs for the web application, including:
 \begin{itemize}\setlength\itemsep{0em}
-\item \textbf{Model} - the final model recalibrated on the training, validation and test set.
-\item \textbf{Threshold} - the final classification threshold recalibrated on the training, validation and test set.
-\item \textbf{Features} - the final features used in the final model.
-\item \textbf{Data Frame} - the input tabular object used in the web application to store the loan applicant's inputs.
-\item \textbf{Optimal Binning Transformator} - fitted \lstinline{BinningProcess} object for binning and WoE-encoding of the loan applicant's inputs.
-\item \textbf{WoE Bins} - a set of bins and WoE values used for mapping the WoE values to missing values.
-\item \textbf{LIME explainer} - fitted \lstinline{LimeTabularExplainer} object for local explainability of model's prediction.
+\item \textbf{Model} - The final model recalibrated on the training, validation and test set.
+\item \textbf{Threshold} - The final classification threshold recalibrated on the training, validation and test set.
+\item \textbf{Features} - The final features used in the final model.
+\item \textbf{Data Frame} - The input tabular object used in the web application to store the loan applicant's inputs.
+\item \textbf{Optimal Binning Transformator} - Fitted \lstinline{BinningProcess} object for binning and WoE-encoding of the loan applicant's inputs.
+\item \textbf{WoE Bins} - Set of bins and WoE values used for mapping the WoE values to missing values.
+\item \textbf{LIME explainer} - Fitted \lstinline{LimeTabularExplainer} object for local explainability of model's prediction.
 \end{itemize}
 
 Such inputs required for the machine learning application are exported in the \lstinline{.pkl} format using the \lstinline{dill} module. This format allows for efficient and easy-to-use serialization and deserialization of the inputs. The pickled file is then loaded directly into the Flask application.
