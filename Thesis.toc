@@ -7,7 +7,7 @@
 \contentsline {subsection}{\numberline {2.1.1}Regulation}{3}{subsection.2.1.1}%
 \contentsline {subsubsection}{Basel II/III}{3}{section*.15}%
 \contentsline {subsubsection}{IFRS 9}{3}{section*.16}%
-\contentsline {subsection}{\numberline {2.1.2}Credit Scoring}{3}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.2}Credit Scoring}{4}{subsection.2.1.2}%
 \contentsline {subsubsection}{Application Scoring}{4}{section*.17}%
 \contentsline {subsubsection}{Behavioral Scoring}{4}{section*.18}%
 \contentsline {section}{\numberline {2.2}Machine Learning Terminology}{5}{section.2.2}%
