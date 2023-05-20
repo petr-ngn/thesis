@@ -1,4 +1,4 @@
-\begin{thebibliography}{93}
+\begin{thebibliography}{94}
 \newcommand{\enquote}[1]{``#1''}
 \providecommand{\natexlab}[1]{#1}
 
@@ -503,6 +503,12 @@
 \textsc{TIBCO-Software} (2023): \enquote{What is a random forest?}
 \newblock \url{https://www.tibco.com/reference-center/what-is-a-random-forest}.
 \newblock Retrieved April 30, 2023.
+
+\bibitem[{Van~Gestel \& Baesens(2009)}]{van2009credit}
+\textsc{Van~Gestel}, T. \& B.~\textsc{Baesens} (2009): \emph{Credit Risk
+  Management: Basic concepts: Financial risk components, Rating analysis,
+  models, economic and regulatory capital}.
+\newblock Oxford University Press.
 
 \bibitem[{Verma(2020)}]{Verma2020}
 \textsc{Verma}, V. (2020): \enquote{A comprehensive guide to feature selection
