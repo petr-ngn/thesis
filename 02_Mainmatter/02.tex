@@ -9,7 +9,7 @@ Additionally, this chapter explores more specialized topics including ADASYN ove
 max 3-4 pages for this section.
 \textbf{TBD}
 
-According to \citep{gregory2012counterparty}, credit risk can be defined as the risk that the client may be unable to unwilling to make a payment or fulfil loan contractual obligations.
+According to Gregory \citep{gregory2012counterparty}, credit risk can be defined as the risk that the client may be unable to unwilling to make a payment or fulfil loan contractual obligations.
 
 The main objective in credit risk modelling is to estimate (expected) credit loss, which has 3 components and is defined as follows:
 \begin{equation}
@@ -19,7 +19,6 @@ where $PD$ is the probability of default indicating likelihood of the client wil
 
 \subsection{Regulation}
 \subsubsection{Basel II/III}
-\subsubsection{Standardized Approach}
 Basel Commitee on Banking Supervision (BCBS) introduced Capital Accord Basel II and Basel III in 2004 and 2010, respectively \citep{shakdwipee2017basel}, with a goal to set higher risk management and internal control standards for banks \citep{witzany2017credit}.
 Regarding credit risk modelling, the former Accord introduced two approaches how to model credit risk:
 \begin{itemize}\setlength\itemsep{0em}
@@ -35,14 +34,15 @@ Regarding credit risk modelling, the former Accord introduced two approaches how
 \textbf{TBD}
 
 \subsection{Credit Scoring}
-\textbf{TBD}
+Credit scoring is an assessment of the credit quality of the client which uses techniques for finding the criteria that best discriminate between defaulters and non--defaulters \citep{bessis2015}.
 
 \subsubsection{Application Scoring}
-\textbf{TBD}
+As the name indicates, the application scoring is used to assess the creditworthiness of the client at the moment of loan application  whiuch supports the decision whether a bank should approve or reject the loan application \citep{baesens2016credit}. The most common variables which are used in application scoring and can be acquired from the loan application are for instance: age, gender, marital status, income, employment status and others \citep{baesens2016credit}.
 \subsubsection{Behavioral Scoring}
 
 \textbf{TBD}
 
+\newpage
 \section{Machine Learning Terminology}
 \label{sec:mlterms}
 In order to avoid confusion and ensure clear understanding in this thesis, it is necessary to provide precise definitions for machine learning terminology that may be easily confused with statistical terminology due to their similar meanings but different naming conventions.
@@ -66,9 +66,8 @@ In order to avoid confusion and ensure clear understanding in this thesis, it is
 In this section, several algorithms, which are used in the machine learning implementation, are described. Since the goal is to predict whether or not given client will default, henceforth only (binary) classification algorithms as a part of the supervised learning are described. In other words, regression models and unsupervised learning algorithms are out of the scope of this thesis.
 \subsection{Logistic Regression}
 \label{subsubsec:logisticregression}
-Despite the algorithm's name, it is actually not a regression but rather a classification model.
-In contrast, a linear regression's target variable is continuous whereas regarding a logistic regression, the target variable is categorical (or rather dichotomous in case of binary classification) \citep{wendler2021data}.
-For a probability score prediction, it uses a logistic, or so-called sigmoid function, which maps any real value into a probability and takes a S-shaped curve \citep{zaidi2022mathematical}, as can be seen in \autoref{fig:sigmoid}.
+Despite the algorithm's name, logistic regression is not a regression algorithm, but rather a classification algorithm as linear regression's target variable is continuous, whereas regarding a logistic regression, the target variable is categorical, or rather dichotomous in case of binary classification \citep{wendler2021data}.
+For a probability score prediction, it uses a logistic (sigmoid) function, which maps any real value into a probability and takes a S-shaped curve \citep{zaidi2022mathematical}, as can be seen in \autoref{fig:sigmoid}.
 
 \begin{figure}[H]
     \centering
