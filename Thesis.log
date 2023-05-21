@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.31)  21 MAY 2023 22:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.31)  21 MAY 2023 22:20
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2406,11 +2406,11 @@ Chapter 4.
 [51.64
 
 ]
-<Figures/ml_framework.jpg, id=1346, 605.26125pt x 269.20575pt>
+<Figures/ml_framework.jpg, id=1346, 1321.93875pt x 579.66562pt>
 File: Figures/ml_framework.jpg Graphic file (type jpg)
 <use Figures/ml_framework.jpg>
 Package pdftex.def Info: Figures/ml_framework.jpg  used on input line 20.
-(pdftex.def)             Requested size: 341.43306pt x 151.86327pt.
+(pdftex.def)             Requested size: 398.33858pt x 174.67053pt.
  [52.65 <./Figures/ml_framework.jpg>] [53.66] [54.67] [55.68] [56.69] [57.70]
 <Figures/Default_Distribution.jpg, id=1387, 578.16pt x 433.62pt>
 File: Figures/Default_Distribution.jpg Graphic file (type jpg)
@@ -3149,13 +3149,13 @@ Package rerunfilecheck Info: File `Thesis.out' has not changed.
 Here is how much of TeX's memory you used:
  28922 strings out of 480559
  456293 string characters out of 5897073
- 1243904 words of memory out of 5000000
+ 1243905 words of memory out of 5000000
  42596 multiletter control sequences out of 15000+600000
  585091 words of font info for 107 fonts, out of 8000000 for 9000
  48 hyphenation exceptions out of 8191
  123i,12n,120p,699b,3779s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}<c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmex10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmmi12.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmmi6.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmr17.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmr6.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmri12.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmss12.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmsy6.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmsy7.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmsy8.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmtk10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmtt10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmtt12.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmtt9.pfb>
-Output written on Thesis.pdf (253 pages, 11684376 bytes).
+Output written on Thesis.pdf (253 pages, 11816561 bytes).
 PDF statistics:
  5867 PDF objects out of 6186 (max. 8388607)
  5455 compressed objects within 55 object streams
