@@ -114,6 +114,7 @@ To achieve this, the user has to either change the path in the terminal using \t
     >> conda env create -n FFU_VSE_Masters_Thesis -f requirements.yml   
 \end{verbatim}
 }
+
 \centering{\begin{source}Author's command at Anaconda\end{source}}\vspace{0em}
 \end{figure}
 
@@ -231,6 +232,7 @@ This may cause problems in the modelling part, as the model may be biased toward
 \caption{Default Distribution}
 \label{fig:defaultdist}
 \includegraphics[width=130mm]{Figures/Default_Distribution.jpg}\vspace{-1em}
+
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
 
@@ -262,6 +264,7 @@ For a reference, see \autoref{tab:normalitytest} in \autoref{chap:app1}.
 \caption{Conditional Distribution of Numeric Features}\vspace{0.5em}
 \label{fig:boxfeat}
 \includegraphics[width=140mm]{Figures/Numeric_Features_Distribution_Boxplots.jpg}
+
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
 
@@ -314,6 +317,7 @@ Such associations are further investigated in \autoref{subsubsec:target-na-ass}.
 \end{tabular}
 \end{center}
 \begin{center}
+
 \source{Author's results in Python}
 \end{center}
 \end{table}
@@ -336,6 +340,7 @@ Hence, a moderate association between the \texttt{JOB} feature and the default s
 \caption{Conditional Distribution of Categorical Features}\vspace{0.5em}
 \label{fig:catdist}
 \includegraphics[width=140mm]{Figures/Categorical_Features_Distribution.jpg}
+
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
 \subsection{Association Analysis}
@@ -520,6 +525,7 @@ Therefore, it can be inferred that a significant number of loan applicants tend 
     \caption{Nullity Dendrogram}\vspace{0.5em}
     \label{fig:dendrogram}
     \includegraphics[width=140mm]{Figures/NA_Dendrogram.jpg}
+
     \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
 
@@ -530,6 +536,7 @@ As can be seen, the hierarchy has changed compared the hierarchy in \autoref{fig
     \caption{Nullity Dendrogram (default cases)}\vspace{0.5em}
     \label{fig:dendrogramdef}
     \includegraphics[width=140mm]{Figures/NA_Dendrogram_defaults.jpg}
+
     \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
 
@@ -552,6 +559,7 @@ In the \autoref{fig:spearmancorr}, we can observe a very strong correlation betw
     \caption{Spearman Correlation Matrix}\vspace{0.5em}
     \label{fig:spearmancorr}\
     \includegraphics[width=150mm]{Figures/Spearman_Correlation_Matrix_Numeric_Features.jpg}
+
     \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
 
@@ -673,6 +681,7 @@ Therefore, default instances which either are managers or applied for a loan due
     \caption{ADASYN Impact of Categorical Features' Distribution}\vspace{0.5em}
     \label{fig:adasynimpact}\
     \includegraphics[width=130mm]{Figures/Categorical_Features_Distribution_OS_Default.jpg}
+
     \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
 
@@ -711,6 +720,7 @@ Since ADASYN generated more default class instances for original default instanc
 \caption{WoE Bins Distribution}\vspace{0.5em}
 \label{fig:woedist}
 \includegraphics[width=140mm]{Figures/WoE_Distribution.jpg}
+
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
 
@@ -1051,6 +1061,7 @@ On the other hand, features such as \texttt{LOAN} and \texttt{REASON} were selec
 \caption{Reccurrence of Selected Features}\vspace{0.5em}
 \label{fig:fsrec}\
 \includegraphics[width=120mm]{Figures/Recurrence_Selected_Features.jpg}
+
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
 
@@ -1062,6 +1073,7 @@ It is evident the more complex black--box models require more features in contra
     \caption{Distribution of Selected Features per Model}\vspace{0.5em}
     \label{fig:fsdistmod}\
     \includegraphics[width=120mm]{Figures/Selected_Features_Distribution.jpg}
+
     \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
 
@@ -1285,6 +1297,7 @@ In order to gain a more detailed understanding of the model selection results, t
 \caption{F1 Score Distribution}\vspace{0.5em}
 \label{fig:f1dist}\
 \includegraphics[width=140mm]{Figures/F1_Distribution.jpg}
+
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
 Such outlier is removed in \autoref{fig:f1distclean} to gain a more general insight into the F1 score distribution.
@@ -1295,6 +1308,7 @@ Another tree ensemble model, Random Forest, is performing well as the second bes
 \caption{F1 Score Distribution - \textit{without outlier}}\vspace{0.5em}
 \label{fig:f1distclean}\
 \includegraphics[width=140mm]{Figures/F1_wo_outliers_Distribution.jpg}
+
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
 
@@ -1304,6 +1318,7 @@ As depicted in \autoref{fig:f1distcleanbbwb}, it visualizes the distribution of 
     \caption{F1 Score Distribution (Black--box/White--box dimension) - \textit{without outlier}}\vspace{0.5em}
     \label{fig:f1distcleanbbwb}\
     \includegraphics[width=140mm]{Figures/F1_wo_outliers_Distribution_BB_WB.jpg}
+
     \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
 
@@ -1314,6 +1329,7 @@ Hence, across all the metrics, the Gradient Boosting perform the best in overall
     \caption{Rank Score Distribution}\vspace{0.5em}
     \label{fig:avgrankdist}\
     \includegraphics[width=140mm]{Figures/AVG_RANK_Distribution.jpg}
+
     \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
 
@@ -1342,6 +1358,7 @@ In order to obtain a better insight into the distribution of optimal thresholds,
 \caption{Threshold Distribution - \textit{without outlier}}\vspace{0.5em}
 \label{fig:thresdistclean}\
 \includegraphics[width=140mm]{Figures/Threshold_wo_outliers_Distribution.jpg}
+
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
 
@@ -1354,6 +1371,7 @@ This finding suggests that longer execution time does not necessarily lead to be
 \caption{Execution Time Distribution}\vspace{0.5em}
 \label{fig:timedist}\
 \includegraphics[width=140mm]{Figures/EXECUTION_TIME_Distribution.jpg}
+
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
 We can inspect the execution time from another perspective as shown in \autoref{fig:timedistbbwb}.
@@ -1364,6 +1382,7 @@ Further we can notice that some of the black--box models took only few minutes t
     \caption{Execution Time Distribution (Black--box/White--box dimension)}\vspace{0.5em}
     \label{fig:timedistbbwb}\
     \includegraphics[width=140mm]{Figures/EXECUTION_TIME_Distribution_BB_WB.jpg}
+
     \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
 
@@ -1378,6 +1397,7 @@ On the other hand, the Neural Network models always perform poorly, regardless o
 \caption{Execution Time vs. F1 Scatterplot - \textit{without outlier}}\vspace{0.5em}
 \label{fig:scattertime}\
 \includegraphics[width=140mm]{Figures/Scatterplot_execution_time_F1_wo_outliers.jpg}
+
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
 Such separation of of the black--box and white--box models is more evident from \autoref{fig:scattertimebbwb} where the white--box models points are light blue-colored and the black--box models are purple-colored.
@@ -1388,6 +1408,7 @@ While the score of white--box models seems to be constant regardless the executi
     \caption{Execution Time vs. F1 Scatterplot (Black--box/White--box dimension) - \textit{without outlier}}\vspace{0.5em}
     \label{fig:scattertimebbwb}\
     \includegraphics[width=140mm]{Figures/Scatterplot_execution_time_F1_wo_outliers_BB_WB.jpg}
+
     \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
 
@@ -1466,6 +1487,7 @@ In \autoref{fig:confmat}, the confusion matrix for the final model, based on the
 \caption{Confusion Matrix}\vspace{0.5em}
 \label{fig:confmat}\
 \includegraphics[width=130mm]{Figures/Confusion_Matrix.jpg}
+
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
 
@@ -1547,6 +1569,7 @@ From the curve, we observe that the AUC value of the model is 95.55 \%, indicati
 \caption{ROC Curve}\vspace{0.5em}
 \label{fig:roc}\
 \includegraphics[width=140mm]{Figures/ROC_curve_FINAL.jpg}
+
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
 
@@ -1569,6 +1592,7 @@ The two most important features used in the final model are \texttt{DEBTINC} and
 \caption{Feature Importance}\vspace{0.5em}
 \label{fig:fi}\
 \includegraphics[width=140mm]{Figures/Feature_Importances.jpg}
+
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
 
@@ -1595,6 +1619,7 @@ By understanding the relative importance of each feature, we can gain deeper ins
 \caption{SHAP Summary Plot}\vspace{0.5em}
 \label{fig:shap}\
 \includegraphics[width=140mm]{Figures/SHAP_summary_plot.jpg}
+
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
 
