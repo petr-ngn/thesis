@@ -1,4 +1,4 @@
-\begin{thebibliography}{99}
+\begin{thebibliography}{107}
 \newcommand{\enquote}[1]{``#1''}
 \providecommand{\natexlab}[1]{#1}
 
@@ -7,6 +7,14 @@
   equivalence between kolmogorov-smirnov and roc curve metrics for binary
   classification.}
 \newblock \emph{arXiv preprint arXiv:1606.00496} .
+
+\bibitem[{Akiba \emph{et~al.}(2019)Akiba, Sano, Yanase, Ohta, \&
+  Koyama}]{akiba2019optuna}
+\textsc{Akiba}, T., S.~\textsc{Sano}, T.~\textsc{Yanase}, T.~\textsc{Ohta}, \&
+  M.~\textsc{Koyama} (2019): \enquote{Optuna: A next-generation hyperparameter
+  optimization framework.}
+\newblock In \enquote{Proceedings of the 25th ACM SIGKDD international
+  conference on knowledge discovery \& data mining,} pp. 2623--2631.
 
 \bibitem[{Alloghani \emph{et~al.}(2020)Alloghani, Al-Jumeily, Mustafina,
   Hussain, \& Aljaaf}]{alloghani2020supervised}
@@ -224,6 +232,10 @@
   adjustment: A continuing challenge for global financial markets}.
 \newblock John Wiley \& Sons.
 
+\bibitem[{H2O.ai(2023)}]{H2Oai2023}
+\textsc{H2O.ai} (2023): \enquote{Automl: Automatic machine learning.}
+\newblock AutoML: Automatic Machine Learning - H2O 3.40.0.4 documentation.
+
 \bibitem[{Hale(2019)}]{hale2019dont}
 \textsc{Hale}, J. (2019): \enquote{Don't sweat the solver stuff.}
 \newblock \emph{Medium} Retrieved May 1, 2023.
@@ -272,6 +284,12 @@
 \newblock In \enquote{2017 Artificial intelligence and signal processing
   conference (AISP),} pp. 209--212. IEEE.
 
+\bibitem[{Jakubik \emph{et~al.}(2007)}]{jakubik2007macroeconomic}
+\textsc{Jakubik}, P. \emph{et~al.} (2007): \enquote{Macroeconomic environment
+  and credit risk.}
+\newblock \emph{Czech Journal of Economics and Finance (Finance a uver)}
+  \textbf{57(1-2)}: pp. 60--78.
+
 \bibitem[{Janitza \emph{et~al.}(2013)Janitza, Strobl, \&
   Boulesteix}]{janitza2013auc}
 \textsc{Janitza}, S., C.~\textsc{Strobl}, \& A.-L. \textsc{Boulesteix} (2013):
@@ -288,6 +306,13 @@
 \textsc{Joseph}, C. (2013): \emph{Advanced credit risk analysis and
   management}.
 \newblock John Wiley \& Sons.
+
+\bibitem[{Karatas \emph{et~al.}(2020)Karatas, Demir, \&
+  Sahingoz}]{karatas2020increasing}
+\textsc{Karatas}, G., O.~\textsc{Demir}, \& O.~K. \textsc{Sahingoz} (2020):
+  \enquote{Increasing the performance of machine learning-based idss on an
+  imbalanced and up-to-date dataset.}
+\newblock \emph{IEEE access} \textbf{8}: pp. 32150--32162.
 
 \bibitem[{Kaushik(2016)}]{kaushik2016introduction}
 \textsc{Kaushik}, S. (2016): \enquote{Introduction to feature selection methods
@@ -310,6 +335,23 @@
 \bibitem[{Kornbrot(2014)}]{kornbrot2014point}
 \textsc{Kornbrot}, D. (2014): \enquote{Point biserial correlation.}
 \newblock \emph{Wiley StatsRef: Statistics Reference Online} .
+
+\bibitem[{Kumar \emph{et~al.}(2021)Kumar, Khan, Kumar, Golilarz, Zhang, Ting,
+  Zheng, Wang \emph{et~al.}}]{kumar2021blockchain}
+\textsc{Kumar}, R., A.~A. \textsc{Khan}, J.~\textsc{Kumar}, N.~A.
+  \textsc{Golilarz}, S.~\textsc{Zhang}, Y.~\textsc{Ting}, C.~\textsc{Zheng},
+  W.~\textsc{Wang} \emph{et~al.} (2021): \enquote{Blockchain-federated-learning
+  and deep learning models for covid-19 detection using ct imaging.}
+\newblock \emph{IEEE Sensors Journal} \textbf{21(14)}: pp. 16301--16314.
+
+\bibitem[{LeDell \& Poirier(2020)}]{ledell2020h2o}
+\textsc{LeDell}, E. \& S.~\textsc{Poirier} (2020): \enquote{H2o automl:
+  Scalable automatic machine learning.}
+\newblock In \enquote{Proceedings of the AutoML Workshop at ICML,} volume 2020.
+
+\bibitem[{Li \& Zhong(2012)}]{li2012overview}
+\textsc{Li}, X.-L. \& Y.~\textsc{Zhong} (2012): \enquote{An overview of
+  personal credit scoring: techniques and future work.} .
 
 \bibitem[{Lin \emph{et~al.}(2007)Lin, Lin, \& Weng}]{lin2007note}
 \textsc{Lin}, H.-T., C.-J. \textsc{Lin}, \& R.~C. \textsc{Weng} (2007):
@@ -365,6 +407,14 @@
 \bibitem[{Newson(2014)}]{newson2014interpretation}
 \textsc{Newson}, R.~B. (2014): \enquote{Interpretation of somers' d under four
   simple models.}
+
+\bibitem[{Ng \emph{et~al.}(2020)Ng, Minasny, Mendes, \&
+  Dematt{\^e}}]{ng2020influence}
+\textsc{Ng}, W., B.~\textsc{Minasny}, W.~d.~S. \textsc{Mendes}, \& J.~A.~M.
+  \textsc{Dematt{\^e}} (2020): \enquote{The influence of training sample size
+  on the accuracy of deep learning models for the prediction of soil properties
+  with near-infrared spectroscopy data.}
+\newblock \emph{Soil} \textbf{6(2)}: pp. 565--578.
 
 \bibitem[{Nian(2018)}]{nian2018introduction}
 \textsc{Nian}, R. (2018): \enquote{An introduction to {ADASYN} (with code!).}
