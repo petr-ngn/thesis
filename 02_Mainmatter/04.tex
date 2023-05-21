@@ -34,34 +34,33 @@ The repository structure is shown in \autoref{fig:repostructure}.
 
 {\footnotesize
 \begin{verbatim}
-
-            |--- data
-            |  |--- interim_dat.csv
-            |  |--- preprocessed_data.csv
-            |  |--- raw_data.csv
-            |
-            |--- flask_app
-            |  |--- inputs
-            |  |  |--- inputs_flask_app_dict.pkl
-            |  |
-            |  |--- templates
-            |  |  |--- index.html
-            |  |  |--- results.html
-            |  |
-            |  |--- static
-            |  |
-            |  |--- app.py
-            |
-            |--- models
-            |  |--- feature_preprocessing
-            |  |--- feature_selection
-            |  |--- model_selection
-            |  |--- objects_FINAL
-            |
-            |--- plots
-            |--- Masters_Thesis.ipynb
-            |--- README.md
-            |--- requirements.yml
+                        |--- data
+                        |  |--- interim_dat.csv
+                        |  |--- preprocessed_data.csv
+                        |  |--- raw_data.csv
+                        |
+                        |--- flask_app
+                        |  |--- inputs
+                        |  |  |--- inputs_flask_app_dict.pkl
+                        |  |
+                        |  |--- templates
+                        |  |  |--- index.html
+                        |  |  |--- results.html
+                        |  |
+                        |  |--- static
+                        |  |
+                        |  |--- app.py
+                        |
+                        |--- models
+                        |  |--- feature_preprocessing
+                        |  |--- feature_selection
+                        |  |--- model_selection
+                        |  |--- objects_FINAL
+                        |
+                        |--- plots
+                        |--- Masters_Thesis.ipynb
+                        |--- README.md
+                        |--- requirements.yml
 \end{verbatim}
 }
 \centering{\begin{source}Author's results at GitHub\end{source}}\vspace{0em}
@@ -80,43 +79,48 @@ The repository structure is shown in \autoref{fig:repostructure}.
 
 This particular solution is developed in Python version 3.10.9 and these are the main packages and modules used in this project:
 \begin{itemize}\setlength\itemsep{0em}
-\item \lstinline{NumPy}, \lstinline{Pandas} - for data manipulation and analysis.
-\item \lstinline{Matplotlib}, \lstinline{Seaborn} - for data visualization.
-\item \lstinline{Scipy} - for statistical analysis.
-\item \lstinline{OptBinning} - for optimal binning of features with respect to the target.
-\item \lstinline{ImbLearn} - for handling imbalanced data using oversampling.
-\item \lstinline{Scikit-learn} - for feature selection, model selection and model evaluation.
-\item \lstinline{Scikit-optimize} - for more advanced hyperparameter optimization.
+\item \lstinline{NumPy}, \lstinline{Pandas} - for data manipulation and analysis;
+\item \lstinline{Matplotlib}, \lstinline{Seaborn} - for data visualization;
+\item \lstinline{Scipy} - for statistical analysis;
+\item \lstinline{OptBinning} - for optimal binning of features with respect to the target;
+\item \lstinline{ImbLearn} - for handling imbalanced data using oversampling;
+\item \lstinline{Scikit-learn} - for ML modelling, feature selection, model selection and model evaluation;
+\item \lstinline{Scikit-optimize} - for more advanced hyperparameter tuning;
 \item \lstinline{Flask} - for deployment of the model as web application.
 \end{itemize}
-
-To replicate this solution, one may download this repository as a zip file or either can clone this repository using Git to the local repository. Before running any files or scripts, it is important to set the environment for such project using the file \texttt{requirements.yml}. This can be done by running the following command in the Anaconda terminal which will create the new environment with the name \texttt{FFU\_VSE\_Masters\_Thesis} and install all the required packages:
+\newpage
+To replicate this solution, one may download this repository as a zip file or either can clone this repository using Git to the local repository. Before running any files or scripts, it is important to set the environment for such project using the file \texttt{requirements.yml}.
+This can be done by running the following command in the Anaconda terminal which will create the new environment with the name \texttt{FFU\_VSE\_Masters\_Thesis} and install all the required packages, as shown in \autoref{fig:envsetup}:
 \begin{figure}[H]
+    \centering\caption{Environment Setup Command}
+    \label{fig:envsetup}
 \centering\
 {\footnotesize
 \begin{verbatim}
->> conda env create -n FFU_VSE_Masters_Thesis -f requirements.yml    
+    >> conda env create -n FFU_VSE_Masters_Thesis -f requirements.yml    
 \end{verbatim}
-\vspace{-1em}
 }
+\centering{\begin{source}Author's command at Anaconda\end{source}}\vspace{0em}
 \end{figure}
 Be aware of your current path directory in your terminal. In order to install the file \texttt{requirements.yml}, you need to define a path to the directory, where such file is located.
-To achieve this, the user has to either change the path in the terminal using \texttt{cd} command, insert the path directory before the \texttt{requirements.yml} in terminal, or to copy the file \texttt{requirements.yml} to the current path directory. The following code shows the former approach:
+To achieve this, the user has to either change the path in the terminal using \texttt{cd} command, insert the path directory before the \texttt{requirements.yml} in terminal, or to copy the file \texttt{requirements.yml} to the current path directory. The following code in \autoref{fig:envsetupcd} shows the former approach:
 \begin{figure}[H]
+    \centering\caption{Environment Setup Command with Directory Change}
+    \label{fig:envsetupcd}
 \centering\
 {\footnotesize
 \begin{verbatim}
->> cd C:\Users\ngnpe\FFU_VSE_Masters_Thesis_ML_Credit_Risk_Modelling
->> conda env create -n FFU_VSE_Masters_Thesis -f requirements.yml   
+    >> cd C:\Users\ngnpe\FFU_VSE_Masters_Thesis_ML_Credit_Risk_Modelling
+    >> conda env create -n FFU_VSE_Masters_Thesis -f requirements.yml   
 \end{verbatim}
-\vspace{-1em}
 }
+\centering{\begin{source}Author's command at Anaconda\end{source}}\vspace{0em}
 \end{figure}
 
 
 To preserve the reproducibility of this solution and conistency of the results, the random seed is instantiated to \texttt{42}, so for instance data split, model optimization or training would be deterministic and not totally random everytime when replicating the solution.
 
-Some \lstinline{Scikit-learn} or \lstinline{Scikit-optimize} objects have optional argument \texttt{n\_jobs} which utilizes the number of CPU cores used during the parallelizing computation. Such argument is set to \texttt{-1}, hence all the processors are used in order to  speed up the training or optimization process.
+Some \lstinline{Scikit-learn} or \lstinline{Scikit-optimize} objects have optional argument \texttt{n\_jobs} which utilizes the number of central processing units (CPU) cores used during the parallelizing computation. Such argument is set to \texttt{-1}, hence all the processors are used in order to  speed up the training or optimization process.
 
 \newpage
 \section{Data Exploration}
@@ -326,6 +330,7 @@ Specifically, the categories \texttt{Office}, \texttt{ProfExe}, and \texttt{N/A}
 Hence, a moderate association between the \texttt{JOB} feature and the default status is possible, as further investigated in \autoref{subsubsec:target-cat-ass}.
 
 
+
 \begin{figure}[H]
 \centering
 \caption{Conditional Distribution of Categorical Features}\vspace{0.5em}
@@ -336,7 +341,7 @@ Hence, a moderate association between the \texttt{JOB} feature and the default s
 \subsection{Association Analysis}
 In this subsection, we aim to examine potential relationships between the variables by analyzing their associations. Firstly, we investigate the association between the default status and the features. Subsequently, we explore the association among the features themselves.
 
-\subsubsection{Association between default status and numeric features}
+\subsubsection{Association between Default Status and Numeric Features}
 \label{subsubsec:target-num-ass}
 
 To measure the association between the target variable and the numeric features, we use the Point-Biserial correlation coefficient, which is the Pearson's product moment correlation coefficient between a continuous variable and a dichotomous variable \citep{kornbrot2014point}.
@@ -398,7 +403,7 @@ These findings support the observations made in \autoref{subsubsec:numdist} rega
 
 \end{table}
 
-\subsubsection{Association between default status and categorical features}
+\subsubsection{Association between Default Status and Categorical Features}
 \label{subsubsec:target-cat-ass}
 
 In order to measure the strength of the relationship between the dichotomous default status and categorical variables, we employ Cramer's V, which ranges from 0 to 1 and is defined as:
@@ -440,7 +445,7 @@ Ultimately, the usefulness of a feature in predicting the target variable is det
         \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{table}
 
-\subsubsection{Association between default status and missing values}
+\subsubsection{Association between Default Status and Missing Values}
 \label{subsubsec:target-na-ass}
 
 Given that the loan data set contains missing values, it is necessary to examine whether the missingness is associated with the default status. One possible approach is to encode the feature with missing values as a binary variable, where 1 indicates the presence of a missing value and 0 otherwise.
@@ -632,7 +637,7 @@ On the other hand, the proportion of defaulted clients who are labelled as \text
     \renewcommand{\arraystretch}{1.3}
     \centering
     \caption[ADASYN Impact on Categorical Features' Distribution]{ADASYN Impact on Categorical Features' Distribution}\label{tab:adasynimpact}
-    \begin{tabular}{|ll|rr|rr|r|}
+    \begin{tabular}{ll|rr|rr|r}
     
         \hline
     \textbf{Features} & \textbf{Category} & \textbf{$n_{B}$} & \textbf{$n_{A}$} & \textbf{$n_{B} / N_{B}$} & \textbf{$n_{A} / N_{A}$} & \textbf{Diff.} \\ 
@@ -667,7 +672,7 @@ Therefore, default instances which either are managers or applied for a loan due
     \centering
     \caption{ADASYN Impact of Categorical Features' Distribution}\vspace{0.5em}
     \label{fig:adasynimpact}\
-    \includegraphics[width=140mm]{Figures/Categorical_Features_Distribution_OS_Default.jpg}
+    \includegraphics[width=130mm]{Figures/Categorical_Features_Distribution_OS_Default.jpg}
     \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
 
@@ -699,8 +704,6 @@ This finding was already raised in \autoref{subsubsec:target-na-ass} in terms of
 
 Within the \texttt{JOB} feature, specifically regarding the \texttt{Mgr} category, we can observe the direct impact of ADASYN oversampling as already described by \autoref{tab:adasynimpact}.
 Since ADASYN generated more default class instances for original default instances who are managers, this results in higher default rate within such job category, thus to the larger distribution of defaulters compared to non--defaulters, which is quantified in the negative WoE value.
-
-\textbf{QUESTION FOR SUPERVISOR: should I also decsribe the WoE distribution for other features as well or is this sufficient?}
 
 
 \begin{figure}[H]
@@ -991,7 +994,7 @@ Learning rate & Constant, Adaptive, Invscaling \\
 \label{subsec:feature-selection}
 
 As the feature selection approach, Forward Sequential Feature Selection (henceforth SFS) is employed in order to choose the optimal set of features as described in \autoref{sec:fsfstheory}.
-Within machine learning implemenation, instead of fitting Forward SFS only with one model, Forward SFS is fitted for each input model in order to obtain the best subsets of features for each model, assuming the importance of each features varies across the models.
+Within machine learning implemenation, instead of fitting Forward SFS only with one model, Forward SFS is fitted for each input model in order to obtain the best subset of features for each model, assuming the importance of each features varies across the models.
 Instead of using input models with default hyperparameters, each model is tuned with Bayesian Optimization in order to obtain the optimal hyperparameters for each model, which would further improve the performance of each model within SFS and therefore, it would lead to the more optimal selection of features.
 The custom feature selection algorithm is stated in Algorithm \autoref{alg:feature_selection}, thus, when having $n$ input models, it returns $n$  subsets of optimal features, one per each model:
 \begin{algorithm}[H]
@@ -1007,7 +1010,7 @@ The custom feature selection algorithm is stated in Algorithm \autoref{alg:featu
 Particularly, each input model is first tuned on the training set with Bayesian Optimization with 50 iterations and 10--fold stratified cross validation (in order to preserve the target variable distribution across the folds) while maximizing the F1 score - within author's machine learning implemenation, his custom function \lstinline{bayesian_optimization()} is used.
 Once the model is tuned, the Forward SFS is fitted with such tuned model on the same training set with 10--fold stratified cross validation while maximizing the F1 score. Instead of selecting the fixed number of features, Scikit-learn's \lstinline{SequentialFeatureSelector} class allows to set a stop criterion (\lstinline{tol} parameter) which stops adding features if the objective score function is not increasing at least by \lstinline{tol} between two consecutive feature additions \citep{sfs}.
 Such paramaeter is set to the value which is close to zero, therefore the feature selection stops when the objective score function is not increasing anymore.
-
+\newpage
 Such feature selection algorithm is wrapped into author's custom function \lstinline{SFS_feature_selection()}.
 This function iteratively prints the process of the feature selection as can be seen in \autoref{fig:featselectprint}, including the current step (Bayesian Optimization or Feature Selection), the execution time in minutes, and the selected features per each model. Since we have 8 input models, we get 8 optimal subsets of features.
 
@@ -1034,27 +1037,7 @@ Execution time: 0.8622 minutes
 9 features selected: VALUE, JOB, YOJ, DEROG, DELINQ, CLAGE, NINQ, CLNO, DEBTINC 
 
 -------------------------------------------------------------------------------------
-------------------------------------------------------------------------------------- 
-
-
 -------------------------------------------------------------------------------------
------------------------------------------- 3/8 --------------------------------------
--------------------------------------------------------------------------------------
-------------------------------- FEATURE SELECTION WITH GNB --------------------------
--------------------------------------------------------------------------------------
-------------------------------------------------------------------------------------- 
-
-1/4 ... Starting Bayesian Optimization on the whole set of features
-2/4 ... Bayesian Optimization finished
-3/4 ... Starting Forward Sequential Feature Selection
-4/4 ... Forward Sequential Feature Selection with finished 
-
-Execution time: 0.4152 minutes 
-
-6 features selected: MORTDUE, JOB, DELINQ, CLAGE, NINQ, DEBTINC 
-
-------------------------------------------------------------------------------------- 
-------------------------------------------------------------------------------------- 
 \end{verbatim}
 }
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{0em}
@@ -1067,7 +1050,7 @@ On the other hand, features such as \texttt{LOAN} and \texttt{REASON} were selec
 \centering
 \caption{Reccurrence of Selected Features}\vspace{0.5em}
 \label{fig:fsrec}\
-\includegraphics[width=140mm]{Figures/Recurrence_Selected_Features.jpg}
+\includegraphics[width=120mm]{Figures/Recurrence_Selected_Features.jpg}
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
 
@@ -1078,10 +1061,11 @@ It is evident the more complex black--box models require more features in contra
     \centering
     \caption{Distribution of Selected Features per Model}\vspace{0.5em}
     \label{fig:fsdistmod}\
-    \includegraphics[width=140mm]{Figures/Selected_Features_Distribution.jpg}
+    \includegraphics[width=120mm]{Figures/Selected_Features_Distribution.jpg}
     \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
 
+\newpage
 \subsection{Model Selection}
 
 In combination with the pre--selected subsets of features, the next step regards the selection of the final model which will be further used within an evaluation and the deployment. The algorithm process is described in Algorithm  \autoref{alg:model_selection} below:
@@ -1175,6 +1159,8 @@ Particularly, for each model a rank score is calculated in order to determine th
 where $k$ is the number of metrics used to evaluated the model $M$, $r_i$ is the rank order of $i$--th metric for given model $M$ and $w_i$ is the weight assigned to the $i$--th metric.
 Such metric lies in interval $<1, k>$, where 1 would indicate a perfect model performance across the all metrics.
 
+
+\newpage
 \subsubsection{Model Selection Results}
 
 
@@ -1189,49 +1175,49 @@ Particularly, it prints which model on which features is being tuned and evaluat
 {\fontsize{8.8}{11}\selectfont 
 \begin{verbatim}
 -------------------------------------------------------------------------------------
---------------------------------------- 56/64 ---------------------------------------
+---------------------------------------- 7/64 ---------------------------------------
 -------------------------------------------------------------------------------------
----------------------------- BAYESIAN OPTIMIZATION OF SVM ---------------------------
---------------------------- WITH FEATURES SELECTED BY MLP ---------------------------
+---------------------------- BAYESIAN OPTIMIZATION OF LR ----------------------------
+--------------------------- WITH FEATURES SELECTED BY SVM ---------------------------
 -------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------- 
 
-1/2 ... Starting Bayesian Optimization on the subset of features (10 features):
-        MORTDUE, VALUE, JOB, YOJ, DEROG, DELINQ, CLAGE, NINQ, CLNO, DEBTINC
+1/2 ... Starting Bayesian Optimization on the subset of features (11 features):
+        LOAN, MORTDUE, VALUE, REASON, JOB, YOJ, DEROG, DELINQ, CLAGE, NINQ, DEBTINC
 2/2... Bayesian Optimization finished 
 
-Execution time: 22.0695 minutes 
+Execution time: 1.493 minutes 
 
-F1 Score on Validation set: 0.7102272727272726 
+F1 Score on Validation set: 0.6160919540229886 
 
-Optimal classification threshold: 0.6477 
+Optimal classification threshold: 0.4003
 
-Tuned hyperparameters of SVM: 
+Tuned hyperparameters of LR: 
 
-    C: 4.999999999999999
-    break_ties: False
-    cache_size: 200
-    class_weight: balanced
-    coef0: 0.0
-    decision_function_shape: ovr
-    degree: 1
-    gamma: scale
-    kernel: rbf
-    max_iter: -1
-    probability: True
-    random_state: 42
-    shrinking: False
-    tol: 1.102507160381566e-09
-    verbose: False
-
+        C: 0.2768320429063577
+        class_weight: balanced
+        dual: False
+        fit_intercept: True
+        intercept_scaling: 25.603205585229382
+        l1_ratio: 0.5230523280543836
+        max_iter: 100
+        multi_class: auto
+        n_jobs: -1
+        penalty: elasticnet
+        random_state: 42
+        solver: saga
+        tol: 0.0001
+        verbose: 0
+        warm_start: False
 -------------------------------------------------------------------------------------
-------------------------------------------------------------------------------------- 
+-------------------------------------------------------------------------------------
 \end{verbatim}
 }
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{0em}
 \end{figure}
 
 
+\newpage
 
 The final output of the function \lstinline{model_selection()} is table which summarizes the model's computed metrics as depicted in \autoref{tab:modelsectab}. As can be seen, the best models in terms of ranking are the Gradient Boosting models which in general have the highest score metrics and the lowest loss metrics. On the other hand, the worst-performing models are Gaussian Naive Bayes models.
 
@@ -1258,27 +1244,27 @@ The final output of the function \lstinline{model_selection()} is table which su
     \textbf{Tuned model} & \textbf{FS model} & \textbf{\# \newline Features} & \textbf{Exec. \newline Time} & \textbf{Thresh.} & \textbf{F1} & \textbf{Prec.} & \textbf{Rec.} & \textbf{Acc.} & \textbf{AUC} & \textbf{SD} & \textbf{KS} & \textbf{MCC} & \textbf{BS} & \textbf{Log Loss} & \textbf{Score} & \textbf{Rank} \\
     \midrule
     \hline
-GB & MLP & 10 & 738.19 & 0.4955 & 0.7809 & 0.7853 & 0.7765 & 0.9128 & 0.9515 & 0.9030 & 0.7751 & 0.7265 & 0.0666 & 0.2487 & 3.48 & 1 \\ 
-GB & KNN & 11 & 767.90 & 0.5072 & 0.7978 & 0.7912 & 0.8045 & 0.9184 & 0.9587 & 0.9175 & 0.7989 & 0.7467 & 0.0687 & 0.4135 & 3.82 & 2 \\ 
-GB & SVM & 11 & 904.84 & 0.5053 & 0.7896 & 0.8155 & 0.7654 & 0.9184 & 0.9555 & 0.9109 & 0.7961 & 0.7397 & 0.0718 & 0.3486 & 4.17 & 3 \\ 
-GB & GB & 11 & 686.26 & 0.4132 & 0.7799 & 0.7778 & 0.7821 & 0.9117 & 0.9543 & 0.9086 & 0.7989 & 0.7247 & 0.0703 & 0.3372 & 4.29 & 4 \\ 
-GB & RF & 11 & 802.55 & 0.4973 & 0.7775 & 0.7841 & 0.7710 & 0.9117 & 0.9541 & 0.9081 & 0.7961 & 0.7225 & 0.0669 & 0.2803 & 4.37 & 5 \\ 
-RF & KNN & 11 & 356.24 & 0.4725 & 0.7486 & 0.7326 & 0.7654 & 0.8972 & 0.9226 & 0.8452 & 0.7109 & 0.6843 & 0.0923 & 0.3232 & 8.66 & 6 \\ 
-GB & DT & 9 & 719.92 & 0.4729 & 0.7675 & 0.7697 & 0.7654 & 0.9073 & 0.9407 & 0.8814 & 0.7556 & 0.7096  & 0.0808 & 0.4693 & 8.87 & 7 \\ 
-RF & GB & 11 & 310.63 & 0.4517 & 0.7385 & 0.7135 & 0.7654 & 0.8916 & 0.9200 & 0.8400 & 0.7123 & 0.6709 & 0.0886 & 0.3135 & 9.47 & 8 \\ 
-RF & MLP & 10 & 397.42 & 0.4761 & 0.7357 & 0.7181 & 0.7542 & 0.8916 & 0.9179 & 0.8358 & 0.7081 & 0.6679 & 0.0879 & 0.3084 & 10.39 & 9 \\ 
-GB & LR & 7 & 1008.69 & 0.4362 & 0.7388 & 0.7000 & 0.7821 & 0.8894 & 0.9219 & 0.8438 & 0.7081 & 0.6706 & 0.0886 & 0.3925 & 10.79 & 10 \\ 
+    GB & MLP & 10 & 12.21 & 0.4955 & 0.7809 & 0.7853 & 0.7765 & 0.9128 & 0.9515 & 0.9030 & 0.7751 & 0.7265 & 0.0666 & 0.2487 & 3.30 & 1 \\ 
+    GB & RF & 11 & 13.30 & 0.4973 & 0.7775 & 0.7841 & 0.7709 & 0.9117 & 0.9541 & 0.9081 & 0.7961 & 0.7225 & 0.0669 & 0.2803 & 3.97 & 2 \\ 
+    GB & KNN & 11 & 12.80 & 0.5072 & 0.7978 & 0.7912 & 0.8045 & 0.9184 & 0.9587 & 0.9175 & 0.7989 & 0.7467 & 0.0687 & 0.4135 & 4.08 & 3 \\ 
+    GB & SVM & 11 & 15.00 & 0.5053 & 0.7896 & 0.8155 & 0.7654 & 0.9184 & 0.9555 & 0.9109 & 0.7961 & 0.7397 & 0.0718 & 0.3486 & 4.32 & 4 \\ 
+    GB & GB & 11 & 11.38 & 0.4132 & 0.7799 & 0.7778 & 0.7821 & 0.9117 & 0.9543 & 0.9086 & 0.7989 & 0.7247 & 0.0703 & 0.3372 & 4.39 & 5 \\ 
+    RF & KNN & 11 & 5.80 & 0.4725 & 0.7486 & 0.7326 & 0.7654 & 0.8972 & 0.9226 & 0.8452 & 0.7109 & 0.6843 & 0.0923 & 0.3232 & 8.48 & 6 \\ 
+    GB & DT & 9 & 12.03 & 0.4729 & 0.7675 & 0.7697 & 0.7654 & 0.9073 & 0.9407 & 0.8814 & 0.7556 & 0.7096 & 0.0808 & 0.4693 & 8.80 & 7 \\ 
+    RF & GB & 11 & 5.07 & 0.4517 & 0.7385 & 0.7135 & 0.7654 & 0.8916 & 0.9200 & 0.8400 & 0.7123 & 0.6709 & 0.0886 & 0.3135 & 9.22 & 8 \\ 
+    RF & MLP & 10 & 6.54 & 0.4761 & 0.7357 & 0.7181 & 0.7542 & 0.8916 & 0.9179 & 0.8358 & 0.7081 & 0.6679 & 0.0879 & 0.3084 & 10.20 & 9 \\ 
+    GB & LR & 7 & 16.79 & 0.4362 & 0.7388 & 0.7000 & 0.7821 & 0.8894 & 0.9219 & 0.8438 & 0.7081 & 0.6706 & 0.0886 & 0.3925 & 11.03 & 10 \\
 \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots \\
-DT & MLP & 10 & 54.19 & 0.5000 & 0.6427 & 0.6374 & 0.6480 & 0.8559 & 0.8133 & 0.6266 & 0.5810 & 0.5524 & 0.1254 & 2.0008 & 50.38 & 55 \\ 
-GNB & GB & 11 & 23.04 & 0.1829 & 0.5970 & 0.4893 & 0.7654 & 0.7933 & 0.8531 & 0.7063 & 0.5810 & 0.4880 & 0.1310 & 0.6461 & 50.50 & 56 \\ 
-GNB & KNN & 11 & 22.98 & 0.3588 & 0.6093 & 0.5219 & 0.7318 & 0.8123 & 0.8479 & 0.6957 & 0.5698 & 0.5024 & 0.1367 & 0.6686 & 50.81 & 57 \\ 
-GNB & DT & 9 & 23.11 & 0.2241 & 0.6063 & 0.5095 & 0.7486 & 0.8056 & 0.8467 & 0.6935 & 0.5768 & 0.4991 & 0.1316 & 0.6370 & 50.85 & 58 \\ 
-GNB & MLP & 10 & 23.11 & 0.2194 & 0.6013 & 0.5000 & 0.7542 & 0.8000 & 0.8493 & 0.6986 & 0.5768 & 0.4930 & 0.1319 & 0.6360 & 50.99 & 59 \\ 
-DT & GNB & 6 & 53.14 & 0.5000 & 0.6354 & 0.6284 & 0.6425 & 0.8525 & 0.8187 & 0.6375 & 0.5838 & 0.5430 & 0.1251 & 2.1679 & 51.74 & 60 \\ 
-GNB & GNB & 6 & 23.05 & 0.4787 & 0.5950 & 0.5039 & 0.7263 & 0.8022 & 0.8356 & 0.6711 & 0.5559 & 0.4835 & 0.1470 & 0.5280 & 54.53 & 61 \\ 
-LR & GNB & 6 & 95.14 & 0.4561 & 0.5948 & 0.5121 & 0.7095 & 0.8067 & 0.8379 & 0.6758 & 0.5531 & 0.4831 & 0.1319 & 0.4180 & 54.97 & 62 \\ 
-GNB & SVM & 11 & 22.91 & 0.1991 & 0.5885 & 0.4872 & 0.7430 & 0.7922 & 0.8425 & 0.6850 & 0.5712 & 0.4756 & 0.1345 & 0.6721 & 55.15 & 63 \\ 
-GNB & RF & 11 & 23.25 & 0.3413 & 0.5864 & 0.4943 & 0.7207 & 0.7966 & 0.8288 & 0.6577 & 0.5545 & 0.4720 & 0.1486 & 0.7040 & 57.85 & 64 \\ 
+GNB & DT & 9 & 0.36 & 0.2241 & 0.6063 & 0.5095 & 0.7486 & 0.8056 & 0.8467 & 0.6935 & 0.5768 & 0.4991 & 0.1316 & 0.6370 & 49.56 & 55 \\ 
+        GNB & MLP & 10 & 0.36 & 0.2194 & 0.6013 & 0.5000 & 0.7542 & 0.8000 & 0.8493 & 0.6986 & 0.5768 & 0.4930 & 0.1319 & 0.6360 & 49.68 & 56 \\ 
+        GNB & KNN & 11 & 0.35 & 0.3588 & 0.6093 & 0.5219 & 0.7318 & 0.8123 & 0.8479 & 0.6957 & 0.5698 & 0.5024 & 0.1367 & 0.6686 & 50.58 & 57 \\ 
+        DT & MLP & 10 & 0.83 & 0.5000 & 0.6427 & 0.6374 & 0.6480 & 0.8559 & 0.8133 & 0.6266 & 0.5810 & 0.5524 & 0.1254 & 2.0008 & 52.10 & 58 \\ 
+        SVM & GNB & 6 & 6.38 & 0.1821 & 0.5788 & 0.4718 & 0.7486 & 0.7821 & 0.8393 & 0.6786 & 0.5768 & 0.4633 & 0.1355 & 0.4354 & 53.11 & 59 \\ 
+        DT & GNB & 6 & 0.82 & 0.5000 & 0.6354 & 0.6284 & 0.6425 & 0.8525 & 0.8187 & 0.6375 & 0.5838 & 0.5430 & 0.1251 & 2.1679 & 53.31 & 60 \\
+        GNB & SVM & 11 & 0.36 & 0.1991 & 0.5885 & 0.4872 & 0.7430 & 0.7922 & 0.8425 & 0.6850 & 0.5712 & 0.4756 & 0.1345 & 0.6721 & 53.65 & 61 \\ 
+        GNB & GNB & 6 & 0.36 & 0.4787 & 0.5950 & 0.5039 & 0.7263 & 0.8022 & 0.8356 & 0.6711 & 0.5559 & 0.4835 & 0.1470 & 0.5280 & 53.79 & 62 \\ 
+        LR & GNB & 6 & 1.53 & 0.4561 & 0.5948 & 0.5121 & 0.7095 & 0.8067 & 0.8379 & 0.6758 & 0.5531 & 0.4831 & 0.1319 & 0.4180 & 54.02 & 63 \\ 
+        GNB & RF & 11 & 0.36 & 0.3413 & 0.5864 & 0.4943 & 0.7207 & 0.7966 & 0.8288 & 0.6577 & 0.5545 & 0.4720 & 0.1486 & 0.7040 & 57.08 & 64 \\
     \hline
     \bottomrule 
 \end{tabular}}
@@ -1327,7 +1313,7 @@ Hence, across all the metrics, the Gradient Boosting perform the best in overall
     \centering
     \caption{Rank Score Distribution}\vspace{0.5em}
     \label{fig:avgrankdist}\
-    \includegraphics[width=140mm]{Figures/AVG_Rank_score_Distribution.jpg}
+    \includegraphics[width=140mm]{Figures/AVG_RANK_Distribution.jpg}
     \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
 
@@ -1336,7 +1322,7 @@ As expected, also, the black--box models are ranked higher than the white--box m
     \centering
     \caption{Rank Score Distribution (Black--box/White--box dimension)}\vspace{0.5em}
     \label{fig:avgrankdistbbwb}\
-    \includegraphics[width=140mm]{Figures/AVG_Rank_score_Distribution_BB_WB.jpg}
+    \includegraphics[width=140mm]{Figures/AVG_Rank_Distribution_BB_WB.jpg}
     \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
 
@@ -1358,8 +1344,6 @@ In order to obtain a better insight into the distribution of optimal thresholds,
 \includegraphics[width=140mm]{Figures/Threshold_wo_outliers_Distribution.jpg}
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
-
-
 
 
 Upon examining the execution time of each model, it can be observed that the transparent and non-complex models such as Logistic Regression, Gaussian Naive Bayes, or even Decision Tree, which take around only 1 minute to optimize themselves, also perform poorly, as already inspected in \autoref{fig:f1distclean}.
@@ -1565,6 +1549,8 @@ From the curve, we observe that the AUC value of the model is 95.55 \%, indicati
 \includegraphics[width=140mm]{Figures/ROC_curve_FINAL.jpg}
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
+
+
 
 \subsection{Model Explainability}
 To gain insights into the impact of the features used in the final model, we can inspect the feature imporances of the final model, which is a part of family of tree ensemble algorithms.

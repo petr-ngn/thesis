@@ -50,9 +50,9 @@
 \contentsline {subsubsection}{Numeric Features' Distribution}{59}{section*.47}%
 \contentsline {subsubsection}{Categorical Features' Distribution}{63}{section*.50}%
 \contentsline {subsection}{\numberline {4.2.3}Association Analysis}{64}{subsection.4.2.3}%
-\contentsline {subsubsection}{Association between default status and numeric features}{64}{section*.52}%
-\contentsline {subsubsection}{Association between default status and categorical features}{66}{section*.54}%
-\contentsline {subsubsection}{Association between default status and missing values}{66}{section*.56}%
+\contentsline {subsubsection}{Association between Default Status and Numeric Features}{64}{section*.52}%
+\contentsline {subsubsection}{Association between Default Status and Categorical Features}{66}{section*.54}%
+\contentsline {subsubsection}{Association between Default Status and Missing Values}{66}{section*.56}%
 \contentsline {subsubsection}{Missing Values Association}{67}{section*.58}%
 \contentsline {subsubsection}{Multicolinearity Analysis}{69}{section*.61}%
 \contentsline {section}{\numberline {4.3}Data Preprocessing}{71}{section.4.3}%
@@ -70,7 +70,7 @@
 \contentsline {subsubsection}{Multi--Layer Percepton}{84}{section*.81}%
 \contentsline {subsection}{\numberline {4.4.2}Sequential Feature Selection}{85}{subsection.4.4.2}%
 \contentsline {subsection}{\numberline {4.4.3}Model Selection}{88}{subsection.4.4.3}%
-\contentsline {subsubsection}{Metrics Space}{89}{section*.86}%
+\contentsline {subsubsection}{Metrics Space}{88}{section*.86}%
 \contentsline {subsubsection}{Model Selection Results}{91}{section*.88}%
 \contentsline {subsection}{\numberline {4.4.4}Model Recalibration}{105}{subsection.4.4.4}%
 \contentsline {section}{\numberline {4.5}Model Evaluation}{106}{section.4.5}%
