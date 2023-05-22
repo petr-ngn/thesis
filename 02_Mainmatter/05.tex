@@ -137,6 +137,7 @@ The key findings of this thesis are summarized in the following list. We exclude
     \item Another findind regards the features \texttt{DEBTINC}, \texttt{DELINQ}. The higher debt--to--income ratio and/or the higher number of delinquent credit lines, the higher the probability of default. This is evident from the WoE values in \autoref{fig:woedist} and the SHAP summary plot in \autoref{fig:shap}.
     \item Most of the models are conservative as most of their optimal thresholds obtained using Youden index are below the standard classification threshold of 0.5 as depicted in \autoref{fig:thresdistclean}.
     \item Ensemble models, such as Gradient Boosting and Random Forest, perform better than SVM or Neural Network (MLP), while the transparent models such as Decision Tree, Logistic Regression, and Gaussian Naive Bayes perform the worst. This is depicted in \autoref{fig:avgrankdist}.
+    \item Black--box models which are complex tend to select more features than transparent white box--models within feature selection (\autoref{fig:fsrec}).
 \end{itemize}
 \section{Contributions}
 \label{sec:contributions}

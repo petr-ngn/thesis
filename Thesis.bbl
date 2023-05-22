@@ -547,7 +547,7 @@
 \textsc{{scikit-learn}} (2023{\natexlab{c}}):
   \enquote{sklearn.ensemble.randomforestclassifier.}
 \newblock
-  \url{https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html#sklearn.linear_model.LogisticRegression}.
+  \url{https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html#sklearn.ensemble.RandomForestClassifier}.
 \newblock Retrieved April 28, 2023.
 
 \bibitem[{{scikit-learn}(2023{\natexlab{d}})}]{scikit-gnb}
@@ -578,17 +578,17 @@
   \url{https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html#sklearn.tree.DecisionTreeClassifier}.
 \newblock Retrieved April 28, 2023.
 
-\bibitem[{{scikit-learn}(2023{\natexlab{h}})}]{scikit-opt}
-\textsc{{scikit-learn}} (2023{\natexlab{h}}): \enquote{skopt.bayessearchcv.}
-\newblock
-  \url{https://scikit-optimize.github.io/stable/modules/generated/skopt.BayesSearchCV.html#}.
-\newblock Retrieved April 28, 2023.
-
-\bibitem[{{scikit-optimize}(2023)}]{scikit-lr}
-\textsc{{scikit-optimize}} (2023):
+\bibitem[{{scikit-optimize}(2023{\natexlab{a}})}]{scikit-lr}
+\textsc{{scikit-optimize}} (2023{\natexlab{a}}):
   \enquote{sklearn.linear\_model.logisticregression.}
 \newblock
-  \url{https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html#sklearn.ensemble.RandomForestClassifier}.
+  \url{https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html#sklearn.linear_model.LogisticRegression}.
+\newblock Retrieved April 28, 2023.
+
+\bibitem[{{scikit-optimize}(2023{\natexlab{b}})}]{scikit-opt}
+\textsc{{scikit-optimize}} (2023{\natexlab{b}}): \enquote{skopt.bayessearchcv.}
+\newblock
+  \url{https://scikit-optimize.github.io/stable/modules/generated/skopt.BayesSearchCV.html#}.
 \newblock Retrieved April 28, 2023.
 
 \bibitem[{Shakdwipee \& Mehta(2017)}]{shakdwipee2017basel}

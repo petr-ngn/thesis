@@ -745,9 +745,8 @@ The WoE bins distributions of other features are depicted \autoref{fig:woedist} 
 \newpage
 \section{Modelling}
 \label{sec:modelling}
-Once the data are finally preprocessed, the next step regards the modelling part which includes hyperparameter tuning, feature selection, model selection and model building.
-
-In Python, 8 different machine learning models from \lstinline{Scikit-learn} module are used for the default status prediction, which were already described in \autoref{sec:algorithms}, namely:
+Once the data are finally preprocessed, the next step regards the modelling part which includes hyperparameter tuning, feature selection, model selection and model recalibration.
+In Python, eight different machine learning classification models from \lstinline{Scikit-learn} module are used for the default status prediction, which were already described in \autoref{sec:algorithms}, namely:
 \begin{itemize}\setlength\itemsep{0em}
 \item \textbf{Logistic Regression} - \lstinline{LogisticRegression()}
 \item \textbf{Decision Tree} - \lstinline{DecisionTreeClassifier()}
@@ -758,7 +757,7 @@ In Python, 8 different machine learning models from \lstinline{Scikit-learn} mod
 \item \textbf{Support Vector Machine} - \lstinline{SVC()}
 \item \textbf{Multi--Layer Percepton} (\textit{Neural Network}) - \lstinline{MLPClassifier()}
 \begin{itemize}\setlength\itemsep{0em}
-\item Henceforth, we will refer to Neural Network as \textbf{MLP}.
+\item Henceforth, we terms such as Neural Network and Multi--Layer Perceptron are used interchangeably.
 \end{itemize}
 \end{itemize}
 
@@ -1124,8 +1123,10 @@ Since there are 8 input models and 8 unique subsets of selected features, the to
 
 \subsubsection{Metrics Space}
 
-When evaluating classification models using class-based metrics such as F1 score, Precision, Recall, Accuracy, Matthews Correlation Coefficient, a default classification threshold of 0.5 is often used. This threshold separates predicted classes based on whether the predicted probability score is higher or lower than 0.5.
-However, in real-world use cases, the 0.5 classification threshold may not be appropriate and according to \citep{esposito2021ghost}, such threshold is not appropriate when having imbalanced ata. Therefore, it is recommended to calculate an optimal threshold rather than relying on the default one.
+When evaluating classification models using class-based metrics such as F1 score, Precision, Recall, Accuracy, Matthews Correlation Coefficient, a standard classification threshold of 0.5 is often used. This threshold separates predicted classes based on whether the predicted probability score is higher or lower than 0.5.
+However, in real-world use cases, the 0.5 classification threshold may not be appropriate and according to \citep{esposito2021ghost}, such threshold is not appropriate when having imbalanced data.
+
+Therefore, it is recommended to calculate an optimal threshold rather than relying on the standard one.
 For such case, the Youden index is employed which is derived from ROC curve and enables the selection of an optimal classification threshold value. 
 The Younden index searches for the threshold that maximizes the sum of True Positive Rate and True Negative Rate, decreased by 1 \citep{fluss2005estimation}, thus:
 \begin{equation}\label{eq}
@@ -1184,12 +1185,13 @@ Brier Score Loss  & 1 \\
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{table}
 
-Particularly, for each model a rank score is calculated in order to determine the final rank. The lower rank score indicates better model performance. For particular model $M$, the rank score as weighted sum of the individual ranks as follows:
+Particularly, for each model a rank score is calculated in order to determine the final rank. The lower rank score indicates better model performance. For particular model $M$, the rank score can be calulcated as weighted average of the individual ranks as follows:
 \begin{equation}\label{eq:rankscorem}
     RankScore_{M} = \frac{\sum_{i=1}^{k} {r_i \times w_i}}{\sum_{i=1}^{k} {w_i}} 
 \end{equation}
 where $k$ is the number of metrics used to evaluated the model $M$, $r_i$ is the rank order of $i$--th metric for given model $M$ and $w_i$ is the weight assigned to the $i$--th metric.
 Such metric lies in interval $<1, k>$, where 1 would indicate a perfect model performance across the all metrics.
+Based on the rank scores, we assign the final ranks where rank of 1 indicates the best performing model whereas rank $k$ determines the worst performing model.
 
 
 \newpage
@@ -1251,7 +1253,8 @@ Tuned hyperparameters of LR:
 
 \newpage
 
-The final output of the function \lstinline{model_selection()} is table which summarizes the model's computed metrics as depicted in \autoref{tab:modelsectab}. As can be seen, the best models in terms of ranking are the Gradient Boosting models which in general have the highest score metrics and the lowest loss metrics. On the other hand, the worst-performing models are Gaussian Naive Bayes models.
+The final output of the function \lstinline{model_selection()} is table which summarizes the model's computed metrics as depicted in \autoref{tab:modelsectab}. As can be seen, the best models in terms of ranking are the Gradient Boosting models which in general have the highest score metrics and the lowest loss metrics, followed by another ensemble mode, Random Forest.
+On the other hand, the worst-performing models are Gaussian Naive Bayes models. In the first ten worst performing models, we can observe also that Decision Tree and Logistic Regression, as white--box models, perform poorly.
 
 
 \clearpage
@@ -1311,7 +1314,7 @@ GNB & DT & 9 & 0.36 & 0.2241 & 0.6063 & 0.5095 & 0.7486 & 0.8056 & 0.8467 & 0.69
 \restoregeometry
 \fancyheadoffset{0pt}
 
-In order to gain a more detailed understanding of the model selection results, the distribution of computed metrics is plotted. In \autoref{fig:f1dist}, the F1 score distribution is visualized for each input model. An outlier can be observed in KNN where the F1 score is 0.				
+In order to gain a more detailed understanding of the model selection results, the distribution of computed metrics is plotted. In \autoref{fig:f1dist}, the F1 score distribution is visualized for each input model. An outlier can be observed in KNN where the F1 score is 0.			
 \begin{figure}[H]
 \centering
 \caption{F1 Score Distribution}\vspace{0.5em}

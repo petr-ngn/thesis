@@ -15,14 +15,14 @@ Warning--empty journal in li2012overview
 You've used 113 entries,
             3042 wiz_defined-function locations,
             1179 strings with 24001 characters,
-and the built_in function-call counts, 69529 in all, are:
+and the built_in function-call counts, 69531 in all, are:
 = -- 5479
 > -- 2598
 < -- 260
 + -- 917
 - -- 753
-* -- 5789
-:= -- 9852
+* -- 5791
+:= -- 9853
 add.period$ -- 345
 call.type$ -- 113
 change.case$ -- 837
@@ -41,10 +41,10 @@ pop$ -- 1773
 preamble$ -- 1
 purify$ -- 698
 quote$ -- 0
-skip$ -- 2630
+skip$ -- 2628
 stack$ -- 0
 substring$ -- 2729
-swap$ -- 3347
+swap$ -- 3348
 text.length$ -- 184
 text.prefix$ -- 0
 top$ -- 0
