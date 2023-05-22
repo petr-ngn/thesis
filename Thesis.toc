@@ -36,7 +36,7 @@
 \contentsline {subsection}{\numberline {2.4.6}Log Loss}{35}{subsection.2.4.6}%
 \contentsline {section}{\numberline {2.5}ADASYN Oversampling}{36}{section.2.5}%
 \contentsline {section}{\numberline {2.6}Optimal Binning}{39}{section.2.6}%
-\contentsline {section}{\numberline {2.7}Hyperparameter Bayesian Optimization}{41}{section.2.7}%
+\contentsline {section}{\numberline {2.7}Bayesian Hyperparameter Optimization}{41}{section.2.7}%
 \contentsline {section}{\numberline {2.8}Forward Sequential Feature Selection}{44}{section.2.8}%
 \contentsline {section}{\numberline {2.9}Theoretical Summary}{46}{section.2.9}%
 \contentsline {chapter}{\numberline {3}Literature Review}{47}{chapter.3}%
@@ -59,7 +59,7 @@
 \contentsline {subsection}{\numberline {4.3.1}Data Split and ADASYN Oversampling}{74}{subsection.4.3.1}%
 \contentsline {subsection}{\numberline {4.3.2}Optimal Binning and Weight--of--Evidence}{78}{subsection.4.3.2}%
 \contentsline {section}{\numberline {4.4}Modelling}{81}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Hyperparameter Bayesian Optimization}{81}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.1}Bayesian Hyperparameter Optimization}{81}{subsection.4.4.1}%
 \contentsline {subsubsection}{Logistic Regression}{82}{section*.69}%
 \contentsline {subsubsection}{Decision Tree}{83}{section*.71}%
 \contentsline {subsubsection}{Gaussian Naive Bayes}{83}{section*.73}%
