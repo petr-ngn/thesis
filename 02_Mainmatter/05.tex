@@ -15,7 +15,7 @@ In particular, all the score metrics and loss metrics have increased and decreas
 
 We reject the \textbf{Hypothesis \#2} as the final model, which is the best performing, is the Gradient Boosting model as described in \autoref{tab:finalmodelinfo}.
 KNN was also outperformed by the Random Forest and in case of Neural Network, it was outperformed by SVM as well as can be seen in \autoref{fig:avgrankdist}.
-If we aggregate the model selection results by looking the highest rank per each model, we can observe that the best KNN model had the 11th highest rank, while Neural Network (MLP) exhibited unsatisfactory performance with the 22nd highest rank as can be seen in \autoref{tab:maxranks}.
+If we aggregate the model selection results by looking the highest rank per each model, we can observe that the best KNN model had the 12th highest rank, while Neural Network (MLP) exhibited unsatisfactory performance with the 26th highest rank as can be seen in \autoref{tab:maxranks}.
 Therefore, our results are not in with line with the outcomes of respective studies \citep{serkan2021bagging,zurada2014classification} which reported that Neural Network and KNN model outperformed all the models on HMEQ data set, respectively.
 
 \begin{table}[H]
@@ -31,12 +31,12 @@ Therefore, our results are not in with line with the outcomes of respective stud
     \hline
     GB & 1 \\ 
     RF & 6 \\ 
-    KNN & 11 \\ 
-    SVM & 19 \\ 
-    MLP & 22 \\ 
-    DT & 33 \\ 
-    LR & 40 \\
-    GNB & 55 \\
+    KNN & 12 \\ 
+    SVM & 17 \\ 
+    MLP & 26 \\ 
+    DT & 35 \\ 
+    LR & 39 \\
+    GNB & 52 \\
     \hline
     \bottomrule
     \end{tabular}
@@ -47,7 +47,7 @@ Therefore, our results are not in with line with the outcomes of respective stud
 
 \vspace{0.3cm}
 
-\noindent \textbf{Result \#3:} \textit{Black--box models \underline{DOES} perform better than the white--box models on HMEQ data set.}
+\noindent \textbf{Result \#3:} \textit{Black--box models \underline{DO} perform better than the white--box models on HMEQ data set.}
 
 We fail to reject the \textbf{Hypothesis \#3} as the black--box models truly outperformed the white--box models as can be seen in \autoref{fig:avgrankdistbbwb} which depicts the distribution of ranks for both black--box and white--box models.
 Most of the white--box models were ranked in the bottom half within the model selection, whereas the 10 best performing models consisted out of black--box models only, namely Gradient Boosting and Random Forest.
@@ -68,6 +68,55 @@ Since the features' values are encoded as WoE, the negative WoE values indicates
 Based on the WoE bins distribution in \autoref{fig:woedist}, we can observe negative WoE values for bins where the debt--to--income ratio is extremely high or is missing. Regarding to the number of delinquent credit lines, we can observe a negative WoE value for bin corresponding to the relatively high number of delinquent credit lines.
 Therefore, if the loan applicant has either high or missing debt--to--income ratio and/or relatively high number of delinquent credit lines,  he would be likely to default.
 
+\section{Comparison with other HMEQ Studies}
+
+Within the literature review in \autoref{chap:three}, we explored the studies of Aras \citep{serkan2021bagging} and Zurada \citep{zurada2014classification} which analyzed the HMEQ data set, i.e., the same data set as in this thesis.
+In this section, we contrast their results with those of this thesis. Particularly, we compare the models' rankings from \autoref{tab:serkanresultsranks} and \autoref{tab:zuradaresultsranks}, respectively, with the author's rankings derived from \autoref{tab:maxranks}, which is summarized in the following \autoref{tab:comparisonfinal}.
+Upon examination, it is apparent that none of the studies considered the Gradient Boosting model, which happens to be the best-performing model in this thesis.
+
+With respect to the study of Aras \citep{serkan2021bagging}, when excluding our Gradient Boosting model, we can agree that Random Forest and KNN are the top-performing models. However, there is a discrepancy in the order of their performance. Aras found that KNN outperformed Random Forest, whereas in this thesis, Random Forest outperformed KNN.
+Furthermore, it is worth noting that the worst-performing models, namely Decision Tree, Logistic Regression, and Gaussian Naive Bayes, align with both this thesis and Aras' study. Specifically, Aras identified Logistic Regression as the worst-performing model, while in this thesis, Gaussian Naive Bayes exhibited the poorest performance.
+
+Regarding the Zurada's study \citep{zurada2014classification}, we again concur that Logistic Regression is one of the worst performing models.
+However, there are significant disparities in the rankings of other models compared to the results obtained in this thesis.
+It is evident from the findings that MLP was identified as the best performing model in Zurada's study, whereas in this thesis, MLP was ranked as the 5th best performing model, placing it in the second half of the ranked models.
+In contrast, while KNN was ranked as the 3rd best performing model in this thesis, it received the position of the 2nd worst performing model according to Zurada.
+Conversely, Zurada ranked Decision Tree as the best second performing model, while in this thesis, it was positioned as the 6th best performing model.
+However, both Zurada's and Aras' studies, consistent with this thesis, ranked the SVM model in the middle range, aligning with our findings.
+\begin{table}[H]
+    \small
+    \setlength{\tabcolsep}{8pt}
+    \renewcommand{\arraystretch}{1.3}
+    \centering
+        \caption[Ranking Results Comparison based on HMEQ Data Set]{Ranking Results Comparison based on HMEQ Data Set}\label{tab:comparisonfinal}
+        \begin{tabular}{r r r r}
+    \toprule
+    \textbf{Model} & \textbf{This Thesis} & \textbf{\citep{serkan2021bagging}} & \textbf{\citep{zurada2014classification}}\\
+    \midrule
+    \hline
+    GB & 1 & - & - \\ 
+    RF & 2 & 2 & - \\ 
+    KNN & 3 & 1 & 4 \\ 
+    SVM & 4 & 3 & 3 \\ 
+    MLP & 5 & - & 1 \\ 
+    DT & 6 & 4 & 2 \\ 
+    LR & 7 & 6 & 5 \\
+    GNB & 8 & 5 & - \\
+    \hline
+    \bottomrule
+    \end{tabular}
+    \vspace{0.35em}
+
+        \centering{\begin{source}Author's results in Python, Rankings of \citep{serkan2021bagging}, \citep{zurada2014classification}\end{source}}\vspace{-1em}
+\end{table}
+
+It is important to note that the author of the thesis, Aras, and Zurada employed distinct data preprocessing techniques and employed different data splits, leading to variations in the training, tuning, and evaluation samples, resulting in disparate outcomes.
+While Zurada and Aras utilized Grid Search with cross-validation for hyperparameter tuning, the author of the thesis employed Bayesian Optimization with stratified cross-validation and different hyperparameter spaces.
+Additionally, each author utilized different evaluation metrics. Aras utilized Accuracy, Recall, Precision, F1, and Matthews Correlation Coefficient, while Zurada employed Accuracy, Recall, and AUC.
+In contrast, the author of the thesis employed a broader range of metrics, including Accuracy, Recall, Precision, F1, Matthews Correlation Coefficient, AUC, Kolmogorov-Smirnov Distance, Somers' D, Brier Score Loss, and Log Loss.
+Moreover, it is worth mentioning that the authors may have used different software tools. The thesis' author utilized Python, while Zurada employed Weka, and the software used by Aras is unclear.
+These various factors contribute to the discrepancies in the obtained results among the studies and the thesis. Therefore, it is advisable to refrain from making direct comparisons due to the incomparability of the results.
+\vspace{0.3cm}
 
 \section{Key Findings}
 

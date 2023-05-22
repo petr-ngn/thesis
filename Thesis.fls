@@ -1855,6 +1855,7 @@ INPUT ./02_Mainmatter/05.tex
 INPUT 02_Mainmatter/05.tex
 INPUT ./02_Mainmatter/05.tex
 INPUT 02_Mainmatter/05.tex
+INPUT c:/tex/texlive/texmf-dist/fonts/tfm/public/lm/ec-lmbxi10.tfm
 INPUT ./02_Mainmatter/99_Concl.tex
 INPUT 02_Mainmatter/99_Concl.tex
 INPUT ./02_Mainmatter/99_Concl.tex
@@ -1893,6 +1894,7 @@ INPUT c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc
 INPUT c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc
 INPUT c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmbx10.pfb
 INPUT c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmbx12.pfb
+INPUT c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb
 INPUT c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb
 INPUT c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmex10.pfb
 INPUT c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmmi10.pfb
