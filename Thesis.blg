@@ -6,6 +6,7 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: Styles/Bibliography.bib
 Warning--entry type for "igareta2021strat" isn't style-file defined
 --line 2091 of file Styles/Bibliography.bib
+Warning--I didn't find a database entry for "scikit-learn"
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Warning--missing publisher in doumpos2019analytical
 Warning--empty journal in li2012overview
@@ -50,4 +51,4 @@ warning$ -- 2
 while$ -- 463
 width$ -- 0
 write$ -- 1330
-(There were 3 warnings)
+(There were 4 warnings)

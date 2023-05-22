@@ -3,13 +3,53 @@
 
 \textbf{TBD}
 
-Recap of theoretical background (credit risk definition, ML terminology, ML algorithms, evaluation and other topics).
+The main contribution of this thesis is conducting a custom achine learning implementation on a credit risk data set of US home equity loans (HMEQ), including training, tuning and selecting from the eight classification algorithms with further deployment and development of a custom web application.
 
-Hypotheses and literature review
+We have covered the theoretical background of credit risk, machine learning, particular machine learning algorithms and the evaluation of classification models, including more advanced machine learning techniques such as ADASYN oversmapling, Optimal Binning, Bayesian Optimization or Forward Sequential Feature Selection, as all described in \autoref{chap:two}.
+In \autoref{chap:three} we have formulated five hypothesess, including the literature review with the main focus on HMEQ--based studies of Aras \citep{serkan2021bagging} and Zurada \citep{zurada2014classification}.
 
-Recap of the ML framework and repository structure / Dataset description / findings from distribution and association analysis.
 
-Data preprocessing - data split, ADASYN, optbinning.
+The \autoref{chap:four} regards the empirical analysis, i.e., machine learning implementation on HMEQ data set.  This includes the high--level overview of the custom machine learning framework, repository and envinronment structure in Python \autoref{sec:repo}, data exploration, data preprocessing, hyperparameter tuning, feature selection, model selection, model recalibration, model evaluation and final machine learning deployment.
+Such implementation is employed with random seed of 42 in order to ensure reproducibility of the results.
+
+Within data exploration (\autoref{sec:dataexploration}), we first delve into the description of the data set, particularly, what variables or how many instances does it contains (\autoref{subsec:datadescript}).
+Also, distribution analysis is performed (\autoref{subsec:distribution}) as an inspection of the default distribution (\autoref{subsubsec:defaultdist}) as well as the distribution of the features conditional on the default and non--default classes (\autoref{subsubsec:numdist}, \autoref{subsubsec:catdist}).
+Further, an association analysis (\autoref{subsec:assanal}) is conducted using Point--Biserial Coefficient (\autoref{subsubsec:target-num-ass}),
+Cramer's V (\autoref{subsubsec:target-cat-ass}), Phi Coefficient (\autoref{subsubsec:target-na-ass}), Spearman Correlation Coefficient (\autoref{subsubsec:multicolinearity}) or Nullity dendrograms (\autoref{subsubsec:naass}), in order to infer some association between the default and the features or the feature themselves.
+
+This chapter further describes an implementation of data preprocessing (\autoref{sec:dataprep}), including the data split into training set (for hyperparameter tuning, feature selection and model training), validation set (for model selection), and test set (for model evaluation).
+Such data is split into ratio 70:15:15 with stratification in order to preserve the global distribution of the defaults across the samples. It also includes ADASYN oversampling in order to balance the default distribution, which is performed on the training set only in order to avoid data leakage (\autoref{sec:dataprep}).
+The next step of data preprocessing involves Optimal Binning (\autoref{subsec:prep-optbinning}), which is utilized using \lstinline{optbinning} module in Python developed by Navas--Palencia \citep{navas2020optimal}.
+This module is employed in order to discretize the numeric features into interval bins and categorical features into subgroups of categories, both are optimally binned with respect to the default.
+Optimal binning also captures both linear and non--linear relationships and also extreme and missing values, hence no replacement or imputation of outliers of missing values is needed.
+Afterwards, these bins as categorical values are transformed using Weight--of--Evidence (WoE) with respect to the defaults. The optimal binning and WoE transformation are fitted on the training set only in order to avoid data leakage, based on which other sets are transformed.
+
+
+\autoref{chap:four} also includes modelling part (\autoref{sec:modelling}), which includes Bayesian Optimization, feature selection and model selection.
+In this thesis, we use eight classification models from \lstinline{scikit-learn} module \citep{scikit-learn} namely Logistic Regression, Decision Tree, Gaussian Naive Bayes, K--Nearest Neighbors, Random Forest, Gradient Boosting, Support Vector Machine, and Neural Network (Multi--Layer Perceptron).
+Bayesian Optimization is used for hyperparameter tuning, particularly we use \lstinline{scikit-optimize} module. We use Bayesian Optimization with 50 iterations, stratified 10--fold cross--validation, while maximizing F1 score. For each model, we further define hyperparameters' space over which the model is tuned (\autoref{subsec:hyperoptbayes}).
+The feature selection is performed using custom algorithm developed by the author, which iterates over the models. Particularly, for each model, it tunes it with Bayesian Optimization on training set, and such tuned model is used as an input estimator within Forward Sequential Feature Selection on training set, which returns subset of optimal features for given model. Since we have eight models, we obtain eight subset of features.
+Within the model selection \autoref{subsec:modelselection}, each model is tuned on each subset of selected features on training set, and then is evaluated on the validation set. On the validation set, we evaluate several evaluation metrics, such as F1 score, Precision, Recall, Accuracy, Matthews Correlation Coefficient, AUC, Kolmogorov--Smirnov Distance, Somers' D, Brier Score Loss and Log Loss.
+Instead of using standard classification threshold of 0.5, we compute an optimal threshold using Youden index. Since we have eight models and eight subset of features, we obtain 64 models in total.
+Afterwards, all the models are ranked on each metric, based on which we calculate a rank score as a weighted sum of the individual ranks, where the weights are set explicitly by the author. Based on the rank score, we determine the final rank. The model with the highest rank (i.e., rank of 1) is then selected as the final model for both evaluation and deployment.
+The final model is \textbf{Gradient Boosting} which was trained on the features selected by \textbf{Multi--Layer Perceptron}.
+
+
+In the next part of \autoref{chap:four}, we delve into model recalibration and model evaluation.
+Pertaining to model recalibration (\autoref{subsec:modelrecal}), the final model is retrained (recalibrated) on the joined training and validation set as (1) by increasing the training sample size we enhace the model's performance and ability to generalize, and (2) we already used validation set within model selection, thus no data leakage occurs. Together with the model itself, we also recalculate the optimal threshold using Youden index.
+The recalibrated optimal threshold used for an evaluation is \textbf{0.45109}.
+The final model is further assessed in evaluation part on the test set (\autoref{sec:modeleval}).
+First we inspect model's performance (\autoref{subsec:modelperformance}) using confusion matrix and the evaluation metrics defined previously and further we construct a ROC curve as an indicator, whether given model performs better than a random guess.
+We inspect the impact of the recalibration on the model's performance as well.
+Further, we assess the model explainability (\autoref{subsec:explainability}) by exploring its feature importances, i.e., how each feature contributes to the model's performance, and by SHAP summary plot which depicts the global explainability of the model and how each future contributes to the predictions.
+
+The final section of \autoref{chap:four} regards the machine learning deployment of the model into a production as a web application (\autoref{sec:deployment}).
+Such application is built using Flask framework for back--end and HTML with CSS and JavaScript elements for front--end.
+Prior the deployment, the final model and its optimal threshold are retrained on the whole data set (training, validation and test set) in order to enhance the model's performance and ability to generalize, since we already used the test set within the evaluation part. The final optimal threshold used in the deployment is \textbf{0.3358}.
+
+
+
+
 
 Bayesian Optimization - approach -> Feature selection algorithm
 

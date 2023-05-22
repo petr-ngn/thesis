@@ -24,7 +24,7 @@ This chapter focuses on the main part of this thesis, particularly on the practi
 
 \newpage
 \section{Repository and Environment Structure}
-
+\label{sec:repo}
 The whole machine learning implmenetation as the scope of this thesis is done mainly using Python Programming Language and further with collaboration of Git and HTML.
 The whole repository can be found in the separate appendix or is available on the GitHub repository \url{https://github.com/petr-ngn/FFU_VSE_Masters_Thesis_ML_Credit_Risk_Modelling}.
 The repository structure is shown in \autoref{fig:repostructure}.
@@ -223,6 +223,7 @@ In this subsection, we inspect the distribution of our variables, including the 
 Such distribution inspection may help us to identify outliers, and other potential issues with the data set.
 
 \subsubsection{Default Distribution}
+\label{subsubsec:defaultdist}
 
 Regarding the the target variable distribution, from the \autoref{fig:defaultdist} we can observe that the default status distribution is heavily imbalanced, as most of the loans have not defaulted yet.
 Particularly, 80.05\% of the observations have been labelled as non-default (4,771 observations) and 19.95\% observations labelled as default (1,189 observations).
@@ -345,6 +346,7 @@ Hence, a moderate association between the \texttt{JOB} feature and the default s
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
 \subsection{Association Analysis}
+\label{subsec:assanal}
 In this subsection, we aim to examine potential relationships between the variables by analyzing their associations. Firstly, we investigate the association between the default status and the features. Subsequently, we explore the association among the features themselves.
 
 \subsubsection{Association between Default Status and Numeric Features}
@@ -510,6 +512,7 @@ Therefore, we can anticipate that these features will be crucial indicators in d
 \end{table}
 
 \subsubsection{Missing Values Association}
+\label{subsubsec:naass}
 Additionally, it is imperative to investigate the relationship between missing values and default status, as well as the interrelationship between the missing values themselves.
 A common approach to identifying patterns of missing data in a data set is through the use of a dendrogram, which clusters variables hierarchically based on the occurrence of missing values.
 This method groups variables into clusters based on the similarity of their missing value patterns, such that variables with comparable patterns of missingness are clustered together.
@@ -542,7 +545,7 @@ As can be seen, the hierarchy has changed compared the hierarchy in \autoref{fig
 \end{figure}
 
 \subsubsection{Multicolinearity Analysis}
-
+\label{subsubsec:multicolinearity}
 To quantify the association between the numerical features, Pearson correlation coefficient is often used.
 However, it is highly sensitive to outliers and makes assumptions regarding the normal distribution and linear relationship between variables.
 Consequently, Spearman correlation coefficient is utilized as an alternative, as it is a non-parametric measure that does not make any assumptions regarding the distribution of variables or the linearity of their relationship.
@@ -568,6 +571,7 @@ Regarding the association between categorical features, namely \texttt{REASON} a
 
 \newpage
 \section{Data Preprocessing}
+\label{sec:dataprep}
 In this section, the process of preprocessing data is described as the crucial step in the machine learning modelling. Particularly, the the process of dividing data for various tasks, oversampling due to the imbalanced class issue, discretization of features and Weight--of--Eveidence transformation are further discussed and described.
 
 \subsection{Data Split and ADASYN Oversampling}
@@ -1475,6 +1479,7 @@ Therefore, using the validation data for recalibration is a sound practice that 
 
 \newpage
 \section{Model Evaluation}
+\label{sec:modeleval}
 After recalibrating the model and threshold, the final step in evaluating the model's performance is to test it on previously unseen data, specifically the test set.
 This evaluation is critical to determine whether the model can generalize well to new data beyond the training, feature selection, and model selection phases.
 During the evaluation, the recalibrated classification threshold of 0.45109, determined in the model recalibration process, is also used.
