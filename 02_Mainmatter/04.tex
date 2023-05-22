@@ -1481,7 +1481,7 @@ To summarize this subsection, the best and final model is the \textbf{Gradient B
 \label{subsec:modelrecal}
 
 In order to ensure that the final model performs well on unseen data, it is common practice to employ the recalibration approach, which involves retraining the model on both the training and validation sets.
-By doing so, the sample size used for training is increased. As such, the retraining (or so called recalibration) model lead (or are expected to lead) to markedly improved model performance \citep{de2023predicting}.
+By doing so, the sample size used for training is increased. As such, the re-training (or so called recalibration) model leads (or is expected to lead) to markedly improved model performance \citep{de2023predicting}.
 The recalibrated model is then used to evaluate the performance of the final model on the test set, which is the ultimate measure of a model's performance.
 
 In addition to recalibrating the final model, it is crucial to recalibrate the threshold value for assigning class labels based on predicted probabilities. The optimal threshold value can be determined using the training and validation sets. Such threshold is recalibrated based on the training and validation set.
@@ -1518,6 +1518,7 @@ In \autoref{fig:confmat}, the confusion matrix for the final model, based on the
 In order to obtain a better understanding of the model's performance on previously unseen data, we computed several metrics that were used during the model selection process.
 These metrics are presented in \autoref{tab:metricseval}. The results indicate that the model performs well on the unseen data, with most of the scores metrics around 80 \% to 90 \%.
 Furthermore, the loss metrics are relatively low, indicating that the model can effectively distinguish between defaults and non-defaults.
+Particularly, out of all test instances, the model predicts correctly 92.62 \%. Model also predicts 81.46 \% instances out of all the actual default instances. Also, out of all predicted default instances, model predict 81.46 \% instances correctly to be actually default instances.
 Overall, these results suggest that the model is performing well and is suitable for predicting defaults.
 The results suggest that the model has a good balance between correctly identifying defaults and non-defaults, as well as minimizing false positives and false negatives. This further confirms the model's ability to accurately predict defaults.
 
@@ -1550,7 +1551,7 @@ The results suggest that the model has a good balance between correctly identify
         \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{table}
 
-The following \autoref{tab:recab} shows the impact of recalibration on the model's performance metrics. $M_{NR}$ denotes the final model which was not recalibrated at all (i.e., was trained only on the training set), whereas $M_R$ denotes the recalibrated model (i.e., trained on the joined training and validation set). Respectively, $M_{NR}$ uses its threshold computed bas on the training set (0.4955), and $M_R$ uses its threshold computed on the joined training and validation set(0.45109).
+The following \autoref{tab:recab} shows the impact of recalibration on the model's performance metrics. $M_{NR}$ denotes the final model which was not recalibrated at all (i.e., trained only on the training set), whereas $M_R$ denotes the recalibrated model (i.e., trained on the joined training and validation set). Respectively, $M_{NR}$ uses its threshold computed bas on the training set (0.4955), and $M_R$ uses its threshold computed on the joined training and validation set(0.45109).
 As can be seen, the recalibration indeed has a positive impact on the metrics evaluation as all the metric scores have increased, while the metric loss functions decreased.
 We can observe the most significant decrease in the Log Loss function, which decreased by 8.09 \%, while the objective function F1 score has increased by 3.30 \% thanks to to increase in both Precision and Recall.
 Therefore, the recalibration process is deemed desired and appropriate in terms of model's performance.
@@ -1612,7 +1613,7 @@ According to Bonaccorso \citep{bonaccorso2020mastering}, feature importance is t
 where $ \text{FI}\left(\bar{x}^{\left(i\right)}\right)$ referes to the feature importance of the feature $i$, $n(j)$ is the number of samples reaching the node $j$, $\delta I_{j}^{i}$ represents the impurity reduction at node $j$ after the splitting using the feature $j$, $M$ is total number of samples in the data set used to built the model, and $N$ refers to the number of tree estimators used within an ensemble model.
 
 The following \autoref{fig:fi} depicts the feature importances of all the selected features on which the model was trained.
-The two most important features used in the final model are \texttt{DEBTINC} and \texttt{DELINQ}, which are crucial delinquency indicators in determining whether a borrower would be able to repay their loan. These two features have a significant impact on the model's ability to accurately predict loan defaults, with high feature importance scores. This is also in line with the findings from the exploratory analysis, WoE distribution or feature selection.
+The two most important features used in the final model are \texttt{DEBTINC} and \texttt{DELINQ}, which are crucial debt and delinquency indicators in determining whether a borrower would be able to repay their loan. These two features have a significant impact on the model's ability to accurately predict loan defaults, with high feature importance scores. This is also in line with the findings from the exploratory analysis, WoE distribution or feature selection.
 \begin{figure}[H]
 \centering
 \caption{Feature Importance}\vspace{0.5em}
