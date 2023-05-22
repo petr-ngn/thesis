@@ -29,7 +29,7 @@ where $PD$ is the probability of default indicating likelihood of the client wil
 Basel Commitee on Banking Supervision (BCBS) introduced Capital Accord Basel II and Basel III in 2004 and 2010, respectively \citep{shakdwipee2017basel}, with a goal to set higher risk management and internal control standards for banks \citep{witzany2017credit}.
 Regarding credit risk modelling, the former Accord introduced two approaches how to model credit risk:
 \begin{itemize}\setlength\itemsep{0em}
-    \item \textbf{Standardized Approach} - The simplest approach which imposes risk weights based ot assets based on the external credit ratings from credit rating agencies (CRA's) \citep{konno2016alternative}.
+    \item \textbf{Standardized Approach} - The simplest approach which imposes risk weights of assets based on the external credit ratings from credit rating agencies (CRA's) \citep{konno2016alternative}.
     \item \textbf{Internal Ratings Based (IRB)  Approach} - More sophisticated approach which allows to use internal rating systems to assess the parameters such as PD, LGD and EAD \citep{baesens2016credit}. Such approach is further divided into two sub-approaches:
     \begin{itemize}\setlength\itemsep{0em}
         \item \textbf{Foundation IRB approach} - Only PD is internally estimated by a bank, while LGD and EAD are determined by the Basel Accord or provided by the local regulator \citep{baesens2016credit}.
@@ -54,7 +54,7 @@ For more information about the differences between IFRS 9 and Basel II/III, plea
 Credit scoring is an assessment of the credit quality of the client which uses techniques for finding the criteria that best discriminate between defaulters and non--defaulters \citep{bessis2015}. From such perspective, we distinguish two basic types of credit scoring:
 
 \subsubsection{Application Scoring}
-As the name indicates, the application scoring is used to assess the creditworthiness of the client at the moment of loan application  whiuch supports the decision whether a bank should approve or reject the loan application \citep{baesens2016credit}. The most common variables which are used in application scoring and can be acquired from the loan application are for instance: age, gender, marital status, income, employment status and others \citep{baesens2016credit}.
+As the name indicates, the application scoring is used to assess the creditworthiness of the client at the moment of loan application  which supports the decision whether a bank should approve or reject the loan application \citep{baesens2016credit}. The most common variables which are used in application scoring and can be acquired from the loan application are for instance: age, gender, marital status, income, employment status and others \citep{baesens2016credit}.
 \subsubsection{Behavioral Scoring}
 Behavioral scoring takes into account the observed client's recent or past behavior and and starts once the loan has been approved \citep{van2009credit}. In contrast to application scoring, which is static and takes into account only information from the loan application, behavioral scoring accumulates the information retrieved from the monitoring of the repayments and financial behavior of the client \citep{van2009credit}.
 
@@ -111,7 +111,7 @@ Therefore, the term within the natural logarithm is the odds or more particularl
     \frac{P}{1-P}  = \frac{\operatorname{Pr}(Y=1 \mid X_1,X_2,\ldots,X_n)}{\operatorname{Pr}(Y=0 \mid X_1,X_2,\ldots,X_n)}
 \end{equation}
 
-Referring to the previous equations, solving for $P$, henceforth we get a final equation for computing the probability of occurred event with usage of logistic regression:
+Referring to the previous equations, solving for $P$, thus we get a final equation for computing the probability of occurred event with usage of logistic regression:
 \begin{equation}\label{eq}
 P = \frac{1}{1+e^{-\left(\beta_0 + \sum_{i=1}^{n} \beta_i X_i\right)}}
 \end{equation}
@@ -138,7 +138,7 @@ We distinguish 3 types of regularization (penalty) types:
 \begin{equation}\label{eq:elasticnet}
     L(y, p)_{ElasticNet} = L(y, p) + C \sum_{j=1}^{k} \left[ \alpha \mid w_j \mid + (1-\alpha) w_j^2 \right]
 \end{equation}
-\newpage
+
 \subsection{Decision Tree}
 \label{subsec:dt}
 
@@ -826,7 +826,7 @@ According to Scikit-learn's documentation \citep{sfs}, at each stage, SFS choose
 \newpage
 \section{Theoretical Summary}
 
-In this chapter, we we have introduced the theoretical background of the thesis.
+In this chapter, we have introduced the theoretical background of the thesis.
 In particular, in \autoref{sec:creditrisk}, we have described the traditional credit risk parameters, i.e., PD, LGD, and EAD, as well as the credit risk regulation regarding Basel II/III and IFRS 9, and also scoring methods, namely application and behavioral scoring.
 Pertaining to the machine learning part, its terminology has been introduced in order to avoid any misunderstanding in the following chapters \autoref{sec:mlterms}.
 
@@ -836,4 +836,4 @@ For assessment of model's performance, we have defined following metrics in \aut
 
 Moreover, another advanced machine learning techniques have been presented, particularly, ADASYN oversampling for dealing with imblanaced, i.e., skewed distribution of the target variable (\autoref{sec:adasyntheory}), Optimal Binning for data preprocessing using discretization with respect to the target variable (\autoref{sec:optbinningtheory}),
 Bayesian Optimization for hyperparameter tuning of models (\autoref{sec:bayesoptheory}), and lastly, Forward Sequential Feature Selection for selecting subsets of optimal features (\autoref{sec:fsfstheory}).
-All these techniques are employed in empirical analysis of this thesis as welll.
+All these techniques are employed in empirical analysis of this thesis as well.
