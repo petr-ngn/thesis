@@ -1,13 +1,13 @@
 \section*{Abstract}
 
 
-This Master's thesis deals with the custom machine learning implementation framework, which was developed in Python and dapplied on the application scoring data of US home equity loans (HMEQ).
-Such ML framework involves 8 classification models, namely Logistic Regression, Decision Tree, Gaussian Naive Bayes, K-Nearest Neighbors, Random Forest, Gradient Boosting, Support Vector Machine and Neural Network.
-It further consists out of data exploration, data preprocessing using ADASYN oversampling and Optimal Binning with Weight--of--Evidence, custom feature selection algorithm utilizing both Bayesian Optimization and Forward Sequential Feature Selection and custom model selection algorithm employed based on Bayesian Optimization and weighted ranking of indvidual metrics ranks. In this thesis, metrics such as F1 score, MCC, AUC, Kolmogorov--Smirnov Distance, Somers' D etc., are evaluated.
-Instead of using standard classification threshold, an optimal threshold is calculated using Youden index.
+This Master's thesis deals with the custom machine learning implementation framework that was developed in Python and applied to the application scoring data of US home equity loans (HMEQ).
+The ML framework involves eight classification models, namely Logistic Regression, Decision Tree, Gaussian Naive Bayes, K-Nearest Neighbors, Random Forest, Gradient Boosting, Support Vector Machine, and Neural Network.
+It further consists of data exploration, data preprocessing using ADASYN oversampling and Optimal Binning with Weight-of-Evidence, a custom feature selection algorithm that utilizes both Bayesian Optimization and Forward Sequential Feature Selection, and a custom model selection algorithm employed based on Bayesian Optimization and weighted ranking of individual metric ranks. In this thesis, metrics such as F1 score, MCC, AUC, Kolmogorov-Smirnov Distance, Somers' D, etc., are evaluated.
+Instead of using standard classification threshold of 0.5, an optimal threshold is calculated using Youden index.
 The final model is Gradient Boosting trained on the features selected by Neural Network. 
-uch model is further evaluated using both model performance assessment and black--box model explainability inspection.
-The final model is deployed as a web application using Flask and HTML which requires to fill in the loan application form and outputs the loan approval result, proability of default and LIME - local explanation of the black--box model around the prediction.
+This model is further evaluated using both model performance assessment and black-box model explainability inspection.
+The final model is deployed as a web application using Flask and HTML, which requires filling in the loan application form and outputs the loan approval result, probability of default, and LIME plot, i.e., local explainability of the black-box model around the single prediction.
 \bigskip
 
 \textbf{Keywords:} \Keywords
@@ -20,11 +20,11 @@ The final model is deployed as a web application using Flask and HTML which requ
 
 
 Tato diplomov\'{a} pr\'{a}ce se zab\'{y}v\'{a} implementac\'{i} vlastn\'{i}ho r\'{a}mce strojov\'{e}ho u\v{c}en\'{i} (ML), kter\'{y} byl vyvinut v Pythonu a aplikov\'{a}n na aplika\v{c}n\'{i} scoringov\'{a} data americk\'{y}ch hypote\v{c}n\'{i}ch \'{u}v\v{e}r\r{u} (HMEQ).
-Tento ML r\'{a}mec zahrnuje 8 klasifika\v{c}n\'{i}ch model\r{u}, jmenovit\v{e} logistickou regresi, rozhodovac\'{i} strom, Gaussovsk\'{y} naivn\'{i} Bayes, K-nejbli\v{z}\v{s}\'{i}ch soused\r{u}, N\'{a}hodn\'{y} les, Gradientn\'{i} Boosting, Model podp\r{u}rn\'{y}ch vektor\r{u} a Neuronovou s\'{i}\v{t}.
+Tento ML r\'{a}mec zahrnuje 8 klasifika\v{c}n\'{i}ch model\r{u}, jmenovit\v{e} logistickou regresi, rozhodovac\'{i} strom, Gaussovsk\'{y} naivn\'{i} Bayes, k-nejbli\v{z}\v{s}\'{i}ch soused\r{u}, n\'{a}hodn\'{y} les, gradientn\'{i} boosting, model podp\r{u}rn\'{y}ch vektor\r{u} a neuronovou s\'{i}\v{t}.
 D\'{a}le je zde zahrnut\'{a} explorace dat, zpracov\'{a}n\'{i} dat pomoc\'{i} ADASYN a optim\'{a}ln\'{i}ho binningu s Weight-of-Evidence, vlastn\'{i} algoritmus pro v\'{y}b\v{e}r prediktor\r{u} vyu\v{z}\'{i}vaj\'{i}c\'{i} Bayesovskou optimalizaci a Forwardovou sekven\v{c}n\'{i} selekci prediktor\r{u} a
 vlastn\'{i} algoritmus pro v\'{y}b\v{e}r fin\'{a}ln\'{i}ho modelu na z\'{a}klad\v{e} Bayesovsk\'{e} optimalizace a v\'{a}\v{z}en\'{e}ho rankingu dle jednotliv\'{y}ch metrik. V t\'{e}to pr\'{a}ci jsou evaluov\'{a}ny metriky jako F1 sk\'{o}re, MCC, AUC, Kolmogorov-Smirnovova vzd\'{a}lenost, Somers\r{u}v D atd.
 Nam\'{i}sto pou\v{z}it\'{i} standardn\'{i}ho klasifika\v{c}n\'{i}ho prahu 0,5 se optim\'{a}ln\'{i} prahov\'{a} hodnota vypo\v{c}\'{i}t\'{a}v\'{a} pomoc\'{i} Youdenova indexu.
-Fin\'{a}ln\'{i}m vybran\'{y}m modelem je Gradientn\'{i} Boosting tr\'{e}novan\'{y} na prediktorech vybran\'{y}ch Neuronovou s\'{i}\v{t}\'{i}.
+Fin\'{a}ln\'{i}m vybran\'{y}m modelem je gradientn\'{i} boosting tr\'{e}novan\'{y} na prediktorech vybran\'{y}ch neuronovou s\'{i}\v{t}\'{i}.
 Tento model je d\'{a}le evaluov\'{a}n na z\'{a}klad\v{e} hodnocen\'{i} v\'{y}konnosti modelu a inspekce vysv\v{e}tlitelnosti black-box modelu.
 Fin\'{a}ln\'{i} model je nasazen jako webov\'{a} aplikace vyu\v{z}\'{i}vaj\'{i}c\'{i} Flask a HTML, do kter\'{e} se vypln\'{i} formul\'{a}\v{r} \v{z}\'{a}dosti o \'{u}v\v{e}r a vr\'{a}t\'{i} v\'{y}sledek o schv\'{a}len\'{i} \'{u}v\v{e}ru, pravd\v{e}podobnost defaultu a LIME - lok\'{a}ln\'{i} vysv\v{e}tlitelnost black-box modelu okolo samotn\'{e} predikce.
 

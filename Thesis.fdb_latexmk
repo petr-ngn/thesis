@@ -1,13 +1,13 @@
 # Fdb version 3
-["bibtex Thesis"] 1684753206 "Thesis.aux" "Thesis.bbl" "Thesis" 1684753594
+["bibtex Thesis"] 1684753206 "Thesis.aux" "Thesis.bbl" "Thesis" 1684770613
   "./Styles/Stylebib.bst" 1682666078 31292 98900db980236de35533dae0552abced ""
   "Styles/Bibliography.bib" 1684747253 37681 6d8d9553c3844719544bb02c655cf85b ""
-  "Thesis.aux" 1684753593 65774 925167e24ca2e1eee3b253eee2392fc6 "pdflatex"
+  "Thesis.aux" 1684770612 65774 925167e24ca2e1eee3b253eee2392fc6 "pdflatex"
   (generated)
   "Thesis.bbl"
   "Thesis.blg"
-["pdflatex"] 1684753590 "c:/Users/ngnpe/OneDrive/Desktop/VŠE/FFÚ - INŽENÝRSKÉ STUDIUM 2020-2023/FFÚ - DIPLOMOVÁ PRÁCE/LaTeX/Thesis.tex" "Thesis.pdf" "Thesis" 1684753594
-  "01_Frontmatter/abst.tex" 1684753589 3654 a7b11d3a6238bc83d338fdeb3713f400 ""
+["pdflatex"] 1684770608 "c:/Users/ngnpe/OneDrive/Desktop/VŠE/FFÚ - INŽENÝRSKÉ STUDIUM 2020-2023/FFÚ - DIPLOMOVÁ PRÁCE/LaTeX/Thesis.tex" "Thesis.pdf" "Thesis" 1684770613
+  "01_Frontmatter/abst.tex" 1684770608 3687 796f41952c4c366839f3b656900128f7 ""
   "01_Frontmatter/ackn.tex" 1684125314 299 725dc27e77df10fa6ae15b2941d15512 ""
   "01_Frontmatter/acro.tex" 1684616121 1690 a8cebbbb11cb361ff843241f5c67363a ""
   "01_Frontmatter/decl.tex" 1684701906 448 9913d04f8ae15b339625f134f6ffb2c6 ""
@@ -85,15 +85,15 @@
   "Figures/svmhyperplane.jpg" 1683333712 48356 dff28ce2bf80be68754a1156b3cd7507 ""
   "Styles/Head.sty" 1683946762 1144 a37dac30698e0f8ed8ccebca659da71c ""
   "Styles/Mystyle.sty" 1684096749 8183 c844efc2da31dcc4f50fa9fd1224ae57 ""
-  "Thesis.aux" 1684753593 65774 925167e24ca2e1eee3b253eee2392fc6 "pdflatex"
+  "Thesis.aux" 1684770612 65774 925167e24ca2e1eee3b253eee2392fc6 "pdflatex"
   "Thesis.bbl" 1684753206 31813 fe2a5d9761523e2b7a591cadd0dd2f9f "bibtex Thesis"
-  "Thesis.lof" 1684753593 9183 7479c16b5ad586894c6fba05b945837d "pdflatex"
-  "Thesis.lot" 1684753593 3716 fdebcaef1ee9cf5b6d4914c97b1e58a6 "pdflatex"
-  "Thesis.out" 1684753593 11735 743de5e836c5fcb7e62f2a2c63693c18 "pdflatex"
-  "Thesis.tex" 1684728519 6590 2596b0aac7c103af05e4a70b5888e90e ""
-  "Thesis.toc" 1684753593 7301 bb022ad4b2a7c10450c022b42af90f8e "pdflatex"
+  "Thesis.lof" 1684770612 9183 7479c16b5ad586894c6fba05b945837d "pdflatex"
+  "Thesis.lot" 1684770612 3716 fdebcaef1ee9cf5b6d4914c97b1e58a6 "pdflatex"
+  "Thesis.out" 1684770612 11735 743de5e836c5fcb7e62f2a2c63693c18 "pdflatex"
+  "Thesis.tex" 1684770525 6594 990037ef0c529a51eb75a84977f5fc35 ""
+  "Thesis.toc" 1684770612 7301 bb022ad4b2a7c10450c022b42af90f8e "pdflatex"
   "Thesis.xmpdata" 1684130039 320 57f6ebcbf26c81b4362f746c6f6bf32e ""
-  "c:/Users/ngnpe/OneDrive/Desktop/VŠE/FFÚ - INŽENÝRSKÉ STUDIUM 2020-2023/FFÚ - DIPLOMOVÁ PRÁCE/LaTeX/Thesis.tex" 1684728519 6590 2596b0aac7c103af05e4a70b5888e90e ""
+  "c:/Users/ngnpe/OneDrive/Desktop/VŠE/FFÚ - INŽENÝRSKÉ STUDIUM 2020-2023/FFÚ - DIPLOMOVÁ PRÁCE/LaTeX/Thesis.tex" 1684770525 6594 990037ef0c529a51eb75a84977f5fc35 ""
   "c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1661968496 2375 baa924870cfb487815765f9094cf3728 ""
   "c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc" 1661968496 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
   "c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1661968496 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
@@ -337,7 +337,7 @@
   "c:/tex/texlive/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1661971916 4371221 a8f32d84668eddf2c447725b2a4f7bba ""
   "c:/tex/texlive/texmf-var/web2c/pdftex/pdflatex.fmt" 1661970370 1458328 16fdd7581fb593b5825b66d0fedd4625 ""
   "c:/tex/texlive/texmf.cnf" 1661968934 877 ff6679c7ec2843f2455741ca309c7a7c ""
-  "pdfa.xmpi" 1684753591 5671 bcdfa7f312b2783db433d05f177ad3e0 "pdflatex"
+  "pdfa.xmpi" 1684770609 5671 cf18504d2e0c4109ed97111c73a4a8b2 "pdflatex"
   "picins.sty" 1682666078 17806 ea81a4645c63ed687e5eeda884f3557d ""
   (generated)
   "Thesis.aux"
