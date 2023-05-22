@@ -1,13 +1,12 @@
 \chapter{Conclusion}
 \label{conclusion}
 
-The main contribution of this thesis is conducting a custom achine learning implementation on a credit risk data set of US home equity loans (HMEQ), including training, tuning and selecting from the eight classification algorithms with further deployment and development of a custom web application.
+The main contribution of this thesis is conducting a custom machine learning implementation framework on a credit risk data set of US home equity loans (HMEQ), including training, tuning and selecting from the eight classification algorithms with further deployment and development of a custom web application.
 
 We have covered the theoretical background of credit risk, machine learning, particular machine learning algorithms and the evaluation of classification models, including more advanced machine learning techniques such as ADASYN oversmapling, Optimal Binning, Bayesian Optimization or Forward Sequential Feature Selection, as all described in \autoref{chap:two}.
-In \autoref{chap:three} we have formulated five hypothesess, including the literature review with the main focus on HMEQ--based studies of Aras \citep{serkan2021bagging} and Zurada \citep{zurada2014classification}.
+In \autoref{chap:three} we have proposed five hypothesess, including the literature review with the main focus on HMEQ--based studies of Aras \citep{serkan2021bagging} and Zurada \citep{zurada2014classification}.
 
-
-The \autoref{chap:four} pertains to the very extensive empirical analysis, i.e., machine learning implementation on HMEQ data set.  This includes the high--level overview of the custom machine learning framework, repository and envinronment structure in Python \autoref{sec:repo}, data exploration, data preprocessing, hyperparameter tuning, feature selection, model selection, model recalibration, model evaluation and final machine learning deployment.
+The \autoref{chap:four} pertains to the very extensive empirical analysis, i.e., machine learning implementation on HMEQ data set.  This includes the high--level overview of the custom machine learning framework, repository and envinronment structure in Python (\autoref{sec:repo}), data exploration, data preprocessing, hyperparameter tuning, feature selection, model selection, model recalibration, model evaluation and final machine learning deployment.
 Such implementation is employed with random seed of 42 in order to ensure reproducibility of the results.
 
 Within data exploration (\autoref{sec:dataexploration}), we first delve into the description of the data set, particularly, what variables or how many instances does it contains (\autoref{subsec:datadescript}).
@@ -24,12 +23,12 @@ Afterwards, these bins as categorical values are transformed using Weight--of--E
 
 
 \autoref{chap:four} also includes modelling part (\autoref{sec:modelling}), which includes Bayesian Optimization, feature selection and model selection.
-In this thesis, we use eight classification models from \lstinline{scikit-learn} module \citep{scikit-learn} namely Logistic Regression, Decision Tree, Gaussian Naive Bayes, K--Nearest Neighbors, Random Forest, Gradient Boosting, Support Vector Machine, and Neural Network (Multi--Layer Perceptron).
+In this thesis, we use eight classification models from \lstinline{scikit-learn} module, namely Logistic Regression, Decision Tree, Gaussian Naive Bayes, K--Nearest Neighbors, Random Forest, Gradient Boosting, Support Vector Machine, and Neural Network (Multi--Layer Perceptron).
 Bayesian Optimization is used for hyperparameter tuning, particularly we use \lstinline{scikit-optimize} module. We use Bayesian Optimization with 50 iterations, stratified 10--fold cross--validation, while maximizing F1 score. For each model, we further define hyperparameters' space over which the model is tuned (\autoref{subsec:hyperoptbayes}).
 The feature selection is performed using custom algorithm developed by the author, which iterates over the models. Particularly, for each model, it tunes it with Bayesian Optimization on training set, and such tuned model is used as an input estimator within Forward Sequential Feature Selection on training set, which returns subset of optimal features for given model. Since we have eight models, we obtain eight subset of features.
 Within the model selection \autoref{subsec:modelselection}, each model is tuned on each subset of selected features on training set, and then is evaluated on the validation set. On the validation set, we evaluate several evaluation metrics, such as F1 score, Precision, Recall, Accuracy, Matthews Correlation Coefficient, AUC, Kolmogorov--Smirnov Distance, Somers' D, Brier Score Loss and Log Loss.
 Instead of using standard classification threshold of 0.5, we compute an optimal threshold using Youden index. Since we have eight models and eight subset of features, we obtain 64 models in total.
-Afterwards, all the models are ranked on each metric, based on which we calculate a rank score as a weighted sum of the individual ranks, where the weights are set explicitly by the author. Based on the rank score, we determine the final rank. The model with the highest rank (i.e., rank of 1) is then selected as the final model for both evaluation and deployment.
+Afterwards, all the models are ranked on each metric, based on which we calculate a rank score as a weighted average of the individual ranks, where the weights are set explicitly by the author. Based on the rank score, we determine the final rank. The model with the highest rank (i.e., rank of 1) is then selected as the final model for both evaluation and deployment.
 The final model is \textbf{Gradient Boosting} which was trained on the features selected by \textbf{Multi--Layer Perceptron}.
 
 

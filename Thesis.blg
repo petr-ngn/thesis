@@ -8,7 +8,6 @@ Warning--entry type for "PwC2023" isn't style-file defined
 --line 27 of file Styles/Bibliography.bib
 Warning--entry type for "igareta2021strat" isn't style-file defined
 --line 2107 of file Styles/Bibliography.bib
-Warning--I didn't find a database entry for "scikit-learn"
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Warning--missing publisher in doumpos2019analytical
 Warning--empty journal in li2012overview
@@ -53,4 +52,4 @@ warning$ -- 2
 while$ -- 466
 width$ -- 0
 write$ -- 1339
-(There were 5 warnings)
+(There were 4 warnings)
