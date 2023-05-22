@@ -60,18 +60,18 @@
 \contentsline {subsection}{\numberline {4.3.2}Optimal Binning and Weight--of--Evidence}{75}{subsection.4.3.2}%
 \contentsline {section}{\numberline {4.4}Modelling}{78}{section.4.4}%
 \contentsline {subsection}{\numberline {4.4.1}Hyperparameter Bayesian Optimization}{78}{subsection.4.4.1}%
-\contentsline {subsubsection}{Logistic Regression}{79}{section*.67}%
-\contentsline {subsubsection}{Decision Tree}{80}{section*.69}%
-\contentsline {subsubsection}{Gaussian Naive Bayes}{80}{section*.71}%
-\contentsline {subsubsection}{K--Nearest Neighbors}{81}{section*.73}%
-\contentsline {subsubsection}{Random Forest}{81}{section*.75}%
-\contentsline {subsubsection}{Gradient Boosting}{82}{section*.77}%
-\contentsline {subsubsection}{Support Vector Machine}{83}{section*.79}%
-\contentsline {subsubsection}{Multi--Layer Percepton}{84}{section*.81}%
+\contentsline {subsubsection}{Logistic Regression}{79}{section*.69}%
+\contentsline {subsubsection}{Decision Tree}{80}{section*.71}%
+\contentsline {subsubsection}{Gaussian Naive Bayes}{80}{section*.73}%
+\contentsline {subsubsection}{K--Nearest Neighbors}{81}{section*.75}%
+\contentsline {subsubsection}{Random Forest}{81}{section*.77}%
+\contentsline {subsubsection}{Gradient Boosting}{82}{section*.79}%
+\contentsline {subsubsection}{Support Vector Machine}{83}{section*.81}%
+\contentsline {subsubsection}{Multi--Layer Percepton}{84}{section*.83}%
 \contentsline {subsection}{\numberline {4.4.2}Sequential Feature Selection}{85}{subsection.4.4.2}%
 \contentsline {subsection}{\numberline {4.4.3}Model Selection}{88}{subsection.4.4.3}%
-\contentsline {subsubsection}{Metrics Space}{88}{section*.86}%
-\contentsline {subsubsection}{Model Selection Results}{91}{section*.88}%
+\contentsline {subsubsection}{Metrics Space}{88}{section*.88}%
+\contentsline {subsubsection}{Model Selection Results}{91}{section*.90}%
 \contentsline {subsection}{\numberline {4.4.4}Model Recalibration}{105}{subsection.4.4.4}%
 \contentsline {section}{\numberline {4.5}Model Evaluation}{106}{section.4.5}%
 \contentsline {subsection}{\numberline {4.5.1}Model Performance Assessment}{106}{subsection.4.5.1}%
@@ -86,5 +86,5 @@
 \contentsline {section}{\numberline {5.4}Contributions}{124}{section.5.4}%
 \contentsline {section}{\numberline {5.5}Recommendations}{125}{section.5.5}%
 \contentsline {chapter}{\numberline {6}Conclusion}{128}{chapter.6}%
-\contentsline {chapter}{Bibliography}{134}{table.caption.113}%
+\contentsline {chapter}{Bibliography}{134}{table.caption.115}%
 \contentsline {chapter}{\numberline {A}Additional Figures and Tables}{I}{appendix.A}%

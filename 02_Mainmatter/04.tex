@@ -699,35 +699,51 @@ As already described in \autoref{sec:optbinningtheory}, the optimal binning is e
 Particularly, we employ \lstinline{BinningProcess} class from the \lstinline{optbinning} module in Python - such class optimally discretizes the continuous features into interval bins and optimally groups categorical features' categories into sub-group categories with respect to the target variable while maximizing Information Value, and afterwards such bins are encoded using WoE \citep{navas2020optimal}. Besides discretizing and grouping, it also creates special bins for capturing missing values.
 
 
+
 In this thesis, this data preprocessing step is wrapped into a custom function \lstinline{woe_binning()} in Python.
-First, the  \lstinline{BinningProcess} class is fitted on the training set only in order to avoid data leakage, while it learns the split points for binning, event rates, WoE coefficients etc., and afterwards, such fitted  \lstinline{BinningProcess} class is used to transform training, validation and test set.
+First, the  \lstinline{BinningProcess} class is fitted on the training set only in order to avoid data leakage, while it learns the split points for binning, event rates, WoE coefficients etc., and then is used to transform training, validation and test set.
 
+The following \autoref{fig:woedistdebtinc} depicts the WoE bins distribution for the \texttt{DEBTINC} feature.
+It is evident that the bin capturing the missing values has the most negative WoE coefficient, which indicates larger distribution of defaulters compared to non--defautlters in such bin. We can further observe a monotonic relationship between the WoE coefficients and the bins, as the debt--to--income ration increases, the WoE coefficient decreases, thus higher likelihood of default.
+Therefore, we expect if the debt--to--income ratio is either missing or extremely high, it will have a significant impact on the likelihood of default.
+\begin{figure}[H]
+    \centering
+    \caption{WoE Bins Distribution - Debt--To--Income Ratio}\vspace{0.5em}
+    \label{fig:woedistdebtinc}
+    \includegraphics[width=120mm]{Figures/WoE_Distribution_DEBTINC.jpg}
+    
+    \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
+\end{figure}
 
-The following \autoref{fig:woedist} depicts the distribution of WoE bins for each feature. It can be observed that binning captures either linear, non-linear, monotonic, or non-monotonic relationships between the default status and the numeric features in terms of WoE.
-Regarding the \texttt{DELINQ} feature, a monotonic relationship can be observed, where the higher number of delinquent credit lines, the lower the WoE coefficient, indicating a larger distribution of defaults with respect to non-defaults in the given bin.
-Thus, the higher the number of delinquent credit lines, the higher the likelihood of defaulting in terms of WoE.
-
-A non-linear relationship can be observed with respect to the \texttt{YOJ} feature, where the WoE coefficient is positive for applicants who have recently started working at their new job (i.e., number of years at the present job is less than 1) and for applicants who have been working at their current job for a relatively long time (i.e., number of years at the present job is higher than 19).
-Thus, applicants who have been working for a longer time have stable income and are more creditworthy and less likely to default.
-Regarding applicants who have recently started working at their new job, it is possible that they are less likely to default since the \texttt{YOJ} feature does not capture the applicant's total number of years of work experience, but only the number of years at the present job.
-Thus, in the given data set, applicants who have recently started working at their new job have a relatively higher total number of years of work experience, making them more creditworthy and less likely to default. On the other hand, for applicants who have been working at their present job between 1 and 19 years, the WoE coefficient is negative.
-This relationship seems to be complex and can be influenced by other factors not present in the data set, such as the applicant's age, total number of years of work experience, education, etc.
-
-As already mentioned numeric and categorical features contain a separate bin capturing missing values, which can be a useful indicator when training a model. This is evident in the \texttt{DEBTINC} feature, where the bin capturing missing values has the most negative WoE coefficient, indicating that there is a larger distribution of defaulters compared to non-defaulters.
-This finding was already raised in \autoref{subsubsec:target-na-ass} in terms of the strong and statistically significant association between the default status and the missing values in \texttt{DEBTINC}.
-
-Within the \texttt{JOB} feature, specifically regarding the \texttt{Mgr} category, we can observe the direct impact of ADASYN oversampling as already described by \autoref{tab:adasynimpact}.
-Since ADASYN generated more default class instances for original default instances who are managers, this results in higher default rate within such job category, thus to the larger distribution of defaulters compared to non--defaulters, which is quantified in the negative WoE value.
+Another monotonic relationship can be observed in case of \texttt{DELINQ} feature as can be seen in \autoref{fig:woedistdelinq}. With increasing number of delinquent credit lines, the WoE coefficient decreases, indicating larger distribution of defaulters compared to non--defaulters. Therefore, we expect that the higher the number of delinquent credit lines will lead to the the higher the likelihood of default.
 
 
 \begin{figure}[H]
-\centering
-\caption{WoE Bins Distribution}\vspace{0.5em}
-\label{fig:woedist}
-\includegraphics[width=140mm]{Figures/WoE_Distribution.jpg}
-
-\centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
+    \centering
+    \caption{WoE Bins Distribution - Number of Delinquent Credit Lines}\vspace{0.5em}
+    \label{fig:woedistdelinq}
+    \includegraphics[width=120mm]{Figures/WoE_Distribution_DELINQ.jpg}
+    
+    \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
+
+Within the \texttt{JOB} feature, specifically regarding the \texttt{Mgr} category, we can observe the direct impact of ADASYN oversampling as already described by \autoref{tab:adasynimpact}. \autoref{fig:woedistjob}
+Since ADASYN generated more default class instances for original default instances who are managers, this results in higher default rate within such job category, thus to the larger distribution of defaulters compared to non--defaulters, which is quantified in the negative WoE value.
+
+
+
+\begin{figure}[H]
+    \centering
+    \caption{WoE Bins Distribution - Job Occupancy}\vspace{0.5em}
+    \label{fig:woedistjob}
+    \includegraphics[width=120mm]{Figures/WoE_Distribution_JOB.jpg}
+    
+    \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
+\end{figure}
+
+The WoE bins distributions of other features are depicted \autoref{fig:woedist} in the Appendix \autoref{chap:app1}.
+
+
 
 \newpage
 \section{Modelling}
