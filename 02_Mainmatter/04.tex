@@ -635,7 +635,7 @@ Test & 894 &  20.00 \% & 80.00 \% \\
 \end{table}
 
 Since ADASYN increases the sample size by generating, i.e., adding new instances into the sample, it may have an impact on the distribution of the features.
-After the inspection in Python, it have no significant impact on the numeric features as the distributions before and after ADASYN oversampling do not differ that much.
+After the inspection in Python, it have no significant impact on the numeric features as the distributions before and after ADASYN oversampling do not differ that much, as can be seen \autoref{fig:adasynimpactnum} in \autoref{chap:app1}.
 However, pertaining to the categorical features, a significant impact of ADASYN oversampling can be observed as can be seen in  \autoref{tab:adasynimpact} and \autoref{fig:adasynimpact}, respectively, which depict the distribution of categorical features on the subsample of default cases within the training set, particularly distribution before and after the oversampling.
 As such, $n_B$ and $n_A$ refer to the number of default cases within given category before and after oversampling, respectively, $N_B$ and $N_A$ represents the total number of default cases before and after oversampling, respectively.
 

@@ -48,4 +48,29 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces WoE Bins Distribution\relax }}{II}{figure.caption.118}%
+\contentsline {figure}{\numberline {A.1}{\ignorespaces ADASYN Impact of Numeric Features' Distribution\relax }}{II}{figure.caption.118}%
+\contentsline {figure}{\numberline {A.2}{\ignorespaces WoE Bins Distribution\relax }}{III}{figure.caption.119}%
+\contentsline {figure}{\numberline {A.3}{\ignorespaces Precision Distribution\relax }}{IV}{figure.caption.120}%
+\contentsline {figure}{\numberline {A.4}{\ignorespaces Precision Distribution - \textit {without outlier}\relax }}{IV}{figure.caption.121}%
+\contentsline {figure}{\numberline {A.5}{\ignorespaces Precision Distribution (Black--box/White--box dimension)\relax }}{V}{figure.caption.122}%
+\contentsline {figure}{\numberline {A.6}{\ignorespaces Precision Distribution (Black--box/White--box dimension) - \textit {without outlier}\relax }}{V}{figure.caption.123}%
+\contentsline {figure}{\numberline {A.7}{\ignorespaces Recall Distribution\relax }}{VI}{figure.caption.124}%
+\contentsline {figure}{\numberline {A.8}{\ignorespaces Recall Distribution - \textit {without outlier}\relax }}{VI}{figure.caption.125}%
+\contentsline {figure}{\numberline {A.9}{\ignorespaces Recall Distribution (Black--box/White--box dimension)\relax }}{VII}{figure.caption.126}%
+\contentsline {figure}{\numberline {A.10}{\ignorespaces Recall Distribution (Black--box/White--box dimension) - \textit {without outlier}\relax }}{VII}{figure.caption.127}%
+\contentsline {figure}{\numberline {A.11}{\ignorespaces Accuracy Distribution\relax }}{VIII}{figure.caption.128}%
+\contentsline {figure}{\numberline {A.12}{\ignorespaces Accuracy Distribution (Black--box/White--box dimension)\relax }}{VIII}{figure.caption.129}%
+\contentsline {figure}{\numberline {A.13}{\ignorespaces AUC Distribution\relax }}{IX}{figure.caption.130}%
+\contentsline {figure}{\numberline {A.14}{\ignorespaces AUC Distribution (Black--box/White--box dimension)\relax }}{IX}{figure.caption.131}%
+\contentsline {figure}{\numberline {A.15}{\ignorespaces Matthews Correlaition Coefficient Distribution\relax }}{X}{figure.caption.132}%
+\contentsline {figure}{\numberline {A.16}{\ignorespaces Matthews Correlaition Coefficient Distribution - \textit {without outlier}\relax }}{X}{figure.caption.133}%
+\contentsline {figure}{\numberline {A.17}{\ignorespaces Matthews Correlaition Coefficient Distribution (Black--box/White--box dimension)\relax }}{XI}{figure.caption.134}%
+\contentsline {figure}{\numberline {A.18}{\ignorespaces Matthews Correlaition Coefficient Distribution (Black--box/White--box dimension) - \textit {without outlier}\relax }}{XI}{figure.caption.135}%
+\contentsline {figure}{\numberline {A.19}{\ignorespaces Birer Score Loss Distribution\relax }}{XII}{figure.caption.136}%
+\contentsline {figure}{\numberline {A.20}{\ignorespaces Birer Score Loss Distribution (Black--box/White--box dimension)\relax }}{XII}{figure.caption.137}%
+\contentsline {figure}{\numberline {A.21}{\ignorespaces Kolmogorov--Smirnov Distance Distribution\relax }}{XIII}{figure.caption.138}%
+\contentsline {figure}{\numberline {A.22}{\ignorespaces Kolmogorov--Smirnov Distance Distribution (Black--box/White--box dimension)\relax }}{XIII}{figure.caption.139}%
+\contentsline {figure}{\numberline {A.23}{\ignorespaces Log Loss Distribution\relax }}{XIV}{figure.caption.140}%
+\contentsline {figure}{\numberline {A.24}{\ignorespaces Log Loss Distribution (Black--box/White--box dimension)\relax }}{XIV}{figure.caption.141}%
+\contentsline {figure}{\numberline {A.25}{\ignorespaces Somers' D Distribution\relax }}{XV}{figure.caption.142}%
+\contentsline {figure}{\numberline {A.26}{\ignorespaces Somers' D Distribution (Black--box/White--box dimension)\relax }}{XV}{figure.caption.143}%

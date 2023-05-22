@@ -1879,11 +1879,136 @@ INPUT ./03_Backmatter/01_App.tex
 INPUT 03_Backmatter/01_App.tex
 INPUT ./03_Backmatter/01_App.tex
 INPUT 03_Backmatter/01_App.tex
+INPUT ./Figures/Numeric_Features_Distribution_OS_Violinplots.jpg
+INPUT ./Figures/Numeric_Features_Distribution_OS_Violinplots.jpg
+INPUT Figures/Numeric_Features_Distribution_OS_Violinplots.jpg
+INPUT ./Figures/Numeric_Features_Distribution_OS_Violinplots.jpg
+INPUT ./Figures/Numeric_Features_Distribution_OS_Violinplots.jpg
 INPUT ./Figures/WoE_Distribution.jpg
 INPUT ./Figures/WoE_Distribution.jpg
 INPUT Figures/WoE_Distribution.jpg
 INPUT ./Figures/WoE_Distribution.jpg
 INPUT ./Figures/WoE_Distribution.jpg
+INPUT ./Figures/PRECISION_Distribution.jpg
+INPUT ./Figures/PRECISION_Distribution.jpg
+INPUT Figures/PRECISION_Distribution.jpg
+INPUT ./Figures/PRECISION_Distribution.jpg
+INPUT ./Figures/PRECISION_Distribution.jpg
+INPUT ./Figures/PRECISION_WO_OUTLIERS_Distribution.jpg
+INPUT ./Figures/PRECISION_WO_OUTLIERS_Distribution.jpg
+INPUT Figures/PRECISION_WO_OUTLIERS_Distribution.jpg
+INPUT ./Figures/PRECISION_WO_OUTLIERS_Distribution.jpg
+INPUT ./Figures/PRECISION_WO_OUTLIERS_Distribution.jpg
+INPUT ./Figures/PRECISION_Distribution_BB_WB.jpg
+INPUT ./Figures/PRECISION_Distribution_BB_WB.jpg
+INPUT Figures/PRECISION_Distribution_BB_WB.jpg
+INPUT ./Figures/PRECISION_Distribution_BB_WB.jpg
+INPUT ./Figures/PRECISION_Distribution_BB_WB.jpg
+INPUT ./Figures/PRECISION_WO_OUTLIERS_Distribution_BB_WB.jpg
+INPUT ./Figures/PRECISION_WO_OUTLIERS_Distribution_BB_WB.jpg
+INPUT Figures/PRECISION_WO_OUTLIERS_Distribution_BB_WB.jpg
+INPUT ./Figures/PRECISION_WO_OUTLIERS_Distribution_BB_WB.jpg
+INPUT ./Figures/PRECISION_WO_OUTLIERS_Distribution_BB_WB.jpg
+INPUT ./Figures/RECALL_Distribution.jpg
+INPUT ./Figures/RECALL_Distribution.jpg
+INPUT Figures/RECALL_Distribution.jpg
+INPUT ./Figures/RECALL_Distribution.jpg
+INPUT ./Figures/RECALL_Distribution.jpg
+INPUT ./Figures/RECALL_WO_OUTLIERS_Distribution.jpg
+INPUT ./Figures/RECALL_WO_OUTLIERS_Distribution.jpg
+INPUT Figures/RECALL_WO_OUTLIERS_Distribution.jpg
+INPUT ./Figures/RECALL_WO_OUTLIERS_Distribution.jpg
+INPUT ./Figures/RECALL_WO_OUTLIERS_Distribution.jpg
+INPUT ./Figures/RECALL_Distribution_BB_WB.jpg
+INPUT ./Figures/RECALL_Distribution_BB_WB.jpg
+INPUT Figures/RECALL_Distribution_BB_WB.jpg
+INPUT ./Figures/RECALL_Distribution_BB_WB.jpg
+INPUT ./Figures/RECALL_Distribution_BB_WB.jpg
+INPUT ./Figures/RECALL_WO_OUTLIERS_Distribution_BB_WB.jpg
+INPUT ./Figures/RECALL_WO_OUTLIERS_Distribution_BB_WB.jpg
+INPUT Figures/RECALL_WO_OUTLIERS_Distribution_BB_WB.jpg
+INPUT ./Figures/RECALL_WO_OUTLIERS_Distribution_BB_WB.jpg
+INPUT ./Figures/RECALL_WO_OUTLIERS_Distribution_BB_WB.jpg
+INPUT ./Figures/ACCURACY_Distribution.jpg
+INPUT ./Figures/ACCURACY_Distribution.jpg
+INPUT Figures/ACCURACY_Distribution.jpg
+INPUT ./Figures/ACCURACY_Distribution.jpg
+INPUT ./Figures/ACCURACY_Distribution.jpg
+INPUT ./Figures/ACCURACY_Distribution_BB_WB.jpg
+INPUT ./Figures/ACCURACY_Distribution_BB_WB.jpg
+INPUT Figures/ACCURACY_Distribution_BB_WB.jpg
+INPUT ./Figures/ACCURACY_Distribution_BB_WB.jpg
+INPUT ./Figures/ACCURACY_Distribution_BB_WB.jpg
+INPUT ./Figures/AUC_Distribution.jpg
+INPUT ./Figures/AUC_Distribution.jpg
+INPUT Figures/AUC_Distribution.jpg
+INPUT ./Figures/AUC_Distribution.jpg
+INPUT ./Figures/AUC_Distribution.jpg
+INPUT ./Figures/AUC_Distribution_BB_WB.jpg
+INPUT ./Figures/AUC_Distribution_BB_WB.jpg
+INPUT Figures/AUC_Distribution_BB_WB.jpg
+INPUT ./Figures/AUC_Distribution_BB_WB.jpg
+INPUT ./Figures/AUC_Distribution_BB_WB.jpg
+INPUT ./Figures/MCC_Distribution.jpg
+INPUT ./Figures/MCC_Distribution.jpg
+INPUT Figures/MCC_Distribution.jpg
+INPUT ./Figures/MCC_Distribution.jpg
+INPUT ./Figures/MCC_Distribution.jpg
+INPUT ./Figures/MCC_WO_OUTLIERS_Distribution.jpg
+INPUT ./Figures/MCC_WO_OUTLIERS_Distribution.jpg
+INPUT Figures/MCC_WO_OUTLIERS_Distribution.jpg
+INPUT ./Figures/MCC_WO_OUTLIERS_Distribution.jpg
+INPUT ./Figures/MCC_WO_OUTLIERS_Distribution.jpg
+INPUT ./Figures/MCC_Distribution_BB_WB.jpg
+INPUT ./Figures/MCC_Distribution_BB_WB.jpg
+INPUT Figures/MCC_Distribution_BB_WB.jpg
+INPUT ./Figures/MCC_Distribution_BB_WB.jpg
+INPUT ./Figures/MCC_Distribution_BB_WB.jpg
+INPUT ./Figures/MCC_WO_OUTLIERS_Distribution_BB_WB.jpg
+INPUT ./Figures/MCC_WO_OUTLIERS_Distribution_BB_WB.jpg
+INPUT Figures/MCC_WO_OUTLIERS_Distribution_BB_WB.jpg
+INPUT ./Figures/MCC_WO_OUTLIERS_Distribution_BB_WB.jpg
+INPUT ./Figures/MCC_WO_OUTLIERS_Distribution_BB_WB.jpg
+INPUT ./Figures/BRIER SCORE LOSS_Distribution.jpg
+INPUT ./Figures/BRIER SCORE LOSS_Distribution.jpg
+INPUT Figures/BRIER SCORE LOSS_Distribution.jpg
+INPUT ./Figures/BRIER SCORE LOSS_Distribution.jpg
+INPUT ./Figures/BRIER SCORE LOSS_Distribution.jpg
+INPUT ./Figures/BRIER SCORE LOSS_Distribution_BB_WB.jpg
+INPUT ./Figures/BRIER SCORE LOSS_Distribution_BB_WB.jpg
+INPUT Figures/BRIER SCORE LOSS_Distribution_BB_WB.jpg
+INPUT ./Figures/BRIER SCORE LOSS_Distribution_BB_WB.jpg
+INPUT ./Figures/BRIER SCORE LOSS_Distribution_BB_WB.jpg
+INPUT ./Figures/KS_Distribution.jpg
+INPUT ./Figures/KS_Distribution.jpg
+INPUT Figures/KS_Distribution.jpg
+INPUT ./Figures/KS_Distribution.jpg
+INPUT ./Figures/KS_Distribution.jpg
+INPUT ./Figures/KS_Distribution_BB_WB.jpg
+INPUT ./Figures/KS_Distribution_BB_WB.jpg
+INPUT Figures/KS_Distribution_BB_WB.jpg
+INPUT ./Figures/KS_Distribution_BB_WB.jpg
+INPUT ./Figures/KS_Distribution_BB_WB.jpg
+INPUT ./Figures/LOG LOSS_Distribution.jpg
+INPUT ./Figures/LOG LOSS_Distribution.jpg
+INPUT Figures/LOG LOSS_Distribution.jpg
+INPUT ./Figures/LOG LOSS_Distribution.jpg
+INPUT ./Figures/LOG LOSS_Distribution.jpg
+INPUT ./Figures/LOG LOSS_Distribution_BB_WB.jpg
+INPUT ./Figures/LOG LOSS_Distribution_BB_WB.jpg
+INPUT Figures/LOG LOSS_Distribution_BB_WB.jpg
+INPUT ./Figures/LOG LOSS_Distribution_BB_WB.jpg
+INPUT ./Figures/LOG LOSS_Distribution_BB_WB.jpg
+INPUT ./Figures/SOMERS D_Distribution.jpg
+INPUT ./Figures/SOMERS D_Distribution.jpg
+INPUT Figures/SOMERS D_Distribution.jpg
+INPUT ./Figures/SOMERS D_Distribution.jpg
+INPUT ./Figures/SOMERS D_Distribution.jpg
+INPUT ./Figures/SOMERS D_Distribution_BB_WB.jpg
+INPUT ./Figures/SOMERS D_Distribution_BB_WB.jpg
+INPUT Figures/SOMERS D_Distribution_BB_WB.jpg
+INPUT ./Figures/SOMERS D_Distribution_BB_WB.jpg
+INPUT ./Figures/SOMERS D_Distribution_BB_WB.jpg
 INPUT Thesis.aux
 INPUT ./Thesis.out
 INPUT ./Thesis.out
