@@ -1,4 +1,4 @@
-\begin{thebibliography}{109}
+\begin{thebibliography}{112}
 \newcommand{\enquote}[1]{``#1''}
 \providecommand{\natexlab}[1]{#1}
 
@@ -240,6 +240,11 @@
   adjustment: A continuing challenge for global financial markets}.
 \newblock John Wiley \& Sons.
 
+\bibitem[{Grzybowska \& Karwanski(2020)}]{grzybowska2020application}
+\textsc{Grzybowska}, U. \& M.~\textsc{Karwanski} (2020): \enquote{Application
+  of machine learning method under ifrs 9 approach to lgd modeling.}
+\newblock \emph{Acta Physica Polonica, A.} \textbf{138(1)}.
+
 \bibitem[{H2O.ai(2023)}]{H2Oai2023}
 \textsc{H2O.ai} (2023): \enquote{Automl: Automatic machine learning.}
 \newblock AutoML: Automatic Machine Learning - H2O 3.40.0.4 documentation.
@@ -248,6 +253,12 @@
 \bibitem[{Hale(2019)}]{hale2019dont}
 \textsc{Hale}, J. (2019): \enquote{Don't sweat the solver stuff.}
 \newblock \emph{Medium} Retrieved May 1, 2023.
+
+\bibitem[{Hall \emph{et~al.}(2018)}]{hall2018machine}
+\textsc{Hall}, A.~S. \emph{et~al.} (2018): \enquote{Machine learning approaches
+  to macroeconomic forecasting.}
+\newblock \emph{The Federal Reserve Bank of Kansas City Economic Review}
+  \textbf{103(63)}: p.~2.
 
 \bibitem[{Han \emph{et~al.}(2011)Han, Kamber, \& Pei}]{han2011data}
 \textsc{Han}, J., M.~\textsc{Kamber}, \& J.~\textsc{Pei} (2011): \emph{Data
@@ -402,6 +413,13 @@
 \textsc{Mucherino}, A., P.~\textsc{Papajorgji}, \& P.~M. \textsc{Pardalos}
   (2009): \emph{Data mining in agriculture}, volume~34.
 \newblock Springer Science \& Business Media.
+
+\bibitem[{Munkhdalai \emph{et~al.}(2019)Munkhdalai, Munkhdalai, Namsrai, Lee,
+  \& Ryu}]{munkhdalai2019empirical}
+\textsc{Munkhdalai}, L., T.~\textsc{Munkhdalai}, O.-E. \textsc{Namsrai}, J.~Y.
+  \textsc{Lee}, \& K.~H. \textsc{Ryu} (2019): \enquote{An empirical comparison
+  of machine-learning methods on bank client credit assessments.}
+\newblock \emph{Sustainability} \textbf{11(3)}: p. 699.
 
 \bibitem[{Narkhede(2018)}]{narkhede2018understanding}
 \textsc{Narkhede}, S. (2018): \enquote{Understanding auc - roc curve.}
