@@ -1,18 +1,19 @@
 \chapter{Literature Review}
 \label{chap:three}
 
-In this thesis, our objective is to explore the application and implementation of machine learning in credit scoring. We will examine relevant studies in two areas: machine learning applications specifically related to credit scoring and machine learning implementations in various other domains. The aim is to identify machine learning techniques from non-credit scoring contexts that could potentially be useful in credit scoring. We will evaluate the impact of these techniques through hypothesis testing.
+Within the literature review, our objective is to explore the application and implementation of machine learning in credit scoring.
+We will examine relevant studies in two areas: machine learning applications specifically related to credit scoring and machine learning implementations in various other domains. The aim is to identify machine learning techniques from non-credit scoring contexts that could potentially be useful in credit scoring. We will evaluate the impact of these techniques through hypothesis testing.
 
-Regarding studies related to machine learning in credit scoring, we will analyze not only the research focused on the data set used in this thesis, but also studies that involve different data sets. This comprehensive approach is intended to develop a broader understanding and facilitate the discovery of valuable insights and methodologies that can be applied across various data sets in the credit scoring field.
+Regarding studies related to machine learning in credit scoring, we will analyze not only the researches focused on the HMEQ data set used in this thesis, but also studies that involve different data sets. This comprehensive approach is intended to develop a broader understanding and facilitate the discovery of valuable insights and methodologies that can be applied across various data sets in the credit scoring field.
 
 It is a known fact that the distribution of the default status is imbalanced in the credit scoring domain, since the non--default cases are overpresented compared to the default cases. Several studies have already address such issue.
-For instance, Owusu and others \citep{owusu2023deep} employed ADASYN oversampling on the peer-to-peer loans data from American Lending Club, which exhibited an improvement in the model's performance in comparison to other benchmark studies.
+For instance, Owusu \citep{owusu2023deep} employed ADASYN oversampling on the peer-to-peer loans data from American Lending Club, which exhibited an improvement in the model's performance in comparison to other benchmark studies.
 Another way to address such imbalance issue is changing the classication cut--off point.
-By default, the cut--off point is set to 0.5, which means that if the predicted probability score exceeds the threshold, it will be classified as default and vice versa. Kazemi and others \citep{kazemi2023estimation} demonstrated that utilization of the customized cut--off points leads to a more accurate classification compared to the default threshold value of 0.5, based on German and Australian credit data sets available to the public in the UCI machine learning data repository.
+By default, the cut--off point is set to 0.5, which means that if the predicted probability score exceeds the threshold, it will be classified as default and vice versa. Kazemi \citep{kazemi2023estimation} demonstrated that utilization of the customized cut--off points leads to a more accurate classification compared to the default threshold value of 0.5, based on German and Australian credit data sets available to the public in the UCI machine learning data repository.
 
 
 Whether to choose transparent, white--box model such as logistic regression or a complex, black--box model such as ensemble models or neural network depends on various factors, such as type of the data set, sample size, data preprocessing techniques, hyperparameter tuning, or even a software used to implement the model.
-While Tepl\'{y} and Polena \citep{teply2020best} suggest that Logistic Regression is the best performing model on peer-to-peer loans data from Lending Club, Aniceto and others \citep{aniceto2020machine} demonstrate that the ensemble models, namely Random Forest and AdaBoost, outperformed the Logistic Regression on a large Brazilian bank's loan data set.
+While Tepl\'{y} and Polena \citep{teply2020best} suggest that Logistic Regression is the best performing model on peer-to-peer loans data from Lending Club, Aniceto  \citep{aniceto2020machine} demonstrates that the ensemble models, namely Random Forest and AdaBoost, outperformed the Logistic Regression on a large Brazilian bank's loan data set.
 
 
 In this thesis, a data set of US home equity loans (HMEQ) is analyzed, which is further described in \autoref{subsec:datadescript}.
@@ -57,7 +58,7 @@ However, it is not appropriate to compare the computed the metrics with the resu
 
 If we rank the models by each computed metric descendingly,we can explicitly derive a rank score as an average of the ranks. Based on the rank scores, we can then rank the models, as shown in \autoref{tab:serkanresultsranks}. As can be seen, KNN dominantly outperformed all the models across all the metrics, while the black--box models such as Random Forest and SVM performed also performed well but not as well as KNN.
 On the other hand, Gaussian Naive Bayes and Logistic Regression performance exhibited very unsatisfactory performance.
-Therefore, according to Aras, one would expect that KNN and the black--box models (Random Forest and/or SVM) would perform well on the HMEQ data set.
+Therefore, according to Aras, one would expect that KNN and Random Forest would perform well on the HMEQ data set.
 
 \begin{table}[H]
     \small
@@ -87,12 +88,12 @@ Therefore, according to Aras, one would expect that KNN and the black--box model
 \end{table}
 
 
-The latter study pertains to the reasearch conducted by Zurada and others \citep{zurada2014classification}. Likewise Aras, they also analyzed various classification models, but only relevant ones to this thesis are further discussed.
-Namely, the authors trained Neural Network (NN), Decision Tree (DT), Support Vector Machine (SVM), K--Nearest Neighbors (KNN) and Logistic Regression (LR), using Weka software.
+The latter study pertains to the reasearch conducted by Zurada \citep{zurada2014classification}. Likewise Aras, author also analyzed various classification models, but only relevant ones to this thesis are further discussed.
+Namely, Zurada trained Neural Network (NN), Decision Tree (DT), Support Vector Machine (SVM), K--Nearest Neighbors (KNN) and Logistic Regression (LR), using Weka software.
 Authors did not mention which imputation technique did they use, nor the data split ratio (i.e., the test size used for an evulation), but likwise Aras, they conducted a hyperparameter tuning using Grid Search with 10--fold cross validation.
 
 The evalulation results are depicted in \autoref{tab:zuradaresults}, namely the computed metrics such as Accuracy (Acc.), Recall (Rec.) and AUC.
-As can be seen, KNN model, which was the best one in case of Zurada's study, yielded a very deteriorated performance, while Logistic regression still performed badly.
+As can be seen, KNN model, which was the best one in case of Zurada's study, yielded a very deteriorated performance, while Logistic Regression still performed badly.
 On the other, Neural Network was the best performing model as a black--box model. Surprisingly, also Decision Tree showcased relatively high performance in contrast to Zurada's study, where Decision Tree's performance was quite weak.
 \begin{table}[H]
     \small
@@ -145,9 +146,9 @@ Hence, one would expect that Neural Network would perform well on the HMEQ data 
 \end{table}
 
 Although, both Zurada and Aras ranked the Logistic Regression as the worst performing model and SVM was ranked according to them as the third best model, they did not agree on the ranking of Decision Tree and KNN models.
-Such a disagreement can be attributed to the fact they both used different data preprocessing techniques, as well as different hyperparameters' spaces for fine tuning the models and probably also different softwares, random seed, and data split.
+Such a disagreement can be attributed to the fact they both used different data preprocessing techniques, different hyperparameters' spaces for fine tuning and probably also different softwares, random seed, and data split.
 We also need to account for a relatively small sample size of the HMEQ data set, which can lead to a high variance in the results.
-Therefore, several steps and procedures are applied in this thesis in order to ensure the reliable and robust results and estimates, which are further described in \autoref{sec:modelling}.
+Therefore, several steps and procedures are applied in this thesis to ensure the reliable and robust results and estimates, which are further described in \autoref{sec:dataprep} and \autoref{sec:modelling}.
 
 \section{Hypotheses}
 \label{sec:hypo}
@@ -157,14 +158,14 @@ In this section, we formulate the hypotheses, which are partially derived from t
 
 \noindent \textbf{Hypothesis \#1:} \textit{The recalibration of the model enhaces model performance on HMEQ data set.}
 
-The study of de Hond and others \citep{de2023predicting} focuses on the model re-training (recalibration) in order to improve the model performance, based on the health record data from Leiden University Medical Center and Amsterdam University Medical Center for a prediction of readmissions or deaths after ICU discharge.
-Such effect is being achieved by either re-training the model on the and newest additional data, hence by increasing the sample size within the model training, we expect the model's predictive power to be enhanced. Such approach is further discussed in \autoref{subsec:modelrecal} and assessed in \autoref{subsec:modelperformance}.
+The study of de Hond \citep{de2023predicting} focuses on the model re-training (recalibration) in order to improve the model performance, based on the health record data from Leiden University Medical Center and Amsterdam University Medical Center for a prediction of readmissions or deaths after ICU discharge.
+Such effect is being achieved by re-training the model on the newest additional data, hence by increasing the sample size within the model training, we expect the model's predictive power to be enhanced. Such approach is further discussed in \autoref{subsec:modelrecal} and assessed in \autoref{subsec:modelperformance}.
 \vspace{0.5cm}
 
 
 \noindent \textbf{Hypothesis \#2:} \textit{Either Neural Network or KNN model outperforms all the models on HMEQ data set.}
 
-Based on the studies of Aras \citep{serkan2021bagging} and Zurada and others \citep{zurada2014classification}, the highest ranked models in terms of performance were KNN and Neural Network, respectively. These two models outperformed the traditional Logistic Regression, and in case of Aras, KNN also outperformed Decision Tree, Gaussian Naive Bayes, SVM and even Random Forest.
+Based on the studies of Aras \citep{serkan2021bagging} and Zurada \citep{zurada2014classification}, the highest ranked models in terms of performance were KNN and Neural Network, respectively. These two models outperformed the traditional Logistic Regression, and in case of Aras, KNN also outperformed Decision Tree, Gaussian Naive Bayes, SVM and even Random Forest.
 Therefore, we expect that at least one of those two models will outperform all the other models on the HMEQ data set.
 
 \vspace{0.5cm}
@@ -177,7 +178,7 @@ Another white--box model is a Guassian Naive Bayes as it is based on the Bayes t
 Decision Tree can be considered as a white--box model, assuming that that the decision tree is small \citep{goethals2022non}, i.e., if the tree is not too deep and wide, which enhace the comprehensible interpretation of the model.
 
 One would say that KNN is a white--box model, since it just looks for $k$ closest neighbours around given data point. However, the interpretation of the model might not be straightforward if the $k$ is large and/or when having higher number of features which increases the dimensionality, as the model might be too complex.
-According to Loyala \citep{loyola2019black}, KNN is considered as a black--box model since it is highly dependent on the distance function which might bias the classification results and change in a distance function can lead to different outcomes. Therefore, we consider KNN as a black--box model.
+According to Loyala--Gonzalez \citep{loyola2019black}, KNN is considered as a black--box model since it is highly dependent on the distance function which might bias the classification results and change in a distance function can lead to different outcomes. Therefore, we consider KNN as a black--box model.
 Regarding the rest of the models, they are deemed as black--box models due to the following reasonings:
 \begin{itemize}\setlength\itemsep{0em}
     \item \textbf{SVM} - Very complex mathematical operations involved in such algorithm make it difficult to interpret the model \citep{loyola2019black}.
@@ -191,9 +192,9 @@ Therefore, we expect that the black--box models will outperform the white--box m
 
 \noindent \textbf{Hypothesis \#4:} \textit{The longer execution time of a model, the better performance on HMEQ data set.}
 
-Although, the research paper's objective of Wu and others \citep{wu2018accurate} does not directly regard the relationship between the training (execution) time and the model performance, but rather the accuracy of indoor localization techniques in two different environments.
+Although, the research paper's objective of Wu \citep{wu2018accurate} does not directly regard the relationship between the training (execution) time and the model performance, but rather the accuracy of indoor localization techniques in two different environments.
 Howeover, such study also inspects the evaluation of Bayes Net, SVM and Random Forest models, including their execution time. As shown in \autoref{tab:wuexec}, we can observe that there is a trade-off between model performance and the execution time, as the SVM has the highest accuracy and moderate execution time, while the Bayes Net has the lowest accuracy, but also the shortest execution time.
-Therefore, we expect a positive association between the execution time and the model performance.
+Therefore, we expect a positive relationship between the execution time and the model performance.
 
 \begin{table}[H]
     \small
@@ -222,6 +223,6 @@ Therefore, we expect a positive association between the execution time and the m
 
 \noindent \textbf{Hypothesis \#5:} \textit{The main default drivers are the debt and/or delinquency features on HMEQ data set.}
 
-In the study of Zurada and others \citep{zurada2014classification}, the authors also inspected the significance of features in order to reduce the dimensionality. In particular, the authors employed both correlation analysis with the target variable as well as ranking according to information gain.
-In this case, the most significant features are debt--to--income ratio, number of derogatory public records and number of delinquent credit lines.
-Thus, these features are expected to be the most important indicators when predicting a default.
+In the study of Zurada \citep{zurada2014classification}, the author also inspected the significance of features in order to reduce the dimensionality. In particular, the authors employed both correlation analysis with the target variable as well as ranking according to information gain.
+In this case, the most significant features are debt--to--income ratio and number of delinquent credit lines.
+Therefore, these features are expected to be the most important indicators when predicting a default.
