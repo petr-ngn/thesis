@@ -46,6 +46,9 @@ Further, we assess the model explainability (\autoref{subsec:explainability}) by
 The final section of \autoref{chap:four} regards the machine learning deployment of the model into a production as a web application (\autoref{sec:deployment}).
 Such application is built using Flask framework for back--end and HTML with CSS and JavaScript elements for front--end.
 Prior the deployment, the final model and its optimal threshold are retrained on the whole data set (training, validation and test set) in order to enhance the model's performance and ability to generalize, since we already used the test set within the evaluation part. The final optimal threshold used in the deployment is \textbf{0.3358}.
+The web application itself is temporarily deployed on PythonAnywhere cloud platform which is accessible via the folllowing link: \url{http://ml-credit-risk-app-petrngn.pythonanywhere.com/}.
+Such application requires to fill in the loan application form where its fields correspond to the features on which the final model was trained (\autoref{fig:flaskform}). After a submission of the form, the application processes the inputs, bins them and transforms them into WoE values and afterwards, it predicts the result, whether the loan is rejected or approved based on the optimal threshold, and the probability of default. The result is then displayed on the web page (\autoref{fig:flaskresult}).
+The application also displays LIME which depicts the local Explainability of the model around the given prediction, i.e., it shows the contribution of each feature to the prediction.
 
 
 
