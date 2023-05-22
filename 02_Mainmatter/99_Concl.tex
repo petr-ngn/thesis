@@ -50,20 +50,7 @@ The web application itself is temporarily deployed on PythonAnywhere cloud platf
 Such application requires to fill in the loan application form where its fields correspond to the features on which the final model was trained (\autoref{fig:flaskform}). After a submission of the form, the application processes the inputs, bins them and transforms them into WoE values and afterwards, it predicts the result, whether the loan is rejected or approved based on the optimal threshold, and the probability of default. The result is then displayed on the web page (\autoref{fig:flaskresult}).
 The application also displays LIME which depicts the local Explainability of the model around the given prediction, i.e., it shows the contribution of each feature to the prediction.
 
-
-
-
-
-Bayesian Optimization - approach -> Feature selection algorithm
-
-Model selection algorithm - ranking, weights, youden index, distribution analysis, final model
-
-recalibration for evaluation -> evaluation / model performance + model explainability
-
-model deployment - web application / application form / prediction result / local explainability
-
-Hypotheses results + key findings + future recommendations
-
+In the last \autoref{chap:five}, we summarize the results of this thesis. Particularly, we assess hypotheses' testing (\autoref{sec:hypotest}) which is depicted in the following table \autoref{tab:hypoconclusion}.
 
 \begin{table}[H]
     \small
@@ -88,3 +75,24 @@ Hypotheses results + key findings + future recommendations
     
     \centering{\begin{source}Author's Results\end{source}}\vspace{-1em}
 \end{table}
+
+This chapter also includes the discussion of the model rankings results with the results of the studies of Aras \citep{serkan2021bagging} and Zurada \citep{zurada2014classification} as discussed in \autoref{sec:comparisonfinal}.
+While the results of Aras' study are in line with the results of this thesis, i.e., Random Forest and K-Nearest Neighbors perform well whereas Decision Tree, Logistic Regression and Gaussian Naive Bayes perform poorly,
+the results of Zurada's study are not in line with the results of this thesis, as its best models are Multi--Layer Perceptron and Decision Tree, which are outperformed by Gradient Boosting, Random Forest, K-Nearest Neighbors and Support Vector Machine.
+Further, Zurada ranks K-Nearest Neighbors as one the worst performing models (after Logistic Regression), whereas K-Nearest Neighbors performs well in this thesis and outperforms Support Vector Machine, Multi--Layer Perceptron, Decision Tree, Logistic Regression and Gaussian Naive Bayes.
+Since either thesis' author, Zurada and Aras used different data preprocessing steps, hyperparameter tuning approach and spaces, evaluation metrics and software tools, we should refrain from making direct comparisons due to the incomparability of the results, given the factors mentioned above.
+
+Regarding the key findings of this thesis, particularly of the machine learning implementation \autoref{sec:keyfindings}, besides the findings observed within hypotheses' testing and studies' comparisons, we further observe that ADASYN oversampling generates more default--case instances which are managers
+which is attributed to the nature of ADASYN oversampling,
+which generates more synthetic default--case samples for such default cases which are hard--to--learn by ADASYN,
+thus defaulted managers are hard--to--learn by ADASYN (\autoref{subsec:data-split-ADASYN}).
+By generating more syntehtic instances which are hard--to--learn, it is expected that the model's performance will be enhanced.
+Another finding regards the impact of the missing value of debt--to--income ratio within default prediction, in particular, if the debt--to--income ratio is missing, it increases the probability of default (\autoref{fig:shap}), since bin capturing missing values has negative WoE coefficient (\autoref{fig:woedist}).
+Following this observation, also higher of debt-to--income ratio and/or number of delinquent credit lines increase the probability of default as can be seen in SHAP summary plot (\autoref{fig:shap}) and WoE distribution ((\autoref{fig:woedist})).
+Further, most of the models are conservative since their optimal thresholds are lower than the standard classification threshold 0.5, i.e., they are more likely to reject the loan application than to approve it, as depicted in \autoref{fig:thresdistclean}.
+Last but not least, ensemble models, such as Gradient Boosting and Random Forest, outperform Support Vector Machine and Multi--Layer Perceptron, whereas the less complex, white--box models, such as Decision Tree, Logistic Regression and Gaussian Naive Bayes have very poor performance, as shown in \autoref{fig:avgrankdist}.
+
+In the final part, we discuss the contribution of this thesis which is further elaborated in detail in \autoref{sec:contributions}, and the recommendations for future research \autoref{sec:keyfindings}, given the limitation of the analyzed data set which might not be representative for the current situation in the financial industry.
+We recommend to use more relevant actual data to capture current market situation; use bigger data to increase the training sample size; use macroeconomic data to dynamically capture the current economic state;
+use TensorFlow/Keras or PyTorch for development of Neural Network which is more versatile than Scikit-learn; use Django for machine learning deployment which is more suitable for full--stack projects than Flask;
+implement machine learning in other components of credit risk modelling, such as EAD, LGD, recovery rates or ECL itself; use Optuna module for hyperparameter tuning which is the state--of--the--art hyperparameter optimization framework; use H2O module for automated machine learning.
