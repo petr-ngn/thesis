@@ -20,3 +20,28 @@ recalibration for evaluation -> evaluation / model performance + model explainab
 model deployment - web application / application form / prediction result / local explainability
 
 Hypotheses results + key findings + future recommendations
+
+
+\begin{table}[H]
+    \small
+    \setlength{\tabcolsep}{8pt}
+    \centering
+    \caption[Hypotheses' Results]{Hypotheses' Results}\label{tab:hypoconclusion}
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabular}{c p{10cm} c}
+    \toprule
+    \textbf{\#} & \textbf{Hypothesis} & \textbf{Rejected} \\
+    \midrule
+    \hline
+    H1 & \textit{The recalibration of the model enhances model performance on HMEQ data set.} & NO \\
+    H2 & \textit{Either Neural Network or KNN model outperforms all the models on HMEQ data set.} & YES \\
+    H3 & \textit{Black--box models perform better than the white--box models on HMEQ data set.} & NO \\
+    H4 & \textit{The longer execution time of a model, the better performance on HMEQ data set.} & YES \\
+    H5 & \textit{The main default drivers are the debt and/or delinquency features on HMEQ data set.} & NO \\
+    \hline
+    \bottomrule
+    \end{tabular}
+    \vspace{0.35em}
+    
+    \centering{\begin{source}Author's Results\end{source}}\vspace{-1em}
+\end{table}
