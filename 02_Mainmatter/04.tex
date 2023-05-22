@@ -1,16 +1,16 @@
 \chapter{Empirical Analysis - Machine Learning Implementation}
 \label{chap:four}
-This chapter focuses on the main part of this thesis, particularly on the practical example of machine learning implementation. The machine learning framework deployed in this thesis is shown in \autoref{fig:mlframe}.
+This chapter focuses on the main part of this thesis, particularly on employing the custom machine learning implementation framework. The machine learning framework deployed in this thesis is shown in \autoref{fig:mlframe} as is described from the high--level--point view as follows:
 \begin{itemize}\setlength\itemsep{0em}
-\item \textbf{Data Exploration} - Focus on the exploration of the data in order to infer some insights about the data quality, distribution of the variables, statistical testing or association analysis.
-\item \textbf{Data Split} - Focus on the splitting of the data which are used separaterly in diferrent tasks such as model training, hyperparameter tuning, feature selection, model selection and model evaluation.
-\item \textbf{Optimal Binning and WoE Encoding} - Focus on the optimal binning and the WoE encoding of the features as the main part of the feature preprocessing.
-\item \textbf{Feature Selection} Focus on the feature selection in order to reduce the dimensionality of the data and to improve the performance of the machine learning models - each input model is tuned with Bayesian Optimization.
-\item \textbf{Model Selection} -Focus on the model selection in order to find the best model based on the ranking - each input model is tuned with Bayesian Optimization on the subsets of selected features.
-\item \textbf{Model Recalibration (Evaluation)} - Focus on the recalibration of the final model by re-training it on the joined training and validation sets, which will be further evaluated.
-\item \textbf{Model Evaluation} - Focus on the evaluation of the final model on the unseen data from test set in order to assess model's predictive power.
-\item \textbf{Model Recalibration (Deployment)} - Focus on the final recalibration of the final model by re-training it on the joined training, validation and test sets, which will be further deployed into a production.
-\item \textbf{Model Deployment} - Focus on the deployment of the final model into a production as a web application.
+\item \textbf{Data Exploration} - Exploration of the data in order to infer some insights about the data quality, distribution of the variables, statistical testing and association analysis.
+\item \textbf{Data Split} - Splitting of the data which are used separaterly in diferrent tasks such as model training, hyperparameter tuning, feature selection, model selection and model evaluation.
+\item \textbf{Optimal Binning and WoE Encoding} - Optimal binning and the WoE encoding of the features as the main part of the feature preprocessing.
+\item \textbf{Feature Selection} - Feature selection with Forward Sequential Feature Selection in order to reduce the dimensionality of the data and to improve the performance of the machine learning models - each input model is tuned with Bayesian Optimization.
+\item \textbf{Model Selection} - Model selection based on weighted ranking where the weights are defined explictly by the thesis' author, in order to find the best model. Each input model is tuned with Bayesian Optimization on each subset of selected features.
+\item \textbf{Model Recalibration (Evaluation)} - Recalibration (Re-training) of the final model by re-training it on the joined training and validation sets, which will be further evaluated.
+\item \textbf{Model Evaluation} - Evaluation of the final model on the unseen data from test set in order to assess model's predictive power as well as model's explainability.
+\item \textbf{Model Recalibration (Deployment)} - Final recalibration of the final model by re-training it on the joined training, validation and test sets, which will be further deployed into a production.
+\item \textbf{Model Deployment} - Dployment of the final model into a production as a web application.
 \end{itemize}
 
 \begin{figure}[H]
@@ -25,7 +25,7 @@ This chapter focuses on the main part of this thesis, particularly on the practi
 \newpage
 \section{Repository and Environment Structure}
 \label{sec:repo}
-The whole machine learning implmenetation as the scope of this thesis is done mainly using Python Programming Language and further with collaboration of Git and HTML.
+The whole machine learning implmenetation as the scope of this thesis is developed mainly using Python Programming Language and further with collaboration of Git and HTML.
 The whole repository can be found in the separate appendix or is available on the GitHub repository \url{https://github.com/petr-ngn/FFU_VSE_Masters_Thesis_ML_Credit_Risk_Modelling}.
 The repository structure is shown in \autoref{fig:repostructure}.
 \begin{figure}[H]
@@ -70,9 +70,9 @@ The repository structure is shown in \autoref{fig:repostructure}.
 \begin{itemize}\setlength\itemsep{0em}
 \item \texttt{data} - Directory containing the raw data, partially preprocessed data (\texttt{interim}) and the final preprocessed data.
 \item \texttt{flask\_app} - Directory containing the Flask application which is used for the deployment of the model. Particularly, it contains the \texttt{app.py} file which is the main back-end file of the application, the \texttt{templates} and \texttt{static} subdirectories which contain the front-end HTML files for the application, and the \texttt{inputs} subdirectory which contains the input dictionary for the application (such as the trained model, threshold, final features etc.).
-\item \texttt{models} - Directory containing the the subdirectories of the trained and fitted objects for features preprocessing, feature selection and model selection, including the final objects used in deployment.
+\item \texttt{models} - Directory containing the the sub--directories of the trained and fitted objects for features preprocessing, feature selection and model selection, including the final objects used in evaluation or deployment.
 \item \texttt{plots} - Directory containing the plots generated within the main Python notebook.
-\item \texttt{Masters\_Thesis.ipynb} - Main Python notebook containing the main part of the machine learning Implementation, such as exploratory analysis, data preprocessing, training and evaluation of the models.
+\item \texttt{Masters\_Thesis.ipynb} - Main Python notebook containing the main part of the machine learning implementation, such as exploratory analysis, data preprocessing, training and evaluation of the models.
 \item \texttt{README.md} - README file containing the description of the repository.
 \item \texttt{requirements.yml} - File containing the list of the required packages and their specific versions used in this project.
 \end{itemize}
@@ -102,7 +102,7 @@ This can be done by running the following command in the Anaconda terminal which
 }
 \centering{\begin{source}Author's command at Anaconda\end{source}}\vspace{0em}
 \end{figure}
-Be aware of your current path directory in your terminal. In order to install the file \texttt{requirements.yml}, you need to define a path to the directory, where such file is located.
+An user should aware of his current path directory in the terminal. In order to install the file \texttt{requirements.yml}, one needs to define a path to the directory, where such file is located.
 To achieve this, the user has to either change the path in the terminal using \texttt{cd} command, insert the path directory before the \texttt{requirements.yml} in terminal, or to copy the file \texttt{requirements.yml} to the current path directory. The following code in \autoref{fig:envsetupcd} shows the former approach:
 \begin{figure}[H]
     \centering\caption{Environment Setup Command with Directory Change}
@@ -119,8 +119,7 @@ To achieve this, the user has to either change the path in the terminal using \t
 \end{figure}
 
 
-To preserve the reproducibility of this solution and conistency of the results, the random seed is instantiated to \texttt{42}, so for instance data split, model optimization or training would be deterministic and not totally random everytime when replicating the solution.
-
+To preserve the reproducibility of this solution and conistency of the results, the random seed is instantiated to \texttt{42}, so for instance data split, model optimization or training would be deterministic and not totally random every time when replicating the solution.
 Some \lstinline{Scikit-learn} or \lstinline{Scikit-optimize} objects have optional argument \texttt{n\_jobs} which utilizes the number of central processing units (CPU) cores used during the parallelizing computation. Such argument is set to \texttt{-1}, hence all the processors are used in order to  speed up the training or optimization process.
 
 \newpage
@@ -330,7 +329,7 @@ Regarding the distribution of categorical features, the data set includes 2 nomi
 The conditional distribution of categorical features on the default status is visualized using barplots in \autoref{fig:catdist}.
 The plot indicates that most loan applicants applied for debt consolidation, while most job occupancies were labeled as \texttt{Other}.
 
-With respect to the default status, there appears to be no significant difference between the default and non-default cases in terms of the relative distribution of the \texttt{REASON} feature.
+With respect to the default status, there appears to be no strong difference between the default and non-default cases in terms of the relative distribution of the \texttt{REASON} feature.
 However, a slight difference is observed between the default and non-default cases in terms of the relative distribution of the \texttt{JOB} feature.
 Specifically, the categories \texttt{Office}, \texttt{ProfExe}, and \texttt{N/A} exhibit a relatively higher proportion of non-default cases than default cases.
 Hence, a moderate association between the \texttt{JOB} feature and the default status is possible, as further investigated in \autoref{subsubsec:target-cat-ass}.
@@ -572,13 +571,13 @@ Regarding the association between categorical features, namely \texttt{REASON} a
 \newpage
 \section{Data Preprocessing}
 \label{sec:dataprep}
-In this section, the process of preprocessing data is described as the crucial step in the machine learning modelling. Particularly, the the process of dividing data for various tasks, oversampling due to the imbalanced class issue, discretization of features and Weight--of--Eveidence transformation are further discussed and described.
+In this section, the process of preprocessing data is described as the crucial step in the machine learning modelling. Particularly, the the process of dividing data for various tasks, ADASYN oversampling due to the imbalanced class issue, discretization of features and Weight--of--Eveidence transformation are further discussed and described.
 
 \subsection{Data Split and ADASYN Oversampling}
 \label{subsec:data-split-ADASYN}
 
 To ensure appropriate model training and unbiased evaluation, it is necessary to split data into separate sets for various purposes. Specifically, the data set is split into three sets: (1) training set for training the model, perform feature selection or hyperparameter tuning, (2) validation for hyperparameter tuning, and (3) test set for assess the model performance on the unseen data \citep{subasi2020practical}.
-In this thesis, the data is plit into training, validation and test sets in ratio of 70:15:15, which ensures sufficient amount of data for training, hence the model would be able to generalize well, while keeping the validation and test sets large enough to provide reliable evaluation of the model's performance.
+In this thesis, the data is split into training, validation and test sets with ratio of 70:15:15, which ensures sufficient amount of data for training, hence the model would be able to generalize well, while keeping the validation and test sets large enough to provide reliable evaluation of the model's performance.
 
 The data is split using stratified split to preserve the default status distribution, which is highly imbalanced.
 Stratification ensures that the distribution of defaults and non-defaults remains the same across all sets, thereby avoiding overfitting and data leakage. Using stratification, each set had 80 \% non-defaults and 20 \% defaults. This method enables accurate prediction since the model is trained and evaluated on the same population \citep{igareta2021strat}.
@@ -633,6 +632,7 @@ Test & 894 &  20.00 \% & 80.00 \% \\
 
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{table}
+\newpage
 
 Since ADASYN increases the sample size by generating, i.e., adding new instances into the sample, it may have an impact on the distribution of the features.
 After the inspection in Python, it have no significant impact on the numeric features as the distributions before and after ADASYN oversampling do not differ that much, as can be seen \autoref{fig:adasynimpactnum} in \autoref{chap:app1}.
@@ -640,10 +640,7 @@ However, pertaining to the categorical features, a significant impact of ADASYN 
 As such, $n_B$ and $n_A$ refer to the number of default cases within given category before and after oversampling, respectively, $N_B$ and $N_A$ represents the total number of default cases before and after oversampling, respectively.
 
 Within the \texttt{REASON} feature, we can observe a significant increase the proportion of defaulted clients who applied for a loan due to the debt consolidation (\texttt{DebtCon}) among all the defaulters after an oversampling - particularly, the ratio has increased by 12.20 percentage points.
-On the other hand, the proportion of defaulted clients who applied for a loan due to the home improvement (\texttt{HomeImp}) has decreased by 9.69 percentage points, indicating lower distribution of such clients in the oversampled set.
 Regarding the \texttt{JOB} feature, we can observe a substantial increase in the proportion in the of defaulted managers (\texttt{Mgr}) among all the defaulters after oversampling by 38.75 percentage points.
-On the other hand, the proportion of defaulted clients who are labelled as \texttt{Others} has decreased by 17.15 percentage points.
-
 \begin{table}[H]
     \small
     \setlength{\tabcolsep}{8pt}
@@ -676,7 +673,7 @@ On the other hand, the proportion of defaulted clients who are labelled as \text
 \end{table}
 
 Such findings regarding the significant increases in the proportion of default cases regarding the \texttt{DebtCon} and \texttt{Mgr} categories are given to the nature of ADASYN oversampling.
-As explained before, ADASYN generates more synthetic default class instances in the neighborhood of such default instances, which are hard--to--learn for ADASYN.
+As already explained, ADASYN generates more synthetic default class instances in the neighborhood of such default instances, which are hard--to--learn for ADASYN.
 In other words, ADASYN creates more default instances for such default instances where the density of the non--default class is relatively high in given default instance's neighborhood.
 Therefore, default instances which either are managers or applied for a loan due to the debt consolidation are difficult--to--learn for ADASYN, thus ADASYN replicates more instances with such characteristics, hence this results in a higher proportion of default cases in the oversampled set for such category.
 
@@ -695,7 +692,7 @@ Therefore, default instances which either are managers or applied for a loan due
 \newpage
 \subsection{Optimal Binning and Weight--of--Evidence}
 \label{subsec:prep-optbinning}
-As already described in \autoref{sec:optbinningtheory}, the optimal binning is employed as a data preprocessing step in this thesis.
+As already described in \autoref{sec:optbinningtheory}, the Optimal Binning is employed as a data preprocessing step in this thesis.
 Particularly, we employ \lstinline{BinningProcess} class from the \lstinline{optbinning} module in Python - such class optimally discretizes the continuous features into interval bins and optimally groups categorical features' categories into sub-group categories with respect to the target variable while maximizing Information Value, and afterwards such bins are encoded using WoE \citep{navas2020optimal}. Besides discretizing and grouping, it also creates special bins for capturing missing values.
 
 
