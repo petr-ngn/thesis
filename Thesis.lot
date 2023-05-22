@@ -1,37 +1,37 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {3.1}{\ignorespaces Evaluation Results \citep {serkan2021bagging}}}{46}{table.caption.34}%
-\contentsline {table}{\numberline {3.2}{\ignorespaces Evaluation Results - Ranked \citep {serkan2021bagging}}}{46}{table.caption.35}%
-\contentsline {table}{\numberline {3.3}{\ignorespaces Evaluation Results \citep {zurada2014classification}}}{47}{table.caption.36}%
-\contentsline {table}{\numberline {3.4}{\ignorespaces Evaluation Results - Ranked \citep {zurada2014classification}}}{47}{table.caption.37}%
-\contentsline {table}{\numberline {3.5}{\ignorespaces Accuracy vs. Execution Time \citep {wu2018accurate}}}{50}{table.caption.38}%
+\contentsline {table}{\numberline {3.1}{\ignorespaces Evaluation Results \citep {serkan2021bagging}}}{49}{table.caption.34}%
+\contentsline {table}{\numberline {3.2}{\ignorespaces Evaluation Results - Ranked \citep {serkan2021bagging}}}{49}{table.caption.35}%
+\contentsline {table}{\numberline {3.3}{\ignorespaces Evaluation Results \citep {zurada2014classification}}}{50}{table.caption.36}%
+\contentsline {table}{\numberline {3.4}{\ignorespaces Evaluation Results - Ranked \citep {zurada2014classification}}}{50}{table.caption.37}%
+\contentsline {table}{\numberline {3.5}{\ignorespaces Accuracy vs. Execution Time \citep {wu2018accurate}}}{53}{table.caption.38}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Data Set Columns}}{57}{table.caption.43}%
-\contentsline {table}{\numberline {4.2}{\ignorespaces Missing Values Summary}}{58}{table.caption.44}%
-\contentsline {table}{\numberline {4.3}{\ignorespaces Numeric Features NA's Summary}}{63}{table.caption.49}%
-\contentsline {table}{\numberline {4.4}{\ignorespaces Point--Biserial Correlation - Numeric Features vs. Default}}{65}{table.caption.53}%
-\contentsline {table}{\numberline {4.5}{\ignorespaces Cramer's V Association - Categorical Features vs. Default}}{66}{table.caption.55}%
-\contentsline {table}{\numberline {4.6}{\ignorespaces Phi Correlation Coefficient - NA's vs. Default}}{67}{table.caption.57}%
-\contentsline {table}{\numberline {4.7}{\ignorespaces Data Split Summary}}{72}{table.caption.63}%
-\contentsline {table}{\numberline {4.8}{\ignorespaces ADASYN Impact on Categorical Features' Distribution}}{73}{table.caption.64}%
-\contentsline {table}{\numberline {4.9}{\ignorespaces Logistic Regression - Hyperparameter Space}}{80}{table.caption.70}%
-\contentsline {table}{\numberline {4.10}{\ignorespaces Decision Tree - Hyperparameter Space}}{80}{table.caption.72}%
-\contentsline {table}{\numberline {4.11}{\ignorespaces Gaussian Naive Bayes - Hyperparameter Space}}{81}{table.caption.74}%
-\contentsline {table}{\numberline {4.12}{\ignorespaces K--Nearest Neighbors - Hyperparameter Space}}{81}{table.caption.76}%
-\contentsline {table}{\numberline {4.13}{\ignorespaces Random Forest - Hyperparameter Space}}{82}{table.caption.78}%
-\contentsline {table}{\numberline {4.14}{\ignorespaces Gradient Boosting - Hyperparameter Space}}{83}{table.caption.80}%
-\contentsline {table}{\numberline {4.15}{\ignorespaces Support Vector Machine - Hyperparameter Space}}{83}{table.caption.82}%
-\contentsline {table}{\numberline {4.16}{\ignorespaces Multi Layer Percepton - Hyperparameter Space}}{84}{table.caption.84}%
-\contentsline {table}{\numberline {4.17}{\ignorespaces Model Ranking Weights}}{90}{table.caption.89}%
-\contentsline {table}{\numberline {4.18}{\ignorespaces Model Selection Results}}{93}{table.caption.92}%
-\contentsline {table}{\numberline {4.19}{\ignorespaces Final Model Information\relax }}{104}{table.caption.104}%
-\contentsline {table}{\numberline {4.20}{\ignorespaces Metrics Evaluation}}{107}{table.caption.106}%
-\contentsline {table}{\numberline {4.21}{\ignorespaces Recalibration Impact on Metrics Evaluation}}{108}{table.caption.107}%
+\contentsline {table}{\numberline {4.1}{\ignorespaces Data Set Columns}}{60}{table.caption.43}%
+\contentsline {table}{\numberline {4.2}{\ignorespaces Missing Values Summary}}{61}{table.caption.44}%
+\contentsline {table}{\numberline {4.3}{\ignorespaces Numeric Features NA's Summary}}{66}{table.caption.49}%
+\contentsline {table}{\numberline {4.4}{\ignorespaces Point--Biserial Correlation - Numeric Features vs. Default}}{68}{table.caption.53}%
+\contentsline {table}{\numberline {4.5}{\ignorespaces Cramer's V Association - Categorical Features vs. Default}}{69}{table.caption.55}%
+\contentsline {table}{\numberline {4.6}{\ignorespaces Phi Correlation Coefficient - NA's vs. Default}}{70}{table.caption.57}%
+\contentsline {table}{\numberline {4.7}{\ignorespaces Data Split Summary}}{75}{table.caption.63}%
+\contentsline {table}{\numberline {4.8}{\ignorespaces ADASYN Impact on Categorical Features' Distribution}}{76}{table.caption.64}%
+\contentsline {table}{\numberline {4.9}{\ignorespaces Logistic Regression - Hyperparameter Space}}{83}{table.caption.70}%
+\contentsline {table}{\numberline {4.10}{\ignorespaces Decision Tree - Hyperparameter Space}}{83}{table.caption.72}%
+\contentsline {table}{\numberline {4.11}{\ignorespaces Gaussian Naive Bayes - Hyperparameter Space}}{84}{table.caption.74}%
+\contentsline {table}{\numberline {4.12}{\ignorespaces K--Nearest Neighbors - Hyperparameter Space}}{84}{table.caption.76}%
+\contentsline {table}{\numberline {4.13}{\ignorespaces Random Forest - Hyperparameter Space}}{85}{table.caption.78}%
+\contentsline {table}{\numberline {4.14}{\ignorespaces Gradient Boosting - Hyperparameter Space}}{86}{table.caption.80}%
+\contentsline {table}{\numberline {4.15}{\ignorespaces Support Vector Machine - Hyperparameter Space}}{86}{table.caption.82}%
+\contentsline {table}{\numberline {4.16}{\ignorespaces Multi Layer Percepton - Hyperparameter Space}}{87}{table.caption.84}%
+\contentsline {table}{\numberline {4.17}{\ignorespaces Model Ranking Weights}}{93}{table.caption.89}%
+\contentsline {table}{\numberline {4.18}{\ignorespaces Model Selection Results}}{96}{table.caption.92}%
+\contentsline {table}{\numberline {4.19}{\ignorespaces Final Model Information\relax }}{107}{table.caption.104}%
+\contentsline {table}{\numberline {4.20}{\ignorespaces Metrics Evaluation}}{110}{table.caption.106}%
+\contentsline {table}{\numberline {4.21}{\ignorespaces Recalibration Impact on Metrics Evaluation}}{111}{table.caption.107}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {5.1}{\ignorespaces Max--Aggregated Ranks of Models}}{119}{table.caption.113}%
-\contentsline {table}{\numberline {5.2}{\ignorespaces Ranking Results Comparison based on HMEQ Data Set}}{122}{table.caption.114}%
+\contentsline {table}{\numberline {5.1}{\ignorespaces Max--Aggregated Ranks of Models}}{122}{table.caption.113}%
+\contentsline {table}{\numberline {5.2}{\ignorespaces Ranking Results Comparison based on HMEQ Data Set}}{125}{table.caption.114}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {6.1}{\ignorespaces Hypotheses' Results}}{131}{table.caption.115}%
+\contentsline {table}{\numberline {6.1}{\ignorespaces Hypotheses' Results}}{134}{table.caption.115}%
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {A.1}{\ignorespaces Normality Test - Shapiro--Wilk}}{I}{table.caption.117}%
