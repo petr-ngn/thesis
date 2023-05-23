@@ -7,19 +7,19 @@ Database file #1: Styles/Bibliography.bib
 Warning--entry type for "PwC2023" isn't style-file defined
 --line 27 of file Styles/Bibliography.bib
 Warning--entry type for "igareta2021strat" isn't style-file defined
---line 2085 of file Styles/Bibliography.bib
+--line 2083 of file Styles/Bibliography.bib
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Warning--empty journal in adeodato2016equivalence
 Warning--empty booktitle in dias2018comparison
 Warning--empty journal in li2012overview
 You've used 113 entries,
             3042 wiz_defined-function locations,
-            1181 strings with 24620 characters,
-and the built_in function-call counts, 68711 in all, are:
+            1181 strings with 24626 characters,
+and the built_in function-call counts, 68707 in all, are:
 = -- 5396
 > -- 2570
 < -- 255
-+ -- 902
++ -- 900
 - -- 744
 * -- 5730
 := -- 9788
@@ -43,7 +43,7 @@ purify$ -- 695
 quote$ -- 0
 skip$ -- 2575
 stack$ -- 0
-substring$ -- 2644
+substring$ -- 2642
 swap$ -- 3285
 text.length$ -- 179
 text.prefix$ -- 0

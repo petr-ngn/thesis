@@ -188,24 +188,24 @@
 \bibitem[{Esposito \emph{et~al.}(2021)Esposito, Landrum, Schneider, Stiefl, \&
   Riniker}]{esposito2021ghost}
 \textsc{Esposito}, C., G.~A. \textsc{Landrum}, N.~\textsc{Schneider},
-  N.~\textsc{Stiefl}, \& S.~\textsc{Riniker} (2021): \enquote{Ghost: adjusting
-  the decision threshold to handle imbalanced data in machine learning.}
+  N.~\textsc{Stiefl}, \& S.~\textsc{Riniker} (2021): \enquote{{GHOST: adjusting
+  the decision threshold to handle imbalanced data in machine learning}.}
 \newblock \emph{Journal of Chemical Information and Modeling} \textbf{61(6)}:
   pp. 2623--2640.
 
 \bibitem[{Fawcett(2006)}]{fawcett2006introduction}
-\textsc{Fawcett}, T. (2006): \enquote{An introduction to roc analysis.}
-\newblock \emph{Pattern recognition letters} \textbf{27(8)}: pp. 861--874.
+\textsc{Fawcett}, T. (2006): \enquote{{An introduction to ROC analysis}.}
+\newblock \emph{Pattern Recognition Letters} \textbf{27(8)}: pp. 861--874.
 
 \bibitem[{Fluss \emph{et~al.}(2005)Fluss, Faraggi, \&
   Reiser}]{fluss2005estimation}
 \textsc{Fluss}, R., D.~\textsc{Faraggi}, \& B.~\textsc{Reiser} (2005):
-  \enquote{Estimation of the youden index and its associated cutoff point.}
+  \enquote{{Estimation of the Youden Index and its associated cutoff point}.}
 \newblock \emph{Biometrical Journal: Journal of Mathematical Methods in
   Biosciences} \textbf{47(4)}: pp. 458--472.
 
 \bibitem[{Forsyth(2019)}]{forsyth2019applied}
-\textsc{Forsyth}, D. (2019): \emph{Applied machine learning}.
+\textsc{Forsyth}, D. (2019): \emph{Applied Machine Learning}.
 \newblock Springer.
 
 \bibitem[{Gauhar(2020)}]{gauhar2020decision}
