@@ -11,7 +11,7 @@ The \autoref{chap:four} pertains to the very extensive empirical analysis, i.e.,
 
 
 Within data exploration (\autoref{sec:dataexploration}), we delve into the description of the data set, distribution analysis and association analysis.
-This chapter further employs an data preprocessing step (\autoref{sec:dataprep}), including the data split with stratification into training set, validation set  and test set with ratio of 70:15:15.
+This chapter further employs data preprocessing step (\autoref{sec:dataprep}), including the data split with stratification into training set, validation set  and test set with ratio of 70:15:15.
 Subsequently, ADASYN oversampling is performed in order to balance the default distribution (\autoref{subsec:data-split-ADASYN}).
 The next step of data preprocessing involves Optimal Binning (\autoref{subsec:prep-optbinning}), which is utilized using \lstinline{optbinning} module developed by Navas--Palencia \citep{navas2020optimal}. This module is employed in order to discretize the numeric features into interval bins and categorical features into subgroups of categories, both are optimally binned with respect to the default, and further transforms these bins using Weight--of--Evidence.
 
@@ -21,17 +21,18 @@ Bayesian Optimization is used for hyperparameter tuning, particularly we use \ls
 
 The feature selection (\autoref{subsec:feature-selection}) is performed using custom algorithm developed by the author, which iterates over the models. Each model is tuned with Bayesian Optimization and is further used as an input estimator within Forward Sequential Feature Selection, which returns subset of optimal features for given model. Since we have 8 models, we obtain 8 subset of features.
 
-Within the model selection \autoref{subsec:modelselection}, each model is tuned on each subset of selected features on training set, and then is evaluated on the validation set by computing several evaluation metrics.
+Within the model selection (\autoref{subsec:modelselection}), each model is tuned on each subset of selected features, and then is evaluated on the validation set by computing a range of metrics mentioned above.
 Instead of using standard classification threshold of 0.5, we compute an optimal threshold using Youden index. Since we have 8 models and 8 subsets of features, we obtain 64 models in total.
 All the models are ranked on each metric, based on which we calculate a rank score as a weighted average of the individual ranks, where the weights are set explicitly by the author. Based on the rank score, we determine the final rank. The model with the highest rank (i.e., rank of 1) is then selected as the final model for both evaluation and deployment.
 The final model is \textbf{Gradient Boosting} which was trained on the features selected by \textbf{Multi--Layer Perceptron}.
 
+\newpage
 Such final model is then recalibrated on the joined training and validation set and also, the optimal threshold is recalculated using Youden index, as described in \autoref{subsec:modelrecal}.
-Afterwards, the final recalibrated model is evaluated on test set in \autoref{sec:modeleval}, where we assess the model performance, inspect impact of the recalibration on the model's predictive power and also we delve into black--box model explainability using feature importances and SHAP summary plot. It is evident that debt--to--income ratio and number of delinquent credit lines are the main default drivers.
+Afterwards, the final recalibrated model is evaluated on test set in \autoref{sec:modeleval}, where we assess the model performance, inspect the impact of the recalibration on the model's predictive power and also we delve into black--box model explainability using feature importances and SHAP summary plot. It is evident that debt--to--income ratio and number of delinquent credit lines are the main default drivers.
 
 In the last part of machine learning implementation, the final model is deployed into a production environment as presented in \autoref{sec:deployment}.
 Prior the deployment, the final model and its optimal threshold are recalibrated on the whole data set (training, validation and test set) in order to maximize the predictive power of the model.
-Particularly, such model is deployed as a web application built in Flask (back--end) and HTML with CSS and JavaScript elements (front-end).
+Particularly, such model is deployed as a web application built in Flask (for back--end) and HTML with CSS and JavaScript elements (for front-end).
 The web application itself is temporarily deployed on PythonAnywhere cloud platform which is accessible via the following link: \url{http://ml-credit-risk-app-petrngn.pythonanywhere.com/}.
 This application requires to fill in the loan application form  as can be seen in \autoref{fig:flaskform}.
 After a submission of the form, the application processes the inputs and returns (1) whether the loan would be rejected or approved by model based on given threshold, (2), predicted probability of default and (3) local black--box model explainability of the prediction using LIME, which is displayed in \autoref{fig:flaskres}.
