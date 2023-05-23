@@ -251,14 +251,15 @@
   \url{ttps://docs.h2o.ai/h2o/latest-stable/h2o-docs/automl.html}.
 
 \bibitem[{Hale(2019)}]{hale2019dont}
-\textsc{Hale}, J. (2019): \enquote{Don't sweat the solver stuff.}
-\newblock \emph{Medium} Retrieved May 1, 2023.
+\textsc{Hale}, J. (2019): \enquote{{Don't Sweat the Solver Stuff}.}
+\newblock TowardsDataScience.com. Retrieved May 1, 2023. Available at
+  \url{https://towardsdatascience.com/dont-sweat-the-solver-stuff-aea7cddc3451}.
 
-\bibitem[{Hall \emph{et~al.}(2018)}]{hall2018machine}
-\textsc{Hall}, A.~S. \emph{et~al.} (2018): \enquote{Machine learning approaches
-  to macroeconomic forecasting.}
+\bibitem[{Hall(2018)}]{hall2018machine}
+\textsc{Hall}, A.~S. (2018): \enquote{{Machine Learning Approaches to
+  Macroeconomic Forecasting}.}
 \newblock \emph{The Federal Reserve Bank of Kansas City Economic Review}
-  \textbf{103(63)}: p.~2.
+  \textbf{103}: pp. 63--81.
 
 \bibitem[{Han \emph{et~al.}(2011)Han, Kamber, \& Pei}]{han2011data}
 \textsc{Han}, J., M.~\textsc{Kamber}, \& J.~\textsc{Pei} (2011): \emph{Data
@@ -267,11 +268,10 @@
 
 \bibitem[{He \emph{et~al.}(2008)He, Bai, Garcia, \& Li}]{adasynhaibo}
 \textsc{He}, H., Y.~\textsc{Bai}, E.~A. \textsc{Garcia}, \& S.~\textsc{Li}
-  (2008): \enquote{Adasyn: Adaptive synthetic sampling approach for imbalanced
-  learning.}
-\newblock In \enquote{2008 IEEE International Joint Conference on Neural
-  Networks (IEEE World Congress on Computational Intelligence),} pp.
-  1322--1328.
+  (2008): \enquote{{ADASYN: Adaptive synthetic sampling approach for imbalanced
+  learning}.}
+\newblock \emph{2008 IEEE International Joint Conference on Neural Networks
+  (IEEE World Congress on Computational Intelligence)} pp. 1322--1328.
 
 \bibitem[{He \& Ma(2013)}]{ma2013imbalanced}
 \textsc{He}, H. \& Y.~\textsc{Ma} (2013): \emph{Imbalanced Learning:
@@ -282,40 +282,43 @@
   Thoral, Arbous, \& Steyerberg}]{de2023predicting}
 \textsc{de~Hond}, A.~A., I.~M. \textsc{Kant}, M.~\textsc{Fornasa},
   G.~\textsc{Cin{\`a}}, P.~W. \textsc{Elbers}, P.~J. \textsc{Thoral}, M.~S.
-  \textsc{Arbous}, \& E.~W. \textsc{Steyerberg} (2023): \enquote{Predicting
-  readmission or death after discharge from the icu: External validation and
-  retraining of a machine learning model.}
+  \textsc{Arbous}, \& E.~W. \textsc{Steyerberg} (2023): \enquote{{Predicting
+  Readmission or Death After Discharge From the ICU: External Validation and
+  Retraining of a Machine Learning Model}.}
 \newblock \emph{Critical Care Medicine} \textbf{51(2)}: pp. 291--300.
 
 \bibitem[{Hsu \& Lin(2002)}]{hsu2002comparison}
-\textsc{Hsu}, C.-W. \& C.-J. \textsc{Lin} (2002): \enquote{A comparison of
-  methods for multiclass support vector machines.}
+\textsc{Hsu}, C.-W. \& C.-J. \textsc{Lin} (2002): \enquote{{A comparison of
+  methods for multiclass support vector machines}.}
 \newblock \emph{IEEE transactions on Neural Networks} \textbf{13(2)}: pp.
   415--425.
 
 \bibitem[{Igareta(2021)}]{igareta2021strat}
 \textsc{Igareta}, A. (2021): \enquote{Stratified sampling: You may have been
   splitting your dataset all wrong.}
+\newblock TowardsDataScience.com. Retrieved April 17, 2023. Available at
+  \url{https://towardsdatascience.com/stratified-sampling-you-may-have-been-splitting-your-dataset-all-wrong-8cfdd0d32502}.
 
 \bibitem[{Jahromi \& Taheri(2017)}]{jahromi2017non}
-\textsc{Jahromi}, A.~H. \& M.~\textsc{Taheri} (2017): \enquote{A non-parametric
-  mixture of gaussian naive bayes classifiers based on local independent
-  features.}
-\newblock In \enquote{2017 Artificial intelligence and signal processing
-  conference (AISP),} pp. 209--212. IEEE.
+\textsc{Jahromi}, A.~H. \& M.~\textsc{Taheri} (2017): \enquote{{A
+  non-parametric mixture of Gaussian naive Bayes classifiers based on local
+  independent features}.}
+\newblock \emph{2017 Artificial intelligence and signal processing conference
+  (AISP)} pp. 209--212.
 
 \bibitem[{Jakubik \emph{et~al.}(2007)}]{jakubik2007macroeconomic}
 \textsc{Jakubik}, P. \emph{et~al.} (2007): \enquote{Macroeconomic environment
   and credit risk.}
-\newblock \emph{Czech Journal of Economics and Finance (Finance a uver)}
-  \textbf{57(1-2)}: pp. 60--78.
+\newblock \emph{Czech Journal of Economics and Finance (Finance a uver).
+  Charles University Prague, Faculty of Social Sciences} \textbf{57(1-2)}: pp.
+  60--78.
 
 \bibitem[{Janitza \emph{et~al.}(2013)Janitza, Strobl, \&
   Boulesteix}]{janitza2013auc}
 \textsc{Janitza}, S., C.~\textsc{Strobl}, \& A.-L. \textsc{Boulesteix} (2013):
-  \enquote{An auc-based permutation variable importance measure for random
-  forests.}
-\newblock \emph{BMC bioinformatics} \textbf{14(1)}: pp. 1--11.
+  \enquote{{An AUC-based permutation variable importance measure for random
+  forests}.}
+\newblock \emph{BMC bioinformatics} \textbf{14}.
 
 \bibitem[{Japkowicz \& Shah(2011)}]{japkowicz2011evaluating}
 \textsc{Japkowicz}, N. \& M.~\textsc{Shah} (2011): \emph{Evaluating learning
