@@ -209,11 +209,10 @@
 \newblock Springer.
 
 \bibitem[{Gauhar(2020)}]{gauhar2020decision}
-\textsc{Gauhar}, N. (2020): \enquote{Decision tree: A classification
-  algorithm.}
-\newblock
+\textsc{Gauhar}, N. (2020): \enquote{{Decision Tree: A Classification
+  Algorithm}.}
+\newblock LearningWithGauhar.com. Retrieved April 30, 2023. Available at
   \url{https://learnwithgauhar.com/decision-tree-a-classification-algorithm/}.
-\newblock Accessed on April 30, 2023.
 
 \bibitem[{Gevorkyan \emph{et~al.}(2019)Gevorkyan, Demidova, Demidova, \&
   Sobolev}]{gevorkyan2019review}
@@ -230,25 +229,26 @@
 \newblock \emph{Journal of Big Data} \textbf{9(1)}: p.~30.
 
 \bibitem[{Gornjak(2017)}]{gornjak2017ifrs}
-\textsc{Gornjak}, M. (2017): \enquote{Comparison of ias 39 and ifrs 9: The
-  analysis of replacement.}
-\newblock \emph{International journal of managament, knowledge and learning}
-  \textbf{6}.
+\textsc{Gornjak}, M. (2017): \enquote{{Comparison of IAS 39 and IFRS 9: The
+  Analysis of Replacement}.}
+\newblock \emph{International Journal of Management, Knowledge and Learning}
+  \textbf{6(1)}: pp. 115--130.
 
 \bibitem[{Gregory(2012)}]{gregory2012counterparty}
-\textsc{Gregory}, J. (2012): \emph{Counterparty credit risk and credit value
-  adjustment: A continuing challenge for global financial markets}.
-\newblock John Wiley \& Sons.
+\textsc{Gregory}, J. (2012): \emph{Counterparty Credit Risk and Credit Value
+  Adjustment: A Continuing Challenge for Global Financial Markets}.
+\newblock John Wiley \& Sons, 2nd edition.
 
 \bibitem[{Grzybowska \& Karwanski(2020)}]{grzybowska2020application}
-\textsc{Grzybowska}, U. \& M.~\textsc{Karwanski} (2020): \enquote{Application
-  of machine learning method under ifrs 9 approach to lgd modeling.}
-\newblock \emph{Acta Physica Polonica, A.} \textbf{138(1)}.
+\textsc{Grzybowska}, U. \& M.~\textsc{Karwanski} (2020): \enquote{{Application
+  of Machine Learning Method under IFRS 9 Approach to LGD Modeling}.}
+\newblock \emph{Acta Physica Polonica, A.} \textbf{138(1)}: pp. 116--122.
 
 \bibitem[{H2O.ai(2023)}]{H2Oai2023}
-\textsc{H2O.ai} (2023): \enquote{Automl: Automatic machine learning.}
+\textsc{H2O.ai} (2023): \enquote{{AutoML: Automatic Machine Learning}.}
 \newblock AutoML: Automatic Machine Learning - H2O 3.40.0.4 documentation.
-\newblock Accessed on March 28, 2023.
+  Retrieved March 28, 2023.
+  \url{ttps://docs.h2o.ai/h2o/latest-stable/h2o-docs/automl.html}.
 
 \bibitem[{Hale(2019)}]{hale2019dont}
 \textsc{Hale}, J. (2019): \enquote{Don't sweat the solver stuff.}
