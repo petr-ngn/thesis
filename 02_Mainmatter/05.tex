@@ -47,6 +47,7 @@ In particular, all the score metrics and loss metrics have increased and decreas
 
 \vspace{0.3cm}
 
+\newpage
 \noindent \textbf{Result \#2:} \textit{Neural Network and KNN model \underline{DO NOT} outperform all the models on HMEQ data set.}
 
 We reject the \textbf{Hypothesis \#2} as the final model, which is the best performing, is the Gradient Boosting model as described in \autoref{tab:finalmodelinfo}.
@@ -166,7 +167,9 @@ The key findings of this thesis are summarized in the following list. We exclude
     This is attributed to ADASYN nature as it generates more synthetic instances for such default--case instances which are hard-to--learn, therefore default clients who are managers are hard--to--learn according to ADASYN and its underlying KNN algorithm as described in \autoref{subsec:data-split-ADASYN}. By generating more synthetic learn for instances which are hard--to--learn, ADASYN oversampling is expected to improve the model's performance.
     \item We can also observe the impact of missing values within default prediction, particularly in case of debt--to--income ratio \texttt{DEBTINC}. As can be seen in \autoref{fig:woedistdebtinc}, the WoE corresponding the bin capturing missing values has a negative value of (approx. -2), which indicates a larger distribution of defaulters compared to non--defaulters.
     Referring to the WoE values, the SHAP summary plot (\autoref{fig:shap}) depicts the global model explainability and the contribution of each feature to the predictions. As can be seen in case of \texttt{DEBTINC}, the blue values (i.e., negative WoE values) contributes positively to the default, hence when the debt--to--income ratio is missing, the model is more likely to predict default for such instance.
+    This also confirms our finding within exploration analysis, particularly in the association analysis where we inspected the association between the default and the missing values as presented in \autoref{tab:phi-target}.
     \item Another finding regards the features \texttt{DEBTINC} and \texttt{DELINQ}. The higher debt--to--income ratio and/or the higher number of delinquent credit lines, the higher the probability of default. This is evident from the WoE values in \autoref{fig:woedistdebtinc} and \autoref{fig:woedistdelinq}, respectively, and the SHAP summary plot in \autoref{fig:shap}.
+    Therefore, we confirm our findings from the exploration analysis, where we assessed association analysis with the default in \autoref{tab:pointbi}.
     \item Most of the models are conservative as most of their optimal thresholds obtained using Youden index are below the standard classification threshold of 0.5 as depicted in \autoref{fig:thresdistclean}.
     \item Ensemble models, such as Gradient Boosting and Random Forest, perform better than SVM or Neural Network (MLP), while the transparent models such as Decision Tree, Logistic Regression, and Gaussian Naive Bayes perform the worst. This is depicted in \autoref{fig:avgrankdist}.
     \item Black--box models which are complex tend to select more features than transparent white box--models within feature selection (\autoref{fig:fsrec}).
