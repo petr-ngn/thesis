@@ -3,10 +3,9 @@
 \providecommand{\natexlab}[1]{#1}
 
 \bibitem[{Adeodato \& Melo(2016)}]{adeodato2016equivalence}
-\textsc{Adeodato}, P.~J. \& S.~B. \textsc{Melo} (2016): \enquote{On the
-  equivalence between kolmogorov-smirnov and roc curve metrics for binary
-  classification.}
-\newblock \emph{arXiv preprint arXiv:1606.00496} .
+\textsc{Adeodato}, P. \& S.~\textsc{Melo} (2016): \enquote{{On the equivalence
+  between Kolmogorov-Smirnov and ROC curve metrics for binary classification}.}
+  .
 
 \bibitem[{Akiba \emph{et~al.}(2019)Akiba, Sano, Yanase, Ohta, \&
   Koyama}]{akiba2019optuna}
@@ -16,18 +15,11 @@
 \newblock In \enquote{Proceedings of the 25th ACM SIGKDD international
   conference on knowledge discovery \& data mining,} pp. 2623--2631.
 
-\bibitem[{Alloghani \emph{et~al.}(2020)Alloghani, Al-Jumeily, Mustafina,
-  Hussain, \& Aljaaf}]{alloghani2020supervised}
-\textsc{Alloghani}, M., D.~\textsc{Al-Jumeily}, J.~\textsc{Mustafina},
-  A.~\textsc{Hussain}, \& A.~\textsc{Aljaaf} (2020): \enquote{Supervised and
-  unsupervised learning for data science.}
-\newblock \emph{Supervised and Unsupervised Learning for Data Science} .
-
 \bibitem[{Aniceto \emph{et~al.}(2020)Aniceto, Barboza, \&
   Kimura}]{aniceto2020machine}
 \textsc{Aniceto}, M.~C., F.~\textsc{Barboza}, \& H.~\textsc{Kimura} (2020):
   \enquote{Machine learning predictivity applied to consumer creditworthiness.}
-\newblock \emph{Future Business Journal} \textbf{6(1)}: pp. 1--14.
+\newblock \emph{Future Business Journal} \textbf{6}: pp. 1--14.
 
 \bibitem[{Aras(2021)}]{serkan2021bagging}
 \textsc{Aras}, S. (2021): \enquote{Bagging and boosting classifiers for credit
@@ -35,8 +27,9 @@
 \newblock \emph{REFLECTIONS OF ECONOMIC DEVELOPMENT} p. 121.
 
 \bibitem[{Ayyadevara(2018)}]{ayyadevara2018pro}
-\textsc{Ayyadevara}, V.~K. (2018): \enquote{Pro machine learning algorithms.}
-\newblock \emph{Apress: Berkeley, CA, USA} .
+\textsc{Ayyadevara}, V.~K. (2018): \emph{Pro Machine Learning Algorithms: A
+  Hands-On Approach to Implementing Algorithms in Python and R}.
+\newblock Apress.
 
 \bibitem[{Baesens \emph{et~al.}(2016)Baesens, Roesch, \&
   Scheule}]{baesens2016credit}
@@ -45,16 +38,16 @@
   examples in SAS}.
 \newblock John Wiley \& Sons.
 
-\bibitem[{Bathaee(2017)}]{bathaee2017artificial}
-\textsc{Bathaee}, Y. (2017): \enquote{The artificial intelligence black box and
-  the failure of intent and causation.}
-\newblock \emph{Harv. JL \& Tech.} \textbf{31}: p. 889.
+\bibitem[{Bathaee(2018)}]{bathaee2017artificial}
+\textsc{Bathaee}, Y. (2018): \enquote{{The Artificial Intelligence Black Box
+  and the Failure of Intent and Causation}.}
+\newblock \emph{Harvard Journal of Law \& Technology} \textbf{31}: p. 889.
 
-\bibitem[{Beerbaum \& Ahmad(2015)}]{beerbaum2015credit}
-\textsc{Beerbaum}, D. \& S.~\textsc{Ahmad} (2015): \enquote{Credit risk
-  according to ifrs 9: Significant increase in credit risk and implications for
-  financial institutions.}
-\newblock \emph{SSRN Electronic Journal} .
+\bibitem[{Beerbaum(2015)}]{beerbaum2015credit}
+\textsc{Beerbaum}, D. (2015): \enquote{Significant increase in credit risk
+  according to {IFRS 9}: Implications for financial institutions.}
+\newblock \emph{International Journal of Economics \& Management Sciences}
+  \textbf{04(09)}.
 
 \bibitem[{Bellini(2019)}]{bellini2019ifrs}
 \textsc{Bellini}, T. (2019): \emph{IFRS 9 and CECL Credit Risk Modelling and
@@ -66,6 +59,12 @@
 \textsc{Bera}, D., R.~\textsc{Pratap}, \& B.~D. \textsc{Verma} (2021):
   \enquote{Dimensionality reduction for categorical data.}
 \newblock \emph{IEEE Transactions on Knowledge and Data Engineering} .
+
+\bibitem[{Berry \emph{et~al.}(2020)Berry, Mohamed, \&
+  Yap}]{berry2020supervised}
+\textsc{Berry}, M.~W., A.~\textsc{Mohamed}, \& B.~W. \textsc{Yap} (editors)
+  (2020): \emph{Supervised and Unsupervised Learning for Data Science}.
+\newblock Springer Nature, 1st edition.
 
 \bibitem[{Bessis(2015)}]{bessis2015}
 \textsc{Bessis}, J. (2015): \emph{Risk Management in Banking}.
@@ -99,20 +98,20 @@
 \textsc{Bonaccorso}, G. (2020): \emph{Mastering Machine Learning Algorithms:
   Expert techniques for implementing popular machine learning algorithms,
   fine-tuning your models, and understanding how they work}.
-\newblock Packt Publishing Ltd.
+\newblock Packt Publishing Ltd, 2nd edition.
 
 \bibitem[{Boughorbel \emph{et~al.}(2017)Boughorbel, Jarray, \&
   El-Anbari}]{boughorbel2017optimal}
 \textsc{Boughorbel}, S., F.~\textsc{Jarray}, \& M.~\textsc{El-Anbari} (2017):
-  \enquote{Optimal classifier for imbalanced data using matthews correlation
-  coefficient metric.}
-\newblock \emph{PloS one} \textbf{12(6)}: p. e0177678.
+  \enquote{{Optimal classifier for imbalanced data using Matthews Correlation
+  Coefficient metric}.}
+\newblock \emph{PLOS ONE} \textbf{12(6)}: pp. 1--17.
 
 \bibitem[{Brabec \emph{et~al.}(2020)Brabec, Kom{\'a}rek, Franc, \&
   Machlica}]{brabec2020model}
 \textsc{Brabec}, J., T.~\textsc{Kom{\'a}rek}, V.~\textsc{Franc}, \&
-  L.~\textsc{Machlica} (2020): \enquote{On model evaluation under non-constant
-  class imbalance.}
+  L.~\textsc{Machlica} (2020): \enquote{{On Model Evaluation Under Non-Constant
+  Class Imbalance}.}
 \newblock In \enquote{Computational Science--ICCS 2020: 20th International
   Conference, Amsterdam, The Netherlands, June 3--5, 2020, Proceedings, Part IV
   20,} pp. 74--87. Springer.
@@ -120,69 +119,70 @@
 \bibitem[{Brezigar-Masten \emph{et~al.}(2021)Brezigar-Masten, Masten, \&
   Volk}]{brezigar2021modeling}
 \textsc{Brezigar-Masten}, A., I.~\textsc{Masten}, \& M.~\textsc{Volk} (2021):
-  \enquote{Modeling credit risk with a tobit model of days past due.}
-\newblock \emph{Journal of Banking \& Finance} \textbf{122}: p. 105984.
+  \enquote{{Modeling credit risk with a Tobit model of days past due}.}
+\newblock \emph{Journal of Banking \& Finance} \textbf{122}.
 
 \bibitem[{Brownlee(2020)}]{Brownlee2020}
-\textsc{Brownlee}, J. (2020): \enquote{Recursive feature elimination (rfe) for
-  feature selection in python.}
-\newblock Retrieved April 28, 2023.
+\textsc{Brownlee}, J. (2020): \enquote{{Recursive feature elimination (RFE) for
+  feature selection in Python}.}
+\newblock MachineLearningMastery.com. Retrieved April 28, 2023. Available at
+  \url{https://machinelearningmastery.com/rfe-feature-selection-in-python/}.
 
 \bibitem[{Brownlee(2021)}]{brownlee2021failure}
-\textsc{Brownlee}, J. (2021): \enquote{Failure of classification accuracy for
-  imbalanced class distributions.}
-\newblock \emph{MachineLearningMastery.com} .
+\textsc{Brownlee}, J. (2021): \enquote{{Failure of Classification Accuracy for
+  Imbalanced Class Distributions}.}
+\newblock MachineLearningMastery.com. Retrieved April 30, 2023. Available at
+  \url{https://machinelearningmastery.com/failure-of-accuracy-for-imbalanced-class-distributions/}.
 
 \bibitem[{Charu(2018)}]{charu2018neural}
-\textsc{Charu}, C.~A. (2018): \enquote{Neural networks and deep learning: a
-  textbook.}
+\textsc{Charu}, C.~A. (2018): \emph{Neural Networks and Deep Learning: A
+  Textbook}.
+\newblock Spinger.
 
 \bibitem[{Chicco \& Jurman(2020)}]{chicco2020advantages}
-\textsc{Chicco}, D. \& G.~\textsc{Jurman} (2020): \enquote{The advantages of
-  the matthews correlation coefficient (mcc) over f1 score and accuracy in
-  binary classification evaluation.}
-\newblock \emph{BMC genomics} \textbf{21}: pp. 1--13.
+\textsc{Chicco}, D. \& G.~\textsc{Jurman} (2020): \enquote{{The advantages of
+  the Matthews correlation coefficient (MCC) over F1 score and accuracy in
+  binary classification evaluation}.}
+\newblock \emph{BMC genomics} \textbf{21}.
 
-\bibitem[{Cichosz(2014)}]{cichosz2014data}
-\textsc{Cichosz}, P. (2014): \emph{Data mining algorithms: explained using R}.
+\bibitem[{Cichosz(2015)}]{cichosz2014data}
+\textsc{Cichosz}, P. (2015): \emph{Data Mining Algorithms: Explained Using R}.
 \newblock John Wiley \& Sons.
 
 \bibitem[{Comotto(2022)}]{comotto2022evaluation}
-\textsc{Comotto}, F. (2022): \enquote{Evaluation metrics: Leave your comfort
-  zone and try mcc and brier score.}
-\newblock Medium.
-\newblock Retrieved April 30, 2023.
+\textsc{Comotto}, F. (2022): \enquote{{Evaluation Metrics: Leave Your Comfort
+  Zone and Try MCC and Brier Score}.}
+\newblock TowardsDataScience.com. Retrieved April 30, 2023. Available at
+  \url{https://towardsdatascience.com/evaluation-metrics-leave-your-comfort-zone-and-try-mcc-and-brier-score-86307fb1236a}.
 
 \bibitem[{Dembla(2020)}]{dembla2020intuition}
-\textsc{Dembla}, G. (2020): \enquote{Intuition behind log-loss score.}
-\newblock Medium.
-\newblock Retrieved April 30, 2023.
+\textsc{Dembla}, G. (2020): \enquote{{Intuition behind Log-Loss score}.}
+\newblock TowardsDataScience.com. Retrieved April 30, 2023. Available at
+  \url{https://towardsdatascience.com/intuition-behind-log-loss-score-4e0c9979680a}.
 
 \bibitem[{Dias \emph{et~al.}(2018)Dias, Experian, Melissa~Forti, Witarsa, \&
   Experian}]{dias2018comparison}
 \textsc{Dias}, P., S.~\textsc{Experian}, B.~\textsc{Melissa~Forti},
-  M.~\textsc{Witarsa}, \& S.~\textsc{Experian} (2018): \enquote{A comparison of
-  gradient boosting with logistic regression in practical cases.}
-\newblock In \enquote{URL: https://www. sas.
-  com/content/dam/SAS/support/en/sasglobal-forum-proceedings/2018/1857-2018.
-  pdf,} .
+  M.~\textsc{Witarsa}, \& S.~\textsc{Experian} (2018): \enquote{{A comparison
+  of Gradient Boosting with Logistic Regression in Practical Cases}.}
 
-\bibitem[{Dilmegani(2017)}]{Dilmegani2017}
-\textsc{Dilmegani}, C. (2017): \enquote{Dark side of neural networks explained
+\bibitem[{Dilmegani(2022)}]{Dilmegani2017}
+\textsc{Dilmegani}, C. (2022): \enquote{Dark side of neural networks explained
   [2023].}
-\newblock AIMultiple.
-\newblock Retrieved April 30, 2023.
+\newblock AIMultiple.com. Retrieved April 30, 2023. Available at
+  \url{https://research.aimultiple.com/how-neural-networks-work/}.
 
 \bibitem[{Doumpos \emph{et~al.}(2019)Doumpos, Lemonakis, Niklis, \&
   Zopounidis}]{doumpos2019analytical}
 \textsc{Doumpos}, M., C.~\textsc{Lemonakis}, D.~\textsc{Niklis}, \&
   C.~\textsc{Zopounidis} (2019): \emph{Analytical Techniques in the Assessment
   of Credit Risk: An Overview of Methodologies and Applications}.
+\newblock Springer.
 
 \bibitem[{Drahokoupil(2022)}]{drahokoupil2022application}
-\textsc{Drahokoupil}, J. (2022): \enquote{Application of the xgboost algorithm
-  and bayesian optimization for the bitcoin price prediction during the
-  covid-19 period.}
+\textsc{Drahokoupil}, J. (2022): \enquote{{Application of the XGBoost algorithm
+  and Bayesian optimization for the Bitcoin price prediction during the
+  COVID-19 period}.}
 \newblock \emph{FFA Working Papers} \textbf{4}: p. Article 2022.006.
 
 \bibitem[{Esposito \emph{et~al.}(2021)Esposito, Landrum, Schneider, Stiefl, \&
