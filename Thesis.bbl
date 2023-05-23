@@ -508,33 +508,36 @@
   \textbf{10(2)}: pp. 29--44.
 
 \bibitem[{Pramoditha(2021)}]{pramoditha2021mitigate}
-\textsc{Pramoditha}, R. (2021): \enquote{How to mitigate overfitting with
-  regularization.}
-\newblock Medium.
-\newblock Retrieved May 1, 2023.
+\textsc{Pramoditha}, R. (2021): \enquote{{How to Mitigate Overfitting with
+  Regularization}.}
+\newblock TowardsDataScience.com. Retrieved May 1, 2023. Available at
+  \url{https://towardsdatascience.com/how-to-mitigate-overfitting-with-regularization-befcf4e41865}.
 
 \bibitem[{Prati \emph{et~al.}(2009)Prati, Batista, \& Monard}]{prati2009data}
 \textsc{Prati}, R.~C., G.~E. \textsc{Batista}, \& M.~C. \textsc{Monard} (2009):
-  \enquote{Data mining with imbalanced class distributions: concepts and
-  methods.}
-\newblock In \enquote{IICAI,} pp. 359--376.
+  \enquote{{Data mining with imbalanced class distributions: concepts and
+  methods}.}
+\newblock \emph{Indian International Conference on Artificial Intelligence
+  (IICAI)} .
 
 \bibitem[{Provost \& Fawcett(2013)}]{provost2013data}
 \textsc{Provost}, F. \& T.~\textsc{Fawcett} (2013): \emph{Data Science for
-  Business: What you need to know about data mining and data-analytic
-  thinking}.
-\newblock " O'Reilly Media, Inc.".
+  Business: What You Need to Know about Data Mining and Data-Analytic
+  Thinking}.
+\newblock O'Reilly Media, 1st edition.
 
 \bibitem[{PwC(2023)}]{PwC2023}
 \textsc{PwC} (2023): \enquote{Risk management and modelling.}
+\newblock PwC. Retrieved May 20, 2023. Available at
+  \url{https://www.pwc.com/cz/cs/assets/Risk-management-and-Modelling-eBook-A4.pdf}.
 
 \bibitem[{Ribeiro \emph{et~al.}(2016)Ribeiro, Singh, \&
   Guestrin}]{ribeiro2016should}
 \textsc{Ribeiro}, M.~T., S.~\textsc{Singh}, \& C.~\textsc{Guestrin} (2016):
-  \enquote{" why should i trust you?" explaining the predictions of any
-  classifier.}
-\newblock In \enquote{Proceedings of the 22nd ACM SIGKDD international
-  conference on knowledge discovery and data mining,} pp. 1135--1144.
+  \enquote{{"Why Should I Trust You?": Explaining the Predictions of Any
+  Classifier}.}
+\newblock \emph{Proceedings of the 22nd ACM SIGKDD International Conference on
+  Knowledge Discovery and Data Mining} pp. 1135--1144.
 
 \bibitem[{{scikit-learn}(2023{\natexlab{a}})}]{sfs}
 \textsc{{scikit-learn}} (2023{\natexlab{a}}):
@@ -599,33 +602,34 @@
 \newblock Retrieved April 28, 2023.
 
 \bibitem[{Shakdwipee \& Mehta(2017)}]{shakdwipee2017basel}
-\textsc{Shakdwipee}, P. \& M.~\textsc{Mehta} (2017): \enquote{From basel i to
-  basel ii to basel iii.}
+\textsc{Shakdwipee}, P. \& M.~\textsc{Mehta} (2017): \enquote{{From Basel I to
+  Basel II to Basel III}.}
 \newblock \emph{International Journal of New Technology and Research (IJNTR)}
   \textbf{3(1)}: pp. 66--70.
 
 \bibitem[{Subasi(2020)}]{subasi2020practical}
-\textsc{Subasi}, A. (2020): \emph{Practical machine learning for data analysis
-  using python}.
+\textsc{Subasi}, A. (2020): \emph{Practical Machine Learning for Data Analysis
+  Using Python}.
 \newblock Academic Press.
 
 \bibitem[{Tatsat \emph{et~al.}(2020)Tatsat, Puri, \&
   Lookabaugh}]{tatsat2020machine}
 \textsc{Tatsat}, H., S.~\textsc{Puri}, \& B.~\textsc{Lookabaugh} (2020):
-  \emph{Machine Learning and Data Science Blueprints for Finance}.
-\newblock O'Reilly Media.
+  \emph{Machine Learning and Data Science Blueprints for Finance: From Building
+  Trading Strategies to Robo-Advisors Using Python}.
+\newblock O'Reilly Media, 1st edition.
 
 \bibitem[{Temim(2016)}]{temim2016ifrs}
-\textsc{Temim}, J. (2016): \enquote{The ifrs 9 impairment model and its
-  interaction with the basel framework.}
-\newblock \emph{Moody’s Analytics Risk Perspectives} \textbf{8(1)}: pp.
-  13--33.
+\textsc{Temim}, J. (2016): \enquote{{The IFRS 9 impairment model and its
+  interaction with the Basel framework}.}
+\newblock \emph{Moody's Analytics Risk Perspectives: The Convergence of Risk,
+  Finance, and Accounting: CECL} \textbf{8(1)}.
 
 \bibitem[{Tepl\'{y} \& Polena(2020)}]{teply2020best}
 \textsc{Tepl\'{y}}, P. \& M.~\textsc{Polena} (2020): \enquote{Best
   classification algorithms in peer-to-peer lending.}
 \newblock \emph{The North American Journal of Economics and Finance}
-  \textbf{51}: p. 100904.
+  \textbf{51}.
 
 \bibitem[{Van~Gestel \& Baesens(2009)}]{van2009credit}
 \textsc{Van~Gestel}, T. \& B.~\textsc{Baesens} (2009): \emph{Credit Risk

@@ -1874,7 +1874,6 @@ INPUT ./Thesis.bbl
 INPUT Thesis.bbl
 INPUT ./Thesis.bbl
 INPUT Thesis.bbl
-INPUT c:/tex/texlive/texmf-dist/fonts/tfm/public/lm/ts1-lmri12.tfm
 INPUT ./03_Backmatter/01_App.tex
 INPUT 03_Backmatter/01_App.tex
 INPUT ./03_Backmatter/01_App.tex
@@ -2012,12 +2011,12 @@ INPUT ./Figures/SOMERS D_Distribution_BB_WB.jpg
 INPUT Thesis.aux
 INPUT ./Thesis.out
 INPUT ./Thesis.out
-INPUT c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc
 INPUT c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc
 INPUT c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc
 INPUT c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc
 INPUT c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc
 INPUT c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc
+INPUT c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc
 INPUT c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmbx10.pfb
 INPUT c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmbx12.pfb
 INPUT c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb

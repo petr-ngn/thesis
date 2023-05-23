@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.31)  23 MAY 2023 03:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.31)  23 MAY 2023 04:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2867,138 +2867,148 @@ Underfull \hbox (badness 5403) in paragraph at lines 460--464
 \T1/lmr/m/n/12 able at []$\T1/lmtt/m/n/12 https : / / medium . com / @ruinian / an -[] introduction -[] to -[] adasyn -[]
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 511--515
+[]$\T1/lmtt/m/n/12 https : / / towardsdatascience . com / how -[] to -[] mitigate -[] overfitting -[]
+ []
+
 [143.158]
-Underfull \hbox (badness 3492) in paragraph at lines 540--545
+Underfull \hbox (badness 2932) in paragraph at lines 530--533
+[]\T1/lmr/m/sc/12 PwC \T1/lmr/m/n/12 (2023): ``Risk man-age-ment and mod-elling.''  PwC. Re-trieved
+ []
+
+
+Underfull \hbox (badness 3492) in paragraph at lines 543--548
 []\T1/lmr/m/sc/12 scikit-learn \T1/lmr/m/n/12 (2023a): ``Se-quen-tialfea-ture-s-e-lec-tor.''  []$\T1/lmtt/m/n/12 https : / / scikit -[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 540--545
+Underfull \hbox (badness 10000) in paragraph at lines 543--548
 \T1/lmtt/m/n/12 learn . org / stable / modules / generated / sklearn . feature _ selection .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 540--545
+Underfull \hbox (badness 10000) in paragraph at lines 543--548
 \T1/lmtt/m/n/12 SequentialFeatureSelector . html#sklearn . feature _ selection .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 547--552
+Underfull \hbox (badness 10000) in paragraph at lines 550--555
 []\T1/lmr/m/sc/12 scikit-learn \T1/lmr/m/n/12 (2023b): ``sklearn.ensemble.gradientboostingclassifier.''
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 547--552
+Underfull \hbox (badness 10000) in paragraph at lines 550--555
 []$\T1/lmtt/m/n/12 https : / / scikit -[] learn . org / stable / modules / generated / sklearn .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 547--552
+Underfull \hbox (badness 10000) in paragraph at lines 550--555
 \T1/lmtt/m/n/12 ensemble . GradientBoostingClassifier . html#sklearn . ensemble .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 554--559
+Underfull \hbox (badness 10000) in paragraph at lines 557--562
 []\T1/lmr/m/sc/12 scikit-learn \T1/lmr/m/n/12 (2023c): ``sklearn.ensemble.randomforestclassifier.''
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 554--559
+Underfull \hbox (badness 10000) in paragraph at lines 557--562
 []$\T1/lmtt/m/n/12 https : / / scikit -[] learn . org / stable / modules / generated / sklearn .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 554--559
+Underfull \hbox (badness 10000) in paragraph at lines 557--562
 \T1/lmtt/m/n/12 ensemble . RandomForestClassifier . html#sklearn . ensemble .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 561--566
+Underfull \hbox (badness 10000) in paragraph at lines 564--569
 []\T1/lmr/m/sc/12 scikit-learn \T1/lmr/m/n/12 (2023d): ``sklearn.naive_bayes.gaussiannb.''  []$\T1/lmtt/m/n/12 https :
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 561--566
+Underfull \hbox (badness 10000) in paragraph at lines 564--569
 \T1/lmtt/m/n/12 / / scikit -[] learn . org / stable / modules / generated / sklearn . naive _
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 568--573
+Underfull \hbox (badness 10000) in paragraph at lines 571--576
 []\T1/lmr/m/sc/12 scikit-learn \T1/lmr/m/n/12 (2023e): ``sklearn.neighbors.kneighborsclassifier.''
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 568--573
+Underfull \hbox (badness 10000) in paragraph at lines 571--576
 []$\T1/lmtt/m/n/12 https : / / scikit -[] learn . org / stable / modules / generated / sklearn .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 568--573
+Underfull \hbox (badness 10000) in paragraph at lines 571--576
 \T1/lmtt/m/n/12 neighbors . KNeighborsClassifier . html#sklearn . neighbors .
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 575--580
+[144.159]
+Underfull \hbox (badness 10000) in paragraph at lines 578--583
 []\T1/lmr/m/sc/12 scikit-learn \T1/lmr/m/n/12 (2023f): ``sklearn.neural_network.mlpclassifier.''
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 575--580
+Underfull \hbox (badness 10000) in paragraph at lines 578--583
 []$\T1/lmtt/m/n/12 https : / / scikit -[] learn . org / stable / modules / generated / sklearn .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 575--580
+Underfull \hbox (badness 10000) in paragraph at lines 578--583
 \T1/lmtt/m/n/12 neural _ network . MLPClassifier . html#sklearn . neural _ network .
  []
 
-[144.159]
-Underfull \hbox (badness 10000) in paragraph at lines 582--587
+
+Underfull \hbox (badness 10000) in paragraph at lines 585--590
 []\T1/lmr/m/sc/12 scikit-learn \T1/lmr/m/n/12 (2023g): ``sklearn.tree.decisiontreeclassifier.''
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 582--587
+Underfull \hbox (badness 10000) in paragraph at lines 585--590
 []$\T1/lmtt/m/n/12 https : / / scikit -[] learn . org / stable / modules / generated /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 582--587
+Underfull \hbox (badness 10000) in paragraph at lines 585--590
 \T1/lmtt/m/n/12 sklearn . tree . DecisionTreeClassifier . html#sklearn . tree .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 589--594
+Underfull \hbox (badness 10000) in paragraph at lines 592--597
 []\T1/lmr/m/sc/12 scikit-optimize \T1/lmr/m/n/12 (2023a): ``sklearn.linear_model.logisticregression.''
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 589--594
+Underfull \hbox (badness 10000) in paragraph at lines 592--597
 []$\T1/lmtt/m/n/12 https : / / scikit -[] learn . org / stable / modules / generated / sklearn .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 589--594
+Underfull \hbox (badness 10000) in paragraph at lines 592--597
 \T1/lmtt/m/n/12 linear _ model . LogisticRegression . html#sklearn . linear _ model .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 596--600
+Underfull \hbox (badness 10000) in paragraph at lines 599--603
 []\T1/lmr/m/sc/12 scikit-optimize \T1/lmr/m/n/12 (2023b): ``skopt.bayessearchcv.''  []$\T1/lmtt/m/n/12 https : / /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 596--600
+Underfull \hbox (badness 10000) in paragraph at lines 599--603
 \T1/lmtt/m/n/12 scikit -[] optimize . github . io / stable / modules / generated / skopt .
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 637--642
+[145.160]
+Underfull \hbox (badness 10000) in paragraph at lines 641--646
 \T1/lmtt/m/n/12 10 / a -[] comprehensive -[] guide -[] to -[] feature -[] selection -[] using -[] wrapper -[]
  []
 
-[145.160]
-Underfull \hbox (badness 10000) in paragraph at lines 644--649
+
+Underfull \hbox (badness 10000) in paragraph at lines 648--653
 []$\T1/lmtt/m/n/12 https : / / analyticsindiamag . com / a -[] complete -[] guide -[] to -[] sequential -[]
  []
 
@@ -3183,18 +3193,18 @@ Package rerunfilecheck Info: File `Thesis.out' has not changed.
 (rerunfilecheck)             Checksum: 743DE5E836C5FCB7E62F2A2C63693C18;11735.
  ) 
 Here is how much of TeX's memory you used:
- 25666 strings out of 480559
- 412833 string characters out of 5897073
+ 25662 strings out of 480559
+ 412781 string characters out of 5897073
  814529 words of memory out of 5000000
- 41972 multiletter control sequences out of 15000+600000
- 588726 words of font info for 106 fonts, out of 8000000 for 9000
+ 41969 multiletter control sequences out of 15000+600000
+ 588311 words of font info for 105 fonts, out of 8000000 for 9000
  48 hyphenation exceptions out of 8191
  123i,12n,120p,699b,2543s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}<c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmex10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmmi12.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmmi6.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmr17.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmr6.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmri12.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmss12.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmsy6.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmsy7.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmsy8.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmtk10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmtt10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmtt12.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmtt9.pfb>
-Output written on Thesis.pdf (176 pages, 17626100 bytes).
+{c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}<c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmex10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmmi12.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmmi6.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmr17.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmr6.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmri12.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmss12.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmsy6.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmsy7.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmsy8.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmtk10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmtt10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmtt12.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmtt9.pfb>
+Output written on Thesis.pdf (176 pages, 17624868 bytes).
 PDF statistics:
- 2640 PDF objects out of 2984 (max. 8388607)
- 2307 compressed objects within 24 object streams
+ 2638 PDF objects out of 2984 (max. 8388607)
+ 2306 compressed objects within 24 object streams
  640 named destinations out of 1000 (max. 500000)
  850 words of extra memory for PDF output out of 10000 (max. 10000000)
 
