@@ -13,36 +13,36 @@ Warning--empty journal in li2012overview
 You've used 113 entries,
             3042 wiz_defined-function locations,
             1183 strings with 25154 characters,
-and the built_in function-call counts, 68733 in all, are:
-= -- 5416
+and the built_in function-call counts, 68750 in all, are:
+= -- 5418
 > -- 2560
 < -- 256
 + -- 891
 - -- 741
-* -- 5721
-:= -- 9790
+* -- 5724
+:= -- 9791
 add.period$ -- 334
 call.type$ -- 113
-change.case$ -- 821
+change.case$ -- 822
 chr.to.int$ -- 106
 cite$ -- 116
-duplicate$ -- 5546
-empty$ -- 5284
+duplicate$ -- 5548
+empty$ -- 5285
 format.name$ -- 1387
-if$ -- 13872
+if$ -- 13876
 int.to.chr$ -- 8
 int.to.str$ -- 1
-missing$ -- 904
+missing$ -- 905
 newline$ -- 468
 num.names$ -- 453
 pop$ -- 1752
 preamble$ -- 1
 purify$ -- 695
 quote$ -- 0
-skip$ -- 2593
+skip$ -- 2592
 stack$ -- 0
 substring$ -- 2692
-swap$ -- 3291
+swap$ -- 3293
 text.length$ -- 180
 text.prefix$ -- 0
 top$ -- 0
@@ -50,5 +50,5 @@ type$ -- 939
 warning$ -- 3
 while$ -- 466
 width$ -- 0
-write$ -- 1333
+write$ -- 1334
 (There were 4 warnings)
