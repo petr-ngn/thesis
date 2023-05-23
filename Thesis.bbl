@@ -420,34 +420,33 @@
 \bibitem[{Mucherino \emph{et~al.}(2009)Mucherino, Papajorgji, \&
   Pardalos}]{mucherino2009data}
 \textsc{Mucherino}, A., P.~\textsc{Papajorgji}, \& P.~M. \textsc{Pardalos}
-  (2009): \emph{Data mining in agriculture}, volume~34.
-\newblock Springer Science \& Business Media.
+  (2009): \emph{Data Mining in Agriculture}.
+\newblock Springer.
 
 \bibitem[{Munkhdalai \emph{et~al.}(2019)Munkhdalai, Munkhdalai, Namsrai, Lee,
   \& Ryu}]{munkhdalai2019empirical}
 \textsc{Munkhdalai}, L., T.~\textsc{Munkhdalai}, O.-E. \textsc{Namsrai}, J.~Y.
-  \textsc{Lee}, \& K.~H. \textsc{Ryu} (2019): \enquote{An empirical comparison
-  of machine-learning methods on bank client credit assessments.}
+  \textsc{Lee}, \& K.~H. \textsc{Ryu} (2019): \enquote{{An Empirical Comparison
+  of Machine-Learning Methods on Bank Client Credit Assessments}.}
 \newblock \emph{Sustainability} \textbf{11(3)}: p. 699.
 
 \bibitem[{Narkhede(2018)}]{narkhede2018understanding}
-\textsc{Narkhede}, S. (2018): \enquote{Understanding auc - roc curve.}
-\newblock Medium.
-\newblock Retrieved April 28, 2023.
+\textsc{Narkhede}, S. (2018): \enquote{{Understanding AUC-ROC Curve}.}
+\newblock TowardsDataScience.com. Retrieved April 28, 2023. Available at
+  \url{https://towardsdatascience.com/understanding-auc-roc-curve-68b2303cc9c5}.
 
 \bibitem[{Navas-Palencia(2020)}]{navas2020optimal}
 \textsc{Navas-Palencia}, G. (2020): \enquote{Optimal binning: mathematical
-  programming formulation.}
-\newblock \emph{arXiv preprint arXiv:2001.08025} .
+  programming formulation.} .
 
 \bibitem[{Newson(2002)}]{newson2002parameters}
-\textsc{Newson}, R. (2002): \enquote{Parameters behind “nonparametric”
-  statistics: Kendall's tau, somers’ d and median differences.}
+\textsc{Newson}, R. (2002): \enquote{{Parameters behind "Nonparametric"
+  statistics: Kendall's tau, Somers' D and Median Differences}.}
 \newblock \emph{The Stata Journal} \textbf{2(1)}: pp. 45--64.
 
 \bibitem[{Newson(2014)}]{newson2014interpretation}
-\textsc{Newson}, R.~B. (2014): \enquote{Interpretation of somers' d under four
-  simple models.}
+\textsc{Newson}, R. (2014): \enquote{{Interpretation of Somers' D under four
+  simple models}.}
 
 \bibitem[{Ng \emph{et~al.}(2020)Ng, Minasny, Mendes, \&
   Dematt{\^e}}]{ng2020influence}
