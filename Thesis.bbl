@@ -401,20 +401,21 @@
 \bibitem[{Malley \emph{et~al.}(2011)Malley, Kruppa, Dasgupta, Malley, \&
   Ziegler}]{randomforestmalley}
 \textsc{Malley}, J., J.~\textsc{Kruppa}, A.~\textsc{Dasgupta},
-  K.~\textsc{Malley}, \& A.~\textsc{Ziegler} (2011): \enquote{Probability
-  machines consistent probability estimation using nonparametric learning
-  machines.}
+  K.~\textsc{Malley}, \& A.~\textsc{Ziegler} (2011): \enquote{{Probability
+  Machines Consistent Probability Estimation Using Nonparametric Learning
+  Machines}.}
 \newblock \emph{Methods of information in medicine} \textbf{51}: pp. 74--81.
 
 \bibitem[{Marinov \& Karapetyan(2019)}]{marinov2019hyperparameter}
-\textsc{Marinov}, D. \& D.~\textsc{Karapetyan} (2019): \enquote{Hyperparameter
-  optimisation with early termination of poor performers.}
-\newblock In \enquote{2019 11th Computer Science and Electronic Engineering
-  (CEEC),} pp. 160--163. IEEE.
+\textsc{Marinov}, D. \& D.~\textsc{Karapetyan} (2019): \enquote{{Hyperparameter
+  Optimisation with Early Termination of Poor Performers}.}
+\newblock \emph{2019 11th Computer Science and Electronic Engineering (CEEC)}
+  pp. 160--163.
 
-\bibitem[{Meyer(2015)}]{meyer2015support}
-\textsc{Meyer}, D. (2015): \enquote{Support vector machines.}
-\newblock \emph{The Interface to libsvm in package e1071} \textbf{28}: p.~20.
+\bibitem[{Meyer(2009)}]{meyer2015support}
+\textsc{Meyer}, D. (2009): \enquote{{Support Vector Machines: The Interface to
+  libsvm in package e1071}.}
+\newblock \emph{FH Technikum Wien, Austria} .
 
 \bibitem[{Mucherino \emph{et~al.}(2009)Mucherino, Papajorgji, \&
   Pardalos}]{mucherino2009data}
