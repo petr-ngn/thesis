@@ -47,31 +47,7 @@ The web application itself is temporarily deployed on PythonAnywhere cloud platf
 Such application requires to fill in the loan application form where its fields correspond to the features on which the final model was trained (\autoref{fig:flaskform}). After a submission of the form, the application processes the inputs, bins them and transforms them into WoE values and afterwards, it predicts the result, whether the loan is rejected or approved based on the optimal threshold, and the probability of default. The result is then displayed on the web page (\autoref{fig:flaskres}).
 The application also displays LIME which depicts the local Explainability of the model around the given prediction, i.e., it shows the contribution of each feature to the prediction.
 
-In the last \autoref{chap:five}, we summarize the results of this thesis. Particularly, we assess hypotheses' testing (\autoref{sec:hypotest}) which is depicted in the following table \autoref{tab:hypoconclusion}.
-
-\begin{table}[H]
-    \small
-    \setlength{\tabcolsep}{8pt}
-    \centering
-    \caption[Hypotheses' Results]{Hypotheses' Results}\label{tab:hypoconclusion}
-    \renewcommand{\arraystretch}{1.5}
-    \begin{tabular}{c p{10cm} c}
-    \toprule
-    \textbf{\#} & \textbf{Hypothesis} & \textbf{Rejected} \\
-    \midrule
-    \hline
-    H1 & \textit{The recalibration of the model enhances model performance on HMEQ data set.} & NO \\
-    H2 & \textit{Either Neural Network or KNN model outperforms all the models on HMEQ data set.} & YES \\
-    H3 & \textit{Black--box models perform better than the white--box models on HMEQ data set.} & NO \\
-    H4 & \textit{The longer execution time of a model, the better performance on HMEQ data set.} & YES \\
-    H5 & \textit{The main default drivers are the debt and/or delinquency features on HMEQ data set.} & NO \\
-    \hline
-    \bottomrule
-    \end{tabular}
-    \vspace{0.35em}
-    
-    \centering{\begin{source}Author's Results\end{source}}\vspace{-1em}
-\end{table}
+In the last \autoref{chap:five}, we summarize the results of this thesis. Particularly, we assess hypotheses' testing (\autoref{sec:hypotest}) which is depicted in  \autoref{tab:hypoconclusion}.
 
 This chapter also includes the discussion of the model rankings results with the results of the studies of Aras \citep{serkan2021bagging} and Zurada \citep{zurada2014classification} as discussed in \autoref{sec:comparisonfinal}.
 While the results of Aras' study are in line with the results of this thesis, i.e., Random Forest and K-Nearest Neighbors perform well whereas Decision Tree, Logistic Regression and Gaussian Naive Bayes perform poorly,

@@ -3,12 +3,43 @@
 In this chapter, we evaluate the hypotheses presented in \autoref{sec:hypotest}, as outlined in \autoref{sec:hypo}.
 These evaluations are based on the results obtained from the implementation of machine learning techniques described in \autoref{chap:four}. 
 Furthermore, we compare our results with those of previous studies on HMEQ--based studies \citep{serkan2021bagging,zurada2014classification} in \autoref{sec:comparisonfinal}.
+
 Additionally, we provide a summary of the key findings derived from the machine learning implementation from \autoref{chap:four} in  \autoref{sec:keyfindings}. 
 Moreover, we delve into the author's contributions to the field of credit risk modelling and machine learning in \autoref{sec:contributions}.
 Lastly, we address the key recommendations to improve this thesis and its machine learning implementation or for future research in \autoref{sec:recommendations}.
 
+\newpage
 \section{Hypotheses' Testing}
 \label{sec:hypotest}
+
+In this section, we evaluate the hypotheses presented in \autoref{sec:hypo} based on the results obtained from the machine learning implementation described in \autoref{chap:four}. The results of hypotheses' testing are summarized in \autoref{tab:hypoconclusion}.
+As can be seen, out of five proposed hypotheses, we reject two hypotheses and fail to reject three hypotheses. Such results are further described in the following paragraphs.
+
+\begin{table}[H]
+    \small
+    \setlength{\tabcolsep}{8pt}
+    \centering
+    \caption[Hypotheses' Results]{Hypotheses' Results}\label{tab:hypoconclusion}
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabular}{c p{10cm} c}
+    \toprule
+    \textbf{\#} & \textbf{Hypothesis} & \textbf{Rejected} \\
+    \midrule
+    \hline
+    H1 & \textit{The recalibration of the model enhances model performance on HMEQ data set.} & NO \\
+    H2 & \textit{Either Neural Network or KNN model outperforms all the models on HMEQ data set.} & YES \\
+    H3 & \textit{Black--box models perform better than the white--box models on HMEQ data set.} & NO \\
+    H4 & \textit{The longer execution time of a model, the better performance on HMEQ data set.} & YES \\
+    H5 & \textit{The main default drivers are the debt and/or delinquency features on HMEQ data set.} & NO \\
+    \hline
+    \bottomrule
+    \end{tabular}
+    \vspace{0.35em}
+    
+    \centering{\begin{source}Author's Results\end{source}}\vspace{-1em}
+\end{table}
+
+
 \noindent \textbf{Result \#1:} \textit{The recalibration of the model \underline{DOES} enhace model performance on HMEQ data set.}
 
 We fail to reject the \textbf{Hypothesis \#1} because we observe improvements across all the metrics within evaluation on test set when the final model was re-trained on the joined training and validation set instead solely on the training set.
