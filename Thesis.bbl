@@ -637,65 +637,64 @@
   models, economic and regulatory capital}.
 \newblock Oxford University Press.
 
-\bibitem[{Verma(2020)}]{Verma2020}
-\textsc{Verma}, V. (2020): \enquote{A comprehensive guide to feature selection
-  using wrapper methods in python.}
-\newblock
+\bibitem[{Verma(2022)}]{Verma2020}
+\textsc{Verma}, V. (2022): \enquote{{A comprehensive guide to Feature Selection
+  using Wrapper methods in Python}.}
+\newblock Analytics Vidhya. Retrieved April 30, 2023. Available at
   \url{https://www.analyticsvidhya.com/blog/2020/10/a-comprehensive-guide-to-feature-selection-using-wrapper-methods-in-python/}.
-\newblock Retrieved April 30, 2023.
 
 \bibitem[{Verma(2021)}]{Verma2021}
-\textsc{Verma}, Y. (2021): \enquote{A complete guide to sequential feature
-  selection.}
-\newblock
+\textsc{Verma}, Y. (2021): \enquote{{A Complete Guide to Sequential Feature
+  Selection}.}
+\newblock Analytics India Magazine. Retrieved April 28, 2023. Available at
   \url{https://analyticsindiamag.com/a-complete-guide-to-sequential-feature-selection/}.
-\newblock Retrieved April 28, 2023.
 
 \bibitem[{Wang(2020)}]{wang2020bayesian}
-\textsc{Wang}, W. (2020): \enquote{Bayesian optimization concept explained in
-  layman terms.}
-\newblock Medium.
-\newblock Accessed: April 29, 2023.
+\textsc{Wang}, W. (2020): \enquote{{Bayesian optimization concept explained in
+  Layman terms}.}
+\newblock TowardsDataScience.com. Retrieved April 29, 2023. Available at
+  \url{https://towardsdatascience.com/bayesian-optimization-concept-explained-in-layman-terms-1d2bcdeaf12f}.
 
 \bibitem[{Wendler \& Gr{\"o}ttrup(2021)}]{wendler2021data}
 \textsc{Wendler}, T. \& S.~\textsc{Gr{\"o}ttrup} (2021): \emph{Data Mining with
   SPSS Modeler: Theory, Exercises and Solutions}.
-\newblock Cham: Springer.
+\newblock Cham: Springer, 2nd edition.
 
-\bibitem[{Witten \emph{et~al.}(2011)Witten, Frank, Hall, \&
+\bibitem[{Witten \emph{et~al.}(2016)Witten, Frank, Hall, \&
   Pal}]{witten2011data}
 \textsc{Witten}, I.~H., E.~\textsc{Frank}, M.~\textsc{Hall}, \& C.~\textsc{Pal}
-  (2011): \emph{Data Mining: Practical Machine Learning Tools and Techniques}.
+  (2016): \emph{Data Mining: Practical Machine Learning Tools and Techniques}.
 \newblock Morgan Kaufmann, 4th edition.
 
 \bibitem[{Witzany(2017)}]{witzany2017credit}
-\textsc{Witzany}, J. (2017): \emph{Credit risk management}.
+\textsc{Witzany}, J. (2017): \emph{Credit Risk Management: Pricing,
+  Measurement, and Modeling}.
 \newblock Springer.
 
 \bibitem[{Wu \emph{et~al.}(2018)Wu, Jiang, Jiang, Chen, Liu, Xuan, \&
   Xiang}]{wu2018accurate}
 \textsc{Wu}, Z., L.~\textsc{Jiang}, Z.~\textsc{Jiang}, B.~\textsc{Chen},
   K.~\textsc{Liu}, Q.~\textsc{Xuan}, \& Y.~\textsc{Xiang} (2018):
-  \enquote{Accurate indoor localization based on csi and visibility graph.}
-\newblock \emph{Sensors} \textbf{18(8)}: p. 2549.
+  \enquote{{Accurate indoor localization based on CSI and visibility graph}.}
+\newblock \emph{Sensors (Basel, Switzerland)} \textbf{18(8)}: p. 2549.
 
 \bibitem[{Zaidi(2022)}]{zaidi2022mathematical}
-\textsc{Zaidi}, A. (2022): \enquote{Mathematical justification on the origin of
-  the sigmoid in logistic regression.}
+\textsc{Zaidi}, A. (2022): \enquote{{Mathematical justification on the origin
+  of the sigmoid in logistic regression}.}
 \newblock \emph{Central European Management Journal} \textbf{30(4)}: pp.
   1327--1337.
 
 \bibitem[{Zeng(2014)}]{zeng2014necessary}
-\textsc{Zeng}, G. (2014): \enquote{A necessary condition for a good binning
-  algorithm in credit scoring.}
+\textsc{Zeng}, G. (2014): \enquote{{A Necessary Condition for a Good Binning
+  Algorithm in Credit Scoring}.}
 \newblock \emph{Applied Mathematical Sciences} \textbf{8(65)}: pp. 3229--3242.
 
 \bibitem[{Zurada \emph{et~al.}(2014)Zurada, Kunene, \&
   Guan}]{zurada2014classification}
 \textsc{Zurada}, J., N.~\textsc{Kunene}, \& J.~\textsc{Guan} (2014):
-  \enquote{The classification performance of multiple methods and datasets:
-  Cases from the loan credit scoring domain.}
+  \enquote{{The classification performance of multiple methods and datasets:
+  Cases from the loan credit scoring domain}.}
 \newblock \emph{Journal of International Technology and Information Management}
-  \textbf{23(1)}: p.~5.
+  \textbf{23(1)}.
 
 \end{thebibliography}
