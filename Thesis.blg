@@ -9,46 +9,45 @@ Warning--entry type for "PwC2023" isn't style-file defined
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Warning--empty journal in adeodato2016equivalence
 Warning--empty booktitle in dias2018comparison
-Warning--empty journal in li2012overview
 You've used 113 entries,
             3042 wiz_defined-function locations,
-            1183 strings with 25154 characters,
-and the built_in function-call counts, 68750 in all, are:
-= -- 5418
+            1184 strings with 25477 characters,
+and the built_in function-call counts, 68416 in all, are:
+= -- 5384
 > -- 2560
-< -- 256
-+ -- 891
+< -- 254
++ -- 885
 - -- 741
-* -- 5724
-:= -- 9791
+* -- 5713
+:= -- 9773
 add.period$ -- 334
 call.type$ -- 113
-change.case$ -- 822
+change.case$ -- 818
 chr.to.int$ -- 106
-cite$ -- 116
-duplicate$ -- 5548
-empty$ -- 5285
+cite$ -- 115
+duplicate$ -- 5519
+empty$ -- 5260
 format.name$ -- 1387
-if$ -- 13876
+if$ -- 13788
 int.to.chr$ -- 8
 int.to.str$ -- 1
-missing$ -- 905
-newline$ -- 468
+missing$ -- 901
+newline$ -- 469
 num.names$ -- 453
-pop$ -- 1752
+pop$ -- 1735
 preamble$ -- 1
 purify$ -- 695
 quote$ -- 0
-skip$ -- 2592
+skip$ -- 2564
 stack$ -- 0
-substring$ -- 2692
-swap$ -- 3293
-text.length$ -- 180
+substring$ -- 2648
+swap$ -- 3271
+text.length$ -- 178
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 939
-warning$ -- 3
-while$ -- 466
+warning$ -- 2
+while$ -- 465
 width$ -- 0
-write$ -- 1334
-(There were 4 warnings)
+write$ -- 1336
+(There were 3 warnings)

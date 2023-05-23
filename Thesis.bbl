@@ -22,8 +22,8 @@
 \newblock \emph{Future Business Journal} \textbf{6}: pp. 1--14.
 
 \bibitem[{Aras(2021)}]{serkan2021bagging}
-\textsc{Aras}, S. (2021): \enquote{Bagging and boosting classifiers for credit
-  risk evaluation.}
+\textsc{Aras}, S. (2021): \enquote{{Bagging and boosting classifiers for credit
+  risk evaluation}.}
 \newblock \emph{REFLECTIONS OF ECONOMIC DEVELOPMENT} p. 121.
 
 \bibitem[{Ayyadevara(2018)}]{ayyadevara2018pro}
@@ -326,71 +326,76 @@
 \newblock Cambridge University Press, 1st edition.
 
 \bibitem[{Joseph(2013)}]{joseph2013advanced}
-\textsc{Joseph}, C. (2013): \emph{Advanced credit risk analysis and
-  management}.
+\textsc{Joseph}, C. (2013): \emph{Advanced Credit Risk Analysis and
+  Management}.
 \newblock John Wiley \& Sons.
 
 \bibitem[{Karatas \emph{et~al.}(2020)Karatas, Demir, \&
   Sahingoz}]{karatas2020increasing}
 \textsc{Karatas}, G., O.~\textsc{Demir}, \& O.~K. \textsc{Sahingoz} (2020):
-  \enquote{Increasing the performance of machine learning-based idss on an
-  imbalanced and up-to-date dataset.}
+  \enquote{{Increasing the Performance of Machine Learning-Based IDSs on an
+  Imbalanced and Up-to-Date Dataset}.}
 \newblock \emph{IEEE access} \textbf{8}: pp. 32150--32162.
 
-\bibitem[{Kaushik(2016)}]{kaushik2016introduction}
-\textsc{Kaushik}, S. (2016): \enquote{Introduction to feature selection methods
-  with an example (or how to select the right variables?).}
-\newblock Accessed: April 30, 2023.
+\bibitem[{Kaushik(2023)}]{kaushik2016introduction}
+\textsc{Kaushik}, S. (2023): \enquote{{Introduction to Feature Selection
+  methods with an example (or how to select the right variables?)}.}
+\newblock Analytics Vidhya. Retrieved April 30, 2023. Available at
+  \url{ttps://www.analyticsvidhya.com/blog/2016/12/introduction-to-feature-selection-methods-with-an-example-or-how-to-select-the-right-variables/}.
 
-\bibitem[{Kazemi \emph{et~al.}(2023)Kazemi, Khalili-Damghani, \&
+\bibitem[{Kazemi \emph{et~al.}(2022)Kazemi, Khalili-Damghani, \&
   Sadi-Nezhad}]{kazemi2023estimation}
 \textsc{Kazemi}, H.~R., K.~\textsc{Khalili-Damghani}, \&
-  S.~\textsc{Sadi-Nezhad} (2023): \enquote{Estimation of optimum thresholds for
-  binary classification using genetic algorithm: An application to solve a
-  credit scoring problem.}
-\newblock \emph{Expert Systems} \textbf{40(3)}: p. e13203.
+  S.~\textsc{Sadi-Nezhad} (2022): \enquote{{Estimation of optimum thresholds
+  for binary classification using genetic algorithm: An application to solve a
+  credit scoring problem}.}
+\newblock \emph{Expert Systems} \textbf{40(3)}.
 
 \bibitem[{Khatri \& Jonhs(2023)}]{khatri2023}
-\textsc{Khatri}, V.~S. \& R.~\textsc{Jonhs} (2023): \enquote{Flask vs django:
-  Which python web framework to use in 2023?}
-\newblock Accessed on March 28, 2023.
+\textsc{Khatri}, V.~S. \& R.~\textsc{Jonhs} (2023): \enquote{{Flask vs Django:
+  Which Python Web Framework to Use in 2023?}}
+\newblock hackr.io. Retrieved May 20, 2023. Available at
+  \url{https://hackr.io/blog/flask-vs-django}.
 
 \bibitem[{Konno \& Itoh(2016)}]{konno2016alternative}
-\textsc{Konno}, Y. \& Y.~\textsc{Itoh} (2016): \enquote{An alternative to the
-  standardized approach for assessing credit risk under the basel accords.}
-\newblock \emph{Cogent Economics \& Finance} \textbf{4(1)}: p. 1220119.
+\textsc{Konno}, Y. \& Y.~\textsc{Itoh} (2016): \enquote{{An alternative to the
+  standardized approach for assessing credit risk under the Basel Accords}.}
+\newblock \emph{Cogent Economics \& Finance} \textbf{4(1)}.
 
-\bibitem[{Kornbrot(2014)}]{kornbrot2014point}
-\textsc{Kornbrot}, D. (2014): \enquote{Point biserial correlation.}
-\newblock \emph{Wiley StatsRef: Statistics Reference Online} .
+\bibitem[{Kornbrot(2015)}]{kornbrot2014point}
+\textsc{Kornbrot}, D. (2015): \enquote{{Point Biserial Correlation}.}
+\newblock \emph{Encyclopedia of Statistics in Behavioral Science} .
 
 \bibitem[{Kumar \emph{et~al.}(2021)Kumar, Khan, Kumar, Golilarz, Zhang, Ting,
   Zheng, Wang \emph{et~al.}}]{kumar2021blockchain}
 \textsc{Kumar}, R., A.~A. \textsc{Khan}, J.~\textsc{Kumar}, N.~A.
   \textsc{Golilarz}, S.~\textsc{Zhang}, Y.~\textsc{Ting}, C.~\textsc{Zheng},
-  W.~\textsc{Wang} \emph{et~al.} (2021): \enquote{Blockchain-federated-learning
-  and deep learning models for covid-19 detection using ct imaging.}
+  W.~\textsc{Wang} \emph{et~al.} (2021):
+  \enquote{{Blockchain-Federated-Learning and Deep Learning Models for COVID-19
+  detection using CT Imaging}.}
 \newblock \emph{IEEE Sensors Journal} \textbf{21(14)}: pp. 16301--16314.
 
 \bibitem[{LeDell \& Poirier(2020)}]{ledell2020h2o}
-\textsc{LeDell}, E. \& S.~\textsc{Poirier} (2020): \enquote{H2o automl:
-  Scalable automatic machine learning.}
-\newblock In \enquote{Proceedings of the AutoML Workshop at ICML,} volume 2020.
+\textsc{LeDell}, E. \& S.~\textsc{Poirier} (2020): \enquote{{H2O AutoML:
+  Scalable Automatic Machine Learning}.}
+\newblock \emph{7th ICML Workshop on Automated Machine Learning (2020)} .
 
 \bibitem[{Li \& Zhong(2012)}]{li2012overview}
-\textsc{Li}, X.-L. \& Y.~\textsc{Zhong} (2012): \enquote{An overview of
-  personal credit scoring: techniques and future work.} .
+\textsc{Li}, X.-L. \& Y.~\textsc{Zhong} (2012): \enquote{{An Overview of
+  Personal Credit Scoring: Techniques and Future Work}.}
+\newblock \emph{International Journal of Intelligence Science} \textbf{2(4A)}:
+  pp. 181--189.
 
 \bibitem[{Lin \emph{et~al.}(2007)Lin, Lin, \& Weng}]{lin2007note}
 \textsc{Lin}, H.-T., C.-J. \textsc{Lin}, \& R.~C. \textsc{Weng} (2007):
-  \enquote{A note on platt’s probabilistic outputs for support vector
-  machines.}
+  \enquote{{A note on Platt's probabilistic outputs for support vector
+  machines}.}
 \newblock \emph{Machine learning} \textbf{68}: pp. 267--276.
 
 \bibitem[{Loyola-Gonzalez(2019)}]{loyola2019black}
-\textsc{Loyola-Gonzalez}, O. (2019): \enquote{Black-box vs. white-box:
-  Understanding their advantages and weaknesses from a practical point of
-  view.}
+\textsc{Loyola-Gonzalez}, O. (2019): \enquote{{Black-Box vs. White-Box:
+  Understanding Their Advantages and Weaknesses From a Practical Point of
+  View}.}
 \newblock \emph{IEEE access} \textbf{7}: pp. 154096--154113.
 
 \bibitem[{Malley \emph{et~al.}(2011)Malley, Kruppa, Dasgupta, Malley, \&
