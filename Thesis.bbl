@@ -451,15 +451,15 @@
 \bibitem[{Ng \emph{et~al.}(2020)Ng, Minasny, Mendes, \&
   Dematt{\^e}}]{ng2020influence}
 \textsc{Ng}, W., B.~\textsc{Minasny}, W.~d.~S. \textsc{Mendes}, \& J.~A.~M.
-  \textsc{Dematt{\^e}} (2020): \enquote{The influence of training sample size
+  \textsc{Dematt{\^e}} (2020): \enquote{{The influence of training sample size
   on the accuracy of deep learning models for the prediction of soil properties
-  with near-infrared spectroscopy data.}
-\newblock \emph{Soil} \textbf{6(2)}: pp. 565--578.
+  with near-infrared spectroscopy data}.}
+\newblock \emph{SOIL} \textbf{6(2)}: pp. 565--578.
 
 \bibitem[{Nian(2018)}]{nian2018introduction}
-\textsc{Nian}, R. (2018): \enquote{An introduction to {ADASYN} (with code!).}
-\newblock Medium.
-\newblock Retrieved on May 2, 2023 from
+\textsc{Nian}, R. (2018): \enquote{{Fixing Imbalanced Datasets: An Introduction
+  to ADASYN (with code!)}.}
+\newblock Medium.com. Retrieved May 2, 2023. Available at
   \url{https://medium.com/@ruinian/an-introduction-to-adasyn-with-code-1383a5ece7aa}.
 
 \bibitem[{Owen(2022)}]{owen2022hyperparameter}
@@ -470,41 +470,40 @@
 \bibitem[{Owusu \emph{et~al.}(2023)Owusu, Quainoo, Mensah, \&
   Appati}]{owusu2023deep}
 \textsc{Owusu}, E., R.~\textsc{Quainoo}, S.~\textsc{Mensah}, \& J.~K.
-  \textsc{Appati} (2023): \enquote{A deep learning approach for loan default
-  prediction using imbalanced dataset.}
+  \textsc{Appati} (2023): \enquote{{A Deep Learning Approach for Loan Default
+  Prediction Using Imbalanced Dataset}.}
 \newblock \emph{International Journal of Intelligent Information Technologies
   (IJIIT)} \textbf{19(1)}: pp. 1--16.
 
 \bibitem[{Park(2013)}]{park2013introduction}
-\textsc{Park}, H.-A. (2013): \enquote{An introduction to logistic regression:
+\textsc{Park}, H.-A. (2013): \enquote{{An introduction to logistic regression:
   from basic concepts to interpretation with particular attention to nursing
-  domain.}
+  domain}.}
 \newblock \emph{Journal of Korean Academy of Nursing} \textbf{43(2)}: pp.
   154--164.
 
 \bibitem[{Patle \& Chouhan(2013)}]{patle2013svm}
-\textsc{Patle}, A. \& D.~S. \textsc{Chouhan} (2013): \enquote{Svm kernel
-  functions for classification.}
-\newblock In \enquote{2013 International Conference on Advances in Technology
-  and Engineering (ICATE),} pp. 1--9. IEEE.
+\textsc{Patle}, A. \& D.~S. \textsc{Chouhan} (2013): \enquote{{SVM kernel
+  functions for classification}.}
+\newblock \emph{2013 International Conference on Advances in Technology and
+  Engineering (ICATE)} pp. 1--9.
 
 \bibitem[{Pintelas \emph{et~al.}(2020)Pintelas, Livieris, \&
   Pintelas}]{pintelas2020grey}
 \textsc{Pintelas}, E., I.~E. \textsc{Livieris}, \& P.~\textsc{Pintelas} (2020):
-  \enquote{A grey-box ensemble model exploiting black-box accuracy and
-  white-box intrinsic interpretability.}
+  \enquote{{A Grey-Box Ensemble Model Exploiting Black-Box Accuracy and
+  White-Box Intrinsic Interpretability}.}
 \newblock \emph{Algorithms} \textbf{13(1)}: p.~17.
 
 \bibitem[{Platt \emph{et~al.}(1999)}]{platt1999probabilistic}
-\textsc{Platt}, J. \emph{et~al.} (1999): \enquote{Probabilistic outputs for
-  support vector machines and comparisons to regularized likelihood methods.}
-\newblock \emph{Advances in large margin classifiers} \textbf{10(3)}: pp.
-  61--74.
+\textsc{Platt}, J. \emph{et~al.} (1999): \enquote{{Probabilistic Outputs for
+  Support Vector Machines and Comparisons to Regularized Likelihood Methods}.}
+\newblock \emph{Advances in Large Margin Classifiers} .
 
 \bibitem[{Porretta \emph{et~al.}(2020)Porretta, Letizia, \&
   Santoboni}]{porretta2020credit}
 \textsc{Porretta}, P., A.~\textsc{Letizia}, \& F.~\textsc{Santoboni} (2020):
-  \enquote{Credit risk management in bank: Impacts of ifrs 9 and basel 3.}
+  \enquote{{Credit risk management in bank: Impacts of IFRS 9 and Basel 3}.}
 \newblock \emph{Risk Governance and Control: Financial Markets \& Institutions}
   \textbf{10(2)}: pp. 29--44.
 

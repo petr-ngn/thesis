@@ -12,43 +12,43 @@ Warning--empty booktitle in dias2018comparison
 Warning--empty journal in navas2020optimal
 You've used 113 entries,
             3042 wiz_defined-function locations,
-            1179 strings with 25565 characters,
-and the built_in function-call counts, 68180 in all, are:
-= -- 5360
+            1178 strings with 25619 characters,
+and the built_in function-call counts, 67894 in all, are:
+= -- 5329
 > -- 2560
-< -- 252
-+ -- 883
+< -- 251
++ -- 873
 - -- 741
-* -- 5698
-:= -- 9753
-add.period$ -- 330
+* -- 5679
+:= -- 9731
+add.period$ -- 327
 call.type$ -- 113
-change.case$ -- 815
+change.case$ -- 812
 chr.to.int$ -- 106
 cite$ -- 116
-duplicate$ -- 5497
-empty$ -- 5238
+duplicate$ -- 5476
+empty$ -- 5212
 format.name$ -- 1387
-if$ -- 13727
+if$ -- 13658
 int.to.chr$ -- 8
 int.to.str$ -- 1
-missing$ -- 895
-newline$ -- 467
+missing$ -- 891
+newline$ -- 466
 num.names$ -- 453
-pop$ -- 1734
+pop$ -- 1735
 preamble$ -- 1
 purify$ -- 695
 quote$ -- 0
-skip$ -- 2559
+skip$ -- 2550
 stack$ -- 0
-substring$ -- 2633
-swap$ -- 3248
-text.length$ -- 176
+substring$ -- 2596
+swap$ -- 3225
+text.length$ -- 175
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 939
 warning$ -- 3
-while$ -- 463
+while$ -- 460
 width$ -- 0
-write$ -- 1329
+write$ -- 1325
 (There were 4 warnings)
