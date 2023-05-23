@@ -112,9 +112,9 @@
 \textsc{Brabec}, J., T.~\textsc{Kom{\'a}rek}, V.~\textsc{Franc}, \&
   L.~\textsc{Machlica} (2020): \enquote{{On Model Evaluation Under Non-Constant
   Class Imbalance}.}
-\newblock In \enquote{Computational Science--ICCS 2020: 20th International
+\newblock \emph{Computational Science--ICCS 2020: 20th International
   Conference, Amsterdam, The Netherlands, June 3--5, 2020, Proceedings, Part IV
-  20,} pp. 74--87. Springer.
+  20} pp. 74--87.
 
 \bibitem[{Brezigar-Masten \emph{et~al.}(2021)Brezigar-Masten, Masten, \&
   Volk}]{brezigar2021modeling}
