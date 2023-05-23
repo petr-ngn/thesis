@@ -3,7 +3,7 @@
 
 This Master's thesis deals with the custom machine learning implementation framework that was developed in Python and applied to the application scoring data of US home equity loans (HMEQ).
 The ML framework involves eight classification models, namely Logistic Regression, Decision Tree, Gaussian Naive Bayes, K-Nearest Neighbors, Random Forest, Gradient Boosting, Support Vector Machine, and Neural Network.
-It further consists of data exploration, data preprocessing using ADASYN oversampling and Optimal Binning with Weight-of-Evidence, a custom feature selection algorithm that utilizes both Bayesian Optimization and Forward Sequential Feature Selection, and a custom model selection algorithm employed based on Bayesian Optimization and weighted ranking of individual metric ranks. In this thesis, metrics such as F1 score, MCC, AUC, Kolmogorov-Smirnov Distance, Somers' D, etc., are evaluated.
+It further consists of data exploration, data preprocessing using ADASYN oversampling and Optimal Binning with Weight-of-Evidence, a custom feature selection algorithm that utilizes both Bayesian Optimization and Forward Sequential Feature Selection, and a custom model selection algorithm employed based on Bayesian Optimization and weighted ranking of individual metric ranks. In this thesis, metrics such as F1 score, MCC, AUC, Kolmogorov-Smirnov Distance, Somers' D, and others., are evaluated.
 Instead of using the standard classification threshold of 0.5, an optimal threshold is calculated using Youden index.
 The final model is Gradient Boosting trained on the features selected by Neural Network. 
 Such model is further recalibrated and evaluated using both model performance assessment and black-box model explainability inspection.
