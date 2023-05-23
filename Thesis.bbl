@@ -10,10 +10,10 @@
 \bibitem[{Akiba \emph{et~al.}(2019)Akiba, Sano, Yanase, Ohta, \&
   Koyama}]{akiba2019optuna}
 \textsc{Akiba}, T., S.~\textsc{Sano}, T.~\textsc{Yanase}, T.~\textsc{Ohta}, \&
-  M.~\textsc{Koyama} (2019): \enquote{Optuna: A next-generation hyperparameter
-  optimization framework.}
-\newblock In \enquote{Proceedings of the 25th ACM SIGKDD international
-  conference on knowledge discovery \& data mining,} pp. 2623--2631.
+  M.~\textsc{Koyama} (2019): \enquote{{Optuna: A Next-generation Hyperparameter
+  Optimization Framework}.}
+\newblock \emph{Proceedings of the 25th ACM SIGKDD international conference on
+  knowledge discovery \& data mining} pp. 2623--2631.
 
 \bibitem[{Aniceto \emph{et~al.}(2020)Aniceto, Barboza, \&
   Kimura}]{aniceto2020machine}
@@ -22,9 +22,9 @@
 \newblock \emph{Future Business Journal} \textbf{6}: pp. 1--14.
 
 \bibitem[{Aras(2021)}]{serkan2021bagging}
-\textsc{Aras}, S. (2021): \enquote{{Bagging and boosting classifiers for credit
-  risk evaluation}.}
-\newblock \emph{REFLECTIONS OF ECONOMIC DEVELOPMENT} p. 121.
+\textsc{Aras}, S. (2021): \enquote{{Bagging and Boosting Classifiers for Credit
+  Risk Evaluation}.}
+\newblock \emph{Reflection of Economic Development} pp. 121--150.
 
 \bibitem[{Ayyadevara(2018)}]{ayyadevara2018pro}
 \textsc{Ayyadevara}, V.~K. (2018): \emph{Pro Machine Learning Algorithms: A
