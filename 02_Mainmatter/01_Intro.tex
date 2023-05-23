@@ -1,15 +1,14 @@
 \chapter{Introduction}
 \label{chap:one}
 
-As the backbone of most financial institutions, credit risk modelling plays an integral role in ensuring the stability and profitability of these establishments as it primarily revolves around assessing the likelihood that a borrower will default on a debt by failing to make required payments.
+As the backbone of most financial institutions, credit risk modelling plays an integral role  in such institutions as it  revolves around assessing the likelihood that a borrower will default on a debt.
 Conventional methodologies for credit risk assessment have relied on statistical techniques and rule-based systems, which have been known to deliver sound results.
-However, with the exponential growth of data in recent years, financial institutions are confronted with the challenge and opportunity to extract valuable insights from this information deluge.
-In an era where data-driven decision making is becoming the norm, machine learning is becoming increasingly important in the financial industry as it can bring competitive edge. Many financial institutions have already utilized the machine learning techniques for assessing creditworthiness of the clients and predicting their future behavior \citep{PwC2023}.
+However, with the exponential growth of data in recent years where data-driven decision making is becoming the norm, machine learning is becoming increasingly important in the financial industry as it can bring competitive edge. \citep{PwC2023}.
 
 
-Therefore, the main goal of this thesis is to implement a custom machine learning framework developed in Python, which involves data exploration, data preprocessing, hyperparameter tuning, feature selection, model selection, model recalibration, model evaluation, and further development of a custom web application which deploys the machine learning model into a production, using Flask and HTML with CSS and JavaScript elements.
+Therefore, the main goal of this thesis is to implement a custom machine learning framework developed in Python, which involves data exploration, data preprocessing, hyperparameter tuning, feature selection, model selection, recalibration, evaluation, and further development of a web application which deploys the machine learning model, using Flask and HTML.
 Such comprehensive machine learning framework is applied on an exemplary application scoring data set of US home equity loans (HMEQ) acquired from Credit Risk Analytics \citep{baesens2016credit}.
-Regardless of the potential discrepancy between such exemplary data set and the current state of the loan market, the objective of this thesis is rather to showcase a versatile machine learning implementation framework that can be effectively employed for diverse data sets, transcending industry boundaries and fulfilling varying analytical requirements.
+Regardless of the potential discrepancy between such exemplary data set and the current state of the loan market, the objective of this thesis is rather to showcase a versatile machine learning implementation framework that can be effectively employed for diverse data sets.
 
 
 Particularly, we employ eight different machine learning algorithms, namely Logistic Regression, Decision Tree, Gaussian Naive Bayes, K-Nearest Neighbors, Random Forest, Support Vector Machine, Gradient Boosting, and Neural Network.
@@ -21,10 +20,9 @@ Furthermore, more advanced machine learning techniques are introduced, such as A
 
 In \autoref{chap:three} we conduct literature review from both credit risk modelling and machine learning fields. Moreover, we propose 5 hypotheses either based on HMEQ--based studies \citep{serkan2021bagging, zurada2014classification}, or based on researches related to machine learning application in different sectors \citep{de2023predicting, pintelas2020grey, wu2018accurate}.
 
-Within \autoref{chap:four}, an empirical analysis is performed, particularly, we implement our machine learning framework on the HMEQ data set.
-Such framework applies data exploration approaches and further performs data preprocessing transformations, namely data split, ADASYN oversampling, Optimal Binning and Weight of Evidence.
-Moreover, this framework involves hyperparameter tuning, which is performed using Bayesian Optimization, as well as feature selection, which is utilized using Forward Sequential Feature Selection.
+Within \autoref{chap:four}, an empirical analysis is performed, i.e., we implement our machine learning framework on the HMEQ data set.
+Such framework applies exploration analysis, data preprocessing transformations, namely data split, ADASYN oversampling, Optimal Binning and Weight of Evidence, hyperparameter tuning with Bayesian Optimization, as well as feature selection, which is utilized using Forward Sequential Feature Selection.
 Subsequently, model selection is performed based on ranking of the proposed range of evaluation metrics.
 Afterwards, the final model is recalibrated, evaluated and deployed into a production environment as a web application.
 
-Lastly, \autoref{chap:five} concludes the summary of results in thesis by assessing the hypotheses proposed in \autoref{chap:three}, discussing the results obtained in this thesis with the results from HMEQ--based studies, outlining the key findings and main contributions in this thesis, and also proposing the author's recommendations for future research. 
+Lastly, \autoref{chap:five} concludes the summary of results in thesis by assessing the hypotheses proposed in \autoref{chap:three}, discussing the thesis' results  with the results from HMEQ--based studies, outlining the key findings and main contributions in this thesis, and proposing the author's recommendations for future research. 
