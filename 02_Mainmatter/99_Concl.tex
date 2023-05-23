@@ -2,42 +2,27 @@
 \label{conclusion}
 
 The main contribution of this thesis is to develop a custom machine learning implementation framework using Python which is further applied to the application scoring data set of US home equity loans (HMEQ).
-In this thesis, we employ 8 machine learning classification models - Logistic Regression, Decision Tree, Gaussian Naive Bayes, K--Nearest Neighbors, Random Forest, Gradient Boosting, Support Vector Machine, and Neural Network (Multi--Layer Perceptron). As evaluation metrics, we use F1 score, Precision, Recall, Accuracy, Matthews Correlation Coefficient, AUC, Kolmogorov--Smirnov Distance, Somers' D, Brier Score Loss and Log Loss.
+In this thesis, we employ 8 classification models: Logistic Regression, Decision Tree, Gaussian Naive Bayes, K--Nearest Neighbors, Random Forest, Gradient Boosting, Support Vector Machine, and Neural Network. As evaluation metrics, we use F1, Precision, Recall, Accuracy, Matthews Correlation Coefficient, AUC, Kolmogorov--Smirnov Distance, Somers' D, Brier Score Loss and Log Loss.
+Prior the machine learning implementation, we cover theoretical background of both credit risk and machine learning (\autoref{chap:two}), and we also propose five hypotheses (\autoref{chap:three}), including the literature review with the main focus on HMEQ--based studies of Aras \citep{serkan2021bagging} and Zurada \citep{zurada2014classification}.
 
-Prior the machine learning implementation, we have covered theoretical background of credit risk as well as understanding of machine learning algorithms and the evaluation of classification models, including more advanced machine learning techniques such as ADASYN oversampling, Optimal Binning, Bayesian Optimization or Forward Sequential Feature Selection, as all described in \autoref{chap:two}.
-In \autoref{chap:three} we have proposed five hypotheses, including the literature review with the main focus on HMEQ--based studies of Aras \citep{serkan2021bagging} and Zurada \citep{zurada2014classification}.
+Within the empirical analysis (\autoref{chap:four}) we conduct machine learning implementation on HMEQ data set, which includes data exploration, data preprocessing, hyperparameter tuning, feature selection, model selection, model recalibration, model evaluation and final machine learning deployment.
+In the data exploration (\autoref{sec:dataexploration}), we inspect the distributions of the variables and their associations.
+Within the data preprocessing phase (\autoref{sec:dataprep}), we perform 3 operations: (1) Stratified split into training, validation  and test set with 70:15:15 ratio, (2) ADASYN oversampling for balancing default distribution, and (3) Optimal Binning of features and Weight--of--Evidence transformation.
 
-The \autoref{chap:four} pertains to the very extensive empirical analysis, i.e., machine learning implementation on HMEQ data set.  This includes the high--level overview of the custom machine learning framework, repository and environment structure in Python (\autoref{sec:repo}), and further data exploration, data preprocessing, hyperparameter tuning, feature selection, model selection, model recalibration, model evaluation and final machine learning deployment.
+During the modelling part (\autoref{sec:modelling}), we establish hyperparameter tuning process using Bayesian Optimization with 50 iterations, stratified 10--fold cross validation while maximizing F1 score (\autoref{subsec:hyperoptbayes}).
+Such process enters into 2 following algorithmic steps: feature selection and model selection.
+In the former step (\autoref{subsec:feature-selection}), each model is tuned with Bayesian Optimization and is further used within Forward Sequential Feature Selection, which returns a subset of optimal features. The features are selected while maximizing F1 score using the 10--fold cross validation. Since we have 8 models, we obtain 8 subsets of features.
+Within the latter step (\autoref{subsec:modelselection}), each model is tuned on each subset of selected features, and then evaluated on the validation set by computing a range of metrics mentioned above. Instead of using standard classification threshold 0.5, we calculate an optimal threshold using Youden index. Since we have 8 models and 8 subsets of features, we obtain 64 models.
 
+Each metric is used to rank all the models, and the rank score is then calculated as a weighted average of the individual rankings, with the author's explicit weights. We calculate the final rank based on the rank score.
+The final model chosen for evaluation and deployment is the one with the highest rank (rank of 1). 
+The final model is \textbf{Gradient Boosting} which was trained on the features selected by \textbf{Neural Network}.
+Such final model and its threshold are recalibrated on the joined training and validation set prior the evaluation (\autoref{subsec:modelrecal}).
+In the evaluation part (\autoref{sec:modeleval}), we assess the model's performance on test set, inspect the impact of the recalibration on the model's performance and delve into black--box model explainability using feature importances and SHAP values.
+It is evident that debt--to--income ratio and number of delinquent credit lines are the main default drivers.
 
-Within data exploration (\autoref{sec:dataexploration}), we delve into the description of the data set, distribution analysis and association analysis.
-This chapter further employs data preprocessing step (\autoref{sec:dataprep}), including the data split with stratification into training set, validation set  and test set with ratio of 70:15:15.
-Subsequently, ADASYN oversampling is performed in order to balance the default distribution (\autoref{subsec:data-split-ADASYN}).
-The next step of data preprocessing involves Optimal Binning (\autoref{subsec:prep-optbinning}), which is utilized using \lstinline{optbinning} module developed by Navas--Palencia \citep{navas2020optimal}. This module is employed in order to discretize the numeric features into interval bins and categorical features into subgroups of categories, both are optimally binned with respect to the default, and further transforms these bins using Weight--of--Evidence.
+Prior the deployment of the model into a production (\autoref{sec:deployment}), the final model and its optimal threshold are recalibrated on the whole data set in order to maximize the predictive power of the model.
+Particularly, we develop a web application using Flask and HTML, which is temporarily deployed on PythonAnywhere cloud platform (\textit{available here:} \url{http://ml-credit-risk-app-petrngn.pythonanywhere.com/}).
+Such application requires to fill in the loan application form  (\autoref{fig:flaskform}) and once the form is submitted, the application processes the inputs and returns (1) loan approval result (2), predicted probability of default and (3) local black--box model explainability of the prediction using LIME (\autoref{fig:flaskres}).
 
-
-\autoref{chap:four} also contains modelling part (\autoref{sec:modelling}), which includes Bayesian Optimization, feature selection and model selection.
-Bayesian Optimization is used for hyperparameter tuning, particularly we use \lstinline{scikit-optimize} module which employs Bayesian Optimization with 50 iterations, stratified 10--fold cross validation, while maximizing F1 score. For each model, we further define hyperparameters' spaces over which the model is tuned (\autoref{subsec:hyperoptbayes}).
-
-The feature selection (\autoref{subsec:feature-selection}) is performed using custom algorithm developed by the author, which iterates over the models. Each model is tuned with Bayesian Optimization and is further used as an input estimator within Forward Sequential Feature Selection, which returns subset of optimal features for given model. Since we have 8 models, we obtain 8 subset of features.
-
-Within the model selection (\autoref{subsec:modelselection}), each model is tuned on each subset of selected features, and then is evaluated on the validation set by computing a range of metrics mentioned above.
-Instead of using standard classification threshold of 0.5, we compute an optimal threshold using Youden index. Since we have 8 models and 8 subsets of features, we obtain 64 models in total.
-All the models are ranked on each metric, based on which we calculate a rank score as a weighted average of the individual ranks, where the weights are set explicitly by the author. Based on the rank score, we determine the final rank. The model with the highest rank (i.e., rank of 1) is then selected as the final model for both evaluation and deployment.
-The final model is \textbf{Gradient Boosting} which was trained on the features selected by \textbf{Multi--Layer Perceptron}.
-
-\newpage
-Such final model is then recalibrated on the joined training and validation set and also, the optimal threshold is recalculated using Youden index, as described in \autoref{subsec:modelrecal}.
-Afterwards, the final recalibrated model is evaluated on test set in \autoref{sec:modeleval}, where we assess the model performance, inspect the impact of the recalibration on the model's predictive power and also we delve into black--box model explainability using feature importances and SHAP summary plot. It is evident that debt--to--income ratio and number of delinquent credit lines are the main default drivers.
-
-In the last part of machine learning implementation, the final model is deployed into a production environment as presented in \autoref{sec:deployment}.
-Prior the deployment, the final model and its optimal threshold are recalibrated on the whole data set (training, validation and test set) in order to maximize the predictive power of the model.
-Particularly, such model is deployed as a web application built in Flask (for back--end) and HTML with CSS and JavaScript elements (for front-end).
-The web application itself is temporarily deployed on PythonAnywhere cloud platform which is accessible via the following link: \url{http://ml-credit-risk-app-petrngn.pythonanywhere.com/}.
-This application requires to fill in the loan application form  as can be seen in \autoref{fig:flaskform}.
-After a submission of the form, the application processes the inputs and returns (1) whether the loan would be rejected or approved by model based on given threshold, (2), predicted probability of default and (3) local black--box model explainability of the prediction using LIME, which is displayed in \autoref{fig:flaskres}.
-
-
-In the last \autoref{chap:five}, we summarize the results of this thesis. Particularly, we assess hypotheses' testing in \autoref{sec:hypotest} based on the results of the machine learning implementation, and we also compare our results with the results of HMEQ--based studies of Aras \citep{serkan2021bagging} and Zurada \citep{zurada2014classification}, as shown in \autoref{sec:comparisonfinal}.
-In this chapter, key findings (\autoref{sec:keyfindings}) and main contributions (\autoref{sec:contributions}) are outlined as well.
-Lastly, we propose several policy recommendations for feature research as presented in \autoref{sec:recommendations}.
+Lastly, we summarize our results (\autoref{chap:five}), particularly we assess the hypotheses' testing in conduct a comparison with the HMEQ--based studies, outline key findings and main contributions, and propose several policy recommendations for feature research.
