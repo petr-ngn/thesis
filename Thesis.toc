@@ -67,7 +67,7 @@
 \contentsline {subsubsection}{Random Forest}{83}{section*.77}%
 \contentsline {subsubsection}{Gradient Boosting}{84}{section*.79}%
 \contentsline {subsubsection}{Support Vector Machine}{85}{section*.81}%
-\contentsline {subsubsection}{Multi--Layer Percepton}{86}{section*.83}%
+\contentsline {subsubsection}{Multi--Layer Perceptron}{86}{section*.83}%
 \contentsline {subsection}{\numberline {4.4.2}Sequential Feature Selection}{87}{subsection.4.4.2}%
 \contentsline {subsection}{\numberline {4.4.3}Model Selection}{90}{subsection.4.4.3}%
 \contentsline {subsubsection}{Metrics Space}{90}{section*.88}%

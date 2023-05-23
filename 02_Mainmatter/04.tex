@@ -3,14 +3,14 @@
 This chapter focuses on the main part of this thesis, particularly on employing the custom machine learning implementation framework. The machine learning framework deployed in this thesis is shown in \autoref{fig:mlframe} as is described from the high--level--point view as follows:
 \begin{itemize}\setlength\itemsep{0em}
 \item \textbf{Data Exploration} - Exploration of the data in order to infer some insights about the data quality, distribution of the variables, statistical testing and association analysis.
-\item \textbf{Data Split} - Splitting of the data which are used separaterly in diferrent tasks such as model training, hyperparameter tuning, feature selection, model selection and model evaluation.
+\item \textbf{Data Split} - Splitting of the data which are used separately in different tasks such as model training, hyperparameter tuning, feature selection, model selection and model evaluation.
 \item \textbf{Optimal Binning and WoE Encoding} - Optimal binning and the WoE encoding of the features as the main part of the feature preprocessing.
 \item \textbf{Feature Selection} - Feature selection with Forward Sequential Feature Selection in order to reduce the dimensionality of the data and to improve the performance of the machine learning models - each input model is tuned with Bayesian Optimization.
-\item \textbf{Model Selection} - Model selection based on weighted ranking where the weights are defined explictly by the thesis' author, in order to find the best model. Each input model is tuned with Bayesian Optimization on each subset of selected features.
+\item \textbf{Model Selection} - Model selection based on weighted ranking where the weights are defined explicitly by the thesis' author, in order to find the best model. Each input model is tuned with Bayesian Optimization on each subset of selected features.
 \item \textbf{Model Recalibration (Evaluation)} - Recalibration (Re-training) of the final model by re-training it on the joined training and validation sets, which will be further evaluated.
 \item \textbf{Model Evaluation} - Evaluation of the final model on the unseen data from test set in order to assess model's predictive power as well as model's explainability.
 \item \textbf{Model Recalibration (Deployment)} - Final recalibration of the final model by re-training it on the joined training, validation and test sets, which will be further deployed into a production.
-\item \textbf{Model Deployment} - Dployment of the final model into a production as a web application.
+\item \textbf{Model Deployment} - Deployment of the final model into a production as a web application.
 \end{itemize}
 
 \begin{figure}[H]
@@ -25,7 +25,7 @@ This chapter focuses on the main part of this thesis, particularly on employing 
 \newpage
 \section{Repository and Environment Structure}
 \label{sec:repo}
-The whole machine learning implmenetation as the scope of this thesis is developed mainly using Python Programming Language and further with collaboration of Git and HTML.
+The whole machine learning implementation as the scope of this thesis is developed mainly using Python Programming Language and further with collaboration of Git and HTML.
 The whole repository can be found in the separate appendix or is available on the GitHub repository \url{https://github.com/petr-ngn/FFU_VSE_Masters_Thesis_ML_Credit_Risk_Modelling}.
 The repository structure is shown in \autoref{fig:repostructure}.
 \begin{figure}[H]
@@ -70,7 +70,7 @@ The repository structure is shown in \autoref{fig:repostructure}.
 \begin{itemize}\setlength\itemsep{0em}
 \item \texttt{data} - Directory containing the raw data, partially preprocessed data (\texttt{interim}) and the final preprocessed data.
 \item \texttt{flask\_app} - Directory containing the Flask application which is used for the deployment of the model. Particularly, it contains the \texttt{app.py} file which is the main back-end file of the application, the \texttt{templates} and \texttt{static} subdirectories which contain the front-end HTML files for the application, and the \texttt{inputs} subdirectory which contains the input dictionary for the application (such as the trained model, threshold, final features etc.).
-\item \texttt{models} - Directory containing the the sub--directories of the trained and fitted objects for features preprocessing, feature selection and model selection, including the final objects used in evaluation or deployment.
+\item \texttt{models} - Directory containing the sub--directories of the trained and fitted objects for features preprocessing, feature selection and model selection, including the final objects used in evaluation or deployment.
 \item \texttt{plots} - Directory containing the plots generated within the main Python notebook.
 \item \texttt{Masters\_Thesis.ipynb} - Main Python notebook containing the main part of the machine learning implementation, such as exploratory analysis, data preprocessing, training and evaluation of the models.
 \item \texttt{README.md} - README file containing the description of the repository.
@@ -119,7 +119,7 @@ To achieve this, the user has to either change the path in the terminal using \t
 \end{figure}
 
 
-To preserve the reproducibility of this solution and conistency of the results, the random seed is instantiated to \texttt{42}, so for instance data split, model optimization or training would be deterministic and not totally random every time when replicating the solution.
+To preserve the reproducibility of this solution and consistency of the results, the random seed is instantiated to \texttt{42}, so for instance data split, model optimization or training would be deterministic and not totally random every time when replicating the solution.
 Some \lstinline{Scikit-learn} or \lstinline{Scikit-optimize} objects have optional argument \texttt{n\_jobs} which utilizes the number of central processing units (CPU) cores used during the parallelizing computation. Such argument is set to \texttt{-1}, hence all the processors are used in order to  speed up the training or optimization process.
 
 \newpage
@@ -133,7 +133,7 @@ The analyzed data set pertains to the HMEQ data set which contains loan applicat
 Thus our goal is to predict whether the loan applicant will or would default based on provided information from the loan application.
 
 As can be seen in \autoref{tab:dataset}, the data set contains 13 columns, 12 features and 1 target variable \texttt{BAD} indicating whether the loan was in default (\texttt{1}) or not (\texttt{0}). 
-Amongst the 12 features, there are 10 numeric features and 2 categorical features, namely \texttt{REASON} which contains 2 categories - Debt consolidation (\texttt{DebtCon}) and Home improvement (\texttt{HomeImp}), and \texttt{JOB} which fontains following categories - Administration (\texttt{Office}), Sales, Manager (\texttt{Mgr}), Professional Executive (\texttt{ProfExe}), Self-employed (\texttt{Self}), and Other.
+Amongst the 12 features, there are 10 numeric features and 2 categorical features, namely \texttt{REASON} which contains 2 categories - Debt consolidation (\texttt{DebtCon}) and Home improvement (\texttt{HomeImp}), and \texttt{JOB} which contains following categories - Administration (\texttt{Office}), Sales, Manager (\texttt{Mgr}), Professional Executive (\texttt{ProfExe}), Self-employed (\texttt{Self}), and Other.
 
 
 \begin{table}[H]
@@ -224,7 +224,7 @@ Such distribution inspection may help us to identify outliers, and other potenti
 \subsubsection{Default Distribution}
 \label{subsubsec:defaultdist}
 
-Regarding the the target variable distribution, from the \autoref{fig:defaultdist} we can observe that the default status distribution is heavily imbalanced, as most of the loans have not defaulted yet.
+Regarding the target variable distribution, from the \autoref{fig:defaultdist} we can observe that the default status distribution is heavily imbalanced, as most of the loans have not defaulted yet.
 Particularly, 80.05\% of the observations have been labelled as non-default (4,771 observations) and 19.95\% observations labelled as default (1,189 observations).
 This may cause problems in the modelling part, as the model may be biased towards the majority class, i.e., the non-default class. Such imbalanced class issue will be further treated in \autoref{subsec:data-split-ADASYN}.
 
@@ -256,7 +256,7 @@ Referring to the feature \texttt{DEBTINC}, it does not exhibit any extreme value
 From this, it can be inferred that if the debt-to-income ratio is too high, indicating that the applicant's income is not sufficient to cover their debt, the loan is more likely to end in default.
 The association between the default status and the numeric features is further investigated in \autoref{subsubsec:target-num-ass}.
 
-Since the features are positively skewed a lot, they do not follow Guassian (normal) distribution. Additionally, Shapiro--Wilk test is conducted in order to assessed whether the features' distributions are significantly different from a normal distribution.
+Since the features are positively skewed a lot, they do not follow Gaussian (normal) distribution. Additionally, Shapiro--Wilk test is conducted in order to assessed whether the features' distributions are significantly different from a normal distribution.
 According to such test, all the numeric features' distributions do not follow normal distribution on 1\% statistical significance level.
 For a reference, see \autoref{tab:normalitytest} in \autoref{chap:app1}.
 
@@ -533,7 +533,7 @@ Therefore, it can be inferred that a significant number of loan applicants tend 
 \end{figure}
 
 Note that the target variable is imbalanced, therefore, the dendrogram depicted in \autoref{fig:dendrogram} is not representative for the default cases. Therefore, we can also inspect the dendrogram for the default cases only, as shown in \autoref{fig:dendrogramdef}.
-As can be seen, the hierarchy has changed compared the hierarchy in \autoref{fig:dendrogram}. It can be observed that a significant number of loan applicated tend to ommit information regarding their number of credit lines (\texttt{CLNO}) and the number of delinquent credit lines (\texttt{DELINQ}) when submitting their loan applications. Especially regarding the second feature, this might indicate a common delinquency problem among the applicants and thus, higher probability of default.
+As can be seen, the hierarchy has changed compared the hierarchy in \autoref{fig:dendrogram}. It can be observed that a significant number of loan applicated tend to omit  information regarding their number of credit lines (\texttt{CLNO}) and the number of delinquent credit lines (\texttt{DELINQ}) when submitting their loan applications. Especially regarding the second feature, this might indicate a common delinquency problem among the applicants and thus, higher probability of default.
 \begin{figure}[H]
     \centering
     \caption{Nullity Dendrogram (default cases)}\vspace{0.5em}
@@ -555,7 +555,7 @@ The Spearman correlation coefficient is defined as follows:
 \end{equation}
 
 
-In the \autoref{fig:spearmancorr}, we can observe a very strong correlation between the \texttt{MORTDUE} and \texttt{VALUE} features. Such multicolinearity can cause problem in predictions na model's overfitting. Therefore, a feature selection is recommended - such selection is further described in \autoref{subsec:feature-selection}.
+In the \autoref{fig:spearmancorr}, we can observe a very strong correlation between the \texttt{MORTDUE} and \texttt{VALUE} features. Such multicolinearity can cause problem in predictions and model's overfitting. Therefore, a feature selection is recommended - such selection is further described in \autoref{subsec:feature-selection}.
 
 \begin{figure}[H]
     \centering
@@ -571,7 +571,7 @@ Regarding the association between categorical features, namely \texttt{REASON} a
 \newpage
 \section{Data Preprocessing}
 \label{sec:dataprep}
-In this section, the process of preprocessing data is described as the crucial step in the machine learning modelling. Particularly, the the process of dividing data for various tasks, ADASYN oversampling due to the imbalanced class issue, discretization of features and Weight--of--Eveidence transformation are further discussed and described.
+In this section, the process of preprocessing data is described as the crucial step in the machine learning modelling. Particularly, the process of dividing data for various tasks, ADASYN oversampling due to the imbalanced class issue, discretization of features and Weight--of--Eveidence transformation are further discussed and described.
 
 \subsection{Data Split and ADASYN Oversampling}
 \label{subsec:data-split-ADASYN}
@@ -712,7 +712,7 @@ Therefore, we expect if the debt--to--income ratio is either missing or extremel
     \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
 
-Another monotonic relationship can be observed in case of \texttt{DELINQ} feature as can be seen in \autoref{fig:woedistdelinq}. With increasing number of delinquent credit lines, the WoE coefficient decreases, indicating larger distribution of defaulters compared to non--defaulters. Therefore, we expect that the higher the number of delinquent credit lines will lead to the the higher the likelihood of default.
+Another monotonic relationship can be observed in case of \texttt{DELINQ} feature as can be seen in \autoref{fig:woedistdelinq}. With increasing number of delinquent credit lines, the WoE coefficient decreases, indicating larger distribution of defaulters compared to non--defaulters. Therefore, we expect that the higher the number of delinquent credit lines will lead to the higher the likelihood of default.
 
 
 \begin{figure}[H]
@@ -755,7 +755,7 @@ In Python, eight different machine learning classification models from \lstinlin
 \item \textbf{Random Forest} - \lstinline{RandomForestClassifier()}
 \item \textbf{Gradient Boosting} - \lstinline{GradientBoostingClassifier()}
 \item \textbf{Support Vector Machine} - \lstinline{SVC()}
-\item \textbf{Multi--Layer Percepton} (\textit{Neural Network}) - \lstinline{MLPClassifier()}
+\item \textbf{Multi--Layer Perceptron} (\textit{Neural Network}) - \lstinline{MLPClassifier()}
 \begin{itemize}\setlength\itemsep{0em}
 \item Henceforth, we terms such as Neural Network and Multi--Layer Perceptron are used interchangeably.
 \end{itemize}
@@ -771,7 +771,7 @@ By maximizing the F1 score, the hyperparameters selected through this process wi
 
 For each model, the Bayesian Optimization algorithm performs 50 iterations while searching for the best hyperparameters values that maximize the F1 score. Within each iteration, a 10-fold stratified cross-validation is conducted to evaluate the model's cross--validation F1 score.
 Moreover, for each model, we specify the hyperparameter space, i.e., particular hyperparameters to be tuned and their possible ranges which the hyperparameter can take. The ranges are specified using \lstinline{Integer} class to define interval of integers, \lstinline{Real} to define interval of float numbers, and \lstinline{Categorical} to define a list of possible (categorical) values.
-Note that not all the available hyperparameters are tuned, but only the most relevants due to the time complexity of the Bayesian Optimization algorithm.
+Note that not all the available hyperparameters are tuned, but only the most relevant ones due to the time complexity of the Bayesian Optimization algorithm.
 The definition of hyperparameter space for each model is described further in the following subsubsections.
 
 \subsubsection{Logistic Regression}
@@ -895,11 +895,11 @@ Weights & Uniform, Distance \\
 
 \subsubsection{Random Forest}
 In in the Random Forest, we tune the number of base trees which are trained in parallel way in the ensemble, i.e., the \textbf{\texttt{\# estimators}} hyperparameter. 
-Similarly to Decision Tree, Random Forest allows to select the optimal split measure, i.e., Gini, Entropy or additionaly even Log Loss, which is depicted in the \textbf{\texttt{Criterion}} hyperparameter.
-Likewise Decision Tree, Random Forest also allows to specify the maximum depth of the tree as well as the  the number of features to consider when looking for the best split, i.e., the \textbf{\texttt{Max depth}} hyperparameter and \textbf{\texttt{Max features}}, respectively.
+Similarly to Decision Tree, Random Forest allows to select the optimal split measure, i.e., Gini, Entropy or additionally even Log Loss, which is depicted in the \textbf{\texttt{Criterion}} hyperparameter.
+Likewise Decision Tree, Random Forest also allows to specify the maximum depth of the tree as well as  the number of features to consider when looking for the best split, i.e., the \textbf{\texttt{Max depth}} hyperparameter and \textbf{\texttt{Max features}}, respectively.
 The \textbf{\texttt{Bootstrap}} hyperparameter allows to specify whether bootstrap samples are used when training the tree estimators.
 Similarly to Logistic Regression, Random Forest also has the \textbf{\texttt{Class weight}} hyperparameter which allows to specify the weight of each class in the classification process - \textit{balanced} function takes the target variable to adjust the weights which are inversely proportional to class frequencies, whereas \textit{subsample balanced} does almost the same, but the weights are computed based on the bootstrap samples.
-Last but not least, Random Forest also allows to tune the \textbf{\texttt{CCP alpha}} hyperparameter which allows to specify the complexity parameter used for Minimal Cost-Complexity Pruning (CCP), in order to reduce the size of the tree estimators and avoid overfitting by remocing subtrees from the tree estimators which do not improve the performance \citep{scikit-rf}.
+Last but not least, Random Forest also allows to tune the \textbf{\texttt{CCP alpha}} hyperparameter which allows to specify the complexity parameter used for Minimal Cost-Complexity Pruning (CCP), in order to reduce the size of the tree estimators and avoid overfitting by removing subtrees from the tree estimators which do not improve the performance \citep{scikit-rf}.
 
 \begin{table}[H]
 \small
@@ -988,7 +988,7 @@ Class weight & balanced, None \\
 \end{table}
 
 
-\subsubsection{Multi--Layer Percepton}
+\subsubsection{Multi--Layer Perceptron}
 Regarding the MLP, we use one hidden layer where we tune the number of units as represented by the \textbf{\texttt{Hidden layer size}} hyperparameter.
 We also tune the \textbf{\texttt{Activation function}} applied in the hidden layer, namely Logistic, ReLU, Tanh which were already described in \autoref{subssec:nn}, and further Identity which is just a linear activation function, hence $f(z) = z$.
 Regarding the optimization algorithm which refers to \textbf{\texttt{Solver}} hyperparameter, we can choose between \textit{lbgfs}, \textit{sgd} (Stochastic Gradient Descent) and \textit{adam} (Adaptive Moment Estimation).
@@ -999,7 +999,7 @@ The \textbf{\texttt{Learning rate}} can be either constant (i.e, 0.001), inverse
 \setlength{\tabcolsep}{8pt}
 \renewcommand{\arraystretch}{1.3}
 \centering
-    \caption[Multi Layer Percepton - Hyperparameter Space]{Multi Layer Percepton - Hyperparameter Space}\label{tab:mlpspace}
+    \caption[Multi Layer Perceptron - Hyperparameter Space]{Multi Layer Perceptron - Hyperparameter Space}\label{tab:mlpspace}
     \begin{tabular}{ll}
 \toprule
 \textbf{Hyperparameter} & \textbf{Space}\\
@@ -1022,7 +1022,7 @@ Learning rate & Constant, Adaptive, Invscaling \\
 \label{subsec:feature-selection}
 
 As the feature selection approach, Forward Sequential Feature Selection (henceforth SFS) is employed in order to choose the optimal set of features as described in \autoref{sec:fsfstheory}.
-Within machine learning implemenation, instead of fitting Forward SFS only with one model, Forward SFS is fitted for each input model in order to obtain the best subset of features for each model, assuming the importance of each features varies across the models.
+Within machine learning implementation, instead of fitting Forward SFS only with one model, Forward SFS is fitted for each input model in order to obtain the best subset of features for each model, assuming the importance of each features varies across the models.
 Instead of using input models with default hyperparameters, each model is tuned with Bayesian Optimization in order to obtain the optimal hyperparameters for each model, which would further improve the performance of each model within SFS and therefore, it would lead to the more optimal selection of features.
 The custom feature selection algorithm is stated in Algorithm \autoref{alg:feature_selection}, thus, when having $n$ input models, it returns $n$  subsets of optimal features, one per each model:
 \begin{algorithm}[H]
@@ -1035,9 +1035,9 @@ The custom feature selection algorithm is stated in Algorithm \autoref{alg:featu
 \EndFor
 \end{algorithmic}
 \end{algorithm}
-Particularly, each input model is first tuned on the training set with Bayesian Optimization with 50 iterations and 10--fold stratified cross validation (in order to preserve the target variable distribution across the folds) while maximizing the F1 score - within author's machine learning implemenation, his custom function \lstinline{bayesian_optimization()} is used.
+Particularly, each input model is first tuned on the training set with Bayesian Optimization with 50 iterations and 10--fold stratified cross validation (in order to preserve the target variable distribution across the folds) while maximizing the F1 score - within author's machine learning implementation, his custom function \lstinline{bayesian_optimization()} is used.
 Once the model is tuned, the Forward SFS is fitted with such tuned model on the same training set with 10--fold stratified cross validation while maximizing the F1 score. Instead of selecting the fixed number of features, Scikit-learn's \lstinline{SequentialFeatureSelector} class allows to set a stop criterion (\lstinline{tol} parameter) which stops adding features if the objective score function is not increasing at least by \lstinline{tol} between two consecutive feature additions \citep{sfs}.
-Such paramaeter is set to the value which is close to zero, therefore the feature selection stops when the objective score function is not increasing anymore.
+Such parameter is set to the value which is close to zero, therefore the feature selection stops when the objective score function is not increasing anymore.
 \newpage
 Such feature selection algorithm is wrapped into author's custom function \lstinline{SFS_feature_selection()}.
 This function iteratively prints the process of the feature selection as can be seen in \autoref{fig:featselectprint}, including the current step (Bayesian Optimization or Feature Selection), the execution time in minutes, and the selected features per each model. Since we have 8 input models, we get 8 optimal subsets of features.
@@ -1072,7 +1072,7 @@ Execution time: 0.8622 minutes
 \end{figure}
 
 
-The following \autoref{fig:fsrec} depicts the reccurrence of the selected features. As can be seen, features such as \texttt{CLAGE}, \texttt{DEBTINC}, \texttt{DELINQ} and \texttt{JOB} were selected by each model. 
+The following \autoref{fig:fsrec} depicts the recurrence  of the selected features. As can be seen, features such as \texttt{CLAGE}, \texttt{DEBTINC}, \texttt{DELINQ} and \texttt{JOB} were selected by each model. 
 On the other hand, features such as \texttt{LOAN} and \texttt{REASON} were selected only four times. Therefore, it can be expected that such features which were selected every time will have significant impact in predictions.
 \begin{figure}[H]
 \centering
@@ -1084,7 +1084,7 @@ On the other hand, features such as \texttt{LOAN} and \texttt{REASON} were selec
 \end{figure}
 
 
-According to \autoref{fig:fsdistmod}, models such as KNN, Random Forest, Gradient Boosting and SVM chose almost all the features as onlt one feature feature was eliminated. On the other hand, Gaussian Naive Bayes chose only 6. It seems to be that most of the features are important as each model has selected a higher amount of features.
+According to \autoref{fig:fsdistmod}, models such as KNN, Random Forest, Gradient Boosting and SVM chose almost all the features as only one feature was eliminated. On the other hand, Gaussian Naive Bayes chose only 6. It seems to be that most of the features are important as each model has selected a higher amount of features.
 It is evident the more complex black--box models require more features in contrast to transparent models such as Logistic Regression or Gaussian Naive Bayes.
 \begin{figure}[H]
     \centering
@@ -1128,7 +1128,7 @@ However, in real-world use cases, the 0.5 classification threshold may not be ap
 
 Therefore, it is recommended to calculate an optimal threshold rather than relying on the standard one.
 For such case, the Youden index is employed which is derived from ROC curve and enables the selection of an optimal classification threshold value. 
-The Younden index searches for the threshold that maximizes the sum of True Positive Rate and True Negative Rate, decreased by 1 \citep{fluss2005estimation}, thus:
+The Youden index searches for the threshold that maximizes the sum of True Positive Rate and True Negative Rate, decreased by 1 \citep{fluss2005estimation}, thus:
 \begin{equation}\label{eq}
 J = TPR + TNR - 1
 \end{equation}
@@ -1185,7 +1185,7 @@ Brier Score Loss  & 1 \\
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{table}
 
-Particularly, for each model a rank score is calculated in order to determine the final rank. The lower rank score indicates better model performance. For particular model $M$, the rank score can be calulcated as weighted average of the individual ranks as follows:
+Particularly, for each model a rank score is calculated in order to determine the final rank. The lower rank score indicates better model performance. For particular model $M$, the rank score can be calculated as weighted average of the individual ranks as follows:
 \begin{equation}\label{eq:rankscorem}
     RankScore_{M} = \frac{\sum_{i=1}^{k} {r_i \times w_i}}{\sum_{i=1}^{k} {w_i}} 
 \end{equation}
@@ -1200,7 +1200,7 @@ Based on the rank scores, we assign the final ranks where rank of 1 indicates th
 
 
 The custom function \lstinline{model_selection()} iteratively prints the process of the model tuning and evaluation on each subset of features, in order to keep the track of such process as it is depicted in \autoref{fig:modselprint}.
-Particularly, it prints which model on which features is being tuned and evaluated, exeuction time, optimal threshold, F1 score on the validation set and the best hyperparameters.
+Particularly, it prints which model on which features is being tuned and evaluated, execution time, optimal threshold, F1 score on the validation set and the best hyperparameters.
 
 \begin{figure}[H]
 \centering\caption{Model Selection Print Statement}
@@ -1398,7 +1398,7 @@ This finding suggests that longer execution time does not necessarily lead to be
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
 We can inspect the execution time from another perspective as shown in \autoref{fig:timedistbbwb}.
-It can be observed that black--box models take a significant amount of time ot opimize than the white--box models which is given due to the complexity of the black--box models.
+It can be observed that black--box models take a significant amount of time to optimize than the white--box models which is given due to the complexity of the black--box models.
 Further we can notice that some of the black--box models took only few minutes to optimized themselves. This corresponds to KNN models and it can be attributed to the small sample size as of data set as well as lower data set dimensionality (i.e., low number of features) and further given the lower number of $k$ neighbors (which is constrained to 10 at most as depicted in \autoref{tab:knnspace}).
 \begin{figure}[H]
     \centering
@@ -1423,7 +1423,7 @@ On the other hand, the Neural Network models always perform poorly, regardless o
 
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
-Such separation of of the black--box and white--box models is more evident from \autoref{fig:scattertimebbwb} where the white--box models points are light blue-colored and the black--box models are purple-colored.
+Such separation of the black--box and white--box models is more evident from \autoref{fig:scattertimebbwb} where the white--box models points are light blue-colored and the black--box models are purple-colored.
 While the score of white--box models seems to be constant regardless the execution time length, the points of black--box models are more dispersed across the execution time--F1 score dimension.
 
 \begin{figure}[H]
@@ -1448,7 +1448,7 @@ To summarize this subsection, the best and final model is the \textbf{Gradient B
     \midrule
     \textbf{Final Model} & Gradient Boosting \\
     \midrule
-    \textbf{FS Model} & Multi--Layer Percepton \\
+    \textbf{FS Model} & Multi--Layer Perceptron \\
     \midrule
     \textbf{Final Features} &
     MORTDUE, VALUE, JOB, YOJ, DEROG, DELINQ, CLAGE, NINQ, CLNO, DEBTINC \\
@@ -1553,7 +1553,7 @@ The results suggest that the model has a good balance between correctly identify
 
 The following \autoref{tab:recab} shows the impact of recalibration on the model's performance metrics. $M_{NR}$ denotes the final model which was not recalibrated at all (i.e., trained only on the training set), whereas $M_R$ denotes the recalibrated model (i.e., trained on the joined training and validation set). Respectively, $M_{NR}$ uses its threshold computed bas on the training set (0.4955), and $M_R$ uses its threshold computed on the joined training and validation set(0.45109).
 As can be seen, the recalibration indeed has a positive impact on the metrics evaluation as all the metric scores have increased, while the metric loss functions decreased.
-We can observe the most significant decrease in the Log Loss function, which decreased by 8.09 \%, while the objective function F1 score has increased by 3.30 \% thanks to to increase in both Precision and Recall.
+We can observe the most significant decrease in the Log Loss function, which decreased by 8.09 \%, while the objective function F1 score has increased by 3.30 \% thanks to increase in both Precision and Recall.
 Therefore, the recalibration process is deemed desired and appropriate in terms of model's performance.
 
 \begin{table}[H]
@@ -1603,14 +1603,14 @@ From the curve, we observe that the AUC value of the model is 95.55 \%, indicati
 \subsection{Model Explainability}
 \label{subsec:explainability}
 
-To gain insights into the impact of the features used in the final model, we can inspect the feature imporances of the final model, which is a part of family of tree ensemble algorithms.
+To gain insights into the impact of the features used in the final model, we can inspect the feature importances of the final model, which is a part of family of tree ensemble algorithms.
 As the name indicates, it is the score value representing the importance of the features, i.e., the higher score, the more important the feature is. Basically, it is the measure of how much a feature contributes to the overall performance of the model.
 Overall, the feature importance plot provides valuable insights into the factors that are most important in predicting loan defaults. It can be used to identify which features are contributing the most to the model's accuracy and to guide future feature selection efforts.
 According to Bonaccorso \citep{bonaccorso2020mastering}, feature importance is the measure proportional to the impurity reduction that a particular feature allows us to achieve, and is defined as:
 \begin{equation}\label{eq}
     \text{FI}\left(\bar{x}^{\left(i\right)}\right) = \frac{1}{N} \displaystyle\sum_{k=1}^{N} \displaystyle\sum_{j=1}^{L} \frac{n(j)}{M} \delta I_{j}^{i}
 \end{equation}
-where $ \text{FI}\left(\bar{x}^{\left(i\right)}\right)$ referes to the feature importance of the feature $i$, $n(j)$ is the number of samples reaching the node $j$, $\delta I_{j}^{i}$ represents the impurity reduction at node $j$ after the splitting using the feature $j$, $M$ is total number of samples in the data set used to built the model, and $N$ refers to the number of tree estimators used within an ensemble model.
+where $ \text{FI}\left(\bar{x}^{\left(i\right)}\right)$ refers to the feature importance of the feature $i$, $n(j)$ is the number of samples reaching the node $j$, $\delta I_{j}^{i}$ represents the impurity reduction at node $j$ after the splitting using the feature $j$, $M$ is total number of samples in the data set used to built the model, and $N$ refers to the number of tree estimators used within an ensemble model.
 
 The following \autoref{fig:fi} depicts the feature importances of all the selected features on which the model was trained.
 The two most important features used in the final model are \texttt{DEBTINC} and \texttt{DELINQ}, which are crucial debt and delinquency indicators in determining whether a borrower would be able to repay their loan. These two features have a significant impact on the model's ability to accurately predict loan defaults, with high feature importance scores. This is also in line with the findings from the exploratory analysis, WoE distribution or feature selection.
@@ -1728,5 +1728,5 @@ where $f$ is the original black--box model, $g$ is the surrogate model, $L$ is t
 
 The explanation is given in terms of the feature importance, which is represented by the magnitude of the feature's coefficient in the local interpretable model. The higher the magnitude of the coefficient, the more important the feature is in the prediction of the black box model.
 Therefore, as it is shown in \autoref{fig:flaskres}, the red bars indicate positive contribution to the probability of default whereas green bars indicate negative contribution to the probability of default. In other words, The features with red bars indicate that the client would not probably repay his loan and vice versa.
-The contributions' magnitudes are in line with the findings from feature imporance or SHAP values which is focused on the global explainability of the black--box model (not local explainability), that features such as debt--to--income ratio (\texttt{DEBTINC}) or number of delinquent credit lines (\texttt{DELINQ}) have the largest impact of the probability default.
+The contributions' magnitudes are in line with the findings from feature importance or SHAP values which is focused on the global explainability of the black--box model (not local explainability), that features such as debt--to--income ratio (\texttt{DEBTINC}) or number of delinquent credit lines (\texttt{DELINQ}) have the largest impact of the probability default.
 Particularly, a high value of debt--to--income ratio causes higher probability default, whereas no delinquent credit lines leads to the lower probability default.

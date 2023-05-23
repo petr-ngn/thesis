@@ -22,7 +22,7 @@
 \contentsline {table}{\numberline {4.13}{\ignorespaces Random Forest - Hyperparameter Space}}{84}{table.caption.78}%
 \contentsline {table}{\numberline {4.14}{\ignorespaces Gradient Boosting - Hyperparameter Space}}{85}{table.caption.80}%
 \contentsline {table}{\numberline {4.15}{\ignorespaces Support Vector Machine - Hyperparameter Space}}{85}{table.caption.82}%
-\contentsline {table}{\numberline {4.16}{\ignorespaces Multi Layer Percepton - Hyperparameter Space}}{86}{table.caption.84}%
+\contentsline {table}{\numberline {4.16}{\ignorespaces Multi Layer Perceptron - Hyperparameter Space}}{86}{table.caption.84}%
 \contentsline {table}{\numberline {4.17}{\ignorespaces Model Ranking Weights}}{92}{table.caption.89}%
 \contentsline {table}{\numberline {4.18}{\ignorespaces Model Selection Results}}{95}{table.caption.92}%
 \contentsline {table}{\numberline {4.19}{\ignorespaces Final Model Information\relax }}{106}{table.caption.104}%
