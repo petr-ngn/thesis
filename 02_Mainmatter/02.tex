@@ -188,7 +188,7 @@ The prediction process starts at the root node and continues until the leaf node
 \newpage
 \subsection{Naive Bayes}
 
-Naive Bayes is a classification and probabilistic machine learning algorithm which is based on Bayes theorem which is defined as:
+Naive Bayes is a classification and probabilistic machine learning algorithm which is based on Bayes theorem and defined as follows:
 \begin{equation}\label{eq}
     \operatorname{Pr}\left(C=c \mid E \right) = \frac{\operatorname{Pr}\left(C=c\right) \times \operatorname{Pr}\left(E \mid C=c\right)}{\operatorname{Pr}\left(E\right)}
 \end{equation}
@@ -196,7 +196,7 @@ Naive Bayes is a classification and probabilistic machine learning algorithm whi
 where $\operatorname{Pr}\left(C=c \mid E \right)$ is the posterior probability which is the probability that the target variable $C$ takes on the class of interest $c$ after taking the evidence $E$, $\operatorname{Pr}\left(C=c\right)$  is the prior probability of the class $c$, i.e., the probability we would assign to the class $c$ before seeing any evidence $E$,  $\operatorname{Pr}\left(E \mid C=c\right)$ is the probability of seeing the evidence $E$ conditional on the given class $c$,
 and $\operatorname{Pr}\left(E\right)$ is the probability of the evidence $E$.
 
-With regards to the binary classification, we can substitute $Y$ as a target variable instead $C$, and set of features $X$ which will refer to the set of evidence $E$., henceforth the probability of $Y$ using the Naive Bayes algorithm can be mathematically expressed as:
+With regards to the binary classification, we can substitute $Y$ as a target variable instead of $C$, and set of features $X$ which will refer to the set of evidence $E$, henceforth the probability of $Y$ using the Naive Bayes algorithm can be mathematically expressed as:
 \begin{equation}\label{eq}
     \operatorname{Pr}\left(Y \mid X \right) = \frac{\operatorname{Pr}\left(Y\right) \times \operatorname{Pr}\left(X \mid Y \right)}{\operatorname{Pr}\left(X\right)}
 \end{equation}
@@ -208,13 +208,13 @@ Therefore, instead of computing the probability of all features together, condit
     \operatorname{Pr}\left(X  \mid Y \right) = \prod_{i=1}^{n} \operatorname{Pr}\left(X_i \mid Y\right)
 \end{equation}
 
-Furthermore, the second adjustment is applied to the denominator of the Bayes theorem, i.e., $\operatorname{Pr}\left(X\right)$ - since such probability is constant over all the values of the class event, we can omit it from the equation. Therefore, the posterior probability of the class event $Y$ conditional on the subset of features $X$ can be expressed as:
+Further, the second adjustment is applied to the denominator of the Bayes theorem, i.e., $\operatorname{Pr}\left(X\right)$ - since such probability is constant over all the values of the class event, we can omit it from the equation. Therefore, the posterior probability of the class event $Y$ conditional on the subset of features $X$ can be expressed as:
 \begin{equation}\label{eq}
     \operatorname{Pr}\left(Y \mid X \right) = \prod_{i=1}^{n} \operatorname{Pr}\left(X_i \mid Y\right) \times \operatorname{Pr}\left(Y\right)
 \end{equation}
 
 During the training process, the Naive Bayes algorithm computes $\operatorname{Pr}\left(Y\right)$ and $ \operatorname{Pr}\left(X \mid Y \right)$ for each class event $Y$ and each feature $X$.
-In terms of default status, it calculates the proportion of defaulters  $\operatorname{Pr}\left(Y = 1\right)$ and non--defaulters $\operatorname{Pr}\left(Y=0\right)$ within given training sample as well as the proportion of defaulters and non--defaulters within given feature $X$.
+In terms of default status, it calculates the proportion of defaulters  $\operatorname{Pr}\left(Y = 1\right)$ and non--defaulters $\operatorname{Pr}\left(Y=0\right)$ within given training sample as well as the proportion of defaulters and non--defaulters within given features $X$.
 
 
 When it comes to the predictions or classification of new instances, we use the trained Naive Bayes model, i.e., the computed probabilities $\operatorname{Pr}\left(Y\right)$ and $ \operatorname{Pr}\left(X \mid Y \right)$ for both default and non--default class.
@@ -248,29 +248,29 @@ Afterwards, $\operatorname{Pr}\left(X = x \mid Y = 1\right)$ derived from the Ga
 \label{subsec:knn-theory}
 
 The goal of K-nearest Neighbors algorithm (henceforth KNN) is to find $k$ instances that are most similar to particular instances $y$ in the $n$--dimensional space, where $n$ is the number of features.
-The principle of this algorithm consists in the similarity between the instances as it assumes that the similar instances are close to each other.
+The principle of this algorithm lies in the similarity between the instances, as it assumes that the similar instances are close to each other.
 Based on the predetermined $k$ neighbors, it will predict the class based on the $k$ nearest instances.
 
 
-There are several ways how to measure the distance. The most used one is the Euclidean distance. Geometrically, it is a straight line between the two points  and within two-dimensional space, it can be derived from the Pythagorean theorem, where the hypotenuse is the straight line measuring the distance. In the $n$-dimensional space, we take the sum the squared differences between the data points $x$ and $y$, underneath the square root in order to compute the total Euclidean distance.
+There are several ways to measure the distance. The most common one is the Euclidean distance. Geometrically, it is a straight line between the two points, and within two-dimensional space, it can be derived from the Pythagorean theorem, where the hypotenuse is the straight line measuring the distance. In $n$-dimensional space, we take the sum of the squared differences between the data points $x$ and $y$, underneath the square root in order to compute the total Euclidean distance.
 \begin{equation}\label{eq}
 d_{Euclidean}(x,y) = \sqrt{\sum\limits_{i=1}^{n} (x_i - y_i)^2}
 \end{equation}
 
-Other distance measure is the Manhattan distance measure, also known as a city block distance.
-In contrast to the Euclidean distance, but instead of squared differences, it sums the absolute differences between the data points.
+Another distance measure is the Manhattan distance measure, also known as a city block distance.
+In contrast to the Euclidean distance, instead of squared differences, it sums the absolute differences between the data points.
 \begin{equation}\label{eq}
 d_{Manhattan}(x,y) = \sqrt{\sum\limits_{i=1}^{n} |x_i - y_i|}
 \end{equation}
 
-The last measure is the Minkowski distance which is the generalized form Euclidean or Manhattan distance respectively.
+The last measure is the Minkowski distance which is the generalized form Euclidean or Manhattan distance, respectively.
 It depends on $p$ which represents the order of the norm. Hence, the Euclidean distance has the second order of the norm, whereas Manhattan distance has the first order of the norm.
 \begin{equation}\label{eq}
 d_{Minkowski}(x,y) = \sqrt[p]{\sum\limits_{i=1}^{n} |x_i - y_i|^p}
 \end{equation}
 
-Within the training process, KNN memorizes training instances and afterwards when it encounters a new instance, it tries to search for such training instance(s) which most strongly resembles the new instance \citep{witten2011data}.
-Therefore, After the training process, when it comes to the prediction, the KNN compares the new instance to the training instances, calculates the distances between the new input and the training instances, and predicts the class based on the majority voting within the $k$ nearest neighbors, or predicts the probability score as the fraction of positive instances within the $k$ nearest neighbors.
+Within the training process, KNN memorizes training instances, and afterwards, when it encounters a new instance, it tries to search for such training instance(s) which most strongly resemble the new instance \citep{witten2011data}.
+Therefore, after the training process, when it comes to the prediction, the KNN compares the new instance to the training instances, calculates the distances between the new input and the training instances, and predicts the class based on the majority voting within the $k$ nearest neighbors, or predicts the probability score as the fraction of positive instances within the $k$ nearest neighbors.
 
 
 In the following \autoref{fig:knn-example}, let us consider 2--dimensional space and that $k$ is equal to 4, hence we are looking at four nearest neighbors for such new instance. Further, let us consider two classes - red squares and green triangles.
