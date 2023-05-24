@@ -575,7 +575,7 @@ In this section, the process of preprocessing data is described as the crucial s
 \subsection{Data Split and ADASYN Oversampling}
 \label{subsec:data-split-ADASYN}
 
-To ensure appropriate model training and unbiased evaluation, it is necessary to split data into separate sets for various purposes. Specifically, the data set is split into three sets: (1) training set for training the model, perform feature selection or hyperparameter tuning, (2) validation for hyperparameter tuning, and (3) test set for assess the model performance on the unseen data \citep{subasi2020practical}.
+To ensure appropriate model training and unbiased evaluation, it is necessary to split data into separate sets for various purposes. Specifically, the data set is split into three sets: (1) training set for training the model, perform feature selection or hyperparameter tuning, (2) validation for hyperparameter tuning, and (3) test set for assess the model's performance on the unseen data \citep{subasi2020practical}.
 In this thesis, the data is split into training, validation and test sets with ratio of 70:15:15, which ensures sufficient amount of data for training, hence the model would be able to generalize well, while keeping the validation and test sets large enough to provide reliable evaluation of the model's performance.
 
 The data is split using stratified split to preserve the default status distribution, which is highly imbalanced.
@@ -1184,12 +1184,12 @@ Brier Score Loss  & 1 \\
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{table}
 
-Particularly, for each model a rank score is calculated in order to determine the final rank. The lower rank score indicates better model performance. For particular model $M$, the rank score can be calculated as weighted average of the individual ranks as follows:
+Particularly, for each model a rank score is calculated in order to determine the final rank. The lower rank score indicates better model's performance. For particular model $M$, the rank score can be calculated as weighted average of the individual ranks as follows:
 \begin{equation}\label{eq:rankscorem}
     RankScore_{M} = \frac{\sum_{i=1}^{k} {r_i \times w_i}}{\sum_{i=1}^{k} {w_i}} 
 \end{equation}
 where $k$ is the number of metrics used to evaluated the model $M$, $r_i$ is the rank order of $i$--th metric for given model $M$ and $w_i$ is the weight assigned to the $i$--th metric.
-Such metric lies in interval $<1, k>$, where 1 would indicate a perfect model performance across the all metrics.
+Such metric lies in interval $<1, k>$, where 1 would indicate a perfect model' performance across the all metrics.
 Based on the rank scores, we assign the final ranks where rank of 1 indicates the best performing model whereas rank $k$ determines the worst performing model.
 
 
@@ -1481,7 +1481,7 @@ To summarize this subsection, the best and final model is the \textbf{Gradient B
 \label{subsec:modelrecal}
 
 In order to ensure that the final model performs well on unseen data, it is common practice to employ the recalibration approach, which involves retraining the model on both the training and validation sets.
-By doing so, the sample size used for training is increased. As such, the re-training (or so called recalibration) model leads (or is expected to lead) to markedly improved model performance \citep{de2023predicting}.
+By doing so, the sample size used for training is increased. As such, the re-training (or so called recalibration) model leads (or is expected to lead) to markedly improved model's performance \citep{de2023predicting}.
 The recalibrated model is then used to evaluate the performance of the final model on the test set, which is the ultimate measure of a model's performance.
 
 In addition to recalibrating the final model, it is crucial to recalibrate the threshold value for assigning class labels based on predicted probabilities. The optimal threshold value can be determined using the training and validation sets. Such threshold is recalibrated based on the training and validation set.
@@ -1623,7 +1623,7 @@ The two most important features used in the final model are \texttt{DEBTINC} and
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
 
-Thus, understanding the impact of individual features on model performance can be useful in identifying areas for improvement, as well as in identifying the most significant factors that drive loan defaults.
+Thus, understanding the impact of individual features on model's performance can be useful in identifying areas for improvement, as well as in identifying the most significant factors that drive loan defaults.
 By focusing on these important features, lenders and policymakers can better understand and address the underlying factors that contribute to default risk, ultimately leading to better lending decisions and improved outcomes for borrowers and lenders alike.
 
 

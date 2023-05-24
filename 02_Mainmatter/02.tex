@@ -553,7 +553,7 @@ Matthews correlation coefficient ranges from -1 to 1, where 1 indicates perfect 
 \subsection{ROC Curve and AUC}
 \subsubsection{ROC Curve}
 In order to derive Area Under the Curve (henceforth AUC), first we need to define Receiver Operating Characteristics (henceforth ROC) curve.
-ROC curve is two-dimensional visualization of the model performance and shows trade--off between True Positive Rate ($TPR$) and False Positive Rate ($FPR$) based on varying the given threshold \citep{han2011data}. The former metric was already described in \autoref{subsubsec:recall}, the latter refers to the ratio of the number of $Negative$ instances which are classified as $Positive$ to the total number of the actual $Negative$ instances, hence:
+ROC curve is two-dimensional visualization of the model's performance and shows trade--off between True Positive Rate ($TPR$) and False Positive Rate ($FPR$) based on varying the given threshold \citep{han2011data}. The former metric was already described in \autoref{subsubsec:recall}, the latter refers to the ratio of the number of $Negative$ instances which are classified as $Positive$ to the total number of the actual $Negative$ instances, hence:
 \begin{equation}\label{eq}
     FPR = \frac{FP}{TN + FP}
 \end{equation}
@@ -807,19 +807,19 @@ Referring to Owen \citep{owen2022hyperparameter}, higher expected performance $\
 \newpage
 \section{Forward Sequential Feature Selection}
 \label{sec:fsfstheory}
-Instead of using all the features in data set, we use only the subset of the most relevant ones, which can further reduce the dimensionality of data set, boost model performance, save computational resources and reduce overfitting. Such process is called feature selection and can be defined as the process of detecting the most relevant features and discarding the noisy redundant ones. \citep{bolon2015feature}.
+Instead of using all the features in data set, we use only a subset of the most relevant ones, which can further reduce the dimensionality of data set, boost model's performance, save computational resources, and reduce overfitting. Such process is called feature selection and can be defined as the process of detecting the most relevant features and discarding the noisy and redundant ones. \citep{bolon2015feature}.
 
 With respect to the target variable, we distinguish 2 most common types of feature selection approaches: (1) filter methods and (2) wrapper methods.
-Using the former approach, the feature selection is independent on a machine learning model itself, but rather is performed using univariate statistical tests, such as correlation measures, Chi--square test, Fisher score and others \citep{kaushik2016introduction}, and chooses those ones with the highest or lowest values.
-This approach is used when we prefer lower computational cost and faster feature selection process, but since it does no take into account the model itself, it does not have to able to select the features which would be optimal for particular model.
+Using the former approach, the feature selection is independent of a machine learning model itself, but rather is performed using univariate statistical tests, such as correlation measures, Chi--square test, Fisher score and others \citep{kaushik2016introduction}, and chooses those ones with the highest or lowest values.
+This approach is used when we prefer lower computational cost and faster feature selection process, but since it does not take the model itself into account, it does not have to be able to select the features which would be optimal for particular model.
 Regarding the latter approach, the feature selection is based on a specific machine learning model and follows a greedy search approach by evaluating all the possible combinations of features against the evaluation metric criteria \citep{Verma2020}. Although, such approach is very computationally expensive, it is able to select the optimal features for a particular model.
 
-The most common wrapper method for feature selection is Recursive Feature Elimination (henceforth RFE). Such method takes a machine learning model as an base estimator, fit the model on whole set of features, computes and ranks their coefficients or feature importances, eliminates the least important features and repeats the process until the desired number of features is reached \citep{Brownlee2020} or until the stop criteria is met.
-However, the drawback of RFE is that it always requires feature importances or coefficients to compute, which is not suitable for models which do not produce any coefficients nor feature importances, such as KNN or Naive Bayes. Therefore, this approach is not implemented in this thesis.
+The most common wrapper method for feature selection is Recursive Feature Elimination (henceforth RFE). Such method takes a machine learning model as a base estimator, fits the model on whole set of features, computes and ranks their coefficients or feature importances, eliminates the least important features, and repeats the process until the desired number of features is reached \citep{Brownlee2020} or until the stop criterion is met.
+However, the drawback of RFE is that it always requires feature importances or coefficients to compute, which is not suitable for models that do not produce any coefficients nor feature importances, such as KNN or Naive Bayes. Therefore, this approach is not implemented in this thesis.
 
-Instead, the feature selection is performed with Sequential Feature Selection (henceforth SFS). Such method is iteratively adding (or removes) features the set sequentially. Hence, there are two approaches, Forward SFS and Backward SFS.
+Instead, the feature selection is performed with Sequential Feature Selection (henceforth SFS). Such method iteratively adds (or removes) features the set sequentially. Hence, there are two approaches, Forward SFS and Backward SFS.
 The former approach keeps adding features to the set until the desired number of features is reached, while the latter approach starts with the whole set of features and removes them until the desired number of features is reached.
-In this thesis, Forward SFS is used since it was way more computationally efficient than Backward SFS within author's analysis. In particular, Forward SFS starts with an empty set of features and afterwards, variant features are sequentially added until the desired number of features is reached  or until the addition of extra features does not reduce the criterion \citep{Verma2021}. 
+In this thesis, Forward SFS is used since it was way more computationally efficient than Backward SFS within author's analysis. In particular, Forward SFS starts with an empty set of features and afterwards, variant features are sequentially added until the desired number of features is reached  or until the addition of extra features does not reduce the loss or increase the score \citep{Verma2021}. 
 According to Scikit-learn's documentation \citep{sfs}, at each stage, SFS chooses the best feature to add based on the cross--validation score.
 
 \newpage
@@ -827,12 +827,12 @@ According to Scikit-learn's documentation \citep{sfs}, at each stage, SFS choose
 
 In this chapter, we have introduced the theoretical background of the thesis.
 In particular, in \autoref{sec:creditrisk}, we have described the traditional credit risk parameters, i.e., PD, LGD, and EAD, as well as the credit risk regulation regarding Basel II/III and IFRS 9, and also scoring methods, namely application and behavioral scoring.
-Pertaining to the machine learning part, its terminology has been introduced in order to avoid any misunderstanding in the following chapters \autoref{sec:mlterms}.
+Pertaining to the machine learning part, its terminology has been introduced in order to avoid any misunderstanding in the following chapters, as described in  \autoref{sec:mlterms}.
 
-Furthermore, as classification algorithms, following 8 algorithms have been described in \autoref{sec:algorithms} and are also employed in empirical analysis of this thesis: Logistic Regression, Decision Tree, Gaussian Naive Bayes, KNN, Random Forest, Gradient Boosting, SVM and Neural Network.
+Furthermore, as classification algorithms, following 8 algorithms have been presented in \autoref{sec:algorithms} and are also employed in empirical analysis of this thesis: Logistic Regression, Decision Tree, Gaussian Naive Bayes, KNN, Random Forest, Gradient Boosting, SVM and Neural Network.
 
 For assessment of model's performance, we have defined following metrics in \autoref{sec:evaltheory}, which are used in empirical analysis of this thesis: Accuracy, Precision, Recall, F1 score, Matthews Correlation Coefficient, AUC, Kolmogorov--Smirnov Distance, Somers' D, Brier Score Loss and Log Loss.
 
-Moreover, another advanced machine learning techniques have been presented, particularly, ADASYN oversampling for dealing with imbalanced, i.e., skewed distribution of the target variable (\autoref{sec:adasyntheory}), Optimal Binning for data preprocessing using discretization with respect to the target variable (\autoref{sec:optbinningtheory}),
+Moreover, other advanced machine learning techniques have been presented, particularly, ADASYN oversampling for dealing with imbalanced, i.e., skewed distribution of the target variable (\autoref{sec:adasyntheory}), Optimal Binning for data preprocessing using discretization with respect to the target variable (\autoref{sec:optbinningtheory}),
 Bayesian Optimization for hyperparameter tuning of models (\autoref{sec:bayesoptheory}), and lastly, Forward Sequential Feature Selection for selecting subsets of optimal features (\autoref{sec:fsfstheory}).
 All these techniques are employed in empirical analysis of this thesis as well.

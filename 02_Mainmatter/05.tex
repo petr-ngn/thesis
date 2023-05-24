@@ -26,7 +26,7 @@ As can be seen, out of five proposed hypotheses, we reject two hypotheses and fa
     \textbf{\#} & \textbf{Hypothesis} & \textbf{Rejected} \\
     \midrule
     \hline
-    H1 & \textit{The recalibration of the model enhances model performance on HMEQ data set.} & NO \\
+    H1 & \textit{The recalibration of the model enhances model's performance on HMEQ data set.} & NO \\
     H2 & \textit{Either Neural Network or KNN model outperforms all the models on HMEQ data set.} & YES \\
     H3 & \textit{Black--box models perform better than the white--box models on HMEQ data set.} & NO \\
     H4 & \textit{The longer execution time of a model, the better performance on HMEQ data set.} & YES \\
@@ -40,7 +40,7 @@ As can be seen, out of five proposed hypotheses, we reject two hypotheses and fa
 \end{table}
 
 
-\noindent \textbf{Result \#1:} \textit{The recalibration of the model \underline{DOES} enhance model performance on HMEQ data set.}
+\noindent \textbf{Result \#1:} \textit{The recalibration of the model \underline{DOES} enhance model's performance on HMEQ data set.}
 
 We fail to reject the \textbf{Hypothesis \#1} because we observe improvements across all the metrics within evaluation on test set when the final model was re-trained on the joined training and validation set instead solely on the training set.
 In particular, all the score metrics and loss metrics have increased and decreased, respectively, as can be seen in \autoref{tab:recab}. Hereby, we can confirm that the recalibration of the model truly boost the model predictive power on HMEQ data set.
