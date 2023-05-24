@@ -288,12 +288,12 @@ Therefore, when applying majority voting, KNN would predict such instance as a r
 \newpage
 \subsection{Random Forest}
 
-Random forest is an ensemble algorithm which is a collection of decision trees where each tree is independently trained on a bootstrap sample of the training data \citep{han2011data}, i.e., on a on a set which is randomly sampled from the training data with replacement and which has the same size as the training data. In such way, each bootstrap sample is unique and can contain duplicates of the original data or does not have to contain all the original data.
+Random forest is an ensemble algorithm which is a collection of decision trees where each tree is independently trained on a bootstrap sample of the training data \citep{han2011data}, i.e., on a set which is randomly sampled from the training data with replacement and which has the same size as the training data. In such way, each bootstrap sample is unique and can contain duplicates of the original data or does not have to contain all the original data.
 Another aspect of randomness in such algorithm, particularly in the variability within trees, is the number of features considered for the split at each node.
 Instead of considering all the features of the length $M$, it randomly selects a subset of features of the length $m$ (where $m<M$) and chooses the best split from the subset.
 The training process of individual decision tree is the same as described in \autoref{subsec:dt}.
 
-Within classifying new instances, the random forest algorithm predicts the class based on the majority voting of the individual decision trees or predicts a probability as an average of the probabilities of the individual decision trees \citep{randomforestmalley}, thus:
+Within classifying new instances, the random forest algorithm predicts the class based on the majority voting of the individual decision trees or predicts a probability score as an average of the probability scores of the individual decision trees \citep{randomforestmalley}, thus:
 \begin{equation}
     \operatorname{Pr}\left(Y=1 \mid X \right) = \frac{1}{B} \sum_{b=1}^{B} \operatorname{Pr}\left(Y=1 \mid X, T_b \right)
 \end{equation}
