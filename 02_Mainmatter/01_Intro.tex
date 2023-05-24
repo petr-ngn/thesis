@@ -1,27 +1,34 @@
 \chapter{Introduction}
 \label{chap:one}
 
-As the backbone of most financial institutions, credit risk modelling plays an integral role as it  revolves around assessing the likelihood that a borrower will default on a debt.
-Conventional methodologies for credit risk assessment have relied on statistical techniques and rule-based systems, however, with the exponential growth of data in recent years where data-driven decision making is becoming the norm, machine learning is becoming increasingly important in the financial industry as it can bring competitive edge. \citep{PwC2023}.
+As the backbone of most financial institutions, credit risk modelling plays an integral role as it  revolves around assessing the likelihood that a borrower will default on a debt.
+Conventional methodologies for credit risk assessment have relied on statistical techniques and rule-based systems, however, with the exponential growth of data in recent years, where data-driven decision making is becoming the norm, machine learning is becoming increasingly important in the financial industry as it can bring a competitive edge. \citep{PwC2023}.
 
 
-Therefore, the main goal of this thesis is to implement a custom machine learning framework developed in Python, which involves data exploration, data preprocessing, hyperparameter tuning, feature selection, model selection, recalibration, evaluation, and further development of a web application which deploys the machine learning model, using Flask and HTML.
-Such comprehensive machine learning framework is applied on an exemplary application scoring data set of US home equity loans (HMEQ) acquired from Credit Risk Analytics \citep{baesens2016credit}.
-Regardless of the potential discrepancy between such exemplary data set and the current state of the loan market, the objective of this thesis is rather to showcase a versatile machine learning implementation framework that can be  employed for diverse data sets, as a proof of concept.
+
+Therefore, the main goal of this thesis is to implement a custom machine learning framework developed in Python, that involves data exploration, data preprocessing, hyperparameter tuning, feature selection, model selection, recalibration, evaluation, and further development of a web application that deploys the machine learning model, using Flask and HTML.
+Such comprehensive machine learning framework is applied to an exemplary application scoring data set of US home equity loans (HMEQ) acquired from Credit Risk Analytics \citep{baesens2016credit}.
+Regardless of the potential discrepancy between such exemplary data set and the current state of the loan market, the objective of this thesis is rather to showcase a versatile machine learning implementation framework that can be  employed for diverse data sets, as a proof of concept.
+
 
 
 Particularly, we employ eight different machine learning algorithms, namely Logistic Regression, Decision Tree, Gaussian Naive Bayes, K-Nearest Neighbors, Random Forest, Support Vector Machine, Gradient Boosting, and Neural Network.
 As evaluation metrics in order to assess model's performance, we use F1 score, Precision, Recall, Accuracy, Matthews Correlation Coefficient, AUC, Kolmogorov--Smirnov Distance, Somers' D, Brier Score Loss and Log Loss.
 
 
-Regarding the thesis outline, \autoref{chap:two} introduces theoretical aspects of both credit risk  and machine learning. Particularly, credit risk definition, regulation and credit scoring approaches are described. Moreover, machine learning terminology, machine learning algorithms and evaluation metrics are explained.
-Furthermore, more advanced machine learning techniques are introduced, such as ADASYN oversampling, Optimal Binning, Bayesian hyperparameter optimization or Forward Sequential Feature Selection.
 
-In \autoref{chap:three} we conduct literature review from both credit risk modelling and machine learning fields. Moreover, we propose 5 hypotheses either based on HMEQ--based studies \citep{serkan2021bagging, zurada2014classification}, or based on researches related to machine learning application in different sectors \citep{de2023predicting, pintelas2020grey, wu2018accurate}.
+Regarding the thesis outline, \autoref{chap:two} introduces theoretical aspects of both credit risk  and machine learning. Particularly, credit risk definition, regulation and credit scoring approaches are described. Moreover, machine learning terminology, machine learning algorithms, and evaluation metrics are explained.
+Furthermore, more advanced machine learning techniques are introduced, such as ADASYN oversampling, Optimal Binning, Bayesian hyperparameter optimization, or Forward Sequential Feature Selection.
+
+
+In \autoref{chap:three} we conduct literature review from both credit risk modelling and machine learning fields. Moreover, we propose 5 hypotheses either based on HMEQ--based studies \citep{serkan2021bagging, zurada2014classification}, or studies related to machine learning application in different sectors \citep{de2023predicting, pintelas2020grey, wu2018accurate}.
+
 
 Within \autoref{chap:four}, an empirical analysis is performed, i.e., we implement our machine learning framework on the HMEQ data set.
-Such framework applies exploration analysis, data preprocessing transformations, including data split, ADASYN oversampling, Optimal Binning and Weight of Evidence, hyperparameter tuning with Bayesian Optimization, as well as feature selection, which is utilized using Forward Sequential Feature Selection.
-Subsequently, model selection is performed based on ranking of the proposed range of evaluation metrics.
-Afterwards, the final model is recalibrated, evaluated and deployed into a production environment as a web application.
+Such framework applies exploration analysis, data preprocessing transformations, including data split, ADASYN oversampling, Optimal Binning and Weight of Evidence, hyperparameter tuning with Bayesian Optimization, and feature selection, which is utilized using Forward Sequential Feature Selection.
+Subsequently, model selection is performed based on the ranking of the proposed range of evaluation metrics.
+Afterwards, the final model is recalibrated, evaluated, and deployed into a production environment as a web application.
 
-Lastly, \autoref{chap:five} concludes the summary of results in thesis by assessing the hypotheses proposed in \autoref{chap:three}, discussing the thesis' results  with the results from HMEQ--based studies, outlining the key findings and main contributions in this thesis, and proposing the author's recommendations for future research. 
+
+Lastly, \autoref{chap:five} concludes the summary of results in thesis by assessing the hypotheses proposed in \autoref{chap:three}, discussing the thesis' results  with the results from HMEQ--based studies, outlining the key findings and main contributions in this thesis, and proposing the author's recommendations for future research.
+

@@ -1,62 +1,71 @@
 \chapter{Theoretical Background}
 \label{chap:two}
-This chapter provides an in-depth theoretical exploration of both credit risk and several areas within the field of machine learning. The former describes basic credit risk definition, its key components, underlying regulation as well as the credit scoring approaches.
-The latter includes clarification of machine learning terminology for enhanced understanding in later chapters, an introduction to various machine learning algorithms used in empirical analysis of this thesis, and a definition of the metrics used to evaluate machine learning algorithms.
+This chapter provides an in-depth theoretical exploration of both credit risk and several areas within the field of machine learning. The former describes the basic credit risk definition, its key components, underlying regulation, and credit scoring approaches.
+The latter includes clarification of machine learning terminology for enhanced understanding in later chapters, an introduction to various machine learning algorithms used in the empirical analysis of this thesis, and a definition of the metrics used to evaluate machine learning algorithms.
+
 
 This chapter also delves into more sophisticated machine learning topics, including the ADASYN oversampling methodology for handling imbalanced data sets, Bayesian Optimization for tuning the models' hyperparameters, Optimal Binning as a method for preprocessing data, and Forward Sequential Feature Selection as a technique for selecting the most optimal features.
+
 
 \section{Credit Risk}
 \label{sec:creditrisk}
 
-According to Gregory \citep{gregory2012counterparty}, credit risk can be defined as the risk that the client may be unable or unwilling to make a payment or fulfil loan contractual obligations, which is often known generically as default.
-However, default can have various forms and definitions. 
+
+According to Gregory \citep{gregory2012counterparty}, credit risk can be defined as the risk that the client may be unable or unwilling to make a payment or fulfill loan contractual obligations, which is often known generically as default.
+However, default can have various forms and definitions.
 The most common definition of default is based on days past due (DPD), particularly, the default event occurs when the client is more than 90 days overdue on his loan \citep{brezigar2021modeling}.
 
-Bessis \citep{bessis2015} also defines default event which can result from the following events:
+
+Bessis \citep{bessis2015} also defines a default event, which can result from the following events:
 \begin{itemize}\setlength\itemsep{0em}
-    \item Temporary or indefinite delay in payments;
-    \item Restructuring of debt obligations due to the deterioration of the borrower's creditworthiness;
-    \item Bankruptcy.
+     \item Temporary or indefinite delay in payments;
+     \item Restructuring of debt obligations due to the deterioration of the borrower's creditworthiness;
+      \item Bankruptcy.
 \end{itemize}
 The main objective in credit risk modelling is to estimate (expected) credit loss, which has three components and is defined as follows:
 \begin{equation}
-    ECL = PD \times EAD \times LGD
+     ECL = PD \times EAD \times LGD
 \end{equation}
-where $PD$ is the probability of default indicating likelihood that the client will not meet scheduled loan payments, $EAD$ is the exposure at default is the amount size that is due to be repaid at the of default, and $LGD$ is loss given default indicating the loss in case of default occurrence \citep{doumpos2019analytical}.
+where $PD$ is the probability of default, indicating the likelihood that the client will not meet scheduled loan payments, $EAD$ is the exposure at default, which is the amount that is due to be repaid at the time of default, and $LGD$ is loss given default, indicating the loss in case of default occurrence \citep{doumpos2019analytical}.
+
 
 \subsection{Regulation}
 \subsubsection{Basel II/III}
-Basel Committee on Banking Supervision (BCBS) introduced Capital Accords Basel II and Basel III in 2004 and 2010, respectively \citep{shakdwipee2017basel}, with a goal to set higher risk management and internal control standards for banks \citep{witzany2017credit}.
-Regarding credit risk modelling, the former Accord introduced two approaches how to model credit risk:
+The Basel Committee on Banking Supervision (BCBS) introduced Capital Accords Basel II and Basel III in 2004 and 2010, respectively \citep{shakdwipee2017basel}, with a goal to set higher risk management and internal control standards for banks \citep{witzany2017credit}.
+Regarding credit risk modelling, the former Accord introduced two approaches to modelling credit risk:
 \begin{itemize}\setlength\itemsep{0em}
-    \item \textbf{Standardized Approach} - The simplest approach which imposes risk weights on assets based on the external credit ratings from credit rating agencies (CRA's) \citep{konno2016alternative}.
-    \item \textbf{Internal Ratings Based (IRB)  Approach} - A more sophisticated approach that allows the use of internal rating systems to assess the parameters such as PD, LGD and EAD \citep{baesens2016credit}. Such approach is further divided into two sub-approaches:
-    \begin{itemize}\setlength\itemsep{0em}
-        \item \textbf{Foundation IRB approach} - Only PD is internally estimated by a bank, while LGD and EAD are determined by the Basel Accord or provided by the local regulator \citep{baesens2016credit}.
-        \item \textbf{Advanced IRB approach} - All the parameters, i.e., PD, LGD and EAD are estimated internally by a bank itself and also subject to regulatory satisfaction \citep{joseph2013advanced}.
+     \item \textbf{Standardized Approach} - The simplest approach, which imposes risk weights on assets based on the external credit ratings from credit rating agencies (CRA's) \citep{konno2016alternative}.
+     \item \textbf{Internal Ratings Based (IRB)  Approach} - A more sophisticated approach that allows the use of internal rating systems to assess parameters such as PD, LGD and EAD \citep{baesens2016credit}. Such approach is further divided into two sub-approaches:
+      \begin{itemize}\setlength\itemsep{0em}
+         \item \textbf{Foundation IRB approach} - Only PD is internally estimated by a bank, while LGD and EAD are determined by the Basel Accord or provided by the local regulator \citep{baesens2016credit}.
+         \item \textbf{Advanced IRB approach} - All the parameters, i.e., PD, LGD and EAD are estimated internally by the bank itself and are also subject to regulatory satisfaction \citep{joseph2013advanced}.
     \end{itemize}
 \end{itemize}
-
 \subsubsection{IFRS 9}
-International Accounting  Standard Board (IASB) in cooperation with the Financial Accounting  Standard Board (FASB) published International Financial Reporting Standard (IFRS) 9 in 2014 in order to replace IAS (International Accounting Standard) 39 \citep{temim2016ifrs}, which incorporates the forward--looking information, i.e., impact of macroeconomic projections on expected credit losses \citep{porretta2020credit}.
-IFRS 9 also outlines three--stages approach considering changes in credit quality since initial recognition of the financial asset \citep{beerbaum2015credit}, also known as SICR (Significant Increase In Credit Risk). According to Bellini \citep{bellini2019ifrs}, the stages are defined as follows:
+The International Accounting  Standard Board (IASB), in cooperation with the Financial Accounting  Standard Board (FASB), published International Financial Reporting Standard (IFRS) 9 in 2014 in order to replace IAS (International Accounting Standard) 39 \citep{temim2016ifrs}, which incorporates forward--looking information, i.e., the impact of macroeconomic projections on expected credit losses \citep{porretta2020credit}.
+IFRS 9 also outlines a three-stage approach considering changes in credit quality since initial recognition of the financial asset \citep{beerbaum2015credit}, also known as SICR (Significant Increase In Credit Risk). According to Bellini \citep{bellini2019ifrs}, the stages are defined as follows:
 \begin{itemize}\setlength\itemsep{0em}
     \item \textbf{Stage 1} - The financial instrument is considered to be in Stage 1 if it has not had a SICR since initial recognition or if it has low credit risk at the reporting date.
     \item \textbf{Stage 2} - The financial instrument is considered to be in Stage 2 if it has experienced a SICR since initial recognition but does not have objective evidence of impairment at the reporting date.
-    \item \textbf{Stage 3} -  The financial instrument is considered to be in Stage 3 if it has objective evidence of impairment at the reporting date.
+    \item \textbf{Stage 3} -  The financial instrument is considered to be in Stage 3 if it has objective evidence of impairment at the reporting date.
 \end{itemize}
-In case of Stage 1, 12--month ECL is calculated, while in case of Stage 2 and Stage 3, lifetime ECL estimation is conducted \citep{gornjak2017ifrs}.
-While the aim of IFRS 9 regards financial reporting, which should follow a general purpose to provide information to those outside the firm to support decision-making usefulness, Basel II/III seeks to decrease the frequency and cost of bank failures and protect the financial system as a whole by limiting the frequency and cost of systemic crises. \citep{beerbaum2015credit}.
+In case of Stage 1, 12--month ECL is calculated, while in Stage 2 and Stage 3, lifetime ECL estimation is conducted \citep{gornjak2017ifrs}.
+While the aim of IFRS 9 regards financial reporting, which should follow a general purpose to provide information to those outside the firm to support decision-making usefulness, Basel II/III seek to decrease the frequency and cost of bank failures and protect the financial system as a whole by limiting the frequency and cost of systemic crises. \citep{beerbaum2015credit}.
+
 
 For more information about the differences between IFRS 9 and Basel II/III, please, refer to the study of Beerbaum and Ahmad \citep{beerbaum2015credit}.
 
+
 \subsection{Credit Scoring}
-Credit scoring is an assessment of the credit quality of the client which uses techniques for finding the criteria that best discriminate between defaulters and non--defaulters \citep{bessis2015}. From such perspective, we distinguish two basic types of credit scoring:
+Credit scoring is an assessment of the credit quality of the client that uses techniques for finding the criteria that best discriminate between defaulters and non--defaulters \citep{bessis2015}. From such perspective, we distinguish two basic types of credit scoring:
+
 
 \subsubsection{Application Scoring}
-As the name indicates, application scoring is used to assess the creditworthiness of the client at the moment of loan application,  which supports the decision whether a bank should approve or reject the loan application \citep{baesens2016credit}. The most common variables which are used in application scoring and can be acquired from the loan application are, for instance: age, gender, marital status, income, employment status, and others \citep{baesens2016credit}.
+As the name indicates, application scoring is used to assess the creditworthiness of the client at the moment of loan application,  which supports the decision whether a bank should approve or reject the loan application \citep{baesens2016credit}. The most common variables which are used in application scoring and can be acquired from the loan application are, for instance: age, gender, marital status, income, employment status, and others \citep{baesens2016credit}.
 \subsubsection{Behavioral Scoring}
 Behavioral scoring takes into account the observed client's recent or past behavior and starts once the loan has been approved \citep{van2009credit}. In contrast to application scoring, which is static and takes into account only information from the loan application, behavioral scoring accumulates the information retrieved from the monitoring of the repayments and financial behavior of the client \citep{van2009credit}.
+
+
 
 \newpage
 \section{Machine Learning Terminology}

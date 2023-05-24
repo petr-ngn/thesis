@@ -2,15 +2,15 @@
 \label{chap:four}
 This chapter focuses on the main part of this thesis, particularly on employing the custom machine learning implementation framework. The machine learning framework deployed in this thesis is shown in \autoref{fig:mlframe} and is described from the high--level--point view as follows:
 \begin{itemize}\setlength\itemsep{0em}
-\item \textbf{Data Exploration} - Exploration of the data in order to infer some insights about the data quality, distribution of the variables, statistical testing and association analysis.
-\item \textbf{Data Split} - Splitting of the data which are used separately in different tasks such as model training, hyperparameter tuning, feature selection, model selection and model evaluation.
+\item \textbf{Data Exploration} - Exploration of the data in order to infer some insights about the data quality, distribution of the variables, statistical testing, and association analysis.
+\item \textbf{Data Split} - Splitting of the data that are used separately in different tasks such as model training, hyperparameter tuning, feature selection, model selection, and model evaluation.
 \item \textbf{Optimal Binning and WoE Encoding} - Optimal binning and the WoE encoding of the features as the main part of the feature preprocessing.
 \item \textbf{Feature Selection} - Feature selection with Forward Sequential Feature Selection in order to reduce the dimensionality of the data and improve the performance of the machine learning models - each input model is tuned with Bayesian Optimization.
 \item \textbf{Model Selection} - Model selection based on weighted ranking where the weights are defined explicitly by the thesis' author, in order to find the best model. Each input model is tuned with Bayesian Optimization on each subset of selected features.
 \item \textbf{Model Recalibration (Evaluation)} - Recalibration (Re-training) of the final model by re-training it on the joined training and validation sets, which will be further evaluated.
-\item \textbf{Model Evaluation} - Evaluation of the final model on the unseen data from test set in order to assess model's predictive power as well as model's explainability.
-\item \textbf{Model Recalibration (Deployment)} - Final recalibration of the final model by re-training it on the joined training, validation and test sets, which will be further deployed into a production.
-\item \textbf{Model Deployment} - Deployment of the final model into a production as a web application.
+\item \textbf{Model Evaluation} - Evaluation of the final model on the unseen data from the test set in order to assess the model's predictive power as well as model's explainability.
+\item \textbf{Model Recalibration (Deployment)} - Final recalibration of the final model by re-training it on the joined training, validation, and test sets, which will be further deployed into a production.
+\item \textbf{Model Deployment} - Deployment of the final model into production as a web application.
 \end{itemize}
 
 \begin{figure}[H]
@@ -25,7 +25,7 @@ This chapter focuses on the main part of this thesis, particularly on employing 
 \newpage
 \section{Repository and Environment Structure}
 \label{sec:repo}
-The whole machine learning implementation as the scope of this thesis is developed mainly using Python Programming Language and further with collaboration of Git and Hypertext Markup Language (HTML).
+The whole machine learning implementation as the scope of this thesis, is developed mainly using Python Programming Language and further with the collaboration of Git and Hypertext Markup Language (HTML).
 The whole repository can be found in the separate appendix or is available on the GitHub repository which is accessible via the following link: \url{https://github.com/petr-ngn/FFU_VSE_Masters_Thesis_ML_Credit_Risk_Modelling}.
 The repository structure is shown in \autoref{fig:repostructure}.
 \begin{figure}[H]
@@ -68,13 +68,15 @@ The repository structure is shown in \autoref{fig:repostructure}.
 
 
 \begin{itemize}\setlength\itemsep{0em}
-\item \texttt{data} - Directory containing the raw data, partially preprocessed data (\texttt{interim}) and the final preprocessed data.
-\item \texttt{flask\_app} - Directory containing the Flask application which is used for the deployment of the model. Particularly, it contains the \texttt{app.py} file which is the main back-end file of the application, the \texttt{templates} and \texttt{static} subdirectories which contain the front-end HTML files for the application, and the \texttt{inputs} subdirectory which contains the input dictionary for the application (such as the trained model, threshold, final features etc.).
-\item \texttt{models} - Directory containing the sub--directories of the trained and fitted objects for features preprocessing, feature selection and model selection, including the final objects used in evaluation and deployment.
-\item \texttt{plots} - Directory containing the plots generated within the main Python notebook.
-\item \texttt{Masters\_Thesis.ipynb} - Main Python notebook containing the main part of the machine learning implementation, such as exploratory analysis, data preprocessing, training and evaluation of the models. Web application deployment is not included in this notebook, but in \texttt{app.py} Python script.
-\item \texttt{requirements.yml} - File containing the list of the required packages and their specific versions used in this project.
+    \item \texttt{data} - Directory containing the raw data, partially preprocessed data (\texttt{interim}) and the final preprocessed data.
+    \item \texttt{flask\_app} - Directory containing the Flask application, which is used for the deployment of the model. Particularly, it contains the \texttt{app.py} file, which is the main back-end file of the application, the \texttt{templates} and \texttt{static} subdirectories, which contain the front-end HTML files for the application, and the \texttt{inputs} subdirectory, which contains the input dictionary for the application (such as the trained model, threshold, final features, etc.).
+    \item \texttt{models} - Directory containing the sub--directories of the trained and fitted objects for feature preprocessing, feature selection, and model selection, including the final objects used in evaluation and deployment.
+    \item \texttt{plots} - Directory containing the plots generated within the main Python notebook.
+    \item \texttt{Masters\_Thesis.ipynb} - Main Python notebook containing the main part of the machine learning implementation, such as exploratory analysis, data preprocessing, training, and evaluation of the models. Web application deployment is not included in this notebook, but in \texttt{app.py} Python script.
+    \item \texttt{requirements.yml} - File containing the list of the required packages and their specific versions used in this project.
 \end{itemize}
+    
+    
 
 This particular solution is developed in Python version 3.10.9 and these are the main packages and modules used in this project:
 \begin{itemize}\setlength\itemsep{0em}
@@ -83,7 +85,7 @@ This particular solution is developed in Python version 3.10.9 and these are the
 \item \lstinline{Scipy} - for statistical analysis;
 \item \lstinline{OptBinning} - for optimal binning of features with respect to the target;
 \item \lstinline{ImbLearn} - for handling imbalanced data using oversampling;
-\item \lstinline{Scikit-learn} - for ML modelling, feature selection, model selection and model evaluation;
+\item \lstinline{Scikit-learn} - for ML modelling, feature selection, model selection, and model evaluation;
 \item \lstinline{Scikit-optimize} - for hyperparameter tuning;
 \item \lstinline{Flask} - for deployment of the model as a web application.
 \end{itemize}
@@ -118,29 +120,30 @@ To achieve this, the user has to either change the path in the terminal using \t
 \end{figure}
 
 
-To preserve the reproducibility of this solution and consistency of the results, the random seed is instantiated to \texttt{42}, so for instance data split, model optimization or training would be deterministic and not totally random every time when replicating the solution.
-Some \lstinline{Scikit-learn} or \lstinline{Scikit-optimize} objects have optional argument \texttt{n\_jobs} which utilizes the number of central processing units (CPU) cores used during the parallelizing computation. Such argument is set to \texttt{-1}, hence all the processors are used in order to  speed up the training or optimization process.
+To preserve the reproducibility of this solution and consistency of the results, the random seed is instantiated to \texttt{42}, so for instance, data split, model optimization, or training would be deterministic and not totally random every time when replicating the solution.
+Some \lstinline{Scikit-learn} or \lstinline{Scikit-optimize} objects have the optional argument \texttt{n\_jobs} which utilizes the number of central processing units (CPU) cores used during the parallelizing computation. Such argument is set to \texttt{-1}, hence, all the processors are used in order to  speed up the training or optimization process.
+
 
 \newpage
 \section{Data Exploration}
 \label{sec:dataexploration}
-This section is focused on exploration of the analyzed loan data set, particularly on data set description, distribution analysis and association analysis, in order to infer potential valuable insights and which can be used in the preprocessing, modelling or evaluation part.
+This section is focused on the exploration of the analyzed loan data set, particularly on data set description, distribution analysis, and association analysis, in order to infer potential valuable insights that can be used in the preprocessing, modelling or evaluation part.
 
 \subsection{Data Set Description}
 \label{subsec:datadescript}
-The analyzed data set pertains to the HMEQ data set which contains loan application information and default status of 5,960 US home equity loans. Such data set was acquired from Credit Risk Analytics website \citep{baesens2016credit}. Since this data set regards the loan application scoring data, using macroeconomic or other external data is omitted due to the data set characteristics as well as modelling with behavioral scoring.
-Thus our goal is to predict whether the loan applicant will or would default based on provided information from the loan application.
-Thus, we aim to predict the probability of default only, therefore EAD, LGD and ECL are not considered in this thesis.
+The analyzed data set pertains to the HMEQ data set, which contains loan application information and default status of 5,960 US home equity loans. Such data set was acquired from Credit Risk Analytics website \citep{baesens2016credit}. Since this data set regards loan application scoring data, using macroeconomic or other external data is omitted due to the data set's characteristics as well as modelling with behavioral scoring.
+Thus, our goal is to predict whether the loan applicant will or will not default based on the information provided in the loan application.
+Thus, we aim to predict the probability of default only, therefore, EAD, LGD, and ECL are not considered in this thesis.
 
-As can be seen in \autoref{tab:dataset}, the data set contains 13 columns, 12 features and 1 target variable \texttt{BAD} indicating whether the loan was in default (\texttt{1}) or not (\texttt{0}). 
+As can be seen in \autoref{tab:dataset}, the data set contains 13 columns, 12 features, and 1 target variable, \texttt{BAD} indicating whether the loan was in default (\texttt{1}) or not (\texttt{0}).
 Amongst the 12 features, there are 10 numeric features and 2 categorical features, namely \texttt{REASON} which contains 2 categories - Debt consolidation (\texttt{DebtCon}) and Home improvement (\texttt{HomeImp}), and \texttt{JOB} which contains following categories - Administration (\texttt{Office}), Sales, Manager (\texttt{Mgr}), Professional Executive (\texttt{ProfExe}), Self-employed (\texttt{Self}), and Other.
 
-Although all the variables and their names seem to be self-explanatory, one may find the \texttt{DEROG} feature's meaning unclear. In such case, derogatory report refers to derogatory mark on a credit report, which is the negative item indicating significant credit risk as an indicator of delinquency issues or late payments \citep{experian}. Such credit report is provided by credit bureau based on bank's request when assessing the creditworthiness of the loan applicant.
+Although all the variables and their names seem to be self-explanatory, one may find the \texttt{DEROG} feature's meaning unclear. In such case, derogatory report refers to the derogatory mark on a credit report, which is the negative item indicating significant credit risk as an indicator of delinquency issues or late payments \citep{experian}. Such credit report is provided by the credit bureau based on the bank's request when assessing the creditworthiness of the loan applicant.
 
 
 Regarding the indirect data quality issues, the data set's source does not specify the time period of its observations or the snapshot date, which may also be relevant point given that some loans might default after the snapshot date even though they had not defaulted before.
-Nevertheless, as already mentioned in introduction, the main goal of this thesis is the implemenent custom machine learning implementation framework while the data set is used only as a proof of concept.
-Therefore, we deem appropriate to omit the raised data quality issues in this thesis.
+Nevertheless, as already mentioned in introduction, the main goal of this thesis is the implementation of a custom machine learning implementation framework, while the data set is used only as a proof of concept.
+Therefore, we deem it appropriate to omit the raised data quality issues in this thesis.
 
 \begin{table}[H]
 \small
@@ -231,7 +234,7 @@ Such distribution inspection may help us identify outliers, and other potential 
 \label{subsubsec:defaultdist}
 
 Regarding the target variable distribution, from the \autoref{fig:defaultdist} we can observe that the default status distribution is heavily imbalanced, as most of the loans have not defaulted yet.
-Particularly, 80.05\% of the observations have been labelled as non-default (4,771 observations) and 19.95\% observations labelled as default (1,189 observations).
+Particularly, 80.05\% of the observations have been labeled as non-default (4,771 observations) and 19.95\% observations labeled as default (1,189 observations).
 This may cause problems in the modelling part, as the model might be biased towards the majority class, i.e., the non-default class. Such imbalanced class issue will be further treated in \autoref{subsec:data-split-ADASYN}.
 
 \begin{figure}[H]
@@ -248,12 +251,14 @@ This may cause problems in the modelling part, as the model might be biased towa
 
 Regarding the numeric features, it can be observed that most of them exhibit a positive skewness and contain outliers, as illustrated in \autoref{fig:boxfeat}, which depicts the conditional distribution of the numeric features with respect to the default status via boxplots.
 All the outliers appear to be valid, indicating that they have not arisen due to data entry errors.
-This can be attributed to the non-negative nature of all the numeric features, which makes it impossible to have negative values for features such as the number of years at present job or the number of delinquent credit lines, among others.
+This can be attributed to the non-negative nature of all the numeric features, which makes it impossible to have negative values for features such as the number of years at the present job or the number of delinquent credit lines, among others.
 Additionally, the maximum values of the given features are not unrealistically high, further corroborating the validity of the outliers.
 
-However, it is necessary to treat these outliers as they can bias and jeopardize model's weights, coefficients or distance calculation, which may significantly affect the position and orientation of the decision boundary.
-Such factors can lead to overfitting and inaccurate and biased predictions.
+
+However, it is necessary to treat these outliers as such, as they can bias and jeopardize the model's weights, coefficients, or distance calculation, which may significantly affect the position and orientation of the decision boundary.
+Such factors can lead to overfitting, inaccurate, and biased predictions.
 A detailed explanation of the outlier treatment is provided in \autoref{subsec:prep-optbinning}.
+
 
 \newpage
 Concerning the target variable, it can be observed that there are some differences in the distribution shapes of \texttt{DEROG} and \texttt{DELINQ}, which exhibit less skewness and lower dispersion for non-default cases as compared to default cases.
@@ -262,9 +267,11 @@ Referring to the feature \texttt{DEBTINC}, it does not exhibit any extreme value
 From this, it can be inferred that if the debt-to-income ratio is too high, indicating that the applicant's income is not sufficient to cover their debt, the loan is more likely to end in default.
 The association between the default status and the numeric features is further investigated in \autoref{subsubsec:target-num-ass}.
 
-Since the features are substantially positively skewed, they do not follow Gaussian (normal) distribution. Additionally, Shapiro--Wilk test is conducted in order to assess whether the features' distributions are significantly different from the normal distribution.
-According to such test, all the numeric features' distributions do not follow normal distribution on 1\% statistical significance level.
+
+Since the features are substantially positively skewed, they do not follow a Gaussian (normal) distribution. Additionally, Shapiro--Wilk test is conducted in order to assess whether the features' distributions are significantly different from the normal distribution.
+According to such test, all the numeric features' distributions do not follow the normal distribution on 1\% statistical significance level.
 For a reference, see \autoref{tab:normalitytest} in \autoref{chap:app1}.
+
 
 \begin{figure}[H]
 \centering
@@ -275,16 +282,18 @@ For a reference, see \autoref{tab:normalitytest} in \autoref{chap:app1}.
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
 
-Due to the fact that the boxplots do not capture the missing values occurred in given features, it is also important to inspect the numbers and proportions of missing values in each feature, conditional on the default status.
-As can be seen in \autoref{tab:nacont-table}, $n_0$ refers to the number of missing values in given feature for non-default cases, $n_1$ refers to the number of missing values in given feature for default cases.
-$N_0$ and $N_1$ refer to the total number non--default cases and default cases respectively, therefore $n_0/N_0$ refers to the proportion of missing values in given feature for non-default cases, and $n_1/N_1$ refers to the proportion of missing values in given feature for default cases.
+Due to the fact that the boxplots do not capture the missing values that occurred in given features, it is also important to inspect the numbers and proportions of missing values in each feature, conditional on the default status.
+As can be seen in \autoref{tab:nacont-table}, $n_0$ refers to the number of missing values in the given feature for non-default cases, and $n_1$ refers to the number of missing values in the given feature for default cases.
+$N_0$ and $N_1$ refer to the total number of non--default cases and default cases, respectively, therefore, $n_0/N_0$ refers to the proportion of missing values in the given feature for non-default cases, and $n_1/N_1$ refers to the proportion of missing values in the given feature for default cases.
 
-Pertaining to the feature \texttt{DEBTINC}, we can observe a significant difference in the number of missing values between the default and non-default cases. Out of all defaulted loans, 66.11 \% had missing debt--to--income ratio, whereas only 10.08 \% out of all non-defaulted loans had missing debt--to--income ratio.
+
+Pertaining to the feature \texttt{DEBTINC}, we can observe a significant difference in the number of missing values between the default and non-default cases. Out of all defaulted loans, 66.11 \% had a missing debt--to--income ratio, whereas only 10.08 \% out of all non-defaulted loans had a missing debt--to--income ratio.
 Therefore, there could be a strong association between the missing debt--to--income ratio and the default.
 
-Similarly, the table depicts a significant difference with respect to \texttt{VALUE} as 0.15 \% had missing collateral property value out of all non--defaulted loan, and 8.92 \% defaulted loans had missing collateral property value.
+
+Similarly, the table depicts a significant difference with respect to \texttt{VALUE} as 0.15 \% had missing collateral property value out of all non--defaulted loans and 8.92 \% defaulted loans had missing collateral property value.
 It can be inferred that loan applicants who withhold information on their collateral property value or debt-to-income ratio are more likely to default on their loans.
-This may be due to negative information that they are trying to conceal, such as an excessively high debt or low income, or a low collateral property value.
+This may be due to negative information that they are trying to conceal, such as excessively high debt, low income, or a low collateral property value.
 Such associations are further investigated in \autoref{subsubsec:target-na-ass}.
 
 
@@ -352,7 +361,7 @@ Hence, a moderate association between the \texttt{JOB} feature and the default s
 \end{figure}
 \subsection{Association Analysis}
 \label{subsec:assanal}
-In this subsection, we aim to examine potential relationships between the variables by analyzing their associations. Firstly, we investigate the association between the default status and the features. Subsequently, we explore the association among the features themselves.
+In this subsection, we aim to examine potential relationships between the variables by analyzing their associations. Firstly, we investigate the association between the default status and the features. Subsequently, we explore the associations among the features themselves.
 
 \subsubsection{Association between Default Status and Numeric Features}
 \label{subsubsec:target-num-ass}
@@ -365,7 +374,7 @@ The formula for computing this coefficient is as follows:
 r_{pb,X} =  \frac{\mu \left( X | Y=1 \right) -\mu \left( X | Y=0 \right)}{\sigma_{X}}\sqrt{\frac{N\left(Y=1\right) \times N\left(Y=0\right)}{N \left(N - 1 \right)}}
 \end{equation}
 
-Here, $\mu \left( X | Y=1 \right)$ and $\mu \left( X | Y=0 \right)$ represent the means of the given numeric feature $X$ conditional on the default status and non-default status, respectively, while $\sigma_{X}$ denotes the standard deviation of $X$.
+where $\mu \left( X | Y=1 \right)$ and $\mu \left( X | Y=0 \right)$ represent the means of the given numeric feature $X$ conditional on the default status and non-default status, respectively, while $\sigma_{X}$ denotes the standard deviation of $X$.
 The values of $N\left(Y=1\right)$ and $N\left(Y=0\right)$ indicate the number of observations with default status and non-default status, respectively, and $N$ represents the total number of observations within the feature $X$.
 
 
@@ -379,7 +388,7 @@ These findings support the observations made in \autoref{subsubsec:numdist} rega
     \renewcommand{\arraystretch}{1.3}
     \centering
         \caption[Point--Biserial Correlation - Numeric Features vs. Default]{Point--Biserial Correlation - Numeric Features vs. Default}\label{tab:pointbi}
-        \begin{tabular}{@{} l r @{\hspace{1cm}} l @{}}
+        \begin{tabular}{@{} l r @{\hspace{1cm}} l @{{}}}
     \toprule
     \textbf{Feature} & \textbf{Coefficient} & \textbf{Significance}\\
     \midrule
@@ -458,6 +467,7 @@ Ultimately, the usefulness of a feature in predicting the target variable is det
         \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{table}
 
+\newpage
 \subsubsection{Association between Default Status and Missing Values}
 \label{subsubsec:target-na-ass}
 
@@ -521,12 +531,11 @@ Therefore, we can anticipate that these features will be crucial indicators in d
 Additionally, it is imperative to investigate the relationship between missing values and default status, as well as the interrelationship between the missing values themselves.
 A common approach to identifying patterns of missing data in a data set is through the use of a dendrogram, which clusters variables hierarchically based on the occurrence of missing values.
 This method groups variables into clusters based on the similarity of their missing value patterns, such that variables with comparable patterns of missingness are clustered together.
-Conversely, variables with dissimilar patterns of missingness are placed in separate clusters.
 The dendrogram is constructed by merging the two closest clusters iteratively until all variables are in the same cluster.
-The distance between the clusters at each step of the merging process is shown on the y-axis of the dendrogram, and the order in which the variables are merged is displayed on the x-axis.
+The distance between the clusters at each step of the merging is shown on the y-axis of the dendrogram, and the order in which the variables are merged is displayed on the x-axis.
 
 In \autoref{fig:dendrogram}, the hierarchical clustering of the data set's variables is illustrated, excluding the default status and requested loan amount feature \texttt{LOAN}, as these variables do not contain any missing values.
-As depicted in the dendrogram, the \texttt{CLNO} and \texttt{CLAGE} features have the most similar patterns of missing values occurrences.
+As depicted in the dendrogram, the \texttt{CLNO} and \texttt{CLAGE} features have the most similar patterns of missing value occurrences.
 Therefore, it can be inferred that a significant number of loan applicants tend to omit information regarding their number of credit lines (\texttt{CLNO}) and the age of their most recent credit line (\texttt{CLAGE}) when submitting their loan applications.
 
 \begin{figure}[H]
@@ -539,7 +548,7 @@ Therefore, it can be inferred that a significant number of loan applicants tend 
 \end{figure}
 
 Note that the target variable is imbalanced, therefore, the dendrogram depicted in \autoref{fig:dendrogram} is not representative for the default cases. Therefore, we can also inspect the dendrogram for the default cases only, as shown in \autoref{fig:dendrogramdef}.
-As can be seen, the hierarchy has changed compared the hierarchy in \autoref{fig:dendrogram}. It can be observed that a significant number of loan applicated tend to omit  information regarding their number of credit lines (\texttt{CLNO}) and the number of delinquent credit lines (\texttt{DELINQ}) when submitting their loan applications. Especially regarding the second feature, this might indicate a common delinquency problem among the applicants and thus, higher probability of default.
+As can be seen, the hierarchy has changed compared the hierarchy in \autoref{fig:dendrogram}. It can be observed that a significant number of loan applicants tend to omit  information regarding their number of credit lines (\texttt{CLNO}) and the number of delinquent credit lines (\texttt{DELINQ}) when submitting their loan applications. Especially regarding the second feature, this might indicate a common delinquency problem among the applicants and, thus, a higher probability of default.
 \begin{figure}[H]
     \centering
     \caption{Nullity Dendrogram (default cases)}\vspace{0.5em}
@@ -551,18 +560,16 @@ As can be seen, the hierarchy has changed compared the hierarchy in \autoref{fig
 
 \subsubsection{Multicolinearity Analysis}
 \label{subsubsec:multicolinearity}
-To quantify the association between the numerical features, Pearson correlation coefficient is often used.
+To quantify the association between the numerical features, the Pearson correlation coefficient is often used.
 However, it is highly sensitive to outliers and makes assumptions regarding the normal distribution and linear relationship between variables.
-Consequently, Spearman correlation coefficient is utilized as an alternative, as it is a non-parametric measure that does not make any assumptions regarding the distribution of variables or the linearity of their relationship.
+Consequently, the Spearman correlation coefficient is utilized as an alternative, as it is a non-parametric measure that does not make any assumptions regarding the distribution of variables or the linearity of their relationship.
 The Spearman correlation coefficient is defined as follows:
-
 \begin{equation}\label{eq}
 \rho_{spearman} = 1 - \frac{6 \sum_{i=1}^{n} d_{i}^{2}}{n \left(n^{2}-1\right)}
 \end{equation}
 
 
-In the \autoref{fig:spearmancorr}, we can observe a very strong correlation between the \texttt{MORTDUE} and \texttt{VALUE} features. Such multicolinearity can cause problem in predictions and model's overfitting. Therefore, a feature selection is recommended - such selection is further described in \autoref{subsec:feature-selection}.
-
+In the \autoref{fig:spearmancorr}, we can observe a very strong correlation between the \texttt{MORTDUE} and \texttt{VALUE} features. Such multicolinearity can cause problems in predictions and model's overfitting. Therefore, a feature selection is recommended - such selection is further described in \autoref{subsec:feature-selection}.
 \begin{figure}[H]
     \centering
     \caption{Spearman Correlation Matrix}\vspace{0.5em}
@@ -572,7 +579,8 @@ In the \autoref{fig:spearmancorr}, we can observe a very strong correlation betw
     \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
 
-Regarding the association between categorical features, namely \texttt{REASON} and \texttt{JOB}, the Cramer's V coefficient is used. The Cramer's V coefficient results in a value of 0.149 while being statistically significant 1\% statistical significance level, thus we observe a weak association between the two features.
+Regarding the association between categorical features, namely \texttt{REASON} and \texttt{JOB}, the Cramer's V coefficient is used. The Cramer's V coefficient results in a value of 0.149 while being statistically significant at 1\% the significance level, thus, we observe a weak association between the two features.
+
 
 \newpage
 \section{Data Preprocessing}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.31)  24 MAY 2023 07:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.31)  24 MAY 2023 07:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2349,29 +2349,29 @@ Chapter 2.
 [3.18
 
 ]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 17.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 21.
  (c:/tex/texlive/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [4.19] [5.20] [6.21] [7.22]
 <Figures/sigmoid.jpg, id=821, 505.89pt x 289.08pt>
 File: Figures/sigmoid.jpg Graphic file (type jpg)
 <use Figures/sigmoid.jpg>
-Package pdftex.def Info: Figures/sigmoid.jpg  used on input line 93.
+Package pdftex.def Info: Figures/sigmoid.jpg  used on input line 102.
 (pdftex.def)             Requested size: 312.9803pt x 178.84839pt.
  [8.23 <./Figures/sigmoid.jpg>] [9.24]
 <Figures/dtnodes.jpg, id=853, 678.535pt x 232.87pt>
 File: Figures/dtnodes.jpg Graphic file (type jpg)
 <use Figures/dtnodes.jpg>
-Package pdftex.def Info: Figures/dtnodes.jpg  used on input line 156.
+Package pdftex.def Info: Figures/dtnodes.jpg  used on input line 165.
 (pdftex.def)             Requested size: 369.88582pt x 126.94182pt.
  [10.25 <./Figures/dtnodes.jpg>]
 <Figures/impurity.jpg, id=867, 578.16pt x 361.35pt>
 File: Figures/impurity.jpg Graphic file (type jpg)
 <use Figures/impurity.jpg>
-Package pdftex.def Info: Figures/impurity.jpg  used on input line 181.
+Package pdftex.def Info: Figures/impurity.jpg  used on input line 190.
 (pdftex.def)             Requested size: 312.9803pt x 195.6113pt.
  [11.26 <./Figures/impurity.jpg>] [12.27]
-Overfull \hbox (3.40764pt too wide) in paragraph at lines 224--226
+Overfull \hbox (3.40764pt too wide) in paragraph at lines 233--235
 \T1/lmr/m/n/12 Specifically, in terms of bi-nary clas-si-fi-ca-tion for pre-dic-tion of given class, whether
  []
 
@@ -2379,34 +2379,34 @@ Overfull \hbox (3.40764pt too wide) in paragraph at lines 224--226
 <Figures/KNN_example.jpg, id=906, 291.33844pt x 199.49532pt>
 File: Figures/KNN_example.jpg Graphic file (type jpg)
 <use Figures/KNN_example.jpg>
-Package pdftex.def Info: Figures/KNN_example.jpg  used on input line 284.
+Package pdftex.def Info: Figures/KNN_example.jpg  used on input line 293.
 (pdftex.def)             Requested size: 199.16928pt x 136.38557pt.
  [15.30 <./Figures/KNN_example.jpg>] [16.31] [17.32]
 <Figures/svmhyperplane.jpg, id=950, 459.21562pt x 453.94594pt>
 File: Figures/svmhyperplane.jpg Graphic file (type jpg)
 <use Figures/svmhyperplane.jpg>
-Package pdftex.def Info: Figures/svmhyperplane.jpg  used on input line 340.
+Package pdftex.def Info: Figures/svmhyperplane.jpg  used on input line 349.
 (pdftex.def)             Requested size: 170.71652pt x 168.76085pt.
  [18.33 <./Figures/svmhyperplane.jpg>] [19.34]
 <Figures/nn-example.jpg, id=986, 501.875pt x 310.15875pt>
 File: Figures/nn-example.jpg Graphic file (type jpg)
 <use Figures/nn-example.jpg>
-Package pdftex.def Info: Figures/nn-example.jpg  used on input line 406.
+Package pdftex.def Info: Figures/nn-example.jpg  used on input line 415.
 (pdftex.def)             Requested size: 284.52756pt x 175.8458pt.
  [20.35 <./Figures/nn-example.jpg>] [21.36] [22.37] [23.38] [24.39] [25.40] [26.41] [27.42]
 <Figures/ROC_theory.jpg, id=1076, 508.299pt x 388.5717pt>
 File: Figures/ROC_theory.jpg Graphic file (type jpg)
 <use Figures/ROC_theory.jpg>
-Package pdftex.def Info: Figures/ROC_theory.jpg  used on input line 580.
+Package pdftex.def Info: Figures/ROC_theory.jpg  used on input line 589.
 (pdftex.def)             Requested size: 284.52756pt x 217.50972pt.
  [28.43 <./Figures/ROC_theory.jpg>] [29.44] [30.45] [31.46]
 <Figures/logloss.jpg, id=1125, 794.97pt x 505.89pt>
 File: Figures/logloss.jpg Graphic file (type jpg)
 <use Figures/logloss.jpg>
-Package pdftex.def Info: Figures/logloss.jpg  used on input line 665.
+Package pdftex.def Info: Figures/logloss.jpg  used on input line 674.
 (pdftex.def)             Requested size: 369.88582pt x 235.3908pt.
  [32.47 <./Figures/logloss.jpg>] [33.48] [34.49] [35.50]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 732.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 741.
  (c:/tex/texlive/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [36.51] [37.52] [38.53] [39.54] [40.55] [41.56] [42.57]) (./02_Mainmatter/03.tex [43.58]
@@ -2415,7 +2415,7 @@ Chapter 3.
 
 ]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 38.
+(Font)              <10.95> on input line 44.
  [45.60] [46.61] [47.62] [48.63] [49.64]) (./02_Mainmatter/04.tex [50.65]
 Chapter 4.
 [51.66
@@ -2430,13 +2430,13 @@ Package pdftex.def Info: Figures/ml_framework.jpg  used on input line 20.
 <Figures/Default_Distribution.jpg, id=1444, 578.16pt x 433.62pt>
 File: Figures/Default_Distribution.jpg Graphic file (type jpg)
 <use Figures/Default_Distribution.jpg>
-Package pdftex.def Info: Figures/Default_Distribution.jpg  used on input line 241.
+Package pdftex.def Info: Figures/Default_Distribution.jpg  used on input line 244.
 (pdftex.def)             Requested size: 369.88582pt x 277.40999pt.
  [58.73] [59.74 <./Figures/Default_Distribution.jpg>]
 <Figures/Numeric_Features_Distribution_Boxplots.jpg, id=1461, 867.24pt x 1445.4pt>
 File: Figures/Numeric_Features_Distribution_Boxplots.jpg Graphic file (type jpg)
 <use Figures/Numeric_Features_Distribution_Boxplots.jpg>
-Package pdftex.def Info: Figures/Numeric_Features_Distribution_Boxplots.jpg  used on input line 273.
+Package pdftex.def Info: Figures/Numeric_Features_Distribution_Boxplots.jpg  used on input line 280.
 (pdftex.def)             Requested size: 398.33858pt x 663.8996pt.
  [60.75]
 Overfull \vbox (36.01959pt too high) has occurred while \output is active []
@@ -2445,84 +2445,84 @@ Overfull \vbox (36.01959pt too high) has occurred while \output is active []
 <Figures/Categorical_Features_Distribution.jpg, id=1480, 794.97pt x 722.7pt>
 File: Figures/Categorical_Features_Distribution.jpg Graphic file (type jpg)
 <use Figures/Categorical_Features_Distribution.jpg>
-Package pdftex.def Info: Figures/Categorical_Features_Distribution.jpg  used on input line 349.
+Package pdftex.def Info: Figures/Categorical_Features_Distribution.jpg  used on input line 358.
 (pdftex.def)             Requested size: 398.33858pt x 362.13206pt.
  [63.78] [64.79 <./Figures/Categorical_Features_Distribution.jpg>]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 413.
+(Font)              <10> on input line 422.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 413.
+(Font)              <7> on input line 422.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 413.
+(Font)              <5> on input line 422.
  [65.80] [66.81] [67.82]
-<Figures/NA_Dendrogram.jpg, id=1522, 722.7pt x 433.62pt>
+<Figures/NA_Dendrogram.jpg, id=1521, 722.7pt x 433.62pt>
 File: Figures/NA_Dendrogram.jpg Graphic file (type jpg)
 <use Figures/NA_Dendrogram.jpg>
-Package pdftex.def Info: Figures/NA_Dendrogram.jpg  used on input line 536.
+Package pdftex.def Info: Figures/NA_Dendrogram.jpg  used on input line 545.
 (pdftex.def)             Requested size: 398.33858pt x 239.0012pt.
-<Figures/NA_Dendrogram_defaults.jpg, id=1526, 722.7pt x 433.62pt>
+<Figures/NA_Dendrogram_defaults.jpg, id=1525, 722.7pt x 433.62pt>
 File: Figures/NA_Dendrogram_defaults.jpg Graphic file (type jpg)
 <use Figures/NA_Dendrogram_defaults.jpg>
-Package pdftex.def Info: Figures/NA_Dendrogram_defaults.jpg  used on input line 547.
+Package pdftex.def Info: Figures/NA_Dendrogram_defaults.jpg  used on input line 556.
 (pdftex.def)             Requested size: 398.33858pt x 239.0012pt.
- [68.83 <./Figures/NA_Dendrogram.jpg>]
-<Figures/Spearman_Correlation_Matrix_Numeric_Features.jpg, id=1534, 1156.32pt x 939.51pt>
+ [68.83 <./Figures/NA_Dendrogram.jpg>] [69.84 <./Figures/NA_Dendrogram_defaults.jpg>]
+<Figures/Spearman_Correlation_Matrix_Numeric_Features.jpg, id=1539, 1156.32pt x 939.51pt>
 File: Figures/Spearman_Correlation_Matrix_Numeric_Features.jpg Graphic file (type jpg)
 <use Figures/Spearman_Correlation_Matrix_Numeric_Features.jpg>
-Package pdftex.def Info: Figures/Spearman_Correlation_Matrix_Numeric_Features.jpg  used on input line 570.
+Package pdftex.def Info: Figures/Spearman_Correlation_Matrix_Numeric_Features.jpg  used on input line 577.
 (pdftex.def)             Requested size: 426.79134pt x 346.76744pt.
 
-Overfull \hbox (25.60722pt too wide) in paragraph at lines 569--571
+Overfull \hbox (25.60722pt too wide) in paragraph at lines 576--578
  [] 
  []
 
-[69.84 <./Figures/NA_Dendrogram_defaults.jpg>] [70.85 <./Figures/Spearman_Correlation_Matrix_Numeric_Features.jpg>] [71.86] [72.87] [73.88]
+[70.85 <./Figures/Spearman_Correlation_Matrix_Numeric_Features.jpg>] [71.86] [72.87] [73.88]
 <Figures/Categorical_Features_Distribution_OS_Default.jpg, id=1578, 1011.78pt x 722.7pt>
 File: Figures/Categorical_Features_Distribution_OS_Default.jpg Graphic file (type jpg)
 <use Figures/Categorical_Features_Distribution_OS_Default.jpg>
-Package pdftex.def Info: Figures/Categorical_Features_Distribution_OS_Default.jpg  used on input line 691.
+Package pdftex.def Info: Figures/Categorical_Features_Distribution_OS_Default.jpg  used on input line 699.
 (pdftex.def)             Requested size: 369.88582pt x 264.20786pt.
  [74.89 <./Figures/Categorical_Features_Distribution_OS_Default.jpg>]
 <Figures/WoE_Distribution_DEBTINC.jpg, id=1587, 650.43pt x 433.62pt>
 File: Figures/WoE_Distribution_DEBTINC.jpg Graphic file (type jpg)
 <use Figures/WoE_Distribution_DEBTINC.jpg>
-Package pdftex.def Info: Figures/WoE_Distribution_DEBTINC.jpg  used on input line 716.
+Package pdftex.def Info: Figures/WoE_Distribution_DEBTINC.jpg  used on input line 724.
 (pdftex.def)             Requested size: 341.43306pt x 227.62744pt.
  [75.90]
 <Figures/WoE_Distribution_DELINQ.jpg, id=1593, 650.43pt x 433.62pt>
 File: Figures/WoE_Distribution_DELINQ.jpg Graphic file (type jpg)
 <use Figures/WoE_Distribution_DELINQ.jpg>
-Package pdftex.def Info: Figures/WoE_Distribution_DELINQ.jpg  used on input line 728.
+Package pdftex.def Info: Figures/WoE_Distribution_DELINQ.jpg  used on input line 736.
 (pdftex.def)             Requested size: 341.43306pt x 227.62744pt.
  [76.91 <./Figures/WoE_Distribution_DEBTINC.jpg> <./Figures/WoE_Distribution_DELINQ.jpg>]
 <Figures/WoE_Distribution_JOB.jpg, id=1601, 650.43pt x 433.62pt>
 File: Figures/WoE_Distribution_JOB.jpg Graphic file (type jpg)
 <use Figures/WoE_Distribution_JOB.jpg>
-Package pdftex.def Info: Figures/WoE_Distribution_JOB.jpg  used on input line 742.
+Package pdftex.def Info: Figures/WoE_Distribution_JOB.jpg  used on input line 750.
 (pdftex.def)             Requested size: 341.43306pt x 227.62744pt.
  [77.92 <./Figures/WoE_Distribution_JOB.jpg>] [78.93]
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <12> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 784.
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 792.
  [79.94] [80.95] [81.96] [82.97] [83.98] [84.99]
 
-Package hyperref Warning: No autoref name for `algorithm' on input line 1033.
+Package hyperref Warning: No autoref name for `algorithm' on input line 1041.
 
-Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 1035.
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 1043.
 [85.100]
 <Figures/Recurrence_Selected_Features.jpg, id=1694, 794.97pt x 505.89pt>
 File: Figures/Recurrence_Selected_Features.jpg Graphic file (type jpg)
 <use Figures/Recurrence_Selected_Features.jpg>
-Package pdftex.def Info: Figures/Recurrence_Selected_Features.jpg  used on input line 1087.
+Package pdftex.def Info: Figures/Recurrence_Selected_Features.jpg  used on input line 1095.
 (pdftex.def)             Requested size: 341.43306pt x 217.28143pt.
  [86.101]
 <Figures/Selected_Features_Distribution.jpg, id=1701, 722.7pt x 433.62pt>
 File: Figures/Selected_Features_Distribution.jpg Graphic file (type jpg)
 <use Figures/Selected_Features_Distribution.jpg>
-Package pdftex.def Info: Figures/Selected_Features_Distribution.jpg  used on input line 1099.
+Package pdftex.def Info: Figures/Selected_Features_Distribution.jpg  used on input line 1107.
 (pdftex.def)             Requested size: 341.43306pt x 204.86006pt.
  [87.102 <./Figures/Recurrence_Selected_Features.jpg> <./Figures/Selected_Features_Distribution.jpg>]
 
-Package hyperref Warning: No autoref name for `algorithm' on input line 1108.
+Package hyperref Warning: No autoref name for `algorithm' on input line 1116.
 
 [88.103] [89.104] [90.105] [91.106] [92.107]
 Package typearea Info: With paper sizes other than (almost) `A4' predefined
@@ -2553,9 +2553,9 @@ Package typearea Info: These are the values describing the layout:
 (typearea)              \topskip        = 12.0pt
 (typearea)              \footskip       = 62.9806pt
 (typearea)              \baselineskip   = 17.99446pt
-(typearea)              on input line 1269.
+(typearea)              on input line 1277.
 Package typearea Info: Using dirty hack to recalculate internal output
-(typearea)             dimensions of LaTeX on input line 1269.
+(typearea)             dimensions of LaTeX on input line 1277.
 *geometry* verbose mode - [ newgeometry ] result:
 * driver: pdftex
 * paper: custom
@@ -2621,17 +2621,17 @@ Package typearea Info: Using dirty hack to recalculate internal output
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1311--1311
+Underfull \hbox (badness 10000) in paragraph at lines 1319--1319
 []|\T1/lmr/bx/n/10.95 Tuned
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1311--1311
+Underfull \hbox (badness 10000) in paragraph at lines 1319--1319
 []|\T1/lmr/bx/n/10.95 FS
  []
 
 
-Overfull \hbox (3.905pt too wide) in paragraph at lines 1311--1311
+Overfull \hbox (3.905pt too wide) in paragraph at lines 1319--1319
  \T1/lmr/bx/n/10.95 Features|
  []
 
@@ -2656,9 +2656,9 @@ Package typearea Info: These are the values describing the layout:
 (typearea)              \topskip        = 12.0pt
 (typearea)              \footskip       = 62.9806pt
 (typearea)              \baselineskip   = 17.99446pt
-(typearea)              on input line 1319.
+(typearea)              on input line 1327.
 Package typearea Info: Using dirty hack to recalculate internal output
-(typearea)             dimensions of LaTeX on input line 1319.
+(typearea)             dimensions of LaTeX on input line 1327.
 *geometry* verbose mode - [ newgeometry ] result:
 * driver: pdftex
 * paper: custom
@@ -2694,12 +2694,12 @@ Package typearea Info: Using dirty hack to recalculate internal output
 <Figures/F1_Distribution.jpg, id=1752, 722.7pt x 433.62pt>
 File: Figures/F1_Distribution.jpg Graphic file (type jpg)
 <use Figures/F1_Distribution.jpg>
-Package pdftex.def Info: Figures/F1_Distribution.jpg  used on input line 1328.
+Package pdftex.def Info: Figures/F1_Distribution.jpg  used on input line 1336.
 (pdftex.def)             Requested size: 398.33858pt x 239.0012pt.
 <Figures/F1_wo_outliers_Distribution.jpg, id=1754, 722.7pt x 433.62pt>
 File: Figures/F1_wo_outliers_Distribution.jpg Graphic file (type jpg)
 <use Figures/F1_wo_outliers_Distribution.jpg>
-Package pdftex.def Info: Figures/F1_wo_outliers_Distribution.jpg  used on input line 1339.
+Package pdftex.def Info: Figures/F1_wo_outliers_Distribution.jpg  used on input line 1347.
 (pdftex.def)             Requested size: 398.33858pt x 239.0012pt.
  [94.109
 
@@ -2709,90 +2709,90 @@ Package pdftex.def Info: Figures/F1_wo_outliers_Distribution.jpg  used on input 
 <Figures/F1_wo_outliers_Distribution_BB_WB.jpg, id=1761, 722.7pt x 433.62pt>
 File: Figures/F1_wo_outliers_Distribution_BB_WB.jpg Graphic file (type jpg)
 <use Figures/F1_wo_outliers_Distribution_BB_WB.jpg>
-Package pdftex.def Info: Figures/F1_wo_outliers_Distribution_BB_WB.jpg  used on input line 1349.
+Package pdftex.def Info: Figures/F1_wo_outliers_Distribution_BB_WB.jpg  used on input line 1357.
 (pdftex.def)             Requested size: 398.33858pt x 239.0012pt.
  [95.110 <./Figures/F1_wo_outliers_Distribution.jpg>]
 <Figures/AVG_RANK_Distribution.jpg, id=1769, 722.7pt x 433.62pt>
 File: Figures/AVG_RANK_Distribution.jpg Graphic file (type jpg)
 <use Figures/AVG_RANK_Distribution.jpg>
-Package pdftex.def Info: Figures/AVG_RANK_Distribution.jpg  used on input line 1360.
+Package pdftex.def Info: Figures/AVG_RANK_Distribution.jpg  used on input line 1368.
 (pdftex.def)             Requested size: 398.33858pt x 239.0012pt.
  [96.111 <./Figures/F1_wo_outliers_Distribution_BB_WB.jpg>]
 <Figures/AVG_Rank_Distribution_BB_WB.jpg, id=1778, 722.7pt x 433.62pt>
 File: Figures/AVG_Rank_Distribution_BB_WB.jpg Graphic file (type jpg)
 <use Figures/AVG_Rank_Distribution_BB_WB.jpg>
-Package pdftex.def Info: Figures/AVG_Rank_Distribution_BB_WB.jpg  used on input line 1371.
+Package pdftex.def Info: Figures/AVG_Rank_Distribution_BB_WB.jpg  used on input line 1379.
 (pdftex.def)             Requested size: 398.33858pt x 239.0012pt.
  [97.112 <./Figures/AVG_RANK_Distribution.jpg>]
 <Figures/Threshold_Distribution.jpg, id=1785, 722.7pt x 433.62pt>
 File: Figures/Threshold_Distribution.jpg Graphic file (type jpg)
 <use Figures/Threshold_Distribution.jpg>
-Package pdftex.def Info: Figures/Threshold_Distribution.jpg  used on input line 1381.
+Package pdftex.def Info: Figures/Threshold_Distribution.jpg  used on input line 1389.
 (pdftex.def)             Requested size: 398.33858pt x 239.0012pt.
 <Figures/Threshold_wo_outliers_Distribution.jpg, id=1787, 722.7pt x 433.62pt>
 File: Figures/Threshold_wo_outliers_Distribution.jpg Graphic file (type jpg)
 <use Figures/Threshold_wo_outliers_Distribution.jpg>
-Package pdftex.def Info: Figures/Threshold_wo_outliers_Distribution.jpg  used on input line 1390.
+Package pdftex.def Info: Figures/Threshold_wo_outliers_Distribution.jpg  used on input line 1398.
 (pdftex.def)             Requested size: 398.33858pt x 239.0012pt.
  [98.113 <./Figures/AVG_RANK_Distribution_BB_WB.jpg> <./Figures/Threshold_Distribution.jpg>]
 <Figures/EXECUTION_TIME_Distribution.jpg, id=1794, 722.7pt x 433.62pt>
 File: Figures/EXECUTION_TIME_Distribution.jpg Graphic file (type jpg)
 <use Figures/EXECUTION_TIME_Distribution.jpg>
-Package pdftex.def Info: Figures/EXECUTION_TIME_Distribution.jpg  used on input line 1403.
+Package pdftex.def Info: Figures/EXECUTION_TIME_Distribution.jpg  used on input line 1411.
 (pdftex.def)             Requested size: 398.33858pt x 239.0012pt.
  [99.114 <./Figures/THRESHOLD_WO_OUTLIERS_Distribution.jpg>]
 <Figures/EXECUTION_TIME_Distribution_BB_WB.jpg, id=1801, 722.7pt x 433.62pt>
 File: Figures/EXECUTION_TIME_Distribution_BB_WB.jpg Graphic file (type jpg)
 <use Figures/EXECUTION_TIME_Distribution_BB_WB.jpg>
-Package pdftex.def Info: Figures/EXECUTION_TIME_Distribution_BB_WB.jpg  used on input line 1414.
+Package pdftex.def Info: Figures/EXECUTION_TIME_Distribution_BB_WB.jpg  used on input line 1422.
 (pdftex.def)             Requested size: 398.33858pt x 239.0012pt.
  [100.115 <./Figures/EXECUTION_TIME_Distribution.jpg>]
 <Figures/Scatterplot_execution_time_F1_wo_outliers.jpg, id=1809, 722.7pt x 505.89pt>
 File: Figures/Scatterplot_execution_time_F1_wo_outliers.jpg Graphic file (type jpg)
 <use Figures/Scatterplot_execution_time_F1_wo_outliers.jpg>
-Package pdftex.def Info: Figures/Scatterplot_execution_time_F1_wo_outliers.jpg  used on input line 1429.
+Package pdftex.def Info: Figures/Scatterplot_execution_time_F1_wo_outliers.jpg  used on input line 1437.
 (pdftex.def)             Requested size: 398.33858pt x 278.83473pt.
  [101.116 <./Figures/EXECUTION_TIME_Distribution_BB_WB.jpg>]
 <Figures/Scatterplot_execution_time_F1_wo_outliers_BB_WB.jpg, id=1815, 722.7pt x 505.89pt>
 File: Figures/Scatterplot_execution_time_F1_wo_outliers_BB_WB.jpg Graphic file (type jpg)
 <use Figures/Scatterplot_execution_time_F1_wo_outliers_BB_WB.jpg>
-Package pdftex.def Info: Figures/Scatterplot_execution_time_F1_wo_outliers_BB_WB.jpg  used on input line 1440.
+Package pdftex.def Info: Figures/Scatterplot_execution_time_F1_wo_outliers_BB_WB.jpg  used on input line 1448.
 (pdftex.def)             Requested size: 398.33858pt x 278.83473pt.
  [102.117 <./Figures/Scatterplot_execution_time_F1_wo_outliers.jpg>] [103.118 <./Figures/Scatterplot_execution_time_F1_wo_outliers_BB_WB.jpg>] [104.119] [105.120]
 <Figures/Confusion_Matrix.jpg, id=1837, 650.43pt x 505.89pt>
 File: Figures/Confusion_Matrix.jpg Graphic file (type jpg)
 <use Figures/Confusion_Matrix.jpg>
-Package pdftex.def Info: Figures/Confusion_Matrix.jpg  used on input line 1520.
+Package pdftex.def Info: Figures/Confusion_Matrix.jpg  used on input line 1528.
 (pdftex.def)             Requested size: 369.88582pt x 287.69643pt.
  [106.121 <./Figures/Confusion_Matrix.jpg>] [107.122]
 <Figures/ROC_curve_FINAL.jpg, id=1851, 722.7pt x 505.89pt>
 File: Figures/ROC_curve_FINAL.jpg Graphic file (type jpg)
 <use Figures/ROC_curve_FINAL.jpg>
-Package pdftex.def Info: Figures/ROC_curve_FINAL.jpg  used on input line 1603.
+Package pdftex.def Info: Figures/ROC_curve_FINAL.jpg  used on input line 1611.
 (pdftex.def)             Requested size: 398.33858pt x 278.83473pt.
  [108.123] [109.124 <./Figures/ROC_curve_FINAL.jpg>]
 <Figures/Feature_Importances.jpg, id=1865, 722.7pt x 433.62pt>
 File: Figures/Feature_Importances.jpg Graphic file (type jpg)
 <use Figures/Feature_Importances.jpg>
-Package pdftex.def Info: Figures/Feature_Importances.jpg  used on input line 1628.
+Package pdftex.def Info: Figures/Feature_Importances.jpg  used on input line 1636.
 (pdftex.def)             Requested size: 398.33858pt x 239.0012pt.
  [110.125 <./Figures/Feature_Importances.jpg>]
 <Figures/SHAP_summary_plot.jpg, id=1873, 650.43pt x 578.16pt>
 File: Figures/SHAP_summary_plot.jpg Graphic file (type jpg)
 <use Figures/SHAP_summary_plot.jpg>
-Package pdftex.def Info: Figures/SHAP_summary_plot.jpg  used on input line 1655.
+Package pdftex.def Info: Figures/SHAP_summary_plot.jpg  used on input line 1663.
 (pdftex.def)             Requested size: 398.33858pt x 354.08861pt.
  [111.126] [112.127 <./Figures/SHAP_summary_plot.jpg>] [113.128]
 <Figures/flask_app_form.jpg, id=1892, 788.19469pt x 749.80125pt>
 File: Figures/flask_app_form.jpg Graphic file (type jpg)
 <use Figures/flask_app_form.jpg>
-Package pdftex.def Info: Figures/flask_app_form.jpg  used on input line 1706.
+Package pdftex.def Info: Figures/flask_app_form.jpg  used on input line 1714.
 (pdftex.def)             Requested size: 398.33858pt x 378.92694pt.
  [114.129] [115.130 <./Figures/flask_app_form.jpg>]
 <Figures/flask_app_result.jpg, id=1902, 773.89125pt x 631.60968pt>
 File: Figures/flask_app_result.jpg Graphic file (type jpg)
 <use Figures/flask_app_result.jpg>
-Package pdftex.def Info: Figures/flask_app_result.jpg  used on input line 1719.
+Package pdftex.def Info: Figures/flask_app_result.jpg  used on input line 1727.
 (pdftex.def)             Requested size: 369.88582pt x 301.87776pt.
  [116.131
 
@@ -3167,13 +3167,13 @@ Package rerunfilecheck Info: File `Thesis.out' has not changed.
 Here is how much of TeX's memory you used:
  25664 strings out of 480559
  412851 string characters out of 5897073
- 813822 words of memory out of 5000000
+ 814822 words of memory out of 5000000
  41973 multiletter control sequences out of 15000+600000
  588311 words of font info for 105 fonts, out of 8000000 for 9000
  48 hyphenation exceptions out of 8191
  123i,12n,120p,699b,2543s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}<c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmex10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmmi12.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmmi6.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmr17.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmr6.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmri12.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmss12.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmsy6.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmsy7.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmsy8.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmtk10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmtt10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmtt12.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmtt9.pfb>
-Output written on Thesis.pdf (172 pages, 16779503 bytes).
+Output written on Thesis.pdf (172 pages, 16779666 bytes).
 PDF statistics:
  2584 PDF objects out of 2984 (max. 8388607)
  2257 compressed objects within 23 object streams

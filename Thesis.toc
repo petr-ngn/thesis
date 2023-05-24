@@ -52,8 +52,8 @@
 \contentsline {subsection}{\numberline {4.2.3}Association Analysis}{64}{subsection.4.2.3}%
 \contentsline {subsubsection}{Association between Default Status and Numeric Features}{64}{section*.52}%
 \contentsline {subsubsection}{Association between Default Status and Categorical Features}{66}{section*.54}%
-\contentsline {subsubsection}{Association between Default Status and Missing Values}{66}{section*.56}%
-\contentsline {subsubsection}{Missing Values Association}{67}{section*.58}%
+\contentsline {subsubsection}{Association between Default Status and Missing Values}{67}{section*.56}%
+\contentsline {subsubsection}{Missing Values Association}{68}{section*.58}%
 \contentsline {subsubsection}{Multicolinearity Analysis}{69}{section*.61}%
 \contentsline {section}{\numberline {4.3}Data Preprocessing}{71}{section.4.3}%
 \contentsline {subsection}{\numberline {4.3.1}Data Split and ADASYN Oversampling}{71}{subsection.4.3.1}%
