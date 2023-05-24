@@ -449,7 +449,7 @@ If not stated otherwise, the higher the metric, the better the model's performan
 
 
 Confusion matrix is a table which summarizes the classification model's performance with respect to the actual classes and predicted classes.
-It is a square $n \times n$ matrix, where $n$ determines number of classes within the target variable.
+It is a square $n \times n$ matrix, where $n$ determines the number of classes within the target variable.
 Let us denote the confusion matrix as $C\left(f\right)$ for classification algorithm $f$. 
 Its elements can be denoted as $c_{i,j}$ where $i$ and $j$ refer to the row and column indices, respectively, or more particularly, $i$ refers to the actual class and $j$ to the class predicted by the classifier $f$.
 Each element of the confusion matrix refers to the number of instances corresponding to actual class $i$ and predicted class $j$ \citep{japkowicz2011evaluating}. For instance, the element $c_{2,1}$ would refer to the number of instances which have the actual class $2$ but have been classified as class $1$.
@@ -478,7 +478,7 @@ Further, let us consider a binary classification - hence, the confusion matrix w
 \end{equation}
 
 
-We can this rewrite confusion matrix, assuming 2 target variable classes $Positive$ and $Negative$, as:
+We can this rewrite the confusion matrix, assuming 2 target variable classes $Positive$ and $Negative$, as:
 \begin{equation}
     C_{2 \times 2} = \begin{bmatrix}
     TP & FN \\
@@ -488,17 +488,16 @@ We can this rewrite confusion matrix, assuming 2 target variable classes $Positi
 
 where:
 \begin{itemize}\setlength\itemsep{0em}
-    \item TP is the True Positive which refers to the number of instances which corresponds to the actual (\textit{True}) class $Positive$ and indeed have been correctly classified as class $Positive$.
-	\item $FP$ is the False Positive which refers to the number of instances which corresponds to the actual (\textit{True}) class $Negative$, but have been incorrectly classified as class $Positive$. In the statistics and hypothesis--testing terms, it can be also called as Type 1 Error.
-	\item $FN$ is the False Negative which refers to the number of instances which corresponds to the actual class $Negative$, but have been incorrectly classified as class $Positive$. In the statistics and hypothesis--testing terms, it can be also called as Type 2 Error.
-	\item $TN$ is the True Negative which refers to the number of instances which corresponds to the actual class $Negative$ and indeed have been correctly classified as class $Negative$.
+    \item TP is the True Positive which refers to the number of instances which correspond to the actual (\textit{True}) class $Positive$ and indeed have been correctly classified as class $Positive$.
+	\item $FP$ is the False Positive which refers to the number of instances which correspond to the actual (\textit{True}) class $Negative$, but have been incorrectly classified as class $Positive$. In the statistics and hypothesis--testing terms, it can be also called as Type 1 Error.
+	\item $FN$ is the False Negative which refers to the number of instances which correspond to the actual class $Positive$, but have been incorrectly classified as class $Negative$. In the statistics and hypothesis--testing terms, it can be also called as Type 2 Error.
+	\item $TN$ is the True Negative which refers to the number of instances which correspond to the actual class $Negative$ and indeed have been correctly classified as class $Negative$.
 \end{itemize}
 
 From such confusion matrix, we can derive several metrics which are further described on the following pages.
 
-\newpage
 \subsubsection{Accuracy}
-Such metric ranges from 0 to 1 and it describes in relatives terms how many instances the model has correctly predicted. Thus, the goal is to minimize the number of False Positives and False Negatives, or in credit risk modelling terms, number of defaulters which the model has classified as non--defaulters and number of non--defaulters which the model has classified as defaulters.
+Such metric ranges from 0 to 1 and describes, in relative terms, how many instances the model has correctly predicted. Thus, the goal is to minimize the number of False Positives and False Negatives, or in credit risk modelling terms, number of defaulters which the model has classified as non--defaulters and number of non--defaulters which the model has classified as defaulters.
 However, Accuracy is inappropriate metric for evaluation when having imbalanced class, i.e., where the distribution of the target variable is skewed.
 In such case, the model can achieve a relatively high Accuracy even though it is not able to predict the minority class correctly \citep{brownlee2021failure}, thus it would lead to the misleading results.
 This is the case of the credit risk modelling, when the loan portfolio most of the time has a lot of non--defaults and few defaults.
@@ -509,18 +508,18 @@ Therefore, it is deemed appropriate to consider other metrics when having imbala
 
 \subsubsection{Recall}
 \label{subsubsec:recall}
-Such metric is also known as True Positive Rate (TPR) or Sensitivity, which also ranges from 0 to 1, and it describes in relative terms how many actual $Positive$ instances the model has correctly predicted out of all the actual $Positive$ instances. Thus, the goal is to minimize the number of False Negatives, i.e., number of defaulters which the model has classified as non--defaulters.
-A lower value of recall could therefore indicates that either the model is not able to predict correctly the $True$ classes resulting in low number of True Positives and/or high number of False Negatives.
-Recall metric is useful when having imbalanced class and should be used instead of accuracy metric as it measures the model's ability to correctly identify instances of the minority class (i.e., defaults).
-Mathematically based on the confusion matrix elements, it can be computed as:
+Such metric is also known as True Positive Rate (TPR) or Sensitivity, which also ranges from 0 to 1, and it describes ,in relative, terms how many actual $Positive$ instances the model has correctly predicted out of all the actual $Positive$ instances. Thus, the goal is to minimize the number of False Negatives, i.e., number of defaulters which the model has classified as non--defaulters.
+A lower value of Recall could indicate that either the model is not able to predict correctly the $Positive$ classes resulting in a lower number of True Positives and/or a higher number of False Negatives.
+Recall metric is useful when having imbalanced class and should be used instead of Accuracy metric as it measures the model's ability to correctly identify instances of the minority class (i.e., defaults).
+Mathematically, based on the confusion matrix elements, it can be computed as:
 \begin{equation}\label{eq}
     Recall = \frac{TP}{TP + FN}
 \end{equation}
 
 \newpage
 \subsubsection{Precision}
-This metric describes in relative terms how many predicted $Positive$ instances are actually $Positive$ out of all the predicted $Positive$ instances. Thus, the goal is to minimize the number of False Positives, i.e., number of non--defaulters which the model has classified as defaulters.
-A lower value of Precision could therefore indicates that either the model is not able to predict correctly the $True$ classes (low number of True Positives) or its prediction of $True$ classes is noisy (high number of False Positives).
+This metric describes, in relative terms, how many predicted $Positive$ instances are actually $Positive$ out of all the predicted $Positive$ instances. Thus, the goal is to minimize the number of False Positives, i.e., number of non--defaulters which the model has classified as defaulters.
+A lower value of Precision could therefore indicate that either the model is not able to predict correctly the $Positive$ classes (thus a lower number of True Positives) or its prediction of $Positive$ classes is too noisy (thus a high number of False Positives).
 Precision is another metric which should be used instead of Accuracy when having imbalanced class as it measures the model's ability to correctly identify instances of the minority class while minimizing false positives (i.e., non--default instances which the model has classified as default).
 Similarly, Precision also ranges from 0 to 1 and can be derived from the confusion matrix as follows:
 \begin{equation}\label{eq}
@@ -528,15 +527,15 @@ Similarly, Precision also ranges from 0 to 1 and can be derived from the confusi
 \end{equation}
 \subsubsection{F1 Score}
 F1 score incorporates both Recall and Precision into a single value and takes on values between 0 and 1 as well.
-Is it defined as a weighted harmonic mean of these two metrics \citep{brabec2020model} (where both Recall and Precision have uniform weights), and the goal is to minimize False Positives and False Negatives at the same time as within Accuracy.
-Nevertheless, F1 score is deemed as more appropriate metric when dealing with imbalanced class as it provides more balanced evaluation of model's performance in imbalanced data sets compared to Accuracy.
+It is defined as a weighted harmonic mean of these two metrics \citep{brabec2020model} (where both Recall and Precision have uniform weights), and the goal is to minimize False Positives and False Negatives at the same time as within Accuracy.
+Nevertheless, F1 score is deemed as more appropriate metric when dealing with imbalanced class as it provides more unbiased evaluation of model's performance in imbalanced data sets compared to Accuracy.
 \begin{equation}\label{eq}
     F1 = \frac{2 \times Precision \times Recall}{Precision + Recall} = \frac{2 \times TP}{2 \times TP + FP + FN}
 \end{equation}
 
 \newpage
 \subsubsection{Matthews Correlation Coefficient}
-The drawback of Recall, Precision and F1 score is they are asymmetric measures, i.e., they do not take into account the True Negatives.
+The drawback of Recall, Precision and F1 score is that they are asymmetric measures, i.e., they do not take into account the True Negatives.
 Therefore, such metrics' values will differ if we swap the positive and negative classes \citep{chicco2020advantages}, e.g., class 1 would indicate non--default and vice versa.
 In order to overcome such drawback, Matthews Correlation Coefficient can be used as it is symmetric and it takes into account all the four elements of the confusion matrix as well as it captures imbalanced class issue.
 Methodologically, Matthews Correlation Coefficient is defined as a discretization of Pearson correlation for the case of binary variables \citep{boughorbel2017optimal}.
@@ -548,7 +547,7 @@ Thus, assuming that $x$ is the vector of True labels and $y$ is the vector of pr
 \begin{equation}\label{eq}
     MCC = \frac{TP \times TN - FP \times FN}{\sqrt{(TP + FP) (TP + FN) (TN + FP) (TN + FN)}}
 \end{equation}
-Matthews correlation coefficient ranges from -1 to 1, where 1 indicates perfect model's predictions, -1 indicates that model misclassifies all the instances and 0 indicates that model's predictions are not better than random guessing.
+Matthews correlation coefficient ranges from -1 to 1, where 1 indicates perfect model's predictions, -1 indicates that the model misclassifies all the instances, and 0 indicates that the model's predictions are not better than random guessing.
 
 \newpage
 \subsection{ROC Curve and AUC}
@@ -562,12 +561,12 @@ ROC curve is two-dimensional visualization of the model performance and shows tr
 In order to construct ROC curve, we need to sort the instances by the predicted probability scores and based on the given probability score, we set a threshold - what will be above the threshold will be classified as $True$ instance and what is below the threshold will be classified as $False$ instance. Thus, each probability score threshold produces a different confusion matrix and hence, different $TPR$ and $FPR$ values \citep{fawcett2006introduction}.
 Thus, if the probability is 1, the threshold will be 1 as well and hence:
 \begin{itemize}\setlength\itemsep{0em}
-    \item $TPR$ will be 0 because there is no probability which is higher than 1 and hence, everything will be classified as $Negative$ which will result into $TP$ of 0, and subsequently into $TPR$ of 0 as well.
+    \item $TPR$ will be 0, because there is no probability which is higher than 1 and hence, everything will be classified as $Negative$ which will result into $TP$ of 0, and subsequently into $TPR$ of 0 as well.
 	\item $FPR$ will be 0, too - since everything will be classified as $Negative$, therefore $FP$ will be 0 which implies $FPR$ to be 0, too.
 \end{itemize}
 On the other hand, if the probability is 0, the threshold will be 0 as well and hence:
 \begin{itemize}\setlength\itemsep{0em}
-    \item $TPR$ will be 1 because there is no probability which is lower than 0 and hence, everything will be classified as $Positive$ which will result into $FN$ of 0, and subsequently into $TPR$ of 1.
+    \item $TPR$ will be 1, because there is no probability which is lower than 0 and hence, everything will be classified as $Positive$ which will result into $FN$ of 0, and subsequently into $TPR$ of 1.
 	\item $FPR$ will be 1, too - since everything will be classified as $Positive$, therefore $TN$ will be 0 which implies $FPR$ to be 1.
 \end{itemize}
 
@@ -584,21 +583,20 @@ Note that the diagonal line represents a random model which randomly guesses the
 \end{figure}
 
 Logically, a decent model should perform better than the random model, thus it the ROC curve should be above the diagonal line.
-Intuitively, the best possible theoretical model would have $TPR$ of 1 and $FPR$ of 0, meaning that all the $True$ actual classes should be predicted as $True$ and all the $False$ actual classes should not be classified as $True$
- Within the ROC curve, the given curve reaches the left top corner which corresponds to the coordinates of $TPR$ and $FPR$.
+Intuitively, the best possible theoretical model would have $TPR$ of 1 and $FPR$ of 0, meaning that all the $Positive$ actual classes should be predicted as $Positive$ and all the $Negative$ actual classes should not be classified as $Negative$.
  \newpage
 \subsubsection{AUC}
 
 $AUC$ is basically the representation of ROC curve as a single number as it aggregates the performance on all possible thresholds ranging from 0 to 1.
-$AUC$ can be interpreted as the probability that the randomly chosen actual $True$ instance is ranked higher than the randomly chosen actual $False$ instance \citep{janitza2013auc}.
+$AUC$ can be interpreted as the probability that the randomly chosen actual $Positive$ instance is ranked higher than the randomly chosen actual $Negative$ instance \citep{janitza2013auc}.
 
-As the $AUC$ is an area present underneath the ROC curve, mathematically, it can be computed with the definite integral where $x$ is the given threshold:
+As the $AUC$ is an area that lies underneath the ROC curve, mathematically, it can be computed with the definite integral where $x$ is the given threshold:
 \begin{equation}\label{eq}
     AUC = \int_{0}^{1} TPR \left(FPR^{-1}\left(x \right)\right) dx
 \end{equation}
 
 
-Since ROC curve is a probability curve, thus it is considering distribution curve of $TP$ and distribution curve of $TN$, separated by particular threshold - hence, $TP$ would have probability scores above the given thresholds, whereas $TN$ would have probability scores below the threshold.
+Since ROC curve is a probability curve, thus it is considering the distribution curve of $TP$ and the distribution curve of $TN$, separated by particular threshold - hence, $TP$ should have probability scores above the given thresholds, whereas $TN$ should have probability scores below the threshold.
 If these curves do not overlap, meaning the model can perfectly distinguish between the $Positive$ and $Negative$ values, therefore the $AUC$ would be 1 and the ROC curve would reach the left top corner.
 
 However, this idealistic situation does not occur in the practice at all, but rather the two distributions are overlapping since the misclassification of the classes takes the place.
@@ -627,11 +625,11 @@ where $M_D$ and $M_{ND}$ refer to the number of default and non-default cases, r
  
 \subsection{Somer's D}
 
-The Somers' D is a metric which is part of the Kendall family of ranking measures. Particularly, assuming X-Y pairs, a Kendall's $\tau_{a}$ is defined as:
+The Somers' D is a metric which is part of the Kendall family of ranking measures. Particularly, assuming X-Y pairs, a Kendall's $\tau$ is defined as:
 \begin{equation}\label{eq}
     \tau\left(X,Y\right) = \text{E} \left[ \text{sign}(X_i - X_j) \text{sign} (Y_i - Y_j) \right]
 \end{equation}
-Equivalently, Kendall's $\tau_{a}$ can be defined as the difference between the probability that the two X-Y pairs are \textit{concordant} and the probability that they are \textit{discordant}. X-Y pair is concordant if the larger of the $X$ values is paired with larger of the $Y$ values, i.e., $X_i < X_j$ and $Y_i < Y_j$.
+Equivalently, Kendall's $\tau$ can be defined as the difference between the probability that the two X-Y pairs are \textit{concordant} and the probability that they are \textit{discordant}. X-Y pair is concordant if the larger of the $X$ values is paired with larger of the $Y$ values, i.e., $X_i < X_j$ and $Y_i < Y_j$.
 In contrast, X-Y pair is discordant if the larger of $X$ values is associated with smaller of $Y$ values or vice versa, i.e., $X_i < X_j$ and $Y_i > Y_j$, or $X_i > X_j$ and $Y_i < Y_j$ \citep{newson2002parameters}.
 \newpage
 Therefore, Somers' D can be defined as the difference between the two conditional probabilities of concordance and discordance, given that the two $X$ values are unequal \citep{newson2014interpretation} as follows:
@@ -646,19 +644,20 @@ Henceforth, Brier Score Loss is defined as a mean squared error between the $Tru
 \begin{equation}\label{eq}
     \text{Brier Score Loss} = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2
 \end{equation}
-Brier Score Loss ranges from 0 to 1, where the ideal scenario would be Brier Score Loss of 0 - in such case, the model would be perfect predictive power.
+Brier Score Loss ranges from 0 to 1, where the ideal scenario would be Brier Score Loss of 0 - in such case, the model would have perfect predictive power.
 
 \newpage
 \subsection{Log Loss}
 \label{subsubsec:logloss}
 
-Log loss, also know as logistic loss or cross--entropy loss, is a loss function metric which takes \textit{True} labels and predicted probabilities as an input and the minimize the difference between these two in a logarithmic function's form. Particularly, it indicates how close the predicted probabilities are to the corresponding $True$ labels. The more predicted probabilities diverges from the actual value, the more the log loss function penalizes the model's performance \citep{dembla2020intuition}.
+Log loss, also known as logistic loss or cross--entropy loss, is a loss function metric which takes \textit{True} labels and predicted probabilities as an input, and then minimizes the differences between these two in a logarithmic function's form.
+Particularly, it indicates how close the predicted probabilities are to the corresponding $True$ labels. The more predicted probabilities diverge from the actual values, the more the Log Loss function penalizes the model's performance \citep{dembla2020intuition}.
 \begin{equation}\label{eq}
     \text{Log Loss}  = -\frac{1}{N} \sum_{i=1}^{N} y_i \ln(p_i) + (1-y_i)\ln(1-p_i)
 \end{equation}
 
 
-Logically, the lower Log loss value, the better performance of the model is. As depicted in \autoref{fig:logloss}, we can observe the closer the predicted probability is closer to 1 with respect to the actual target class being equal to 1, the more is the log loss function closer to 0 which is desired in terms of model's performance.
+Logically, the lower Log loss value, the better performance of the model is. As depicted in \autoref{fig:logloss}, we can observe the closer the predicted probability is to 1 with respect to the actual target class being equal to 1, the more the Log Loss function closer to 0 which is, which is desired in terms of model's performance.
 \begin{figure}[H]
     \centering
     \caption{Log Loss Function for $Y=1$}\vspace{0.5em}
