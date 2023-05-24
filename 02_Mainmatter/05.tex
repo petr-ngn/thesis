@@ -185,7 +185,7 @@ Additionally, a preprocessing step utilizing Optimal Binning is implemented to d
 
 The author then utilizes custom wrapped algorithms for both feature selection and model selection.
 These algorithms incorporate Bayesian Optimization for hyperparameter tuning based on the chosen classification models (\autoref{subsec:hyperoptbayes}).
-Within the feature selection, algorithm, each model is tuned and used within Forward Sequential Feature Selection to determine the subset of optimal features  (\autoref{subsec:feature-selection}).
+Within the feature selection, algorithm, each model is tuned and used within Forward Sequential Feature Selection to determine the subset of optimal features (\autoref{subsec:feature-selection}).
 Within the model selection algorithm, each model is tuned and trained on subsets of selected features, determining an optimal threshold for classification using the Youden index, and subsequently evaluated on a validation set using a variety of metrics (\autoref{subsec:modelselection}).
 The models are ranked based on these metrics, considering explicit weights defined by the author.
 The best performing model is selected for final evaluation on the test set and for deployment.

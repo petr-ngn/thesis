@@ -16,7 +16,7 @@ By default, the threshold is set to 0.5, which means that if the predicted proba
 
 
 Whether to choose a transparent, white--box model such as logistic regression or a complex, black--box model such as ensemble models or neural network depends on various factors, such as the type of data set, sample size, data preprocessing techniques, hyperparameter tuning, or even the software used to implement the model.
-While Tepl\'{y} and Polena \citep{teply2020best} suggest that Logistic Regression is the best performing model on peer-to-peer loans data from Lending Club, Aniceto  \citep{aniceto2020machine} demonstrates that the ensemble models, namely Random Forest and AdaBoost, outperformed the Logistic Regression on a large Brazilian bank's loan data set.
+While Tepl\'{y} and Polena \citep{teply2020best} suggest that Logistic Regression is the best performing model on peer-to-peer loans data from Lending Club, Aniceto \citep{aniceto2020machine} demonstrates that the ensemble models, namely Random Forest and AdaBoost, outperformed the Logistic Regression on a large Brazilian bank's loan data set.
 
 
 
@@ -96,10 +96,10 @@ Therefore, according to Aras, one would expect that KNN and Random Forest would 
 
 The latter study pertains to the research conducted by Zurada \citep{zurada2014classification}. Likewise Aras, the author also analyzed various classification models, but only the relevant ones to this thesis are further discussed.
 Namely, Zurada trained Neural Network (NN), Decision Tree (DT), Support Vector Machine (SVM), K--Nearest Neighbors (KNN) and Logistic Regression (LR), using Weka software.
-The author did not mention which imputation technique they used or the data split ratio (i.e., the test size used for an evaluation), but likewise  Aras, Zurada conducted a hyperparameter tuning using Grid Search with 10--fold cross validation.
+The author did not mention which imputation technique they used or the data split ratio (i.e., the test size used for an evaluation), but likewise Aras, Zurada conducted a hyperparameter tuning using Grid Search with 10--fold cross validation.
 
 
-The evaluation  results are depicted in \autoref{tab:zuradaresults}, namely the computed metrics such as Accuracy (Acc.), Recall (Rec.) and AUC are assessed.
+The evaluation results are depicted in \autoref{tab:zuradaresults}, namely the computed metrics such as Accuracy (Acc.), Recall (Rec.) and AUC are assessed.
 As can be seen, the KNN model, which was the best one in case of Aras' study, yielded a very deteriorated performance, while Logistic Regression still performed badly.
 On the other hand, Neural Network was the best performing model as a black--box model. Surprisingly, Decision Tree showcased relatively high performance in contrast to Aras' study, where Decision Tree's performance was quite weak.
 \begin{table}[H]

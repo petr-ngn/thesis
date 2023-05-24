@@ -121,7 +121,7 @@ To achieve this, the user has to either change the path in the terminal using \t
 
 
 To preserve the reproducibility of this solution and consistency of the results, the random seed is instantiated to \texttt{42}, so for instance, data split, model optimization, or training would be deterministic and not totally random every time when replicating the solution.
-Some \lstinline{Scikit-learn} or \lstinline{Scikit-optimize} objects have the optional argument \texttt{n\_jobs} which utilizes the number of central processing units (CPU) cores used during the parallelizing computation. Such argument is set to \texttt{-1}, hence, all the processors are used in order to  speed up the training or optimization process.
+Some \lstinline{Scikit-learn} or \lstinline{Scikit-optimize} objects have the optional argument \texttt{n\_jobs} which utilizes the number of central processing units (CPU) cores used during the parallelizing computation. Such argument is set to \texttt{-1}, hence, all the processors are used in order to speed up the training or optimization process.
 
 
 \newpage
@@ -548,7 +548,7 @@ Therefore, it can be inferred that a significant number of loan applicants tend 
 \end{figure}
 
 Note that the target variable is imbalanced, therefore, the dendrogram depicted in \autoref{fig:dendrogram} is not representative for the default cases. Therefore, we can also inspect the dendrogram for the default cases only, as shown in \autoref{fig:dendrogramdef}.
-As can be seen, the hierarchy has changed compared the hierarchy in \autoref{fig:dendrogram}. It can be observed that a significant number of loan applicants tend to omit  information regarding their number of credit lines (\texttt{CLNO}) and the number of delinquent credit lines (\texttt{DELINQ}) when submitting their loan applications. Especially regarding the second feature, this might indicate a common delinquency problem among the applicants and, thus, a higher probability of default.
+As can be seen, the hierarchy has changed compared the hierarchy in \autoref{fig:dendrogram}. It can be observed that a significant number of loan applicants tend to omit information regarding their number of credit lines (\texttt{CLNO}) and the number of delinquent credit lines (\texttt{DELINQ}) when submitting their loan applications. Especially regarding the second feature, this might indicate a common delinquency problem among the applicants and, thus, a higher probability of default.
 \begin{figure}[H]
     \centering
     \caption{Nullity Dendrogram (default cases)}\vspace{0.5em}
@@ -917,7 +917,7 @@ Weights & Uniform, Distance \\
 \subsubsection{Random Forest}
 In the Random Forest, we tune the number of base trees that are trained in parallel way in the ensemble, i.e., the \textbf{\texttt{\# estimators}} hyperparameter.
 Similarly to Decision Tree, Random Forest allows to select the optimal split measure, i.e., Gini, Entropy or additionally even Log Loss, which is depicted in the \textbf{\texttt{Criterion}} hyperparameter.
-Likewise Decision Tree, Random Forest also allows us to specify the maximum depth of the tree as well as  the number of features to consider when looking for the best split, i.e., the \textbf{\texttt{Max depth}} hyperparameter and \textbf{\texttt{Max features}}, respectively.
+Likewise Decision Tree, Random Forest also allows us to specify the maximum depth of the tree as well as the number of features to consider when looking for the best split, i.e., the \textbf{\texttt{Max depth}} hyperparameter and \textbf{\texttt{Max features}}, respectively.
 The \textbf{\texttt{Bootstrap}} hyperparameter allows us to specify whether bootstrap samples are used when training the tree estimators.
 
 Similarly to Logistic Regression, Random Forest also has the \textbf{\texttt{Class weight}} hyperparameter which allows to specify the weight of each class in the classification process - \textit{balanced} function takes the target variable to adjust the weights, which are inversely proportional to class frequencies, whereas \textit{subsample balanced} does almost the same, but the weights are computed based on the bootstrap samples.
@@ -1048,7 +1048,7 @@ Learning rate & Constant, Adaptive, Invscaling \\
 As the feature selection approach, Forward Sequential Feature Selection (henceforth SFS) is employed in order to choose the optimal set of features as described in \autoref{sec:fsfstheory}.
 Within machine learning implementation, instead of fitting Forward SFS only with one model, Forward SFS is fitted to each input model in order to obtain the best subset of features for each model, assuming the importance of each features varies across the models.
 Instead of using input models with default hyperparameters, each model is tuned with Bayesian Optimization in order to obtain the optimal hyperparameters for each model, which would further improve the performance of each model within SFS and therefore, it would lead to the more optimal selection of features.
-The custom feature selection algorithm is stated in Algorithm \autoref{alg:feature_selection}, thus, when having $n$ input models, it returns $n$  subsets of optimal features, one per each model:
+The custom feature selection algorithm is stated in Algorithm \autoref{alg:feature_selection}, thus, when having $n$ input models, it returns $n$ subsets of optimal features, one per each model:
 \begin{algorithm}[H]
 \caption{Feature Selection Algorithm}
 \label{alg:feature_selection}
@@ -1098,7 +1098,7 @@ Execution time: 0.8622 minutes
 \end{figure}
 
 
-The following \autoref{fig:fsrec} depicts the recurrence  of the selected features. As can be seen, features such as \texttt{CLAGE}, \texttt{DEBTINC}, \texttt{DELINQ} and \texttt{JOB} were selected by each model.
+The following \autoref{fig:fsrec} depicts the recurrence of the selected features. As can be seen, features such as \texttt{CLAGE}, \texttt{DEBTINC}, \texttt{DELINQ} and \texttt{JOB} were selected by each model.
 On the other hand, features such as \texttt{LOAN} and \texttt{REASON} were selected only four times. Therefore, it can be expected that such features, which were selected every time, will have a significant impact on predictions.
 \begin{figure}[H]
 \centering
@@ -1125,7 +1125,7 @@ It is evident that more complex black--box models require more features in contr
 \subsection{Model Selection}
 \label{subsec:modelselection}
 
-In combination with the pre--selected subsets of features, the next step regards the selection of the final model, which will be further used within an evaluation and deployment. The algorithm process is described in Algorithm  \autoref{alg:model_selection} below:
+In combination with the pre--selected subsets of features, the next step regards the selection of the final model, which will be further used within an evaluation and deployment. The algorithm process is described in Algorithm \autoref{alg:model_selection} below:
 \begin{algorithm}[H]
 \caption{Model Selection Algorithm}
 \label{alg:model_selection}

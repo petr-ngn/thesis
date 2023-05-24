@@ -225,7 +225,7 @@ Further, the second adjustment is applied to the denominator of the Bayes theore
 \end{equation}
 
 During the training process, the Naive Bayes algorithm computes $\operatorname{Pr}\left(Y\right)$ and $ \operatorname{Pr}\left(X \mid Y \right)$ for each class event $Y$ and each feature $X$.
-In terms of default status, it calculates the proportion of defaulters  $\operatorname{Pr}\left(Y = 1\right)$ and non--defaulters $\operatorname{Pr}\left(Y=0\right)$ within given training sample, as well as the proportion of defaulters and non--defaulters within given features $X$.
+In terms of default status, it calculates the proportion of defaulters $\operatorname{Pr}\left(Y = 1\right)$ and non--defaulters $\operatorname{Pr}\left(Y=0\right)$ within given training sample, as well as the proportion of defaulters and non--defaulters within given features $X$.
 
 
 When it comes to the predictions or classification of new instances, we use the trained Naive Bayes model, i.e., the computed probabilities $\operatorname{Pr}\left(Y\right)$ and $ \operatorname{Pr}\left(X \mid Y \right)$ for both default and non--default class.
@@ -688,7 +688,7 @@ Brier Score Loss ranges from 0 to 1, where the ideal scenario would be a Brier S
 Log loss, also known as logistic loss or cross--entropy loss, is a loss function metric that takes \textit{True} labels and predicted probabilities as input, and then minimizes the differences between these two in a logarithmic function's form.
 Particularly, it indicates how close the predicted probabilities are to the corresponding $True$ labels. The more predicted probabilities diverge from the actual values, the more the Log Loss function penalizes the model's performance \citep{dembla2020intuition}.
 \begin{equation}\label{eq}
-text{Log Loss}  = -\frac{1}{N} \sum_{i=1}^{N} y_i \ln(p_i) + (1-y_i)\ln(1-p_i)
+text{Log Loss} = -\frac{1}{N} \sum_{i=1}^{N} y_i \ln(p_i) + (1-y_i)\ln(1-p_i)
 \end{equation}
 
 
@@ -735,7 +735,7 @@ where $m_l$ is the number of majority class instances, $m_s$ is the number of mi
 
 Then, for each minority class instance $x_i$, using $K$-Nearest Neighbors with Euclidean distance, calculate the ratio $r_i$ as:
 \begin{equation}\label{eq}
-     r_{i} = \frac{\delta_{i}} {K}
+    r_{i} = \frac{\delta_{i}} {K}
 \end{equation}
 where $\delta_{i}$ is the number of majority class instances within the $K$ nearest neighbors of $x_i$.
 In such case, higher $r_i$ indicates dominance of the majority class in given specific neighborhood of $x_i$ \citep{nian2018introduction}.
@@ -798,7 +798,7 @@ Assuming feature $X$ and its respective bin $b_i$, thus $b_i \in X$, we can expr
 \end{equation}
 According to Navas--Palencia \citep{navas2020optimal}, the WoE for bin $i$ can also be computed as:
 \begin{equation}\label{eq}
-    WoE_{i} = \ln \left( \frac{r^{ND}_i / r^{ND}_T} {r^{D}_i / r^{D}_T}  \right)
+    WoE_{i} = \ln \left( \frac{r^{ND}_i / r^{ND}_T} {r^{D}_i / r^{D}_T} \right)
 \end{equation}
 where $r^{ND}_i$ is the number of non--default instances in the given bin $i$, $r^{D}_i$ is the number of default instances in the given bin $i$, $r^{ND}_T$ is the total number of non--default instances in the whole sample and $r^{D}_T$ is the total number of default instances in the whole sample.
 Thus, a positive WoE value indicates a larger distribution of non--defaults, i.e., a higher likelihood of non--default, while a negative WoE value indicates a larger distribution of defaults, i.e., a higher likelihood of default.
