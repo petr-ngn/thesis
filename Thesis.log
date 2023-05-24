@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.31)  24 MAY 2023 11:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.31)  24 MAY 2023 12:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2359,54 +2359,60 @@ Package pdftex.def Info: Figures/sigmoid.jpg  used on input line 102.
 <Figures/dtnodes.jpg, id=853, 678.535pt x 232.87pt>
 File: Figures/dtnodes.jpg Graphic file (type jpg)
 <use Figures/dtnodes.jpg>
-Package pdftex.def Info: Figures/dtnodes.jpg  used on input line 165.
+Package pdftex.def Info: Figures/dtnodes.jpg  used on input line 166.
 (pdftex.def)             Requested size: 369.88582pt x 126.94182pt.
  [10.25 <./Figures/dtnodes.jpg>]
 <Figures/impurity.jpg, id=867, 578.16pt x 361.35pt>
 File: Figures/impurity.jpg Graphic file (type jpg)
 <use Figures/impurity.jpg>
-Package pdftex.def Info: Figures/impurity.jpg  used on input line 190.
+Package pdftex.def Info: Figures/impurity.jpg  used on input line 191.
 (pdftex.def)             Requested size: 312.9803pt x 195.6113pt.
- [11.26 <./Figures/impurity.jpg>] [12.27]
-Overfull \hbox (3.40764pt too wide) in paragraph at lines 233--235
-\T1/lmr/m/n/12 Specifically, in terms of bi-nary clas-si-fi-ca-tion for pre-dic-tion of given class, whether
- []
-
-[13.28] [14.29]
+ [11.26 <./Figures/impurity.jpg>] [12.27] [13.28] [14.29]
 <Figures/KNN_example.jpg, id=906, 291.33844pt x 199.49532pt>
 File: Figures/KNN_example.jpg Graphic file (type jpg)
 <use Figures/KNN_example.jpg>
-Package pdftex.def Info: Figures/KNN_example.jpg  used on input line 293.
+Package pdftex.def Info: Figures/KNN_example.jpg  used on input line 298.
 (pdftex.def)             Requested size: 199.16928pt x 136.38557pt.
  [15.30 <./Figures/KNN_example.jpg>] [16.31] [17.32]
 <Figures/svmhyperplane.jpg, id=950, 459.21562pt x 453.94594pt>
 File: Figures/svmhyperplane.jpg Graphic file (type jpg)
 <use Figures/svmhyperplane.jpg>
-Package pdftex.def Info: Figures/svmhyperplane.jpg  used on input line 349.
+Package pdftex.def Info: Figures/svmhyperplane.jpg  used on input line 355.
 (pdftex.def)             Requested size: 170.71652pt x 168.76085pt.
  [18.33 <./Figures/svmhyperplane.jpg>] [19.34]
 <Figures/nn-example.jpg, id=986, 501.875pt x 310.15875pt>
 File: Figures/nn-example.jpg Graphic file (type jpg)
 <use Figures/nn-example.jpg>
-Package pdftex.def Info: Figures/nn-example.jpg  used on input line 415.
+Package pdftex.def Info: Figures/nn-example.jpg  used on input line 423.
 (pdftex.def)             Requested size: 284.52756pt x 175.8458pt.
  [20.35 <./Figures/nn-example.jpg>] [21.36] [22.37] [23.38] [24.39] [25.40] [26.41] [27.42]
 <Figures/ROC_theory.jpg, id=1076, 508.299pt x 388.5717pt>
 File: Figures/ROC_theory.jpg Graphic file (type jpg)
 <use Figures/ROC_theory.jpg>
-Package pdftex.def Info: Figures/ROC_theory.jpg  used on input line 589.
+Package pdftex.def Info: Figures/ROC_theory.jpg  used on input line 606.
 (pdftex.def)             Requested size: 284.52756pt x 217.50972pt.
  [28.43 <./Figures/ROC_theory.jpg>] [29.44] [30.45] [31.46]
+
+LaTeX Warning: Command \^ invalid in math mode on input line 691.
+
 <Figures/logloss.jpg, id=1125, 794.97pt x 505.89pt>
 File: Figures/logloss.jpg Graphic file (type jpg)
 <use Figures/logloss.jpg>
-Package pdftex.def Info: Figures/logloss.jpg  used on input line 674.
+Package pdftex.def Info: Figures/logloss.jpg  used on input line 701.
 (pdftex.def)             Requested size: 369.88582pt x 235.3908pt.
- [32.47 <./Figures/logloss.jpg>] [33.48] [34.49] [35.50]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 741.
+[32.47 <./Figures/logloss.jpg>] [33.48]
+
+LaTeX Warning: Command \^ invalid in math mode on input line 738.
+
+[34.49] [35.50]
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 774.
  (c:/tex/texlive/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [36.51] [37.52] [38.53] [39.54] [40.55] [41.56] [42.57]) (./02_Mainmatter/03.tex [43.58]
+) [36.51]
+
+LaTeX Warning: Command \^ invalid in math mode on input line 801.
+
+[37.52] [38.53] [39.54] [40.55] [41.56] [42.57]) (./02_Mainmatter/03.tex [43.58]
 Chapter 3.
 [44.59
 
@@ -3180,7 +3186,7 @@ Here is how much of TeX's memory you used:
  48 hyphenation exceptions out of 8191
  123i,12n,120p,699b,2543s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}<c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmex10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmmi12.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmmi6.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmr17.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmr6.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmri12.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmss12.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmsy6.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmsy7.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmsy8.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmtk10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmtt10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmtt12.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmtt9.pfb>
-Output written on Thesis.pdf (173 pages, 16781423 bytes).
+Output written on Thesis.pdf (173 pages, 16781605 bytes).
 PDF statistics:
  2589 PDF objects out of 2984 (max. 8388607)
  2261 compressed objects within 23 object streams
