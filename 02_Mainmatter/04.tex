@@ -232,7 +232,7 @@ Such distribution inspection may help us identify outliers, and other potential 
 
 Regarding the target variable distribution, from the \autoref{fig:defaultdist} we can observe that the default status distribution is heavily imbalanced, as most of the loans have not defaulted yet.
 Particularly, 80.05\% of the observations have been labelled as non-default (4,771 observations) and 19.95\% observations labelled as default (1,189 observations).
-This may cause problems in the modelling part, as the model may be biased towards the majority class, i.e., the non-default class. Such imbalanced class issue will be further treated in \autoref{subsec:data-split-ADASYN}.
+This may cause problems in the modelling part, as the model might be biased towards the majority class, i.e., the non-default class. Such imbalanced class issue will be further treated in \autoref{subsec:data-split-ADASYN}.
 
 \begin{figure}[H]
 \centering
@@ -247,22 +247,22 @@ This may cause problems in the modelling part, as the model may be biased toward
 \label{subsubsec:numdist}
 
 Regarding the numeric features, it can be observed that most of them exhibit a positive skewness and contain outliers, as illustrated in \autoref{fig:boxfeat}, which depicts the conditional distribution of the numeric features with respect to the default status via boxplots.
-
 All the outliers appear to be valid, indicating that they have not arisen due to data entry errors.
 This can be attributed to the non-negative nature of all the numeric features, which makes it impossible to have negative values for features such as the number of years at present job or the number of delinquent credit lines, among others.
 Additionally, the maximum values of the given features are not unrealistically high, further corroborating the validity of the outliers.
-However, it is necessary to treat these outliers as they can bias a model's weights or coefficients, particularly in the case of logistic regression or neural networks.
-Outliers can also jeopardize distance calculations in the case of KNN, or in general, affect the position and orientation of the decision boundary.
+
+However, it is necessary to treat these outliers as they can bias and jeopardize model's weights, coefficients or distance calculation, which may significantly affect the position and orientation of the decision boundary.
 Such factors can lead to overfitting and inaccurate and biased predictions.
 A detailed explanation of the outlier treatment is provided in \autoref{subsec:prep-optbinning}.
 
+\newpage
 Concerning the target variable, it can be observed that there are some differences in the distribution shapes of \texttt{DEROG} and \texttt{DELINQ}, which exhibit less skewness and lower dispersion for non-default cases as compared to default cases.
 Since both features indicate negative information about delinquency, it is expected that a higher value for these features would increase the likelihood of loan default.
 Referring to the feature \texttt{DEBTINC}, it does not exhibit any extreme values for non-default cases, but some extreme values are present for default cases.
 From this, it can be inferred that if the debt-to-income ratio is too high, indicating that the applicant's income is not sufficient to cover their debt, the loan is more likely to end in default.
 The association between the default status and the numeric features is further investigated in \autoref{subsubsec:target-num-ass}.
 
-Since the features are positively skewed a lot, they do not follow Gaussian (normal) distribution. Additionally, Shapiro--Wilk test is conducted in order to assessed whether the features' distributions are significantly different from a normal distribution.
+Since the features are substantially positively skewed, they do not follow Gaussian (normal) distribution. Additionally, Shapiro--Wilk test is conducted in order to assess whether the features' distributions are significantly different from the normal distribution.
 According to such test, all the numeric features' distributions do not follow normal distribution on 1\% statistical significance level.
 For a reference, see \autoref{tab:normalitytest} in \autoref{chap:app1}.
 
