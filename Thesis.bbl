@@ -125,13 +125,15 @@
 \bibitem[{Brownlee(2020)}]{Brownlee2020}
 \textsc{Brownlee}, J. (2020): \enquote{{Recursive feature elimination (RFE) for
   feature selection in Python}.}
-\newblock MachineLearningMastery.com. Retrieved April 28, 2023. Available at
+\newblock MachineLearningMastery.com. Accessed on: April 28, 2023. Available
+  at:
   \url{https://machinelearningmastery.com/rfe-feature-selection-in-python/}.
 
 \bibitem[{Brownlee(2021)}]{brownlee2021failure}
 \textsc{Brownlee}, J. (2021): \enquote{{Failure of Classification Accuracy for
   Imbalanced Class Distributions}.}
-\newblock MachineLearningMastery.com. Retrieved April 30, 2023. Available at
+\newblock MachineLearningMastery.com. Accessed on: April 30, 2023. Available
+  at:
   \url{https://machinelearningmastery.com/failure-of-accuracy-for-imbalanced-class-distributions/}.
 
 \bibitem[{Charu(2018)}]{charu2018neural}
@@ -152,12 +154,12 @@
 \bibitem[{Comotto(2022)}]{comotto2022evaluation}
 \textsc{Comotto}, F. (2022): \enquote{{Evaluation Metrics: Leave Your Comfort
   Zone and Try MCC and Brier Score}.}
-\newblock TowardsDataScience.com. Retrieved April 30, 2023. Available at
+\newblock TowardsDataScience.com. Accessed on: April 30, 2023. Available at:
   \url{https://towardsdatascience.com/evaluation-metrics-leave-your-comfort-zone-and-try-mcc-and-brier-score-86307fb1236a}.
 
 \bibitem[{Dembla(2020)}]{dembla2020intuition}
 \textsc{Dembla}, G. (2020): \enquote{{Intuition behind Log-Loss score}.}
-\newblock TowardsDataScience.com. Retrieved April 30, 2023. Available at
+\newblock TowardsDataScience.com. Accessed on: April 30, 2023. Available at:
   \url{https://towardsdatascience.com/intuition-behind-log-loss-score-4e0c9979680a}.
 
 \bibitem[{Dias \emph{et~al.}(2018)Dias, Experian, Melissa~Forti, Witarsa, \&
@@ -169,7 +171,7 @@
 \bibitem[{Dilmegani(2022)}]{Dilmegani2017}
 \textsc{Dilmegani}, C. (2022): \enquote{Dark side of neural networks explained
   [2023].}
-\newblock AIMultiple.com. Retrieved April 30, 2023. Available at
+\newblock AIMultiple.com. Accessed on: April 30, 2023. Available at:
   \url{https://research.aimultiple.com/how-neural-networks-work/}.
 
 \bibitem[{Doumpos \emph{et~al.}(2019)Doumpos, Lemonakis, Niklis, \&
@@ -211,7 +213,7 @@
 \bibitem[{Gauhar(2020)}]{gauhar2020decision}
 \textsc{Gauhar}, N. (2020): \enquote{{Decision Tree: A Classification
   Algorithm}.}
-\newblock LearningWithGauhar.com. Retrieved April 30, 2023. Available at
+\newblock LearningWithGauhar.com. Accessed on: April 30, 2023. Available at:
   \url{https://learnwithgauhar.com/decision-tree-a-classification-algorithm/}.
 
 \bibitem[{Gevorkyan \emph{et~al.}(2019)Gevorkyan, Demidova, Demidova, \&
@@ -247,12 +249,12 @@
 \bibitem[{H2O.ai(2023)}]{H2Oai2023}
 \textsc{H2O.ai} (2023): \enquote{{AutoML: Automatic Machine Learning}.}
 \newblock AutoML: Automatic Machine Learning - H2O 3.40.0.4 documentation.
-  Retrieved March 28, 2023.
+  Accessed on: March 28, 2023.
   \url{ttps://docs.h2o.ai/h2o/latest-stable/h2o-docs/automl.html}.
 
 \bibitem[{Hale(2019)}]{hale2019dont}
 \textsc{Hale}, J. (2019): \enquote{{Don't Sweat the Solver Stuff}.}
-\newblock TowardsDataScience.com. Retrieved May 1, 2023. Available at
+\newblock TowardsDataScience.com. Accessed on: May 1, 2023. Available at:
   \url{https://towardsdatascience.com/dont-sweat-the-solver-stuff-aea7cddc3451}.
 
 \bibitem[{Hall(2018)}]{hall2018machine}
@@ -296,7 +298,7 @@
 \bibitem[{Igareta(2021)}]{igareta2021strat}
 \textsc{Igareta}, A. (2021): \enquote{Stratified sampling: You may have been
   splitting your dataset all wrong.}
-\newblock TowardsDataScience.com. Retrieved April 17, 2023. Available at
+\newblock TowardsDataScience.com. Accessed on: April 17, 2023. Available at:
   \url{https://towardsdatascience.com/stratified-sampling-you-may-have-been-splitting-your-dataset-all-wrong-8cfdd0d32502}.
 
 \bibitem[{Jahromi \& Taheri(2017)}]{jahromi2017non}
@@ -340,7 +342,7 @@
 \bibitem[{Kaushik(2023)}]{kaushik2016introduction}
 \textsc{Kaushik}, S. (2023): \enquote{{Introduction to Feature Selection
   methods with an example (or how to select the right variables?)}.}
-\newblock Analytics Vidhya. Retrieved April 30, 2023. Available at
+\newblock Analytics Vidhya. Accessed on: April 30, 2023. Available at:
   \url{ttps://www.analyticsvidhya.com/blog/2016/12/introduction-to-feature-selection-methods-with-an-example-or-how-to-select-the-right-variables/}.
 
 \bibitem[{Kazemi \emph{et~al.}(2022)Kazemi, Khalili-Damghani, \&
@@ -354,7 +356,7 @@
 \bibitem[{Khatri \& Jonhs(2023)}]{khatri2023}
 \textsc{Khatri}, V.~S. \& R.~\textsc{Jonhs} (2023): \enquote{{Flask vs Django:
   Which Python Web Framework to Use in 2023?}}
-\newblock hackr.io. Retrieved May 20, 2023. Available at
+\newblock hackr.io. Accessed on: May 20, 2023. Available at:
   \url{https://hackr.io/blog/flask-vs-django}.
 
 \bibitem[{Konno \& Itoh(2016)}]{konno2016alternative}
@@ -432,7 +434,7 @@
 
 \bibitem[{Narkhede(2018)}]{narkhede2018understanding}
 \textsc{Narkhede}, S. (2018): \enquote{{Understanding AUC-ROC Curve}.}
-\newblock TowardsDataScience.com. Retrieved April 28, 2023. Available at
+\newblock TowardsDataScience.com. Accessed on: April 28, 2023. Available at:
   \url{https://towardsdatascience.com/understanding-auc-roc-curve-68b2303cc9c5}.
 
 \bibitem[{Navas-Palencia(2020)}]{navas2020optimal}
@@ -459,7 +461,7 @@
 \bibitem[{Nian(2018)}]{nian2018introduction}
 \textsc{Nian}, R. (2018): \enquote{{Fixing Imbalanced Datasets: An Introduction
   to ADASYN (with code!)}.}
-\newblock Medium.com. Retrieved May 2, 2023. Available at
+\newblock Medium.com. Accessed on: May 2, 2023. Available at:
   \url{https://medium.com/@ruinian/an-introduction-to-adasyn-with-code-1383a5ece7aa}.
 
 \bibitem[{Owen(2022)}]{owen2022hyperparameter}
@@ -510,7 +512,7 @@
 \bibitem[{Pramoditha(2021)}]{pramoditha2021mitigate}
 \textsc{Pramoditha}, R. (2021): \enquote{{How to Mitigate Overfitting with
   Regularization}.}
-\newblock TowardsDataScience.com. Retrieved May 1, 2023. Available at
+\newblock TowardsDataScience.com. Accessed on: May 1, 2023. Available at:
   \url{https://towardsdatascience.com/how-to-mitigate-overfitting-with-regularization-befcf4e41865}.
 
 \bibitem[{Prati \emph{et~al.}(2009)Prati, Batista, \& Monard}]{prati2009data}
@@ -528,7 +530,7 @@
 
 \bibitem[{PwC(2023)}]{PwC2023}
 \textsc{PwC} (2023): \enquote{Risk management and modelling.}
-\newblock PwC. Retrieved May 20, 2023. Available at
+\newblock PwC. Accessed on: May 20, 2023. Available at:
   \url{https://www.pwc.com/cz/cs/assets/Risk-management-and-Modelling-eBook-A4.pdf}.
 
 \bibitem[{Ribeiro \emph{et~al.}(2016)Ribeiro, Singh, \&
@@ -542,51 +544,51 @@
 \bibitem[{{scikit-learn}(2023{\natexlab{a}})}]{scikit-dt}
 \textsc{{scikit-learn}} (2023{\natexlab{a}}):
   \enquote{{DecisionTreeClassifier}.}
-\newblock Scikit-learn. Retrieved April 28, 2023. Available at
+\newblock Scikit-learn. Accessed on: April 28, 2023. Available at:
   \url{https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html#sklearn.tree.DecisionTreeClassifier}.
 
 \bibitem[{{scikit-learn}(2023{\natexlab{b}})}]{scikit-gnb}
 \textsc{{scikit-learn}} (2023{\natexlab{b}}): \enquote{{GaussianNB}.}
-\newblock Scikit-learn. Retrieved April 28, 2023. Available at
+\newblock Scikit-learn. Accessed on: April 28, 2023. Available at:
   \url{https://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.GaussianNB.html#sklearn.naive_bayes.GaussianNB}.
 
 \bibitem[{{scikit-learn}(2023{\natexlab{c}})}]{scikit-gb}
 \textsc{{scikit-learn}} (2023{\natexlab{c}}):
   \enquote{{GradientBoostingClassifier}.}
-\newblock Scikit-learn. Retrieved April 28, 2023. Available at
+\newblock Scikit-learn. Accessed on: April 28, 2023. Available at:
   \url{https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingClassifier.html#sklearn.ensemble.GradientBoostingClassifier}.
 
 \bibitem[{{scikit-learn}(2023{\natexlab{d}})}]{scikit-knn}
 \textsc{{scikit-learn}} (2023{\natexlab{d}}): \enquote{{KNeighborsClassifier}.}
-\newblock Scikit-learn. Retrieved April 28, 2023. Available at
+\newblock Scikit-learn. Accessed on: April 28, 2023. Available at:
   \url{https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html#sklearn.neighbors.KNeighborsClassifier}.
 
 \bibitem[{{scikit-learn}(2023{\natexlab{e}})}]{scikit-mlp}
 \textsc{{scikit-learn}} (2023{\natexlab{e}}): \enquote{{MLPClassifier}.}
-\newblock Scikit-learn. Retrieved April 28, 2023. Available at
+\newblock Scikit-learn. Accessed on: April 28, 2023. Available at:
   \url{https://scikit-learn.org/stable/modules/generated/sklearn.neural_network.MLPClassifier.html#sklearn.neural_network.MLPClassifier}.
 
 \bibitem[{{scikit-learn}(2023{\natexlab{f}})}]{scikit-rf}
 \textsc{{scikit-learn}} (2023{\natexlab{f}}):
   \enquote{{RandomForestClassifier}.}
-\newblock Scikit-learn. Retrieved April 28, 2023. Available at
+\newblock Scikit-learn. Accessed on: April 28, 2023. Available at:
   \url{https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html#sklearn.ensemble.RandomForestClassifier}.
 
 \bibitem[{{scikit-learn}(2023{\natexlab{g}})}]{sfs}
 \textsc{{scikit-learn}} (2023{\natexlab{g}}):
   \enquote{{SequentialFeatureSelector}.}
-\newblock Scikit-learn. Retrieved April 28, 2023. Available at
+\newblock Scikit-learn. Accessed on: April 28, 2023. Available at:
   \url{https://scikit-learn.org/stable/modules/generated/sklearn.feature_selection.SequentialFeatureSelector.html#sklearn.feature_selection.SequentialFeatureSelector}.
 
 \bibitem[{{scikit-optimize}(2023{\natexlab{a}})}]{scikit-opt}
 \textsc{{scikit-optimize}} (2023{\natexlab{a}}): \enquote{{BayesSearchCV}.}
-\newblock Scikit-optimize. Retrieved April 28, 2023. Available at
+\newblock Scikit-optimize. Accessed on: April 28, 2023. Available at:
   \url{https://scikit-optimize.github.io/stable/modules/generated/skopt.BayesSearchCV.html#}.
 
 \bibitem[{{scikit-optimize}(2023{\natexlab{b}})}]{scikit-lr}
 \textsc{{scikit-optimize}} (2023{\natexlab{b}}):
   \enquote{{LogisticRegression}.}
-\newblock Scikit-learn. Retrieved April 28, 2023. Available at
+\newblock Scikit-learn. Accessed on: April 28, 2023. Available at:
   \url{https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html#sklearn.linear_model.LogisticRegression}.
 
 \bibitem[{Shakdwipee \& Mehta(2017)}]{shakdwipee2017basel}
@@ -628,19 +630,19 @@
 \bibitem[{Verma(2022)}]{Verma2020}
 \textsc{Verma}, V. (2022): \enquote{{A comprehensive guide to Feature Selection
   using Wrapper methods in Python}.}
-\newblock Analytics Vidhya. Retrieved April 30, 2023. Available at
+\newblock Analytics Vidhya. Accessed on: April 30, 2023. Available at:
   \url{https://www.analyticsvidhya.com/blog/2020/10/a-comprehensive-guide-to-feature-selection-using-wrapper-methods-in-python/}.
 
 \bibitem[{Verma(2021)}]{Verma2021}
 \textsc{Verma}, Y. (2021): \enquote{{A Complete Guide to Sequential Feature
   Selection}.}
-\newblock Analytics India Magazine. Retrieved April 28, 2023. Available at
+\newblock Analytics India Magazine. Accessed on: April 28, 2023. Available at:
   \url{https://analyticsindiamag.com/a-complete-guide-to-sequential-feature-selection/}.
 
 \bibitem[{Wang(2020)}]{wang2020bayesian}
 \textsc{Wang}, W. (2020): \enquote{{Bayesian optimization concept explained in
   Layman terms}.}
-\newblock TowardsDataScience.com. Retrieved April 29, 2023. Available at
+\newblock TowardsDataScience.com. Accessed on: April 29, 2023. Available at:
   \url{https://towardsdatascience.com/bayesian-optimization-concept-explained-in-layman-terms-1d2bcdeaf12f}.
 
 \bibitem[{Wendler \& Gr{\"o}ttrup(2021)}]{wendler2021data}
@@ -651,7 +653,7 @@
 \bibitem[{White(2022)}]{experian}
 \textsc{White}, J. (2022): \enquote{{What Does 'Derogatory' Mean on a Credit
   Report?}}
-\newblock Experian. Retrieved March 21, 2023.
+\newblock Experian. Accessed on: March 21, 2023.
   \url{https://www.experian.com/blogs/ask-experian/what-the-term-derogatory-means-in-a-credit-report/}.
 
 \bibitem[{Witten \emph{et~al.}(2016)Witten, Frank, Hall, \&
