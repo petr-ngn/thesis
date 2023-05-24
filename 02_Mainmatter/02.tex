@@ -726,15 +726,15 @@ where $x_{zi}$ represents the randomly chosen minority class instance within the
 In the context of data preprocessing, it is crucial to consider the most appropriate feature transformation method that optimizes the performance of machine learning models.
 Although common approaches such as dummy encoding, standardization, logarithmic transformation, and normalization are widely used, they may not always be suitable for a given data set due to the presence of certain characteristics.
 For instance, dummy encoding (also known as one--hot encoding) may not be suitable for categorical features with a large number of categories as it could lead to the curse of dimensionality, therefore, it may result in the decrease of model's performance \citep{bera2021dimensionality}.
-Standardization may not be appropriate for features with a large number of outliers as it may result in a loss of information.
 
-Therefore, alternative approaches such as discretization or binning are increasingly being used. Binning is a categorization process to transform a continuous variable into a small set of groups or bins \citep{zeng2014necessary}. This approach enables the identification of outliers within bins and reduce their impact, and additionally, it can capture missing values without requiring the removal or imputation of such values.
+Therefore, alternative approaches such as discretization, also known as binning, are increasingly being used. Binning is a categorization process to transform a continuous variable into a small set of groups or bins \citep{zeng2014necessary}. This approach enables the identification of outliers and reduces their impact, as well as capturing missing values without requiring their removal or imputation.
 
 In this thesis, we employ the \lstinline{BinningProcess} from the \lstinline{optbinning} module in Python for an optimal binning of both numeric and categorical features with respect to the target variable, developed by Guillermo Navas--Palencia \citep{navas2020optimal}. 
 This approach involves grouping the values of a continuous variable into discrete intervals, or "bins", based on their relationship with the target variable.
 Similarly, for categorical features, the approach involves grouping the categories based on their relationship with the target variable.
-In general, the optimal binning is solved by iteratively merging an initial granular discretization until imposed constraints are satisfied. Particularly, the optimal binning process consists of two phases - pre--binning process (for generating initial granular discretization) and subsequent optimization (for satisfying imposed constraints).
-The former phase usually uses decision tree to generate initial split points to create pre--bins which are further merged while maximizing Information Value (also known as Jeffreys' divergence) while accounting for the constraints.
+
+In general, the optimal binning is solved by iteratively merging an initial granular discretization until imposed constraints are satisfied \citep{navas2020optimal}. Particularly, the optimal binning process consists of two phases - pre--binning process (for generating initial granular discretization) and subsequent optimization (for satisfying imposed constraints).
+The former phase usually uses decision tree to generate initial split points for creating pre--bins, which are further merged while maximizing Information Value (also known as Jeffreys' divergence) while accounting for the constraints.
 As Navas--Palencia states \citep{navas2020optimal}, such constraints are:
 \begin{itemize}\setlength\itemsep{0em} 
     \item \textbf{Creation of separate bins for missing values:} Since missing values can have a significant impact on the target variable, hence is important to create a separate bin for them.
@@ -758,7 +758,7 @@ According to Navas--Palencia \citep{navas2020optimal}, the WoE for bin $i$ can b
     WoE_{i} = \ln \left( \frac{r^{ND}_i / r^{ND}_T} {r^{D}_i / r^{D}_T}  \right)
 \end{equation}
 where $r^{ND}_i$ is the number of non--default instances in given bin $i$, $r^{D}_i$ is the number of default instances in the given bin $i$, $r^{ND}_T$ is the total number of non--default instances in whole sample and $r^{D}_T$ is the total number of default instances in whole sample.
-Thus, positive WoE value is indicates larger distribution of non--defaults, i.e. higher likelihood of non--default, while negative WoE value indicates larger distribution of defaults, i.e., higher likelihood of default.
+Thus, positive WoE value indicates larger distribution of non--defaults, i.e. higher likelihood of non--default, while negative WoE value indicates larger distribution of defaults, i.e., higher likelihood of default.
 
 \newpage
 \section{Bayesian Hyperparameter Optimization}
