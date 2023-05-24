@@ -764,7 +764,7 @@ The WoE bins distributions of other features are depicted \autoref{fig:woedist} 
 \newpage
 \section{Modelling}
 \label{sec:modelling}
-Once the data are finally preprocessed, the next step regards the modelling part which includes hyperparameter tuning, feature selection, model selection and model recalibration.
+Once the data are finally preprocessed, the next step regards the modelling part which includes hyperparameter tuning, feature selection, model selection, and model recalibration.
 In Python, eight different machine learning classification models from \lstinline{Scikit-learn} module are used for the default status prediction, which were already described in \autoref{sec:algorithms}, namely:
 \begin{itemize}\setlength\itemsep{0em}
 \item \textbf{Logistic Regression} - \lstinline{LogisticRegression()}
@@ -776,7 +776,7 @@ In Python, eight different machine learning classification models from \lstinlin
 \item \textbf{Support Vector Machine} - \lstinline{SVC()}
 \item \textbf{Multi--Layer Perceptron} (\textit{Neural Network}) - \lstinline{MLPClassifier()}
 \begin{itemize}\setlength\itemsep{0em}
-\item Henceforth, we terms such as Neural Network and Multi--Layer Perceptron are used interchangeably.
+\item Henceforth, terms such as Neural Network and Multi--Layer Perceptron are used interchangeably.
 \end{itemize}
 \end{itemize}
 
@@ -784,25 +784,26 @@ In Python, eight different machine learning classification models from \lstinlin
 \label{subsec:hyperoptbayes}
 In this thesis, hyperparameter tuning of models is performed using Bayesian Optimization as described in \autoref{sec:bayesoptheory}.
 In Python, a custom function, \lstinline{bayesian_optimization()}, is implemented to perform hyperparameter tuning using Bayesian Optimization.
-This function utilizes \lstinline{BayesSearchCV} class from the \lstinline{Scikit-optimize} module, with a 10-fold stratified cross-validation scheme and 50 iterations, while maximizing the F1 score. As a surrogate function, Gaussian Process is used \citep{scikit-opt}.
+This function utilizes \lstinline{BayesSearchCV} class from the \lstinline{Scikit-optimize} module, with a 10-fold stratified cross-validation scheme and 50 iterations, while maximizing the F1 score. As a surrogate function, the Gaussian Process is used \citep{scikit-opt}.
 The use of \lstinline{BayesSearchCV} with stratified cross-validation in the hyperparameter tuning process provides a robust and reliable approach to selecting the optimal hyperparameters for the model, while the incorporation of Bayesian Optimization enables the efficient exploration of the hyperparameter space.
-By maximizing the F1 score, the hyperparameters selected through this process will result in a model with improved performance. Note, that the hyperparameter tuning is performed solely on training set in order to preserve the independence of the validation and test set, and avoid the information/data leakage as well.
+By maximizing the F1 score, the hyperparameters selected through this process will result in a model with improved performance. Note, that the hyperparameter tuning is performed solely on training set in order to preserve the independence of the validation and test set, and avoid information and data leakage as well.
 
 For each model, the Bayesian Optimization algorithm performs 50 iterations while searching for the best hyperparameters values that maximize the F1 score. Within each iteration, a 10-fold stratified cross-validation is conducted to evaluate the model's cross--validation F1 score.
-Moreover, for each model, we specify the hyperparameter space, i.e., particular hyperparameters to be tuned and their possible ranges which the hyperparameter can take. The ranges are specified using \lstinline{Integer} class to define interval of integers, \lstinline{Real} to define interval of float numbers, and \lstinline{Categorical} to define a list of possible (categorical) values.
+Moreover, for each model, we specify the hyperparameter space, i.e., the particular hyperparameters to be tuned and their possible ranges that the hyperparameter can take. The ranges are specified using \lstinline{Integer} class to define an interval of integers, \lstinline{Real} to define an interval of float numbers, and \lstinline{Categorical} to define a list of possible (categorical) values.
 Note that not all the available hyperparameters are tuned, but only the most relevant ones due to the time complexity of the Bayesian Optimization algorithm.
 The definition of hyperparameter space for each model is described further in the following subsubsections.
 
 \subsubsection{Logistic Regression}
-The first hyperparameter \textbf{\texttt{Intercept}} allows to specify whether the intercept should be estimated or not.
-$C$ is the regularization strength, and it is used to specify the regularization penalty, i.e., the hyperparameter \textbf{\texttt{Penalty}}.
+The first hyperparameter \textbf{\texttt{Intercept}} allows us to specify whether the intercept should be estimated or not.
+$C$ is the regularization strength, and it is used to specify the regularization factor, which is further specified with the hyperparameter \textbf{\texttt{Penalty}}.
 If the penalty is set to $ElasticNet$, we can also tune $L1$ ratio, which refers to the $\alpha$ parameter in in \autoref{eq:elasticnet}
-Moreover, the  \textbf{\texttt{Class weight}} hyperparameter is a hyperparameter which allows to assign higher importance to the minority class instances during the training process.
+Moreover, the \textbf{\texttt{Class weight}} hyperparameter is a hyperparameter that allows us to assign higher importance to minority class instances during the training process.
 
-Furthermore, \textbf{\texttt{Solver}} hyperparameter is used to specify which optimization algorithm should be used to estimate the coefficients' values.
-According to Hale \citep{hale2019dont}, Scikit-learn provides five solvers for Logistic Regression, namely \textit{lbfgs} (Limited-memory Broyden-Fletcher-Goldfarb-Shanno) which approximates the second derivative matrix updates with gradient evaluations, \textit{liblinear} (Library for Large Linear Classification) which uses coordinate descent algorithm, \textit{newton-cg},
-\textit{sag} (Stochastic Average Gradient descent) as a variation of gradient descent and incremental aggregated gradient approaches using random sample of previous gradient values, and \textit{saga} as an extension of \textit{sag} which allows $L1$ regularization.
-For more information, please refer to the Scikit-learn documentation regarding Logistic Regression \citep{scikit-lr}.
+
+\textbf{\texttt{Solver}} hyperparameter is used to specify which optimization algorithm should be used to estimate the parameters.
+According to Hale \citep{hale2019dont}, Scikit-learn provides five solvers for Logistic Regression, namely \textit{lbfgs} (Limited-memory Broyden-Fletcher-Goldfarb-Shanno) which approximates the second derivative matrix updates with gradient evaluations, \textit{liblinear} (Library for Large Linear Classification) which uses the coordinate descent algorithm, \textit{newton-cg},
+\textit{sag} (Stochastic Average Gradient descent) as a variation of gradient descent and incremental aggregated gradient approaches using a random sample of previous gradient values, and \textit{saga} as an extension of \textit{sag} which allows $L1$ regularization.
+For more information, please refer to the Scikit-learn documentation \citep{scikit-lr}.
 The last hyperparameter of Logistic Regression to tune in this thesis is the \textbf{\texttt{Intercept scaling}} which allows to scale the intercept.
 
 \begin{table}[H]
@@ -833,10 +834,10 @@ Intercept scaling & True, False  \\
 
 
 \subsubsection{Decision Tree}
-The first hyperparameter of Decision Tree is the \textbf{\texttt{Criterion}} which allows to specify the function to measure the quality of a split - either Gini or Entropy impurity function.
-Another important hyperparameter is the \textbf{\texttt{Max depth}} which allows to specify the maximum depth of the tree.
+The first hyperparameter of Decision Tree is the \textbf{\texttt{Criterion}} which allows us to specify the function to measure the quality of a split - either Gini or Entropy impurity function.
+Another important hyperparameter is the \textbf{\texttt{Max depth}} which allows us to specify the maximum depth of the tree.
 The last hyperparameter is the \textbf{\texttt{Max features}} which allows to specify the number of features to consider when looking for the best split \citep{scikit-dt}.
-Note, that \textbf{\texttt{Max features}} has a variable range of values depending on the number of features which is dependent on the number of features selected during feature selection (where the feature are iteratively selected and the model is trained and evaluated on each iteration).
+Note, that \textbf{\texttt{Max features}} has a variable range of values depending on the number of features, which is dependent on the number of features selected during feature selection (where the features are iteratively selected and the model is trained and evaluated on each iteration).
 \begin{table}[H]
 \small
 \setlength{\tabcolsep}{8pt}
@@ -859,9 +860,10 @@ Max features & <1, \verb|len(X.columns)|>  \\
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{table}
 
+\newpage
 \subsubsection{Gaussian Naive Bayes}
 
-In case of Gaussian Naive Bayes, the only hyperparameter to tune is the \textbf{\texttt{Variance smoothing}} which allows to specify the portion of the largest variance of all features to be added to variances for calculation stability \citep{scikit-gnb}, in order to smooth out the variances of each feature in case when the variance is zero.
+In the case of Gaussian Naive Bayes, the only hyperparameter to tune is the \textbf{\texttt{Variance smoothing}} which allows to specify the portion of the largest variance of all features to be added to variances for calculation stability \citep{scikit-gnb}, in order to smooth out the variances of each feature in case when the variance is zero.
 \begin{table}[H]
 \small
 \setlength{\tabcolsep}{8pt}
@@ -886,9 +888,9 @@ Variance smoothing & <$1\times 10^{-9}$, $1\times 10^{-6}$> \\
 \subsubsection{K--Nearest Neighbors}
 
 In KNN, it is crucial to specify the number of neighbors to consider during the classification process, which is depicted in the \textbf{\texttt{\# neighbors}} hyperparameter.
-Further, it is needed to select optimal distance measure, i.e., Euclidean, Manhattan or Minkowski as described in \autoref{subsec:knn-theory} - such selection refers to the \textbf{\texttt{Metric}} hyperparameter.
-Pertaining to the Minowski distance, we tune also the \textbf{\texttt{Norm order}} hyperparameter which allows to specify the power parameter within the distance calculation.
-Last but not least, KNN also allows to tune the \textbf{\texttt{Weights}} hyperparameter which allows to specify the weight function used in prediction - either uniform or distance. With the former function, all the points within each neighborhood are weighted uniformly and with the latter approach, the points are weighted inversely with respect to their distance. \citep{scikit-knn}.
+Further, it is needed to select the optimal distance measure, i.e., Euclidean, Manhattan, or Minkowski, as described in \autoref{subsec:knn-theory} - such selection refers to the \textbf{\texttt{Metric}} hyperparameter.
+Pertaining to the Minowski distance, we also tune the \textbf{\texttt{Norm order}} hyperparameter which allows us to specify the power parameter within the distance calculation.
+Last but not least, KNN also allows us to tune the \textbf{\texttt{Weights}} hyperparameter which allows us to specify the weight function used in prediction - either uniform or distance. With the former function, all the points within each neighborhood are weighted uniformly, and with the latter approach, the points are weighted inversely with respect to their distance. \citep{scikit-knn}.
 \begin{table}[H]
 \small
 \setlength{\tabcolsep}{8pt}
@@ -913,12 +915,13 @@ Weights & Uniform, Distance \\
 \end{table}
 
 \subsubsection{Random Forest}
-In in the Random Forest, we tune the number of base trees which are trained in parallel way in the ensemble, i.e., the \textbf{\texttt{\# estimators}} hyperparameter. 
+In the Random Forest, we tune the number of base trees that are trained in parallel way in the ensemble, i.e., the \textbf{\texttt{\# estimators}} hyperparameter.
 Similarly to Decision Tree, Random Forest allows to select the optimal split measure, i.e., Gini, Entropy or additionally even Log Loss, which is depicted in the \textbf{\texttt{Criterion}} hyperparameter.
-Likewise Decision Tree, Random Forest also allows to specify the maximum depth of the tree as well as  the number of features to consider when looking for the best split, i.e., the \textbf{\texttt{Max depth}} hyperparameter and \textbf{\texttt{Max features}}, respectively.
-The \textbf{\texttt{Bootstrap}} hyperparameter allows to specify whether bootstrap samples are used when training the tree estimators.
-Similarly to Logistic Regression, Random Forest also has the \textbf{\texttt{Class weight}} hyperparameter which allows to specify the weight of each class in the classification process - \textit{balanced} function takes the target variable to adjust the weights which are inversely proportional to class frequencies, whereas \textit{subsample balanced} does almost the same, but the weights are computed based on the bootstrap samples.
-Last but not least, Random Forest also allows to tune the \textbf{\texttt{CCP alpha}} hyperparameter which allows to specify the complexity parameter used for Minimal Cost-Complexity Pruning (CCP), in order to reduce the size of the tree estimators and avoid overfitting by removing subtrees from the tree estimators which do not improve the performance \citep{scikit-rf}.
+Likewise Decision Tree, Random Forest also allows us to specify the maximum depth of the tree as well as  the number of features to consider when looking for the best split, i.e., the \textbf{\texttt{Max depth}} hyperparameter and \textbf{\texttt{Max features}}, respectively.
+The \textbf{\texttt{Bootstrap}} hyperparameter allows us to specify whether bootstrap samples are used when training the tree estimators.
+
+Similarly to Logistic Regression, Random Forest also has the \textbf{\texttt{Class weight}} hyperparameter which allows to specify the weight of each class in the classification process - \textit{balanced} function takes the target variable to adjust the weights, which are inversely proportional to class frequencies, whereas \textit{subsample balanced} does almost the same, but the weights are computed based on the bootstrap samples.
+Last but not least, Random Forest also allows to tune the \textbf{\texttt{CCP alpha}} hyperparameter which allows to specify the complexity parameter used for Minimal Cost-Complexity Pruning (CCP), in order to reduce the size of the tree estimators and avoid overfitting by removing subtrees from the tree estimators that do not improve the performance \citep{scikit-rf}.
 
 \begin{table}[H]
 \small
@@ -946,11 +949,12 @@ CCP alpha & <$1\times10^{-12}$, 0.5> \\
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{table}
 
+\newpage
 \subsubsection{Gradient Boosting}
-Likewise Random Forest, Gradient Boosting also allows to tune the number of base trees which are trained in sequential way in the ensemble, i.e., the \textbf{\texttt{\# estimators}} hyperparameter, as well as the maximum depth of the tree and the number of features to consider when looking for the best split, i.e., the \textbf{\texttt{Max depth}} hyperparameter and \textbf{\texttt{Max features}}, respectively.
-Is it also need to tune the \textbf{\texttt{Learning rate}} hyperparameter which shrinks the contribution of each tree in order prevent overfitting.
-We can also select the optimal loss function of Gradient Boosting (\textbf{\texttt{Loss}} hyperparameter), either Log Log Loss or Exponential loss function - in the latter case, the model is equivalent to AdaBoost algorithm \citep{scikit-gb}.
-Moreover, the \textbf{\texttt{Criterion}} hyperparameter allows to specify measurement method of the split quality, i.e., MSE or Friedman MSE which improves the MSE with Friedman scores \citep{scikit-gb}.
+Likewise Random Forest, Gradient Boosting also allows us to tune the number of base trees that are trained in a sequential way in the ensemble, i.e., the \textbf{\texttt{\# estimators}} hyperparameter, as well as the maximum depth of the tree and the number of features to consider when looking for the best split, i.e., the \textbf{\texttt{Max depth}} hyperparameter and \textbf{\texttt{Max features}}, respectively.
+Is it also necessary to tune the \textbf{\texttt{Learning rate}} hyperparameter which shrinks the contribution of each tree, in order to prevent overfitting.
+We can also select the optimal loss function of Gradient Boosting (\textbf{\texttt{Loss}} hyperparameter), either Log Loss or Exponential loss function - in the latter case, the model is equivalent to the AdaBoost algorithm \citep{scikit-gb}.
+Moreover, the \textbf{\texttt{Criterion}} hyperparameter allows to specify the measurement method of the split quality, i.e., MSE or Friedman MSE, which improves the MSE with Friedman scores \citep{scikit-gb}.
 
 \begin{table}[H]
 \small
@@ -978,9 +982,10 @@ Criterion & MSE, Friedman MSE \\
 \end{table}
 
 \subsubsection{Support Vector Machine}
-Likewise Logistic Regression, SVM also allows to tune the \textbf{\texttt{C}} hyperparameter for the regularization, as well as the \textbf{\texttt{Kernel}} hyperparameter which specifies the kernel type to be used in the algorithm in order to map the data into higher dimensional space in order to find the optimal hyperplane which separates the classes.
-If the kernel is $d$-degree polynomial, we can also tune the \textbf{\texttt{Degree}} hyperparameter which specifies the degree of the polynomial kernel function.
-SVM also has the \textbf{\texttt{Class weight}} hyperparameter which assigns the weights to the input data based on the class frequencies in order to balance the classes.
+Likewise Logistic Regression, SVM also allows us to tune the \textbf{\texttt{C}} hyperparameter for the regularization, as well as the \textbf{\texttt{Kernel}} hyperparameter which specifies the kernel type to be used in the algorithm in to map the data into higher dimensional space in order to find the optimal hyperplane that separates the classes.
+If the kernel is $d$-degree polynomial, we can also tune the \textbf{\texttt{Degree}} hyperparameter, which specifies the degree of the polynomial kernel function.
+SVM also has the \textbf{\texttt{Class weight}} hyperparameter, which assigns the weights to the input data based on the class frequencies in order to balance the classes.
+
 
 
 \begin{table}[H]
@@ -1009,9 +1014,9 @@ Class weight & balanced, None \\
 
 \subsubsection{Multi--Layer Perceptron}
 Regarding the MLP, we use one hidden layer where we tune the number of units as represented by the \textbf{\texttt{Hidden layer size}} hyperparameter.
-We also tune the \textbf{\texttt{Activation function}} applied in the hidden layer, namely Logistic, ReLU, Tanh which were already described in \autoref{subssec:nn}, and further Identity which is just a linear activation function, hence $f(z) = z$.
-Regarding the optimization algorithm which refers to \textbf{\texttt{Solver}} hyperparameter, we can choose between \textit{lbgfs}, \textit{sgd} (Stochastic Gradient Descent) and \textit{adam} (Adaptive Moment Estimation).
-The \textbf{\texttt{Learning rate}} can be either constant (i.e, 0.001), inversely scaled, i.e., gradually and inversely decreased with and inverse scaling exponent $t$ (where $t$ refers to the time step, by default $t=0.5$), or adaptive, i.e., the learning rate is kept constant as long as the training loss keeps decreasing, otherwise it is divided by 5 \citep{scikit-mlp}.
+We also tune the \textbf{\texttt{Activation function}} applied in the hidden layer, namely Logistic, ReLU, and Tanh, which were already described in \autoref{subssec:nn}, and further Identity, which is just a linear activation function, hence $f(z) = z$.
+Regarding the optimization algorithm, which refers to \textbf{\texttt{Solver}} hyperparameter, we can choose between \textit{lbgfs}, \textit{sgd} (Stochastic Gradient Descent), and \textit{adam} (Adaptive Moment Estimation).
+The \textbf{\texttt{Learning rate}} can be either constant (i.e., 0.001), inversely scaled, i.e., gradually and inversely decreased with an inverse scaling exponent $t$ (where $t$ refers to the time step, by default $t=0.5$), or adaptive, i.e., the learning rate is kept constant as long as the training loss keeps decreasing, otherwise it is divided by 5 \citep{scikit-mlp}.
 
 \begin{table}[H]
 \small

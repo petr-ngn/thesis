@@ -62,10 +62,10 @@
 \contentsline {subsection}{\numberline {4.4.1}Bayesian Hyperparameter Optimization}{78}{subsection.4.4.1}%
 \contentsline {subsubsection}{Logistic Regression}{79}{section*.69}%
 \contentsline {subsubsection}{Decision Tree}{80}{section*.71}%
-\contentsline {subsubsection}{Gaussian Naive Bayes}{80}{section*.73}%
+\contentsline {subsubsection}{Gaussian Naive Bayes}{81}{section*.73}%
 \contentsline {subsubsection}{K--Nearest Neighbors}{81}{section*.75}%
-\contentsline {subsubsection}{Random Forest}{81}{section*.77}%
-\contentsline {subsubsection}{Gradient Boosting}{82}{section*.79}%
+\contentsline {subsubsection}{Random Forest}{82}{section*.77}%
+\contentsline {subsubsection}{Gradient Boosting}{83}{section*.79}%
 \contentsline {subsubsection}{Support Vector Machine}{83}{section*.81}%
 \contentsline {subsubsection}{Multi--Layer Perceptron}{84}{section*.83}%
 \contentsline {subsection}{\numberline {4.4.2}Sequential Feature Selection}{85}{subsection.4.4.2}%
