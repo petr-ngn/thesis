@@ -1125,7 +1125,7 @@ It is evident that more complex black--box models require more features in contr
 \subsection{Model Selection}
 \label{subsec:modelselection}
 
-In combination with the pre--selected subsets of features, the next step regards the selection of the final model which will be further used within an evaluation and the deployment. The algorithm process is described in Algorithm  \autoref{alg:model_selection} below:
+In combination with the pre--selected subsets of features, the next step regards the selection of the final model, which will be further used within an evaluation and deployment. The algorithm process is described in Algorithm  \autoref{alg:model_selection} below:
 \begin{algorithm}[H]
 \caption{Model Selection Algorithm}
 \label{alg:model_selection}
@@ -1143,22 +1143,22 @@ In combination with the pre--selected subsets of features, the next step regards
 
 
 \vspace{-1em}
-Therefore, each input model is tuned on each subset of features selected within feature selection on the training set and subsequently, the optimized model is evaluated on the validation set. Thus, when having $n$ input models and $m$ subsets of selected features, we get $n \times m$ tuned models.
-$m \leq n$ because we exclude duplicated subset of selected features which can occur when more than one model choose the same subset(s) of features.
+Hence, each input model is tuned on each subset of features selected within feature selection on the training set, and subsequently, the optimized model is evaluated on the validation set. Thus, when having $n$ input models and $m$ subsets of selected features, we get $n \times m$ tuned models.
+$m \leq n$ because we exclude duplicated subsets of selected features, which can occur when more than one model chooses the same subset(s) of features.
 Since there are 8 input models and 8 unique subsets of selected features, the total number of tuned models is 64.
 
-\subsubsection{Metrics Space}
+\subsubsection{Metrics Ranking Space}
 
-When evaluating classification models using class-based metrics such as F1 score, Precision, Recall, Accuracy, Matthews Correlation Coefficient, a standard classification threshold of 0.5 is often used. This threshold separates predicted classes based on whether the predicted probability score is higher or lower than 0.5.
-However, in real-world use cases, the 0.5 classification threshold may not be appropriate and according to \citep{esposito2021ghost}, such threshold is not appropriate when having imbalanced data.
+When evaluating classification models using class-based metrics such as F1 score, Precision, Recall, Accuracy, and Matthews Correlation Coefficient, a standard classification threshold of 0.5 is often used. This threshold separates predicted classes based on whether the predicted probability score is higher or lower than 0.5.
+However, in real-world use cases, the 0.5 classification threshold may not be appropriate, and according to \citep{esposito2021ghost}, such threshold is not appropriate when having imbalanced data.
 
 Therefore, it is recommended to calculate an optimal threshold rather than relying on the standard one.
-For such case, the Youden index is employed which is derived from ROC curve and enables the selection of an optimal classification threshold value. 
-The Youden index searches for the threshold that maximizes the sum of True Positive Rate and True Negative Rate, decreased by 1 \citep{fluss2005estimation}, thus:
+In such case, the Youden index is employed, which is derived from the ROC curve and enables the selection of an optimal classification threshold value.
+The Youden index searches for such threshold that maximizes the sum of True Positive Rate and True Negative Rate, decreased by 1 \citep{fluss2005estimation}, thus:
 \begin{equation}\label{eq}
 J = TPR + TNR - 1
 \end{equation}
-Mathematically, the optimal threshold using Youden index is derived as follows:
+Mathematically, the optimal threshold using the Youden index is derived as follows:
 \begin{equation}\label{eq}
 T_{opt} = \text{argmax}_{t \in [0, 1]}\left(J\right)
 \end{equation}
@@ -1167,20 +1167,28 @@ In Python, the \lstinline{roc_curve} function from \lstinline{Scikit-learn} retu
 TNR =  1-FPR
 \end{equation}
 Therefore:
-\begin{equation}\label{eq}
+\begin{equation}\label{eq:youden}
 T_{opt} = \text{argmax}_{t \in [0, 1]}\left(TPR +  \left(1-FPR\right) - 1\right)
 \end{equation}
-Note, that the optimal threshold is calculated based on the training set and henceforth is applied within the evaluation on validation set.
+Note, that the optimal threshold is calculated based on the training set and henceforth applied within the evaluation of the validation set.
 
 In order to ensure a more comprehensive and unbiased evaluation of a model's performance, it is recommended to consider multiple metrics rather than relying on a single metric alone. This approach provides a more generalized overview of the model's performance across different aspects and helps to prevent any bias towards a single metric.
-To accomplish this, models can be ranked based on their performance on each individual metric, where a higher score or a lower loss indicates a better model, resulting in a higher rank for that metric. Subsequently, for each metric, the ranking of the models is determined, and the final ranking is calculated as a weighted average of these individual rankings.
-The weights have been set expertly and are summarized in \autoref{tab:weightsrank}.
+To accomplish this, models can be ranked based on their performances on each individual metric, where a higher score or a lower loss indicates a better model, resulting in a higher rank for that metric.
+Subsequently, for each model, a rank score is calculated in order to determine the final rank. The lower rank score indicates a better model's performance. For a particular model $M$, the rank score can be calculated as a weighted average of the individual ranks as follows:
+\begin{equation}\label{eq:rankscorem}
+    RankScore_{M} = \frac{\sum_{i=1}^{k} {r_i \times w_i}}{\sum_{i=1}^{k} {w_i}} 
+\end{equation}
+where $k$ is the number of metrics used to evaluated the model $M$, $r_i$ is the rank order of $i$--th metric for given model $M$ and $w_i$ is the weight assigned to the $i$--th metric.
+Such metric lies in interval $<1, k>$, where 1 would indicate a perfect model' performance across the all metrics.
+Based on the rank scores, we assign the final ranks where rank of 1 indicates the best performing model whereas rank $k$ determines the worst performing model.
 
+
+The weights have been set expertly and are summarized in \autoref{tab:weightsrank}.
 Specifically, the highest weight (1.5) is assigned to the F1 score, which provides a balanced measure of a model's performance with respect to both False Positives and False Negatives.
 This metric is commonly used in classification tasks, particularly in imbalanced data sets, such as the validation set in our case, which has not been oversampled.
 In addition to the F1 score, higher weight is assigned to the Recall score as well (1.2), which is a metric that penalizes False Negatives.
 False Negatives occur when the model predicts a negative result (i.e., no default) for an instance that is actually positive (i.e., default).
-In the context of loan applications, one may prefer to reject a loan applicant who would not have defaulted (False Positive) rather than approving the application of a client who would have defaulted (False Negative). Therefore, it is appropriate to give higher weight to Recall in order to reduce the likelihood of False Negatives.
+In the context of loan applications, one may prefer to reject a loan applicant who would not have defaulted (False Positive) rather than approve the application of a client who would have defaulted (False Negative). Therefore, it is appropriate to give higher weight to Recall in order to reduce the likelihood of False Negatives.
 Henceforth, the weights are assigned to different metrics based on their relevance to the models' ranking, with the highest weight given to F1 score and additional weight given to Recall to ensure that False Negatives are minimized.
 
 \begin{table}[H]
@@ -1211,13 +1219,7 @@ Brier Score Loss  & 1 \\
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{table}
 
-Particularly, for each model a rank score is calculated in order to determine the final rank. The lower rank score indicates better model's performance. For particular model $M$, the rank score can be calculated as weighted average of the individual ranks as follows:
-\begin{equation}\label{eq:rankscorem}
-    RankScore_{M} = \frac{\sum_{i=1}^{k} {r_i \times w_i}}{\sum_{i=1}^{k} {w_i}} 
-\end{equation}
-where $k$ is the number of metrics used to evaluated the model $M$, $r_i$ is the rank order of $i$--th metric for given model $M$ and $w_i$ is the weight assigned to the $i$--th metric.
-Such metric lies in interval $<1, k>$, where 1 would indicate a perfect model' performance across the all metrics.
-Based on the rank scores, we assign the final ranks where rank of 1 indicates the best performing model whereas rank $k$ determines the worst performing model.
+
 
 
 \newpage
@@ -1226,7 +1228,7 @@ Based on the rank scores, we assign the final ranks where rank of 1 indicates th
 
 
 The custom function \lstinline{model_selection()} iteratively prints the process of the model tuning and evaluation on each subset of features, in order to keep the track of such process as it is depicted in \autoref{fig:modselprint}.
-Particularly, it prints which model on which features is being tuned and evaluated, execution time, optimal threshold, F1 score on the validation set and the best hyperparameters.
+Particularly, it prints which model on which features is being tuned and evaluated, execution time, optimal threshold, F1 score on the validation set, and the best hyperparameters.
 
 \begin{figure}[H]
 \centering\caption{Model Selection Print Statement}
@@ -1279,9 +1281,19 @@ Tuned hyperparameters of LR:
 
 \newpage
 
-The final output of the function \lstinline{model_selection()} is table which summarizes the model's computed metrics as depicted in \autoref{tab:modelsectab}. As can be seen, the best models in terms of ranking are the Gradient Boosting models which in general have the highest score metrics and the lowest loss metrics, followed by another ensemble mode, Random Forest.
-On the other hand, the worst-performing models are Gaussian Naive Bayes models. In the first ten worst performing models, we can observe also that Decision Tree and Logistic Regression, as white--box models, perform poorly.
 
+
+The final output of the function \lstinline{model_selection()} is a table that summarizes the model's computed metrics as depicted in \autoref{tab:modelsectab}.
+For a reference \textbf{Tuned model} refers to the model over which the model selection algorithm is iterated, \textbf{FS model} refers to the model that was used as an input estimator in Forward SFS in order to select a subset of optimal features,
+\textbf{\# Features} refers to the number of selected features on which the model is tuned, \textbf{Exec. Time} refers to the optimalization and training time of the tuned model, and \textbf{Thres.} refers to the optimal threshold computed by the Youden index (\autoref{eq:youden}).
+
+
+The next columns represent the evaluation metrics, namely F1 score (\textbf{F1}), Precision (\textbf{Prec.}), Recall (\textbf{Rec.}), Accuracy (\textbf{Acc.}), AUC, Somers' D (\textbf{SD}), Kolmogorov-Smirnov Distance (\textbf{KS}), Matthews Correlation Coefficient (\textbf{MCC}), Brier Score Loss (\textbf{BS}), and Log Loss.
+The last two columns represent the rank score of the model computed according to \autoref{eq:rankscorem} (\textbf{Score}), and the last column (\textbf{Rank}) is the final rank based on which we determine the final model.
+
+
+As can be seen, the best models in terms of ranking are the Gradient Boosting models, which in general have the highest score metrics and the lowest loss metrics, followed by another ensemble mode, Random Forest.
+On the other hand, the worst-performing models are Gaussian Naive Bayes models. In the first ten worst performing models, we can also observe that Decision Tree and Logistic Regression, as white--box models, perform poorly.
 
 \clearpage
 \newpage
@@ -1349,6 +1361,7 @@ In order to gain a more detailed understanding of the model selection results, t
 
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
+\newpage
 Such outlier is removed in \autoref{fig:f1distclean} to gain a more general insight into the F1 score distribution.
 It can be observed that Gradient Boosting models have the highest F1 scores of around 80 \%.
 Another tree ensemble model, Random Forest, is performing well as the second best. However, more transparent models such as Logistic Regression and Naive Bayes are performing poorly, having F1 scores around 60 \%.
@@ -1360,8 +1373,8 @@ Another tree ensemble model, Random Forest, is performing well as the second bes
 
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
-
-As depicted in \autoref{fig:f1distcleanbbwb}, it visualizes the distribution of F1 score (without the outlier) across the model type. Although, both score distributions overlap, it is evident, that black--box models outperform white--box model in terms of F1 score in overall as expected.
+\newpage
+As depicted in \autoref{fig:f1distcleanbbwb}, it visualizes the distribution of F1 score (without the outlier) across the model type. Although, both score distributions overlap, it is evident, that black--box models outperform white--box models in terms of F1 score in overall as expected.
 \begin{figure}[H]
     \centering
     \caption{F1 Score Distribution (Black--box/White--box dimension) - \textit{without outlier}}\vspace{0.5em}
@@ -1371,8 +1384,9 @@ As depicted in \autoref{fig:f1distcleanbbwb}, it visualizes the distribution of 
     \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
 
-We can also consider not only F1 score but also other metrics, which is quantified in the rank score calculated according to \autoref{eq:rankscorem}. As shown in \autoref{fig:avgrankdist}, we can observe that the order of models ranked by the rank score is identical as the order of the models ranked by F1 score in \autoref{fig:f1dist}.
-Hence, across all the metrics, the Gradient Boosting perform the best in overall while Gaussian Naive Bayes does not perform well at all.
+\newpage
+We can also consider not only the F1 score but also other metrics, which is quantified in the rank score calculated according to \autoref{eq:rankscorem}. As shown in \autoref{fig:avgrankdist}, we can observe that the order of models ranked by the rank score is identical as the order of the models ranked by the F1 score in \autoref{fig:f1dist}.
+Hence, across all the metrics, the Gradient performs the best in overall while Gaussian Naive Bayes does not perform well at all.
 \begin{figure}[H]
     \centering
     \caption{Rank Score Distribution}\vspace{0.5em}
@@ -1382,8 +1396,9 @@ Hence, across all the metrics, the Gradient Boosting perform the best in overall
     \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
 
+\newpage
 As expected, also, the black--box models are ranked higher than the white--box models according to the rank score as shown in \autoref{fig:avgrankdistbbwb}. This is evident also from \autoref{tab:modelsectab} where the black--box models, namely Gradient Boosting and Random Forest, dominated amongst the first 10 ranked models.
-Other metrics' distribution analysis are shown in \autoref{sec:app1modelselectionresultsapp} in \autoref{chap:app1}.
+Other metrics' distribution analyses are shown in \autoref{sec:app1modelselectionresultsapp} in \autoref{chap:app1}.
 \begin{figure}[H]
     \centering
     \caption{Rank Score Distribution (Black--box/White--box dimension)}\vspace{0.5em}
@@ -1392,7 +1407,7 @@ Other metrics' distribution analysis are shown in \autoref{sec:app1modelselectio
     \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
 
-
+\newpage
 The optimal threshold distribution for each base model is presented in \autoref{fig:thresdist}. We can observe an outlier in KNN having a threshold value of 1, which explains the F1 score outlier found previously in \autoref{fig:f1dist}.
 \begin{figure}[H]
 \centering
@@ -1402,7 +1417,8 @@ The optimal threshold distribution for each base model is presented in \autoref{
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
 
-In order to obtain a better insight into the distribution of optimal thresholds, the outlier in KNN is excluded, resulting in the threshold distribution depicted in \autoref{fig:thresdistclean}. The optimal threshold values are mostly distributed below 0.5, indicating that the models are generally more conservative. The most conservative model is Gaussian Naive Bayes, which has a median threshold value around 0.25.
+\newpage
+In order to obtain a better insight into the distribution of optimal thresholds, the outlier in KNN is excluded, resulting in the threshold distribution depicted in \autoref{fig:thresdistclean}. The optimal threshold values are mostly distributed below 0.5, indicating that the models are generally more conservative. The most conservative model is Gaussian Naive Bayes, which has a median threshold value of around 0.25.
 \begin{figure}[H]
 \centering
 \caption{Threshold Distribution - \textit{without outlier}}\vspace{0.5em}
@@ -1412,7 +1428,7 @@ In order to obtain a better insight into the distribution of optimal thresholds,
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
 
-
+\newpage
 Upon examining the execution time of each model, it can be observed that the transparent and non-complex models such as Logistic Regression, Gaussian Naive Bayes, or even Decision Tree, which take around only 1 minute to optimize themselves, also perform poorly, as already inspected in \autoref{fig:f1distclean}.
 Conversely, the most time-consuming models are undoubtedly the Neural Network models, which take around 30 minutes to optimize themselves. Other time-consuming models include Gradient Boosting and Support Vector Machine, which take around 13 and 11 minutes to optimize themselves, respectively.
 This finding suggests that longer execution time does not necessarily lead to better performance, as the Neural Network models are significantly outperformed by several other models.
@@ -1424,9 +1440,11 @@ This finding suggests that longer execution time does not necessarily lead to be
 
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
+
+\newpage
 We can inspect the execution time from another perspective as shown in \autoref{fig:timedistbbwb}.
-It can be observed that black--box models take a significant amount of time to optimize than the white--box models which is given due to the complexity of the black--box models.
-Further we can notice that some of the black--box models took only few minutes to optimized themselves. This corresponds to KNN models and it can be attributed to the small sample size as of data set as well as lower data set dimensionality (i.e., low number of features) and further given the lower number of $k$ neighbors (which is constrained to 10 at most as depicted in \autoref{tab:knnspace}).
+It can be observed that black--box models take a significantly longer amount of time to optimize than the white--box models, which is due to the complexity of the black--box models.
+Further we can notice that some of the black--box models took only a few minutes to optimize themselves. This corresponds to KNN models, and it can be attributed to the small sample size of the data set as well as the lower data set dimensionality (i.e., low number of features) and further given the lower number of $k$ neighbors (which is constrained to 10 at most as depicted in \autoref{tab:knnspace}).
 \begin{figure}[H]
     \centering
     \caption{Execution Time Distribution (Black--box/White--box dimension)}\vspace{0.5em}
@@ -1436,6 +1454,7 @@ Further we can notice that some of the black--box models took only few minutes t
     \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
 
+\newpage
 
 The execution time and the F1 score are inspected together using a scatterplot, as shown in \autoref{fig:scattertime}. 
 A cluster of non-complex and transparent models, such as Logistic Regression, Gaussian Naive Bayes, and Decision Tree, can be observed around the vertical line near 0 execution time. These models are quick to optimize, but their F1 scores are generally low.
@@ -1450,8 +1469,10 @@ On the other hand, the Neural Network models always perform poorly, regardless o
 
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
+
+\newpage
 Such separation of the black--box and white--box models is more evident from \autoref{fig:scattertimebbwb} where the white--box models points are light blue-colored and the black--box models are purple-colored.
-While the score of white--box models seems to be constant regardless the execution time length, the points of black--box models are more dispersed across the execution time--F1 score dimension.
+While the score of white--box models seems to be constant regardless of the execution time length, the points of black--box models are more dispersed across the execution time--F1 score dimension.
 
 \begin{figure}[H]
     \centering
@@ -1462,8 +1483,8 @@ While the score of white--box models seems to be constant regardless the executi
     \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
 
-
-To summarize this subsection, the best and final model is the \textbf{Gradient Boosting Classifier} which was optimized on the subset of features selected by \textbf{MLP} - both the model information and its final hyperparameters' values are described in \autoref{tab:finalmodelinfo}. Such model is then used in the next modelling steps, including the recalibration, evaluation and deployment.
+\newpage
+To summarize this subsection, the best and final model is the \textbf{Gradient Boosting Classifier} which was optimized on the subset of features selected by \textbf{Multi--Layer Perceptron} - both the model information and its final hyperparameters' values are described in \autoref{tab:finalmodelinfo}. Such model is then used in the next modelling steps, including calibration, evaluation, and deployment.
 \begin{table}[H]
     \small
     \setlength{\tabcolsep}{8pt}
