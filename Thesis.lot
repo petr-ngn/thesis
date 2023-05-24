@@ -7,7 +7,7 @@
 \contentsline {table}{\numberline {3.4}{\ignorespaces Evaluation Results - Ranked \citep {zurada2014classification}}}{47}{table.caption.37}%
 \contentsline {table}{\numberline {3.5}{\ignorespaces Accuracy vs. Execution Time \citep {wu2018accurate}}}{50}{table.caption.38}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Data Set Columns}}{57}{table.caption.43}%
+\contentsline {table}{\numberline {4.1}{\ignorespaces Data Set Variables}}{57}{table.caption.43}%
 \contentsline {table}{\numberline {4.2}{\ignorespaces Missing Values Summary}}{58}{table.caption.44}%
 \contentsline {table}{\numberline {4.3}{\ignorespaces Numeric Features NA's Summary}}{63}{table.caption.49}%
 \contentsline {table}{\numberline {4.4}{\ignorespaces Point--Biserial Correlation - Numeric Features vs. Default}}{65}{table.caption.53}%
