@@ -1528,13 +1528,13 @@ To summarize this subsection, the best and final model is the \textbf{Gradient B
 \subsection{Model Recalibration}
 \label{subsec:modelrecal}
 
-In order to ensure that the final model performs well on unseen data, it is common practice to employ the recalibration approach, which involves retraining the model on both the training and validation sets.
-By doing so, the sample size used for training is increased. As such, the re-training (or so called recalibration) model leads (or is expected to lead) to markedly improved model's performance \citep{de2023predicting}.
+In order to ensure that the final model performs well on unseen data, it is desired practice to employ the recalibration approach, which involves retraining the model on both the training and validation sets.
+By doing so, the sample size used for training is increased. As such, the re-training (or so called recalibration) model leads (or is expected to lead) to a markedly improved model's performance \citep{de2023predicting}.
 The recalibrated model is then used to evaluate the performance of the final model on the test set, which is the ultimate measure of a model's performance.
 
-In addition to recalibrating the final model, it is crucial to recalibrate the threshold value for assigning class labels based on predicted probabilities. The optimal threshold value can be determined using the training and validation sets. Such threshold is recalibrated based on the training and validation set.
+In addition to recalibrating the final model, it is deemed appropriate to recalibrate the threshold value for assigning class labels based on predicted probabilities. The optimal threshold value can be determined using the training and validation sets. Such threshold is recalibrated based on the training and validation sets.
 In this thesis, the optimal threshold value is found to be \textbf{0.45109}, which is then used for evaluating the final model's performance on the test set.
-By recalibrating the threshold value, the model's performance is further improved, resulting in more accurate predictions. After the recalibration process, we can observe that the model is more conservative as its optimal classification threshold has decreased. The impact on the model's performance is further assessed in \autoref{subsec:modelperformance}.
+We can observe that the model is more conservative as its optimal classification threshold has decreased. The model recalibration impact on the model's performance is further assessed in \autoref{subsec:modelperformance}.
 
 Moreover, the recalibration process helps to mitigate overfitting issues, which occur when the model is only trained on the training set.
 By incorporating the validation set into the training process, the recalibrated model can better generalize to new data and improve its overall performance on the test set.
@@ -1545,14 +1545,14 @@ Therefore, using the validation data for recalibration is a sound practice that 
 \section{Model Evaluation}
 \label{sec:modeleval}
 After recalibrating the model and threshold, the final step in evaluating the model's performance is to test it on previously unseen data, specifically the test set.
-This evaluation is critical to determine whether the model can generalize well to new data beyond the training, feature selection, and model selection phases.
-During the evaluation, the recalibrated classification threshold of 0.45109, determined in the model recalibration process, is also used.
+This evaluation is critical to determining whether the model can generalize well to new data beyond the training, feature selection, and model selection phases.
+During the evaluation, the recalibrated classification threshold of 0.45109 is also used.
 \subsection{Model Performance Assessment}
 \label{subsec:modelperformance}
 
 
 
-In \autoref{fig:confmat}, the confusion matrix for the final model, based on the test set and using the recalibrated threshold, is presented. The matrix shows that the model is generalizing well, having correctly predicted 145 defaults and misclassified only 33 defaults and further, correctly predicted 683 non--defaults and misclassified only 33 non--defaults. Such a result indicates that the model is a good fit for the data and can provide useful predictions for the problem at hand.
+In \autoref{fig:confmat}, the confusion matrix for the final model, based on the test set and using the recalibrated threshold, is presented. The matrix shows that the model is generalizing well, having correctly predicted 145 defaults and misclassified only 33 defaults, and further, correctly predicted 683 non--defaults and misclassified only 33 non--defaults. Such a result indicates that the model is a good fit for the data and can provide useful predictions.
 
 \begin{figure}[H]
 \centering
@@ -1566,9 +1566,9 @@ In \autoref{fig:confmat}, the confusion matrix for the final model, based on the
 In order to obtain a better understanding of the model's performance on previously unseen data, we computed several metrics that were used during the model selection process.
 These metrics are presented in \autoref{tab:metricseval}. The results indicate that the model performs well on the unseen data, with most of the scores metrics around 80 \% to 90 \%.
 Furthermore, the loss metrics are relatively low, indicating that the model can effectively distinguish between defaults and non-defaults.
-Particularly, out of all test instances, the model predicts correctly 92.62 \%. Model also predicts 81.46 \% instances out of all the actual default instances. Also, out of all predicted default instances, model predict 81.46 \% instances correctly to be actually default instances.
+Particularly, out of all test instances, the model predicts correctly 92.62 \% default instances. The model also predicts 81.46 \% instances out of all the actual default instances. Moreover, out of all predicted default instances, the model correctly predicts 81.46 \% actual default instances.
 Overall, these results suggest that the model is performing well and is suitable for predicting defaults.
-The results suggest that the model has a good balance between correctly identifying defaults and non-defaults, as well as minimizing false positives and false negatives. This further confirms the model's ability to accurately predict defaults.
+The results suggest that the model has a good balance between correctly identifying defaults and non-defaults, as well as minimizing False Positives and False Negatives. This further confirms the model's ability to accurately predict defaults.
 
 \begin{table}[H]
     \small
@@ -1599,10 +1599,11 @@ The results suggest that the model has a good balance between correctly identify
         \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{table}
 
-The following \autoref{tab:recab} shows the impact of recalibration on the model's performance metrics. $M_{NR}$ denotes the final model which was not recalibrated at all (i.e., trained only on the training set), whereas $M_R$ denotes the recalibrated model (i.e., trained on the joined training and validation set). Respectively, $M_{NR}$ uses its threshold computed bas on the training set (0.4955), and $M_R$ uses its threshold computed on the joined training and validation set(0.45109).
-As can be seen, the recalibration indeed has a positive impact on the metrics evaluation as all the metric scores have increased, while the metric loss functions decreased.
-We can observe the most significant decrease in the Log Loss function, which decreased by 8.09 \%, while the objective function F1 score has increased by 3.30 \% thanks to increase in both Precision and Recall.
-Therefore, the recalibration process is deemed desired and appropriate in terms of model's performance.
+The following \autoref{tab:recab} shows the impact of recalibration on the model's performance metrics. $M_{NR}$ denotes the final model that was not recalibrated at all (i.e., trained only on the training set), whereas $M_R$ denotes the recalibrated model (i.e., trained on the joined training and validation sets). Respectively, $M_{NR}$ uses its threshold computed based on the training set (0.4955), and $M_R$ uses its threshold computed on the joined training and validation set(0.45109).
+As can be seen, the recalibration indeed has a positive impact on the metrics evaluation, as all the metric scores have increased, while the metric loss functions have decreased.
+We can observe the most significant decrease in the Log Loss function, which has decreased by 8.09 \%, while the objective function F1 score has increased by 3.30 \% thanks to increases in both Precision and Recall.
+Therefore, the recalibration process is deemed desirable and appropriate in terms of the model's performance.
+
 
 \begin{table}[H]
     \small
@@ -1633,9 +1634,9 @@ Therefore, the recalibration process is deemed desired and appropriate in terms 
         \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{table}
 
-To further evaluate the performance of the (recalibrated) model, we can visualize the ROC curve, as presented in \autoref{fig:roc}. The curve illustrates the trade-off between the true positive rate and the false positive rate at various classification thresholds. An ideal ROC curve should have an area under the curve (AUC) value of 100 \%, indicating a perfect classifier, while a random classifier would have an AUC of 50 \%.
+To further evaluate the performance of the recalibrated final model, we can visualize the ROC curve, as presented in \autoref{fig:roc}. The curve illustrates the trade-off between the True Positive Rate and the False Positive Rate at various classification thresholds. An ideal ROC curve should have an Area Under the Curve (AUC) value of 100 \%, indicating a perfect classifier, while a random classifier would have an AUC of 50 \%.
 
-From the curve, we observe that the AUC value of the model is 95.55 \%, indicating a high degree of accuracy in distinguishing between defaults and non-defaults. The curve covers most of the area under the diagonal line, indicating that the model is performing well in differentiating the two classes. Therefore, the results suggest that the model is performing well and is capable of accurately identifying potential defaulters.
+From the ROC curve plot, we observe that the AUC value of the model is 95.64 \%, indicating a high degree of accuracy in distinguishing between defaults and non-defaults. The curve covers most of the area above the diagonal line, indicating that the model is performing well in differentiating the two classes. Therefore, the results suggest that the model is performing well and is capable of accurately identifying potential defaulters.
 
 \begin{figure}[H]
 \centering
@@ -1651,8 +1652,8 @@ From the curve, we observe that the AUC value of the model is 95.55 \%, indicati
 \subsection{Model Explainability}
 \label{subsec:explainability}
 
-To gain insights into the impact of the features used in the final model, we can inspect the feature importances of the final model, which is a part of family of tree ensemble algorithms.
-As the name indicates, it is the score value representing the importance of the features, i.e., the higher score, the more important the feature is. Basically, it is the measure of how much a feature contributes to the overall performance of the model.
+To gain insights into the impact of the features used in the final model, we can inspect the feature importances of the final model, which is a part of a family of tree ensemble algorithms.
+As the name indicates, it is the score value representing the importance of the features, i.e., the higher the score, the more important the feature is. Basically, it is a measure of how much a feature contributes to the overall performance of the model.
 Overall, the feature importance plot provides valuable insights into the factors that are most important in predicting loan defaults. It can be used to identify which features are contributing the most to the model's accuracy and to guide future feature selection efforts.
 According to Bonaccorso \citep{bonaccorso2020mastering}, feature importance is the measure proportional to the impurity reduction that a particular feature allows us to achieve, and is defined as:
 \begin{equation}\label{eq}
@@ -1660,8 +1661,8 @@ According to Bonaccorso \citep{bonaccorso2020mastering}, feature importance is t
 \end{equation}
 where $ \text{FI}\left(\bar{x}^{\left(i\right)}\right)$ refers to the feature importance of the feature $i$, $n(j)$ is the number of samples reaching the node $j$, $\delta I_{j}^{i}$ represents the impurity reduction at node $j$ after the splitting using the feature $j$, $M$ is total number of samples in the data set used to built the model, and $N$ refers to the number of tree estimators used within an ensemble model.
 
-The following \autoref{fig:fi} depicts the feature importances of all the selected features on which the model was trained.
-The two most important features used in the final model are \texttt{DEBTINC} and \texttt{DELINQ}, which are crucial debt and delinquency indicators in determining whether a borrower would be able to repay their loan. These two features have a significant impact on the model's ability to accurately predict loan defaults, with high feature importance scores. This is also in line with the findings from the exploratory analysis, WoE distribution or feature selection.
+The following \autoref{fig:fi} depicts the feature importances of all the selected features on which the final model was trained.
+The two most important features used in the final model are \texttt{DEBTINC} and \texttt{DELINQ}, which are crucial debt and delinquency indicators in determining whether a borrower would be able to repay their loan. These two features have a significant impact on the model's ability to accurately predict loan defaults, with high feature importance scores. This is also in line with the findings from the exploratory analysis, WoE distribution, or feature selection.
 \begin{figure}[H]
 \centering
 \caption{Feature Importance}\vspace{0.5em}
@@ -1671,22 +1672,22 @@ The two most important features used in the final model are \texttt{DEBTINC} and
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
 
-Thus, understanding the impact of individual features on model's performance can be useful in identifying areas for improvement, as well as in identifying the most significant factors that drive loan defaults.
+Thus, understanding the impact of individual features on model's performance can be useful in identifying areas for improvement, as well as identifying the most significant factors that drive loan defaults.
 By focusing on these important features, lenders and policymakers can better understand and address the underlying factors that contribute to default risk, ultimately leading to better lending decisions and improved outcomes for borrowers and lenders alike.
 
 
 To gain further insights into the impact of the features on the final model's predictions, the SHapley Additive exPlanations (henceforth SHAP) values can be calculated. Particularly, the SHAP value is defined as the mean marginal contribution of each feature value across all possible values in the feature space, while considering feature importance \citep{bhattacharya2022applied}.
-The following \autoref{fig:shap} depicts SHAP summary plot which provides a clear visualization of the contribution each feature makes to a prediction and global explainability of the model predictions.
+The following \autoref{fig:shap} depicts the SHAP summary plot, which provides a clear visualization of the contribution each feature makes to a prediction and the global explainability of the model predictions.
 Each dot in the plot represents a feature and its corresponding SHAP value.
 The color of the dot represents the feature's value, with red indicating high values and blue indicating low values.
 The position of the dot on the x-axis represents the impact of the feature on the prediction, with features on the right-hand side contributing more positively to the prediction, and features on the left-hand side contributing more negatively.
 
-Since our data points are encoded in WoE values, the higher (the more positive) value, the larger distribution of non-defaulters compared to defaulters, and vice versa, the lower (the more negative) value, the larger distribution of defaulters compared to non-defaulters.
+Since our data points are encoded in WoE values, the higher (the more positive) value, the larger the distribution of non-defaulters compared to defaulters, and vice versa, the lower (the more negative) value, the larger the distribution of defaulters compared to non-defaulters.
 For the most important features, we can observe that the blue values (negative WoE values) and red values (positive WoE values) are quite separable.
-Negative WoE values are positively contributing to the predictions, and the positive WoE values are negatively contributing to the predictions. This means that the more negative the WoE value, the more likely the borrower is to default, and vice versa.
+Negative WoE values are positively contributing to the predictions, and positive WoE values are negatively contributing to the predictions. This means that the more negative the WoE value, the more likely the borrower is to default, and vice versa.
 
 Overall, the SHAP summary plot provides a valuable tool for interpreting and understanding the complex decision-making process of the final model.
-The plot enables us to examine the impact of individual features on the model's output and helps us to identify which features are most influential in the model's decision-making process.
+The plot enables us to examine the impact of individual features on the model's output and helps us identify which features are most influential in the model's decision-making process.
 By understanding the relative importance of each feature, we can gain deeper insights into the creditworthiness assessment process and make more informed decisions in the lending industry.
 
 \begin{figure}[H]
@@ -1702,44 +1703,48 @@ By understanding the relative importance of each feature, we can gain deeper ins
 \newpage
 \section{Machine Learning Deployment}
 \label{sec:deployment}
-This section describes the process of taking a trained machine learning model and making it available for use in the real world. It involves taking the model from a development environment and integrating it into a production environment where it can be used to make predictions or decisions based on new data. In this thesis, the machine learning model is deployed as web application using Flask and HTML.
+This section describes the process of taking a trained machine learning model and making it available for use in the real world. It involves taking the model from a development environment and integrating it into a production environment, where it can be used to make predictions or decisions based on new data. In this thesis, the machine learning model is deployed as a web application using Flask and HTML.
+
 \subsection{Final Model Recalibration}
-Before deploying the model in a production setting, a meticulous process is undertaken to ensure optimal performance.
-This involves conducting a final recalibration of the model using the entire data set, comprising the training, validation, and test sets.
+Before deploying the model in a production setting, we undertake the final recalibration of the model using the entire data set, comprising the training, validation, and test sets.
 The purpose of this recalibration is to fine-tune the model parameters, thereby maximizing its ability to generalize and yield accurate predictions.
 
 The test set, which has been employed previously during the model evaluation phase, is incorporated into the recalibration process without any risk of data leakage.
 By including the test set, the sample size for training is expanded, thereby increasing the model's capacity to generalize effectively.
 
 Upon completion of the recalibration, the final classification threshold for deployment is determined to be \textbf{0.3358}.
-This value is derived from a comprehensive analysis of the training, validation, and test sets, which ensures that the model's generalization capabilities are further enhanced for optimal performance in real-world applications.
+We believe that these recalibrated final model's parameters and threshold are optimal for implementation in production settings and will exhibit strong generalization capabilities.
+
 
 \subsection{Flask and HTML Web Application}
 \label{subsec:flaskapp}
 
 In this case, the machine learning model is deployed into a web application using Flask and HTML. The application is temporarily deployed on the Cloud server on the \textbf{PythonAnywhere} platform and is accessible here: \url{http://ml-credit-risk-app-petrngn.pythonanywhere.com/}.
-However, the application will be shut down after the thesis defense and will not be available online anymore due to the budget reasons.
+However, the application will be shut down after the thesis defense and will not be available online anymore due to budgetary reasons.
 Nevertheless, the code for the application is available in the GitHub repository, and the application can be run locally using any Python compiler.
 
 Furthermore, prior to deployment, we need to prepare several Python inputs for the web application, including:
 \begin{itemize}\setlength\itemsep{0em}
-\item \textbf{Model} - The final model recalibrated on the training, validation and test set.
-\item \textbf{Threshold} - The final classification threshold recalibrated on the training, validation and test set.
+\item \textbf{Model} - The final model recalibrated on the training, validation, and test sets.
+\item \textbf{Threshold} - The final classification threshold recalibrated on the training, validation, and test sets.
 \item \textbf{Features} - The final features used in the final model.
 \item \textbf{Data Frame} - The input tabular object used in the web application to store the loan applicant's inputs.
 \item \textbf{Optimal Binning Transformator} - Fitted \lstinline{BinningProcess} object for binning and WoE-encoding of the loan applicant's inputs.
-\item \textbf{WoE Bins} - Set of bins and WoE values used for mapping the WoE values to missing values.
-\item \textbf{LIME explainer} - Fitted \lstinline{LimeTabularExplainer} object for local explainability of model's prediction.
+\item \textbf{WoE Bins} - Set of bins and WoE values used for mapping the missing values to WoE values.
+\item \textbf{LIME explainer} - Fitted \lstinline{LimeTabularExplainer} object for local explainability of the model's prediction.
 \end{itemize}
+
 
 Such inputs required for the machine learning application are exported in the \lstinline{.pkl} format using the \lstinline{dill} module. This format allows for efficient and easy-to-use serialization and deserialization of the inputs. The pickled file is then loaded directly into the Flask application.
 
+
 For the back-end of the web application, Flask is used to deploy the machine learning model. The Flask application is written in the \lstinline{app.py} file, which is stored in the \lstinline{flask_app} directory. The front-end of the web application is coded in HTML, with CSS and JavaScript elements used to enhance the user interface.
+
 
 The web application first renders a HTML page, as shown in \autoref{fig:flaskform}.
 This page contains a loan application form, in which the user or the loan applicant fills in the respective field values that correspond to the features on which the machine learning model was trained.
 The form is designed to capture the necessary information required for the model to make a prediction about the loan applicant's application.
-Note that not all fields in the loan application form need to be filled out. This is because the missing values in certain features may indicate a higher risk of default. Conversely, one may choose to impose a restriction on the form, requiring all fields to be filled out. However, this could result in a lower number of received applications from delinquent clients, as they may not have all the necessary information to complete the form.
+None of the fields in the loan application form need to be filled out. This is because missing values in certain features may indicate a higher risk of default. Conversely, one may choose to impose a restriction on the form, requiring all fields to be filled out. However, this could result in a lower number of received applications from delinquent clients, as they may not have all the necessary information to complete the form.
 \begin{figure}[H]
 \centering
 \caption{Flask Web Application Form}\vspace{0.5em}
@@ -1748,10 +1753,10 @@ Note that not all fields in the loan application form need to be filled out. Thi
 
 \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
-\clearpage
 
-Once, the loan application form is submitted, the web application uses the pickled input to transform the data from the loan application form and use it in the recalibrated model in order to get the result, whether the given loan applicant would repay his loan based on predetermined threshold. The result is then displayed in the web application, as shown in \autoref{fig:flaskres}.
-Particularly, the web application returns whether the loan application would be denied or approved based on the model's output and also the probability score of default.
+
+Once, the loan application form is submitted, the web application uses the pickled input to transform the data from the loan application form and use it in the recalibrated model in order to get the result, whether the given loan applicant would repay his loan based on a predetermined threshold. The result is then displayed in the web application, as shown in \autoref{fig:flaskres}.
+Particularly, the web application returns whether the loan application would be denied or approved based on the model's output, and also the probability score of default.
 
 \begin{figure}[H]
 \centering
@@ -1771,10 +1776,10 @@ The LIME explanation of input instances $x$ is given as follows:
 \xi(x) = \arg\min_{g \in G} L(f, g, \pi_x) + \Omega(g)
 \end{equation}
 
-where $f$ is the original black--box model, $g$ is the surrogate model, $L$ is the loss functions measuring how far is the explanation $\xi(x)$ far from the prediction produced by black--box model $f$, and $\Omega(g)$ is the complexity of the surrogate model $g$.
+where $f$ is the original black--box model, $g$ is the surrogate model, $L$ is the loss function measuring how far the explanation $\xi(x)$ is from the prediction produced by the black--box model $f$, and $\Omega(g)$ is the complexity of the surrogate model $g$.
 
 
 The explanation is given in terms of the feature importance, which is represented by the magnitude of the feature's coefficient in the local interpretable model. The higher the magnitude of the coefficient, the more important the feature is in the prediction of the black box model.
-Therefore, as it is shown in \autoref{fig:flaskres}, the red bars indicate positive contribution to the probability of default whereas green bars indicate negative contribution to the probability of default. In other words, The features with red bars indicate that the client would not probably repay his loan and vice versa.
-The contributions' magnitudes are in line with the findings from feature importance or SHAP values which is focused on the global explainability of the black--box model (not local explainability), that features such as debt--to--income ratio (\texttt{DEBTINC}) or number of delinquent credit lines (\texttt{DELINQ}) have the largest impact of the probability default.
-Particularly, a high value of debt--to--income ratio causes higher probability default, whereas no delinquent credit lines leads to the lower probability default.
+Therefore, as shown in \autoref{fig:flaskres}, the red bars indicate a positive contribution to the probability of default, whereas the green bars indicate a negative contribution to the probability of default. In other words, the features with red bars indicate that the client would probably not repay his loan, and vice versa.
+The contributions' magnitudes are in line with the findings from feature importance or SHAP values, which are focused on the global explainability of the black--box model (not local explainability), that features such as debt--to--income ratio (\texttt{DEBTINC}) or number of delinquent credit lines (\texttt{DELINQ}) have the largest impact on the probability of default.
+Particularly, a high debt--to--income ratio causes a higher probability of default, whereas no delinquent credit lines lead to a lower probability of default.
