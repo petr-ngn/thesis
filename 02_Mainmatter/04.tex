@@ -585,17 +585,20 @@ Regarding the association between categorical features, namely \texttt{REASON} a
 \newpage
 \section{Data Preprocessing}
 \label{sec:dataprep}
-In this section, the process of preprocessing data is described as the crucial step in the machine learning modelling. Particularly, the process of dividing data for various tasks, ADASYN oversampling due to the imbalanced class issue, discretization of features and Weight--of--Eveidence transformation are further discussed and described.
+In this section, the process of preprocessing data is described as a crucial step prior to machine learning modelling. Particularly, the process of dividing data for various tasks, ADASYN oversampling due to the imbalanced class issue, discretization of features and Weight--of--Eveidence transformation are further discussed and employed.
 
 \subsection{Data Split and ADASYN Oversampling}
 \label{subsec:data-split-ADASYN}
 
-To ensure appropriate model training and unbiased evaluation, it is necessary to split data into separate sets for various purposes. Specifically, the data set is split into three sets: (1) training set for training the model, perform feature selection or hyperparameter tuning, (2) validation for hyperparameter tuning, and (3) test set for assess the model's performance on the unseen data \citep{subasi2020practical}.
-In this thesis, the data is split into training, validation and test sets with ratio of 70:15:15, which ensures sufficient amount of data for training, hence the model would be able to generalize well, while keeping the validation and test sets large enough to provide reliable evaluation of the model's performance.
+To ensure appropriate model training and unbiased evaluation, it is necessary to split the data into separate sets for various purposes. Specifically, the data set is split into three sets: (1) training set for training the model, feature selection or hyperparameter tuning, (2) validation set for model selection, and (3) test set to assess the model's performance on the unseen data \citep{subasi2020practical}.
+In this thesis, the data is split into training, validation, and test sets with a ratio of 70:15:15, which ensures a sufficient amount of data for training, hence the model would be able to generalize well, while keeping the validation and test sets large enough to provide reliable evaluation of the model's performance.
 
-The data is split using stratified split to preserve the default status distribution, which is highly imbalanced.
+
+The data is split using stratified splitting to preserve the default status distribution, which is highly imbalanced.
 Stratification ensures that the distribution of defaults and non-defaults remains the same across all sets, thereby avoiding overfitting and data leakage. Using stratification, each set had 80 \% non-defaults and 20 \% defaults. This method enables accurate prediction since the model is trained and evaluated on the same population \citep{igareta2021strat}.
+
 However, stratification alone may not be sufficient for dealing with imbalanced classes. Therefore, ADASYN oversampling is performed as described in \autoref{sec:adasyntheory}. Note that ADASYN oversampling is performed on the training set only after the split to avoid data leakage and biased evaluation.
+
 
 In Python, the data are divided and oversampled using a custom function \lstinline{data_split()}.
 This function first employs the \lstinline{train_test_split()} function from the \lstinline{scikit-learn} module to split the data into training, validation, and test sets with a stratification technique.
@@ -616,12 +619,12 @@ However, the \lstinline{ADASYN()} class from \lstinline{imblearn} is not designe
 \item Retrieve back the missing values:
 \begin{itemize}
 \item Categorical features: replace string \lstinline{'N/A'} with \lstinline{np.nan};
-\item Numeric features: for each feature $X$ if its value exceeds the its original maximum value, then replace it with \lstinline{np.nan};
+\item Numeric features: for each feature $X$ if its value exceeds its original maximum value, then replace it with \lstinline{np.nan};
 \end{itemize}
 \end{enumerate}
 
 
-The following \autoref{tab:split} shows the default distribution of the individual sets before and after oversampling. The default distribution in training set after ADASYN oversampling is balanced, while the default distribution remains the same across the validation and test sets, which is desirable due to stratification.
+The following \autoref{tab:split} shows the default distribution of the individual sets before and after oversampling. The default distribution in the training set after ADASYN oversampling is balanced, while the default distribution remains the same across the validation and test sets, which is desirable due to stratification.
 \begin{table}[H]
 \small
 \setlength{\tabcolsep}{8pt}
@@ -648,13 +651,14 @@ Test & 894 &  20.00 \% & 80.00 \% \\
 \end{table}
 \newpage
 
-Since ADASYN increases the sample size by generating, i.e., adding new instances into the sample, it may have an impact on the distribution of the features.
-After the inspection in Python, it have no significant impact on the numeric features as the distributions before and after ADASYN oversampling do not differ that much, as can be seen \autoref{fig:adasynimpactnum} in \autoref{chap:app1}.
-However, pertaining to the categorical features, a significant impact of ADASYN oversampling can be observed as can be seen in  \autoref{tab:adasynimpact} and \autoref{fig:adasynimpact}, respectively, which depict the distribution of categorical features on the subsample of default cases within the training set, particularly distribution before and after the oversampling.
-As such, $n_B$ and $n_A$ refer to the number of default cases within given category before and after oversampling, respectively, $N_B$ and $N_A$ represents the total number of default cases before and after oversampling, respectively.
+Since ADASYN increases the sample size by generating, i.e., adding new instances to the sample, it may have an impact on the distribution of the features.
+After the inspection in Python, it has no significant impact on the numeric features as the distributions before and after ADASYN oversampling do not differ that much, as can be seen \autoref{fig:adasynimpactnum} in \autoref{chap:app1}.
+However, pertaining to the categorical features, a significant impact of ADASYN oversampling can be observed, as can be seen in \autoref{tab:adasynimpact} and \autoref{fig:adasynimpact}, respectively, which depict the distribution of categorical features on the subsample of default cases within the training set, particularly distribution before and after the oversampling.
+As such, $n_B$ and $n_A$ refer to the number of default cases within a given category before and after oversampling, respectively, and $N_B$ and $N_A$ represent the total number of default cases before and after oversampling, respectively.
 
-Within the \texttt{REASON} feature, we can observe a significant increase the proportion of defaulted clients who applied for a loan due to the debt consolidation (\texttt{DebtCon}) among all the defaulters after an oversampling - particularly, the ratio has increased by 12.20 percentage points.
-Regarding the \texttt{JOB} feature, we can observe a substantial increase in the proportion in the of defaulted managers (\texttt{Mgr}) among all the defaulters after oversampling by 38.75 percentage points.
+
+Within the \texttt{REASON} feature, we can observe a significant increase in the proportion of defaulted clients who applied for a loan due to the debt consolidation (\texttt{DebtCon}) among all the defaulters after an oversampling - particularly, the ratio has increased by 12.20 percentage points.
+Regarding the \texttt{JOB} feature, we can observe a substantial increase in the proportion of defaulted managers (\texttt{Mgr}) among all the defaulters after oversampling by 38.75 percentage points.
 \begin{table}[H]
     \small
     \setlength{\tabcolsep}{8pt}
@@ -685,10 +689,10 @@ Regarding the \texttt{JOB} feature, we can observe a substantial increase in the
     
     \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{table}
-
+\newpage
 Such findings regarding the significant increases in the proportion of default cases regarding the \texttt{DebtCon} and \texttt{Mgr} categories are given to the nature of ADASYN oversampling.
 As already explained, ADASYN generates more synthetic default class instances in the neighborhood of such default instances, which are hard--to--learn for ADASYN.
-In other words, ADASYN creates more default instances for such default instances where the density of the non--default class is relatively high in given default instance's neighborhood.
+In other words, ADASYN creates more default instances for such default instances where the density of the non--default class is relatively high in given default class instance's neighborhood.
 Therefore, default instances which either are managers or applied for a loan due to the debt consolidation are difficult--to--learn for ADASYN, thus ADASYN replicates more instances with such characteristics, hence this results in a higher proportion of default cases in the oversampled set for such category.
 
 
@@ -710,13 +714,13 @@ As already described in \autoref{sec:optbinningtheory}, the Optimal Binning is e
 Particularly, we employ \lstinline{BinningProcess} class from the \lstinline{optbinning} module in Python - such class optimally discretizes the continuous features into interval bins and optimally groups categorical features' categories into sub-group categories with respect to the target variable while maximizing Information Value, and afterwards such bins are encoded using WoE \citep{navas2020optimal}. Besides discretizing and grouping, it also creates special bins for capturing missing values.
 
 
-
 In this thesis, this data preprocessing step is wrapped into a custom function \lstinline{woe_binning()} in Python.
-First, the  \lstinline{BinningProcess} class is fitted on the training set only in order to avoid data leakage, while it learns the split points for binning, event rates, WoE coefficients etc., and then is used to transform training, validation and test set.
+First, the \lstinline{BinningProcess} class is fitted on the training set only in order to avoid data leakage, while it learns the split points for binning, event rates, WoE coefficients, etc., and then is used to transform the training, validation, and test set.
+
 
 The following \autoref{fig:woedistdebtinc} depicts the WoE bins distribution for the \texttt{DEBTINC} feature.
-It is evident that the bin capturing the missing values has the most negative WoE coefficient, which indicates larger distribution of defaulters compared to non--defautlters in such bin. We can further observe a monotonic relationship between the WoE coefficients and the bins, as the debt--to--income ration increases, the WoE coefficient decreases, thus higher likelihood of default.
-Therefore, we expect if the debt--to--income ratio is either missing or extremely high, it will have a significant impact on the likelihood of default.
+It is evident that the bin capturing the missing values has the most negative WoE coefficient, which indicates a larger distribution of defaulters compared to non--defautlters in such bin. We can further observe a monotonic relationship between the WoE coefficients and the bins, as the debt--to--income ratio increases, the WoE coefficient decreases, thus higher likelihood of default.
+Therefore, we expect that if the debt--to--income ratio is either missing or extremely high, it will have a significant impact on the likelihood of default.
 \begin{figure}[H]
     \centering
     \caption{WoE Bins Distribution - Debt--To--Income Ratio}\vspace{0.5em}
@@ -726,7 +730,7 @@ Therefore, we expect if the debt--to--income ratio is either missing or extremel
     \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
 
-Another monotonic relationship can be observed in case of \texttt{DELINQ} feature as can be seen in \autoref{fig:woedistdelinq}. With increasing number of delinquent credit lines, the WoE coefficient decreases, indicating larger distribution of defaulters compared to non--defaulters. Therefore, we expect that the higher the number of delinquent credit lines will lead to the higher the likelihood of default.
+Another monotonic relationship can be observed in case of \texttt{DELINQ} feature as can be seen in \autoref{fig:woedistdelinq}. With increasing number of delinquent credit lines, the WoE coefficient decreases, indicating a larger distribution of defaulters compared to non--defaulters. Therefore, we expect that the higher the number of delinquent credit lines will lead to the higher the likelihood of default.
 
 
 \begin{figure}[H]
@@ -738,8 +742,9 @@ Another monotonic relationship can be observed in case of \texttt{DELINQ} featur
     \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
 
-Within the \texttt{JOB} feature, specifically regarding the \texttt{Mgr} category, we can observe the direct impact of ADASYN oversampling as already described by \autoref{tab:adasynimpact}. \autoref{fig:woedistjob}
-Since ADASYN generated more default class instances for original default instances who are managers, this results in higher default rate within such job category, thus to the larger distribution of defaulters compared to non--defaulters, which is quantified in the negative WoE value.
+Within the \texttt{JOB} feature, specifically regarding the \texttt{Mgr} category, we can observe in \autoref{fig:woedistjob} the direct impact of ADASYN oversampling as already described by \autoref{tab:adasynimpact}.
+Since ADASYN generated more default class instances for original default instances who are managers, this results in a higher default rate within such job category, leading to a larger distribution of defaulters compared to non--defaulters, which is quantified in the negative WoE value.
+We can also see, that Optimal Binning has grouped categories \texttt{Self}, \texttt{Sales} and \texttt{Others} into a single category bin.
 
 
 
