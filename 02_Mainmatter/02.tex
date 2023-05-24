@@ -67,22 +67,23 @@ In order to avoid confusion and ensure clear understanding in this thesis, it is
 	\item \textbf{Feature} - Predictor, attribute, independent variable or explanatory variable ($X$), which we want to use to predict the target variable $Y$. In tabular data, one feature is represented by one column.
 	\item \textbf{instance} - Observation, example, record, data point, case or a row in tabular data.
 	\item \textbf{Training} - Fitting process, learning process or estimation of the model's parameters using the training data.
-	\item \textbf{Supervised Learning} - Process reflecting the ability of an algorithm to generalize  knowledge from the data having with target or label cases, so that the algorithm can be used to predict new (unlabelled) cases \citep{berry2020supervised}.
+	\item \textbf{Supervised Learning} - Process reflecting the ability of an algorithm to generalize knowledge from the data having target or label cases, so that the algorithm can be used to predict new (unlabelled) cases \citep{berry2020supervised}.
     In other words, the learning process is supervised by the target variable, hence the model can be used to predict the target variable for new data, either using classification (when having categorical target variable) or regression (when having continuous target variable).
 	\item \textbf{Cross--validation} - The data is split into $k$ folds (subsets) and the model is trained $k$ times, each time on $k-1$ folds and evaluated on the remaining fold, in order to obtain reliable estimates of the model generalization error \citep{tatsat2020machine}, or so called cross-validation score.
-	\item \textbf{Overfitting} - Situation, when the model has small error during the training, but also a high test error \citep{forsyth2019applied}. The model is too complex and just purely memorizes the data on which is trained on, but cannot generalize well on unseen data.
-	\item \textbf{Black--box model} - Models which are very accurate but also are very complex hard to interpret \citep{pintelas2020grey}.
-	\item \textbf{White--box model} - Models which are comprehensible and transparent but usually are less accurate \citep{pintelas2020grey}.
+	\item \textbf{Overfitting} - Situation, when the model has a small error during the training, but also a high test error \citep{forsyth2019applied}. The model is too complex and just purely memorizes the data on which is trained, but cannot generalize well on unseen data.
+	\item \textbf{Black--box model} - Models which are very accurate but also very complex and hard to interpret \citep{pintelas2020grey}.
+	\item \textbf{White--box model} -  Models which are comprehensible and transparent but are usually less accurate  \citep{pintelas2020grey}.
 \end{itemize}
 \newpage
 
 \section{Algorithms}
 \label{sec:algorithms}
 
-In this section, several algorithms, which are used in the machine learning implementation, are described. Since the goal is to predict whether or not given client will default, henceforth only (binary) classification algorithms as a part of the supervised learning are described. In other words, regression models and unsupervised learning algorithms are out of the scope of this thesis.
+In this section, several algorithms, that are used in the machine learning implementation, are described.
+Since the goal is to predict whether or not a given client will default, henceforth only binary classification algorithms are described as part of the supervised learning. In other words, regression models and unsupervised learning algorithms are out of the scope of this thesis.
 \subsection{Logistic Regression}
 \label{subsubsec:logisticregression}
-Despite the algorithm's name, logistic regression is not a regression algorithm, but rather a classification algorithm as linear regression's target variable is continuous, whereas regarding a logistic regression, the target variable is categorical, or rather dichotomous in case of binary classification \citep{wendler2021data}.
+Despite the algorithm's name, logistic regression is not a regression algorithm, but rather a classification algorithm as linear regression's target variable is continuous, whereas regarding logistic regression, the target variable is categorical, or rather dichotomous in case of binary classification \citep{wendler2021data}.
 For a probability score prediction, it uses a logistic (sigmoid) function, which maps any real value into a probability and takes a S-shaped curve \citep{zaidi2022mathematical}, as can be seen in \autoref{fig:sigmoid}.
 
 \begin{figure}[H]
@@ -101,25 +102,25 @@ The linear form of the logistic regression with $n$ features can be written as:
 
 where $P$ is the probability of the occurred event, conditional on the set of given features.
 
-Let us denote $Y=1$ as an observed target instance where the event occurred (e.g., default), then:
+Let us denote $Y=1$ as an observed target instance where the event occurred (e.g., default), tnus:
 \begin{equation}\label{eq}
     P = \operatorname{Pr}(Y=1 \mid X)
 \end{equation}
 
-Therefore, the term within the natural logarithm is the odds or more particularly, the ratio of the probability of the event with respect to the probability of non-event, both conditional on the same set of given features.
+Therefore, the term within the natural logarithm is the odds, or more particularly, the ratio of the probability of the event with respect to the probability of non-event, both conditional on the same set of given features.
 \begin{equation}\label{eq}
     \frac{P}{1-P}  = \frac{\operatorname{Pr}(Y=1 \mid X_1,X_2,\ldots,X_n)}{\operatorname{Pr}(Y=0 \mid X_1,X_2,\ldots,X_n)}
 \end{equation}
 
-Referring to the previous equations, solving for $P$, thus we get a final equation for computing the probability of occurred event with usage of logistic regression:
+Referring to the previous equations, solving for $P$, we get a final equation for computing the probability of occurred event using logistic regression as:
 \begin{equation}\label{eq}
 P = \frac{1}{1+e^{-\left(\beta_0 + \sum_{i=1}^{n} \beta_i X_i\right)}}
 \end{equation}
 
-Regarding the loss function minimized when estimating the model's parameters, the logistic regression uses the cross-entropy loss function, also known as log loss.
+Regarding the loss function minimized when estimating the model's $\beta$ parameters, logistic regression uses the cross-entropy loss function, also known as log loss.
 This loss function is also used as an evaluation metric for the model's performance, which is further described in \autoref{subsubsec:logloss}.
-Let us denote the loss function as $L(y, p)$, where $y$ is the actual target values and $p$ is the predicted probability scores. To this loss function, we can also additionally employ a regularization term $C$ in order to prevent overfitting \citep{pramoditha2021mitigate} by penalizing the coefficients' magnitudes.
-We distinguish 3 types of regularization (penalty) types:
+Let us denote the loss function as $L(y, p)$, where $y$ is the actual target values and $p$ is the predicted probability scores. To this loss function, we can also additionally employ the regularization term $C$ in order to prevent overfitting \citep{pramoditha2021mitigate} by penalizing the coefficients' magnitudes.
+We distinguish 3 types of regularization penalties:
 \begin{itemize}\setlength\itemsep{0em}
     \item \textbf{L1} - Lasso regularization, which takes the absolute value of the coefficients' magnitudes.
 \end{itemize}
