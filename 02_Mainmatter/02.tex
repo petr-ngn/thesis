@@ -301,7 +301,7 @@ where $B$ is the number of trees and $T_b$ is the $b$-th tree.
 
 \newpage
 \subsection{Gradient Boosting}
-In contrast to Random Forest whose trees are trained independently, i.e., in a parallel way, Gradient Boosting trains trees are trained in a sequential way, where each tree is trained on the residuals of the previous tree \citep{ayyadevara2018pro}, as a sequential building series of dependent weak learners, i.e., decision trees, in order to create a strong learner.
+In contrast to Random Forest, whose trees are trained independently, i.e., in a parallel way, Gradient Boosting's trees are trained in a sequential way, where each tree is trained on the residuals of the previous tree \citep{ayyadevara2018pro}. Such algorithm wraps a sequential building series of dependent weak learners, i.e., decision trees, in order to create a strong learner.
 
 According to Dias \citep{dias2018comparison}, before adding any weak learners, first we need to initialize a model $F_0(x)$ which is a constant value computed by minimizing the sum of the loss function $L$ over all training samples, i.e., we look for such $\gamma$ constant which minimizes the loss function $L$, hence:
 \begin{equation}
@@ -315,7 +315,7 @@ Then, for $m \in M$, where $M$ is the total number of iterations or the number o
     r_{i,m} = -\left[\frac{\partial L\left(y_{i}, F\left(x_{i}\right)\right)}{\partial F\left(x_{i}\right)}\right]_{F(x)=F_{m-1}(x)}
 \end{equation}
 \begin{itemize}\setlength\itemsep{0em}
-    \item[2.] Train a weak learner $h_m(x)$ with the training data as features and the pseudo--residuals as the target values $(x_i, r_{i,m})$, and then compute the learning rate $\gamma_m$ which minimizes the loss function $L$ when adding the weak learner $h_m(x)$ to the previous model $F_{m-1}(x)$, hence:
+    \item[2.] Train a weak regression learner $h_m(x)$ with the training data as features and the pseudo--residuals as the target values $(x_i, r_{i,m})$, and then compute the learning rate $\gamma_m$ which minimizes the loss function $L$ when adding the weak learner $h_m(x)$ to the previous model $F_{m-1}(x)$, hence:
 \end{itemize}
 \begin{equation}
     \gamma_{m} = \arg \min _{\gamma} \sum_{i=1}^{n} L\left(y_{i}, F_{m-1}\left(x_{i}\right)+\gamma h\left(x_{i}\right)\right)
@@ -348,7 +348,7 @@ The hyperplane can be expressed as follows, where $X$ are the features data, $W$
 \end{equation}
 Thus, the data points which lie above the hyperplane are classified as 1 and otherwise \citep{hsu2002comparison}.
 Moreover, the distance between the hyperplane and any training data point is expressed as $\frac{1}{\|W\|}$, where $\|W\|$ is Euclidean the norm of the weight vector $W$.
-In order to maximize the margin, we maximize following term as we want to maximize both sides of below and above the hyperplane, therefore:
+In order to maximize the margin, we minimize the following term as we want to maximize both sides of the hyperplane (i.e., above and below the hyperplane), therefore:
 \begin{equation}
     \min {\frac{2}{\|W\|}}
 \end{equation}
@@ -377,25 +377,25 @@ where $\phi$ is mapping function for high--dimensional projection of the feature
     K(X_i,X_j) = \tanh(\gamma X_i \cdot X_j + r)
 \end{equation}
 In some cases, the data cannot be linearly separable in higher dimensional space, i.e., we need to account for some potential errors, thus we introduce regularization factor $C$  for penalizing the errors $\xi$.
-Therefore, in order to maximize the margin as well as to allow for errors, we minimize the following term:
+Therefore, in order to maximize the margin as well as allow for errors, we minimize the following term:
 \begin{equation}
-    \min \frac{1}{2} \|W\| + C \sum_{i=1}^{N} \xi
+    \min \left[\frac{1}{2} \|W\| + C \sum_{i=1}^{N} \xi\right]
 \end{equation}
 Hence, by minimizing $\frac{1}{2} \|W\|$ we minimize the weights (i.e, maximize the margin), by minimizing $\xi$ we reduce the number of training error, and by tuning $C$ we balance between these two properties \citep{hsu2002comparison}. 
 
-Note, that SVM does not predict probability scores by default, but rather predict classes based on the location whether the given data points are above or below the hyperplane.
-In order to obtain SVM's probabilities, as stated by Lin \citep{lin2007note}, the Platt scaling \citep{platt1999probabilistic} can be applied as a surrogate model to estimate probabilities. Particularly, it fits logistic regression with true labels $Y$ as target variable and predictions produced by SVM ($f(x)$) as features. Therefore the predicted probability score can be expressed as:
+Note, that SVM does not predict probability scores by default, but rather predicts classes based on the location whether the given data points are above or below the hyperplane.
+In order to obtain SVM's predicted probabilities, as stated by Lin \citep{lin2007note}, the Platt scaling \citep{platt1999probabilistic} can be applied as a surrogate model to estimate probabilities. Particularly, it fits logistic regression with true labels $Y$ as target variable and predictions produced by SVM ($f(x)$) as features. Therefore the predicted probability score can be expressed as:
 \begin{equation}
     \operatorname{Pr}\left(Y | f(x) \right) = \frac{1}{1 + \exp\left(A \cdot f(x) + B \right)} 
 \end{equation}
 
-\newpage
+
 \subsection{Neural Network}
 \label{subssec:nn}
-Neural Network is a black--box machine learning algorithm which can handle very complex and non--linear relationship between. It contains several layers where each layer has a certain number of units (neurons). In general, we distinguish 3 type of layers as also visualized in \autoref{fig:nn-example}:
+Neural Network is a black--box machine learning algorithm which can handle very complex and non--linear relationships. It contains several layers where each layer has a certain number of units (neurons). In general, we distinguish 3 types of layers as also visualized in \autoref{fig:nn-example}:
 \begin{itemize}\setlength\itemsep{0em}
     \item \textbf{Input layer} - The initial layer which contains $n$ units, where $n$ is the number of features within the data set.
-    \item \textbf{Output layer} - The final layer which contains $m$ units, where $m$ is the number of classes within the target variable. Since we assume only binary classification algorithms, therefore the output layer contains only one unit.
+    \item \textbf{Output layer} - The final layer which outputs predictions and contains $m$ units, where $m$ is the number of classes within the target variable. Since we assume only binary classification algorithms, therefore the output layer contains only one unit.
     \item \textbf{Hidden layer} - The intermediate layer which is always between the two layers - either between the input and output layer or even between other hidden layers.
     \end{itemize}
 
@@ -430,16 +430,14 @@ Before the output value $z$ is passed to the next layer, it is transformed by an
     f(z) = \frac{e^z - e^{-z}}{e^z + e^{-z}}
 \end{equation}
 \begin{itemize}\setlength\itemsep{0cm}
-    \item \textbf{Sigmoid} - The logistic function was already described in \autoref{subsubsec:logisticregression}. Such function is usually used in the last hidden layer before the output layer as it maps the output to the range between 0 and 1, i.e., the predicted probability for binary classification. In terms of $z$, the sigmoid function is defined as:
+    \item \textbf{Sigmoid} - The sigmoid function was already defined and described in \autoref{subsubsec:logisticregression}. Such function is usually used in the output layer as it maps the input values to the range between 0 and 1, i.e., the predicted probability for binary classification. In terms of $z$, the sigmoid function is defined as:
     \end{itemize}
 \begin{equation}
     f(z) = \frac{1}{1+e^{-z}}
 \end{equation}
-The training of neural network is an iterative process, where within each iteration (also called as epoch), the neural network is fed with the input, pass through the (hidden) layers to the output. The output is then compared with the actual value and the error is calculated.
-Here comes another property of neural network which is the back--propagation, which updates all the weights and biases starting from the last layer by a small amount until the error is minimized as much as possible \citep{ayyadevara2018pro}.
-The error is then backpropagated through the network and the weights are updated. The process is repeated until the error is minimized.
+The training of neural network is an iterative process, where within each iteration (also called as epoch), the neural network is fed with the input, passes it through the hidden layers to the output. The output is then compared with the actual value and the error is calculated.
+Here comes another property of neural network which is the back--propagation, which updates all the weights and biases starting from the last layer by a small amount until the error is minimized as much as possible \citep{ayyadevara2018pro}. Thus, the error is back--propagated through the network and the weights are updated. The process is repeated until the error is minimized or is interrupted once the stop criterion is met.
 
-\newpage
 \section{Evaluation Metrics}
 \label{sec:evaltheory}
 
