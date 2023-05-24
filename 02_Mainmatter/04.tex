@@ -138,6 +138,10 @@ Amongst the 12 features, there are 10 numeric features and 2 categorical feature
 Although all the variables and their names seem to be self-explanatory, one may find the \texttt{DEROG} feature's meaning unclear. In such case, derogatory report refers to derogatory mark on a credit report, which is the negative item indicating significant credit risk as an indicator of delinquency issues or late payments \citep{experian}. Such credit report is provided by credit bureau based on bank's request when assessing the creditworthiness of the loan applicant.
 
 
+Regarding the indirect data quality issues, the data set's source does not specify the time period of its observations or the snapshot date, which may also be relevant point given that some loans might default after the snapshot date even though they had not defaulted before.
+Nevertheless, as already mentioned in introduction, the main goal of this thesis is the implemenent custom machine learning implementation framework while the data set is used only as a proof of concept.
+Therefore, we deem appropriate to omit the raised data quality issues in this thesis.
+
 \begin{table}[H]
 \small
 \setlength{\tabcolsep}{8pt}
@@ -221,7 +225,7 @@ DEBTINC & 1267 & 21.26 \% \\
 \subsection{Distribution Analysis}
 \label{subsec:distribution}
 In this subsection, we inspect the distribution of our variables, including the target variable and the features.
-Such distribution inspection may help us to identify outliers, and other potential issues with the data set.
+Such distribution inspection may help us identify outliers, and other potential issues with the data set.
 
 \subsubsection{Default Distribution}
 \label{subsubsec:defaultdist}
