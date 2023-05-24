@@ -66,7 +66,7 @@
    <dc:creator><rdf:Seq><rdf:li>Petr Nguyen</rdf:li></rdf:Seq></dc:creator>
    <dc:publisher><rdf:Bag><rdf:li>Prague University of Economics and Business</rdf:li></rdf:Bag></dc:publisher>
    <dc:description><rdf:Alt><rdf:li xml:lang="x-default">Machine Learning in Credit Risk Modelling</rdf:li></rdf:Alt></dc:description>
-   <dc:subject><rdf:Bag><rdf:li>Machine Learning, Credit Risk, Loans, Probability of Default, Python, Bayesian Optimization, Web Application</rdf:li></rdf:Bag></dc:subject>
+   <dc:subject><rdf:Bag><rdf:li>Machine Learning, Credit Risk, Loans, Probability of Default, Python, Web Application, Bayesian Optimization</rdf:li></rdf:Bag></dc:subject>
   </rdf:Description> 
   <rdf:Description rdf:about="" xmlns:prism="http://prismstandard.org/namespaces/basic/2.2/"> 
   </rdf:Description> 
@@ -78,15 +78,15 @@
   </rdf:Description> 
   <rdf:Description rdf:about="" xmlns:xmp="http://ns.adobe.com/xap/1.0/"> 
    <xmp:CreatorTool>LaTeX with hyperref</xmp:CreatorTool> 
-   <xmp:ModifyDate>2023-05-24T13:34:01+02:00</xmp:ModifyDate> 
-   <xmp:CreateDate>2023-05-24T13:34:01+02:00</xmp:CreateDate> 
-   <xmp:MetadataDate>2023-05-24T13:34:01+02:00</xmp:MetadataDate> 
+   <xmp:ModifyDate>2023-05-24T13:47:03+02:00</xmp:ModifyDate> 
+   <xmp:CreateDate>2023-05-24T13:47:03+02:00</xmp:CreateDate> 
+   <xmp:MetadataDate>2023-05-24T13:47:03+02:00</xmp:MetadataDate> 
   </rdf:Description> 
   <rdf:Description rdf:about="" xmlns:xmpRights = "http://ns.adobe.com/xap/1.0/rights/"> 
   </rdf:Description> 
   <rdf:Description rdf:about="" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/"> 
    <xmpMM:DocumentID>uuid:B3127226-E9DF-0BA7-D508-53757BC0CACB</xmpMM:DocumentID> 
-   <xmpMM:InstanceID>uuid:273F181C-020A-6495-2881-BD3CDCF4AF64</xmpMM:InstanceID> 
+   <xmpMM:InstanceID>uuid:40E7B09F-A2B9-1BA7-B6D6-1BC3B08DD954</xmpMM:InstanceID> 
   </rdf:Description> 
  </rdf:RDF> 
 </x:xmpmeta> 
