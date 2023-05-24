@@ -670,30 +670,31 @@ Logically, the lower Log loss value, the better performance of the model is. As 
 \newpage
 \section{ADASYN Oversampling}
 \label{sec:adasyntheory}
-Since this thesis pertains to the data set of defaulted loans, which target variable distribution is heavily skewed, it is needed to emphasize the imbalanced class issue, i.e., the class is strongly imbalanced as the frequency distribution of the majority class is significantly higher than the frequency distribution of the minority class. In case of defaulted loans, the majority class would be non--default status and the minority class would be default status.
+Since this thesis pertains to the data set of performing (no--defaulted) and non--performing (defaulted) loans, whose target variable distribution is heavily skewed, it is needed to emphasize the imbalanced class issue, i.e., the frequency distribution of the majority class is significantly higher than the frequency distribution of the minority class.
+In case of a loan portfolio, the majority class would be non--default status and the minority class would be default status.
 This can cause serious degradation in model's performance as most of the models assume well--balanced class distributions, hence such models would be biased towards the majority class and would not be able to predict the minority class accurately \citep{prati2009data}.
 
-To overcome this issue, one would use Random Undersampling or Random Oversampling to deal with the class imbalanced issue. The former randomly eliminates majority class instances whereas the latter randomly duplicates minority class instances.
-However, both have particular drawbacks, as the random under-sampling may lead to a a significant loss of information, and random oversampling is lead to the high degree of repetition of minority instances. Both then could lead to model's overfitting and deterioration in model's performance \citep{ma2013imbalanced}.
-This might be a significant issue when the target variable distribution is heavily imbalanced - assume that we have a data set of 1,000 instances where 990 instances belongs to majority class and 10 instances to minority class.
+To overcome this issue, one would use Random Undersampling or Random Oversampling to deal with the class imbalance issue. The former randomly eliminates majority class instances, whereas the latter randomly duplicates minority class instances.
+However, both have particular drawbacks, as the random under-sampling may lead to a a significant loss of information, and random oversampling may lead to the high degree of repetition of minority instances. Both then could lead to model's overfitting and deterioration in model's performance \citep{ma2013imbalanced}.
+This might be a significant issue when the target variable distribution is heavily imbalanced - assume that we have a data set of 1,000 instances where 990 instances belong to majority class and 10 instances to minority class.
 If we perform random undersampling in order to balance the target variable distribution, we would have to remove 980 instances and end up with undersampled data set of 20 instances, which is not acceptable for model training.
 On the other hand, if we perform random oversampling, we would end up with 1,980 instances, where 980 instances would be the same as in the original data set, which would lead to the model's overfitting.
 
 Therefore, the Adaptive Synthetic Sampling (henceforth ADASYN) technique is used for oversampling the minority class in this thesis.
 ADASYN generates synthetic instances of the minority class based on the nearest neighbors of the minority class instances.
-Such approach is more effective than Synthetic Minority Oversampling Technique (henceforth SMOTE) which also uses nearest neighbors to generate synthetic instances of minority class, however, ADASYN generates more synthetic instances which are hard--to--learn by K-Nearest Neighbors given the density distributions, whereby SMOTE generates synthetic instances uniformly for each minority class instance.
+Such approach is more effective than Synthetic Minority Oversampling Technique (henceforth SMOTE) which also uses nearest neighbors to generate synthetic instances of minority class, however, ADASYN generates more synthetic instances which are hard--to--learn by K-Nearest Neighbors given the density distributions, whereas SMOTE generates synthetic instances uniformly for each minority class instance.
  \citep{adasynhaibo}. 
 
 In other words, ADASYN generates more synthetic instances in regions where the density of the majority class within $K$ nearest neighbors of minority instance is higher and fewer synthetic instances in regions where the density is lower, thereby ADASYN focuses on generating more hard--to--learn minority instances.
-Thereby, it makes easier for the machine learning model to learn the decision boundary between the minority and majority classes and boost the model's performance by focusing on hard--to--learn instances \citep{adasynhaibo}.
+Thus, it makes easier for the machine learning model to learn the decision boundary between the minority and majority classes and boost the model's performance by focusing on hard--to--learn instances \citep{adasynhaibo}.
 
-Before oversampling algorithm's execution, first we need to calculate the number of instances of minority class to be synthetically generated in order to balance the target variable distribution. The number of instances to be generated $G$ is calculated as follows:
+Before the oversampling algorithm's execution, first, we need to calculate the number of instances of minority class to be synthetically generated in order to balance the target variable distribution. The number of instances to be generated $G$ is calculated as follows:
 \begin{equation}\label{eq}
     G = \left(m_{l} - m_{s}\right) \times \beta
 \end{equation}
 where $m_l$ is the number of majority class instances, $m_s$ is the number of minority class instances and $\beta$ indicates the desired ratio between the numbers of majority and minority class instances after oversampling.
 
-Then, for each minority class instance $x_i$, using $K$-Nearest Neighbors with Euclidean distance calculate the ratio $r_i$ as:
+Then, for each minority class instance $x_i$, using $K$-Nearest Neighbors with Euclidean distance, calculate the ratio $r_i$ as:
 \begin{equation}\label{eq}
    r_{i} = \frac{\delta_{i}} {K}
 \end{equation}

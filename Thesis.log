@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.31)  24 MAY 2023 04:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.31)  24 MAY 2023 04:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2406,7 +2406,7 @@ File: Figures/logloss.jpg Graphic file (type jpg)
 Package pdftex.def Info: Figures/logloss.jpg  used on input line 665.
 (pdftex.def)             Requested size: 369.88582pt x 235.3908pt.
  [32.47 <./Figures/logloss.jpg>] [33.48] [34.49] [35.50]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 732.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 733.
  (c:/tex/texlive/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [36.51] [37.52] [38.53] [39.54] [40.55] [41.56] [42.57]) (./02_Mainmatter/03.tex [43.58]
@@ -3173,7 +3173,7 @@ Here is how much of TeX's memory you used:
  48 hyphenation exceptions out of 8191
  123i,12n,120p,699b,2543s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}<c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmex10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmmi12.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmmi6.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmr17.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmr6.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmri12.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmss12.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmsy6.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmsy7.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmsy8.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmtk10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmtt10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmtt12.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmtt9.pfb>
-Output written on Thesis.pdf (172 pages, 16783788 bytes).
+Output written on Thesis.pdf (172 pages, 16783816 bytes).
 PDF statistics:
  2579 PDF objects out of 2984 (max. 8388607)
  2252 compressed objects within 23 object streams
