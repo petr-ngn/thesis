@@ -2422,15 +2422,28 @@ def predict():
 
 	lime_plot(input_df_woe_FINAL.iloc[0], model, lime_explainer)
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	return render_template(
 		"results.html",
-		prediction=round(pred_score[0] * 100, 2),
-		predicted_class=result[0],
+		probability_of_default = round(pred_score[0] * 100, 2),
+		prediction = result[0],
 	)
 
-
 if __name__ == "__main__":
-	app.run(debug=True)	
+	app.run(debug = True)	
 \end{lstlisting}
 
 \section{Front--end: HTML Code}
