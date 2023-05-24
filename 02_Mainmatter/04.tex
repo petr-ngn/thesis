@@ -124,15 +124,18 @@ Some \lstinline{Scikit-learn} or \lstinline{Scikit-optimize} objects have option
 \newpage
 \section{Data Exploration}
 \label{sec:dataexploration}
-This section is focused on exploration of the analyzed loan data set, particularly on data set description, distribution analysis and association analysis, in order to infer potential valuable insights and which can be used in the preprocessing or modelling part.
+This section is focused on exploration of the analyzed loan data set, particularly on data set description, distribution analysis and association analysis, in order to infer potential valuable insights and which can be used in the preprocessing, modelling or evaluation part.
 
 \subsection{Data Set Description}
 \label{subsec:datadescript}
 The analyzed data set pertains to the HMEQ data set which contains loan application information and default status of 5,960 US home equity loans. Such data set was acquired from Credit Risk Analytics website \citep{baesens2016credit}. Since this data set regards the loan application scoring data, using macroeconomic or other external data is omitted due to the data set characteristics as well as modelling with behavioral scoring.
 Thus our goal is to predict whether the loan applicant will or would default based on provided information from the loan application.
+Thus, we aim to predict the probability of default only, therefore EAD, LGD and ECL are not considered in this thesis.
 
 As can be seen in \autoref{tab:dataset}, the data set contains 13 columns, 12 features and 1 target variable \texttt{BAD} indicating whether the loan was in default (\texttt{1}) or not (\texttt{0}). 
 Amongst the 12 features, there are 10 numeric features and 2 categorical features, namely \texttt{REASON} which contains 2 categories - Debt consolidation (\texttt{DebtCon}) and Home improvement (\texttt{HomeImp}), and \texttt{JOB} which contains following categories - Administration (\texttt{Office}), Sales, Manager (\texttt{Mgr}), Professional Executive (\texttt{ProfExe}), Self-employed (\texttt{Self}), and Other.
+
+Although all the variables and their names seem to be self-explanatory, one may find the \texttt{DEROG} feature's meaning unclear. In such case, derogatory report refers to derogatory mark on a credit report, which is the negative item indicating significant credit risk as an indicator of delinquency issues or late payments \citep{experian}. Such credit report is provided by credit bureau based on bank's request when assessing the creditworthiness of the loan applicant.
 
 
 \begin{table}[H]
@@ -159,7 +162,7 @@ JOB & Job occupancy category & categorical \\
 
 YOJ & Years of employment at present job & numeric \\
 
-DEROG & Number of derogatory public reports & numeric \\
+DEROG & Number of derogatory reports & numeric \\
 
 DELINQ & Number of delinquent credit lines & numeric \\
 
@@ -178,9 +181,9 @@ DEBTINC & Debt-to-income ratio & numeric \\
 \centering{\begin{source}\citep{baesens2016credit}\end{source}}\vspace{-1em}
 \end{table}
 
-After the initial data inspection, data does not contain any duplicates but does contain missing values, which are summarized in \autoref{tab:natable}.
+After the initial data inspection, the data set does not contain any duplicates but does contain missing values, which are summarized in \autoref{tab:natable}.
 Most of the missing values are observed within the feature \texttt{DEBTINC} with 1,267 missing observations,
-whereas columns indicating default status (\texttt{BAD}) or requested loan amount (\texttt{LOAN}) do not contain any missing values, which is expected as the bank should have the available information about their loans whether they have defaulted or not, and since this data set pertains to the application scoring, when applying for a loan, an applicant should always fill out the requested loan amount.
+whereas variables indicating default status (\texttt{BAD}) or requested loan amount (\texttt{LOAN}) do not contain any missing values, which is expected as the bank should have the available information about their loans whether they have defaulted or not, and since this data set pertains to the application scoring, when applying for a loan, an applicant should always fill out the requested loan amount.
 
 \begin{table}[H]
 \small

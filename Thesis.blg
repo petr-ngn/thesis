@@ -10,45 +10,45 @@ Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Warning--empty journal in adeodato2016equivalence
 Warning--empty booktitle in dias2018comparison
 Warning--empty journal in navas2020optimal
-You've used 113 entries,
+You've used 114 entries,
             3042 wiz_defined-function locations,
-            1171 strings with 26650 characters,
-and the built_in function-call counts, 66902 in all, are:
-= -- 5212
-> -- 2560
-< -- 247
-+ -- 863
-- -- 741
-* -- 5641
-:= -- 9656
-add.period$ -- 310
-call.type$ -- 113
-change.case$ -- 794
-chr.to.int$ -- 106
-cite$ -- 116
-duplicate$ -- 5390
-empty$ -- 5131
-format.name$ -- 1387
-if$ -- 13405
+            1175 strings with 26857 characters,
+and the built_in function-call counts, 67268 in all, are:
+= -- 5244
+> -- 2571
+< -- 248
++ -- 867
+- -- 744
+* -- 5665
+:= -- 9722
+add.period$ -- 313
+call.type$ -- 114
+change.case$ -- 800
+chr.to.int$ -- 107
+cite$ -- 117
+duplicate$ -- 5418
+empty$ -- 5158
+format.name$ -- 1392
+if$ -- 13474
 int.to.chr$ -- 8
 int.to.str$ -- 1
-missing$ -- 876
-newline$ -- 454
-num.names$ -- 453
-pop$ -- 1724
+missing$ -- 880
+newline$ -- 458
+num.names$ -- 457
+pop$ -- 1732
 preamble$ -- 1
-purify$ -- 695
+purify$ -- 700
 quote$ -- 0
-skip$ -- 2505
+skip$ -- 2518
 stack$ -- 0
-substring$ -- 2491
-swap$ -- 3155
+substring$ -- 2502
+swap$ -- 3167
 text.length$ -- 171
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 939
+type$ -- 948
 warning$ -- 3
-while$ -- 452
+while$ -- 455
 width$ -- 0
-write$ -- 1302
+write$ -- 1313
 (There were 4 warnings)

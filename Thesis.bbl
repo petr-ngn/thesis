@@ -1,4 +1,4 @@
-\begin{thebibliography}{113}
+\begin{thebibliography}{114}
 \newcommand{\enquote}[1]{``#1''}
 \providecommand{\natexlab}[1]{#1}
 
@@ -647,6 +647,12 @@
 \textsc{Wendler}, T. \& S.~\textsc{Gr{\"o}ttrup} (2021): \emph{Data Mining with
   SPSS Modeler: Theory, Exercises and Solutions}.
 \newblock Cham: Springer, 2nd edition.
+
+\bibitem[{White(2022)}]{experian}
+\textsc{White}, J. (2022): \enquote{{What Does 'Derogatory' Mean on a Credit
+  Report?}}
+\newblock Experian. Retrieved March 21, 2023.
+  \url{https://www.experian.com/blogs/ask-experian/what-the-term-derogatory-means-in-a-credit-report/}.
 
 \bibitem[{Witten \emph{et~al.}(2016)Witten, Frank, Hall, \&
   Pal}]{witten2011data}
