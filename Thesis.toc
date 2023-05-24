@@ -80,7 +80,7 @@
 \contentsline {subsection}{\numberline {4.6.1}Final Model Recalibration}{114}{subsection.4.6.1}%
 \contentsline {subsection}{\numberline {4.6.2}Flask and HTML Web Application}{114}{subsection.4.6.2}%
 \contentsline {chapter}{\numberline {5}Summary of Results}{119}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Hypotheses' Testing}{120}{section.5.1}%
+\contentsline {section}{\numberline {5.1}Hypotheses' Testing}{119}{section.5.1}%
 \contentsline {section}{\numberline {5.2}Comparison with other HMEQ Studies}{123}{section.5.2}%
 \contentsline {section}{\numberline {5.3}Key Findings}{125}{section.5.3}%
 \contentsline {section}{\numberline {5.4}Contributions}{126}{section.5.4}%
