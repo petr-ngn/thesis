@@ -146,8 +146,8 @@ We distinguish 3 types of regularization penalties:
 Decision Tree is a rule--based algorithm which aims to partition the data into smaller and more homogeneous subsets. Such tree contains nodes, which are also visualized in \autoref{fig:dtnodes}, namely:
 \begin{itemize}\setlength\itemsep{0em}
 	\item \textbf{Root node} - the topmost node of the tree where the splitting begins.
-	\item \textbf{Internal node} - the non--terminal nodes as a result of the split and can be further split into another subsets.
-	\item \textbf{Leaf node} - the terminal nodes as a results of the split and cannot be further split into another subsets.
+	\item \textbf{Internal node} - Non--terminal nodes that remain after the split and can be further divided into additional subsets (nodes).
+	\item \textbf{Leaf node} - Terminal nodes that remain after the split and cannot be divided into additional subsets.
 \end{itemize}
 \begin{figure}[H]
     \centering
@@ -157,10 +157,10 @@ Decision Tree is a rule--based algorithm which aims to partition the data into s
     \centering{\begin{source}\citep{gauhar2020decision}\end{source}}\vspace{-1em}
 \end{figure}
 
-The splitting process is based on the homogeneity or so called purity of the node with respect to the target variable \citep{provost2013data}.
-In other words, we want to have the node as pure as possible which means that the node should contain as high proportion of one class as possible.
+The splitting process is based on the homogeneity, or so called purity, of the node with respect to the target variable \citep{provost2013data}.
+In other words, we want to have the node as pure as possible, which means that the node should contain as high proportion of one class as possible.
 In this case, the node should either contain high proportion of defaulters or non--defaulters, respectively.
-Such splitting process starts from the root node and continues until the leaf nodes are pure enough or until the stopping criteria are met.
+Such splitting process starts at the root node and continues until the leaf nodes are pure enough or until the stopping criteria are met.
 The stopping criteria can be either a maximum depth of the tree, minimum number of observations within the node or minimum number of observations within the leaf node.
 One way to measure impurity is using Entropy which ranges from 0 to 1 and is defined as:
 \begin{equation}\label{eq}
@@ -169,11 +169,11 @@ One way to measure impurity is using Entropy which ranges from 0 to 1 and is def
 where $p_i$ is the probability of the occurrence of the event $i$, or in other words, it is a fraction of the observations belonging to the class $i$ within given node. In credit risk modelling terms, it is a proportion of defaulters within given node and $1-p_i$ is a proportion of non--defaulters within given sample.
 The lower Entropy value, the purer the node is, i.e., the more homogeneous the subset is, where the frequency of one class is dominant to other class.
 Therefore, the goal is to minimize the Entropy value since we want to have the purest nodes as possible, i.e., the nodes where is either a high proportion of defaulters or non--defaulters. 
-However, the Entropy is not the only way to measure the impurity of the node. Another way is using Gini Impurity which ranges from 0 to 0.5 and is defined as:
+However, the Entropy is not the only way to measure the impurity of the node. Another way is to use Gini Impurity which ranges from 0 to 0.5 and is defined as:
 \begin{equation}\label{eq}
     G = 1 - \sum_{i=1}^{n} p_{i}^{2}
 \end{equation}
-Both impurity measures are depicted in \autoref{fig:impurity} which we want to both of them minimize. Thus, we choose such feature and such rule which result in the lowest impurity measure. Such process is repeated until the stopping criteria are met or until the leaf nodes are pure enough.
+Both impurity measures are depicted in \autoref{fig:impurity} which we want to minimize. Thus, we choose such feature and such rule which result in the lowest impurity measure. Such process is repeated until the stopping criteria are met or until the leaf nodes are pure enough.
 \begin{figure}[H]
     \centering
     \caption{Gini Impurity vs. Entropy}\vspace{0.5em}
@@ -184,7 +184,7 @@ Both impurity measures are depicted in \autoref{fig:impurity} which we want to b
 \end{figure}
 
 After the training, Decision Tree predicts the target variable based on the rules which are stored in the tree.
-The prediction process starts from the root node and continues until the leaf node is reached. Within the leaf node, the prediction can be either the most frequent class within the node or the probability of the occurrence of the event, i.e., the proportion of defaulters within given node.
+The prediction process starts at the root node and continues until the leaf node is reached. Within the leaf node, the prediction can be either the most frequent class within the node or the probability of the occurrence of the event, i.e., the proportion of defaulters within given node.
 \newpage
 \subsection{Naive Bayes}
 
