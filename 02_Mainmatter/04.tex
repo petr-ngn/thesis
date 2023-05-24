@@ -1046,9 +1046,9 @@ Learning rate & Constant, Adaptive, Invscaling \\
 \label{subsec:feature-selection}
 
 As the feature selection approach, Forward Sequential Feature Selection (henceforth SFS) is employed in order to choose the optimal set of features as described in \autoref{sec:fsfstheory}.
-Within machine learning implementation, instead of fitting Forward SFS only with one model, Forward SFS is fitted for each input model in order to obtain the best subset of features for each model, assuming the importance of each features varies across the models.
+Within machine learning implementation, instead of fitting Forward SFS only with one model, Forward SFS is fitted to each input model in order to obtain the best subset of features for each model, assuming the importance of each features varies across the models.
 Instead of using input models with default hyperparameters, each model is tuned with Bayesian Optimization in order to obtain the optimal hyperparameters for each model, which would further improve the performance of each model within SFS and therefore, it would lead to the more optimal selection of features.
-The custom feature selection algorithm is stated in Algorithm \autoref{alg:feature_selection}, thus, when having $n$ input models, it returns $n$  subsets of optimal features, one per each model:
+The custom feature selection algorithm is stated in Algorithm \autoref{alg:feature_selection}, thus, when having $n$ input models, it returns $n$  subsets of optimal features, one per each model:
 \begin{algorithm}[H]
 \caption{Feature Selection Algorithm}
 \label{alg:feature_selection}
@@ -1059,10 +1059,12 @@ The custom feature selection algorithm is stated in Algorithm \autoref{alg:featu
 \EndFor
 \end{algorithmic}
 \end{algorithm}
-Particularly, each input model is first tuned on the training set with Bayesian Optimization with 50 iterations and 10--fold stratified cross validation (in order to preserve the target variable distribution across the folds) while maximizing the F1 score - within author's machine learning implementation, his custom function \lstinline{bayesian_optimization()} is used.
+Particularly, each input model is first tuned on the training set with Bayesian Optimization with 50 iterations and 10--fold stratified cross validation (in order to preserve the target variable distribution across the folds) while maximizing the F1 score - the author's machine learning implementation, his custom function \lstinline{bayesian_optimization()} is used.
 Once the model is tuned, the Forward SFS is fitted with such tuned model on the same training set with 10--fold stratified cross validation while maximizing the F1 score. Instead of selecting the fixed number of features, Scikit-learn's \lstinline{SequentialFeatureSelector} class allows to set a stop criterion (\lstinline{tol} parameter) which stops adding features if the objective score function is not increasing at least by \lstinline{tol} between two consecutive feature additions \citep{sfs}.
-Such parameter is set to the value which is close to zero, therefore the feature selection stops when the objective score function is not increasing anymore.
+Such parameter is set to a value that is close to zero, therefore, the feature selection stops when the objective score function is not increasing anymore.
+
 \newpage
+
 Such feature selection algorithm is wrapped into author's custom function \lstinline{SFS_feature_selection()}.
 This function iteratively prints the process of the feature selection as can be seen in \autoref{fig:featselectprint}, including the current step (Bayesian Optimization or Feature Selection), the execution time in minutes, and the selected features per each model. Since we have 8 input models, we get 8 optimal subsets of features.
 
@@ -1096,8 +1098,8 @@ Execution time: 0.8622 minutes
 \end{figure}
 
 
-The following \autoref{fig:fsrec} depicts the recurrence  of the selected features. As can be seen, features such as \texttt{CLAGE}, \texttt{DEBTINC}, \texttt{DELINQ} and \texttt{JOB} were selected by each model. 
-On the other hand, features such as \texttt{LOAN} and \texttt{REASON} were selected only four times. Therefore, it can be expected that such features which were selected every time will have significant impact in predictions.
+The following \autoref{fig:fsrec} depicts the recurrence  of the selected features. As can be seen, features such as \texttt{CLAGE}, \texttt{DEBTINC}, \texttt{DELINQ} and \texttt{JOB} were selected by each model.
+On the other hand, features such as \texttt{LOAN} and \texttt{REASON} were selected only four times. Therefore, it can be expected that such features, which were selected every time, will have a significant impact on predictions.
 \begin{figure}[H]
 \centering
 \caption{Reccurrence of Selected Features}\vspace{0.5em}
@@ -1108,8 +1110,8 @@ On the other hand, features such as \texttt{LOAN} and \texttt{REASON} were selec
 \end{figure}
 
 
-According to \autoref{fig:fsdistmod}, models such as KNN, Random Forest, Gradient Boosting and SVM chose almost all the features as only one feature was eliminated. On the other hand, Gaussian Naive Bayes chose only 6. It seems to be that most of the features are important as each model has selected a higher amount of features.
-It is evident the more complex black--box models require more features in contrast to transparent models such as Logistic Regression or Gaussian Naive Bayes.
+According to \autoref{fig:fsdistmod}, models such as KNN, Random Forest, Gradient Boosting and SVM chose almost all the features, as only one feature was eliminated. On the other hand, Gaussian Naive Bayes chose only 6. It seems that most of the features are important, as each model has selected a higher number of features.
+It is evident that more complex black--box models require more features in contrast to transparent models such as Logistic Regression or Gaussian Naive Bayes.
 \begin{figure}[H]
     \centering
     \caption{Distribution of Selected Features per Model}\vspace{0.5em}
