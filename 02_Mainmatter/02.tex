@@ -528,9 +528,9 @@ Accuracy = \frac{TP + FN}{TP + TN + FP + FN}
 
 \subsubsection{Recall}
 \label{subsubsec:recall}
-Such metric is also known as True Positive Rate (TPR) or Sensitivity, which also ranges from 0 to 1, and it describes, ,in relative, terms, how many actual $Positive$ instances the model has correctly predicted out of all the actual $Positive$ instances. Thus, the goal is to minimize the number of False Negatives, i.e., the number of defaulters that the model has classified as non--defaulters.
+Such metric is also known as True Positive Rate (TPR) or Sensitivity, which also ranges from 0 to 1, and it describes, in relative, terms, how many actual $Positive$ instances the model has correctly predicted out of all the actual $Positive$ instances. Thus, the goal is to minimize the number of False Negatives, i.e., the number of defaulters that the model has classified as non--defaulters.
 A lower value of Recall could indicate that either the model is not able to correctly predict the $Positive$ classes, resulting in a lower number of True Positives and/or a higher number of False Negatives.
-Recall metric is useful when having an imbalanced class and should be used instead of Accuracy metric as it measures the model's ability to correctly identify instances of the minority class (i.e., defaults).
+Recall metric is useful when having an imbalanced class and should be used alongside the Accuracy metric as it measures the model's ability to correctly identify instances of the minority class (i.e., defaults).
 Mathematically, based on the confusion matrix elements, it can be computed as:
 \begin{equation}\label{eq}
      Recall = \frac{TP}{TP + FN}
@@ -541,14 +541,14 @@ Mathematically, based on the confusion matrix elements, it can be computed as:
 \subsubsection{Precision}
 This metric describes, in relative terms, how many predicted $Positive$ instances are actually $Positive$ out of all the predicted $Positive$ instances. Thus, the goal is to minimize the number of False Positives, i.e., the number of non--defaulters that the model has classified as defaulters.
 A lower value of Precision could therefore indicate that either the model is not able to correctly predict the $Positive$ classes (thus a lower number of True Positives) or its prediction of $Positive$ classes is too noisy (thus a high number of False Positives).
-Precision is another metric that should be used instead of Accuracy when having an imbalanced class, as it measures the model's ability to correctly identify instances of the minority class while minimizing false positives (i.e., non--default instances that the model has classified as default).
+Precision is another metric that should be used alongside Accuracy when having an imbalanced class, as it measures the model's ability to correctly identify instances of the minority class while minimizing false positives (i.e., non--default instances that the model has classified as default).
 Similarly, Precision also ranges from 0 to 1 and can be derived from the confusion matrix as follows:
 \begin{equation}\label{eq}
      Precision = \frac{TP}{TP + FP}
 \end{equation}
 \subsubsection{F1 Score}
 The F1 score incorporates both Recall and Precision into a single value and takes on values between 0 and 1 as well.
-It is defined as a weighted harmonic mean of these two metrics \citep{brabec2020model} (where both Recall and Precision have uniform weights), and the goal is to minimize False Positives and False Negatives at the same time as within Accuracy.
+It is defined as a weighted harmonic mean of these two metrics \citep{brabec2020model}, where both Recall and Precision have uniform weights, and the goal is to minimize False Positives and False Negatives at the same time as within Accuracy.
 Nevertheless, F1 score is deemed a more appropriate metric when dealing with imbalanced class as it provides a more unbiased evaluation of the model's performance in imbalanced data sets compared to Accuracy.
 \begin{equation}\label{eq}
 F1 = \frac{2 \times Precision \times Recall}{Precision + Recall} = \frac{2 \times TP}{2 \times TP + FP + FN}
