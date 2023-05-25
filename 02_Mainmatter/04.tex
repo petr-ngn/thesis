@@ -454,7 +454,7 @@ Ultimately, the usefulness of a feature in predicting the target variable is det
         \midrule
         \hline
         REASON & 0.038  & ***\\
-        JOB & 0.120  & ***\\
+        JOB & 0.135  & ***\\
         \hline
         \bottomrule
     \end{tabular}
@@ -559,15 +559,13 @@ As can be seen, the hierarchy has changed compared the hierarchy in \autoref{fig
 
 \subsubsection{Multicolinearity Analysis}
 \label{subsubsec:multicolinearity}
-To quantify the association between the numerical features, the Pearson correlation coefficient is often used.
-However, it is highly sensitive to outliers and makes assumptions regarding the normal distribution and linear relationship between variables.
-Consequently, the Spearman correlation coefficient is utilized as an alternative, as it is a non-parametric measure that does not make any assumptions regarding the distribution of variables or the linearity of their relationship.
+To quantify the association between the numerical features, the Spearman correlation coefficient is utilized as  a non-parametric measure that does not make any assumptions regarding the distribution of variables or the linearity of their relationship.
 The Spearman correlation coefficient is defined as follows:
 \begin{equation}\label{eq}
 \rho_{spearman} = 1 - \frac{6 \sum_{i=1}^{n} d_{i}^{2}}{n \left(n^{2}-1\right)}
 \end{equation}
 
-
+\newpage
 In the \autoref{fig:spearmancorr}, we can observe a very strong correlation between the \texttt{MORTDUE} and \texttt{VALUE} features. Such multicolinearity can cause problems in predictions and model's overfitting. Therefore, a feature selection is recommended - such selection is further described in \autoref{subsec:feature-selection}.
 \begin{figure}[H]
     \centering
@@ -578,7 +576,8 @@ In the \autoref{fig:spearmancorr}, we can observe a very strong correlation betw
     \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{figure}
 
-Regarding the association between categorical features, namely \texttt{REASON} and \texttt{JOB}, the Cramer's V coefficient is used. The Cramer's V coefficient results in a value of 0.149 while being statistically significant at 1\% the significance level, thus, we observe a weak association between the two features.
+Regarding the association between categorical features, namely \texttt{REASON} and \texttt{JOB}, the Cramer's V coefficient is used. The Cramer's V coefficient results in a value of 0.285 while being statistically significant at 1\% the significance level, thus, we observe a moderate  association between the two features, which will be further captured within feature selection.
+If the association amongst the features themselves is not plausible in terms of model's performance, the feature selection ensures that these features will be excluded.
 
 
 \newpage
