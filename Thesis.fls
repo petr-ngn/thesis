@@ -1888,6 +1888,16 @@ INPUT ./Figures/WoE_Distribution.jpg
 INPUT Figures/WoE_Distribution.jpg
 INPUT ./Figures/WoE_Distribution.jpg
 INPUT ./Figures/WoE_Distribution.jpg
+INPUT ./Figures/KNN_special_prob.jpg
+INPUT ./Figures/KNN_special_prob.jpg
+INPUT Figures/KNN_special_prob.jpg
+INPUT ./Figures/KNN_special_prob.jpg
+INPUT ./Figures/KNN_special_prob.jpg
+INPUT ./Figures/KNN_special_ROC.jpg
+INPUT ./Figures/KNN_special_ROC.jpg
+INPUT Figures/KNN_special_ROC.jpg
+INPUT ./Figures/KNN_special_ROC.jpg
+INPUT ./Figures/KNN_special_ROC.jpg
 INPUT ./Figures/PRECISION_Distribution.jpg
 INPUT ./Figures/PRECISION_Distribution.jpg
 INPUT Figures/PRECISION_Distribution.jpg

@@ -1351,7 +1351,15 @@ GNB & RF & 11 & 0.36 & 0.3413 & 0.5864 & 0.4943 & 0.7207 & 0.7966 & 0.8288 & 0.6
 \restoregeometry
 \fancyheadoffset{0pt}
 
-In order to gain a more detailed understanding of the model selection results, the distribution of computed metrics is plotted. In \autoref{fig:f1dist}, the F1 score distribution is visualized for each input model. An outlier can be observed in KNN where the F1 score is 0.			
+In order to gain a more detailed understanding of the model selection results, the distribution of F1 score is plotted per each model as depicted in \autoref{fig:f1dist}. An outlier can be observed in KNN where the F1 score is 0.
+This is caused by the derived optimal threshold using Youden index which happens to be 1. Therefore, based on this threshold, the model predicts everything as non--default.
+After a detailed inspection, we observed that this particular KNN has predicted probability scores close to 0 or 1, respectively, as can be seen in \autoref{fig:knndist} in \autoref{chap:app1}. This indicates that the KNN is very confident about distinguishing defaulters from non--defaulters.
+
+
+Referring to the Youden index, which tries to maximize the TPR and TNR, we also inspect the ROC curve of such KNN model in \autoref{fig:knnroc} in \autoref{chap:app1}. It can be seen that the ROC curve reaches the top left corner, which might be considered as a good model. However, this leads to the result that the maximum of the sum of TPR and TNR corresponds to the threshold of 1.
+In such case, a threshold of 0.5 would be more appropriate since the probability scores are clearly separable.
+Therefore, we recommend adjusting the optimal threshold calculation by imposing a constraint on the thresholds derived from the ROC curve, particularly, if the thresholds lie close to 0 or 1 only, then the threshold should be set to 0.5. This would prevent the model from predicting everything as non--default.
+
 \begin{figure}[H]
 \centering
 \caption{F1 Score Distribution}\vspace{0.5em}
