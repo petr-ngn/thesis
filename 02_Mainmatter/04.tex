@@ -1141,7 +1141,7 @@ In combination with the pre--selected subsets of features, the next step regards
 
 
 \vspace{-1em}
-Hence, each input model is tuned on each subset of features selected within feature selection on the training set, and subsequently, the optimized model is evaluated on the validation set. Thus, when having $n$ input models and $m$ subsets of selected features, we get $n \times m$ tuned models.
+Hence, each input model is tuned with Bayesian Optimization on each subset of features selected within feature selection on the training set, and subsequently, the optimized model is evaluated on the validation set. Thus, when having $n$ input models and $m$ subsets of selected features, we get $n \times m$ tuned models.
 $m \leq n$ because we exclude duplicated subsets of selected features, which can occur when more than one model chooses the same subset(s) of features.
 Since there are 8 input models and 8 unique subsets of selected features, the total number of tuned models is 64.
 
@@ -1282,7 +1282,7 @@ Tuned hyperparameters of LR:
 
 
 
-The final output of the function \lstinline{model_selection()} is a table that summarizes the model's computed metrics as depicted in \autoref{tab:modelsectab}.
+The final output of the function \lstinline{model_selection()} is a table that summarizes the models' computed metrics as depicted in \autoref{tab:modelsectab}.
 For a reference \textbf{Tuned model} refers to the model over which the model selection algorithm is iterated, \textbf{FS model} refers to the model that was used as an input estimator in Forward SFS in order to select a subset of optimal features,
 \textbf{\# Features} refers to the number of selected features on which the model is tuned, \textbf{Exec. Time} refers to the optimalization and training time of the tuned model, and \textbf{Thres.} refers to the optimal threshold computed by the Youden index (\autoref{eq:youden}).
 
@@ -1358,7 +1358,7 @@ After a detailed inspection, we observed that this particular KNN has predicted 
 
 Referring to the Youden index, which tries to maximize the TPR and TNR, we also inspect the ROC curve of such KNN model in \autoref{fig:knnroc} in \autoref{chap:app1}. It can be seen that the ROC curve reaches the top left corner, which might be considered as a good model. However, this leads to the result that the maximum of the sum of TPR and TNR corresponds to the threshold of 1.
 In such case, a threshold of 0.5 would be more appropriate since the probability scores are clearly separable.
-Therefore, we recommend adjusting the optimal threshold calculation by imposing a constraint on the thresholds derived from the ROC curve, particularly, if the thresholds lie close to 0 or 1 only, then the threshold should be set to 0.5. This would prevent the model from predicting everything as non--default.
+Therefore, we recommend adjusting the optimal threshold calculation by imposing a constraint on the thresholds derived from the ROC curve, particularly, if the thresholds lie close to 0 or 1 only, then the threshold should be set to 0.5. This would prevent the model from predicting everything as non--default or default, respectively.
 
 \begin{figure}[H]
 \centering
@@ -1437,7 +1437,7 @@ In order to obtain a better insight into the distribution of optimal thresholds,
 
 \newpage
 Upon examining the execution time of each model, it can be observed that the transparent and non-complex models such as Logistic Regression, Gaussian Naive Bayes, or even Decision Tree, which take around only 1 minute to optimize themselves, also perform poorly, as already inspected in \autoref{fig:f1distclean}.
-Conversely, the most time-consuming models are undoubtedly the Neural Network models, which take around 30 minutes to optimize themselves. Other time-consuming models include Gradient Boosting and Support Vector Machine, which take around 13 and 11 minutes to optimize themselves, respectively.
+Conversely, the most time-consuming models are undoubtedly the Neural Network models, which take around 30 minutes to optimize themselves. Other time-consuming models include Gradient Boosting and Support Vector Machine, which take around 10 and 15 minutes to optimize themselves, respectively.
 This finding suggests that longer execution time does not necessarily lead to better performance, as the Neural Network models are significantly outperformed by several other models.
 \begin{figure}[H]
 \centering
@@ -1464,7 +1464,7 @@ Further we can notice that some of the black--box models took only a few minutes
 \newpage
 
 The execution time and the F1 score are inspected together using a scatterplot, as shown in \autoref{fig:scattertime}. 
-A cluster of non-complex and transparent models, such as Logistic Regression, Gaussian Naive Bayes, and Decision Tree, can be observed around the vertical line near 0 execution time. These models are quick to optimize, but their F1 scores are generally low.
+A cluster of non-complex and transparent models, such as Logistic Regression, Gaussian Naive Bayes, and Decision Tree, can be observed around the vertical line near zero execution time. These models are quick to optimize, but their F1 scores are generally low.
 Further, their variance in execution time is quite low, regardless of the feature subset they are optimized on.
 On the other hand, the Neural Network models always perform poorly, regardless of the length of the execution time. Furthermore, the variance of the F1 scores is quite low for these models, indicating that the execution time does not have a significant impact on the F1 score in the case of Neural Networks.
 
@@ -1573,7 +1573,6 @@ In \autoref{fig:confmat}, the confusion matrix for the final model, based on the
 In order to obtain a better understanding of the model's performance on previously unseen data, we computed several metrics that were used during the model selection process.
 These metrics are presented in \autoref{tab:metricseval}. The results indicate that the model performs well on the unseen data, with most of the scores metrics around 80 \% to 90 \%.
 Furthermore, the loss metrics are relatively low, indicating that the model can effectively distinguish between defaults and non-defaults.
-Particularly, out of all test instances, the model predicts correctly 92.62 \% default instances. The model also predicts 81.46 \% instances out of all the actual default instances. Moreover, out of all predicted default instances, the model correctly predicts 81.46 \% actual default instances.
 Overall, these results suggest that the model is performing well and is suitable for predicting defaults.
 The results suggest that the model has a good balance between correctly identifying defaults and non-defaults, as well as minimizing False Positives and False Negatives. This further confirms the model's ability to accurately predict defaults.
 
@@ -1606,7 +1605,7 @@ The results suggest that the model has a good balance between correctly identify
         \centering{\begin{source}Author's results in Python\end{source}}\vspace{-1em}
 \end{table}
 
-The following \autoref{tab:recab} shows the impact of recalibration on the model's performance metrics. $M_{NR}$ denotes the final model that was not recalibrated at all (i.e., trained only on the training set), whereas $M_R$ denotes the recalibrated model (i.e., trained on the joined training and validation sets). Respectively, $M_{NR}$ uses its threshold computed based on the training set (0.4955), and $M_R$ uses its threshold computed on the joined training and validation set(0.45109).
+The following \autoref{tab:recab} shows the impact of recalibration on the model's performance metrics. $M_{NR}$ denotes the final model that was not recalibrated at all (i.e., trained only on the training set), whereas $M_R$ denotes the recalibrated model (i.e., trained on the joined training and validation sets). Respectively, $M_{NR}$ uses its threshold computed based on the training set (0.4955), and $M_R$ uses its threshold computed on the joined training and validation set (0.45109).
 As can be seen, the recalibration indeed has a positive impact on the metrics evaluation, as all the metric scores have increased, while the metric loss functions have decreased.
 We can observe the most significant decrease in the Log Loss function, which has decreased by 8.09 \%, while the objective function F1 score has increased by 3.30 \% thanks to increases in both Precision and Recall.
 Therefore, the recalibration process is deemed desirable and appropriate in terms of the model's performance.

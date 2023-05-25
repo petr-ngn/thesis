@@ -83,9 +83,9 @@
 \contentsline {section}{\numberline {5.1}Hypotheses' Testing}{119}{section.5.1}%
 \contentsline {section}{\numberline {5.2}Comparison with other HMEQ Studies}{123}{section.5.2}%
 \contentsline {section}{\numberline {5.3}Key Findings}{125}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Contributions}{126}{section.5.4}%
-\contentsline {section}{\numberline {5.5}Recommendations}{127}{section.5.5}%
-\contentsline {chapter}{\numberline {6}Conclusion}{130}{chapter.6}%
-\contentsline {chapter}{Bibliography}{132}{section*.116}%
+\contentsline {section}{\numberline {5.4}Contributions}{127}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Recommendations}{128}{section.5.5}%
+\contentsline {chapter}{\numberline {6}Conclusion}{131}{chapter.6}%
+\contentsline {chapter}{Bibliography}{133}{section*.116}%
 \contentsline {chapter}{\numberline {A}Additional Figures and Tables}{I}{appendix.A}%
 \contentsline {section}{\numberline {A.1}Model Selection Results}{IV}{section.A.1}%

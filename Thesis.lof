@@ -50,8 +50,8 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {A.1}{\ignorespaces ADASYN Impact of Numeric Features' Distribution\relax }}{II}{figure.caption.119}%
 \contentsline {figure}{\numberline {A.2}{\ignorespaces WoE Bins Distribution\relax }}{III}{figure.caption.120}%
-\contentsline {figure}{\numberline {A.3}{\ignorespaces Special Case of KNN - Probability Scores Distribution\relax }}{IV}{figure.caption.121}%
-\contentsline {figure}{\numberline {A.4}{\ignorespaces Special Case of KNN - ROC Curve\relax }}{IV}{figure.caption.122}%
+\contentsline {figure}{\numberline {A.3}{\ignorespaces Special Case of KNN - Probability Scores Distribution (Training Set)\relax }}{IV}{figure.caption.121}%
+\contentsline {figure}{\numberline {A.4}{\ignorespaces Special Case of KNN - ROC Curve (Training Set)\relax }}{IV}{figure.caption.122}%
 \contentsline {figure}{\numberline {A.5}{\ignorespaces Precision Distribution\relax }}{V}{figure.caption.123}%
 \contentsline {figure}{\numberline {A.6}{\ignorespaces Precision Distribution - \textit {without outlier}\relax }}{V}{figure.caption.124}%
 \contentsline {figure}{\numberline {A.7}{\ignorespaces Precision Distribution (Black--box/White--box dimension)\relax }}{VI}{figure.caption.125}%
