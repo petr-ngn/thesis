@@ -207,7 +207,7 @@ where $\operatorname{Pr}\left(C=c \mid E \right)$ is the posterior probability, 
 and $\operatorname{Pr}\left(E\right)$ is the probability of the evidence $E$.
 
 
-With regards to the binary classification, we can substitute $Y$ as a target variable instead of $C$, and a set of features $X$ which will refer to the set of evidence $E$, henceforth, the probability of $Y$ using the Naive Bayes algorithm can be mathematically expressed as:
+With regards to the binary classification, we can substitute $Y$ as a target variable instead of $C$, and a set of features $X$ which will refer to the set of evidence $E$, hence:
 \begin{equation}\label{eq}
     \operatorname{Pr}\left(Y \mid X \right) = \frac{\operatorname{Pr}\left(Y\right) \times \operatorname{Pr}\left(X \mid Y \right)}{\operatorname{Pr}\left(X\right)}
 \end{equation}
@@ -324,7 +324,7 @@ According to Dias \citep{dias2018comparison}, before adding any weak learners, f
 \end{equation}
 Then, for $m \in M$, where $M$ is the total number of iterations or the number of tree estimators:
 \begin{itemize}\setlength\itemsep{0em}
-    \item[1.] Compute pseudo--reisduals for each training sample pair $(x_i, y_i)$ as the negative gradient of the loss function $L$ with respect to the prediction $F_{m-1}(x)$ of the previous model $F_{m-1}(x)$, hence:
+    \item[1.] Compute pseudo--reisduals for each training sample pair $(x_i, y_i)$ as the negative gradient of the loss function $L$ with respect to the prediction of the previous model $F_{m-1}(x)$, hence:
 \end{itemize}
 \begin{equation}
     r_{i,m} = -\left[\frac{\partial L\left(y_{i}, F\left(x_{i}\right)\right)}{\partial F\left(x_{i}\right)}\right]_{F(x)=F_{m-1}(x)}
@@ -394,7 +394,7 @@ where $\phi$ is mapping function for the high--dimensional projection of the fea
 In some cases, the data cannot be linearly separable in higher dimensional space, i.e., we need to account for some potential errors, so we introduce the regularization factor $C$ for penalizing the errors $\xi$.
 Therefore, in order to maximize the margin as well as allow for errors, we minimize the following term:
 \begin{equation}
-    \min \left[\frac{1}{2} \|W\| + C \sum_{i=1}^{N} \xi\right]
+    \min \left[\frac{2}{\|W\|} + C \sum_{i=1}^{N} \xi\right]
 \end{equation}
 Hence, by minimizing $\frac{1}{2} \|W\|$ we minimize the weights (i.e., maximize the margin), by minimizing $\xi$ we reduce the number of training errors, and by tuning $C$ we balance between these two properties \citep{hsu2002comparison}.
 
@@ -411,7 +411,7 @@ In order to obtain SVM's predicted probabilities, as stated by Lin \citep{lin200
 Neural Network is a black--box machine learning algorithm that can handle very complex and non--linear relationships. It contains several layers, where each layer has a certain number of units (neurons). In general, we distinguish 3 types of layers, as also visualized in \autoref{fig:nn-example}:
 \begin{itemize}\setlength\itemsep{0em}
      \item \textbf{Input layer} - The initial layer that contains $n$ units, where $n$ is the number of features within the data set.
-item \textbf{Output layer} - The final layer that outputs predictions and contains $m$ units, where $m$ is the number of classes within the target variable. Since we assume only binary classification algorithms, therefore the output layer contains only one unit.
+    \item \textbf{Output layer} - The final layer that outputs predictions and contains $m$ units, where $m$ is the number of classes within the target variable. Since we assume only binary classification algorithms, therefore the output layer contains only one unit.
  \item \textbf{Hidden layer} - The intermediate layer that is always between the two layers - either between the input and output layers or even between other hidden layers.
  \end{itemize}
 
