@@ -3,7 +3,7 @@
 This chapter focuses on the main part of this thesis, particularly on employing the custom machine learning implementation framework. The machine learning framework deployed in this thesis is shown in \autoref{fig:mlframe} and is described from the high--level--point view as follows:
 \begin{itemize}\setlength\itemsep{0em}
 \item \textbf{Data Exploration} - Exploration of the data in order to infer some insights about the data quality, distribution of the variables, statistical testing, and association analysis.
-\item \textbf{Data Split} - Splitting of the data that are used separately in different tasks such as model training, hyperparameter tuning, feature selection, model selection, and model evaluation.
+\item \textbf{Data Split and ADASYN} - Splitting of the data that are used separately in different tasks such as model training, hyperparameter tuning, feature selection, model selection, and model evaluation. Further, ADASYN oversampling is performed in order to handle the imbalanced data.
 \item \textbf{Optimal Binning and WoE Encoding} - Optimal binning and the WoE encoding of the features as the main part of the feature preprocessing.
 \item \textbf{Feature Selection} - Feature selection with Forward Sequential Feature Selection in order to reduce the dimensionality of the data and improve the performance of the machine learning models - each input model is tuned with Bayesian Optimization.
 \item \textbf{Model Selection} - Model selection based on weighted ranking where the weights are defined explicitly by the thesis' author, in order to find the best model. Each input model is tuned with Bayesian Optimization on each subset of selected features.
