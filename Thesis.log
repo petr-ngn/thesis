@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.31)  25 MAY 2023 04:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.31)  25 MAY 2023 04:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2069,272 +2069,314 @@ LaTeX Warning: Hyper reference `acro:AUC' on page xiv undefined on input line 12
 LaTeX Warning: Hyper reference `acro:AUC' on page xiv undefined on input line 12.
 
 
-LaTeX Warning: Hyper reference `acro:BS' on page xiv undefined on input line 13.
+LaTeX Warning: Hyper reference `acro:BCBS' on page xiv undefined on input line 13.
 
 
-LaTeX Warning: Hyper reference `acro:BS' on page xiv undefined on input line 13.
+LaTeX Warning: Hyper reference `acro:BCBS' on page xiv undefined on input line 13.
 
 
-LaTeX Warning: Hyper reference `acro:CCP' on page xiv undefined on input line 14.
+LaTeX Warning: Hyper reference `acro:BS' on page xiv undefined on input line 14.
 
 
-LaTeX Warning: Hyper reference `acro:CCP' on page xiv undefined on input line 14.
+LaTeX Warning: Hyper reference `acro:BS' on page xiv undefined on input line 14.
 
 
-LaTeX Warning: Hyper reference `acro:CDF' on page xiv undefined on input line 15.
+LaTeX Warning: Hyper reference `acro:CCP' on page xiv undefined on input line 15.
 
 
-LaTeX Warning: Hyper reference `acro:CDF' on page xiv undefined on input line 15.
+LaTeX Warning: Hyper reference `acro:CCP' on page xiv undefined on input line 15.
 
 
-LaTeX Warning: Hyper reference `acro:CPU' on page xiv undefined on input line 16.
+LaTeX Warning: Hyper reference `acro:CDF' on page xiv undefined on input line 16.
 
 
-LaTeX Warning: Hyper reference `acro:CPU' on page xiv undefined on input line 16.
+LaTeX Warning: Hyper reference `acro:CDF' on page xiv undefined on input line 16.
 
 
-LaTeX Warning: Hyper reference `acro:DT' on page xiv undefined on input line 17.
+LaTeX Warning: Hyper reference `acro:CPU' on page xiv undefined on input line 17.
 
 
-LaTeX Warning: Hyper reference `acro:DT' on page xiv undefined on input line 17.
+LaTeX Warning: Hyper reference `acro:CPU' on page xiv undefined on input line 17.
 
 
-LaTeX Warning: Hyper reference `acro:EAD' on page xiv undefined on input line 18.
+LaTeX Warning: Hyper reference `acro:CSS' on page xiv undefined on input line 18.
 
 
-LaTeX Warning: Hyper reference `acro:EAD' on page xiv undefined on input line 18.
+LaTeX Warning: Hyper reference `acro:CSS' on page xiv undefined on input line 18.
 
 
-LaTeX Warning: Hyper reference `acro:ECL' on page xiv undefined on input line 19.
+LaTeX Warning: Hyper reference `acro:DT' on page xiv undefined on input line 19.
 
 
-LaTeX Warning: Hyper reference `acro:ECL' on page xiv undefined on input line 19.
+LaTeX Warning: Hyper reference `acro:DT' on page xiv undefined on input line 19.
 
 
-LaTeX Warning: Hyper reference `acro:EI' on page xiv undefined on input line 20.
+LaTeX Warning: Hyper reference `acro:EAD' on page xiv undefined on input line 20.
 
 
-LaTeX Warning: Hyper reference `acro:EI' on page xiv undefined on input line 20.
+LaTeX Warning: Hyper reference `acro:EAD' on page xiv undefined on input line 20.
 
 
-LaTeX Warning: Hyper reference `acro:FN' on page xiv undefined on input line 21.
+LaTeX Warning: Hyper reference `acro:ECL' on page xiv undefined on input line 21.
 
 
-LaTeX Warning: Hyper reference `acro:FN' on page xiv undefined on input line 21.
+LaTeX Warning: Hyper reference `acro:ECL' on page xiv undefined on input line 21.
 
 
-LaTeX Warning: Hyper reference `acro:FP' on page xiv undefined on input line 22.
+LaTeX Warning: Hyper reference `acro:EI' on page xiv undefined on input line 22.
 
 
-LaTeX Warning: Hyper reference `acro:FP' on page xiv undefined on input line 22.
+LaTeX Warning: Hyper reference `acro:EI' on page xiv undefined on input line 22.
 
 
-LaTeX Warning: Hyper reference `acro:FPR' on page xiv undefined on input line 23.
+LaTeX Warning: Hyper reference `acro:FASB' on page xiv undefined on input line 23.
 
 
-LaTeX Warning: Hyper reference `acro:FPR' on page xiv undefined on input line 23.
+LaTeX Warning: Hyper reference `acro:FASB' on page xiv undefined on input line 23.
 
 
-LaTeX Warning: Hyper reference `acro:GB' on page xiv undefined on input line 24.
+LaTeX Warning: Hyper reference `acro:FN' on page xiv undefined on input line 24.
 
 
-LaTeX Warning: Hyper reference `acro:GB' on page xiv undefined on input line 24.
+LaTeX Warning: Hyper reference `acro:FN' on page xiv undefined on input line 24.
 
 
-LaTeX Warning: Hyper reference `acro:GNB' on page xiv undefined on input line 25.
+LaTeX Warning: Hyper reference `acro:FP' on page xiv undefined on input line 25.
 
 
-LaTeX Warning: Hyper reference `acro:GNB' on page xiv undefined on input line 25.
+LaTeX Warning: Hyper reference `acro:FP' on page xiv undefined on input line 25.
 
 
-LaTeX Warning: Hyper reference `acro:GP' on page xiv undefined on input line 26.
+LaTeX Warning: Hyper reference `acro:FPR' on page xiv undefined on input line 26.
 
 
-LaTeX Warning: Hyper reference `acro:GP' on page xiv undefined on input line 26.
+LaTeX Warning: Hyper reference `acro:FPR' on page xiv undefined on input line 26.
 
 
-LaTeX Warning: Hyper reference `acro:HMEQ' on page xiv undefined on input line 27.
+LaTeX Warning: Hyper reference `acro:GB' on page xiv undefined on input line 27.
 
 
-LaTeX Warning: Hyper reference `acro:HMEQ' on page xiv undefined on input line 27.
+LaTeX Warning: Hyper reference `acro:GB' on page xiv undefined on input line 27.
 
 
-LaTeX Warning: Hyper reference `acro:HTML' on page xiv undefined on input line 28.
+LaTeX Warning: Hyper reference `acro:GNB' on page xiv undefined on input line 28.
 
 
-LaTeX Warning: Hyper reference `acro:HTML' on page xiv undefined on input line 28.
+LaTeX Warning: Hyper reference `acro:GNB' on page xiv undefined on input line 28.
 
 
-LaTeX Warning: Hyper reference `acro:KNN' on page xiv undefined on input line 29.
+LaTeX Warning: Hyper reference `acro:GP' on page xiv undefined on input line 29.
 
 
-LaTeX Warning: Hyper reference `acro:KNN' on page xiv undefined on input line 29.
+LaTeX Warning: Hyper reference `acro:GP' on page xiv undefined on input line 29.
 
 
-LaTeX Warning: Hyper reference `acro:KS' on page xiv undefined on input line 30.
+LaTeX Warning: Hyper reference `acro:HMEQ' on page xiv undefined on input line 30.
 
 
-LaTeX Warning: Hyper reference `acro:KS' on page xiv undefined on input line 30.
+LaTeX Warning: Hyper reference `acro:HMEQ' on page xiv undefined on input line 30.
 
 
-LaTeX Warning: Hyper reference `acro:LGD' on page xiv undefined on input line 31.
+LaTeX Warning: Hyper reference `acro:HTML' on page xiv undefined on input line 31.
 
 
-LaTeX Warning: Hyper reference `acro:LGD' on page xiv undefined on input line 31.
+LaTeX Warning: Hyper reference `acro:HTML' on page xiv undefined on input line 31.
 
 
-LaTeX Warning: Hyper reference `acro:LIME' on page xiv undefined on input line 32.
+LaTeX Warning: Hyper reference `acro:IASB' on page xiv undefined on input line 32.
 
 
-LaTeX Warning: Hyper reference `acro:LIME' on page xiv undefined on input line 32.
+LaTeX Warning: Hyper reference `acro:IASB' on page xiv undefined on input line 32.
 
 
-LaTeX Warning: Hyper reference `acro:LR' on page xiv undefined on input line 33.
+LaTeX Warning: Hyper reference `acro:IAS 39' on page xiv undefined on input line 33.
 
 
-LaTeX Warning: Hyper reference `acro:LR' on page xiv undefined on input line 33.
+LaTeX Warning: Hyper reference `acro:IAS 39' on page xiv undefined on input line 33.
 
 
-LaTeX Warning: Hyper reference `acro:MCC' on page xiv undefined on input line 34.
+LaTeX Warning: Hyper reference `acro:IFRS 9' on page xiv undefined on input line 34.
 
 
-LaTeX Warning: Hyper reference `acro:MCC' on page xiv undefined on input line 34.
+LaTeX Warning: Hyper reference `acro:IFRS 9' on page xiv undefined on input line 34.
 
 
-LaTeX Warning: Hyper reference `acro:ML' on page xiv undefined on input line 35.
+LaTeX Warning: Hyper reference `acro:IRB' on page xiv undefined on input line 35.
 
 
-LaTeX Warning: Hyper reference `acro:ML' on page xiv undefined on input line 35.
+LaTeX Warning: Hyper reference `acro:IRB' on page xiv undefined on input line 35.
 
 [14.14
 
 
 ]
 
-LaTeX Warning: Hyper reference `acro:MLP' on page xv undefined on input line 36.
+LaTeX Warning: Hyper reference `acro:KNN' on page xv undefined on input line 36.
 
 
-LaTeX Warning: Hyper reference `acro:MLP' on page xv undefined on input line 36.
+LaTeX Warning: Hyper reference `acro:KNN' on page xv undefined on input line 36.
 
 
-LaTeX Warning: Hyper reference `acro:MSE' on page xv undefined on input line 37.
+LaTeX Warning: Hyper reference `acro:KS' on page xv undefined on input line 37.
 
 
-LaTeX Warning: Hyper reference `acro:MSE' on page xv undefined on input line 37.
+LaTeX Warning: Hyper reference `acro:KS' on page xv undefined on input line 37.
 
 
-LaTeX Warning: Hyper reference `acro:NN' on page xv undefined on input line 38.
+LaTeX Warning: Hyper reference `acro:LGD' on page xv undefined on input line 38.
 
 
-LaTeX Warning: Hyper reference `acro:NN' on page xv undefined on input line 38.
+LaTeX Warning: Hyper reference `acro:LGD' on page xv undefined on input line 38.
 
 
-LaTeX Warning: Hyper reference `acro:PD' on page xv undefined on input line 39.
+LaTeX Warning: Hyper reference `acro:LIME' on page xv undefined on input line 39.
 
 
-LaTeX Warning: Hyper reference `acro:PD' on page xv undefined on input line 39.
+LaTeX Warning: Hyper reference `acro:LIME' on page xv undefined on input line 39.
 
 
-LaTeX Warning: Hyper reference `acro:Prec.' on page xv undefined on input line 40.
+LaTeX Warning: Hyper reference `acro:LR' on page xv undefined on input line 40.
 
 
-LaTeX Warning: Hyper reference `acro:Prec.' on page xv undefined on input line 40.
+LaTeX Warning: Hyper reference `acro:LR' on page xv undefined on input line 40.
 
 
-LaTeX Warning: Hyper reference `acro:Rec.' on page xv undefined on input line 41.
+LaTeX Warning: Hyper reference `acro:MCC' on page xv undefined on input line 41.
 
 
-LaTeX Warning: Hyper reference `acro:Rec.' on page xv undefined on input line 41.
+LaTeX Warning: Hyper reference `acro:MCC' on page xv undefined on input line 41.
 
 
-LaTeX Warning: Hyper reference `acro:ReLU' on page xv undefined on input line 42.
+LaTeX Warning: Hyper reference `acro:ML' on page xv undefined on input line 42.
 
 
-LaTeX Warning: Hyper reference `acro:ReLU' on page xv undefined on input line 42.
+LaTeX Warning: Hyper reference `acro:ML' on page xv undefined on input line 42.
 
 
-LaTeX Warning: Hyper reference `acro:RF' on page xv undefined on input line 43.
+LaTeX Warning: Hyper reference `acro:MLP' on page xv undefined on input line 43.
 
 
-LaTeX Warning: Hyper reference `acro:RF' on page xv undefined on input line 43.
+LaTeX Warning: Hyper reference `acro:MLP' on page xv undefined on input line 43.
 
 
-LaTeX Warning: Hyper reference `acro:RFE' on page xv undefined on input line 44.
+LaTeX Warning: Hyper reference `acro:MSE' on page xv undefined on input line 44.
 
 
-LaTeX Warning: Hyper reference `acro:RFE' on page xv undefined on input line 44.
+LaTeX Warning: Hyper reference `acro:MSE' on page xv undefined on input line 44.
 
 
-LaTeX Warning: Hyper reference `acro:ROC' on page xv undefined on input line 45.
+LaTeX Warning: Hyper reference `acro:NN' on page xv undefined on input line 45.
 
 
-LaTeX Warning: Hyper reference `acro:ROC' on page xv undefined on input line 45.
+LaTeX Warning: Hyper reference `acro:NN' on page xv undefined on input line 45.
 
 
-LaTeX Warning: Hyper reference `acro:SD' on page xv undefined on input line 46.
+LaTeX Warning: Hyper reference `acro:PD' on page xv undefined on input line 46.
 
 
-LaTeX Warning: Hyper reference `acro:SD' on page xv undefined on input line 46.
+LaTeX Warning: Hyper reference `acro:PD' on page xv undefined on input line 46.
 
 
-LaTeX Warning: Hyper reference `acro:SFS' on page xv undefined on input line 47.
+LaTeX Warning: Hyper reference `acro:Prec.' on page xv undefined on input line 47.
 
 
-LaTeX Warning: Hyper reference `acro:SFS' on page xv undefined on input line 47.
+LaTeX Warning: Hyper reference `acro:Prec.' on page xv undefined on input line 47.
 
 
-LaTeX Warning: Hyper reference `acro:SHAP' on page xv undefined on input line 48.
+LaTeX Warning: Hyper reference `acro:Rec.' on page xv undefined on input line 48.
 
 
-LaTeX Warning: Hyper reference `acro:SHAP' on page xv undefined on input line 48.
+LaTeX Warning: Hyper reference `acro:Rec.' on page xv undefined on input line 48.
 
 
-LaTeX Warning: Hyper reference `acro:SMOTE' on page xv undefined on input line 49.
+LaTeX Warning: Hyper reference `acro:ReLU' on page xv undefined on input line 49.
 
 
-LaTeX Warning: Hyper reference `acro:SMOTE' on page xv undefined on input line 49.
+LaTeX Warning: Hyper reference `acro:ReLU' on page xv undefined on input line 49.
 
 
-LaTeX Warning: Hyper reference `acro:SVM' on page xv undefined on input line 50.
+LaTeX Warning: Hyper reference `acro:RF' on page xv undefined on input line 50.
 
 
-LaTeX Warning: Hyper reference `acro:SVM' on page xv undefined on input line 50.
+LaTeX Warning: Hyper reference `acro:RF' on page xv undefined on input line 50.
 
 
-LaTeX Warning: Hyper reference `acro:Tanh' on page xv undefined on input line 51.
+LaTeX Warning: Hyper reference `acro:RFE' on page xv undefined on input line 51.
 
 
-LaTeX Warning: Hyper reference `acro:Tanh' on page xv undefined on input line 51.
+LaTeX Warning: Hyper reference `acro:RFE' on page xv undefined on input line 51.
 
 
-LaTeX Warning: Hyper reference `acro:Thres.' on page xv undefined on input line 52.
+LaTeX Warning: Hyper reference `acro:ROC' on page xv undefined on input line 52.
 
 
-LaTeX Warning: Hyper reference `acro:Thres.' on page xv undefined on input line 52.
+LaTeX Warning: Hyper reference `acro:ROC' on page xv undefined on input line 52.
 
 
-LaTeX Warning: Hyper reference `acro:TN' on page xv undefined on input line 53.
+LaTeX Warning: Hyper reference `acro:SD' on page xv undefined on input line 53.
 
 
-LaTeX Warning: Hyper reference `acro:TN' on page xv undefined on input line 53.
+LaTeX Warning: Hyper reference `acro:SD' on page xv undefined on input line 53.
 
 
-LaTeX Warning: Hyper reference `acro:TP' on page xv undefined on input line 54.
+LaTeX Warning: Hyper reference `acro:SFS' on page xv undefined on input line 54.
 
 
-LaTeX Warning: Hyper reference `acro:TP' on page xv undefined on input line 54.
+LaTeX Warning: Hyper reference `acro:SFS' on page xv undefined on input line 54.
 
 
-LaTeX Warning: Hyper reference `acro:TPR' on page xv undefined on input line 54.
+LaTeX Warning: Hyper reference `acro:SHAP' on page xv undefined on input line 55.
 
 
-LaTeX Warning: Hyper reference `acro:TPR' on page xv undefined on input line 54.
+LaTeX Warning: Hyper reference `acro:SHAP' on page xv undefined on input line 55.
 
 
-LaTeX Warning: Hyper reference `acro:WoE' on page xv undefined on input line 55.
+LaTeX Warning: Hyper reference `acro:SMOTE' on page xv undefined on input line 56.
 
 
-LaTeX Warning: Hyper reference `acro:WoE' on page xv undefined on input line 55.
+LaTeX Warning: Hyper reference `acro:SMOTE' on page xv undefined on input line 56.
+
+
+LaTeX Warning: Hyper reference `acro:SVM' on page xv undefined on input line 57.
+
+
+LaTeX Warning: Hyper reference `acro:SVM' on page xv undefined on input line 57.
+
+
+LaTeX Warning: Hyper reference `acro:Tanh' on page xv undefined on input line 58.
+
+
+LaTeX Warning: Hyper reference `acro:Tanh' on page xv undefined on input line 58.
+
+
+LaTeX Warning: Hyper reference `acro:Thres.' on page xv undefined on input line 59.
+
+
+LaTeX Warning: Hyper reference `acro:Thres.' on page xv undefined on input line 59.
+
+
+LaTeX Warning: Hyper reference `acro:TN' on page xv undefined on input line 60.
+
+
+LaTeX Warning: Hyper reference `acro:TN' on page xv undefined on input line 60.
+
+
+LaTeX Warning: Hyper reference `acro:TP' on page xv undefined on input line 61.
+
+
+LaTeX Warning: Hyper reference `acro:TP' on page xv undefined on input line 61.
+
+
+LaTeX Warning: Hyper reference `acro:TPR' on page xv undefined on input line 61.
+
+
+LaTeX Warning: Hyper reference `acro:TPR' on page xv undefined on input line 61.
+
+
+LaTeX Warning: Hyper reference `acro:WoE' on page xv undefined on input line 62.
+
+
+LaTeX Warning: Hyper reference `acro:WoE' on page xv undefined on input line 62.
 
 ) [15.15] (./02_Mainmatter/01_Intro.tex
 Chapter 1.
@@ -2350,49 +2392,49 @@ LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 21
  (c:/tex/texlive/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [4.19] [5.20] [6.21] [7.22]
-<Figures/sigmoid.jpg, id=823, 505.89pt x 289.08pt>
+<Figures/sigmoid.jpg, id=830, 505.89pt x 289.08pt>
 File: Figures/sigmoid.jpg Graphic file (type jpg)
 <use Figures/sigmoid.jpg>
 Package pdftex.def Info: Figures/sigmoid.jpg  used on input line 102.
 (pdftex.def)             Requested size: 312.9803pt x 178.84839pt.
  [8.23 <./Figures/sigmoid.jpg>] [9.24]
-<Figures/dtnodes.jpg, id=855, 678.535pt x 232.87pt>
+<Figures/dtnodes.jpg, id=862, 678.535pt x 232.87pt>
 File: Figures/dtnodes.jpg Graphic file (type jpg)
 <use Figures/dtnodes.jpg>
 Package pdftex.def Info: Figures/dtnodes.jpg  used on input line 166.
 (pdftex.def)             Requested size: 369.88582pt x 126.94182pt.
  [10.25 <./Figures/dtnodes.jpg>]
-<Figures/impurity.jpg, id=869, 578.16pt x 361.35pt>
+<Figures/impurity.jpg, id=876, 578.16pt x 361.35pt>
 File: Figures/impurity.jpg Graphic file (type jpg)
 <use Figures/impurity.jpg>
 Package pdftex.def Info: Figures/impurity.jpg  used on input line 191.
 (pdftex.def)             Requested size: 312.9803pt x 195.6113pt.
  [11.26 <./Figures/impurity.jpg>] [12.27] [13.28] [14.29]
-<Figures/KNN_example.jpg, id=908, 291.33844pt x 199.49532pt>
+<Figures/KNN_example.jpg, id=916, 291.33844pt x 199.49532pt>
 File: Figures/KNN_example.jpg Graphic file (type jpg)
 <use Figures/KNN_example.jpg>
 Package pdftex.def Info: Figures/KNN_example.jpg  used on input line 298.
 (pdftex.def)             Requested size: 199.16928pt x 136.38557pt.
  [15.30 <./Figures/KNN_example.jpg>] [16.31] [17.32]
-<Figures/svmhyperplane.jpg, id=952, 459.21562pt x 453.94594pt>
+<Figures/svmhyperplane.jpg, id=959, 459.21562pt x 453.94594pt>
 File: Figures/svmhyperplane.jpg Graphic file (type jpg)
 <use Figures/svmhyperplane.jpg>
 Package pdftex.def Info: Figures/svmhyperplane.jpg  used on input line 355.
 (pdftex.def)             Requested size: 170.71652pt x 168.76085pt.
  [18.33 <./Figures/svmhyperplane.jpg>] [19.34]
-<Figures/nn-example.jpg, id=988, 501.875pt x 310.15875pt>
+<Figures/nn-example.jpg, id=995, 501.875pt x 310.15875pt>
 File: Figures/nn-example.jpg Graphic file (type jpg)
 <use Figures/nn-example.jpg>
 Package pdftex.def Info: Figures/nn-example.jpg  used on input line 423.
 (pdftex.def)             Requested size: 284.52756pt x 175.8458pt.
  [20.35 <./Figures/nn-example.jpg>] [21.36] [22.37] [23.38] [24.39] [25.40] [26.41] [27.42]
-<Figures/ROC_theory.jpg, id=1078, 508.299pt x 388.5717pt>
+<Figures/ROC_theory.jpg, id=1085, 508.299pt x 388.5717pt>
 File: Figures/ROC_theory.jpg Graphic file (type jpg)
 <use Figures/ROC_theory.jpg>
 Package pdftex.def Info: Figures/ROC_theory.jpg  used on input line 606.
 (pdftex.def)             Requested size: 284.52756pt x 217.50972pt.
  [28.43 <./Figures/ROC_theory.jpg>] [29.44] [30.45] [31.46]
-<Figures/logloss.jpg, id=1127, 794.97pt x 505.89pt>
+<Figures/logloss.jpg, id=1134, 794.97pt x 505.89pt>
 File: Figures/logloss.jpg Graphic file (type jpg)
 <use Figures/logloss.jpg>
 Package pdftex.def Info: Figures/logloss.jpg  used on input line 701.
@@ -2413,19 +2455,19 @@ Chapter 4.
 [51.66
 
 ]
-<Figures/ml_framework.jpg, id=1403, 1314.41063pt x 560.8453pt>
+<Figures/ml_framework.jpg, id=1410, 1314.41063pt x 560.8453pt>
 File: Figures/ml_framework.jpg Graphic file (type jpg)
 <use Figures/ml_framework.jpg>
 Package pdftex.def Info: Figures/ml_framework.jpg  used on input line 20.
 (pdftex.def)             Requested size: 398.33858pt x 169.96645pt.
  [52.67 <./Figures/ml_framework.jpg>] [53.68] [54.69] [55.70] [56.71] [57.72]
-<Figures/Default_Distribution.jpg, id=1446, 578.16pt x 433.62pt>
+<Figures/Default_Distribution.jpg, id=1453, 578.16pt x 433.62pt>
 File: Figures/Default_Distribution.jpg Graphic file (type jpg)
 <use Figures/Default_Distribution.jpg>
 Package pdftex.def Info: Figures/Default_Distribution.jpg  used on input line 244.
 (pdftex.def)             Requested size: 369.88582pt x 277.40999pt.
  [58.73] [59.74 <./Figures/Default_Distribution.jpg>]
-<Figures/Numeric_Features_Distribution_Boxplots.jpg, id=1463, 867.24pt x 1445.4pt>
+<Figures/Numeric_Features_Distribution_Boxplots.jpg, id=1470, 867.24pt x 1445.4pt>
 File: Figures/Numeric_Features_Distribution_Boxplots.jpg Graphic file (type jpg)
 <use Figures/Numeric_Features_Distribution_Boxplots.jpg>
 Package pdftex.def Info: Figures/Numeric_Features_Distribution_Boxplots.jpg  used on input line 280.
@@ -2434,7 +2476,7 @@ Package pdftex.def Info: Figures/Numeric_Features_Distribution_Boxplots.jpg  use
 Overfull \vbox (36.01959pt too high) has occurred while \output is active []
 
  [61.76 <./Figures/Numeric_Features_Distribution_Boxplots.jpg>] [62.77]
-<Figures/Categorical_Features_Distribution.jpg, id=1482, 794.97pt x 722.7pt>
+<Figures/Categorical_Features_Distribution.jpg, id=1489, 794.97pt x 722.7pt>
 File: Figures/Categorical_Features_Distribution.jpg Graphic file (type jpg)
 <use Figures/Categorical_Features_Distribution.jpg>
 Package pdftex.def Info: Figures/Categorical_Features_Distribution.jpg  used on input line 358.
@@ -2447,18 +2489,18 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 421.
  [65.80] [66.81] [67.82]
-<Figures/NA_Dendrogram.jpg, id=1523, 722.7pt x 433.62pt>
+<Figures/NA_Dendrogram.jpg, id=1530, 722.7pt x 433.62pt>
 File: Figures/NA_Dendrogram.jpg Graphic file (type jpg)
 <use Figures/NA_Dendrogram.jpg>
 Package pdftex.def Info: Figures/NA_Dendrogram.jpg  used on input line 544.
 (pdftex.def)             Requested size: 398.33858pt x 239.0012pt.
-<Figures/NA_Dendrogram_defaults.jpg, id=1527, 722.7pt x 433.62pt>
+<Figures/NA_Dendrogram_defaults.jpg, id=1534, 722.7pt x 433.62pt>
 File: Figures/NA_Dendrogram_defaults.jpg Graphic file (type jpg)
 <use Figures/NA_Dendrogram_defaults.jpg>
 Package pdftex.def Info: Figures/NA_Dendrogram_defaults.jpg  used on input line 555.
 (pdftex.def)             Requested size: 398.33858pt x 239.0012pt.
  [68.83 <./Figures/NA_Dendrogram.jpg>] [69.84 <./Figures/NA_Dendrogram_defaults.jpg>]
-<Figures/Spearman_Correlation_Matrix_Numeric_Features.jpg, id=1542, 1156.32pt x 939.51pt>
+<Figures/Spearman_Correlation_Matrix_Numeric_Features.jpg, id=1549, 1156.32pt x 939.51pt>
 File: Figures/Spearman_Correlation_Matrix_Numeric_Features.jpg Graphic file (type jpg)
 <use Figures/Spearman_Correlation_Matrix_Numeric_Features.jpg>
 Package pdftex.def Info: Figures/Spearman_Correlation_Matrix_Numeric_Features.jpg  used on input line 574.
@@ -2469,25 +2511,25 @@ Overfull \hbox (25.60722pt too wide) in paragraph at lines 573--575
  []
 
 [70.85 <./Figures/Spearman_Correlation_Matrix_Numeric_Features.jpg>] [71.86] [72.87] [73.88]
-<Figures/Categorical_Features_Distribution_OS_Default.jpg, id=1579, 1011.78pt x 722.7pt>
+<Figures/Categorical_Features_Distribution_OS_Default.jpg, id=1586, 1011.78pt x 722.7pt>
 File: Figures/Categorical_Features_Distribution_OS_Default.jpg Graphic file (type jpg)
 <use Figures/Categorical_Features_Distribution_OS_Default.jpg>
 Package pdftex.def Info: Figures/Categorical_Features_Distribution_OS_Default.jpg  used on input line 701.
 (pdftex.def)             Requested size: 369.88582pt x 264.20786pt.
  [74.89 <./Figures/Categorical_Features_Distribution_OS_Default.jpg>]
-<Figures/WoE_Distribution_DEBTINC.jpg, id=1588, 650.43pt x 433.62pt>
+<Figures/WoE_Distribution_DEBTINC.jpg, id=1595, 650.43pt x 433.62pt>
 File: Figures/WoE_Distribution_DEBTINC.jpg Graphic file (type jpg)
 <use Figures/WoE_Distribution_DEBTINC.jpg>
 Package pdftex.def Info: Figures/WoE_Distribution_DEBTINC.jpg  used on input line 726.
 (pdftex.def)             Requested size: 341.43306pt x 227.62744pt.
  [75.90]
-<Figures/WoE_Distribution_DELINQ.jpg, id=1594, 650.43pt x 433.62pt>
+<Figures/WoE_Distribution_DELINQ.jpg, id=1601, 650.43pt x 433.62pt>
 File: Figures/WoE_Distribution_DELINQ.jpg Graphic file (type jpg)
 <use Figures/WoE_Distribution_DELINQ.jpg>
 Package pdftex.def Info: Figures/WoE_Distribution_DELINQ.jpg  used on input line 738.
 (pdftex.def)             Requested size: 341.43306pt x 227.62744pt.
  [76.91 <./Figures/WoE_Distribution_DEBTINC.jpg> <./Figures/WoE_Distribution_DELINQ.jpg>]
-<Figures/WoE_Distribution_JOB.jpg, id=1602, 650.43pt x 433.62pt>
+<Figures/WoE_Distribution_JOB.jpg, id=1609, 650.43pt x 433.62pt>
 File: Figures/WoE_Distribution_JOB.jpg Graphic file (type jpg)
 <use Figures/WoE_Distribution_JOB.jpg>
 Package pdftex.def Info: Figures/WoE_Distribution_JOB.jpg  used on input line 753.
@@ -2506,13 +2548,13 @@ Package hyperref Warning: No autoref name for `algorithm' on input line 1049.
 
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 1051.
 [85.100]
-<Figures/Recurrence_Selected_Features.jpg, id=1695, 794.97pt x 505.89pt>
+<Figures/Recurrence_Selected_Features.jpg, id=1702, 794.97pt x 505.89pt>
 File: Figures/Recurrence_Selected_Features.jpg Graphic file (type jpg)
 <use Figures/Recurrence_Selected_Features.jpg>
 Package pdftex.def Info: Figures/Recurrence_Selected_Features.jpg  used on input line 1105.
 (pdftex.def)             Requested size: 341.43306pt x 217.28143pt.
  [86.101]
-<Figures/Selected_Features_Distribution.jpg, id=1702, 722.7pt x 433.62pt>
+<Figures/Selected_Features_Distribution.jpg, id=1709, 722.7pt x 433.62pt>
 File: Figures/Selected_Features_Distribution.jpg Graphic file (type jpg)
 <use Figures/Selected_Features_Distribution.jpg>
 Package pdftex.def Info: Figures/Selected_Features_Distribution.jpg  used on input line 1117.
@@ -2698,7 +2740,7 @@ Package typearea Info: Using dirty hack to recalculate internal output
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<Figures/F1_Distribution.jpg, id=1754, 722.7pt x 433.62pt>
+<Figures/F1_Distribution.jpg, id=1761, 722.7pt x 433.62pt>
 File: Figures/F1_Distribution.jpg Graphic file (type jpg)
 <use Figures/F1_Distribution.jpg>
 Package pdftex.def Info: Figures/F1_Distribution.jpg  used on input line 1359.
@@ -2708,97 +2750,97 @@ Package pdftex.def Info: Figures/F1_Distribution.jpg  used on input line 1359.
 
 
  <./Figures/F1_Distribution.jpg>]
-<Figures/F1_wo_outliers_Distribution.jpg, id=1761, 722.7pt x 433.62pt>
+<Figures/F1_wo_outliers_Distribution.jpg, id=1768, 722.7pt x 433.62pt>
 File: Figures/F1_wo_outliers_Distribution.jpg Graphic file (type jpg)
 <use Figures/F1_wo_outliers_Distribution.jpg>
 Package pdftex.def Info: Figures/F1_wo_outliers_Distribution.jpg  used on input line 1371.
 (pdftex.def)             Requested size: 398.33858pt x 239.0012pt.
  [95.110 <./Figures/F1_wo_outliers_Distribution.jpg>]
-<Figures/F1_wo_outliers_Distribution_BB_WB.jpg, id=1767, 722.7pt x 433.62pt>
+<Figures/F1_wo_outliers_Distribution_BB_WB.jpg, id=1774, 722.7pt x 433.62pt>
 File: Figures/F1_wo_outliers_Distribution_BB_WB.jpg Graphic file (type jpg)
 <use Figures/F1_wo_outliers_Distribution_BB_WB.jpg>
 Package pdftex.def Info: Figures/F1_wo_outliers_Distribution_BB_WB.jpg  used on input line 1381.
 (pdftex.def)             Requested size: 398.33858pt x 239.0012pt.
  [96.111 <./Figures/F1_wo_outliers_Distribution_BB_WB.jpg>]
-<Figures/AVG_RANK_Distribution.jpg, id=1775, 722.7pt x 433.62pt>
+<Figures/AVG_RANK_Distribution.jpg, id=1782, 722.7pt x 433.62pt>
 File: Figures/AVG_RANK_Distribution.jpg Graphic file (type jpg)
 <use Figures/AVG_RANK_Distribution.jpg>
 Package pdftex.def Info: Figures/AVG_RANK_Distribution.jpg  used on input line 1393.
 (pdftex.def)             Requested size: 398.33858pt x 239.0012pt.
  [97.112 <./Figures/AVG_RANK_Distribution.jpg>]
-<Figures/AVG_Rank_Distribution_BB_WB.jpg, id=1784, 722.7pt x 433.62pt>
+<Figures/AVG_Rank_Distribution_BB_WB.jpg, id=1791, 722.7pt x 433.62pt>
 File: Figures/AVG_Rank_Distribution_BB_WB.jpg Graphic file (type jpg)
 <use Figures/AVG_Rank_Distribution_BB_WB.jpg>
 Package pdftex.def Info: Figures/AVG_Rank_Distribution_BB_WB.jpg  used on input line 1405.
 (pdftex.def)             Requested size: 398.33858pt x 239.0012pt.
  [98.113 <./Figures/AVG_RANK_Distribution_BB_WB.jpg>]
-<Figures/Threshold_Distribution.jpg, id=1791, 722.7pt x 433.62pt>
+<Figures/Threshold_Distribution.jpg, id=1798, 722.7pt x 433.62pt>
 File: Figures/Threshold_Distribution.jpg Graphic file (type jpg)
 <use Figures/Threshold_Distribution.jpg>
 Package pdftex.def Info: Figures/Threshold_Distribution.jpg  used on input line 1415.
 (pdftex.def)             Requested size: 398.33858pt x 239.0012pt.
  [99.114 <./Figures/Threshold_Distribution.jpg>]
-<Figures/Threshold_wo_outliers_Distribution.jpg, id=1798, 722.7pt x 433.62pt>
+<Figures/Threshold_wo_outliers_Distribution.jpg, id=1805, 722.7pt x 433.62pt>
 File: Figures/Threshold_wo_outliers_Distribution.jpg Graphic file (type jpg)
 <use Figures/Threshold_wo_outliers_Distribution.jpg>
 Package pdftex.def Info: Figures/Threshold_wo_outliers_Distribution.jpg  used on input line 1425.
 (pdftex.def)             Requested size: 398.33858pt x 239.0012pt.
  [100.115 <./Figures/THRESHOLD_WO_OUTLIERS_Distribution.jpg>]
-<Figures/EXECUTION_TIME_Distribution.jpg, id=1805, 722.7pt x 433.62pt>
+<Figures/EXECUTION_TIME_Distribution.jpg, id=1812, 722.7pt x 433.62pt>
 File: Figures/EXECUTION_TIME_Distribution.jpg Graphic file (type jpg)
 <use Figures/EXECUTION_TIME_Distribution.jpg>
 Package pdftex.def Info: Figures/EXECUTION_TIME_Distribution.jpg  used on input line 1438.
 (pdftex.def)             Requested size: 398.33858pt x 239.0012pt.
  [101.116 <./Figures/EXECUTION_TIME_Distribution.jpg>]
-<Figures/EXECUTION_TIME_Distribution_BB_WB.jpg, id=1812, 722.7pt x 433.62pt>
+<Figures/EXECUTION_TIME_Distribution_BB_WB.jpg, id=1819, 722.7pt x 433.62pt>
 File: Figures/EXECUTION_TIME_Distribution_BB_WB.jpg Graphic file (type jpg)
 <use Figures/EXECUTION_TIME_Distribution_BB_WB.jpg>
 Package pdftex.def Info: Figures/EXECUTION_TIME_Distribution_BB_WB.jpg  used on input line 1451.
 (pdftex.def)             Requested size: 398.33858pt x 239.0012pt.
  [102.117 <./Figures/EXECUTION_TIME_Distribution_BB_WB.jpg>]
-<Figures/Scatterplot_execution_time_F1_wo_outliers.jpg, id=1819, 722.7pt x 505.89pt>
+<Figures/Scatterplot_execution_time_F1_wo_outliers.jpg, id=1826, 722.7pt x 505.89pt>
 File: Figures/Scatterplot_execution_time_F1_wo_outliers.jpg Graphic file (type jpg)
 <use Figures/Scatterplot_execution_time_F1_wo_outliers.jpg>
 Package pdftex.def Info: Figures/Scatterplot_execution_time_F1_wo_outliers.jpg  used on input line 1467.
 (pdftex.def)             Requested size: 398.33858pt x 278.83473pt.
  [103.118 <./Figures/Scatterplot_execution_time_F1_wo_outliers.jpg>]
-<Figures/Scatterplot_execution_time_F1_wo_outliers_BB_WB.jpg, id=1825, 722.7pt x 505.89pt>
+<Figures/Scatterplot_execution_time_F1_wo_outliers_BB_WB.jpg, id=1832, 722.7pt x 505.89pt>
 File: Figures/Scatterplot_execution_time_F1_wo_outliers_BB_WB.jpg Graphic file (type jpg)
 <use Figures/Scatterplot_execution_time_F1_wo_outliers_BB_WB.jpg>
 Package pdftex.def Info: Figures/Scatterplot_execution_time_F1_wo_outliers_BB_WB.jpg  used on input line 1480.
 (pdftex.def)             Requested size: 398.33858pt x 278.83473pt.
  [104.119 <./Figures/Scatterplot_execution_time_F1_wo_outliers_BB_WB.jpg>] [105.120] [106.121]
-<Figures/Confusion_Matrix.jpg, id=1844, 650.43pt x 505.89pt>
+<Figures/Confusion_Matrix.jpg, id=1852, 650.43pt x 505.89pt>
 File: Figures/Confusion_Matrix.jpg Graphic file (type jpg)
 <use Figures/Confusion_Matrix.jpg>
 Package pdftex.def Info: Figures/Confusion_Matrix.jpg  used on input line 1560.
 (pdftex.def)             Requested size: 369.88582pt x 287.69643pt.
  [107.122 <./Figures/Confusion_Matrix.jpg>] [108.123]
-<Figures/ROC_curve_FINAL.jpg, id=1857, 722.7pt x 505.89pt>
+<Figures/ROC_curve_FINAL.jpg, id=1864, 722.7pt x 505.89pt>
 File: Figures/ROC_curve_FINAL.jpg Graphic file (type jpg)
 <use Figures/ROC_curve_FINAL.jpg>
 Package pdftex.def Info: Figures/ROC_curve_FINAL.jpg  used on input line 1644.
 (pdftex.def)             Requested size: 398.33858pt x 278.83473pt.
  [109.124] [110.125 <./Figures/ROC_curve_FINAL.jpg>]
-<Figures/Feature_Importances.jpg, id=1871, 722.7pt x 433.62pt>
+<Figures/Feature_Importances.jpg, id=1878, 722.7pt x 433.62pt>
 File: Figures/Feature_Importances.jpg Graphic file (type jpg)
 <use Figures/Feature_Importances.jpg>
 Package pdftex.def Info: Figures/Feature_Importances.jpg  used on input line 1669.
 (pdftex.def)             Requested size: 398.33858pt x 239.0012pt.
  [111.126 <./Figures/Feature_Importances.jpg>]
-<Figures/SHAP_summary_plot.jpg, id=1879, 650.43pt x 578.16pt>
+<Figures/SHAP_summary_plot.jpg, id=1886, 650.43pt x 578.16pt>
 File: Figures/SHAP_summary_plot.jpg Graphic file (type jpg)
 <use Figures/SHAP_summary_plot.jpg>
 Package pdftex.def Info: Figures/SHAP_summary_plot.jpg  used on input line 1696.
 (pdftex.def)             Requested size: 398.33858pt x 354.08861pt.
  [112.127] [113.128 <./Figures/SHAP_summary_plot.jpg>] [114.129]
-<Figures/flask_app_form.jpg, id=1898, 788.19469pt x 749.80125pt>
+<Figures/flask_app_form.jpg, id=1905, 788.19469pt x 749.80125pt>
 File: Figures/flask_app_form.jpg Graphic file (type jpg)
 <use Figures/flask_app_form.jpg>
 Package pdftex.def Info: Figures/flask_app_form.jpg  used on input line 1751.
 (pdftex.def)             Requested size: 398.33858pt x 378.92694pt.
  [115.130]
-<Figures/flask_app_result.jpg, id=1904, 773.89125pt x 631.60968pt>
+<Figures/flask_app_result.jpg, id=1911, 773.89125pt x 631.60968pt>
 File: Figures/flask_app_result.jpg Graphic file (type jpg)
 <use Figures/flask_app_result.jpg>
 Package pdftex.def Info: Figures/flask_app_result.jpg  used on input line 1764.
@@ -2981,7 +3023,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 654--658
 
 [142.157]) [143.158] (./03_Backmatter/01_App.tex
 Appendix A.
-<Figures/Numeric_Features_Distribution_OS_Violinplots.jpg, id=2250, 867.24pt x 1445.4pt>
+<Figures/Numeric_Features_Distribution_OS_Violinplots.jpg, id=2257, 867.24pt x 1445.4pt>
 File: Figures/Numeric_Features_Distribution_OS_Violinplots.jpg Graphic file (type jpg)
 <use Figures/Numeric_Features_Distribution_OS_Violinplots.jpg>
 Package pdftex.def Info: Figures/Numeric_Features_Distribution_OS_Violinplots.jpg  used on input line 42.
@@ -2993,18 +3035,18 @@ Package pdftex.def Info: Figures/Numeric_Features_Distribution_OS_Violinplots.jp
 Overfull \vbox (36.01959pt too high) has occurred while \output is active []
 
  [2.160 <./Figures/Numeric_Features_Distribution_OS_Violinplots.jpg>]
-<Figures/WoE_Distribution.jpg, id=2259, 939.51pt x 1589.94pt>
+<Figures/WoE_Distribution.jpg, id=2266, 939.51pt x 1589.94pt>
 File: Figures/WoE_Distribution.jpg Graphic file (type jpg)
 <use Figures/WoE_Distribution.jpg>
 Package pdftex.def Info: Figures/WoE_Distribution.jpg  used on input line 52.
 (pdftex.def)             Requested size: 284.52756pt x 481.49814pt.
-<Figures/PRECISION_Distribution.jpg, id=2260, 722.7pt x 433.62pt>
+<Figures/PRECISION_Distribution.jpg, id=2267, 722.7pt x 433.62pt>
 File: Figures/PRECISION_Distribution.jpg Graphic file (type jpg)
 <use Figures/PRECISION_Distribution.jpg>
 Package pdftex.def Info: Figures/PRECISION_Distribution.jpg  used on input line 64.
 (pdftex.def)             Requested size: 398.33858pt x 239.0012pt.
  [3.161 <./Figures/WoE_Distribution.jpg>]
-<Figures/PRECISION_WO_OUTLIERS_Distribution.jpg, id=2265, 722.7pt x 433.62pt>
+<Figures/PRECISION_WO_OUTLIERS_Distribution.jpg, id=2272, 722.7pt x 433.62pt>
 File: Figures/PRECISION_WO_OUTLIERS_Distribution.jpg Graphic file (type jpg)
 <use Figures/PRECISION_WO_OUTLIERS_Distribution.jpg>
 Package pdftex.def Info: Figures/PRECISION_WO_OUTLIERS_Distribution.jpg  used on input line 73.
@@ -3014,7 +3056,7 @@ Underfull \hbox (badness 1789) in paragraph at lines 80--80
 [][]|\T1/lmr/m/n/12 Pre-ci-sion Dis-tri-bu-tion (Black--box/White--box di-men-
  []
 
-<Figures/PRECISION_Distribution_BB_WB.jpg, id=2266, 722.7pt x 433.62pt>
+<Figures/PRECISION_Distribution_BB_WB.jpg, id=2273, 722.7pt x 433.62pt>
 File: Figures/PRECISION_Distribution_BB_WB.jpg Graphic file (type jpg)
 <use Figures/PRECISION_Distribution_BB_WB.jpg>
 Package pdftex.def Info: Figures/PRECISION_Distribution_BB_WB.jpg  used on input line 82.
@@ -3024,89 +3066,89 @@ Underfull \hbox (badness 1789) in paragraph at lines 89--89
 [][]|\T1/lmr/m/n/12 Pre-ci-sion Dis-tri-bu-tion (Black--box/White--box di-men-
  []
 
-<Figures/PRECISION_WO_OUTLIERS_Distribution_BB_WB.jpg, id=2271, 722.7pt x 433.62pt>
+<Figures/PRECISION_WO_OUTLIERS_Distribution_BB_WB.jpg, id=2278, 722.7pt x 433.62pt>
 File: Figures/PRECISION_WO_OUTLIERS_Distribution_BB_WB.jpg Graphic file (type jpg)
 <use Figures/PRECISION_WO_OUTLIERS_Distribution_BB_WB.jpg>
 Package pdftex.def Info: Figures/PRECISION_WO_OUTLIERS_Distribution_BB_WB.jpg  used on input line 91.
 (pdftex.def)             Requested size: 398.33858pt x 239.0012pt.
-<Figures/RECALL_Distribution.jpg, id=2272, 722.7pt x 433.62pt>
+<Figures/RECALL_Distribution.jpg, id=2279, 722.7pt x 433.62pt>
 File: Figures/RECALL_Distribution.jpg Graphic file (type jpg)
 <use Figures/RECALL_Distribution.jpg>
 Package pdftex.def Info: Figures/RECALL_Distribution.jpg  used on input line 102.
 (pdftex.def)             Requested size: 398.33858pt x 239.0012pt.
 [5.163 <./Figures/PRECISION_Distribution_BB_WB.jpg> <./Figures/PRECISION_WO_OUTLIERS_Distribution_BB_WB.jpg>]
-<Figures/RECALL_WO_OUTLIERS_Distribution.jpg, id=2278, 722.7pt x 433.62pt>
+<Figures/RECALL_WO_OUTLIERS_Distribution.jpg, id=2286, 722.7pt x 433.62pt>
 File: Figures/RECALL_WO_OUTLIERS_Distribution.jpg Graphic file (type jpg)
 <use Figures/RECALL_WO_OUTLIERS_Distribution.jpg>
 Package pdftex.def Info: Figures/RECALL_WO_OUTLIERS_Distribution.jpg  used on input line 111.
 (pdftex.def)             Requested size: 398.33858pt x 239.0012pt.
-<Figures/RECALL_Distribution_BB_WB.jpg, id=2279, 722.7pt x 433.62pt>
+<Figures/RECALL_Distribution_BB_WB.jpg, id=2287, 722.7pt x 433.62pt>
 File: Figures/RECALL_Distribution_BB_WB.jpg Graphic file (type jpg)
 <use Figures/RECALL_Distribution_BB_WB.jpg>
 Package pdftex.def Info: Figures/RECALL_Distribution_BB_WB.jpg  used on input line 120.
 (pdftex.def)             Requested size: 398.33858pt x 239.0012pt.
  [6.164 <./Figures/RECALL_Distribution.jpg> <./Figures/RECALL_WO_OUTLIERS_Distribution.jpg>]
-<Figures/RECALL_WO_OUTLIERS_Distribution_BB_WB.jpg, id=2285, 722.7pt x 433.62pt>
+<Figures/RECALL_WO_OUTLIERS_Distribution_BB_WB.jpg, id=2292, 722.7pt x 433.62pt>
 File: Figures/RECALL_WO_OUTLIERS_Distribution_BB_WB.jpg Graphic file (type jpg)
 <use Figures/RECALL_WO_OUTLIERS_Distribution_BB_WB.jpg>
 Package pdftex.def Info: Figures/RECALL_WO_OUTLIERS_Distribution_BB_WB.jpg  used on input line 129.
 (pdftex.def)             Requested size: 398.33858pt x 239.0012pt.
-<Figures/ACCURACY_Distribution.jpg, id=2286, 722.7pt x 433.62pt>
+<Figures/ACCURACY_Distribution.jpg, id=2293, 722.7pt x 433.62pt>
 File: Figures/ACCURACY_Distribution.jpg Graphic file (type jpg)
 <use Figures/ACCURACY_Distribution.jpg>
 Package pdftex.def Info: Figures/ACCURACY_Distribution.jpg  used on input line 138.
 (pdftex.def)             Requested size: 398.33858pt x 239.0012pt.
  [7.165 <./Figures/RECALL_Distribution_BB_WB.jpg> <./Figures/RECALL_WO_OUTLIERS_Distribution_BB_WB.jpg>]
-<Figures/ACCURACY_Distribution_BB_WB.jpg, id=2291, 722.7pt x 433.62pt>
+<Figures/ACCURACY_Distribution_BB_WB.jpg, id=2298, 722.7pt x 433.62pt>
 File: Figures/ACCURACY_Distribution_BB_WB.jpg Graphic file (type jpg)
 <use Figures/ACCURACY_Distribution_BB_WB.jpg>
 Package pdftex.def Info: Figures/ACCURACY_Distribution_BB_WB.jpg  used on input line 147.
 (pdftex.def)             Requested size: 398.33858pt x 239.0012pt.
-<Figures/AUC_Distribution.jpg, id=2292, 722.7pt x 433.62pt>
+<Figures/AUC_Distribution.jpg, id=2299, 722.7pt x 433.62pt>
 File: Figures/AUC_Distribution.jpg Graphic file (type jpg)
 <use Figures/AUC_Distribution.jpg>
 Package pdftex.def Info: Figures/AUC_Distribution.jpg  used on input line 156.
 (pdftex.def)             Requested size: 398.33858pt x 239.0012pt.
  [8.166 <./Figures/ACCURACY_Distribution.jpg> <./Figures/ACCURACY_Distribution_BB_WB.jpg>]
-<Figures/AUC_Distribution_BB_WB.jpg, id=2297, 722.7pt x 433.62pt>
+<Figures/AUC_Distribution_BB_WB.jpg, id=2304, 722.7pt x 433.62pt>
 File: Figures/AUC_Distribution_BB_WB.jpg Graphic file (type jpg)
 <use Figures/AUC_Distribution_BB_WB.jpg>
 Package pdftex.def Info: Figures/AUC_Distribution_BB_WB.jpg  used on input line 165.
 (pdftex.def)             Requested size: 398.33858pt x 239.0012pt.
-<Figures/MCC_Distribution.jpg, id=2298, 722.7pt x 433.62pt>
+<Figures/MCC_Distribution.jpg, id=2305, 722.7pt x 433.62pt>
 File: Figures/MCC_Distribution.jpg Graphic file (type jpg)
 <use Figures/MCC_Distribution.jpg>
 Package pdftex.def Info: Figures/MCC_Distribution.jpg  used on input line 174.
 (pdftex.def)             Requested size: 398.33858pt x 239.0012pt.
  [9.167 <./Figures/AUC_Distribution.jpg> <./Figures/AUC_Distribution_BB_WB.jpg>]
-<Figures/MCC_WO_OUTLIERS_Distribution.jpg, id=2303, 722.7pt x 433.62pt>
+<Figures/MCC_WO_OUTLIERS_Distribution.jpg, id=2310, 722.7pt x 433.62pt>
 File: Figures/MCC_WO_OUTLIERS_Distribution.jpg Graphic file (type jpg)
 <use Figures/MCC_WO_OUTLIERS_Distribution.jpg>
 Package pdftex.def Info: Figures/MCC_WO_OUTLIERS_Distribution.jpg  used on input line 183.
 (pdftex.def)             Requested size: 398.33858pt x 239.0012pt.
-<Figures/MCC_Distribution_BB_WB.jpg, id=2304, 722.7pt x 433.62pt>
+<Figures/MCC_Distribution_BB_WB.jpg, id=2311, 722.7pt x 433.62pt>
 File: Figures/MCC_Distribution_BB_WB.jpg Graphic file (type jpg)
 <use Figures/MCC_Distribution_BB_WB.jpg>
 Package pdftex.def Info: Figures/MCC_Distribution_BB_WB.jpg  used on input line 192.
 (pdftex.def)             Requested size: 398.33858pt x 239.0012pt.
  [10.168 <./Figures/MCC_Distribution.jpg> <./Figures/MCC_WO_OUTLIERS_Distribution.jpg>]
-<Figures/MCC_WO_OUTLIERS_Distribution_BB_WB.jpg, id=2309, 722.7pt x 433.62pt>
+<Figures/MCC_WO_OUTLIERS_Distribution_BB_WB.jpg, id=2316, 722.7pt x 433.62pt>
 File: Figures/MCC_WO_OUTLIERS_Distribution_BB_WB.jpg Graphic file (type jpg)
 <use Figures/MCC_WO_OUTLIERS_Distribution_BB_WB.jpg>
 Package pdftex.def Info: Figures/MCC_WO_OUTLIERS_Distribution_BB_WB.jpg  used on input line 201.
 (pdftex.def)             Requested size: 398.33858pt x 239.0012pt.
-<Figures/BRIER SCORE LOSS_Distribution.jpg, id=2310, 722.7pt x 433.62pt>
+<Figures/BRIER SCORE LOSS_Distribution.jpg, id=2317, 722.7pt x 433.62pt>
 File: Figures/BRIER SCORE LOSS_Distribution.jpg Graphic file (type jpg)
 <use Figures/BRIER SCORE LOSS_Distribution.jpg>
 Package pdftex.def Info: Figures/BRIER SCORE LOSS_Distribution.jpg  used on input line 210.
 (pdftex.def)             Requested size: 398.33858pt x 239.0012pt.
  [11.169 <./Figures/MCC_Distribution_BB_WB.jpg> <./Figures/MCC_WO_OUTLIERS_Distribution_BB_WB.jpg>]
-<Figures/BRIER SCORE LOSS_Distribution_BB_WB.jpg, id=2316, 722.7pt x 433.62pt>
+<Figures/BRIER SCORE LOSS_Distribution_BB_WB.jpg, id=2323, 722.7pt x 433.62pt>
 File: Figures/BRIER SCORE LOSS_Distribution_BB_WB.jpg Graphic file (type jpg)
 <use Figures/BRIER SCORE LOSS_Distribution_BB_WB.jpg>
 Package pdftex.def Info: Figures/BRIER SCORE LOSS_Distribution_BB_WB.jpg  used on input line 219.
 (pdftex.def)             Requested size: 398.33858pt x 239.0012pt.
-<Figures/KS_Distribution.jpg, id=2317, 722.7pt x 433.62pt>
+<Figures/KS_Distribution.jpg, id=2324, 722.7pt x 433.62pt>
 File: Figures/KS_Distribution.jpg Graphic file (type jpg)
 <use Figures/KS_Distribution.jpg>
 Package pdftex.def Info: Figures/KS_Distribution.jpg  used on input line 228.
@@ -3116,29 +3158,29 @@ Underfull \hbox (badness 2707) in paragraph at lines 235--235
 [][]|\T1/lmr/m/n/12 Kolmogorov--Smirnov Dis-tance Dis-tri-bu-tion (Black--
  []
 
-<Figures/KS_Distribution_BB_WB.jpg, id=2322, 722.7pt x 433.62pt>
+<Figures/KS_Distribution_BB_WB.jpg, id=2329, 722.7pt x 433.62pt>
 File: Figures/KS_Distribution_BB_WB.jpg Graphic file (type jpg)
 <use Figures/KS_Distribution_BB_WB.jpg>
 Package pdftex.def Info: Figures/KS_Distribution_BB_WB.jpg  used on input line 237.
 (pdftex.def)             Requested size: 398.33858pt x 239.0012pt.
-<Figures/LOG LOSS_Distribution.jpg, id=2323, 722.7pt x 433.62pt>
+<Figures/LOG LOSS_Distribution.jpg, id=2330, 722.7pt x 433.62pt>
 File: Figures/LOG LOSS_Distribution.jpg Graphic file (type jpg)
 <use Figures/LOG LOSS_Distribution.jpg>
 Package pdftex.def Info: Figures/LOG LOSS_Distribution.jpg  used on input line 246.
 (pdftex.def)             Requested size: 398.33858pt x 239.0012pt.
 [13.171 <./Figures/KS_Distribution.jpg> <./Figures/KS_Distribution_BB_WB.jpg>]
-<Figures/LOG LOSS_Distribution_BB_WB.jpg, id=2328, 722.7pt x 433.62pt>
+<Figures/LOG LOSS_Distribution_BB_WB.jpg, id=2335, 722.7pt x 433.62pt>
 File: Figures/LOG LOSS_Distribution_BB_WB.jpg Graphic file (type jpg)
 <use Figures/LOG LOSS_Distribution_BB_WB.jpg>
 Package pdftex.def Info: Figures/LOG LOSS_Distribution_BB_WB.jpg  used on input line 255.
 (pdftex.def)             Requested size: 398.33858pt x 239.0012pt.
-<Figures/SOMERS D_Distribution.jpg, id=2329, 722.7pt x 433.62pt>
+<Figures/SOMERS D_Distribution.jpg, id=2336, 722.7pt x 433.62pt>
 File: Figures/SOMERS D_Distribution.jpg Graphic file (type jpg)
 <use Figures/SOMERS D_Distribution.jpg>
 Package pdftex.def Info: Figures/SOMERS D_Distribution.jpg  used on input line 264.
 (pdftex.def)             Requested size: 398.33858pt x 239.0012pt.
  [14.172 <./Figures/LOG LOSS_Distribution.jpg> <./Figures/LOG LOSS_Distribution_BB_WB.jpg>]
-<Figures/SOMERS D_Distribution_BB_WB.jpg, id=2334, 722.7pt x 433.62pt>
+<Figures/SOMERS D_Distribution_BB_WB.jpg, id=2341, 722.7pt x 433.62pt>
 File: Figures/SOMERS D_Distribution_BB_WB.jpg Graphic file (type jpg)
 <use Figures/SOMERS D_Distribution_BB_WB.jpg>
 Package pdftex.def Info: Figures/SOMERS D_Distribution_BB_WB.jpg  used on input line 273.
@@ -3157,18 +3199,18 @@ Package rerunfilecheck Info: File `Thesis.out' has not changed.
 (rerunfilecheck)             Checksum: DA4D0433F0A788ACFCA742DEBD6325F2;11730.
  ) 
 Here is how much of TeX's memory you used:
- 25667 strings out of 480559
- 412874 string characters out of 5897073
+ 25688 strings out of 480559
+ 413040 string characters out of 5897073
  818829 words of memory out of 5000000
- 41974 multiletter control sequences out of 15000+600000
+ 41988 multiletter control sequences out of 15000+600000
  588311 words of font info for 105 fonts, out of 8000000 for 9000
  48 hyphenation exceptions out of 8191
  123i,12n,120p,699b,2543s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{c:/tex/texlive/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}<c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmex10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmmi12.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmmi6.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmr17.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmr6.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmri12.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmss12.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmsy6.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmsy7.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmsy8.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmtk10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmtt10.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmtt12.pfb><c:/tex/texlive/texmf-dist/fonts/type1/public/lm/lmtt9.pfb>
-Output written on Thesis.pdf (173 pages, 16736236 bytes).
+Output written on Thesis.pdf (173 pages, 16736782 bytes).
 PDF statistics:
- 2593 PDF objects out of 2984 (max. 8388607)
- 2264 compressed objects within 23 object streams
- 639 named destinations out of 1000 (max. 500000)
+ 2601 PDF objects out of 2984 (max. 8388607)
+ 2272 compressed objects within 23 object streams
+ 646 named destinations out of 1000 (max. 500000)
  850 words of extra memory for PDF output out of 10000 (max. 10000000)
 
