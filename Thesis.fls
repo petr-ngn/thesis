@@ -1511,11 +1511,11 @@ INPUT c:/tex/texlive/texmf-dist/tex/latex/ragged2e/ragged2e.sty
 INPUT c:/tex/texlive/texmf-dist/fonts/tfm/public/lm/ec-lmr17.tfm
 INPUT c:/tex/texlive/texmf-dist/fonts/tfm/public/lm/ec-lmbx12.tfm
 INPUT c:/tex/texlive/texmf-dist/fonts/tfm/public/lm/ec-lmr17.tfm
-INPUT ./Figures/FFU-logo_black-EN.jpg
-INPUT ./Figures/FFU-logo_black-EN.jpg
-INPUT Figures/FFU-logo_black-EN.jpg
-INPUT ./Figures/FFU-logo_black-EN.jpg
-INPUT ./Figures/FFU-logo_black-EN.jpg
+INPUT ./Figures/FFU-logo_black-EN.png
+INPUT ./Figures/FFU-logo_black-EN.png
+INPUT Figures/FFU-logo_black-EN.png
+INPUT ./Figures/FFU-logo_black-EN.png
+INPUT ./Figures/FFU-logo_black-EN.png
 INPUT c:/tex/texlive/texmf-dist/fonts/tfm/public/lm/ec-lmbx12.tfm
 INPUT ./01_Frontmatter/decl.tex
 INPUT 01_Frontmatter/decl.tex
